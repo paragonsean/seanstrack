@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<title>FasTrak2</title>
+<style>
+body {
+    background-color: #E5E5E5;
+    }
+
+span.greenspan {
+    background-color: lightgreen;
+    }
+</style>
+
+</head>
+<body>
+<center><h2>Main Screen</h2></center>
+<p>
+<center><img src="./main_screen.gif"></center>
+<p>
+
+<h3>Board</h3>
+This column shows the number of the board. This is the same number that is shown in the
+<b>FasTrak Board Setup</b> program. There is a radio button next to the number which, if you have more than one
+FasTrak2 boards, allows you to select which board the diagnostic programs will talk to.
+
+<h3>Address and Port</h3>
+These columns show the current TCP address and port number used by the boards. These are set in
+the <b>FasTrak Board Setup</b> program.
+
+<h3>Connected</h3>
+This column shows <b>Connecting</b> when the program tries to contact the board. Normally this will change almost
+immediately to <b>Connected</b> when the first response is received. If no response is received <b>Not Connected</b>
+is displayed. If <b>Not Connected</b> is displayed, the program will check every minute or so to see if the board
+is present and will display <b>Connecting</b> followed by either <b>Connected</b> or <b>Not Connected</b>.
+If a board is not set up to be monitored then <b>Not Monitored</b> will be displayed and the program will not attempt
+to contact the board.
+
+<h3>Machine and Part</h3>
+This is the machine that the FasTrak2&#153; board is monitoring and the current part.
+
+<h3>Monitor Status</h3>
+The monitor status is blank when the program first connects to the board. It will show <span class=greenspan><b>&nbsp;Cycle Start&nbsp;</b></span>
+until the shot data has been received and then <b>Ready</b> when the board is ready to receive another shot.
+<p>
+<b>New Setup</b> is displayed whenever the program has downloaded a new part setup to the board. This remains
+displayed until the next cycle start is received.
+</body>
+</html>

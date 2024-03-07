@@ -1,0 +1,126 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOG DISCARDABLE  0, 0, 543, 265
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Data Archiver Backup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Zip Now",ZIP_NOW_BUTTON,180,242,50,14,BS_CENTER
+    GROUPBOX        "New Shot Messages",IDC_STATIC,305,155,221,83,WS_GROUP
+    LISTBOX         ZIP_COUNT_LISTBOX,10,100,289,142,LBS_SORT | 
+                    LBS_USETABSTOPS | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Machine",IDC_STATIC,12,88,32,8,NOT WS_GROUP
+    LTEXT           "Part",MAIN_PART_STATIC,95,88,20,8,NOT WS_GROUP
+    LTEXT           "Profile Count",MAIN_COUNT_STATIC,188,81,24,15,NOT 
+                    WS_GROUP
+    LTEXT           "Time of Last Shot",MAIN_LAST_SHOT_STATIC,222,88,60,8,
+                    NOT WS_GROUP
+    RTEXT           "2403",K_FREE_TBOX,249,43,24,8,NOT WS_GROUP
+    LTEXT           "Free Disk Space:",IDC_STATIC,243,29,60,8,NOT WS_GROUP
+    LTEXT           "GB",IDC_STATIC,276,43,11,8,NOT WS_GROUP
+    CTEXT           "N/A",DISK_FULL_TBOX,251,55,44,10,NOT WS_VISIBLE | NOT 
+                    WS_GROUP
+    RTEXT           "Primary",IDC_STATIC,25,43,24,8
+    RTEXT           "Secondary",IDC_STATIC,24,55,35,8
+    LTEXT           "HPM 2000 Ton ",IDC_STATIC,313,166,52,8
+    GROUPBOX        "Backup Locations",IDC_STATIC,13,21,308,49
+    LTEXT           "D:\\V5Backup",IDC_STATIC,81,43,48,8
+    LTEXT           "\\\\NetworkFileServer\\V5Backup",IDC_STATIC,81,55,112,8
+    LTEXT           "Machine",IDC_STATIC,318,111,28,8
+    LTEXT           "Saved",IDC_STATIC,370,111,22,8
+    LTEXT           "Remaining",IDC_STATIC,402,111,34,8
+    GROUPBOX        "New Shots",IDC_STATIC,304,100,143,45
+    LTEXT           "HPM 2000 Ton",IDC_STATIC,309,126,50,8
+    LTEXT           "10",IDC_STATIC,376,126,9,8
+    LTEXT           "124",IDC_STATIC,412,126,13,8
+    LTEXT           "2011-12-24 13:43:32",IDC_STATIC,416,166,67,8
+    PUSHBUTTON      "Check for New Shots Now",ZIP_NOW_BUTTON2,67,242,100,14,
+                    BS_CENTER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 536
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 258
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

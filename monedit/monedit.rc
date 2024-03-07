@@ -1,0 +1,155 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "msres.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+MONITOR_LIST DIALOGEX 0, 0, 526, 240
+STYLE DS_SETFONT | DS_3DLOOK | WS_CHILD | WS_VISIBLE | WS_BORDER
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Parameters",PARM_GROUPBOX,25,141,227,81
+    GROUPBOX        "Profiles",PROF_GROUPBOX,254,141,229,81
+    LTEXT           "Acquire Count",ACQ_COUNT_STATIC,143,154,107,13,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,258,154,76,62
+    LTEXT           "Machine",MACHINE_STATIC,3,16,47,12,SS_CENTERIMAGE
+    LTEXT           "Part",PART_STATIC,76,16,56,12,SS_CENTERIMAGE
+    LTEXT           "A L M",ALARM_STATIC,180,0,9,28
+    LTEXT           "M T R",MONITOR_STATIC,190,0,8,28
+    LTEXT           "Sample",POST_SECONDS_STATIC,207,16,35,12,SS_CENTERIMAGE
+    LTEXT           "Display",DISPLAY_SECONDS_STATIC,245,16,32,12,SS_CENTERIMAGE
+    LTEXT           "Skip",PARAM_SKIP_STATIC,286,16,49,12,SS_CENTERIMAGE
+    LTEXT           "Acquire",PARAM_ACQUIRE_STATIC,338,16,29,12,SS_CENTERIMAGE
+    LTEXT           "Max",PARAM_MAX_STATIC,370,16,18,12,SS_CENTERIMAGE
+    LTEXT           "Skip",SHOT_SKIP_STATIC,402,16,50,12,SS_CENTERIMAGE
+    LTEXT           "Acquire",SHOT_ACQUIRE_STATIC,455,16,29,12,SS_CENTERIMAGE
+    LTEXT           "Max",SHOT_MAX_STATIC,487,16,19,12,SS_CENTERIMAGE
+    CTEXT           "Parameters",PARAMS_STATIC,283,3,110,12,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "Profiles",PROFILES_STATIC,397,3,110,12,SS_CENTERIMAGE | SS_SUNKEN
+    LTEXT           "Max Saved",MAX_SAVED_STATIC,143,204,107,12,SS_CENTERIMAGE
+    LTEXT           "Current Part Name",CURRENT_PART_STATIC,52,106,83,12,SS_CENTERIMAGE
+    LTEXT           "Acquire Count",ACQ_COUNT_2_STATIC,371,155,107,12,SS_CENTERIMAGE
+    LTEXT           "Max Saved",MAX_SAVED_2_STATIC,371,204,107,12,SS_CENTERIMAGE
+    LTEXT           "Sample Time",SAMPLE_TIME_STATIC,315,112,63,12,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,28,154,77,62
+    LISTBOX         MONITOR_LISTBOX,0,29,525,72,LBS_SORT | LBS_USETABSTOPS | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        PART_NAME_COMBOBOX,50,119,137,49,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Monitor This Part",MONITOR_MACHINE_CHECKBOX,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,198,110,105,12
+    CONTROL         "Monitor Alarms",MONITOR_ALARMS_CHECKBOX,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,198,121,105,12
+    EDITTEXT        SAMPLE_TIME_EBOX,321,127,29,12
+    CONTROL         "Acquire All",PARM_ACQUIRE_ALL,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,30,158,72,12
+    CONTROL         "Acquire None",PARM_ACQUIRE_NONE,"Button",BS_AUTORADIOBUTTON,30,171,72,12
+    CONTROL         "Time Skip",PARM_TIME_SKIP,"Button",BS_AUTORADIOBUTTON,30,185,72,12
+    CONTROL         "Shot Skip",PARM_SKIP_COUNT,"Button",BS_AUTORADIOBUTTON,30,199,72,12
+    LTEXT           "Skip Time",PARM_SKIP_LABEL,143,178,107,12,SS_CENTERIMAGE
+    EDITTEXT        PARM_ACQUIRE_COUNT,107,155,33,12,WS_GROUP
+    EDITTEXT        PARM_SKIP,107,178,33,12
+    EDITTEXT        PARM_MAX_SAVED,107,204,33,12
+    CONTROL         "Acquire All",PROF_ACQUIRE_ALL,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,261,158,70,12
+    CONTROL         "Acquire None",PROF_ACQUIRE_NONE,"Button",BS_AUTORADIOBUTTON,261,172,70,12
+    CONTROL         "Time Skip",PROF_TIME_SKIP,"Button",BS_AUTORADIOBUTTON,261,186,70,12
+    CONTROL         "Shot Skip",PROF_SKIP_COUNT,"Button",BS_AUTORADIOBUTTON,261,200,70,12
+    LTEXT           "Skip Time",PROF_SKIP_LABEL,371,178,107,12,SS_CENTERIMAGE
+    EDITTEXT        PROF_ACQUIRE_COUNT,335,155,33,12,WS_GROUP
+    EDITTEXT        PROF_SKIP,335,178,33,12
+    EDITTEXT        PROF_MAX_SAVED,335,204,33,12
+    PUSHBUTTON      "Save Changes",SAVE_CHANGES_BUTTON,172,224,90,14
+    PUSHBUTTON      "Begin Monitoring",BEGIN_MONITORING_BUTTON,263,224,90,14,BS_CENTER
+    EDITTEXT        DISPLAY_TIME_EBOX,388,127,29,12
+    LTEXT           "Display Time",DISPLAY_TIME_TBOX,382,112,61,12,SS_CENTERIMAGE
+    GROUPBOX        "Post Impact Seconds",POST_IMPACT_STATIC,307,102,140,41,BS_CENTER
+    CTEXT           "Post Impact Seconds",POST_IMPACT_2_STATIC,199,3,82,12,SS_CENTERIMAGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    "MONITOR_LIST", DIALOG
+    BEGIN
+        RIGHTMARGIN, 514
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "msres.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MONEDIT             ICON                    "monedit.ico"
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

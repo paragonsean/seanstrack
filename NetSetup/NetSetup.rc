@@ -1,0 +1,250 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "msres.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+COMPUTER_DIALOG DIALOGEX 0, 0, 542, 223
+STYLE DS_SETFONT | DS_3DLOOK | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Computer",IDC_STATIC,4,9,31,8
+    LTEXT           "Directory",DIRECTORY_TBOX,76,9,29,8
+    LTEXT           "Type",TYPE_TBOX,177,9,17,8
+    LTEXT           "Connections",CONNECTIONS_TBOX,253,9,40,8
+    LTEXT           "Online",ONLINE_TBOX,515,10,21,8
+    CTEXT           "Connected Computers",CONNECTED_COMPUTERS_TBOX,289,142,95,10,WS_DISABLED
+    CTEXT           "Available Computers",AVAILABLE_COMPUTERS_TBOX,419,142,94,10,WS_DISABLED
+    GROUPBOX        "Type",TYPE_GBOX,111,139,100,49,WS_DISABLED
+    LISTBOX         COMPUTER_LISTBOX,2,19,538,115,LBS_SORT | LBS_USETABSTOPS | LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Monitoring Computer",MONITORING_COMPUTER_RADIO,"Button",BS_AUTORADIOBUTTON | WS_DISABLED | WS_GROUP | WS_TABSTOP,121,149,81,10
+    CONTROL         "Office Workstation",OFFICE_WORKSTATION_RADIO,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,121,161,80,10
+    CONTROL         "Data Archiver",DATA_SERVER_RADIO,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,121,173,65,10
+    PUSHBUTTON      "Standard Connections",STANDARD_CONNECTIONS_BUTTON,217,145,48,28,BS_CENTER | BS_VCENTER | BS_MULTILINE | WS_GROUP
+    LISTBOX         CONNECTED_COMPUTER_LISTBOX,273,154,126,58,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         AVAILABLE_COMPUTER_LISTBOX,402,154,126,58,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Save Changes",SAVE_CHANGES_BUTTON,210,200,57,14
+    LTEXT           "\\\\W01\\V5",CHECKING_DIR_TBOX,1,208,202,9
+    PUSHBUTTON      "&Help",HELP_BUTTON,400,0,25,10
+    PUSHBUTTON      "Browse for Computers",BROWSE_COMPUTERS_BUTTON,5,144,96,12
+    PUSHBUTTON      "Add Computer by Path",ADD_COMPUTER_BY_PATH_BUTTON,5,160,96,12
+    PUSHBUTTON      "Remove Computer(s)",REMOVE_COMPUTER_BUTTON,5,175,96,12
+    PUSHBUTTON      "Check for Duplicate Machines",CHECK_FOR_DUPLICATE_MACHINES_PB,5,191,104,12
+    LTEXT           "Version",VERSION_TBOX,464,10,24,8
+    LTEXT           "Shared Full",SHARED_FULL_TBOX,490,2,24,17
+END
+
+ADD_COMPUTER_BY_PATH_DIALOG DIALOG 0, 0, 447, 98
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Add Computer by Path"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Enter the network path of the ""V5"" directory on the new computer.",ENTER_COMPUTER_NAME_TB,4,7,234,12,SS_CENTERIMAGE
+    EDITTEXT        ENTER_COMPUTER_NAME_EB,27,56,400,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Add",IDOK,28,74,45,14
+    LTEXT           "e.g.",IDC_STATIC,4,25,16,12,SS_CENTERIMAGE
+    LTEXT           "\\\\W01\\v5",IDC_STATIC,26,25,58,12,SS_CENTERIMAGE
+    LTEXT           "\\\\vtw-data-archiver\\V5DS",IDC_STATIC,26,38,90,12,SS_CENTERIMAGE
+END
+
+DUPLICATE_MACHINE_DIALOG DIALOG 0, 0, 167, 71
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Duplicate Machine Found"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "M01",DUP_MA_TBOX,51,7,91,8
+    LTEXT           "C01",DUP_CO_1_TBOX,59,19,103,8
+    LTEXT           "C02",DUP_CO_2_TBOX,59,31,103,8
+    PUSHBUTTON      "Add Anyway",IDOK,30,50,50,14,BS_CENTER | WS_GROUP
+    LTEXT           "Machine",IDC_STATIC,8,8,28,8
+    LTEXT           "exists on both",IDC_STATIC,8,18,44,8
+    LTEXT           "and",IDC_STATIC,38,30,14,8
+    PUSHBUTTON      "Cancel",IDCANCEL,86,50,50,14
+END
+
+DUPLICATE_MACHINE_CHECK_DIALOG DIALOG 0, 0, 167, 71
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Duplicate Machine Found"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "M01",DUP_MA_TBOX,51,7,91,8
+    LTEXT           "C01",DUP_CO_1_TBOX,59,19,103,8
+    LTEXT           "C02",DUP_CO_2_TBOX,59,31,103,8
+    LTEXT           "Machine",IDC_STATIC,8,8,28,8
+    LTEXT           "exists on both",IDC_STATIC,8,18,44,8
+    LTEXT           "and",IDC_STATIC,38,30,14,8
+    PUSHBUTTON      "Close",IDCANCEL,86,50,50,14
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE
+BEGIN
+    "msres.h\0"
+END
+
+2 TEXTINCLUDE
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+NETSETUP_ICON           ICON                    "netsetup.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 8,24,0,0
+ PRODUCTVERSION 8,24,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Visi-Trak Worldwide, LLC"
+            VALUE "FileDescription", "Network Setup"
+            VALUE "FileVersion", "8, 24"
+            VALUE "InternalName", "NetSetup"
+            VALUE "LegalCopyright", "Copyright © 2018"
+            VALUE "OriginalFilename", "netsetup.exe"
+            VALUE "ProductName", "Visi-Trak Worldwide, LLC bupres"
+            VALUE "ProductVersion", "8, 24"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    "COMPUTER_DIALOG", DIALOG
+    BEGIN
+        RIGHTMARGIN, 534
+    END
+
+    "ADD_COMPUTER_BY_PATH_DIALOG", DIALOG
+    BEGIN
+        RIGHTMARGIN, 242
+        BOTTOMMARGIN, 62
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    MAIN_WINDOW_TITLE_STRING "Visi-Trak Network Computer Setup v8.24e"
+    MONITORING_COMPUTER_STRING "Monitoring Computer"
+    WORKSTATION_COMPUTER_STRING "Office Workstation"
+    DATA_SERVER_COMPUTER_STRING "Data Archiver"
+    CANT_COMPLY_STRING      "Unable to Comply"
+    ERROR_WRITING_COMPUTER_STRING "Error writing COMPUTER.TXT file"
+    DIR_TOO_LONG_STRING     "Directory Name Too Long, Max is 25 Chars"
+    YES_STRING              "Yes"
+    NO_STRING               "No"
+    CONFIRM_REMOVE_STRING   "Do you wish to continue?"
+    WILL_REMOVE_STRING      "Highlighted computers will be REMOVED"
+    NEW_NAME_TOO_LONG_STRING "New Name is Too Long"
+    NO_NAME_ENTERED_STRING  "You must enter a Name"
+    SAME_NAME_STRING        "You must enter DIFFERENT Name"
+    CREATE_FAILED_STRING    "Creation Failure"
+END
+
+STRINGTABLE
+BEGIN
+    ENUMERATION_THREAD_STRING "Network Computer Search Thread"
+    ADD_COMPUTERS_FROM_LISTBOX_THREAD_STRING "Add Computers from Listbox"
+    NO_V5_FOLDER_FOUND_STRING "No V5 Folder Found"
+    NO_DATA_DIR_FOUND_STRING "\\DATA\\ not found in local directory"
+    COMPUTER_ALREADY_IN_LIST_STRING "This computer is already in the list"
+    NO_VISITRAK_INI_FILE    "No VISITRAK.INI file found"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

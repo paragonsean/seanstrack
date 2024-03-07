@@ -1,0 +1,59 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title>Data Archiver Backup</title>
+<style type="text/css">
+<!--
+span.indent1 { margin-left: 0.5in }
+span.indent2 { margin-left: 1.5in }
+ul li {list-style: disc }
+-->
+</style>
+</head>
+
+<body link="#0000FF" vlink="0000FF">
+
+<a href="./file_settings.htm#filename"><h6>Return to Global File Settings</h6></a>
+
+<h4>File Name</h4>
+<p><img src="./filename.jpg"></p>
+This is the path to the file that will be created for the shot parameter records.
+<p>
+There are several tags that can be used to insert dynamic
+content into the file names. These are as follows.
+<p>
+
+<table border bgcolor=floralwhite>
+  <tr bgcolor=moccasin><td>Tag</td><td>Content</td></tr>
+  <tr><td>{s}    </td><td>Shift Number</td></tr>
+  <tr><td>{dd}   </td><td>Day of the month [1,31]</td></tr>
+  <tr><td>{mm}   </td><td>Month [1,12]</td></tr>
+  <tr><td>{yyyy} </td><td>Year</td></tr>
+  <tr><td>{m}    </td><td>Machine</td></tr>
+  <tr><td>{c}    </td><td>Computer</td></tr>
+  <tr><td>{p}    </td><td>Part</td></tr>
+  </table>
+<p>
+Thus the following entry
+<p>
+FileName=C:\V5NetFiles\{mm}\{dd}\Shotparm.csv
+<p>
+would create a new file each day, beginning with
+
+<ul>
+<li>C:\V5NetFiles\05\01\Shotparm.csv</li>
+<li>C:\V5NetFiles\05\02\Shotparm.csv</li>
+<li>...</li>
+<li>C:\V5NetFiles\05\31\Shotparm.csv</li>
+</ul>
+
+The day of the month in this case would be the actual day of the
+month on which the shot was taken. Note that if you include the
+shift number in the file name then the date that is used is the
+shift date, which is not necessarily the same as the shot date.
+<p>
+
+</body>
+</html>
+

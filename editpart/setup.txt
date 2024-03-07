@@ -1,0 +1,253 @@
+                                               Distance units are contained in C:\V5\Data\Units.txt
+Distance Units,10                              10 is the units number for millimeters, mm
+Velocity Units,11                              11 is the units number for meters per second, mps
+Total Stroke Length,600                        600 mm
+Min Stroke Length,406                          406 mm
+End of Shot Velocity,.1                        0.1 mps
+
+Plunger Diameter,50.0
+Sleeve Fill Distance,175.0                     Distance from P1 to P3
+Runner Fill Distance,100.0                     Distance from P2 to P3
+Min CSFS Position,100.0
+Min Velocity for CSFS,1.0
+Velocity for Rise CSFS,3.1
+Time for Intens Pres,0
+Pres for Response Time,0.0
+Time Delay Biscuit,0
+
+User Vel 1,200                                 Position at which velocity is measured, 200 mm
+User Vel 2,300
+User Vel 3,400
+User Vel 4,500
+User Avg Start 1,150                           Average velocity between 150 and 200 mm
+User Avg Start 2,200                           Average velocity between 200 and 250 mm
+User Avg Start 3,400                           Average velocity between 400 and 450 mm
+User Avg Start 4,500                           Average velocity between 500 and 550 mm
+User Avg End 1,200
+User Avg End 2,250
+User Avg End 3,450
+User Avg End 4,550
+
+Param 1 Desc,Fill Time                         Description for parameter 1
+Param 1 Input Type,1                           1=Internal Parameter   0=Not Used
+                                               2=FT_ANALOG_INPUT
+                                               3=FT_ON_OFF_INPUT
+                                               4=FT_TARGET_INPUT
+                                               5=FT_DIGITAL_INPUT
+                                               7=FT_EXTENDED_ANALOG_INPUT
+
+Param 1 Input Number,2
+
+
+
+
+Param 1 Var Type,32                            1=Distance
+                                               2=Position
+                                               4=Pressure
+                                               8=Temperature
+                                               16=Time
+                                               32=Time Interval
+                                               64=Velocity
+                                               128=Volume
+                                               256=Area
+                                               512=Work
+                                               1024=Weight
+                                               2048=Density
+                                               4096=Digital Input
+
+Param 01 Units,16                              16 is the units number for milliseconds, ms
+Param 01 Low Warn Limit,0.0
+Param 01 Low Warn Wire,0                       0 means no wire.
+Param 01 High Warn Limit,0.0
+Param 01 High Warn Wire,0
+Param 01 Low Alarm Limit,0.0
+Param 01 Low Alarm Wire,0
+Param 01 High Alarm Limit,0.0
+Param 01 High Alarm Wire,0
+                                               The following are used only if this is not an internal parameter
+Param 01 Analog Channel,0                      0 means no channel
+Param 01 Result Type,0                         1 Single point
+                                               2 Max value in range
+                                               4 Minimum value in range.
+                                               8 Average
+
+Param 01 IVar Type,0                           2=Position, measure at a position or between two positions
+                                               16=Time     measure at a time or between two times
+                                               1024=Trigger when greater, measure when the value goes from less
+                                                                          than the target to greater than the target
+                                               2048=Trigger when smaller  measure when the value goes from greater
+                                                                          than the target to less than the target
+Param 01 IVar Value,0                          position to measure or time to measure or target value
+Param 01 End Value,0                           end position or time if Result Type not single point
+
+Param 02 Desc,Total Shot Time
+Param 02 Input Type,1
+Param 02 Input Number,2
+Param 02 Var Type,32
+Param 02 Units,16
+Param 02 Low Warn Limit,0
+Param 02 Low Warn Wire,0
+Param 02 High Warn Limit,0
+Param 02 High Warn Wire,0
+Param 02 Low Alarm Limit,0
+Param 02 Low Alarm Wire,0
+Param 02 High Alarm Limit,0
+Param 02 High Alarm Wire,0
+Param 02 Analog Channel,0
+Param 02 Result Type,0
+Param 02 IVar Type,0
+Param 02 IVar Value,0
+Param 02 End Value,0
+...                                            There is one set of values for each parameter.
+Param 64 Desc,Not Used
+Param 64 Input Type,0
+Param 64 Input Number,0
+Param 64 Var Type,0
+Param 64 Units,16
+Param 64 Low Warn Limit,0
+Param 64 Low Warn Wire,0
+Param 64 High Warn Limit,0
+Param 64 High Warn Wire,0
+Param 64 Low Alarm Limit,0
+Param 64 Low Alarm Wire,0
+Param 64 High Alarm Limit,0
+Param 64 High Alarm Wire,0
+Param 64 Analog Channel,0
+Param 64 Result Type,0
+Param 64 IVar Type,0
+Param 64 IVar Value,0
+Param 64 End Value,0
+Good Shot Wire,0
+Good Shot Use Warn,Y
+Alarm Timeout,0
+Mark 1 Type,P                                  "P"=Parameter
+                                               "S"=Start position of user average velocity range
+                                               "E"=End position
+                                               "V"=Position of single point velocity measurement
+Mark 1 Number,13                               Parameter Number (1-64)
+Mark 1 Symbol,None                             1=vertical line
+                                               2=Bottom mark
+                                               4=No Mark
+Mark 1 Color,RED
+Mark 1 Label,csfs                              4 characters or less
+Mare 1 Enable,Y
+
+Mark 2 Type,P
+Mark 2 Number,30
+Mark 2 Symbol,None
+Mark 2 Color,RED
+Mark 2 Label,P1
+Mare 2 Enable,Y
+
+Channel 1,0                                    Analog Sensor number (0-32) for each channel
+Channel 2,0
+Channel 3,23
+Channel 4,23
+Channel 5,25
+Channel 6,23
+Channel 7,25
+Channel 8,23
+Channel 9,23
+Channel 10,23
+Channel 11,23
+Channel 12,23
+Channel 13,23
+Channel 14,23
+Channel 15,23
+Channel 16,23
+Head Pres Channel,1
+Rod Pres Channel,2
+
+Accel 1,                                       SureTrak Step 1
+Velocity 1,10
+End Pos 1,10.0
+Vac Wait 1,N
+Low Impact 1,20%
+Low Impact from Input 1,N
+Accel 2,                                       SureTrak Step 2
+Velocity 2,10
+End Pos 2,10.0
+Vac Wait 2,N
+Low Impact 2,20%
+Low Impact from Input 2,N
+Accel 3,
+Velocity 3,10
+End Pos 3,10.0
+Vac Wait 3,N
+Low Impact 3,20%
+Low Impact from Input 3,N
+Accel 4,
+Velocity 4,10
+End Pos 4,10.0
+Vac Wait 4,N
+Low Impact 4,20%
+Low Impact from Input 4,N
+Accel 5,
+Velocity 5,10
+End Pos 5,10.0
+Vac Wait 5,N
+Low Impact 5,20%
+Low Impact from Input 5,N
+Accel 6,
+Velocity 6,10
+End Pos 6,10.0
+Vac Wait 6,N
+Low Impact 6,20%
+Low Impact from Input 6,N
+
+Vac Limit Switch,3
+LS 1 Pos,16.0                                  Limit Switch Position
+LS 2 Pos,17.0
+LS 3 Pos,18.0
+LS 4 Pos,20.0
+LS 5 Pos,24.0
+LS 6 Pos,30.0
+LS 1 Desc,Limit Switch 1                       Limit Switch Description
+LS 2 Desc,Limit Switch 2
+LS 3 Desc,Limit Switch 3
+LS 4 Desc,Limit Switch 4
+LS 5 Desc,Limit Switch 5
+LS 6 Desc,Limit Switch 6
+LS 1 Wire,29                                   Limit Switch Output Wire
+LS 2 Wire,30
+LS 3 Wire,31
+LS 4 Wire,32
+LS 5 Wire,26
+LS 6 Wire,27
+Velocity Loop Gain
+Break Velocity 1,0
+Break Gain 1,1.0
+Integral Gain,0.0
+Derivative Gain,1.0
+FT Stop Pos,600
+Warm Up Enable,N
+Warm Up Part,P22061143
+Warm Up Wire,30
+Warm Up Wire State,0
+PC Enable,N                                    Pressure Control Enable
+PC Positive Only,N
+PC RC Enable,N                                 Retract Control Enable
+PC Hardware Closed Loop,N
+PC All Percent,N                               Proportional Valve, No feedback at all
+PC Ramp 1,4                                    Ramp value for Pressure step 1
+PC Goose 1,N
+PC Pres 1,3500
+PC Hold Time 1,200
+PC Ramp 2,10                                   Ramp value for Pressure step 2
+PC Goose 2,N
+PC Pres 2,10000
+PC Hold Time 2,200
+PC Ramp 3,                                     Ramp value for Pressure step 3
+PC Goose 3,N
+PC Pres 3,
+PC Hold Time 3,200
+PC Sensor,0
+PC Volt Range,1
+PC Arm LS,2
+PC Loop Gain,1
+PC Integral Gain,5
+PC Derivative Gain,6
+PC Retract Volts,-10
+PC Park Volts,-10
+RC Arm Percent", 20%
+RC Retract Percent", 100%
