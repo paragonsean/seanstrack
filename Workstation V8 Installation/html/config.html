@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en>
+<meta charset="utf-8">
+<title>True-Trak 2020&trade; Computer Connections</title>
+<link href="screen.css" rel="stylesheet">
+<style type="text/css">
+<!--
+#links { margin-left: .5 in; float: left }
+#rlinks { margin-left: .5 in; float: left }
+table { margin: 0; padding: 0; border-style: none; border-width: 0; width: 100%; }
+td { margin: 0; padding: 5; border-style: none; }
+-->
+</style>
+</head>
+<body>
+<a href="home.html">Table of Contents</a>
+<h1>True-Trak 2020&trade; Computer Connections</h1>
+<p>Each Monitoring computer stores it's results on it's local hard drive. An Office Workstation has to know the network location of all the Monitoring Computers in order to display those results. Similarly, because the Monitoring Computers have to send status updates to the Office Workstation, they need to know the network location of the Office Workstation.</p>
+<p>The Network Setup Program allows you to change the
+way the computers are connected. The Network Setup Program is normally installed on the Office Workstation. You can have more than one Office Workstation but you should only install the Network Setup Program on one of them as the current list of computers and connections is saved in the same folder as the program. The default location is &quot;C:\VisiNet&quot;.</p>
+<p>Before you begin, make sure all the Computers are turned on and that all of them are
+visible in &quot;My Network Places&quot; on the Office Workstation where you installed the NetSetup program. If they
+are not visible in &quot;My Network Places&quot; you will have to enter the path to the computer by pressing
+the "Add Computer by Path" button.</p>
+
+<table><tr>
+<td width="50%">When you installed the NetSetup program an icon was created on the desktop. Double click this icon to start the program.</td>
+<td><img src="./images/nsicon.gif"></td>
+</tr></table>
+
+<p>The NetSetup program maintains a list of all the Monitoring Computers and Office Workstations on the network. If this is the first time the program has been run the list will be empty and the program will display a &quot;Browse for Folder&quot; window so you can add all the computers to the list. The following discusstion assumes that your workgroup is named &quot;Visitrak&quot;.</p>
+<p>To add a computer to the list from this window open <b>My Network Places</b>, <b>Entire Network</b>, <b>Microsoft Windows Network</b> and then <b>Visitrak</b>,
+in that order. Click on the "+" next to the computer you wish to add and then click <b>once</b> on the <b>\V5</b> folder and the computer will be added to the main list box.</p>
+<img src="./images/config1.gif">
+<p>Repeat this for each Monitoring Computer and Office Workstation. When you are finished, Press &quot;OK&quot; to close the &quot;Browse for Folder&quot; window.</p>
+<ul>
+<li>Try not to add the same computer twice.</li>
+<li>Be patient and wait for the computer to appear in
+the listbox of the main screen before clicking on another computer.</li>
+<li>Be sure to find the folder in &quot;My Network Places&quot; and
+<b>not</b> &quot;My Computer&quot;</li>
+</ul>
+<img src="./images/config2.gif">
+<p>The screen should now look like this. Note the &quot;Yes&quot; shown for each computer in the &quot;Shared Full&quot; column on the right. If this is &quot;No&quot; then the V5 directory is not properly shared on that computer. This must be corrected before that computer can be added to the True-Trak computer list.</p>
+<img src="./images/config3.gif">
+<p>The program tries to determine the type of computer, Monitoring Computer or Office Workstation. Check each computer to be sure the type is correct. If it is not, click once on the line for that computer, as shown below, and click on the correct computer type in the box at the bottom of the screen.</p>
+<img src="./images/config4.gif">
+<p></p>
+
+<h3>Connections</h3>
+Now that all the computers have been added to the list and the V5 directories are shared it is time to connect the computers.
+<p>Highlight all of computers by clicking once on the first line and then, while pressing the &quot;Shift&quot; key, clicking once on the last line.</p>
+<img src="./images/config5.gif">
+<p>Press the <b>Standard Connections</b> button<b>. </b>This will add the location of the Office Workstation to the list of computers known by the Monitoring Computers and will add the locations of all the Monitoring Computers to the list of computers known by the Office Workstation. With all of the lines still highlighted press the &quot;Save Changes&quot; button to write the information to all of the computers and to save a local copy of all the information so this program can be run again to make adjustments to the system.</p>
+<img src="./images/config6.gif">
+<h3>Saving Changes</h3>
+<p>
+When you press the <b>Save Changes</b> button <font color="red">changes are only made to the highlighted computers</font> in the list.
+If the computer is not highlighted no changes are made to files on that computer.</p>
+<p>A computer is not added to the local list of saved computers until you actually save the settings to that computer so,
+for instance, if you add 10 computers to the list the first time the program is run and then you save the
+configuration of just one of the 10, the next time you run the program only the one computer will initially be
+in the list. Of course you can load the others again by pressing the <b>Add Computers</b> button. Once a computer
+is saved, it will remained saved unless you remove it.</p>
+</body>
+</html>

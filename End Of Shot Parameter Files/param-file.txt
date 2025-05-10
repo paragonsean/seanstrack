@@ -1,0 +1,11 @@
+<tr><td>{param number}</td><td>Parameter Number</td><td>1,2,...,64</td></tr>
+<tr><td>{param name}</td><td>Parameter Name</td><td>Slow Shot Velocity</td></tr>
+<tr><td>{param value}</td><td>Parameter Value</td><td>36.3483</td></tr>
+<tr><td>{param units}</td><td>Parameter Units</td><td>IN, IPS, etc.</td></tr>
+
+<tr><td>{part name}</td><td>Part Name</td><td>Header Assembly</td></tr>
+<tr><td>{shot name}</td><td>Shot Name</td><td>1250Ton-Header Assembly0003435</td></tr>
+<tr><td>{shot date}</td><td>Shot Date</td><td>03/27/2014</td></tr>
+<tr><td>{shot time}</td><td>Shot Time</td><td>16:37:50</td></tr>
+
+
