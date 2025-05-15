@@ -1,0 +1,12 @@
+4
+ENGLISH,-14,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+GERMAN,-14,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+SPANISH,-14,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ITALIAN,-14,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+COPY_TO_NET	Copy to Network	Copy to Network	Copy to Network	Copia in Rete
+DOWNTIME_SETUP	Down-Time Setup	Down-Time Setup	Down-Time Setup	Impostazione Fermi Macchina
+INDEX	Index	Index	Index	Indice
+MY_TITLE	Down-Time Setup	Down-Time Setup	Down-Time Setup	Down-Time Setup
+PLOT_COLOR	Plot Color	Plot Color	Plot Color	Plot Color
+SUB_INDEX	Sub-Index	Sub-Index	Sub-Index	Sotto Indice
+SUBTRACT_TIMEOUT	Subtract Timeout Seconds from Auto Down	Subtract Timeout Seconds from Auto Down	Subtract Timeout Seconds from Auto Down	Secondi da sottrarre a Fermo Automatico

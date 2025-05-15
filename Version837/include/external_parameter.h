@@ -1,0 +1,18 @@
+#ifndef _EXTERNAL_PARAMETER_SETTINGS_CLASS_
+#define _EXTERNAL_PARAMETER_SETTINGS_CLASS_
+
+class EXTERNAL_PARAMETER_SETTINGS_CLASS
+{
+public:
+STRING_CLASS file_name;
+BOOLEAN      enable;
+BOOLEAN      available_at_eos;
+
+EXTERNAL_PARAMETER_SETTINGS_CLASS();
+~EXTERNAL_PARAMETER_SETTINGS_CLASS();
+void    clear();
+void    operator=(const EXTERNAL_PARAMETER_SETTINGS_CLASS & sorc );
+BOOLEAN get( STRING_CLASS & computer, STRING_CLASS & machine, STRING_CLASS & part );
+BOOLEAN put( STRING_CLASS & computer, STRING_CLASS & machine, STRING_CLASS & part );
+};
+#endif

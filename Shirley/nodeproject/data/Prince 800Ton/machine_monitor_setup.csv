@@ -1,0 +1,17 @@
+Current Part Name,VISITRAK
+Profile Skip Count,10
+Profile Acquire Count,5
+Profile Time Skip (Sec.),600
+Profile Max Saved,1002
+Profile Skip Count,F
+Profile Skip Time,F
+Profile Acquire All,T
+Profile Acquire None,F
+Param Skip Count,50
+Param Acquire Count,5
+Param Time Skip (Sec.),50
+Param Max Saved,1001
+Param Skip Count,F
+Param Skip Time,F
+Param Acquire All,T
+Param Acquire None,F

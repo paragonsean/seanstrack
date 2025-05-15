@@ -1,0 +1,18 @@
+[OPTIONS]
+Compatibility=1.1
+Compiled file=DsBackup.chm
+Default topic=dsbackup.htm
+Display compile progress=No
+Language=0x409 English (United States)
+Title=Data Server Help
+
+
+[FILES]
+dsbackup.htm
+file_settings.htm
+main_screen.htm
+save_config.htm
+record.htm
+mafile.htm
+pafile.htm
+filename.htm

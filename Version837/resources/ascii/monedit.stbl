@@ -1,0 +1,30 @@
+4
+ENGLISH,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+GERMAN,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+SPANISH,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ITALIAN,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+A_L_M	A L M	A L M	A L M	A L M
+ACQ_ALL	Acquire All	Acquire All	Acquire All	Acquisire Tutto
+ACQ_COUNT	Acquire Count	Acquire Count	Acquire Count	Acquisire Conto
+ACQ_NONE	Acquire None	Acquire None	Acquire None	Non Acquisire Nulla
+ACQUIRE	Acquire	Acquire	Acquire	Acquisire
+BEGIN_MON	Begin Monitoring	Begin Monitoring	Begin Monitoring	Inizio Monitoraggio
+CUR_PART_NAME	Current Part Name	Current Part Name	Current Part Name	Parte del Nome Corrente
+DISPLAY	Display	Display	Display	Display
+DISPLAY_TIME	Display Time	Display Time	Display Time	Tempo del Display
+DO_NOT_CONT	Do Not Continue	Do Not Continue	Do Not Continue	Non Continuare
+M_T_R	M T R	M T R	M T R	M T R
+MAX_SAVED	Max Saved	Max Saved	Max Saved	Massimo Salvato
+MON_ALARMS	Monitor Alarms	Monitor Alarms	Monitor Alarms	Allarmi del Monitor
+MON_THIS_PA	Monitor This Part	Monitor This Part	Monitor This Part	Monitorare questa Parte
+MONITOR_SETUP	Monitor Setup	Monitor Setup	Monitor Setup	Setup del Monitor
+NOT_FIND_MA	Cannot Find Machine	Cannot Find Machine	Cannot Find Machine	Impossibile trovare la Macchina
+POST_IMPACT_SEC	Post Impact Seconds	Post Impact Seconds	Post Impact Seconds	Secondi Post Impatto 
+SAMPLE	Sample	Sample	Sample	Campione
+SAMPLE_TIME	Sample Time	Sample Time	Sample Time	Tempo del Campione
+SHOT_SKIP	Shot Skip	Shot Skip	Shot Skip	Salta Iniezione
+SKIP	Skip	Skip	Skip	Saltare
+SKIP_COUNT	Skip Count	Skip Count	Skip Count	Salta il Conto
+SKIP_SEC	Skip Seconds	Skip Seconds	Skip Seconds	Salta Secondi
+SKIP_TIME	Skip Time	Skip Time	Skip Time	Salta Tempo
+TIME_SKIP	Time Skip	Time Skip	Time Skip	Time Skip

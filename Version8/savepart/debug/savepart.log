@@ -1,0 +1,22 @@
+﻿Build started 5/15/25 12:18:50 AM.
+     1>Project "C:\Sources\Version8\savepart\savepart.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt savepart.cpp touni.cpp
+         touni.cpp
+         savepart.cpp
+     1>savepart.cpp(210): error C2039: 'create_runlist' : is not a member of 'MULTIPART_RUNLIST_CLASS'
+                 c:\sources\version8\savepart\..\include\mrunlist.h(11) : see declaration of 'MULTIPART_RUNLIST_CLASS'
+     1>savepart.cpp(230): error C2660: 'MULTIPART_RUNLIST_CLASS::get' : function does not take 3 arguments
+     1>savepart.cpp(231): error C2039: 'create_runlist' : is not a member of 'MULTIPART_RUNLIST_CLASS'
+                 c:\sources\version8\savepart\..\include\mrunlist.h(11) : see declaration of 'MULTIPART_RUNLIST_CLASS'
+     1>savepart.cpp(615): error C2065: 'MAX_MULTIPART_RUNLIST' : undeclared identifier
+     1>savepart.cpp(619): error C2039: 'partname' : is not a member of 'MULTIPART_RUNLIST_CLASS'
+                 c:\sources\version8\savepart\..\include\mrunlist.h(11) : see declaration of 'MULTIPART_RUNLIST_CLASS'
+     1>savepart.cpp(1557): error C2039: 'put' : is not a member of 'MULTIPART_RUNLIST_CLASS'
+                 c:\sources\version8\savepart\..\include\mrunlist.h(11) : see declaration of 'MULTIPART_RUNLIST_CLASS'
+         Generating Code...
+     1>Done Building Project "C:\Sources\Version8\savepart\savepart.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.99

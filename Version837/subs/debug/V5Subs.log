@@ -1,0 +1,469 @@
+﻿Build started 5/13/25 7:33:00 AM.
+     1>Project "C:\Sources\Version837\subs\V5Subs.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt adam_thermo_class.cpp alarmsum.cpp analog_sensor_class.cpp array.cpp ascfloat.cpp asensor.cpp autoback.cpp bitclass.cpp callfile.cpp catclass.cpp chaxis.cpp choose_wire.cpp client.cpp color.cpp colorcl.cpp computer.cpp copymach.cpp copypart.cpp csvclass.cpp current.cpp dateclas.cpp dbsubs.cpp dbupsize.cpp db_to_vdb.cpp dcurve.cpp dow.cpp downsubs.cpp downtime.cpp dstat.cpp dtotchar.cpp dynamic_file_name.cpp error_ms.cpp evclass.cpp event_client.cpp execwait.cpp exists.cpp external_parameter.cpp extract.cpp fifo.cpp fileclas.cpp fillpart.cpp fillpart_with_dir.cpp fillshot.cpp fix.cpp fontclas.cpp ft2_wire_bit_class.cpp ftanalog.cpp ftcalc.cpp ftiiclas.cpp ftiiclas_new.cpp ftii_file.cpp ftii_parameters.cpp ftii_shot_data.cpp ftime.cpp ftoasc.cpp genlist.cpp get_ini.cpp get_tc.cpp gexedir.cpp gpvar.cpp hex.cpp hourglas.cpp iniclass.cpp insalph.cpp is_empty.cpp itoasc.cpp killdir.cpp limit_switch_class.cpp listbox.cpp log_file_string.cpp machcomp.cpp machine.cpp machine_to_hmi.cpp machname.cpp marks.cpp maximize.cpp mem.cpp menu.cpp menuctrl.cpp mexists.cpp misc.cpp monrun.cpp msgclas.cpp multistring.cpp nameclas.cpp namecopy.cpp names.cpp namesold.cpp network.cpp optocontrol.cpp param.cpp param_index_class.cpp part.cpp partlist.cpp path.cpp pexists.cpp plookup.cpp plotclas.cpp plotsubs.cpp pointcl.cpp popctrl.cpp postsec.cpp profiles.cpp purge.cpp pw.cpp readline.cpp rectclas.cpp reverse.cpp ringcl.cpp rjust.cpp runlist.cpp semaphor.cpp servicelog.cpp setpoint.cpp shift.cpp shotclas.cpp shot_count.cpp shot_name.cpp shot_name_reset.cpp sockcli.cpp socket_client.cpp socket_server.cpp sockqueue.cpp Source.cpp startpar.cpp start_of_shift.cpp statics.cpp static_text_parameter.cpp stddown.cpp stparam.cpp stpres.cpp strarray.cpp stringcl.cpp stringtable.cpp structs.cpp stsetup.cpp temp_message.cpp textlen.cpp textlist.cpp time.cpp timeclas.cpp unitadj.cpp units.cpp updown.cpp v5tov7.cpp vdbclass.cpp visigrid.cpp visiplot.cpp warmupcl.cpp wclass.cpp winsubs.cpp wire_class.cpp workclas.cpp writelin.cpp zero.cpp
+         zero.cpp
+         writelin.cpp
+         workclas.cpp
+         wire_class.cpp
+         winsubs.cpp
+         wclass.cpp
+         warmupcl.cpp
+         visiplot.cpp
+         visigrid.cpp
+         vdbclass.cpp
+         v5tov7.cpp
+         updown.cpp
+         units.cpp
+         unitadj.cpp
+         timeclas.cpp
+         time.cpp
+         textlist.cpp
+         textlen.cpp
+         temp_message.cpp
+         stsetup.cpp
+         Generating Code...
+         Compiling...
+         structs.cpp
+         stringtable.cpp
+         stringcl.cpp
+         strarray.cpp
+         stpres.cpp
+         stparam.cpp
+         stddown.cpp
+         static_text_parameter.cpp
+         statics.cpp
+         start_of_shift.cpp
+         startpar.cpp
+         Source.cpp
+     1>c1xx : fatal error C1083: Cannot open source file: 'Source.cpp': No such file or directory
+         sockqueue.cpp
+         socket_server.cpp
+         socket_client.cpp
+         sockcli.cpp
+         shot_name_reset.cpp
+         shot_name.cpp
+         shot_count.cpp
+         shotclas.cpp
+         Generating Code...
+         Compiling...
+         shift.cpp
+         setpoint.cpp
+         servicelog.cpp
+         semaphor.cpp
+         runlist.cpp
+         rjust.cpp
+         ringcl.cpp
+         reverse.cpp
+         rectclas.cpp
+         readline.cpp
+         pw.cpp
+         purge.cpp
+         profiles.cpp
+         postsec.cpp
+         popctrl.cpp
+         pointcl.cpp
+         plotsubs.cpp
+         plotclas.cpp
+         plookup.cpp
+         pexists.cpp
+         Generating Code...
+         Compiling...
+         path.cpp
+         partlist.cpp
+         part.cpp
+         param_index_class.cpp
+         param.cpp
+         optocontrol.cpp
+         network.cpp
+         namesold.cpp
+     1>c:\sources\version837\subs\..\include\computer.h(7): error C2146: syntax error : missing ';' before identifier 'name'
+     1>c:\sources\version837\subs\..\include\computer.h(7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\subs\..\include\computer.h(9): error C2146: syntax error : missing ';' before identifier 'hostname'
+     1>c:\sources\version837\subs\..\include\computer.h(9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\subs\..\include\computer.h(10): error C2146: syntax error : missing ';' before identifier 'ip_address'
+     1>c:\sources\version837\subs\..\include\computer.h(10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\subs\..\include\computer.h(25): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version837\subs\..\include\computer.h(27): error C2143: syntax error : missing ';' before '&'
+     1>c:\sources\version837\subs\..\include\computer.h(27): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\subs\..\include\computer.h(27): warning C4183: 'whoami': missing return type; assumed to be a member function returning 'int'
+     1>c:\sources\version837\subs\..\include\computer.h(28): error C2143: syntax error : missing ';' before '&'
+     1>c:\sources\version837\subs\..\include\computer.h(28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\subs\..\include\computer.h(28): warning C4183: 'name': missing return type; assumed to be a member function returning 'int'
+     1>c:\sources\version837\subs\..\include\computer.h(31): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version837\subs\..\include\computer.h(32): error C2143: syntax error : missing ';' before '&'
+     1>c:\sources\version837\subs\..\include\computer.h(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\subs\..\include\computer.h(32): warning C4183: 'hostname': missing return type; assumed to be a member function returning 'int'
+     1>c:\sources\version837\subs\..\include\computer.h(33): error C2143: syntax error : missing ';' before '&'
+     1>c:\sources\version837\subs\..\include\computer.h(33): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\subs\..\include\computer.h(33): warning C4183: 'ip_address': missing return type; assumed to be a member function returning 'int'
+     1>c:\sources\version837\subs\..\include\computer.h(35): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version837\subs\..\include\computer.h(35): error C2535: 'BOOLEAN COMPUTER_CLASS::is_present(void)' : member function already defined or declared
+                 c:\sources\version837\subs\..\include\computer.h(34) : see declaration of 'COMPUTER_CLASS::is_present'
+     1>c:\sources\version837\subs\..\include\computer.h(40): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version837\subs\..\include\computer.h(40): error C2535: 'BOOLEAN COMPUTER_CLASS::online_status(void)' : member function already defined or declared
+                 c:\sources\version837\subs\..\include\computer.h(39) : see declaration of 'COMPUTER_CLASS::online_status'
+     1>c:\sources\version837\subs\..\include\computer.h(45): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version837\subs\..\include\computer.h(47): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version837\subs\..\include\computer.h(47): error C2535: 'BOOLEAN COMPUTER_CLASS::startup(void)' : member function already defined or declared
+                 c:\sources\version837\subs\..\include\computer.h(46) : see declaration of 'COMPUTER_CLASS::startup'
+     1>c:\sources\version837\subs\..\include\computer.h(25): error C2065: 'new_name' : undeclared identifier
+     1>c:\sources\version837\subs\..\include\computer.h(25): error C2228: left of '.text' must have class/struct/union
+                 type is 'unknown-type'
+     1>c:\sources\version837\subs\..\include\computer.h(31): error C2228: left of '.text' must have class/struct/union
+     1>c:\sources\version837\subs\..\include\names.h(38): error C2065: 'BACKUP_LIST_DB' : undeclared identifier
+     1>c:\sources\version837\subs\..\include\names.h(99): error C2065: 'FTII_LIMIT_SWITCH_WIRES_FILE' : undeclared identifier
+     1>c:\sources\version837\subs\..\include\names.h(107): error C2065: 'STPART_DATA' : undeclared identifier
+     1>c:\sources\version837\subs\..\include\names.h(123): error C2065: 'TEMP_SHOTPARM_DB' : undeclared identifier
+     1>namesold.cpp(57): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version837\subs\..\include\computer.h(14) : see declaration of 'COMPUTER_CLASS'
+     1>namesold.cpp(57): error C2660: 'lstrcpyA' : function does not take 1 arguments
+     1>namesold.cpp(93): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version837\subs\..\include\computer.h(14) : see declaration of 'COMPUTER_CLASS'
+     1>namesold.cpp(93): error C2660: 'lstrcpyA' : function does not take 1 arguments
+     1>namesold.cpp(287): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version837\subs\..\include\computer.h(14) : see declaration of 'COMPUTER_CLASS'
+     1>namesold.cpp(299): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version837\subs\..\include\computer.h(14) : see declaration of 'COMPUTER_CLASS'
+     1>namesold.cpp(325): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version837\subs\..\include\computer.h(14) : see declaration of 'COMPUTER_CLASS'
+     1>namesold.cpp(335): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version837\subs\..\include\computer.h(14) : see declaration of 'COMPUTER_CLASS'
+         names.cpp
+     1>c:\sources\version837\subs\..\include\computer.h(7): error C2146: syntax error : missing ';' before identifier 'name'
+     1>c:\sources\version837\subs\..\include\computer.h(7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\subs\..\include\computer.h(9): error C2146: syntax error : missing ';' before identifier 'hostname'
+     1>c:\sources\version837\subs\..\include\computer.h(9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\subs\..\include\computer.h(10): error C2146: syntax error : missing ';' before identifier 'ip_address'
+     1>c:\sources\version837\subs\..\include\computer.h(10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\subs\..\include\computer.h(25): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version837\subs\..\include\computer.h(27): error C2143: syntax error : missing ';' before '&'
+     1>c:\sources\version837\subs\..\include\computer.h(27): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\subs\..\include\computer.h(27): warning C4183: 'whoami': missing return type; assumed to be a member function returning 'int'
+     1>c:\sources\version837\subs\..\include\computer.h(28): error C2143: syntax error : missing ';' before '&'
+     1>c:\sources\version837\subs\..\include\computer.h(28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\subs\..\include\computer.h(28): warning C4183: 'name': missing return type; assumed to be a member function returning 'int'
+     1>c:\sources\version837\subs\..\include\computer.h(31): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version837\subs\..\include\computer.h(32): error C2143: syntax error : missing ';' before '&'
+     1>c:\sources\version837\subs\..\include\computer.h(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\subs\..\include\computer.h(32): warning C4183: 'hostname': missing return type; assumed to be a member function returning 'int'
+     1>c:\sources\version837\subs\..\include\computer.h(33): error C2143: syntax error : missing ';' before '&'
+     1>c:\sources\version837\subs\..\include\computer.h(33): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\subs\..\include\computer.h(33): warning C4183: 'ip_address': missing return type; assumed to be a member function returning 'int'
+     1>c:\sources\version837\subs\..\include\computer.h(35): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version837\subs\..\include\computer.h(35): error C2535: 'BOOLEAN COMPUTER_CLASS::is_present(void)' : member function already defined or declared
+                 c:\sources\version837\subs\..\include\computer.h(34) : see declaration of 'COMPUTER_CLASS::is_present'
+     1>c:\sources\version837\subs\..\include\computer.h(40): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version837\subs\..\include\computer.h(40): error C2535: 'BOOLEAN COMPUTER_CLASS::online_status(void)' : member function already defined or declared
+                 c:\sources\version837\subs\..\include\computer.h(39) : see declaration of 'COMPUTER_CLASS::online_status'
+     1>c:\sources\version837\subs\..\include\computer.h(45): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version837\subs\..\include\computer.h(47): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version837\subs\..\include\computer.h(47): error C2535: 'BOOLEAN COMPUTER_CLASS::startup(void)' : member function already defined or declared
+                 c:\sources\version837\subs\..\include\computer.h(46) : see declaration of 'COMPUTER_CLASS::startup'
+     1>c:\sources\version837\subs\..\include\computer.h(25): error C2065: 'new_name' : undeclared identifier
+     1>c:\sources\version837\subs\..\include\computer.h(25): error C2228: left of '.text' must have class/struct/union
+                 type is 'unknown-type'
+     1>c:\sources\version837\subs\..\include\computer.h(31): error C2228: left of '.text' must have class/struct/union
+     1>c:\sources\version837\subs\..\include\names.h(38): error C2065: 'BACKUP_LIST_DB' : undeclared identifier
+     1>c:\sources\version837\subs\..\include\names.h(99): error C2065: 'FTII_LIMIT_SWITCH_WIRES_FILE' : undeclared identifier
+     1>c:\sources\version837\subs\..\include\names.h(107): error C2065: 'STPART_DATA' : undeclared identifier
+     1>c:\sources\version837\subs\..\include\names.h(123): error C2065: 'TEMP_SHOTPARM_DB' : undeclared identifier
+     1>names.cpp(57): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version837\subs\..\include\computer.h(14) : see declaration of 'COMPUTER_CLASS'
+     1>names.cpp(57): error C2660: 'lstrcpyA' : function does not take 1 arguments
+     1>names.cpp(93): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version837\subs\..\include\computer.h(14) : see declaration of 'COMPUTER_CLASS'
+     1>names.cpp(93): error C2660: 'lstrcpyA' : function does not take 1 arguments
+     1>names.cpp(287): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version837\subs\..\include\computer.h(14) : see declaration of 'COMPUTER_CLASS'
+     1>names.cpp(299): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version837\subs\..\include\computer.h(14) : see declaration of 'COMPUTER_CLASS'
+     1>names.cpp(325): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version837\subs\..\include\computer.h(14) : see declaration of 'COMPUTER_CLASS'
+     1>names.cpp(335): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version837\subs\..\include\computer.h(14) : see declaration of 'COMPUTER_CLASS'
+         namecopy.cpp
+         nameclas.cpp
+         multistring.cpp
+         msgclas.cpp
+         monrun.cpp
+         misc.cpp
+         mexists.cpp
+         menuctrl.cpp
+         menu.cpp
+         mem.cpp
+         maximize.cpp
+         Generating Code...
+         Compiling...
+         marks.cpp
+         machname.cpp
+         machine_to_hmi.cpp
+         machine.cpp
+         machcomp.cpp
+         log_file_string.cpp
+         listbox.cpp
+         limit_switch_class.cpp
+         killdir.cpp
+         itoasc.cpp
+         is_empty.cpp
+         insalph.cpp
+         iniclass.cpp
+         hourglas.cpp
+         hex.cpp
+         gpvar.cpp
+         gexedir.cpp
+         get_tc.cpp
+         get_ini.cpp
+         genlist.cpp
+         Generating Code...
+         Compiling...
+         ftoasc.cpp
+         ftime.cpp
+         ftii_shot_data.cpp
+         ftii_parameters.cpp
+         ftii_file.cpp
+         ftiiclas_new.cpp
+     1>ftiiclas_new.cpp(727): error C2556: 'void FTII_VAR_ARRAY::set(int,unsigned int)' : overloaded function differs only by return type from 'bool FTII_VAR_ARRAY::set(int,unsigned int)'
+                 c:\sources\version837\subs\..\include\ftii.h(272) : see declaration of 'FTII_VAR_ARRAY::set'
+     1>ftiiclas_new.cpp(727): error C2371: 'FTII_VAR_ARRAY::set' : redefinition; different basic types
+                 c:\sources\version837\subs\..\include\ftii.h(272) : see declaration of 'FTII_VAR_ARRAY::set'
+         ftiiclas.cpp
+         ftcalc.cpp
+         ftanalog.cpp
+         ft2_wire_bit_class.cpp
+     1>c:\sources\version837\include\.\wire_class.h(8): error C2146: syntax error : missing ';' before identifier 'wire_number'
+     1>c:\sources\version837\include\.\wire_class.h(8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\include\.\wire_class.h(9): error C2146: syntax error : missing ';' before identifier 'input_connector_name'
+     1>c:\sources\version837\include\.\wire_class.h(9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\include\.\wire_class.h(10): error C2146: syntax error : missing ';' before identifier 'output_connector_name'
+     1>c:\sources\version837\include\.\wire_class.h(10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version837\include\.\wire_class.h(25): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version837\include\.\wire_class.h(26): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version837\include\.\wire_class.h(27): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version837\subs\..\include\ft2_wire_bit_class.h(26): error C2061: syntax error : identifier 'OUTPUT_WIRE_CLASS'
+     1>c:\sources\version837\subs\..\include\ft2_wire_bit_class.h(32): error C2061: syntax error : identifier 'OUTPUT_WIRE_CLASS'
+     1>c:\sources\version837\subs\..\include\ft2_wire_bit_class.h(34): error C2061: syntax error : identifier 'OUTPUT_WIRE_CLASS'
+     1>c:\sources\version837\subs\..\include\ft2_wire_bit_class.h(34): error C2805: binary 'operator [' has too few parameters
+     1>ft2_wire_bit_class.cpp(36): error C2065: 'OUTPUT_WIRE_CLASS' : undeclared identifier
+     1>ft2_wire_bit_class.cpp(36): error C2065: 'wire_to_clear' : undeclared identifier
+     1>ft2_wire_bit_class.cpp(37): error C2448: 'FT2_OSW_BIT_CLASS::clear' : function-style initializer appears to be a function definition
+     1>ft2_wire_bit_class.cpp(56): error C2065: 'OUTPUT_WIRE_CLASS' : undeclared identifier
+     1>ft2_wire_bit_class.cpp(56): error C2146: syntax error : missing ';' before identifier 'w'
+     1>ft2_wire_bit_class.cpp(56): error C2065: 'w' : undeclared identifier
+     1>ft2_wire_bit_class.cpp(57): error C2065: 'w' : undeclared identifier
+     1>ft2_wire_bit_class.cpp(58): error C2065: 'w' : undeclared identifier
+     1>ft2_wire_bit_class.cpp(114): error C2065: 'OUTPUT_WIRE_CLASS' : undeclared identifier
+     1>ft2_wire_bit_class.cpp(114): error C2146: syntax error : missing ')' before identifier 'wire_to_check'
+     1>ft2_wire_bit_class.cpp(114): error C2761: 'bool FT2_OSW_BIT_CLASS::operator [](void)' : member function redeclaration not allowed
+     1>ft2_wire_bit_class.cpp(114): error C2059: syntax error : ')'
+     1>ft2_wire_bit_class.cpp(115): error C2143: syntax error : missing ';' before '{'
+     1>ft2_wire_bit_class.cpp(115): error C2447: '{' : missing function header (old-style formal list?)
+     1>ft2_wire_bit_class.cpp(202): error C2065: 'OUTPUT_WIRE_CLASS' : undeclared identifier
+     1>ft2_wire_bit_class.cpp(202): error C2065: 'wire_to_set' : undeclared identifier
+     1>ft2_wire_bit_class.cpp(203): error C2448: 'FT2_OSW_BIT_CLASS::set' : function-style initializer appears to be a function definition
+     1>ft2_wire_bit_class.cpp(223): error C2065: 'OUTPUT_WIRE_CLASS' : undeclared identifier
+     1>ft2_wire_bit_class.cpp(223): error C2146: syntax error : missing ';' before identifier 'w'
+     1>ft2_wire_bit_class.cpp(223): error C2065: 'w' : undeclared identifier
+     1>ft2_wire_bit_class.cpp(224): error C2065: 'w' : undeclared identifier
+     1>ft2_wire_bit_class.cpp(225): error C2065: 'w' : undeclared identifier
+         fontclas.cpp
+         fix.cpp
+         fillshot.cpp
+         fillpart_with_dir.cpp
+     1>fillpart_with_dir.cpp(129): error C3861: 'shot_count': identifier not found
+         fillpart.cpp
+         fileclas.cpp
+         fifo.cpp
+         extract.cpp
+         external_parameter.cpp
+         exists.cpp
+         Generating Code...
+         Compiling...
+         execwait.cpp
+         event_client.cpp
+         evclass.cpp
+         error_ms.cpp
+         dynamic_file_name.cpp
+         dtotchar.cpp
+         dstat.cpp
+         downtime.cpp
+         downsubs.cpp
+         dow.cpp
+         dcurve.cpp
+         db_to_vdb.cpp
+         dbupsize.cpp
+         dbsubs.cpp
+         dateclas.cpp
+         current.cpp
+         csvclass.cpp
+     1>c:\sources\version837\subs\..\include\csvclass.h(93): error C2061: syntax error : identifier 'CSV_TABLE'
+     1>c:\sources\version837\subs\..\include\csvclass.h(106): error C2065: 'fo' : undeclared identifier
+     1>c:\sources\version837\subs\..\include\csvclass.h(130): error C3861: 'put_alpha': identifier not found
+     1>csvclass.cpp(25): error C2373: 'NullChar' : redefinition; different type modifiers
+                 csvclass.cpp(16) : see declaration of 'NullChar'
+     1>csvclass.cpp(41): error C2065: 'RECORD_DELIMITER' : undeclared identifier
+     1>csvclass.cpp(41): fatal error C1903: unable to recover from previous error(s); stopping compilation
+         copypart.cpp
+         copymach.cpp
+         computer.cpp
+         Generating Code...
+         Compiling...
+         colorcl.cpp
+         color.cpp
+         client.cpp
+     1>client.cpp(66): error C2143: syntax error : missing ';' before '*'
+     1>client.cpp(66): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>client.cpp(67): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>client.cpp(69): error C2065: 'e' : undeclared identifier
+     1>client.cpp(71): error C2065: 'e' : undeclared identifier
+     1>client.cpp(78): error C2065: 'e' : undeclared identifier
+     1>client.cpp(78): error C2059: syntax error : ')'
+     1>client.cpp(79): error C2065: 'e' : undeclared identifier
+     1>client.cpp(81): error C2065: 'e' : undeclared identifier
+     1>client.cpp(81): error C2227: left of '->handle' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>client.cpp(86): error C2065: 'e' : undeclared identifier
+     1>client.cpp(201): error C2065: 'e' : undeclared identifier
+     1>client.cpp(201): error C2275: 'UINT' : illegal use of this type as an expression
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(177) : see declaration of 'UINT'
+     1>client.cpp(201): error C2146: syntax error : missing ')' before identifier 'transaction_type'
+     1>client.cpp(201): error C2182: 'hot_links' : illegal use of type 'void'
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(177) : see declaration of 'UINT'
+     1>client.cpp(201): error C2059: syntax error : ')'
+     1>client.cpp(202): error C2143: syntax error : missing ';' before '{'
+     1>client.cpp(202): error C2447: '{' : missing function header (old-style formal list?)
+     1>client.cpp(228): error C2065: 'e' : undeclared identifier
+     1>client.cpp(231): error C2065: 'DDE_MONITOR_TOPIC' : undeclared identifier
+     1>client.cpp(238): error C2065: 'e' : undeclared identifier
+     1>client.cpp(238): error C2059: syntax error : ')'
+     1>client.cpp(239): error C2065: 'e' : undeclared identifier
+     1>client.cpp(241): error C2065: 'e' : undeclared identifier
+     1>client.cpp(241): error C2227: left of '->handle' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>client.cpp(243): error C2065: 'e' : undeclared identifier
+     1>client.cpp(243): error C2227: left of '->handle' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>client.cpp(243): error C2227: left of '->topic' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>client.cpp(243): error C2228: left of '.text' must have class/struct/union
+     1>client.cpp(244): error C2065: 'e' : undeclared identifier
+     1>client.cpp(260): error C2065: 'e' : undeclared identifier
+     1>client.cpp(261): error C2065: 'EVENT_ITEM_ENTRY' : undeclared identifier
+     1>client.cpp(261): error C2065: 'ie' : undeclared identifier
+     1>client.cpp(275): error C2065: 'e' : undeclared identifier
+     1>client.cpp(276): error C2065: 'e' : undeclared identifier
+     1>client.cpp(278): error C2065: 'e' : undeclared identifier
+     1>client.cpp(278): error C2227: left of '->handle' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>client.cpp(290): error C2065: 'e' : undeclared identifier
+     1>client.cpp(291): error C2065: 'e' : undeclared identifier
+     1>client.cpp(296): error C2065: 'e' : undeclared identifier
+     1>client.cpp(296): error C2227: left of '->items' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>client.cpp(296): error C2228: left of '.rewind' must have class/struct/union
+     1>client.cpp(299): error C2065: 'ie' : undeclared identifier
+     1>client.cpp(299): error C2065: 'EVENT_ITEM_ENTRY' : undeclared identifier
+     1>client.cpp(299): error C2059: syntax error : ')'
+     1>client.cpp(300): error C2065: 'ie' : undeclared identifier
+     1>client.cpp(302): error C2065: 'ie' : undeclared identifier
+     1>client.cpp(302): error C2227: left of '->index' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>client.cpp(302): error C2227: left of '->callback' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>client.cpp(303): error C2065: 'ie' : undeclared identifier
+     1>client.cpp(303): error C2227: left of '->callback' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>client.cpp(303): error C2065: 'e' : undeclared identifier
+     1>client.cpp(303): error C2227: left of '->topic' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>client.cpp(303): error C2228: left of '.text' must have class/struct/union
+     1>client.cpp(319): error C2143: syntax error : missing ';' before '*'
+     1>client.cpp(319): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>client.cpp(319): error C2370: 'EVENT_ENTRY' : redefinition; different storage class
+                 client.cpp(66) : see declaration of 'EVENT_ENTRY'
+     1>client.cpp(320): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>client.cpp(322): error C2065: 'e' : undeclared identifier
+     1>client.cpp(327): error C2065: 'e' : undeclared identifier
+     1>client.cpp(327): error C2059: syntax error : ')'
+     1>client.cpp(328): error C2065: 'e' : undeclared identifier
+     1>client.cpp(330): error C2065: 'e' : undeclared identifier
+     1>client.cpp(330): error C2227: left of '->topic' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>client.cpp(334): error C2065: 'e' : undeclared identifier
+     1>client.cpp(340): error C2143: syntax error : missing ';' before '*'
+     1>client.cpp(340): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>client.cpp(340): error C2370: 'EVENT_ENTRY' : redefinition; different storage class
+                 client.cpp(66) : see declaration of 'EVENT_ENTRY'
+     1>client.cpp(341): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>client.cpp(343): error C2065: 'e' : undeclared identifier
+     1>client.cpp(345): error C2065: 'e' : undeclared identifier
+     1>client.cpp(347): error C2065: 'e' : undeclared identifier
+     1>client.cpp(349): error C2065: 'e' : undeclared identifier
+     1>client.cpp(349): error C2061: syntax error : identifier 'EVENT_ENTRY'
+     1>client.cpp(351): error C2065: 'e' : undeclared identifier
+     1>client.cpp(353): error C2065: 'e' : undeclared identifier
+     1>client.cpp(353): error C2227: left of '->topic' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>client.cpp(354): error C2065: 'e' : undeclared identifier
+     1>client.cpp(354): error C2227: left of '->handle' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>client.cpp(355): error C2065: 'e' : undeclared identifier
+     1>client.cpp(357): error C2065: 'e' : undeclared identifier
+     1>client.cpp(357): error C2541: 'delete' : cannot delete objects that are not pointers
+     1>client.cpp(358): error C2065: 'e' : undeclared identifier
+     1>client.cpp(363): error C2065: 'e' : undeclared identifier
+     1>client.cpp(369): error C2143: syntax error : missing ';' before '*'
+     1>client.cpp(369): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>client.cpp(369): error C2065: 'e' : undeclared identifier
+     1>client.cpp(369): error C2062: type 'short' unexpected
+     1>client.cpp(370): error C2143: syntax error : missing ';' before '{'
+     1>client.cpp(370): error C2447: '{' : missing function header (old-style formal list?)
+     1>client.cpp(393): error C2143: syntax error : missing ';' before '*'
+     1>client.cpp(393): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>client.cpp(393): error C2086: 'int EVENT_ITEM_ENTRY' : redefinition
+                 client.cpp(369) : see declaration of 'EVENT_ITEM_ENTRY'
+     1>client.cpp(393): error C2065: 'e' : undeclared identifier
+     1>client.cpp(393): error C2062: type 'short' unexpected
+     1>client.cpp(394): error C2143: syntax error : missing ';' before '{'
+     1>client.cpp(394): error C2447: '{' : missing function header (old-style formal list?)
+     1>client.cpp(428): error C2065: 'e' : undeclared identifier
+     1>client.cpp(430): error C2065: 'e' : undeclared identifier
+     1>client.cpp(431): error C2065: 'e' : undeclared identifier
+     1>client.cpp(431): error C3861: 'find_event_item': identifier not found
+     1>client.cpp(437): error C2065: 'e' : undeclared identifier
+     1>client.cpp(437): error C2227: left of '->handle' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>client.cpp(440): error C2065: 'e' : undeclared identifier
+     1>client.cpp(440): error C2227: left of '->handle' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>client.cpp(450): error C2065: 'e' : undeclared identifier
+     1>client.cpp(451): error C2065: 'ie' : undeclared identifier
+     1>client.cpp(453): error C2065: 'e' : undeclared identifier
+     1>client.cpp(454): error C2065: 'e' : undeclared identifier
+     1>client.cpp(454): fatal error C1003: error count exceeds 100; stopping compilation
+         choose_wire.cpp
+         chaxis.cpp
+         catclass.cpp
+         callfile.cpp
+         bitclass.cpp
+         autoback.cpp
+         asensor.cpp
+         ascfloat.cpp
+         array.cpp
+         analog_sensor_class.cpp
+     1>c1xx : fatal error C1083: Cannot open source file: 'analog_sensor_class.cpp': No such file or directory
+         alarmsum.cpp
+         adam_thermo_class.cpp
+     1>adam_thermo_class.cpp(22): error C2065: 'ED_DATA_NOT_SET' : undeclared identifier
+     1>adam_thermo_class.cpp(38): error C2065: 'ED_DATA_NOT_SET' : undeclared identifier
+     1>adam_thermo_class.cpp(47): error C2065: 'ED_DATA_NOT_SET' : undeclared identifier
+     1>adam_thermo_class.cpp(58): error C2065: 'ED_DATA_NOT_SET' : undeclared identifier
+     1>adam_thermo_class.cpp(129): error C2065: 'ED_DATA_NOT_SET' : undeclared identifier
+     1>adam_thermo_class.cpp(131): error C2065: 'ED_DATA_NOT_SET' : undeclared identifier
+     1>adam_thermo_class.cpp(142): error C2065: 'ED_DATA_NOT_SET' : undeclared identifier
+         Generating Code...
+     1>Done Building Project "C:\Sources\Version837\subs\V5Subs.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:34.31

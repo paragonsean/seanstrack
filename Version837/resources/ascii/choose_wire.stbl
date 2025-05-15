@@ -1,0 +1,26 @@
+4				
+ENGLISH,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial				
+GERMAN,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial				
+SPANISH,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial				
+ITALIAN,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial				
+ACCUMULATOR_OUTPUT_STRING	ACCUMULATOR OUTPUT	Ausgang Akkumulator	Salida Acumulador	ACCUMULATORE OUTPUT
+ADVANCED_GRID_1_STRING	Alarm Wire	Alarm Draht	Alambre de Alarma	Cavo di allarme
+ALREADY_IN_USE_STRING	Already in use for 	Bereits im Einsatz für	Ya está en uso por	Già in uso per
+BINARY_VALVE_PULSE_WIRE_STRING	Binary Valve Pulse Wire	Binäre Ventil Pulse Draht	Alambre de Valvula binaria de pulso	Cavo della Valvola Binaria di Pulso
+CHOOSE_OPTO_CONTROL_WIRE_STRING	Choose Opto Contol Wire	Wählen Sie Opto-Kontrolle Draht	Seleccione alambre de Opto-Control	Scegliere il cavo del Controllo Opto
+CHOOSE_OPTO_MONITOR_WIRE_STRING	Choose Opto Monitor Wire	Wählen Sie Opto-Monitor Draht	Seleccione alambre de Opto-Monitor	Scegliere il cavo del Monitor Opto 
+CHOOSE_WIRE	Choose Wire	Choose Wire	Choose Wire	Scegliere cavo
+CLICK_ON	Click on the module you wish to use or press Tab to use the next module.	Click on the module you wish to use or press Tab to use the next module.	Click on the module you wish to use or press Tab to use the next module.	Cliccare sul modulo desiderato o premere Tab per usare il prossimo modulo.
+CONTROL_OUTPUTS	Control Outputs	Control Outputs	Control Outputs	Controllo degli Output
+DONT_USE_WIRE_STRING	You SHOULD NOT USE THIS WIRE! It is already in use.	Sie SOLLTEN NICHT DIESER DRAHT VERWENDEN! Es ist bereits im Einsatz.	NO DEBE UTILIZAR ESTE CABLE! Ya está en uso.	NON USARE QUESTO CAVO! E' già in uso.
+GOOD_SHOT_WIRE_STRING	Good Shot Wire	Guter Schuss Draht	Alambre de Inyección buena	Collegamento per il ciclo buono 
+LIMIT_SWITCH_WIRE_STRING	Limit Switch 	Endschalter	Final de Carrera	Fine corsa
+MANUAL_ENTRY	Manual Entry	Manual Entry	Manual Entry	Entrata Manuale
+MONITOR_OUTPUTS	Monitor Outputs	Monitor Outputs	Monitor Outputs	Output Monitor
+NO_OUTPUT_STRING	NO OUTPUT	KEIN AUSGANG	NO SALIDA	NESSUN OUTPUT
+OUTPUT_NUMBER_STRING	I/O Number	I/O Num.	I/O Número	Numero I/O
+SLOW_SHOT_OUTPUT_STRING	SLOW SHOT OUTPUT	AUSGANG LANGSAM SCHUSS	SALIDA INYECCIÓN LENTA	USCITA CICLO AVVIAMENTO 
+VALVE_TEST_IN_OPERATION_STRING	VALVE TEST IN OPERATION Changes have been made to the parts.	VENTIL TEST IN BETRIEB Änderungen wurden an den Teilen gemacht worden.	VÁLVULA TEST en operación. Cambios se realizaron a las piezas.	TEST DI VALVOLA IN OPERAZIONE. Sono stati fatti cambi per le parti. 
+WARNING_ACTIVE_LOW_STRING	WARNING ACTIVE LOW	WARNUNG AKTIV UNTEN	ATENCIÓN BAJO ACTIVO	ATTENZIONE ATTIVO BASSO
+WIRE_NUMBER_STRING	Opto Wire Number 	Opto Draht Nummer	Número de Opto alambre	Numero di Cavo Opto 
+ZERO_SPEED_OUTPUT_STRING	Zero Speed Output	Zero Speed Output	Zero Speed Output	Velocità Output Zero

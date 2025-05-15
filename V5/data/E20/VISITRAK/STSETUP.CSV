@@ -1,0 +1,9 @@
+Gain Break Velocity 1,300
+Gain Break Velocity 2,300
+Gain Break Velocity 3,300
+Gain Break Gain 1,1.0
+Gain Break 2 or Integral Gain,1
+Gain Break 3 or Derivative Gain,1
+Velocity Loop Gain,300.0
+Follow Through Stop Position,
+Vacuum Limit Switch Number,3

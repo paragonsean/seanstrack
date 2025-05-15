@@ -1,0 +1,10 @@
+1,2,Waiting for PUMP ON
+3,3,Waiting for AT HOME
+8,9,Trapping START SHOT or JOG SHOT
+12,16,Waiting for START SHOT or JOG SHOT
+21,23,Waiting for FOLLOW THROUGH
+28,30,Waiting for RETRACT
+35,36,Making a JOG SHOT
+40,49,Making a SHOT
+60,64,Making a SHOT
+68,72,Testing the VALVE

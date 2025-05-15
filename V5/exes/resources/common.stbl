@@ -1,0 +1,203 @@
+4
+ENGLISH,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+GERMAN,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+SPANISH,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ITALIAN,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ABREVIATION_STRING	Abreviation	Abkürzung	Abreviatura	Abbreviazione
+ACCEL	Acceleration	Acceleration	Acceleration	Accelerazione
+ALARM_LIMITS_STRING	Alarm Limits	Alarmgrenzwerte	Límites de alarma	Range Allarme
+ALARM_SHOT	Alarm Shot	Alarm Shot	Alarma de Disparo	Allarme del Colpo
+ALARM_STRING	Alarm	Alarm	Alarma	Allarme
+ALL_STRING	All	All	All	Tutto
+ANALOG_SENSOR_STRING	Analog Sensor	Analog Sensor	Analog Sensor	Segnali Analogici
+AREA_STRING	Area	Fläche	Área	Area
+AVERAGE_STRING	Average	Durchschnitt	Promedio	Media
+AVG_STRING	Avg	Avg	Avg	Med
+BEGIN	Begin	Begin	Begin	Inizio
+BLUE	Blue	Blue	Blue	Blu
+BOARD	Board	Board	Board	Scheda
+CANCEL	Cancel	Abbrechen	Cancelar	Eliminare
+CANNOT_COMPLY_STRING	Cannot Comply	Nicht durchführbar	No se puede cumplir	Impossibile eseguire
+CATEGORY	Category	Category	Category	Categoria
+CENTIMETERS	Centimeters	Zentimeter	Centímetros	Centimetri
+CHANNEL_STRING	Channel	Kanal	Canal	Canale
+CHARACTERS	Characters	Characters	Characters	Caratteri
+CLEAR_STRING	Clear	Clear	Clear	Pulire
+CLOSE_STRING	Close	Close	Close	Chiudi
+CM_UNITS	CM	CM	CM	CM
+CMD_STRING	CMD	CMD	CMD	CMD
+COLOR	Color	Color	Color	Colore
+COMPUTER	Computer	Computer	Computer	Computer
+CONTINUE	Continue	Continue	Continue	Continue
+COUNT	Count	Count	Count	Conteggio
+CPK_STRING	Cpk	Cpk	Cpk	Cpk
+CYCLE_START	Cycle Start	Cycle Start	Inicio del Ciclo	Inizio Ciclo 
+DATE_STRING	Date	Datum	Fecha	Data
+DAYS	Days	Days	Days	Giorni
+DEL	Del	Del	Del	Del
+DELETE_STRING	Delete	Delete	Delete	Elimina
+DELTA_STRING	Delta	Delta	Delta	Delta
+DESCRIPTION	Description	Description	Description	Descrizione
+DIF_PRES_STRING	Differential Pressure	Differentialdruck	Presión diferencial	Pressione Differenziale
+DIF_STRING	Dif	Dif	Dif	Dif
+DIGITAL_SERVO_AMP	Digital Servo Amp	Digital Servo Amp	Servo Amplificador Digital	Amplificazione Digitale Servo
+DISPLAY	Display	Display	Display	Display
+DISTANCE_STRING	Distance	Abstand	Distancia	Distanza
+DWELL_TIME	Dwell Time	Dwell Time	Tiempo de Permanencia	Tempo di Solidificazione
+EDIT_STRING	Edit	Edit	Edit	Modifica
+EMPTY_LIST	The list is empty.	Diese Liste ist leer.	La lista está vacía	La lista è vuota
+ENABLE_STRING	Enable	Enable	Habilitar	Attivazione
+END_STRING	End	Ende	Final	Fine
+EOS_VELOCITY	End of Shot Velocity	Vorschub Schussende	Fin de Velocidad de la Inyección	Velocità a Fine Iniezione
+F10_RADIO	F10 Control Mods	F10 Steuermodus	F10 Modo Control	Controllo Mods F10
+F2_RADIO	F2 Set Dac	F2 Dac-Vorgabe	F2 Prog.DAC	F2 Imposta Dac 
+F3_RADIO	F3 Null Valve	F3 Ventil referieren	F3 Referencia Valvula	F2 Valvola di Azzeramento 
+F4_RADIO	F4 Valve Test	F4 Ventilpruf	F4 Prueba Valvula	F4 Valvola di Test 
+F5_RADIO	F5 Test Alarms	F5 Alarme prufen	F5 Prueba Alarma	F5 Test Allarmi 
+F6_RADIO	F6 Status and Menu	F6 Status	F6 Estado y Menu	F6 Stato e Menu
+F7_RADIO	F7 Terminal	F7 Terminal	F7 Terminal	F7 Terminale
+F8_RADIO	F8 Realtime	F8 Echtzeit	F8 Realtime	F8 Tempo reale
+F9_RADIO	F9 Globals	F9 Globale	F9 Global	F9 Globali
+FAST	Fast	Fast	Rápido	Veloce
+FILE	File	File	File	File
+FILE_NAME	File Name	Dateiname	Nombre del Archivo	Nome del File
+FILL_TIME	Fill Time	Fill Time	Fill Time	Tempo di Riempimento
+FINISHED	Finished	Finished	Finished	Terminato
+FIRST_NAME_STRING	First Name	Vorname	Nombre	Nome
+FRIDAY	Friday	Friday	Friday	Venerdì
+GAIN_STRING	Gain	Gain	Gain	Gain
+GREEN	Green	Green	Green	Verde
+HEAD_PRES_STRING	Head Pressure	Kopfdruck	Presión de Pistón	Pressione Testa Pistone
+HEAD_PRESSURE_LABEL_STRING	Head	Kopf	Cabeza	Testa Pistone
+HELP_STRING	Help	Hilfe	Ayuda	Help
+HIGH_LIMIT_STRING	High Limit	Obere Grenze	Límite superior	Limite Superiore
+HIGH_ALARM	High Alarm	High Alarm	Alarma Superior	Allarme Tolleranza Alta
+HIGH_STRING	High	Überschreitung	Alto	Alto
+HIGH_WARNING	High Warning	High Warning	Advertencia Superior	Alto Avvertimento
+HOURS_STRING	Hours	Stunden	Horas	Ore
+IN_UNITS	IN	IN	IN	IN
+INCHES	Inches	Zoll	Pulgadas	Inches
+INPUT_ERROR_STRING	Input Error	Fehler: Eingänge	Error de Entrada	Errore Input
+INSERT	Insert	Insert	Insert	Inserire
+INTENSIFICATION	Intensification	Intensification	Intensificación	Moltiplicazione
+IPS	IPS	Z/s	Plg/Sec	IPS
+IS_STRING	is	ist	está	è
+INVALID_ENTRY	Invalid Entry	Invalid Entry	Invalid Entry	Dato non valido
+KG_UNITS	KG	KG	KG	KG
+LAST	Last	Last	Last	Ultimo
+LAST_NAME_STRING	Last Name	Nachname	Apellido	Cognome
+LBS_UNITS	LBS	LBS	LBS	LBS
+LCL_STRING	LCL	LCL	LCL	LCL
+LED	Led	Led	Led	Led
+LIMIT_SWITCH	Limit Switch	Limit Switch	Limit Switch	Fine Corsa
+LOW_ALARM	Low Alarm	Low Alarm	Alarma Inferior	Low Alarm
+LOW_LIMIT_STRING	Low Limit	Untere Grenze	Limite Inferior	Limite Inferiore
+LOW_STRING	Low	Unterschreitung	Bajo	Basso
+LOW_WARNING	Low Warning	Low Warning	Advertencia Inferior	Bassa Avvertenza
+LVDT	LVDT	LVDT	LVDT	LVDT
+MACHINE_INTRO_STRING	Machine :	Maschine :	Màquina :	Macchina :
+MACHINE_STRING	Machine	Maschine	Máquina	Macchina
+MAX_STRING	Max	Max	Max	Max
+MAXIMUM	Maximum	Maximum	Maximum	Massimo
+METAL_PRES	Metal Pressure	Metal Pressure	Metal Pressure	Pressione sul Metallo
+MILLIMETERS	Millimeters	Millimeter	Milímetros	Millimetri
+MIN_STRING	Min	Min	Min	Min
+MIN_STROKE_LEN	Minimum Stroke Length	Mindest-Hublänge	Longitud Carrera Mínima	Corsa Minima del Pistone
+MINIMUM	Minimum	Minimum	Minimum	Minimo
+MINUTES	Minutes	Minutes	Minutes	Minuti
+MM_UNITS	MM	MM	MM	MM
+MONDAY	Monday	Monday	Monday	Lunedì
+MONITOR	Monitor	Monitor	Monitor	Monitor
+MONTHS	Months	Months	Months	Mesi
+MPS	MPS	m/s	M/Sec	MPS
+MVO_06596	MVO-06596	MVO-06596	MVO-06596	MVO-06596
+NAME	Name	Name	Name	Nome
+NEW_STRING	New	New	New	Nuovo
+NEXT_STRING	Next	vorwärts	Siguiente	Successivo
+NO_CALCULATOR_FILE	Calculator File Not Found	Calculator File Not Found	Calculator File Not Found	Calculator File Not Found
+NO_MEMORY_STRING	Unable to allocate memory	Kein Arbeitsspeicher verfügbar	No se puede asignar memoria	Errore allocazione memoria
+NO_SHOT_FILE	Shot File Not Found	Shot File Not Found	Shot File Not Found	Shot File Not Found
+NO_STRING	No	Nein	No	No
+NONE_STRING	None	keines	Ninguno	Nessuno
+NORMAL	Normal	Normal	Normal	Normale
+NUMBER_STRING	Number	Number	Number	Numero
+OFF_STRING	Off	Aus	Apagada	Spento
+OK_STRING	OK	OK	OK	OK
+ON_STRING	On	Ein	On	Acceso
+OPERATOR	Operator	Operator	Operator	Operatore
+PARAM	Param	Param	Param	Param
+PARAMETER_STRING	Parameter	Parameter	Parámetro	Parametro
+PARAMETERS	Parameters	Parameters	Parámetros	Parametri
+PARAMS_STRING	Params	Param	Parámetros	Parametri
+PART_SELECTION_NUMBER	Part Selection Number	Part Selection Number	Part Selection Number	Part Selection Number
+PART_STRING	Part	Gussteil	Parte	Stampo
+PEAK_FS_VELOCITY	Peak Fast Shot Velocity	Peak Fast Shot Velocity	Pico de Disparo de Vélocidad Rápida	Picco Velocità Rapida
+PERCENT_STRING	Percent	Percent	Percent	Percentuale
+PLUNGER_DIAMETER	Plunger Diameter	Stempeldurchmesser	Diámetro del pistón de Inyección	Diametro Pistone
+POINT	Point	Punkt	Punto	Punto
+POS_STRING	Pos	Pos	Pos	Pos
+POSITION_STRING	Position	Wegstrecke	Posición	Posizione
+POST_IMPACT	Post Impact	Post Impact	Post Impact	Post Impatto
+PRE_FAST	Pre Fast	Pre Fast	Pre-Rápido	Pre Rapido
+PRE_IMPACT	Pre Impact	Pre Impact	Pre Impact	Pre Impatto
+PRESSURE_STRING	Pressure	Druck	Presión	Pressione
+PREVIOUS_STRING	Previous	zurück	Anterior	Precedene
+PRINT	Print	Drucken	Imprimir	Stampa
+PROFILE	Profile	Profile	Profile	Profilo
+PROFILES	Profiles	Profiles	Profiles	Profili
+QUESTION_MARKS	???	???	???	???
+RANGE_STRING	Range	Bereich	Rango	Range
+RED	Red	Red	Red	Rosso
+REF_STRING	Reference	Reference	Reference	Riferimento
+REMOVE	Remove	Remove	Remove	Eliminare
+ROD_PITCH	Rod Pitch	Rod Pitch	Pitch de Vástago	Pitch Stelo Pistone
+ROD_PRES_STRING	Rod Pressure	Stempeldruck	Presión de Vástago	Pressione Stelo Pistone
+ROD_STRING	Rod	Rod	Rod	Stelo
+SATURDAY	Saturday	Saturday	Saturday	Sabato
+SAVE	Save	Speichern	Guardar	Salva
+SAVE_CHANGES	Save Changes	Änderungen &speichern	Guardar cambios	Salva Modifiche
+SAVE_FAIL	Unable to Save Changes	Unable to Save Changes	Unable to Save Changes	Salvataggio Impossibile
+SAVING	Saving...	Speichern...	Guardando	Salvando...
+SAVING_STRING	Saving...	Speichern ..	Memorizando ..	Salvataggio in corso...
+SEC_STRING	Sec	Sec	Sec	Sec
+SEC_TIME_LABEL_STRING	TIME (SEC)	Zeitdauer (Sek)	TIEMPO (Sec)	TEMPO (SEC)
+SEMAPHOR_FAIL_STRING	Cannot own machine semaphor db	Maschinen-Semaphor für DB nicht verfügbar.	No se puede tener semaphor db de máquina	Errore File Semaforo Macchina
+SHIFT_STRING	Shift	Schicht	Turno	Turno
+SHIFTS_STRING	Shifts	Shifts	Shifts	Turni
+SHOT_FULL_FORWARD	Shot Full Forward	Shot Full Forward	Pistón Totalmente Adelante	Pistone Completamente Avanti
+SHOT_NUMBER_STRING	Shot Name	Schussname	Nombre Inyecciones	Nome Curva
+SHOT_STRING	Shot	Schuss	Disparo	Iniezione
+SHOTS_STRING	Shots	Schüsse	Disparos	Iniezioni
+START_STRING	Start	Start	Iniciar	Inizio
+STDDEV_STRING	Std.Dev 	Std.Abw.	Std.Dev.	Dev. Std.
+SUB_CAT	Sub-Category	Sub-Category	Sub-Category	Sotto Categoria
+SUNDAY	Sunday	Sunday	Sunday	Domenica
+TARGET_STRING	Target	Target	Target	Target
+TEMPERATURE_STRING	Temperature	Temperatur	Temperatura	Temperatura
+THREAD_FAIL	Unable to Create Thread	Unable to Create Thread	Unable to Create Thread	Errore creazione thread
+THURSDAY	Thursday	Thursday	Thursday	Giovedì
+TIME_INTERVAL_STRING	Time Interval	Zeitabschnitt	Intervalo de Tiempo	Intervallo di Tempo
+TIME_STRING	Time	Uhrzeit	Tiempo	Tempo
+TO_STRING	To	To	To	A
+TOTAL_STROKE_LENGTH	Total Stroke Length	Gesamt-Hublänge	Longitud Total de la Carrera	Corsa Totale Pistone
+TREND	Trend	Trend	Trend	Trend
+TUESDAY	Tuesday	Tuesday	Tuesday	Martedi
+UNABLE_TO_CONTINUE	Unable to Continue	Unable to Continue	Unable to Continue	Impossibile continuare
+UNITS_STRING	Units	Einheiten    Units	Unidades	Unità
+UNKNOWN_STRING	UNKNOWN	Nicht bekannt	DESCONOCIDO	SCONOSCIUTO
+USE	Use	Use	Use	Utilizzo
+VALUE_STRING	Value	Wert	Valor	Valore
+VARIABLE_TYPE	Variable Type	Variable Type	Tipo de Variable	Tipo Variabile
+VEL_STRING	Vel	Vel	Vel	Vel
+VELOCITY_STRING	Velocity	Vorschub	Velocidad	Velocità
+VERSION	Version	Version	Version	Versione
+VOLTS	Volts	Volts	Volts	Volts
+VOLUME_STRING	VOLUME	Volumen	VOLUMEN	VOLUME
+WARNING_LIMITS_STRING	Warning Limits	Warning Limits	Warning Limits	Limiti Segnalazione
+WARNING_STRING	Warning	Warnmeldung	Advertencia	Segnalazione
+WEDNESDAY	Wednesday	Wednesday	Wednesday	Mercoledì
+WEEKS	Weeks	Weeks	Weeks	Settimane
+WIRE_NUMBER	Wire Number	Wire Number	Wire Number	Wire Number
+WIRE_STRING	Wire	Wire	Wire	Filo
+YES_STRING	Yes	Ja	Sí	Si
+ZIP	Zip	Zip	Zip	Zip

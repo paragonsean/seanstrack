@@ -1,0 +1,30 @@
+﻿Build started 5/15/25 12:18:51 AM.
+     1>Project "C:\Sources\Version8\serialtest\serialtest.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt serialtest.cpp
+         serialtest.cpp
+     1>serialtest.cpp(499): error C2143: syntax error : missing ')' before ';'
+     1>serialtest.cpp(504): error C2143: syntax error : missing ')' before ';'
+     1>serialtest.cpp(509): error C2059: syntax error : 'else'
+     1>serialtest.cpp(510): error C2143: syntax error : missing ';' before '{'
+     1>serialtest.cpp(510): error C2447: '{' : missing function header (old-style formal list?)
+     1>serialtest.cpp(516): error C2059: syntax error : 'else'
+     1>serialtest.cpp(519): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>serialtest.cpp(519): error C2365: 'write_hex_file_to_serial_port' : redefinition; previous definition was 'function'
+                 serialtest.cpp(357) : see declaration of 'write_hex_file_to_serial_port'
+     1>serialtest.cpp(519): error C2440: 'initializing' : cannot convert from 'STRING_CLASS' to 'int'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>serialtest.cpp(520): error C2059: syntax error : ']'
+     1>serialtest.cpp(521): error C2143: syntax error : missing ';' before '}'
+     1>serialtest.cpp(521): error C2059: syntax error : '}'
+     1>serialtest.cpp(522): error C2143: syntax error : missing ';' before '}'
+     1>serialtest.cpp(522): error C2059: syntax error : '}'
+     1>serialtest.cpp(532): error C2143: syntax error : missing ';' before '{'
+     1>serialtest.cpp(532): error C2447: '{' : missing function header (old-style formal list?)
+     1>serialtest.cpp(1323): error C2660: 'send_message_to_serial_port' : function does not take 0 arguments
+     1>serialtest.cpp(1373): error C2660: 'send_message_to_serial_port' : function does not take 0 arguments
+     1>Done Building Project "C:\Sources\Version8\serialtest\serialtest.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.64

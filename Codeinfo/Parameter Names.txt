@@ -1,0 +1,35 @@
+  1, Fill Time
+  2, Total Shot Time
+  3, Slow Shot Time
+  4, Fast Shot Time
+  5, Fast Shot Rise Time
+  6, Cycle Time
+  7, User Time Int One
+  8, User Time Int Two
+  9, User Time Int Three
+ 10, User Time Int Four
+ 11, User Time Int Five
+ 12, Biscuit Size
+ 13, Calc Start Fast Shot
+ 14, Intensification Pressure
+ 15, Intensification Rise Time
+ 16, Eff Peak Intensification
+ 17, Impact Pressure to Peak
+ 18, Intens Squeeze Distance
+ 19, Sleeve Full Velocity
+ 20, Runner Full Velocity
+ 21, Average Fill Velocity
+ 22, User Velocity Pos One
+ 23, User Velocity Pos Two
+ 24, User Velocity Pos Three
+ 25, User Velocity Pos Four
+ 26, User Avg Vel Range One
+ 27, User Avg Vel Range Two
+ 28, User Avg Vel Range Three
+ 29, User Avg Vel Range Four
+ 30, Position P1
+ 31, Position P2
+ 32, Position P3
+ 33, Avg Slow Shot Velocity
+ 34, Avg Fast Show Velocity
+ 35, Fast Shot Distance

@@ -1,0 +1,5 @@
+DA0000			// Machine name
+4			// Mode (if avail)
+3154			// Shot count
+26			// Fault update (if avail)
+This is a test die.		// Part / Die description

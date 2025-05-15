@@ -1,0 +1,298 @@
+<html>
+<head>
+<title>Data Server Installation</title>
+<style type="text/css" title="the blues">
+<!--
+body {background: floralwhite; font-family: Arial; font-size: 16pt; }
+td { font-family: Arial; font-size: 16pt; padding-left: 10; padding-right: 10  }
+-->
+</style>
+</head>
+<body>
+<h3>Computer Naming Conventions</h3>
+<table border=1>
+<tr><td><b>WS0</b></td><td>(W S zero) The Office Workstation. This computer displays the data realtime.</td></tr>
+<tr><td><b>FS</b> </td><td>This is the Data Archiver computer. It acquires the data from
+    the monitoring computers as the shots are made and copys the data
+    to it's local C: drive. Periodically, it zips this data to
+    files that can be restored to a local version of the TrueTrak
+    software. In this way, data can be restored and deleted without
+    affecting the monitoring computers.</td></tr>
+<tr><td><b>WXX</b></td><td>Monitoring computers are named with a leading 'W' followed by the
+    number of the machine they are monitoring [1,99]; For machine 1 this
+    would be W01 (W zero one). For machine 99 it would be W99.</td></tr>
+</table>
+
+<h3>Installation Steps</h3>
+<br>
+On each <b>MONITORING</b> computer, do the following
+<ol>
+<li>Run "My Computer"</li>
+<li>Right click the C:\V5 directory</li>
+<li>Choose "Sharing..."</li>
+<li>Click the <b>Shared As</b> button and the <b>Full</b> Button</li>
+<li>Click "OK"</li>
+</ol>
+<br>
+On the <b>Data Archiver</b> computer, do the following
+<p>The following describes installing the data archiver folder, <b>\V5DS</b>, on the C drive.
+You can install this on any drive you wish. The <b>\V5BACKUP</b> folder can also be anywhere you wish but if
+you put it on another drive you will have to edit the <b>VISITRAK.INI</b> file and change the setting there.
+</p>
+<ol>
+    <li>Create a directory called <b>C:\Install6.11</b></li>
+    <li>Copy all the files from the three TrueTrak V6.11 Install/Update disks into this new directory.</li>
+    <li>Run <b>C:\Install6.11\Setup.exe</b>
+    <pre>
+        Directory = C:\V5DS\
+        Computer  = DS</pre>
+        </li>
+    <li>Run <b>C:\Install6.11\Setup.exe</b> again
+    <pre>
+        Directory = C:\V5\
+        Computer  = C01
+        Check <b>This is a local installation on the Data Archiver</b>
+        </pre>
+        </li>
+    <li>Run <b>My Computer</b>
+    <br>Right click the <b>C:\V5DS</b> directory
+    <br>Choose <b>Sharing...</b>
+    <br>Click the <b>Shared As</b> button and the <b>Full</b> button
+    <br>Click <b>OK</b></li>
+    <li>Create a <b>C:\V5BACKUP</b> directory.</li>
+    <li>Delete any subdirectories in the <b>C:\V5DS\DATA\DS</b> directory.
+    There is one for each machine. For a new install there are three.
+    <center>
+    <table>
+        <tr><td>C:\V5DS\DATA\DS\E20</td></tr>
+        <tr><td>C:\V5DS\DATA\DS\M2</td></tr>
+        <tr><td>C:\V5DS\DATA\DS\M20</td></tr>
+        </table>
+    </center></li>
+
+    <li>Edit the <b>C:\V5DS\DATA\DS\MACHSET.TXT</b> file and DELETE EVERYTHING in the file. Save your changes</li>
+
+    <li>
+    Run the <b>NetSetup</b> program on WS0. If you do not have a WS0 then create a <b>C:\VisiNet</b> folder and copy
+    NetSetup.exe and NetSetup.chm to that folder and make a desktop icon for NetSetup.exe and run that.
+    </li>
+
+    <li>All of the computers should be on line. If you haven't run this program before it will ask you
+    to pick new computers and you should pick all the True-Trak 2020 computers.
+    Otherwise choose <b>Add Computers...</b> and select the new Data Server from the list of
+    available computers. If it is not visible then you probably forgot to set the sharing on the C:\V5DS folder.
+    </li>
+
+    <li>Select all of the computers in the listbox and press the <b>Standard Connections</b> button. Then press the
+    <b>Save Changes</b> button.</li>
+
+    <li>Restart the True-Trak 2020 programs, including the Board Monitor, on the montoring computers.</li>
+    <li>Run the "Data Server Backup" program by double-clicking the icon on the desktop.</li>
+    <li>Pull down the <b>Edit</b> menu and choose <b>Shot Save Configuration</b>. Press <b>Save Changes</b>.</li>
+    <li>Pull down the <b>Edit</b> menu and choose <b>Global File Settings</b>. Press <b>Save Changes</b>.</li>
+    <li>You should soon see the shots begin to come in from the one monitoring computer you added the "DataServer=Fs" line to.</li>
+    <li>Pull down the <b>Edit</b> menu and choose <b>Global File Settings</b> and press the <b>Save Changes</b> button</li>
+    <li>Set up the rest of the monitoring computers, one at a time. If there is a problem, shut down the "Data Server Backup"
+        program and redo steps 8 and 9, deleting any machines that exist (including their directories).
+    <br>You should then be able to do steps 10 and 11 again to confirm that you are able to talk to the computer.</li>
+    <li>Edit the <b>C:\V5\EXES\PROFILE.MNU</b> file with the text editor.
+    <br>Change the number on the end of the following lines to 15
+    <pre>
+    1,FasTrak &Board Monitor,703,9
+    2,SEPARATOR,-1,9
+    1,Sure&Trak Control Interface,710,4
+    </pre>
+    </li>
+    <li>Copy the <b>DsBackup.exe</b>, <b>DsBackup.ini</b>, and <b>DsBackup.chm</b> files from the Data Server
+    Install disk to the new <b>\V5DS\Exes</b> folder and make a desktop icon for the DsBackup.exe program.
+    </li>
+    <li>Copy the <b>DsRestore.exe</b> program to the <b>C:\V5\Exes</b> folder and make a desktop icon.</li>
+    <li>Edit the <b>C:\V5\EXES\VISITRAK.INI</b> and add a line in the [Config] section that says:
+    <br><b>NoNetwork=Y</b>
+    </ol>
+
+<hr>
+<h3>Data Server Computer Notes</h3>
+<ul>
+    <li>
+    Control Panel/Network
+    <ul>
+        <li>
+        Configuration
+        <ul>
+            <li>
+                Client for Microsoft Networks
+                <br>
+                Dlink
+                <br>
+                NetBEUI
+                <br>
+                File and printer sharing for Microsoft Networks
+                </li>
+            </ul>
+        <li>
+        Identification
+        <ul>
+            <li>
+                Computer Name: <b>FS</b>
+                <br>
+                WorkGroup:     <b>VISITRAK</b>
+                </li>
+            </ul>
+        <li>
+        Access Control
+        <ul>
+            <li>
+                x Share-level access control
+                </li>
+            </ul>
+        </ul>
+    <li>
+        C:\V5
+        <ul>
+            <li>
+                Standalone installation
+                One computer (C01)
+                Local copy of each machine.
+                </li>
+            </ul>
+        </li>
+    <li>
+        C:\V5BACKUP
+        <ul>
+            <li>
+                Directory for backup zip files
+                </li>
+            </ul>
+        </li>
+    <li>
+        C:\V5DS
+        <ul>
+            <li>
+                Data Server network installation
+                <br>
+                This directory must be fully shared.
+                <br>
+                The C:\V5DS\DATA\COMPUTER.TXT file should contain a
+                line for every computer except WS0.
+                <br>
+                This Computer = DS
+                </li>
+            </ul>
+        </li>
+    <li>
+        DSBACKUP.EXE
+        <ul>
+            <li>
+                This is the backup program. It should be in the <b>C:\V5DS\EXES</b> directory.
+                <br>
+                There should be an icon for this.
+                </li>
+            </ul>
+        </li>
+
+    <li>
+        DSRESTOR.EXE
+        <ul>
+            <li>
+                This is the network restore program. It should be in the <b>C:\V5\EXES</b> directory.
+                <br>
+                There should be an icon for this.
+                </li>
+            </ul>
+        </li>
+    </ul>
+<hr>
+<h3>Office Workstation (WS0) Computer Notes</h3>
+
+    There should be no machines at this computer (see steps 8 and 9 for
+    how to delete the machines).
+<p>
+<hr>
+<center><h3>Example Installation</h3></center>
+<p>
+<h3>FS</h3>
+    This has 2 completely separate V5 installations.
+<ul>
+	<li>C:\V5</li>
+	<li>C:\V5DS</li>
+	</ul>
+
+<table border>
+<tr>
+    <td>
+    C:\V5DS\DATA\COMPUTER.TXT</td>
+    <td>
+    C:\V5\DATA\COMPUTER.TXT</td>
+    </tr>
+<tr>
+    <td>"DS ";"C:\V5DS\DATA\DS\"
+    <br>"W01";"\\W01\V5\DATA\W01\"
+    <br>"W02";"\\W02\V5\DATA\W02\"
+    </td>
+    <td>
+    "C01";"C:\V5\DATA\C01\"
+    </td>
+    </tr>
+</table>
+
+<p>
+<h3>WS0</h3>
+<table border>
+<tr>
+    <td>C:\V5\DATA\COMPUTER.TXT
+    </td>
+    </tr>
+<tr>
+    <td>"WS0";"C:\V5\DATA\WS0\"
+    <br>"W01";"\\W01\V5\DATA\W01\"
+    <br>"W02";"\\W02\V5\DATA\W02\"
+    </td>
+    </tr>
+</table>
+
+<h3>W01</h3>
+<table border>
+<tr>
+    <td>
+    C:\V5\DATA\COMPUTER.TXT
+    </td>
+    <td>
+    VISITRAK.INI
+    </td>
+    </tr>
+<tr>
+    <td>
+    "W01";"C:\V5\DATA\W01\          "
+    <br>
+    "WS0";"\\WS0\v5\DATA\WS0\       "
+    </td>
+    <td>
+    DataServer=FS
+    </td>
+    </tr>
+</table>
+
+<h3>W02</h3>
+<table border>
+<tr>
+    <td>
+    C:\V5\DATA\COMPUTER.TXT
+    </td>
+    <td>
+    VISITRAK.INI
+    </td>
+    </tr>
+<tr>
+    <td>
+    "W02";"C:\V5\DATA\W02\          "
+    <br>
+    "WS0";"\\WS0\V5\DATA\WS0\       "
+    </td>
+    <td>
+    DataServer=FS
+    </td>
+    </tr>
+ </table>
+</body>
+</html>

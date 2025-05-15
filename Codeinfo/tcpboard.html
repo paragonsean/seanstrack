@@ -1,0 +1,257 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title>Ethernet Communications with Boards</title>
+<style type="text/css">
+<!--
+span.indent1 { margin-left: 0.5in }
+span.indent2 { margin-left: 1.5in }
+ul li {list-style: disc }
+-->
+</style>
+</head>
+<body>
+<h3>Message Structure</h3>
+Each message begins with
+<ul>
+<li>message type (2 bytes)</li>
+<li>message length (4 bytes)</li>
+</ul>
+This is followed by the message itself.
+<p>
+At the present there are only two <b>message types</b> that I use.
+<p>
+<table border cellpadding="5" bgcolor="floralwhite">
+<tr bgcolor="moccasin">
+<td>Type</td>
+<td>Value</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>BOARD_DATA_SOCKET_ENTRY_TYPE</td> <td>0x1</td> <td>All messages except the close notification</td>
+</tr>
+<tr>
+<td>SOCKET_CLOSE_NOTIFY_TYPE</td>     <td>0x2</td> <td>Tells the board that this montitor program is exiting</td>
+</tr>
+</table>
+<p>
+The <b>message length</b> is 32 bits long and is the length of the message itself. This allows the comm guy
+to always read 6 bytes and then know how long the message is going to be.
+<p>
+<center><h3>Board Commands</h3>
+<table border cellpadding="5" bgcolor="floralwhite">
+<tr bgcolor="moccasin">
+<td>Command</td><td>Value</td>
+</tr>
+<tr><td>SET_COMMAND_MODE</td>             <td>0x1</td></tr>
+<tr><td>SET_DATA_COLLECTION_MODE_REQ</td> <td>0x2</td></tr>
+<tr><td>SET_PORT_ADDRESS</td>                 <td>0x3</td></tr>
+<tr><td>GET_BOARD_STATUS</td>                 <td>0x4</td></tr>
+<tr><td>GET_BOARD_PARAMETER</td>              <td>0x5</td></tr>
+<tr><td>SET_BOARD_PARAMETER</td>              <td>0x6</td></tr>
+<tr><td>SEND_COMMAND_BUSY</td>                <td>0x7</td></tr>
+<tr><td>GET_SHOT_DATA</td>                    <td>0x8</td></tr>
+<tr><td>SET_POLLING_MS</td>                   <td>0x9</td></tr>
+<tr><td>REGISTER_FOR_STATUS_CHANGES</td>    <td>0xA</td></tr>
+<tr><td>UNREGISTER_FOR_STATUS_CHANGES</td>    <td>0xB</td></tr>
+<tr><td>REGISTER_FOR_CURRENT_VALUES</td>    <td>0xC</td></tr>
+<tr><td>UNREGISTER_FOR_CURRENT_VALUES</td>    <td>0xD</td></tr>
+<tr><td>GET_CURRENT_VALUES</td>               <td>0xE</td></tr>
+<tr><td>READ_ALL_SETPOINTS</td>               <td>0xF</td></tr>
+<tr><td>DO_TRANSDUCER_TEST</td>               <td>0x10</td></tr>
+<tr><td>SEND_COMMAND_WO_CHECK</td>            <td>0x11</td></tr>
+<tr><td>SET_ALL_SETPOINTS</td>                <td>0x12</td></tr>
+<tr><td>READ_ST_PROFILE</td>                  <td>0x13</td></tr>
+<tr><td>READ_ST_GLOBALS</td>                  <td>0x14</td></tr>
+<tr><td>SET_ST_PROFILE </td>                  <td>0x15</td></tr>
+<tr><td>SET_ST_GLOBALS</td>                   <td>0x16</td></tr>
+<tr><td>GET_CONTROL_PROGRAM</td>              <td>0x17</td></tr>
+<tr><td>SET_CONTROL_PROGRAM</td>              <td>0x18</td></tr>
+<tr><td>CC_STATUS_MESSAGE</td>                <td>0x19</td></tr>
+<tr><td>CC_ERROR_MESSAGE</td>                 <td>0x1A</td></tr>
+<tr><td>BEGIN_VALVE_TEST</td>                 <td>0x1B</td></tr>
+<tr><td>END_VALVE_TEST</td>                   <td>0x1C</td></tr>
+<tr><td>VALVE_TEST_DATA</td>                  <td>0x1D</td></tr>
+</table>
+</center>
+<p>
+The most basic command sent to the board is a single command such as SET_COMMAND_MODE that has
+no data with it. This is sent as follows
+<p>
+
+<center>
+<table border cellpadding="5" bgcolor="floralwhite">
+<tr bgcolor="moccasin">
+<td>Start Byte</td>
+<td>End Byte</td>
+<td>Contents</td>
+<td>Description</td>
+</tr>
+
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>BOARD_DATA_SOCKET_ENTRY_TYPE</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>5</td>
+<td>4</td>
+<td>Bytes remaining in this message</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>7</td>
+<td>1</td>
+<td>SET_COMMAND_MODE</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>9</td>
+<td>1</td>
+<td>FASTRAK_BOARD_INDEX</td>
+</tr>
+
+</table></center>
+<p>
+Most commands have data with them.
+<br>The <b>bytes remaining in this message</b> for these is the length of the data buffer plus 4.
+<p>
+<center>
+<table border cellpadding="5" bgcolor="floralwhite">
+<tr bgcolor="moccasin">
+<td>Start Byte</td>
+<td>End Byte</td>
+<td>Contents</td>
+<td>Description</td>
+</tr>
+
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>BOARD_DATA_SOCKET_ENTRY_TYPE</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>5</td>
+<td>6</td>
+<td>Bytes remaining in this message</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>7</td>
+<td>0x7</td>
+<td>SEND_COMMAND_BUSY</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>9</td>
+<td>0</td>
+<td>SURETRAK_BOARD_INDEX</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>11</td>
+<td>0x8014</td>
+<td>CLEAR_CONTROL_MODE</td>
+</tr>
+
+</table></center>
+<p>
+
+Particulars
+<h4>Transducer Test</h4>
+<center>
+<table border cellpadding="5" bgcolor="floralwhite">
+<tr bgcolor="moccasin">
+<td>Start Byte</td><td>End Byte</td><td>Contents</td><td>Description</td>
+</tr>
+
+<tr>
+<td>0</td><td>1</td><td>1</td><td>BOARD_DATA_SOCKET_ENTRY_TYPE</td>
+</tr>
+
+<tr>
+<td>2</td><td>5</td><td>4</td><td>Bytes remaining in this message</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>7</td>
+<td>0x10</td>
+<td>DO_TRANSDUCER_TEST</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>9</td>
+<td>0</td>
+<td>SURETRAK_BOARD_INDEX</td>
+</tr>
+</table></center>
+
+<p>
+When the transducer test is done the board sends a DO_TRANSDUCER_TEST back to the
+computer that asked for the test.
+<p>
+The data returned is an array of unsigned integers with the bits set to indicate whether
+the transducer was high or low. There are 500 bits per channel, two channels per board,
+and two boards. This requires 2000 bits or 63 32-bit integers or 252 bytes.
+<p>
+The results from the Suretrak board are first, channel A then channel B. The results
+from the FasTrak board follow.
+<p>
+<center>
+<table border cellpadding="5" bgcolor="floralwhite">
+<tr bgcolor="moccasin">
+<td>Start Byte</td><td>End Byte</td><td>Contents</td><td>Description</td>
+</tr>
+
+<tr>
+<td>0</td><td>1</td><td>1</td><td>BOARD_DATA_SOCKET_ENTRY_TYPE</td>
+</tr>
+
+<tr>
+<td>2</td><td>5</td><td>256</td><td>Bytes remaining in this message</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>7</td>
+<td>0x10</td>
+<td>DO_TRANSDUCER_TEST</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>9</td>
+<td>0</td>
+<td>SURETRAK_BOARD_INDEX</td>
+</tr>
+<tr>
+<td>10</td>
+<td>265</td>
+<td>0</td>
+<td>Bits from transducer test</td>
+</tr>
+
+</table></center>
+
+
+
+
+
+
+
+</body>
+</html>
+

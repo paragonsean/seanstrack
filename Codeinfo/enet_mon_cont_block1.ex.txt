@@ -1,0 +1,390 @@
+
+DWELL BLOCK STRUCTURE.
+
+.001 D{a} {test input}{set output}
+
+DWELL TIME
+{a} = V0 ... V255 ------>Variable.
+	constant --------->Dwell time in uS.
+
+
+
+POSITION CONTROL BLOCK STRUCTURE.
+
+.001 L{a}{b}F{c} {test input}{set output}
+  
+AXIS NUMBER 
+{a} = A1 or A2.  Axes A3 and A4 may be supported in the future.
+
+POSITION TO MOVE TO
+{b} = V0 ... V255 ------>Variable
+	constant ---------> Position to move to in X4 counts.
+
+	
+VELOCITY
+{c} = V0 ... V255 ------>Variable
+	constant ---------> Velocity setting in X1 pulses / sec.
+
+
+
+VELOCITY CONTROL BLOCK STRUCTURE.
+
+.001 V{a}{b}AC{c}P{d} {test input}{set output}
+
+AXIS NUMBER
+{a} = A1 or A2.  Possible future expansion to axes A3 and A4.
+
+VELOCITY SETTING
+{b} = V0 ... V255 ---------> Variable.
+constant ------------> Closed loop velocity setting in X1 pulses/sec, with a range of  
+0 - 16383.  A setting of 0 indicates skip entire block.  Bit 15 reserved for future signed operation.  Bit 14 indicates open loop percentage.  If set, the number that follows is a percentage of valve opening X 100 with the range being 0 - 10000.  
+
+ACCELERATION COMMAND (Optional, if absent max. acceleration is assumed)
+{c} = V0 ... V255 ---------> Variable.  
+          constant ------------> Accel. or decel. Distance in X1 counts.  Reserve bit 15 for future signed operation.  Bit 14 is the "Goose" bit.  If set, the number that follows is a percentage of valve opening X 100 with the range being 0 - 10000.  The valve is immediately opened to that percentage and then control is passed on the velocity setting.  
+
+END POSITION COMMAND (Optional, if absent movement will continue until stop) 
+{d} = V0 ... V255 ---------> Variable.  
+           constant -----------> Position in X4 counts. Range is +8388607 to -8388608.
+
+
+
+
+
+JUMP BLOCK STRUCTURE.
+
+.001 {-}J{a}.{+/-}{b} {test input}{set output}
+
+RELATIVE INDICATOR
+{-} = Relative jump, omit for absolute jump.
+
+JUMP TYPE
+{a} = Jump type,  0 == Normal, 1 == Subroutine, 2 == Return from subroutine.
+
+RELATIVE JUMP DIRECTION INDICATOR
+{+/-} = Omit sign for absolute jumps.  If relative jump, + == forward jump,
+	    - == backward jump.
+
+{b} = V0 ... V255 ---------> Variable.
+          constant ------------> If absolute jump, block to jump to.  If relative jump, number of blocks to jump to, either forward or backward.  Acceptable range is 0 - 255.
+
+
+
+UPDATE BLOCK STRUCTURE.
+
+.001 U{a}={b}{c}{d} {test input}{set output}
+
+ITEM TO UPDATE
+ {a} = V0 ... V255 ---------->Variable
+,0...15 --------------> Specify which bit to set or clear.
+	A1 ... A2 -----> Axis #1 or axis #2.  Axes #3 and #4 may be supported in the future.
+	CMD -----> Execute command
+DAC1 ... DAC4 ---->DAC output voltage X 1000 == percentage of valve opening X 100 ==  range is +10000 to -10000 (+/- 10V, +/- 100%).  Anything over 10000 will cause the entire block to be skipped.
+AC -----> DAC1...DAC4 acceleration in mV/250uS.  Must follow a DAC1...DAC4 update.  Optional, if absent or zero DAC will be updated immediately.
+	
+
+FIRST OPERAND
+{b} = V0 ... V255 ---------->Variable
+DAC1 ... DAC4 -----> DAC output voltage X 1000 == percentage of valve opening X 100 ==  range is +10000 to -10000 (+/- 10V, +/- 100%)
+	P -------------------------> Position in X4 counts. Range is +8388607 to -8388608
+ F ------------------------> Velocity in X1 pulses/sec, with a range of 0 - 16383.  Bit 15 reserved for sign.
+	constant ------> Direct integer, 16 or 32 bit value. 
+
+
+OPERATOR (Optional)
+{c} =   + --------> Addition operator
+	-  -------> Subtraction operator
+	*  --------> Multiplication operator
+	/  --------> Division operator
+	& --------> AND operator
+	| ----------> OR operator
+	^ ---------> XOR operator
+
+SECOND OPERAND (Optional, must include if an operator is used)
+{d} = V0 ... V255 ---------->Variable
+	constant ------> Direct integer, 16 or 32 bit value.
+
+
+
+
+{test input}	CONDITIONAL EXECUTION (Optional).
+
+Basic form = {I or W}{1 or 0}.{input#}
+
+{I or W} = 	I ------> IF
+		W ----> WHILE
+
+{1 or 0} = 	1 -----> Input ON
+		0 -----> Input OFF
+
+{input#} = V0 ... V255 --------> Variable, if the value the variable points to is zero, conditional execution is bypassed. 
+		constant -----------> Input number to test.
+
+Advanced form = {I or W}{a}{b}{c}
+
+FIRST OPERAND
+{a} = V0 ... V255 ---------->Variable
+	        ,0...15 --------------> Specify which bit to test.	
+DAC1 ... DAC4 -----> DAC output voltage X 1000 == percentage of valve opening X 100 ==  range is +10000 to -10000 (+/- 10V, +/- 100%)
+	P -------------------------> Position in X4 counts. Range is +8388607 to -8388608
+F ------------------------> Velocity in X1 pulses/sec, with a range of 0 - 16383.  Bit 15     reserved for sign.
+ADC1 ... ADC20 -------------> Analog input voltage in volts X 1000.
+	
+
+OPERATOR
+{b} =    > -------> Greater than
+	>= -------> Greater than or equal to
+	<  --------> Less than
+	<=   --------> Less than or equal to
+	= ---------> Equal to
+	!= --------> Not equal to
+
+SECOND OPERAND
+{c} = V0 ... V255 ---------->Variable
+	constant ------> Direct integer, 32 bit value.
+
+
+
+
+
+{set output} SET DIGITAL I/O LINES (Optional).
+
+{B or D or E}{1 or 0}.{output#}
+
+{B or D or E} = 	B ------> At the beginning of the block
+			D ------> During the block
+			E ------> At the end of the block
+
+{1 or 0} = 	1 -----> Turn on
+		0 -----> Turn off
+
+{output#} = V0 ... V255 --------> Variable, if value the variable points to is zero, setting outputs is disabled. 
+		constant -----------> Output number to control.
+
+
+
+Use a semicolon to delimit comments.
+
+Use a comma to set more than one outputs.  For example, B1.1,2 would turn on outputs #1 and #2 together.
+
+Use the AND operator & or the OR operator | to test more than one inputs.  For example, I1.18|19 would execute the block if either I/O #18 OR #19 were true.  I1.18&19 would execute if both #18 AND #19 were true. 
+
+Blocks that do not test inputs or test outputs are indicated by the
+capital letter "N" after the block statement.  For example, .001 D0 N
+
+Variables are 16 bit values.  They can be grouped together with an underscore to create a 32 bit value.  For example V16_V17 would indicate a 32 bit value.  The first variable must be even numbered.  For example, V17_V18 is incorrect and will generate an error at compile time.
+
+Numbers can be optionally expressed as hex or binary.  Prefix a hex number with an "h", for example hffc2.  Prefix a binary number with a "b", for example b11001101 .
+converted data is a 16 bit hex int.
+
+
+Board variables:
+
+There are 256, 16-bit variables present on the board.  Variables 0 - 99 are defined as general purpose.  100 - 255 are reserved for fixed values.  Unassigned variables in the V100 - 255 range can also be used as general purpose variables.  Two variables can be combined to create a 32 bit value.  The following have been defined:
+
+V100_101 Clock frequency in Hz.  V100 low 16 bits, V101 high 16 bits.
+V102_103 Velocity counter clock frequency in Hz.  V102 low 16 bits, V103 high 16 bits.
+V104_105 Part number identifier, V104 low half-word, V105 high half-word.
+V106_107 Output status word #1
+V108_109 Output status word #2
+V110_111 Output status word #3
+V112_113 Input status word #1
+V114_115 Input status word #2
+V116_117 Input status word #3
+V118         Input status word #4 On-board inputs, 6 total, bits 6 - 15 unused. 
+V119	     Reserved
+V120_121 Status word #1, read only
+V122_123 Status word #2, read only
+V124_125 Configuration word #1
+V126_127 Configuration word #2
+V128  Warning word
+V129  Fatal error word
+
+V130 Reserved
+
+V131 Total stroke length in X4 counts.
+V132 Minimum stroke length in X4 counts.
+V133 Minimum velocity for EOS calculation in X1 pulses / sec.
+V134 Time delay biscuit in mS.
+V135 End of shot velocity in X1 pulses / sec.
+V136 Fill distance in X4 counts.
+V137 Runner fill distance in X4 counts.
+V138 Min. position for CSFS in X4 counts.
+V139 Velocity for CSFS in X1 pulses / sec.
+V140 Velocity for rise time calculation in X1 pulses / sec.
+V141 Timed collection interval in uS.
+V142 Number of timed collection data points, 2000 max.
+V143 Time out period in seconds.
+
+V144 - 149 Reserved.
+
+V150 Velocity loop gain.
+V151 Break velocity #1 in X1 pulses / sec
+V152 Break velocity #2 in X1 pulses / sec
+V153 Break velocity #3 in X1 pulses / sec
+V154 Break gain #1 multiplier X 1000
+V155 Break gain #2 multiplier X 1000
+V156 Break gain #3 multiplier X 1000
+
+Board variables cont.   
+
+
+V157 Reserved for dither time
+V158 Reserved for dither amplitude
+V159 Zero speed check position in X4 counts
+V160 Null offset in DAC counts
+V161 LVDT offset in DAC counts
+V162 Jog shot setting, raw DAC setting.
+V163 Follow through setting, raw DAC setting
+V164 Follow through stop position, X4 counts
+V165 Retract setting, raw DAC setting.
+V166 Velocity multiplier, internally computed value, do not write to this location
+V167 Sensor deviation in X4 counts
+V168 Position loop gain
+V169 Reserved for position loop break gain following error setting
+V170 Reserved for position loop gain break
+ 
+V170 - V175 Reserved
+
+V176 Limit switch #1, axis #1 in X4 counts.
+V177 Limit switch #2, axis #1 in X4 counts.
+V178 Limit switch #3, axis #1 in X4 counts.
+V179 Limit switch #4, axis #1 in X4 counts.
+V180 Limit switch #5, axis #1 in X4 counts.
+V181 Limit switch #6, axis #1 in X4 counts.
+V182 Limit switch #1, axis #2 in X4 counts.
+V183 Limit switch #2, axis #2 in X4 counts.
+V184 Limit switch #3, axis #2 in X4 counts.
+V185 Limit switch #4, axis #2 in X4 counts.
+V186 Limit switch #5, axis #2 in X4 counts.
+V187 Limit switch #6, axis #2 in X4 counts.
+
+V189 - V255 available for general purpose use
+
+
+
+
+The following variables are defined in the control program and therefore use general purpose variables below 100.
+
+V0 Accel, profile step #1 in X1 counts.  If bit 14 set then goose % X 100
+V1 Vel. Setting step #1 in X1 pulses / sec.  If bit 14 set then open loop % X 100
+V2 Ending position step #1 in X4 counts.
+V3 Input to test step #1 
+V4 Accel, profile step #2 in X1 counts.  If bit 14 set then goose % X 100
+V5 Vel. Setting step #2 in X1 pulses / sec.  If bit 14 set then open loop % X 100
+V6 Ending position step #2 in X4 counts.
+V7 Input to test step #2
+V8 Accel, profile step #3 in X1 counts.  If bit 14 set then goose % X 100
+V9 Vel. Setting step #3 in X1 pulses / sec.  If bit 14 set then open loop % X 100
+V10 Ending position step #3 in X4 counts.
+V11 Input to test step #3
+V12 Accel, profile step #4 in X1 counts.  If bit 14 set then goose % X 100
+V13 Vel. Setting step #4 in X1 pulses / sec.  If bit 14 set then open loop % X 100
+V14 Ending position step #4 in X4 counts.
+V15 Input to test step #4
+V16 Accel, profile step #5 in X1 counts.  If bit 14 set then goose % X 100
+V17 Vel. Setting step #5 in X1 pulses / sec.  If bit 14 set then open loop % X 100
+V18 Ending position step #5 in X4 counts.
+V19 Input to test step #5 
+V20 Accel, profile step #6 in X1 counts.  If bit 14 set then goose % X 100
+V21 Vel. Setting step #6 in X1 pulses / sec.  If bit 14 set then open loop % X 100
+V22 Ending position step #6 in X4 counts.
+V23 Input to test step #6
+V24 Accel, profile step #7 in X1 counts.  If bit 14 set then goose % X 100
+V25 Vel. Setting step #7 in X1 pulses / sec.  If bit 14 set then open loop % X 100
+
+V26 - V29 Reserved
+
+V30 Pressure control start setting in % of valve opening X 100
+V31 Pressure control step #1 accel in mV / 250uS
+V32 Pressure control step #1 valve command in % of opening X 100
+V33 Pressure control step #1 time to wait in uS
+V34 Pressure control step #2 accel in mV / 250uS
+V35 Pressure control step #2 valve command in % of opening X 100
+V36 Pressure control step #2 time to wait in uS
+V37 Pressure control step #3 accel in mV / 250uS
+V38 Pressure control step #3 valve command in % of opening X 100
+V39 Pressure control step #3 time to wait in uS
+
+V40 - V49  Reserved for part file saved GP variables.
+
+V50 - V99 Available for general purpose use.
+
+
+
+Status word V118 - V121
+
+None defined at this time
+
+
+Configuration words
+
+V122
+
+Bit 0:   Analog ch1 gain, set for 0 - 5V input, clear for 0 - 2.5V input
+Bit 1:   Analog ch2 gain, set for 0 - 5V input, clear for 0 - 2.5V input
+Bit 2:   Analog ch3 gain, set for 0 - 5V input, clear for 0 - 2.5V input
+Bit 3:   Analog ch4 gain, set for 0 - 5V input, clear for 0 - 2.5V input
+Bit 4:   Analog ch5 gain, set for 0 - 5V input, clear for 0 - 2.5V input
+Bit 5:   Analog ch6 gain, set for 0 - 5V input, clear for 0 - 2.5V input
+Bit 6:  Analog ch7 gain, set for 0 - 5V input, clear for 0 - 2.5V input
+Bit 7:  Analog ch8 gain, set for 0 - 5V input, clear for 0 - 2.5V input
+Bit 8:  Analog ch9 gain, set for 0 - 5V input, clear for 0 - 2.5V input
+Bit 9:  Analog ch10 gain, set for 0 - 5V input, clear for 0 - 2.5V input
+Bit 10:  Analog ch11 gain, set for 0 - 5V input, clear for 0 - 2.5V input
+Bit 11:  Analog ch12 gain, set for 0 - 5V input, clear for 0 - 2.5V input
+Bit 12:  Analog ch13 gain, set for 0 - 5V input, clear for 0 - 2.5V input
+Bit 13:  Analog ch14 gain, set for 0 - 5V input, clear for 0 - 2.5V input
+Bit 14:  Analog ch15 gain, set for 0 - 5V input, clear for 0 - 2.5V input
+Bit 15:  Analog ch16 gain, set for 0 - 5V input, clear for 0 - 2.5V input
+
+
+
+V123
+
+Bit 0:  Select analog ch17 - 20 as dynamic, ch13 - 16 will be replaced.
+Bit 1:  Enable position axis #2, axis #1 assumed to always be enabled
+Bit 2: Enable position axis #3
+Bit 3: Enable position axis #4
+Bit 4: Velocity ctr. freq. Axis #1 == main clock /  2
+Bit 5: Velocity ctr. freq. Axis #1 == main clock /  4
+Bit 6: Velocity ctr. freq. Axis #1 == main clock /  8
+Bit 7: Velocity ctr. freq. Axis #1 == main clock /  16
+Bit 8: Velocity ctr. freq. Axis #2 == main clock /  2
+Bit 9: Velocity ctr. freq. Axis #2 == main clock /  4
+Bit 10: Velocity ctr. freq. Axis #2 == main clock /  8
+Bit 11: Velocity ctr. freq. Axis #2 == main clock /  16
+
+Bits 12 - 15 Undefined at this time.
+
+
+Configuration words cont.   
+
+V124
+
+No bits defined at this time.
+
+
+V125
+
+No bits defined at this time.
+
+Warning word definition:   
+
+V126
+
+0000   Cycle start time-out. 
+0001   Sensor missing counts upon reaching AT HOME.
+0002   10 second control block time-out.
+0003   Velocity error overflow.
+0004   Following error overflow.
+0005 - ffff  Undefined
+
+
+Fatal error word definition
+
+V127 
+
+None defined at this time.
+
+

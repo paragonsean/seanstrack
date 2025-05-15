@@ -1,0 +1,217 @@
+Distance Units,10
+Velocity Units,11
+Total Stroke Length,600
+Min Stroke Length,406
+End of Shot Velocity,.1
+
+Plunger Diameter,50.0
+Sleeve Fill Distance,175.0
+Runner Fill Distance,100.0
+Min CSFS Position,100.0
+Min Velocity for CSFS,1.0
+Velocity for Rise CSFS,3.1
+Time for Intens Pres,0
+Pres for Response Time,0.0
+Time Delay Biscuit,0
+
+User Vel 1,1
+User Vel 2,2
+User Vel 3,3
+User Vel 4,4
+User Avg Start 1,1.1
+User Avg Start 2,2.1
+User Avg Start 3,2.6
+User Avg Start 4,2.8
+User Avg End 1,1.8
+User Avg End 2,2.8
+User Avg End 3,2.7
+User Avg End 4,2.9
+
+
+Param 01 Desc,Fill Time
+Param 01 Input Type,1
+Param 01 Input Number,1
+Param 01 Var Type,32
+Param 01 Units,16
+Param 01 Low Warn Limit,0.0
+Param 01 Low Warn Wire,0
+Param 01 High Warn Limit,0.0
+Param 01 High Warn Wire,0
+Param 01 Low Alarm Limit,0.0
+Param 01 Low Alarm Wire,0
+Param 01 High Alarm Limit,0.0
+Param 01 High Alarm Wire,0
+Param 01 Analog Channel,0
+Param 01 Result Type,0
+Param 01 IVar Type,0
+Param 01 IVar Value,0
+Param 01 End Value,0
+Param 02 Desc,Total Shot Time
+Param 02 Input Type,1
+Param 02 Input Number,2
+Param 02 Var Type,32
+Param 02 Units,16
+Param 02 Low Warn Limit,0
+Param 02 Low Warn Wire,0
+Param 02 High Warn Limit,0
+Param 02 High Warn Wire,0
+Param 02 Low Alarm Limit,0
+Param 02 Low Alarm Wire,0
+Param 02 High Alarm Limit,0
+Param 02 High Alarm Wire,0
+Param 02 Analog Channel,0
+Param 02 Result Type,0
+Param 02 IVar Type,0
+Param 02 IVar Value,0
+Param 02 End Value,0
+...
+Param 64 Desc,Not Used
+Param 64 Input Type,0
+Param 64 Input Number,0
+Param 64 Var Type,0
+Param 64 Units,16
+Param 64 Low Warn Limit,0
+Param 64 Low Warn Wire,0
+Param 64 High Warn Limit,0
+Param 64 High Warn Wire,0
+Param 64 Low Alarm Limit,0
+Param 64 Low Alarm Wire,0
+Param 64 High Alarm Limit,0
+Param 64 High Alarm Wire,0
+Param 64 Analog Channel,0
+Param 64 Result Type,0
+Param 64 IVar Type,0
+Param 64 IVar Value,0
+Param 64 End Value,0
+Good Shot Wire,0
+Good Shot Use Warn,Y
+Alarm Timeout,0
+Mark 1 Type,P
+Mark 1 Number,13
+Mark 1 Symbol,None
+Mark 1 Color,RED
+Mark 1 Label,csfs
+Mare 1 Enable,Y
+
+Mark 2 Type,P
+Mark 2 Number,30
+Mark 2 Symbol,None
+Mark 2 Color,RED
+Mark 2 Label,P1
+Mare 2 Enable,Y
+
+Channel 1,0
+Channel 2,0
+Channel 3,23
+Channel 4,23
+Channel 5,25
+Channel 6,23
+Channel 7,25
+Channel 8,23
+Channel 9,23
+Channel 10,23
+Channel 11,23
+Channel 12,23
+Channel 13,23
+Channel 14,23
+Channel 15,23
+Channel 16,23
+Head Pres Channel,1
+Rod Pres Channel,2
+
+Accel 1,
+Velocity 1,10
+End Pos 1,10.0
+Vac Wait 1,N
+Low Impact 1,20%
+Low Impact from Input 1,N
+Accel 2,
+Velocity 2,10
+End Pos 2,10.0
+Vac Wait 2,N
+Low Impact 2,20%
+Low Impact from Input 2,N
+Accel 3,
+Velocity 3,10
+End Pos 3,10.0
+Vac Wait 3,N
+Low Impact 3,20%
+Low Impact from Input 3,N
+Accel 4,
+Velocity 4,10
+End Pos 4,10.0
+Vac Wait 4,N
+Low Impact 4,20%
+Low Impact from Input 4,N
+Accel 5,
+Velocity 5,10
+End Pos 5,10.0
+Vac Wait 5,N
+Low Impact 5,20%
+Low Impact from Input 5,N
+Accel 6,
+Velocity 6,10
+End Pos 6,10.0
+Vac Wait 6,N
+Low Impact 6,20%
+Low Impact from Input 6,N
+
+Vac Limit Switch,3
+LS 1 Pos,16.0
+LS 2 Pos,17.0
+LS 3 Pos,18.0
+LS 4 Pos,20.0
+LS 5 Pos,24.0
+LS 6 Pos,30.0
+LS 1 Desc,Limit Switch 1
+LS 2 Desc,Limit Switch 2
+LS 3 Desc,Limit Switch 3
+LS 4 Desc,Limit Switch 4
+LS 5 Desc,Limit Switch 5
+LS 6 Desc,Limit Switch 6
+LS 1 Wire,29
+LS 2 Wire,30
+LS 3 Wire,31
+LS 4 Wire,32
+LS 5 Wire,26
+LS 6 Wire,27
+Velocity Loop Gain
+Break Velocity 1,0
+Break Gain 1,1.0
+Break Velocity 2,0
+Break Gain 2,1.0
+Break Velocity 3,0
+Break Gain 3,1.0
+FT Stop Pos,600
+Warm Up Enable,N
+Warm Up Part,P22061143
+Warm Up Wire,30
+Warm Up Wire State,0
+PC Enable,N
+PC Positive Only,N
+PC RC Enable,N
+PC Hardware Closed Loop,N
+PC All Percent,N
+PC Ramp 1,4
+PC Goose 1,N
+PC Pres 1,3500
+PC Hold Time 1,200
+PC Ramp 2,10
+PC Goose 2,N
+PC Pres 2,10000
+PC Hold Time 2,200
+PC Ramp 3,
+PC Goose 3,N
+PC Pres 3,
+PC Hold Time 3,200
+PC Sensor,0
+PC Volt Range,1
+PC Arm LS,2
+PC Loop Gain,1
+PC Integral Gain,5
+PC Derivative Gain,6
+PC Retract Volts,-10
+PC Park Volts,-10
+
+
+

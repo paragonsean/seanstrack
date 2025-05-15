@@ -1,0 +1,23 @@
+OPS = -c -v -tWM -WE
+
+setup.exe : setup.obj setup.res
+  TLink32 @&&|
+   -Tpe -aa -c -x +
+\APPS\BC5\LIB\c0w32.obj+
+setup.obj
+setup.exe
+
+..\lib\v5subs.lib+
+\APPS\BC5\LIB\import32.lib+
+\APPS\BC5\LIB\cw32mt.lib
+
+|
+   brc32 setup.res setup.exe
+   copy setup.exe \v5\exes\v5setups.exe
+
+setup.obj :  setup.cpp
+  Bcc32 $(OPS) setup.cpp
+
+setup.res : setup.rc
+   brcc32 setup.rc
+

@@ -1,0 +1,11 @@
+; This file is maintained by HCW. Do not modify this file directly.
+
+[OPTIONS]
+LCID=0x409 0x0 0x0 ; English (United States)
+REPORT=Yes
+CONTENTS=install_and_update
+TITLE=TrueTrak Version 7 Install/Update
+HLP=.\setup.hlp
+
+[FILES]
+.\setup.rtf

@@ -1,0 +1,53 @@
+﻿Build started 5/15/25 12:18:59 AM.
+     1>Project "C:\Sources\Version8\visiedit\visiedit.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fd"vc120.pdb" /Gd /TP /analyze- /errorReport:prompt visiedit.cpp
+         visiedit.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"visiedit.res" visiedit.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\v8\exes\visiedit.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"c:\v8\exes\visiedit.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\v8\exes\visiedit.lib" /MACHINE:X86 visiedit.res
+         visiedit.obj
+     1>visiedit.obj : error LNK2019: unresolved external symbol "long __cdecl file_size(char *)" (?file_size@@YAJPAD@Z) referenced in function "void __cdecl load_from_file(void)" (?load_from_file@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: __thiscall STRING_CLASS::STRING_CLASS(void)" (??0STRING_CLASS@@QAE@XZ) referenced in function "int __cdecl stringtable_message_box(char *,char *,unsigned int)" (?stringtable_message_box@@YAHPAD0I@Z)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: __thiscall STRING_CLASS::~STRING_CLASS(void)" (??1STRING_CLASS@@QAE@XZ) referenced in function "int __cdecl stringtable_message_box(char *,char *,unsigned int)" (?stringtable_message_box@@YAHPAD0I@Z)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::operator=(char const *)" (??4STRING_CLASS@@QAEXPBD@Z) referenced in function "void __cdecl load_resources(void)" (?load_resources@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::operator=(class STRING_CLASS const &)" (??4STRING_CLASS@@QAEXABV0@@Z) referenced in function "void __cdecl load_menu(void)" (?load_menu@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::operator+=(char const *)" (??YSTRING_CLASS@@QAEXPBD@Z) referenced in function "void __cdecl load_from_file(void)" (?load_from_file@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall NAME_CLASS::get_exe_dir_file_name(char const *)" (?get_exe_dir_file_name@NAME_CLASS@@QAEEPBD@Z) referenced in function "void __cdecl load_menu(void)" (?load_menu@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: __thiscall COMPUTER_CLASS::COMPUTER_CLASS(void)" (??0COMPUTER_CLASS@@QAE@XZ) referenced in function "bool __cdecl init(int)" (?init@@YA_NH@Z)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall COMPUTER_CLASS::startup(void)" (?startup@COMPUTER_CLASS@@QAEEXZ) referenced in function "bool __cdecl init(int)" (?init@@YA_NH@Z)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: __thiscall FONT_LIST_CLASS::FONT_LIST_CLASS(void)" (??0FONT_LIST_CLASS@@QAE@XZ) referenced in function "void __cdecl `dynamic initializer for 'FontList''(void)" (??__EFontList@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: __thiscall FONT_LIST_CLASS::~FONT_LIST_CLASS(void)" (??1FONT_LIST_CLASS@@QAE@XZ) referenced in function "void __cdecl `dynamic atexit destructor for 'FontList''(void)" (??__FFontList@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: __thiscall INI_CLASS::~INI_CLASS(void)" (??1INI_CLASS@@QAE@XZ) referenced in function "void __cdecl load_resources(void)" (?load_resources@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall INI_CLASS::set_file(char const *)" (?set_file@INI_CLASS@@QAEEPBD@Z) referenced in function "void __cdecl load_resources(void)" (?load_resources@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall INI_CLASS::set_section(char const *)" (?set_section@INI_CLASS@@QAEEPBD@Z) referenced in function "void __cdecl load_resources(void)" (?load_resources@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall INI_CLASS::find(char const *)" (?find@INI_CLASS@@QAEEPBD@Z) referenced in function "void __cdecl load_resources(void)" (?load_resources@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: char * __thiscall INI_CLASS::get_string(void)" (?get_string@INI_CLASS@@QAEPADXZ) referenced in function "void __cdecl load_resources(void)" (?load_resources@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: __thiscall STRINGTABLE_CLASS::STRINGTABLE_CLASS(void)" (??0STRINGTABLE_CLASS@@QAE@XZ) referenced in function "void __cdecl `dynamic initializer for 'StringTable''(void)" (??__EStringTable@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: __thiscall STRINGTABLE_CLASS::~STRINGTABLE_CLASS(void)" (??1STRINGTABLE_CLASS@@QAE@XZ) referenced in function "void __cdecl `dynamic atexit destructor for 'StringTable''(void)" (??__FStringTable@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: bool __thiscall STRINGTABLE_CLASS::find(class STRING_CLASS &,char *)" (?find@STRINGTABLE_CLASS@@QAE_NAAVSTRING_CLASS@@PAD@Z) referenced in function "int __cdecl stringtable_message_box(char *,char *,unsigned int)" (?stringtable_message_box@@YAHPAD0I@Z)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: char * __thiscall STRINGTABLE_CLASS::find(char *)" (?find@STRINGTABLE_CLASS@@QAEPADPAD@Z) referenced in function "void __cdecl choose_file_to_load(void)" (?choose_file_to_load@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRINGTABLE_CLASS::set_language(class STRING_CLASS &)" (?set_language@STRINGTABLE_CLASS@@QAEXAAVSTRING_CLASS@@@Z) referenced in function "void __cdecl load_resources(void)" (?load_resources@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl get_exe_directory(char *)" (?get_exe_directory@@YAEPAD@Z) referenced in function "void __cdecl gethelp(unsigned int,unsigned long)" (?gethelp@@YAXIK@Z)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "char * __cdecl maketext(long)" (?maketext@@YAPADJ@Z) referenced in function "void __cdecl save_to_file(void)" (?save_to_file@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "void __cdecl append_filename_to_path(char *,char const *)" (?append_filename_to_path@@YAXPADPBD@Z) referenced in function "void __cdecl gethelp(unsigned int,unsigned long)" (?gethelp@@YAXIK@Z)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl get_text(char *,struct HWND__ *,int)" (?get_text@@YAEPADPAUHWND__@@H@Z) referenced in function "void __cdecl save_to_file(void)" (?save_to_file@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl set_text(struct HWND__ *,char const *)" (?set_text@@YAEPAUHWND__@@PBD@Z) referenced in function "void __cdecl load_from_file(void)" (?load_from_file@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl is_previous_instance(char *,char *)" (?is_previous_instance@@YAEPAD0@Z) referenced in function "unsigned char __cdecl my_previous_instance(void)" (?my_previous_instance@@YAEXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "void __cdecl statics_startup(void)" (?statics_startup@@YAXXZ) referenced in function "void __cdecl load_resources(void)" (?load_resources@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "void __cdecl statics_shutdown(void)" (?statics_shutdown@@YAXXZ) referenced in function "void __cdecl shutdown(void)" (?shutdown@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "void __cdecl set_statics_font(class WINDOW_CLASS &)" (?set_statics_font@@YAXAAVWINDOW_CLASS@@@Z) referenced in function "void __cdecl load_menu(void)" (?load_menu@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: __thiscall MENU_CONTROL_ENTRY::MENU_CONTROL_ENTRY(void)" (??0MENU_CONTROL_ENTRY@@QAE@XZ) referenced in function "void __cdecl `dynamic initializer for 'MainMenu''(void)" (??__EMainMenu@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: __thiscall MENU_CONTROL_ENTRY::~MENU_CONTROL_ENTRY(void)" (??1MENU_CONTROL_ENTRY@@QAE@XZ) referenced in function "void __cdecl `dynamic atexit destructor for 'MainMenu''(void)" (??__FMainMenu@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: static void __cdecl MENU_CONTROL_ENTRY::register_window(void)" (?register_window@MENU_CONTROL_ENTRY@@SAXXZ) referenced in function "bool __cdecl init(int)" (?init@@YA_NH@Z)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall MENU_CONTROL_ENTRY::create_windows(char *,struct HWND__ *)" (?create_windows@MENU_CONTROL_ENTRY@@QAEEPADPAUHWND__@@@Z) referenced in function "void __cdecl load_menu(void)" (?load_menu@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall MENU_CONTROL_ENTRY::read(class NAME_CLASS &,int)" (?read@MENU_CONTROL_ENTRY@@QAEEAAVNAME_CLASS@@H@Z) referenced in function "void __cdecl load_menu(void)" (?load_menu@@YAXXZ)
+     1>visiedit.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall MENU_CONTROL_ENTRY::resize(void)" (?resize@MENU_CONTROL_ENTRY@@QAEEXZ) referenced in function "long __stdcall main_proc(struct HWND__ *,unsigned int,unsigned int,long)" (?main_proc@@YGJPAUHWND__@@IIJ@Z)
+     1>visiedit.obj : error LNK2001: unresolved external symbol "private: static char * STRING_CLASS::emptystring" (?emptystring@STRING_CLASS@@0PADA)
+     1>c:\v8\exes\visiedit.exe : fatal error LNK1120: 37 unresolved externals
+     1>Done Building Project "C:\Sources\Version8\visiedit\visiedit.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.53

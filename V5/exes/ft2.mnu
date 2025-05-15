@@ -1,0 +1,25 @@
+4
+ENGLISH,-15,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+GERMAN,-15,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+SPANISH,-15,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ITALIAN,-15,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+3,251,251,251,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+0,File,Datei,Fichero,File,0,0
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Save Shot Name Files,Save Shot Name Files,Save Shot Name Files,Salva Files Curve,121,50
+1,Minimize,Minimieren,Minimize,Minimizza,103,0
+1,Exit and STOP Monitoring,Verlassen u. Überwachung beenden,Salir y detener la supervisión,Esci e termina monitoraggio,108,0
+3,251,251,251,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+0,View,Ansicht,Ver,View,0,4
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Show Digital Outputs,Digitale Ausgänge anzeigen,Ver Salidas Digitales,Mostra Output Digitali,118,9
+1,Log Messages to Board,Log Messages to Board,Mensajes de Tarjeta,Log Messaggi alla Scheda,120,9
+3,251,251,251,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+0,Connect,Verbinden,Conectar,Connetti,0,0
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Check Connection,Anschluss über&prüfen,Controlar Conexion,Controlla Connessione,113,0
+1,Reset,Rücksetzen,Reajustar,Reset,115,0
+3,251,251,251,0,0,0,240,240,240,224,224,224,0,0,0,240,240,240
+0,Help,Hilfe,Ayuda,Help,0,0
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,FasTrak2 Help,FasTrak2 Hilfe,Ayuda Fastrak2,Help Scheda FasTrak2,9,0

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<translations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<translation id="sensor_setup_url_text">
+		<English>analog sensor setup</English>
+		<Chinese>模拟信号设置</Chinese>
+	</translation>
+	<translation id="board_setup_url_text">
+		<English>board setup</English>
+		<Chinese>电路板设置</Chinese>
+	</translation>
+	<translation id="machine_setup_url_text">
+		<English>machine setup</English>
+		<Chinese>机器设置</Chinese>
+	</translation>
+</translations>

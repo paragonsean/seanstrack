@@ -1,0 +1,121 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resrc1.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+MY_ICON                 ICON    DISCARDABLE     "convert.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+CONVERT DIALOG DISCARDABLE  0, 0, 304, 47
+STYLE WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Distance:",IDC_STATIC,1,9,31,8
+    LTEXT           "MM",IDC_STATIC,77,9,13,8
+    LTEXT           "IN",IDC_STATIC,142,9,13,8
+    LTEXT           "X4 Counts",IDC_STATIC,204,9,34,8
+    LTEXT           "Velocity:",IDC_STATIC,1,31,28,8
+    LTEXT           "MPS",IDC_STATIC,77,31,15,8
+    LTEXT           "IPS",IDC_STATIC,142,31,13,8
+    LTEXT           "X1 Counts /Sec",IDC_STATIC,204,29,37,18
+    EDITTEXT        UC_MM_EB,35,8,40,11,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        UC_IN_EB,99,8,40,11,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        UC_X4_EB,160,8,40,11,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        UC_MPS_EB,35,27,40,11,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        UC_IPS_EB,99,27,40,11,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        UC_X1_EB,160,27,40,11,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Distance Between Marks",IDC_STATIC,250,2,52,18
+    EDITTEXT        UC_DIST_BETWEEN_MARKS_EB,250,20,40,12,ES_AUTOHSCROLL
+    CONTROL         "IN",UC_DIST_IN_RB,"Button",BS_AUTORADIOBUTTON,250,35,21,
+                    10
+    CONTROL         "MM",UC_DIST_MM_RB,"Button",BS_AUTORADIOBUTTON,274,35,26,
+                    10
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "resrc1.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    MAIN_WINDOW_TITLE_STRING "Convert Units"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

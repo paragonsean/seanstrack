@@ -1,0 +1,22 @@
+﻿Build started 5/15/25 12:23:28 AM.
+     1>Project "C:\Sources\Version8\t2\Terminal.vcxproj" on node 2 (Build target(s)).
+     1>Build:
+         nmake /f "debug.mak"
+         
+         Microsoft (R) Program Maintenance Utility Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         	cl /nologo /MTd /W3 /Zp1 /Z7 /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /Fp"debug/terminal.pch" /YX"windows.h" /Fo"debug/" /c terminal.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/YXwindows.h'
+         terminal.cpp
+     1>terminal.cpp(170): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>terminal.cpp(1641): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>NMAKE : fatal error U1077: '"C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\cl.EXE"' : return code '0x2'
+         Stop.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.MakeFile.Targets(38,5): error MSB3073: The command "nmake /f "debug.mak"" exited with code 2.
+     1>Done Building Project "C:\Sources\Version8\t2\Terminal.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.45

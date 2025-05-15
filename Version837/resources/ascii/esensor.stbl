@@ -1,0 +1,12 @@
+4
+ENGLISH,-14,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+GERMAN,-14,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+SPANISH,-14,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ITALIAN,-14,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ANALOG_SENSOR_SETUP	Analog Sensor Setup	Analog Sensor Setup	Analog Sensor Setup	Sensore Analogo di Setup
+CREATE_SENSOR	Create New Sensor	Create New Sensor	Create New Sensor	Crea Nuovo Sensore
+DONT_DO_NOTE	You should NOT do this when you are about to make a shot.	You should NOT do this when you are about to make a shot.	You should NOT do this when you are about to make a shot.	NON fare questo quando è in atto l'iniezione.
+NO_VARTYPES	No Variable Types Found	No Variable Types Found	No Variable Types Found	No Variable Types Found
+RESTART_NOTE	Note: After creating a new analog sensor you MUST RESTART all the True-Trak programs.	Note: After creating a new analog sensor you MUST RESTART all the True-Trak programs.	Note: After creating a new analog sensor you MUST RESTART all the True-Trak programs.	Nota: Dopo aver creato un nuovo sensore analogo, si DEVONO RIAVVIARE tutti i programmi True-Trak.
+TEST_CALC	Test Calculator	Test Calculator	Test Calculator	Test Calcolatore
+XDCR_RANGES	Transducer I/O Ranges	Transducer I/O Ranges	Transducer I/O Ranges	Range del Trasduttore I/O 

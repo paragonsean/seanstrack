@@ -1,0 +1,477 @@
+4
+ENGLISH,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+GERMAN,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+SPANISH,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ITALIAN,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ABOUT_BOX_MENU_HELP	Display the software version number.	Software-Versionsnummer  anzeigen.	Muestra el número de versión del software.	Visualizza il numero di versione del software.
+ACTUAL_DAY	Actual Day	Actual Day	Actual Day	Giorno Attuale
+ADD_TO_BACKUP_LIST_MENU_HELP	Add the current shot to the backup list file	Gegenwärtigen Schuss zur Absicherungsliste hinzufügen	Añadir la Pieza actual en la lista de archivo de copia de seguridad	Aggiungi il colpo corrente alla lista di file di backup 
+ADDING_TO_BACKUP_STRING	Adding to Backup List...	Wird zur Absicherungsliste hinzugefügt...	Agregando a la lista de copia de seguridad	Aggiungendo alla Lista di Backup...
+ADDRESS	Tcp/Ip Address	Tcp/Ip Address	Tcp/Ip Address	Indirizzo Tcp/Ip 
+ALARM_COLOR	Alarm Color	Alarm Color	Alarm Color	Colore di Allarme
+ALARM_COUNTS	Alarm Counts	Alarm Counts	Alarm Counts	Conto dell'Allarme
+ALARM_DATE_LABEL_STRING	Date	Datum	Fecha	Data
+ALARM_LIMITS_STRING	Alarm Limits	Alarmgrenzwerte	Rango de Alarma	Limiti dell'Allarme
+ALARM_LOG_SETUP	Alarm Log Setup	Alarm Log Setup	Alarm Log Setup	Log di Setup dell'Allarme
+ALARM_LOG_SETUP_MENU_HELP	Log alarms to a file or printer.	Alarme zu Datei oder Drucker ausgeben.	Archivo de Alarma a un Fichero de Imprimadora	Collega gli allarmi ad un file o stampante.
+ALARM_ON_DOWN	Alarm on Down Wire ( 0 for None )	Alarm on Down Wire ( 0 for None )	Alarm on Down Wire ( 0 for None )	Allarme del Cavo Basso ( 0 per annullare )
+ALARM_SHOT_LABEL_STRING	Shot	Schuss	Inyecciòn	Colpo
+ALARM_STRING	Alarm	Alarm	Alarma	Allarme
+ALARM_SUMMARY	Alarm Summary	Alarm Summary	Alarm Summary	Sommario di Allarmi
+ALARM_SUMMARY_MENU_HELP	View a summary of alarm counts.	Überblick der Alarmimpulse betrachten.	Ver un resumen de cuenta de alarma.	Visualizza il summario di conti degli allarmi.
+ALARM_TIME_LABEL_STRING	Time	Uhrzeit	Hora	Tempo
+ALARM_TT_STRING	Warning or Alarm shown if one or more parameters are out of spec	Warnung- oder Alarmanzeige, sollten ein oder mehrere Parameter nicht im Bereich sein.	Advertencia o alarma aparece si uno o más parámetros están fuera de especificación	Attenzione o l'Allarme viene mostrato se uno o più parametri sono fuori specicazione
+ALARM_TYPE	Alarm Type	Alarm Type	Alarm Type	Tipo di Allarme
+ALARMS_OFF_ON_DOWN	Turn off All Alarms on Down	Turn off All Alarms on Down	Turn off All Alarms on Down	Spegni tutti gli Allarmi 
+ALARMSUM_EXPORT_HEADER_STRING	Date\tShift\tParameter\tLow Warning\tHigh Warning\tLow Alarm\tHigh Alarm\tTotal Warnings\tTotal Alarms\tTotal Shots	Datum\tSchicht\tParameter\tUnter-Warnung\tÜber-Warnung\tUnter-Alarm\tÜber-Alarm\tGesamtzahl Warnungen\tGesamtzahl Alarme\t	Fecha\tTurno\tParametro\tBajo Advertencia\tAlto Advertencia\tBajo Alarma\tAlto Alarma\tTotal Advertencias\tTotal Alarma\tTotal Inyecciones	Data\tTurno\tParametro\tBassa Avvertenza\tAlta Avvertenza\tBasso Allarme\tAlto Allarme\tAvvertenze Totali\tAllarmi Totali\tColpi Totali
+ALL_SUBS	Show All Sub-Categories	Show All Sub-Categories	Show All Sub-Categories	Mostra tutte le Sub-Categorie
+AN1	Head Pressure/Analog 1	Head Pressure/Analog 1	Head Pressure/Analog 1	Alta Pressione/Analogico 1
+AN2	Rod Pressure/Analog 2	Rod Pressure/Analog 2	Rod Pressure/Analog 2	Pressione sul Pistone/Analogico 2
+AN3	Differential/Analog 3	Differential/Analog 3	Differential/Analog 3	Differenziale/Analogico 3
+AN4	Analog 4	Analog 4	Analog 4	Analogico 4
+AREA_TYPE_STRING	AREA	Fläche	ÁREA	AREA
+AS_QUAL_STATIC	Quantity	Quantity	Quantity	Quantità
+ATTEMPT_DEL_ALL_ROWS_STRING	Attempt to Delete All Rows	Es wurde versucht alle Zeilen zu löschen.	Intento de eliminar todas las filas.	Tentativo di Eliminare tutte le Righe
+AUTO_DOWN_STRING	 AutoDown 	 Auto-Stillstand	Auto Apagamiento	 Auto-Spegnimento
+AUTO_DOWN_TT_STRING	Machine timed out - no reason given yet	Maschine ohne bekannten Grund in Zeitsperre.	Màquina apagada sin dar ninguna razòn asta ahora.	Macchina in time out - ancora nessuna ragione
+AVAILABLE_PARAMS	Available Parameters	Available Parameters	Available Parameters	Parametri Acquisibili
+AVG_EVERY	Average Every	Average Every	Average Every	Tutte le Medie
+AXIS_LIMITS	Axis Limits	Axis Limits	Axis Limits	Limiti degli Assi
+BACKGROUND	Background	Background	Background	Background
+BACKUP_AND_RESTORE_MENU_HELP	Backup/restore part setups parameter data and profiles	Gussteil-Einstellungen,  Parameter-Daten und Profile sichern/wiederherstellen	Copia de seguridad / restauración Datos de configuraciòn, Parámetros y Perfiles	Backup/ripristino delle Configurazioni e dei Parametri di Stampi, Dati e Profili 
+BEGIN_EXPORT	Begin Export	Begin Export	Begin Export	Inizio Esportazione 
+BEGIN_PRINTING	Begin Printing	Begin Printing	Begin Printing	Begin Printing
+BOARD_MONITOR_MENU_HELP	Program to collect shot data from the FasTrak data acquisition board.	Programm um Schussdaten vom FasTrak- Datenaufnahme-Modul zu erfassen.	Programa para recopilar datos de Inyecciones de la tarjeta de adquisición FasTrak.	Programma per collezionare i dati dei colpi dalla Scheda di Acquisizione dei Dati FasTrak.
+BORDER	Border	Border	Border	Bordo
+BOX_SCREEN_MENU_HELP	Display boxes with information on all machines being monitored.	Anzeigefenster mit Info aller zu überwachenden Maschinen.	Mostrar las cajas con información sobre todas las máquinas que están monitoreando.	Mostra i box com le informazioni su tutte le macchine monitorate.
+BOX_SCREEN_MENU_STRING	Box Screen	Anzeigekästchen	Caja de pantalla	Box dello Schermo
+BY_DAY	By Day	By Day	By Day	Dalla Giornata
+BY_SHIFT	By Shift	By Shift	By Shift	Dal Turno
+CANNOT_COMPLY_STRING	Cannot Comply	Nicht durchführbar	No se puede cumplir	Impossibile Eseguire
+CANT_CREATE_DEST_DIR_STRING	Unable to create Destination Directory	Ein Zielverzeichnis lässt sich nicht einrichten.	No se puede crear el directorio de destino	Impossibile creare una Directory di Destinazione
+CANT_DO_THAT_STRING	Unable to comply	Nicht durchführbar	Incapaz de cumplir	Impossibile compiere
+CATEGORY	Category	Kategorie	Categoria	Categoria
+CATEGORY_TITLE_STRING	 : Category = 	 : Kategorie =	: Categoria =	 : Categoria =
+CHAN_DESC	Channel Description	Channel Description	Channel Description	Descrizione del Canale
+CHAN_TO_DISP	Channels to Display	Channels to Display	Channels to Display	Canali da Mostrare
+CHANGE_MA_SETUP	Change Machine Setup on Other Computers	Change Machine Setup on Other Computers	Change Machine Setup on Other Computers	Cambia le Impostazioni di Macchina su altri Computer
+CHANGE_PARAM_SETUPS	Change Parameter Setups	Change Parameter Setups	Change Parameter Setups	Cambia le Configurazioni del Parametro 
+CHANGE_TO_OTHER_CO	Changes to Other Computers	Changes to Other Computers	Changes to Other Computers	Cambia in altri Computer
+CHANNEL_1_LABEL_STRING	Ch 1	Kan 1	Can 1	Canale 1
+CHANNEL_2_LABEL_STRING	Ch 2	Kan 2	Can 2	Canale 2
+CHANNEL_3_LABEL_STRING	Ch 3	Kan 3	Can 3	Canale 3
+CHANNEL_4_LABEL_STRING	Ch 4	Kan 4	Can 4	Canale 4
+CHANNEL_5_LABEL_STRING	Ch 5	Kan 5	Can 5	Canale 5
+CHANNEL_6_LABEL_STRING	Ch 6	Kan 6	Can 6	Canale 6
+CHANNEL_7_LABEL_STRING	Ch 7	Kan 7	Can 7	Canale 7
+CHANNEL_8_LABEL_STRING	Ch 8	Kan 8	Can 8	Canale 8
+CHANNEL_TYPE_STRING	CHANNEL	Kanal	CANAL	CANALE
+CHART_TYPE	Chart Type	Chart Type	Chart Type	Tipo di Diagramma
+CHOOSE_CORNER_PARAMS	Choose Corner Parameters	Choose Corner Parameters	Choose Corner Parameters	Scegli Parametri dell'Angolo
+CHOOSE_DOWNTIME_MACHINE	Choose Downtime Machine	Choose Downtime Machine	Choose Downtime Machine	Scegli il Fermo-Macchina
+CHOOSE_DOWNTIME_MACHINE_MENU_STRING	Choose Machine	Maschine wählen	Seleccione la Máquina	Scegli Macchina
+CHOOSE_FILE	Choose File...	Choose File...	Choose File...	Scegli File...
+CHOOSE_LANG_TITLE	Choose Your Language	Choose Your Language	Choose Your Language	Scegli il Linguaggio
+CHOOSE_PARAM_LIST_CAPTION	Choose Corner Parameters	Choose Corner Parameters	Choose Corner Parameters	Scegli Parametri dell'Angolo
+CHOOSE_PART_CAPTION	Choose Part	Gussteil wählen	Seleccione la Pieza	Scegli Stampo
+CHOOSE_PART_MENU_HELP	Choose the current display part	Gussteil für aktuelle Anzeige wählen.	Seleccione la Pieza port la visualizaciòn actual	Choose the current display part
+CHOOSE_PRINTER	Choose Printer...	Choose Printer...	Choose Printer...	Choose Printer...
+CHOOSE_RT_MACHINES_MENU_HELP	Choose machines to display live as shots occur.	Maschinen zur Schussanzeige in Echtzeit wählen.	Seleccione Màquinas para mostrar en vivo quando hay Inyecciòn.	Scegli le macchine da mostrare in tempo reale ad ogni colpo.
+CHOOSE_SHOT_MENU_HELP	Choose the current display shot	Schuss für aktuelle Anzeige wählen	Seleccione la Pieza actualmente visualizada	Scegli il Display del Colpo corrente
+CHOOSE_SHOTS_CAPTION	Choose Shots	Schüsse wählen	Seleccione Inyecciones	Scegli Colpi
+CHOOSE_SUMMARY_PARAMS	Choose Summary Parameters	Choose Summary Parameters	Choose Summary Parameters	Scegli il Sommario dei Parametri
+CHOOSE_YOUR_LANG	Choose Your Language	Choose Your Language	Choose Your Language	Scegli la Lingua
+CLEAR_ALARMS_AT_CS	Clear all alarms when cycle start is received	Clear all alarms when cycle start is received	Clear all alarms when cycle start is received	Rinnovare tutti gli allarmi ad ogni inizio di ciclo
+CLEAR_BACKUP_LIST_MENU_HELP	Begin a new backup list file	Eine neue Datei zur Absicherungsauflistung erstellen	Comienza una nueva lista de ficheros por copia de seguridad.	Inizia un nuovo backup della lista di file
+CLEAR_FROM_POPUP	Clear from Popup Downtime Entry	Clear from Popup Downtime Entry	Clear from Popup Downtime Entry	Resetta da un'entrata Popup del Fermo-Macchina
+CLEAR_MON_WIRE	Clear Monitor Wire on Down	Clear Monitor Wire on Down	Clear Monitor Wire on Down	Annulla il Segnale di Fermo
+CLICK_TO_TOGGLE	Click to Toggle	Click to Toggle	Click to Toggle	Clicca per Modificare
+CO_PROMPT	Computer:	Computer:	Computer:	Computer:
+COLOR_DEFINITION_MENU_HELP	Choose the display colors.	Anzeigefarben wählen.	Seleccione los Colores de Pantalla.	Scegli i Colori del display.
+CONTROL_CHANNELS	Control Channels	Control Channels	Control Channels	Controlla i Canali
+COPY_TO_NETWORK	Copy to Network	Copy to Network	Copy to Network	Copia sul Network
+CORNER_DISPLAY_LIMITS	Corner Parameter Display Limits	Corner Parameter Display Limits	Corner Parameter Display Limits	Limiti del Display dell'Angolo di Parametro
+CORNER_PARAMETERS_MENU_HELP	Choose which parameters to display at the bottom of the profile screen	Parameter zur Anzeige unten auf der Profilseite  wählen.	Seleccione los parámetros para mostrar en la parte inferior del perfil de la pantalla de parámetros.	Scegli quali parametri mostrare in fondo al profilo dello schermo
+COUNTS	Counts	Counts	Contador	Conteggio
+CURRENT_PW_LEVEL	Current Password Level:	Current Password Level:	Current Password Level:	Livello della Password Attuale:
+CURRENT_TSL	The current shot has a stroke length of	The current shot has a stroke length of	The current shot has a stroke length of	Il Colpo corrente ha una Lunghezza-Corsa di
+CURVE_WIDTH	Curve Width	Curve Width	Curve Width	Larghezza della Curva
+DATE_NAME_STRING	Date	Datum	Fecha	Data
+DATE_TT_STRING	Time of the Most Recent Shot	Zeitdauer des letzten Schusses	Tiempo de la Inyecciòn más reciente	Tempo del Colpo più Recente 
+DAY	Day	Day	Day	Giorno
+DAY_AND_MONTH	Day and Month	Day and Month	Day and Month	Giorno e Mese
+DAY_PARAM_SCREEN_MENU_STRING	Critical Parameter Screen	Critical Parameter Screen	Pantalla de Parametros Criticos	Scheda dei Parametri Critici
+DAYS	Days	Days	Days	Giorni
+DBARCFG_HEADING_STRING	Date\tCategory\tSubCategory\tOperator\tPart Number\r\n	Datum\tKategorie\tUnterkategorie\tBedienperson\tGussteil-Nr.\r\n	Fecha\tCategoria\tSubCategoria\tOperario\tNum.Pieza\r\n	Data\tCategoria\tSubCategoria\tOperatore\tStampo Numero\r\n
+DEFAULT_COLORS	Default Colors	Default Colors	Default Colors	Colori di Default
+DEFAULT_EXIT	Default to Shut Down ALL Programs	Default to Shut Down ALL Programs	Default to Shut Down ALL Programs	Default per Chiudere TUTTI i Programmi
+DEL_SELECTED	Delete Selected Range	Delete Selected Range	Delete Selected Range	Eliminare il Range Selezionato
+DEL_RANGE	Delete Selected Range	Delete Selected Range	Delete Selected Range	Eliminare il Range Selezionato
+DEL_SOME_FIRST_STRING	You must remove one to display another	Eines entfernen um ein anderes anzuzeigen.	Se debe quitar una para mostrar otra	Rimuovere un display per visualizzarne un altro
+DIF_AXIS_LABEL_STRING	DIFF	DIFF	DIFF	DIFFERENZA
+DIF_PRES_ZOOM_STRING	Diff Pres	Diff Druck	Diff Presiòn	Differenza di Pressione
+DIF_PRES_STRING	Differential Pressure	Differentialdruck	Presiòn Diferencial	Differenziale di Pressione
+DIFF_PRESSURE_LABEL_STRING	Diff	Diff	Diff	Differenza
+DISPLAY_COLOR_SETUP	Display Color Setup	Display Color Setup	Display Color Setup	Configurazione dei Color del Display
+DISPLAY_CONFIGURATION_MENU_HELP	Choose which analog channels to display.	Analog-Kanäle zum Anzeigen wählen.	Seleccione los canales analógicos para mostrar.	Scegli quale canale analogico visualizzare.
+DISPLAY_CURVES	Display Curves As	Display Curves As	Display Curves As	Visualizza Curve Come
+DISPLAY_SETUP	Display Setup	Display Setup	Display Setup	Configurazione del Display
+DISTANCE_TYPE_STRING	DISTANCE	Abstand	Distancia	DISTANZA
+DOWNBAR_CONFIG_MENU_STRING	Choose Data Range	Datenbereich wählen	Seleccione Rango de Datos	Scegli i Range dei Dati
+DOWNBAR_SCREEN_MENU_HELP	Display a barchart of downtimes.	Balkengrafik der Ausfallzeiten anzeigen.	Visualizar un diagrama de barras de Tiempos de Parada.	Visualizza un diagramma a barre di fermo-macchina.
+DOWNBAR_TITLE_STRING	Downtime Summary for Machine	Überblick  der Maschineausfallzeiten	Resumen de Paradas Màquina	Sommario di Fermo-macchina per la Macchina
+DOWNTIME_ENTRY_CAPTION	Enter Downtime Category and Subcategory	Enter Downtime Category and Subcategory	Enter Downtime Category and Subcategory	Inserire Categoria e Sub-Categoria di Fermo-macchina
+DOWNTIME_FROM_STRING	From: 	Von:	De:	Ds:
+DOWNTIME_MENU_HELP	Change the Downtime cagegory and subcategory names.	Ausfallzeitkategorie- und Unterkategorienamen ändern.	Cambiar la Categoria de Parada y Nombre de Subcategorias.	Cambiare i nomi delle cagegorie e subcategorie di Fermo-macchina.
+DOWNTIME_PROMPT	Down time:	Down time:	Down time:	Fermo-macchina:
+DOWNTIME_RANGE	Downtime Summary Report Range	Downtime Summary Report Range	Downtime Summary Report Range	Sommario di Report di Range di Fermo-macchina
+DOWNTIME_REPORT_SETUPS	Downtime Report Setups	Downtime Report Setups	Downtime Report Setups	Configurazione di Report di Fermo-macchina
+DOWNTIME_TO_STRING	 To: 	 Bis:	A:	 A:
+EA_TITLE	Export/Delete Alarm Summary Data	Export/Delete Alarm Summary Data	Export/Delete Alarm Summary Data	Esporta/Elimina il Sommario degli Allarmi dei Dati
+EDIT_CURRENT_PART	Edit Current Part	Edit Current Part	Edit Current Part	Modifica lo Stampo Corrente 
+EDIT_OPERATORS	Edit Operators	Edit Operators	Edit Operators	Modifica gli Operatori
+EDIT_OPERATORS_BUTTON	Edit Operators Button	Edit Operators Button	Edit Operators Button	Modifica il Bottone degli Operatori 
+EDIT_OPTIONS	Edit Options	Edit Options	Edit Options	Modifica le Opzioni
+EDIT_PART	Edit Part	Edit Teil	Edit Part	Modifica gli Stampi
+EDIT_PC_PROFILE	Edit Pres Control Profile	Edit Pres Control Profile	Edit Pres Control Profile	Modifica la Pressione di Controllo del Profilo
+EDIT_PC_SETUP	Edit Pres Control Setup	Edit Pres Control Setup	Edit Pres Control Setup	Modifica la Configurazione della Pressione di Controllo
+EDIT_PW	Edit Passwords	Edit Passwords	Edit Passwords	Modifica le Password
+EDIT_SETUP	Edit the Setup Sheet	Edit the Setup Sheet	Edit the Setup Sheet	Modifica la Pagina delle Configurazioni
+EDIT_SHIFTS_MENU_HELP	Edit the shift start times	Anfangszeiten der Schichten bearbeiten.	Editar horatios de comienzo Turnos.	Edit the shift start times
+EDIT_STATUS_SCREEN_MENU_HELP	Edit column widths of the Status Screen	Spaltenbreiten der Statusanzeige ändern	Editar ancho de las columnas de la Pantalla de Estado	Modifica la colonna della Larghezza dello Status dello Schermo
+EDIT_STATUS_SCREEN_MENU_STRING	Edit Status Screen Setup	Statusanzeige-Einstellungen bearbeiten	Editar Estado de la Pantalla Setup	Modifica lo Status dell'Impostazione dello Schermo
+EDIT_ST_SETUP	Edit SureTrak2 Setup	Edit SureTrak2 Setup	Edit SureTrak2 Setup	Modifica l'Impostazione SureTrak2
+EDITDOWN_MENU_HELP	Change or add a record telling why a machine is down.	Datensatz ändern oder hinzufügen und Grund des Maschinenausfalls vermerken.	Cambiar o agregar un registro explicando por qué la máquina està apagada.	Modifica o aggiungi un registro che spieghi perché una macchina è spenta.
+EMPTY_LIST	The list is empty.	Diese Liste ist leer.	La lista está vacía.	La lista è vuota.
+ENABLE_SNAPSHOT	Pressing the Print Screen button prints current profile.	Pressing the Print Screen button prints current profile.	Pressing the Print Screen button prints current profile.	Premere il bottone di Stampa dello Schermo button per stampare il profilo corrente.
+ENCRYPT_PW	Encrypt Passwords	Encrypt Passwords	Encrypt Passwords	Codifica le Password
+END_PARENS_STRING	 )	 )	)	 )
+ENTER_BISCUIT	Enter the size of the biscuit for this shot:	Enter the size of the biscuit for this shot:	Enter the size of the biscuit for this shot:	Inserire la misura di uno dei fagioli per questo colpo:
+ENTER_PW	Enter Password:	Enter Password:	Enter Password:	Inserire Password:
+EXIT_MENU_HELP	Exit the program	Das Programm verlassen	Salida de Programa	Esci dal programma
+EXPORT_ALARMS_MENU_HELP	Copy alarm summary data to the windows clipboard for use by other programs.	Alarmüberblickdaten für andere Programme in die Windows-Zwischenablage kopieren.	Copiar resumen datos de alarma de resumen en el Clipboard de Windows por otros programas.	Copia il sommario dei dati degli allarmi alla finestra degli appunti per usare altri programmi.
+EXPORT_DOWNTIMES	Export to Clipboard	Export to Clipboard	Export to Clipboard	Esporta negli Appunti 
+EXPORT_NO_CSV_STRING	No CSV file name specified	Kein Name für CSV-Datei angegeben.	Falta nombre fichero CSV especificado.	Nessun file CSV specificato
+EXPORT_OF_STRING	 of 	 von	de	 di
+EXPORT_SHOT_PARAMS	Export Shot Parameters	Export Shot Parameters	Export Shot Parameters	Esporta i Parametri del Colpo
+EXPORT_SHOTS_MENU_HELP	Copy parameter data to the windows clipboard for use by other programs.	Parameterdaten für den Gebrauch bei anderen Programmen in die Windows-Zwischenablage kopieren.	Copiar datos de parámetros en el portapapeles de Windows para su uso por otros programas	Copia i dati dei parametri data nella finestra degli appunti per usare altri programmi.
+EXPORT_TO_CLIP	Export to Clipboard	Export to Clipboard	Export to Clipboard	Esporta negli Appunti
+EXPORT_TO_CSV	Export to CSV File	Export to CSV File	Export to CSV File	Esporta nel File CSV 
+EXPORT_TOO_SMALL_STRING	Disk too small	Platte zu klein	Disco demasiado pequeño	Disco troppo piccolo
+EXPORT_WRITTEN_STRING	 bytes written.	 bytes geschrieben.	bytes escribidos	 bytes scritti.
+EXTERNAL_SHOT_NAME	External Shot Name	External Shot Name	External Shot Name	Nome del Colpo Esterno
+FASTRAK_CH_1_STRING	FasTrak Channel 4	FasTrak Kanal 1	FasTrak Canal 1	Canale FasTrak 4
+FASTRAK_CH_2_STRING	FasTrak Channel 4	FasTrak Kanal 2	FasTrak Canal 2	Canale FasTrak 4
+FASTRAK_CH_3_STRING	FasTrak Channel 4	FasTrak Kanal 3	FasTrak Canal 3	Canale FasTrak 4
+FASTRAK_CH_4_STRING	FasTrak Channel 4	FasTrak Kanal 4	FasTrak Canal 4	Canale FasTrak 4
+FIELD_TOO_LONG_STRING	Maximum number of characters = 	Maximale Anzahl von Zeichen =	Número máximo de caracteres =	Numero Massimo di caratteri =
+FIELD_TOO_SHORT_STRING	Field cannot be empty	Field cannot be empty	El campo no puede estar vacío	Il Campo non può essere vuoto
+FIX_LIMITS	Fix Limits	Fix Limits	Fix Limits	Fissare i Limiti
+FIX_RANGE	Fix the Range of These Axes	Fix the Range of These Axes	Fix the Range of These Axes	Fissa i Range di questi Assi
+FIXED_AXIS_STRING	Fixed	Feststehend	Fijo	Fissato
+FONT_STATUS_SCREEN_MENU_HELP	Choose the font for the Status Screen	Schriftart für Statusseite wählen	Seleccione el tipo de lètra por la Pantalla de Estado	Scegli il font per lo Status dello Schermo
+FONT_STATUS_SCREEN_MENU_STRING	Choose Font	Schriftart wählen	Seleccione el tipo de lètra	Scegli il Font
+FROM_PROMPT	From:	From:	From:	Da:
+FT2_MONITOR	FasTrak2 Board Monitor	FasTrak2 Board Monitor	FasTrak2 Board Monitor	Scheda di Monitor FasTrak2
+GRID	Grid	Grid	Grid	Rete
+HAVE_SURETRAK	Have Sure-Trak Control	Have Sure-Trak Control	Have Sure-Trak Control	Avere il Controllo Sure-Trak 
+HEAD_PRES_ZOOM_STRING	Head Pres	Kopfdruck	Presiòn en Cabeza	Pressione frontale
+HEAD_PRES_STRING	Head Pressure	Kopfdruck	Presiòn de Cabeza	Pressione frontale
+HEAD_PRESSURE_LABEL_STRING	Head	Kopf	Cabeza	Fronte
+HELP_MENU_HELP	View the main help file.	Hilfefunktion Hauptdatei einsehen.	Ver el archivo de ayuda principal.	Visualizzare il file d'aiuto principale.
+HIDE_ST_LS_WIRES	Hide Sure-Trak Limit Switch Wires	Hide Sure-Trak Limit Switch Wires	Hide Sure-Trak Limit Switch Wires	Nascondere i Cavi di Fine-Corsa Sure-Trak
+HIGH_ALARM_STRING	High Alarm	Oberer Alarmwert	Alarma Alto	Allarme Alto
+HIGH_LIMIT_STRING	High Limit	Obere Grenze	Limite Superior	Alto Limite
+HIGH_WARNING_STRING	High Warning	Warnung: Überschreitung	Advertencia Alto	Alta Avvertenza
+HIGHLIGHT_PARAMS	Highlight the parameters you wish to diplay in the Statistical Summary and press OK.	Highlight the parameters you wish to diplay in the Statistical Summary and press OK.	Highlight the parameters you wish to diplay in the Statistical Summary and press OK.	Evidenziare i parametri che si desiderano vedere nel Sommario delle Statistiche e premere OK.
+HISTOGRAM	Histogram	Histogram	Histogram	Istogramma
+HOUR_AND_DAY	Hour and Day	Hour and Day	Hour and Day	Ora e Giorno
+HOURS_STRING	Hours	Stunden	Horas	Ore
+HUMAN_DOWN_STRING	 Down 	 Stillstand	Parada	 Fermo
+HUMAN_DOWN_TT_STRING	Human Down	Personal bestätigt Stillstand	Parada de Operario	Fermo Manuale
+INPUT_ERROR_STRING	Input Error	Fehler: Eingänge	Error de inserciòn.	Errore d'Entrata
+KILLING_ALARMSUM_DATA_STRING	Deleting Alarm Summary Data...	Alarmüberblickdaten werden gelöscht...	Eliminación Resumen de datos de alarma.	Eliminazione del Sommario dei Dati di Allarme in corso...
+LAST_50_SCREEN_MENU	Last 50 Shots Screen	Anzeige der letzten 50 Schüsse	Pantalla de Última 50 Inyecciones	Schermo degli Ultimi 50 Colpi
+LAST_50_SCREEN_MENU_HELP	Show the corner parameter alarm states for the last 50 shots	Die Alarmzustände der letzten 50 Schüsse im Eckkästchen anzeigen.	Mostrar la esquina de estados alarma de los parámetros en las últimas 50 Inyecciones	Mostra gli stati dell'allarme dell'angolo di parametro per gli ultimi 50 colpi
+LAST_STRING	Last	Last	Last	Ultimo
+LIST_OF_MA	List of Machines	List of Machines	List of Machines	Lista di Macchine
+LISTBOX_FULL_MESSAGE	The Corner Parameter Box is full.	Parameter-Eckkästchen ist voll.	La Caja en Esquina de Parametros està llena.	Il Box dell'Angolo del Parametro è pieno.
+LOADING_MA	Loading Machines from Network...	Loading Machines from Network...	Loading Machines from Network...	Caricamento delle Macchine dal Network...
+LOG_SHOTPARM_ACCESS	Log SHOTPARM Access	Log SHOTPARM Access	Log SHOTPARM Access	Log SHOTPARM Access
+LOG_TO_FILE	Save Alarms to File:	Save Alarms to File:	Save Alarms to File:	Salva Allarmi dal File:
+LOG_TO_PRINTER	Save Alarms to Printer:	Save Alarms to Printer:	Save Alarms to Printer:	Salva Allarmi dalla Stampante:
+LOW_ALARM_STRING	Low Alarm	Unterer Alarmwert	Alarma de Bajo	Basso Allarme
+LOW_LIMIT_STRING	Low Limit	Untere Grenze	Limite Inferior	Basso Limite
+LOW_WARNING_STRING	Low Warning	Warnmeldung: Unterschreitung	Advertencia Bajo	Bassa Avvertenza
+MA_SETUP	Machine Setup	Machine Setup	Machine Setup	Configurazione di Macchina
+MA_TO_DISP_RT	Machines to Display Realtime	Machines to Display Realtime	Machines to Display Realtime	Macchine da visualizzare in Tempo reale
+MACH_UP_STRING	 Running 	 In Betrieb	Activo	 Attivazione
+MACH_UP_TT_STRING	Machine is running ok	Maschine läuft OK	La Màquina esta trabajando OK	La Macchina è in funzione
+MACH_UTILIZATION_STRING	Machine Utilization	Maschinen-Auslastung	Utilizaciòn de la Màquina	Utilizzo della Macchina
+MACHINE_EDITOR_MENU_HELP	Machine Setup, Advanced Machine Setup	Maschinen-Einstellungen, weitere Maschinen-Einstellungen	Configuración de la Màquina, Configuración avanzada	Configurazione della Macchina, Configurazione Avanzata della Macchina
+MACHINE_LABEL_STRING	Machine	Maschine	Màquina	Macchina
+MACHINE_TT_STRING	Name of the Die Cast Machine	Name der Druckguss-Maschine	Nombre de la Prensa	Nome della Macchina di Pressofusione
+MAKE_ALL_DAYS	Make All Days Like This Day	Make All Days Like This Day	Make All Days Like This Day	Regola tutti i Giorni come questo Giorno
+MASTER_EXISTS_STRING	A MASTER trace already exists	Eine Hauptkennlinie ist bereits vorhanden	Una curva de Referencia ya existe.	Traccia di Referenza già esistente
+MAX_DOWNTIME_HOURS_STRING	99999.99	99999.99	99999.99	99999.99
+MAX_DOWNTIME_PERCENT_STRING	100.00%	100.00%	100.00%	100.00%
+MAX_LINES	Max Lines in File	Max Lines in File	Max Lines in File	Linee Massime nel File
+MAX_OVERLAY_REACHED_STRING	Maximum Number of shots are displayed	Maximale Anzahl Schüsse werden angezeigt	Número máximo de Inyecciones visualizadas	Numero Massimo di Colpi da visualizzare 
+MINIMIZE_MENU_HELP	Minimize the display screen	Anzeigeseite minimieren	Minimizar la pantalla	Minimizzare lo schermo del display
+MON_WIRE	Monitor Wire ( 0 for None )	Monitor Wire ( 0 for None )	Monitor Wire ( 0 for None )	Cavo del Monitor ( 0 per annullare )
+MONITOR_CONFIG_MENU_HELP	Choose Current Part Monitor Alarms Post Impact Sample Time Shot Skip	Aktuelles Gussteil, Alarm- Überwachung, Zeitprobe nach Aufprall, Schuss ausblenden wählen.	Seleccione Pieza Actual de Monitorar Alarmas, Post Impacto, Tiempo de Adquisiciòn	Selezionare lo Stampo Attuale da Monitorare Allarmi Stop all'Impatto Tempo di Campionamento Escludi Colpo  
+MONITORED	Monitored	Monitored	Monitored	Monitorato
+MS_TIME_LABEL_STRING	TIME (MS)	Zeitdauer (mSek)	Tiempo (mSec)	TEMPO (MS)
+MULTIPART_RUNLIST_CHOOSE_WIRES_METHOD	Method for Choosing Multipart Runlist Wires	Method for Choosing Multipart Runlist Wires	Method for Choosing Multipart Runlist Wires	Method for Choosing Multipart Runlist Wires
+MULTIPLE_PRINT_STRING	Multiple Shot Printing	Mehrfachschüsse ausdrucken	Impresión Inyecciones múltiple 	Stampaggio di Colpi Multipli
+MULTIPLE_SHOT_PRINT_MENU_HELP	Choose a number of shots to be printed at once	Anzahl der Schüsse für sofortige Ausgabe zum Drucker wählen.	Seleccione un Nùmero de Inyecciones que se imprimirá a la vez	Selezionare un numero di colpi da stampare in una volta sola
+MULTIPLIER	Multiplier	Multiplier	Multiplier	Moltiplicatore
+MUST_HAVE_ONE_STRING	You must have at least one shift entry per day.	Mindestens einen Schichteintrag pro Tag machen.	Se debe tener al menos una entrada de Turno por dìa.	Si consiglia di avere almeno un'entrata di turno per giorno.
+MUST_RELOAD	If this is the current part in the Part Setup program you MUST RELOAD THE PART in that program in order for it to recognize the change.	If this is the current part in the Part Setup program you MUST RELOAD THE PART in that program in order for it to recognize the change.	If this is the current part in the Part Setup program you MUST RELOAD THE PART in that program in order for it to recognize the change.	Se questo è lo stampo attuale nella configurazione del Programma dello Stampo,  si deve RICARICARE LO STAMPO in quel programma per far sì che si riconosca la modifica.
+N_EQUALS_STRING	 ( Group Size = 	  ( Größe der Gruppe =	(Tamaño del grupo =	 ( Dimensione del Gruppo =
+N_PER_GROUP_STRING	 Group Size = 	Größe der Gruppe =	Tamaño del grupo =	 Dimensione del Grupporoup =
+NEXT_DAY_STRING	&Next Day	Morgen	Dìa Siguiente	&Giorno Seguente
+NEXT_SHIFT_STRING	&Next Shift	Nächste Schicht	Turno Siguiente	&Turno Seguente
+NEXT_STRING	Next	vorwärts	Siguiente	Prossimo
+NO_ALARM_DATA_STRING	No alarm data found	Keine Alarmdaten gefunden.	Ningun Dato de Alarma	Nessun dato di allarme trovato
+NO_ALARM_HIST_COLOR	No Alarm History Color	No Alarm History Color	No Alarm History Color	Nessuna Cronologia di Colore di Allarme
+NO_ALARM_STRING	In Spec	Innerhalb Nennwerte	En Especificaciones	In Specificazione
+NO_ALARM_TEXT_COLOR	No Alarm Text Color	No Alarm Text Color	No Alarm Text Color	Nessun Testo di Colore dell'Allarme
+NO_DEL_ALL_ROWS_STRING	You may not delete all the rows	Alle Zeilen können nicht gelöscht werden.	No se debe borrar todas las filas.	Non eliminare tutte le righe
+NO_DOWN_STRING	 Down??? 	 Stillstand	Parada???	 Fermo???
+NO_DOWN_TT_STRING	New machine or no downtime set	Neue Maschine oder keine Ausfallzeit bestimmt	Nueva Màquina o ningùn dato de Parada insertado.	Nuova macchina o nessuna configurazione di Fermo
+NO_DOWNTIME_DATA_STRING	No downtime data found	Keine Ausfalldaten gefunden.	Ningun dato de Parada	Nessun dato di fermo trovato
+NO_DOWNTIME_SELECTED_STRING	No Downtime Selected	Keine Ausfallzeit gewählt.	Ningun dato de Parada seleccionado	Nessun Fermo Selezionato
+NO_GRAPHS_FOUND_STRING	No Profiles found	Keine Profile gefunden	Ningun dato de perfiles	Profili non trovati
+NO_MACHINES_HERE	There are no machines at this computer.	Dieser Rechner hat keine Maschinen.	No hay Màquinas en esto Ordenador.	Non ci sono macchine collegate a questo computer.
+NO_MEM_FOR_SORT_STRING	Unable to allocate memory for sorting	Kein Arbeitsspeicher zum Sortieren verfügbar.	No se puede asignar memoria por el ordinamiento	Impossibile distribuire memoria per lo smistamento
+NO_MEMORY_STRING	Unable to allocate memory	Kein Arbeitsspeicher verfügbar.	No se puede asignar memoria	Impossibile distribuire memoria
+NO_MONITOR_STRING	 NoMonitor 	 Keine Überwachung	NoMonitor	 Nessun Monitor
+NO_MONITOR_TT_STRING	Monitoring is turned off on this machine	Überwachung dieser Maschine ist ausgeschaltet. El moitoreo està apagado en esta Màquina.	Il Monitoraggio è spento su questa macchina
+NO_MORE_THAN	This field can have no more than	This field can have no more than	This field can have no more than	Questo campo non può avere più di
+NO_NETWORK	No Network	No Network	No Network	Nessun Network
+NO_STAT_SUMMARY_MENU_HELP	Remove the statistical summary	Statistischen Überblick entfernen.	Elimine el Resumen estadistico	Rimuovere il Sommario statistico 
+NO_STAT_SUMMARY_MENU_STRING	No Statistical Summary	Kein statistischer Überblick	Ningun Resumen Estadistico	Nessun Sommario Statistico 
+NO_STRING	No	Nein	No	No
+NOF_POINTS	Number of Points	Number of Points	Number of Points	Numero di Punti
+NORMAL	Normal	Normal	Normal	Normale
+NOTHING_SELECTED_STRING	Nothing Selected	Noch nichts gewählt.	No hay nada seleccionado	Nessun Elemento Selezionato
+NOTHING_TO_DISPLAY_STRING	Nothing To Display	Nichts anzuzeigen	No hay nada para mostrar	Nessun Elemento da Mostrare
+NOTHING_TO_EXPORT_STRING	Nothing to export	Nichts zu exportieren	No hay nada para exportar	Nessn Elemento da esportare
+OFF_LINE_STRING	Off Line	Offline	Fuera de línea	Off Line
+OPERATOR	Operator	Operator	Operator	Operatore
+OPERATOR_ABREVIATION_STRING	Abreviation	Abkürzung	Abreviatura	Abreviazione
+OPERATOR_FIRST_NAME_STRING	First Name	Vorname	Nombre	Primo Nome
+OPERATOR_LAST_NAME_STRING	Last Name	Nachname	Apellido	Ultimo Nome
+OPERATOR_NOT_FOUND	Operator Not Found.	Keine Bedienperson gefunden.	Ningùn Operador	Operatore Non Trovato.
+OPERATOR_SIGNON	Operator Signon	Operator Signon	Operator Signon	Login dell'Operatore
+OPERATOR_SIGNON_MENU_HELP	Choose the operator assigned to a machine.	Die für die Maschine bestimmte Bedienperson wählen.	Elegir el operador asignado a una máquina.	Scegliere l'operatore assegnato alla macchina.
+OVERLAY_MENU_HELP	With overlay on old shot profiles are not erased	Bei Überlagerung vorheriger Schüsse werden keine Profile gelöscht.	Con recubrimiento curvas Viejos perfiles de Inyecciòn no se borran	Con la sovrapposizione i profili non vengono cancellati
+PARAMETERS_STRING	Parameters	Parameters	Parámetros	Parametri
+PARAMETER_VALUE_STRING	Value	Wert	Valor	Valore
+PARAMS_LABEL_STRING	Params	Param	Param	Parametri
+PARAMS_TO_DISPLAY	Parameters to Display	Parameters to Display	Parameters to Display	Parametri da Visualizzare
+PART_BASED_DISPLAY	Use Part Based Corner Parameters and Trend Chart Setups	Use Part Based Corner Parameters and Trend Chart Setups	Use Part Based Corner Parameters and Trend Chart Setups	Usare i Parametri d'Angolo Basati sullo Stampo e Configurazione dei Diagrammi di Trend 
+PART_EDITOR_MENU_HELP	Basic Setup, Advanced Setup, Parameters, Positions, Marks, Channels, SureTrak	Grundeinstellungen, weitere Einstellungen, Parameter, Wegstrecken, Beschriftungen, Kanäle, SureTrak	Configuración básica, Configuración avanzada, parámetros, Posiciones, Marcas, Canales, SureTrak	Configurazione Basica, Configurazione Avanzata, Parametri, Posizioni, Marche, Canali, SureTrak
+PART_INTRO_STRING	  Part :	  Gussteil:	Pieza:	  Stampo :
+PART_LABEL_STRING	Part	Gussteil	Pieza	Stampo
+PART_SETUP	Part Setup	Part Setup	Part Setup	Configurazione dello Stampo
+PART_TT_STRING	Current Part or Mold Name	Jetziger Name für Gussteil oder Form.	Pieza Actual o nombre del Molde	Stampo Corrente o Nome della Forma
+PASSWORD_NOT_FOUND_STRING	Password not found	Kennwort nicht gefunden.	No Contraseña	Password non trovata
+PASSWORDS_MENU_HELP	Change the current password level and edit the password list.	Bisherige Kennwortstufe ändern und Kennwortliste bearbeiten.	Cambiar el nivel de la contraseña actual y editar la lista de contraseñas.	Cambia il Livello della password corrente e modificare la lista delle password.
+PLOT_PROG	Plot Program	Plot Program	Plot Program	Configurazione Grafici 
+POINTS	Points	Points	Points	Punti
+POS_ONLY_MENU	Position Based	Auf Wegstrecke basiert	Base Posiciòn	Basato sulla Position 
+POS_ONLY_MENU_HELP	Display pre-impact data only.	Nur Daten vor Aufprall anzeigen.	Mostrar Datos de Pre-Impacto sòlamente	Mosptra solo i dati pre-impatto.
+POS_TIME_MENU	Position/Time Base	Wegstrecke/Zeitbasis	Base Posiciòn/Tiempo	Base Posizione/Tempo 
+POS_TIME_MENU_HELP	Display pre-impact data vs position and post-impact data vs time.	Daten vor Aufprall vs. Wegaufnahme und Daten nach Aufprall vs. Zeit anzeigen.	Mostrar Datos de Pre-Impacto vs Posiciòn y Datos Post-Impacto vs Tiempo	Mostra i dati pre-impatti vs i dati di posizione post-impatto vs tempo.
+POSITION_TYPE_STRING	POSITION	Wegstrecke	POSICION	POSIZIONE
+PRESENT	Present	Present	Present	Presente
+PRESS_SAVE	Press the Save button to save this value to the current part setup.	Press the Save button to save this value to the current part setup.	Press the Save button to save this value to the current part setup.	Premere il Bottone di Salvataggio per salvare questo valore nella configurazione dello stampo corrente.
+PRESSURES	Pressures	Pressures	Pressures	Pressioni
+PRESSURE_TYPE_STRING	PRESSURE	Druck	PRESION	PRESSIONE
+PREV_DAY_STRING	Previous Day	Gestern	Ayer	Giorno Precedente
+PREV_SHIFT_STRING	Previous Shift	Vorherige Schicht	Turno anterior	Turno Precedente
+PREV_STRING	Previous	zurück	Anterior	Precedente
+PRINT_MENU_HELP	Print the current shot	Gegenwärtigen Schuss drucken	Imprimir la Inyecciòn actual	Stampa il colpo corrente
+PRINT_MULTIPLE	Print Multiple Shots	Print Multiple Shots	Print Multiple Shots	Stampa Colpi Multipli
+PRINT_PARAMS	Print parameters with Setup	Print parameters with Setup	Print parameters with Setup	Stampa parametri con Configurazione
+PRINTER	Printer	Printer	Printer	Stampante
+PRINTER_LIST_STRING	Printer List [EnumPrinters]	Druckerliste [EnumPrinters]	Lista de Impresoras [EnumPrinters]	Lista delle Stampanti [EnumPrinters]
+PRINTING_COMPLETE_STRING	Printing Complete	Drucken beendet	Impresiòn Completa	Stampa Completa
+PROCESS_MON	Process Monitoring System	Process Monitoring System	Process Monitoring System	Processo di Monitoraggio del Sistema
+PROFILE_SCREEN_MENU_HELP	Display the profile of the current shot.	Profil für den aktuellen Schuss anzeigen.	Mostra el perfil de la Inyecciò actual	Mostra il profilo del colpo corrente.
+PROG_DOWN_STRING	 NoMonTask 	 Kein Mon-Task	No MonTask	 NoMonTask
+PROG_DOWN_TT_STRING	Board Monitor Task is not running	Modulüberwachung nicht in Betrieb.	BoardMonitor Task no està activo	La Scheda di Task del Monitor non è attiva
+PROG_UP_STRING	 Monitor 	 Überwachung	Monitoreo	 Monitor
+PROG_UP_TT_STRING	Monitor just started, no shot yet	Überwachung begonnen, noch kein Schuss	Monitor iniciado, ningùna Inyecciòn asta ahora	Il Monitor è partito, ancora nessun colpo
+PURGE_DOWNTIMES	Purge Alarms and Downtimes	Purge Alarms and Downtimes	Purge Alarms and Downtimes	Azzera Allarmi e Fermomacchina
+PW_BLANK_STRING	You cannot have blank levels or passwords	Kennwörter oder -stufen können nicht leer sein.	No se puede tener los niveles de contraseñas en blanco	Impossibile creare livelli bianchi o password
+PW_COL_0_STRING	Level	Stufe	Nivel	Livello
+PW_COL_1_STRING	Password	Kennwort	Contraseña	Password
+PW_COL_2_STRING	User Name	Benutzername	Nombre del Usuario	Utente
+PW_DUPLICATE_STRING	Duplicate Password	Kennwort zweifach vertreten.	Duplicar Contraseña	Dupplicare la Password
+PW_LEVELS	Password Levels:	Password Levels:	Password Levels:	Livelli di Password:
+QUANTITY_ABOVE_STRING	Quantity Above	Anzahl über	Cantitad por encima	Quantità Sopra
+QUANTITY_BELOW_STRING	Quantity Below	Anzahl unter	Cantitad por debajo	Quantità Sotto
+RANGE_END	Save as Range End	Save as Range End	Save as Range End	Salva come Range Finale
+RANGE_START	Save as Range Start	Save as Range Start	Save as Range Start	Salva come Range Iniziale
+RAW_COUNTS	Raw Counts	Raw Counts	Conteos en bruto	Conto delle Righe
+REALTIME_OFF_MENU_STRING	Selected Shot	Gewählter Schuss	Inyecciones seleccionadas	Colpo Selezionato
+REALTIME_ON_MENU_STRING	Live Shots	Schüsse in Echtzeit	Inyecciones en Tiempo real	Colpi in Tempo Reale
+REALTIME_SINGLE_MENU_STRING	Live Shots on One Machine	Schüsse in Echtzeit, eine Maschine	Inyecciones en Tiempo real en una Màquina	Colpi in Tempo Reale su una Macchina
+REFERENCE	Reference	Reference	Reference	Riferimento
+REPLACE_MASTER_STRING	Do you want to replace it?	Soll diese ersetzt werden ?	¿Quieres reemplazarlo?	Si desidera rimpiazzarlo?
+RESTART	You must restart the affected programs for the changes to take place.	You must restart the affected programs for the changes to take place.	You must restart the affected programs for the changes to take place.	E' necessario ripristinare i programmi affiliati per salvare le modifiche.
+RESTART_MONITOR_STRING	You must restart the FasTrak Board Monitor	Überwachung des FasTrak-Moduls muss neu gestartet werden.	Debe reiniciar FasTrak Monitor Board	E' necessarrio ripristinare la Scheda di Monitor FasTrak 
+RESTORE_COLORS	Restore Original Colors	Restore Original Colors	Restore Original Colors	Ripristinare i Colori Originali 
+RESTORE_DEF_PW	Restore DEFAULT password after this many minutes.	Restore DEFAULT password after this many minutes.	Restore DEFAULT password after this many minutes.	Ripristinare la password di DEFAULT dopo questi molti minuti.
+RESTORE_PASSWORD_MENU_HELP	Make the current password level equal to the default level.	Aktuelles Kennwort der Normalstufe gleichstellen.	Hacer que el nivel de contraseña actual es igual al nivel predeterminado.	Rendere il livello della password corrente uguale al livello di default.
+ROD_PRES_ZOOM_STRING	Rod Pres	Stempeldruck	Presiòn del Pistòn	Pressione del Pistone
+ROD_PRES_STRING	Rod Pressure	Stempeldruck	Presiòn del Piston	Pressione del Pistone
+ROD_PRESSURE_LABEL_STRING	Rod	Stempel	Piston	Pistone
+SAVE_ALARMS	Save All Alarm Shots	Save All Alarm Shots	Save All Alarm Shots	Salva Tutti i Colpi d'Allarme
+SAVE_ALL_PARTS	Save All Parts	Save All Parts	Save All Parts	Salva Tutti gli Stampi
+SAVE_AS_MASTER_MENU_HELP	Saves the current shot as the reference.	Aktueller Schuss wird als Bezug abgespeichert.	Guardar la Inyeccion actual como Referencia	Salva i colpi correnti come riferimento.
+SAVE_DEFAULT	Save as the Default Configuration	Save as the Default Configuration	Save as the Default Configuration	Salva la Configurazione di Default 
+SAVE_MENU_HELP	Toggle whether this shot is saved permanently or not	Wählen ob dieser Schuss dauerhaft gespeichert werden soll oder nicht.	Seleccionar si esta inyeccion se guarda de forma permanente o no	Azionare se questo colpo è savlato permanentemente
+SAVE_STATUS_SCREEN_MENU_HELP	Save changes to the Status Screen	Änderungen zur Statusanzeige speichern	Guarde los cambios en la pantalla de estado	Salvare modifiche dello Status dello Schermo
+SAVE_STATUS_SCREEN_MENU_STRING	Save Status Screen Setup	Statusanzeige-Einstellungen speichern	Guardar el Setup de la Pantalla de Estado	Salvare la Configurazione dello Status dello Schermo 
+SAVE_TO_CLIP	Save to Clipboard	Save to Clipboard	Save to Clipboard	Salvare negli Appunti
+SAVE_TSL	Save Total Stroke Length	Save Total Stroke Length	Save Total Stroke Length	Salvare Lunghezza Totale del Pistone
+SCREEN	Screen	Screen	Screen	Schermo
+SEC_TIME_LABEL_STRING	TIME (SEC)	Zeitdauer (Sek)	Tiempo (Sec)	TEMPO (SEC)
+SELECT_ROW_STRING	You must select one or more rows by clicking the row number	Ein oder mehrere Zeilen durch Anklicken der Zeilennummer wählen.	Se debe seleccionar una o más filas, haga clic en el número de fila.	E' necessario selezionare uno o più righe cliccando il numero della riga
+SET_PW_LEVEL	Set Password Level	Set Password Level	Set Password Level	Imposta Livello di Password 
+SET_TSL_CAPTION	Set the Total Stroke Length Using The Current Shot	Set the Total Stroke Length Using The Current Shot	Set the Total Stroke Length Using The Current Shot	Impostare la Lunghezza Totale del Pistone Usando il Colpo Attuale
+SETUPS_MENU_HELP	FasTrak Boards at this computer, assign machines to FasTrak Boards, Computer pathnames	FasTrak Modul auf diesem Rechner, Maschinen dem FasTrak Modul zuordnen	Tarjetas FasTrak en este Ordenador, asigne las máquinas a las Tarjetas FasTrak, Directorios de Ordenador	Schede FasTrak a questo computer, assegnare le macchine alla Scheda FasTrak, percorso di Computer
+SHIFT_AND_DAY	Shift and Day	Shift and Day	Shift and Day	Turno e Giornata
+SHIFT_CHANGES_STRING	Shift changes have been saved. 	Schichtänderungen wurden abgespeichert.	Los cambios de turnos se han guardado	Le modifiche del turno sono state savlvate.
+SHIFT_REPORT_MENU_HELP	Plot the downtime status of machines vs time.	Ausfallzeiten der Maschine vs. Laufzeit aufzeichnen.	Trazar estado inactividad de las máquinas frente al tiempo.	Tracciare lo status di fermomacchina delle macchine vs tempo.
+SHIFT_SETUP	Shift Setup	Shift Setup	Shift Setup	Confgurazione del Turno
+SHIFT_STRING	Shift	Schicht	Turno	Turno
+SHIFT_TIME_TITLE_STRING	Shift-Time Setup	Einstellung der Schichtzeiten	Horario de Turnos	Configurazione degli Orari di Turno
+SHOT_COUNT_RESET	Shot Count Reset	Shot Count Reset	Shot Count Reset	Reset del Conto dei Colpi
+SHOT_LABEL_STRING	Shot	Schuss	Inyeccion	Colpo
+SHOT_NAME_TEMPLATE	Shot Name Template	Shot Name Template	Shot Name Template	Nome del Modello del  Colpo
+SHOT_RANGE	Shot Range from	Shot Range from	Shot Range from	Range del Colpo Range da
+SHOT_TT_STRING	Most Recent Shot Number	Letzte Schussnummer	Nùmero Inyecciòn más reciente	Numero di Colpo più recente
+SHOTS_LABEL_STRING	Shots	Schüsse	Inyecciones	Colpi
+SHOW_MON_LEVEL	FasTrak Board Interface appears on the main menu.	FasTrak Board Interface appears on the main menu.	FasTrak Board Interface appears on the main menu.	La Scheda di Interfaccia FasTrak appare sul menu principale.
+SHOW_SETUP	Show Setup Sheet	Show Setup Sheet	Show Setup Sheet	Mostra la Configurazione sul Foglio
+SMOOTH	Smooth	Smooth	Smooth	Morbido
+SMOOTHING	Smoothing	Smoothing	Smoothing	Ammorbidire
+SN_PROMPT	Serial Number:	Serial Number:	Serial Number:	Numero Seriale:
+SOME_VERSIONS_TOO_OLD_STRING	Some versions too old for encrypted passwords.	Some versions too old for encrypted passwords.	Algunas versiones muy viejas para utilizar contraseñas encriptadas.	Alcune versioni sono troppo per le password criptate.
+SORT_BY_CO	Sort by Computer	Sort by Computer	Sort by Computer	Ordina per Computer
+SORT_BY_MA	Sort by Machine	Sort by Machine	Sort by Machine	Ordina per Macchina
+STANDARD_DOWNTIMES_MENU_HELP	Setup standard codes for auto down at break times, etc.	Standardzeichen für Auto-Stillstand bei Pausen usw. einrichten.	Configuración estándar de los códigos para auto apagamiento en los descansos, etc	Configurazione dei codici standard per il fermo automatico nei tempi di interruzione, etc.
+SORT_SUBS	Sort Sub-Categories by Category	Sort Sub-Categories by Category	Sort Sub-Categories by Category	Sort Sub-Categorie dalle Categorie
+STANDARD_DOWNTIMES_MENU_HELP	Setup standard codes for auto down at break times, etc.	Setup standard codes for auto down at break times, etc.	Setup standard codes for auto down at break times, etc.	Configura i codici standard per il fermo automatico nei tempi di interruzione, etc.
+START_OF_SHIFT	Start Of Shift	Start Of Shift	Start Of Shift	Inizio del Turno
+START_SCREEN	Startup Screen	Startup Screen	Startup Screen	Startup Screen
+START_TIME	Start Time	Start Time	Start Time	Inizio del Tempo
+STAT_N_EQUALS_STRING	N = 	N =	N =	N =
+STAT_SUMMARY_MENU_HELP	Display a statistical summary of the parameters in the selected shot range	Statistischen Parameterüberblick für den gewählten Schussbereich anzeigen.	Muestra un resumen estadístico de los parámetros en el rango de Inyecciones seleccionadas	Mostra un sommario statistico dei parametri nel range di colpo selezionato
+STAT_SUMMARY_MENU_STRING	Statistical Summary	Statistische Übersicht	Resumen Estadistico	Sommario Statistico
+STATSUM_AVERAGE_STRING	Average	Durchschnitt	Promedio	Media
+STATSUM_CPK_STRING	Cpk	Cpk	Cpk	Cpk
+STATSUM_HIGH_STRING	High	Überschreitung	Alto	Alto
+STATSUM_LCL_STRING	LCL	LCL	LCL	LCL
+STATSUM_LOW_STRING	Low	Unterschreitung	Bajo	Basso
+STATSUM_MAX_STRING	Max	Max	Max	Massimo
+STATSUM_MIN_STRING	Min	Min	Min	Minimo
+STATSUM_PERCENT_OUT_STRING	%Out	%Out	%Out	%Fuori
+STATSUM_RANGE_STRING	Range	Bereich	Rango	Range
+STATSUM_STDDEV_STRING	Std.Dev 	Std.Abw.	Std.Dev	Std.Dev
+STATSUM_UCL_STRING	UCL	UCL	UCL	UCL
+STATSUM_ZLCL_STRING	Zlcl	Zlcl	Zlcl	Zlcl
+STATSUM_ZMIN_STRING	Zmin	Zmin	Zmin	Zminimo
+STATSUM_ZUCL_STRING	Zucl	Zucl	Zucl	Zucl
+STATUS_SCREEN_MENU_HELP	Display current shot, downtime, and production counts	Gegenwärtigen Schuss, Ausfallzeit und Sachleistung anzeigen Visualización de contadores Inyecciones actuales, Paradas, Producción	Visualizza il colpo corrente, il fermo-macchina, e la produzione dei conti
+STATUS_SCREEN_MENU_STRING	Status Screen	Statusanzeigeseite	Pantalla de Estado	Status dello Schermo
+STD_SCREEN_MENU	Standard Screen	Standard Anzeigeseite	Pantalla Estàndar	Schermo Standard
+STD_SCREEN_MENU_HELP	Show the standard view of the corner parameters.	Parameter im Eckkästchen in normaler Ansicht anzeigen.	Mostrar la Vista estàndar de la esquina de Parametros	Mostra la vista standard dei parametri d'angolo.
+STD_UNITS	Std Units	Std Units	Std Unidades	Std Unità
+STOP_PRINTING	Stop Printing	Stop Printing	Stop Printing	Stop Printing
+SUB_TIMEOUT	Subtract Timeout from Downtime	Subtract Timeout from Downtime	Subtract Timeout from Downtime	Time-out della Subtraccia dal Fermo-macchina
+SUBCATEGORY	Sub-Category	Sub-Category	Sub-Category	Sub-Categoria
+SURETRAK_CONTROL_MENU_HELP	Control board diagnostics, setup, and control program download.	Steuerung Modul-Diagnose, Einstellungen, und Steuerprogramm runterladen.	Control diagnóstico Tarjetas, configuración y carga programa de control	Controllo della Scheda diagnostica, configurazione, e controllo di scaricamento del programma.
+TEMPERATURE_TYPE_STRING	TEMPERATURE	Temperatur	Temperatura	TEMPERATURA
+TEXT	Text	Text	Text	Testo
+TIME_AXIS	Time Axis	Time Axis	Time Axis	Assi Tempo
+TIME_AXIS_LABEL_STRING	TIME (SEC )	Zeitdauer (Sek)	TIEMPO (SEC)	TEMPO (SEC )
+TIME_INTERVAL_STRING	TIME_INTERVAL	Zeitabschnitt	TIEMPO INTERVAL	INTERVALLO DI TEMPO
+TIME_NAME_STRING	Time	Uhrzeit	Tiempo	Tempo
+TIME_ONLY_MENU	Time Based	Auf Zeitbasis	Base Tiempo	Basato sul Tempo
+TIME_ONLY_MENU_HELP	Display entire shot vs time.	Gesamten Schuss vs. Zeit anzeigen.	Visualización Inyecciòn completa frente al tiempo	Visualizza l'intero colpo vs tempo.
+TIME_PERIOD	Time Period to Display	Time Period to Display	Time Period to Display	Periodo di Tempo da Visualizzare
+TIME_SPAN	Time Span	Time Span	Time Span	Span di Tempo
+TIME_TYPE_STRING	TIME	Zeitdauer	TIEMPO	TEMPO
+TIMEOUT_STRING	FasTrak Timeout	FasTrak Zeitsperre	Tiempo de Espera FasTrak	Time-out FasTrak
+TO_PROMPT	To:	To:	To:	To:
+TOO_MANY_GRAPHS_STRING	Too many graphs for this display	Zu viele Grafiken für dieses Anzeige	Demasiados gráficos por esta pantalla	Troppi grafici per questo display
+TOTAL_ALARM_SHOTS_INTRO_STRING	Total Alarm Shots = 	Gesamtzahl der Alarmschüsse =	Total Inyecciones Alarma =	Totale di Allarmi del Colpo =
+TOTAL_ALARM_SHOTS_STRING	Total Alarm Shots:	Gesamtzahl der Alarmschüsse:	Total Inyecciones Alarma:	Totale di Allarmi del Colpo:
+TOTAL_ALARMS	Total Alarms	Total Alarms	Total Alarms	Totale di Allarmi
+TOTAL_COUNT	Total Count	Total Count	Total Count	Totale di Conti
+TOTAL_HOURS_DOWN_STRING	Total Hours Machine Down	Gesamtzahl von Stunden Maschinenausfall	Total Horas Màquina parada	Totale di Ore di Fermo della Macchina
+TOTAL_HOURS_STRING	Total Hours Recorded	Gesamtzahl der aufgezeichneten Stunden	Total Horas guardada	Totale di Ore Registrate
+TOTAL_HOURS_UP_STRING	Total Hours Machine Up	Gesamtzahl der Stunden im Einsatz	Total Horas Màquina en servicio	Totale di Ore di Macchina Attiva
+TOTAL_SHOTS_INTRO_STRING	Total Shots = 	Gesamtzahl der Schüsse =	Inyecciones Totales =	Totale di Colpi =
+TOTAL_SHOTS_STRING	Total Shots:	Gesamtzahl der Schüsse:	Inyecciones Totales:	Colpi Totali:
+TOTAL_WARNING_SHOTS_INTRO_STRING	Total Warning Shots = 	Gesamtzahl der Schüsse mit Warnung =	Inyecciones con Advertencia Totales:	Colpi con Avvertenze Totali =
+TOTAL_WARNING_SHOTS_STRING	Total Warning Shots:	Gesamtzahl der Schüsse mit Warnung:	Nr. Total Inyecciones con Advertencia	Colpi con Avvertenze Totali:
+TOTAL_WARNINGS	Total Warnings	Total Warnings	Total Warnings	Avvertenze Totali
+TOTALS_STRING	Totals	Endsummen	Total	Totali
+TREND_ALLSHOTS_MENU_HELP	Display all shots recorded for this part	Alle für dieses Gussteil aufgezeichneten Schüsse anzeigen.	Mostrar todas las Inyecciones guardada por esta Pieza	Visualizzare tutti i colpi registrati per questo stampo
+TREND_ALLSHOTS_MENU_STRING	Show All Shots - F8	Alle Schüsse anzeigen - F8	Mostrar Todas Inyecciones - F8	Mostra Tutti i Colpi - F8
+TREND_BACKGROUND	Trend Background	Trend Background	Trend Background	Trend del Background
+TREND_CONFIG_MENU_HELP	Setup the trendchart	Tendenzgrafik einstellen	Configuraciòn del Diagrama de Tendencia	Configurazione del diagramma di trend
+TREND_CONFIG_MENU_STRING	Trend Chart Setups	Einstellung der Tendenzgrafiken	Configuraciones del Diagrama de Tendencia	Configurazioni del Diagramma di Trend 
+TREND_REALTIME_MENU_HELP	Display the most recent n shots, using n from the trendchart setups	Die allerletzten n Schüsse, mit n von der Einrichtung der Tendenzgrafik anzeigen	Mostrar las últimas màs recientes n Inyecciones, con n de Configuracion del Diagrama de Tendencia	Visualizza il numero di colpi più recenti, usando il numero dalla configurazione del diagramma di trend
+TREND_REALTIME_MENU_STRING	Live Trend Chart	Tendenzgrafik in Echtzeit	Diagrama de Tendencia en Tiempo Real	Diagramma di Trend in Tempo Reale
+TREND_SCREEN_MENU_HELP	Display a trend chart of parameter data for the current part.	Tendenzgrafik der Parameterwerte des aktuellen Gussteils anzeigen.	Mostrar un Diagrama de Tendencia de los Datos de la Pieza actual	Visualizza un diagramma di trend dei dati del parametro per lo stampo corrente.
+TREND_SCREEN_MENU_STRING	Trend Chart	Tendenzgrafik	Diagrama de Tendencia	Diagramma di Trend 
+TSL_IS	The Total Stroke Length is:	The Total Stroke Length is:	The Total Stroke Length is:	La Lunghezza Totale del Pistone è:
+TT2020	True-Trak 2020™	True-Trak 2020™	True-Trak 2020™	True-Trak 2020™
+UNITS_TITLE_STRING	Units	Einheiten	Unidades	Unità
+UNKNOWN_STRING	UNKNOWN	Nicht bekannt	DESCONOCIDO 	SCONOSCIUTO
+UNZOOM_MENU	Unzoom	Normalgröße	Unzoom	Zoom Out
+UNZOOM_MENU_HELP	Return to full display.	Auf Vollanzeige zurückgehen.	Volver a la pantalla completa	Ritorna al display intero.
+USE_LIMITS	Use Limits	Use Limits	Use Limits	Usare i Limiti
+USE_NULL_VALVE_OUTPUT	Use Null Valve Output	Use Null Valve Output	Use Null Valve Output	Usare l'Uscita della Calvola di Annullamento
+USE_POPUP	Use Popup Downtime Entry Screen	Use Popup Downtime Entry Screen	Use Popup Downtime Entry Screen	Usare il Popup del Fermomacchina dello Schermo d'Entrata
+USE_SHOT_NUMBER_XBOX	Use Shot Number for File Name	Use Shot Number for File Name	Utilizar el Nùmero de Inyecciòn como nombre de Fichero	Usare il Numero di Colpo per il Nome del File 
+USE_VALVE_TEST_OUTPUT	Use Valve Test Output	Use Valve Test Output	Use Valve Test Output	Usare il Test di Uscita della Valvola
+VEL_CHANGE_BUTTON	Velocity Changes Button	Velocity Changes Button	Velocity Changes Button	Bottone di Cambio di Velocità
+VELOCITY_TYPE_STRING	VELOCITY	Vorschub	VELOCIDAD	VELOCITA'
+VIEW_PARAMS	View Parameters	View Parameters	View Parameters	Visualizza Parametri
+VIEW_PARAMETERS_MENU_HELP	Show all the parameters for the current shot.	Alle Parameter für den aktuellen Schuss anzeigen.	Mostrar todos los parametros de la Inyeccion actual	Mostra tutti i parametri per il colpo corrente.
+VIEW_REFERENCE_TRACE_MENU_HELP	Display the reference trace with the current trace.	Bezugskennlinie zusammen mit der aktuellen Kennlinie anzeigen.	Mostrar la curva de referencia con la curva actual	Visualizza la traccia di riferimento con la traccia corrente.
+VISIEDIT_MENU_HELP	Editor for changing initialization and menu files.	Bearbeitung der Initialisierung und Menüdatein	Editor para cambiar la inicializacion y los ficheros de menù	Editore per cambiare l'inizializzazione e il menu dei file.
+VOL_TYPE_STRING	VOLUME	Volumen	Volumen	VOLUME
+WARNING_COLOR	Warning Color	Warning Color	Warning Color	Colore di Avvertenza
+WARNING_COUNTS	Warning Counts	Warning Counts	Warning Counts	Conto delle Avvertenze
+WARNING_STRING	Warning	Warnmeldung	Advertencia	Avvertenza
+WHATS_NEW_MENU_HELP	Show the help describing changes to the program.	Hilfetext zur Beschreibung von Programmänderungen anzeigen	Mostrar la ayuda que describe los cambios en el programa	Mostra la descrizione di aiuto delle modifiche al programma.
+WIRE_1	Wire 1	Wire 1	Wire 1	Cavo 1
+WIRE_2	Wire 2	Wire 2	Wire 2	Cavo 2
+WIRE_3	Wire 3	Wire 3	Wire 3	Cavo 3
+X_POS	X Position	X Position	X Position	Posizione X
+XAXIS	X-Axis	X-Axis	X-Axis	Asse-X
+XBAR	X-Bar	X-Bar	X-Bar	Barra-X
+XDCR_MENU_HELP	Display plots of the separate transducer signals (FasTrak2 only)	Kurvenbilder der einzelnen Messwandlersignale anzeigen (nur bei FasTrak2)	Mostrar Grafico de Tranductores separados (FasTrak2 sòlo)	Mostra i Grafici dei segnali del trasduttore separato (solo FasTrak2)
+XDCR_MENU_STRING	Transducer Plot	Messwandler-Aufzeichnung	Gràfico del Transductor	Grafico del trasduttore
+Y_POS	Y Position	Y Position	Y Position	Posizione Y
+YES_STRING	Yes	Ja	Sì	Si
+ZOOM_MENU	Zoom	Vergrößern	Ampliar Vista (Zoom)	Zoom
+ZOOM_MENU_HELP	Restrict the display to a smaller portion of the x axis.	Anzeige auf einen kleineren Bereich der X-Achse beschränken.	Restringir la visualización a una porción más pequeña del eje x.	Restringi il display ad una porzione più piccola dell'asse x.
+ZOOM_PRINT_DELTA_STRING	Delta	Delta	Delta	Delta
+ZOOM_PRINT_END_STRING	End	Ende	Final	Fine
+ZOOM_PRINT_HEAD_PRES_STRING	Head Pres.	Kopfdruck	Presiòn Cabeza	Pressione Frontale.
+ZOOM_PRINT_POSITION_STRING	Position	Wegstrecke	Posiciòn	Posizione
+ZOOM_PRINT_ROD_PRES_STRING	Rod Pres.	Stempeldruck	Presiòn del Pistòn	Pressione del Pistone.
+ZOOM_PRINT_START_STRING	Start	Start	Comienzo	Inizio
+ZOOM_PRINT_TIME_STRING	Time	Uhrzeit	Tiempo	Tempo
+ZOOM_PRINT_VELOCITY_STRING	Velocity	Vorschub	Velocidad	Velocità

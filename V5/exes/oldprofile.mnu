@@ -1,0 +1,109 @@
+4
+ENGLISH,-20,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+GERMAN,-16,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+SPANISH,-16,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ITALIAN,-16,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+3,251,251,251,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+0,File,Datei,Fichero,File,0,0
+3,240,240,250,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Choose Shots...,Schüsse wählen...,Seleccionar Inyecciones,Seleziona Curve...,109,0
+1,Choose Part...,Gussteil wählen...,Seleccionar Piezas,Seleziona Stampi...,113,0
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Return to HMI (F10),Return to HMI (F10),Volver a HMI (F10),Ritorna a HMI (F10),810,5
+1,Backup and Restore,Sichern und Wiederherstellen,Copiar y Restaurar,Backup e Ripristina,706,5
+1,Clear Backup List File,Absicherungsliste löschen,Borrar copias de seguridad,Elimina Lista di File Backup,120,0
+1,Add to Backup List (F9),Zur Absicherungsliste hinzufügen(F9),Agregar a lista de Backup (F9),Aggiungi alla Lista Backup (F9),121,0
+3,240,240,250,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Export Parameter Data to the Windows Clipboard,Schussparameter &exportieren in Zwischenablage kopieren,Exportar datos de parámetro en el Portapapeles de Windows,Esporta Dati dei Parametri nella Clipboard di Windows,801,0
+1,Export Alarm Summary Data to the Windows Clipboard,Daten für &Alarmüberblick exportieren in Zwischenablage kopieren,Exportar datos de resumen de alarma al Portapapeles de Windows,Esporta i dati Sommario Allarmi nella Clipboard di Windows,807,0
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Display Machine and Computer List,Auflistung der Maschinen und Rechner anzeigen,Mostrar lista de Ordinadores y Máquinas,Lista di Macchine e Computer,122,0
+1,Save Shot As CSV File,Schuss als CSV-Datei speichern,Guardar Inyeccion como fichero CSV,Salva la Curva come File CSV,808,0
+3,240,240,250,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Set Total Stroke Length,Set Total Stroke Length,Establecer la longitud Total del Trazo,Imposta la lunghezza Totale del Pistone,524,0
+1,Text Editor,Textbearbeitung,Editor de texto,Editor di Testo,711,10
+1,Convert Units,Convert Units,Convertir unidades,Convertitore Unità di Misura,716,0
+1,Choose Language,Choose Language,Seleccione Idioma,Selezione Lingua,123,10
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Passwords,Kennworte,Contraseña,Password,804,0
+1,Restore Default Password,Normales Kennwort wiederherstellen,Restablecer la contraseña por default,Ripristino Password di Default,805,4
+3,240,240,250,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Save Shot (Y/N),Schuss speichern (J/N),Guardar Inyecciones (S/N),Salva Curva (S/N),115,5
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Print,Drucken,Imprimir,Stampa,117,0
+1,Print Multiple Shots,Mehrfache Schüsse drucken,Imprimir Multiplas Inyecciones,Stampa Iniezioni Multiple,119,0
+3,240,240,250,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Minimize,Minimieren,Minimizar,Minimizza,114,0
+1,Exit,Verlassen,Salida,Exit,108,0
+3,251,251,251,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+0,Monitor,Über&wachen,Supervisar,Monitoraggio,0,4
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Part Setup,Gussteil einrichten,Configuracion de Piezas,Configurazione Pezzo/Stampo,701,4
+1,Machine Setup,Maschine einrichten,Configuracion de Màquina,Configurazione Macchina,702,9
+3,240,240,250,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Monitor Setup,Über&wachung einrichten,Configuraciòn de Supervision,Setup Monitoraggio,704,9
+1,Real Time Machine List...,Maschinenauflistung in &Echtzeit...,Lista Maquinas en tiempo real,Lista Macchine in Realtime...,608,9
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,FasTrak Board Setup,FasTrak &Modul–Einstellungen,Configuraciòn Tarjeta FastTrak,Setup Scheda FasTrak,707,9
+1,FasTrak Board Monitor,FasTrak &Kartenüberwachung,Supervision Tarjecta FastTrak,Test Scheda FasTrak,703,9
+3,251,251,251,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+0,Display,Anzeige,Ver,Display,0,0
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Last 50 Shots Screen,Letzte 50 Schüsse anzeigen,Pantalla de Últimas 50 Inyecciones,Videata ultime 50 iniezioni,504,0
+1,Standard Screen,Sta&ndard Bildschirmseite,Pantalla Standard,Videata Monitoraggio Standard,505,0
+3,240,240,250,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Box Screen,Anzeige&kästchen,Quadro de Pantalla,Videata Riquadro,508,0
+1,Parameters,Vo&rgaben,parametros,Parametri,507,0
+1,Critical Parameter Screen,Critical Parameter Screen,Critical Parameter Screen,Critical Parameter Screen,526,50
+1,Trend Chart,Tendenz–Anzeigeseite,Pantalla de Tendencia,Videata Trend,509,0
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Position/Time Base,Wegstrecke/Zeitbasis,Base Posiccion/Tiempo,Base Posizione/Tempo,501,0
+1,Position Based,Auf &Wegstreckenbasis,Base Posiccion,Base Posizione,502,0
+1,Time Based,Auf &Zeitbasis,Base Tiempo,Base Tempo,503,0
+3,240,240,250,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Transducer Plot,Transducer Plot,Curva del transductor,Diagnosi Trasduttore Posizione,522,0
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Display Setup...,Anzeigeeinstellungen...,Mostrar Configuracion,Setup Visualizzazione...,605,5
+1,Display Color Setup...,Anzeige&farben einrichten...,Mostrar configuración de Color...,Setup Colori...,606,9
+3,240,240,250,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Corner Parameters,Eckparamete,Esquina de Parametros,Angolo dei Parametri,104,5
+3,251,251,251,0,0,0,240,240,240,224,224,224,0,0,0,240,240,240
+0,Display Functions,Anzeige–&Funktionen,Ver Funciones,Funzioni di Visualizzazione,0,0
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Show Reference Trace,Bezugskennlinie anzeigen,Ver Curva de Referencia,Mostra Curva di Riferimento,506,0
+1,Save as Reference Trace...,Als Bezugskennlinie &speichern...,Guardar Curva de Referencia,Salva come curva di riferimento...,116,5
+3,240,240,250,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Overlay,Über&lagerung,Superposición,Sovrapposizione,101,0
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Zoom,Größer,Zoom,Zoom,607,0
+1,Unzoom,Kleiner,Unzoom,No Zoom,102,0
+3,251,251,251,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+0,Production,Produktion,Produccion,Dati Produzione,0,0
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Down-Time Setup,Ausfallzeiten &einrichten,Configuracion de Paradas,Configurazione Fermi Macchina,708,9
+1,Edit Downtimes,Ausfallzeiten &bearbeiten,Editar Paradas de Màquina,Modifica Causali Fermi Macchina,709,5
+3,240,240,250,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Down This Machine,Diese Maschine &abfahren,Desactivar esta máquina,Disattivare questa macchina,809,0
+1,Edit Shifts,Schichten &bearbeiten,Editar Turnos,Modifica Dati Turno,712,10
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Standard Downtime Setup,Standard-Ausfallzeit &einrichten,Configuraciòn Standard de Paradas,Configurazione Fermo Macchina Standard,713,10
+1,Downtime Summary,Überblick von &Ausfallzeiten,Resumen de Paradas Màquina,Sommario dei Fermi Macchina,514,5
+3,240,240,250,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Shift Report,Schichtprotokoll,Informe de Turno,Report dati Turni,715,0
+1,Operator Sign-On,Bedienperson anmelden,Reconocimiento de operador,Log-In Operatore,800,5
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Alarm Summary Data,Alarmdaten–Überblick,Resumen Datos Alarma,Sommario Allarmi,803,0
+1,Alarm Log Setup,Alarm–&Protokolleinstellungen,Alarma Configuraciòn,Configurazione Log Allarmi,806,10
+3,251,251,251,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+0,External Programs,External Programs,External Programs,Programmi Esterni,0,10
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,PQ2,PQ2,PQ2,PQ2,750,10
+3,251,251,251,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+0,Help,Hilfe,Ayuda,Help,0,0
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,Help Topics,Hilfethemen,Temas de ayuda,Indice Help,900,0
+1,What's New,Letzte Neuigkeiten,Qué hay de nuevo,Cosa c'è di nuoovo,106,0
+3,240,240,250,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,FasTrak2 Help,FasTrak2 Hilfe,Ayuda Fastrak2,Scheda FasTrak2,901,0
+3,255,255,255,0,0,0,128,128,128,224,224,224,0,0,0,128,128,128
+1,About,Info,Informaciòn,Info,105,0

@@ -1,0 +1,283 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resrc1.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+EDIT_MACHINES DIALOG DISCARDABLE  0, 0, 329, 140
+STYLE DS_3DLOOK | WS_CHILD | WS_VISIBLE
+FONT 10, "MS Sans Serif"
+BEGIN
+    LISTBOX         MACHINE_LIST_BOX,0,11,59,125,LBS_SORT | WS_VSCROLL | 
+                    WS_GROUP | WS_TABSTOP
+    CONTROL         "Hot Chamber",HOT_CHAMBER_RADIO_BUTTON,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,72,13,54,11
+    CONTROL         "Cold Chamber",COLD_CHAMBER_RADIO_BUTTON,"Button",
+                    BS_AUTORADIOBUTTON,72,25,56,12
+    COMBOBOX        ROD_PITCH_COMBO_BOX,68,51,49,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    DEFPUSHBUTTON   "Save Changes",IDOK,178,119,52,12
+    LTEXT           "Machine",MACHINE_NUMBER_STATIC,14,1,30,9
+    LTEXT           "Rod Pitch",ROD_PITCH_STATIC,68,41,35,9
+    GROUPBOX        "Machine Type",MACHINE_TYPE_STATIC,68,2,63,38
+    GROUPBOX        "Timeouts (Sec.)",TIMEOUTS_STATIC,136,45,86,41
+    GROUPBOX        "Number of Impact Points",IMPACT_POINTS_STATIC,136,2,86,
+                    40
+    GROUPBOX        "Calculate Parameters Using",CALC_PARAMS_STATIC,227,2,91,
+                    40
+    LTEXT           "Position",IDC_STATIC,173,15,30,9
+    LTEXT           "Time",IDC_STATIC,173,27,22,9
+    LTEXT           "Machine Down",IDC_STATIC,173,60,48,9
+    LTEXT           "Cycle Start",IDC_STATIC,173,71,35,9
+    LTEXT           "Differential Curve Type",DIFF_CURVE_TYPE_STATIC,227,46,
+                    91,11
+    EDITTEXT        POS_IMPACT_POINTS_BOX,142,14,27,11,ES_RIGHT
+    EDITTEXT        TIME_IMPACT_POINTS_BOX,142,26,27,11,ES_RIGHT
+    EDITTEXT        CYCLE_TIMEOUT_BOX,142,58,27,11,ES_RIGHT
+    EDITTEXT        AUTOSHOT_TIMEOUT_BOX,142,70,27,11,ES_RIGHT
+    CONTROL         "Head Pressure",HEAD_PRESS_RADIO_BUTTON,"Button",
+                    BS_AUTORADIOBUTTON,233,11,60,9
+    CONTROL         "Rod Pressure",ROD_PRESS_RADIO_BUTTON,"Button",
+                    BS_AUTORADIOBUTTON,233,21,65,9
+    CONTROL         "Differential Pressure",DIFF_PRESS_RADIO_BUTTON,"Button",
+                    BS_AUTORADIOBUTTON,233,31,80,9
+    COMBOBOX        DIFF_CURVE_TYPE_COMBO_BOX,227,57,91,69,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Edit Equations",EDIT_EQUATIONS_BUTTON,270,75,50,12,
+                    BS_CENTER
+    CONTROL         "Sure-Trak2 Control",SURETRAK2_XBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,63,78,69,10
+    CONTROL         "MVO-06596",MVO_06596_RADIO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,73,102,47,10
+    CONTROL         "Digital Servo Amp",DIGITAL_SERVO_RADIO,"Button",
+                    BS_AUTORADIOBUTTON,73,111,66,10
+    PUSHBUTTON      "Choose",CHOOSE_SERVO_PB,87,123,34,10,WS_GROUP
+    GROUPBOX        "Servo Amplifier Board Type",SERVO_AMP_BOARD_TYPE_STATIC,
+                    63,92,90,44
+    CONTROL         "Replace Biscuit Time Delay with Time to Measure Biscuit",
+                    MEAS_BISCUIT_AT_DELAY_XBOX,"Button",BS_AUTOCHECKBOX | 
+                    BS_MULTILINE | WS_TABSTOP,230,93,98,23
+END
+
+NEW_MACHINE DIALOG DISCARDABLE  6, 15, 99, 63
+STYLE DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Create Machine"
+FONT 10, "MS Sans Serif"
+BEGIN
+    LTEXT           "New Machine Name",-1,7,8,65,10
+    DEFPUSHBUTTON   "OK",1,32,41,36,14
+    EDITTEXT        NEW_MACHINE_EBOX,7,19,86,12
+END
+
+EDIT_DCURVE_DIALOG DIALOG DISCARDABLE  0, 0, 364, 209
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_DLGMODALFRAME | WS_EX_TOPMOST
+CAPTION "Edit Differential Equations"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "&Save Changes",EDITDIFF_SAVE_CHANGES_BUTTON,117,188,56,
+                    14,BS_CENTER
+    CONTROL         "",GRID_POSITION_BORDER,"Static",SS_ETCHEDFRAME,9,7,345,
+                    176
+    PUSHBUTTON      "&Insert",INSERT_EQUATION_BUTTON,300,188,54,14,BS_CENTER
+    PUSHBUTTON      "&Delete",DELETE_EQUATION_BUTTON,9,188,54,14,BS_CENTER
+    PUSHBUTTON      "&Cancel",EDITDIFF_CANCEL_BUTTON,189,188,56,14,BS_CENTER
+END
+
+INPUT_ERROR_DIALOG DIALOG DISCARDABLE  0, 0, 187, 56
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Input Error"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,64,28,52,14,BS_CENTER
+    LTEXT           "This field can have no more than ",-1,10,10,109,10
+    LTEXT           "12",INPUT_ERROR_MAX_CHARS_TBOX,119,10,16,8,NOT WS_GROUP
+    LTEXT           "Characters.",-1,131,10,40,8,NOT WS_GROUP
+END
+
+CHOOSE_SERVO_DIALOG DIALOG DISCARDABLE  0, 0, 387, 268
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Choose Your Servo Amplifier Board"
+FONT 10, "Arial"
+BEGIN
+    PUSHBUTTON      "Button1",MVO_06596_PB,20,2,348,130,BS_BITMAP
+    PUSHBUTTON      "Button1",DIGITAL_SERVO_PB,157,135,211,128,BS_BITMAP
+    LTEXT           "Click on the board you have.",IDC_STATIC,8,150,96,9
+    LTEXT           "The one on the right is the new Digital Servo Amp that plugs directly into the Sure-Trak2™ External Interface.",
+                    IDC_STATIC,8,197,131,26
+    LTEXT           "The one above is the older MVO-06596 External Servo Amp board. ",
+                    IDC_STATIC,8,165,129,21
+    PUSHBUTTON      "Cancel",IDCANCEL,55,242,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MACHINEMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       EXIT_CHOICE
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Create",                     CREATE_CHOICE
+        MENUITEM "&Delete",                     DELETE_CHOICE
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resrc1.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+EMACHINE ACCELERATORS MOVEABLE PURE 
+BEGIN
+    VK_F1,          901,                    VIRTKEY 
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+EMACHINE_ICON           ICON    DISCARDABLE     "emachine.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    "CHOOSE_SERVO_DIALOG", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 380
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 261
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+DIGITAL_SERVO_BMP       BITMAP  DISCARDABLE     "digital_servo_amp.bmp"
+MVO_06596_BMP           BITMAP  DISCARDABLE     "mvo_06596.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    NEED_NEW_PARM_TYPE_STRING 
+                            "You should choose a different Parameter Pressure Type"
+    ABOUT_TO_DELETE_STRING  "You are about to DELETE all information for this machine"
+    CONTINUE_STRING         "Do you wish to continue?"
+    UNABLE_TO_COMPLY_STRING "Unable to Comply"
+    MONITORING_OFF_FIRST_STRING "You must turn off monitoring first"
+    MAIN_WINDOW_TITLE       "Machine Setup"
+    LAST_MACHINE_STRING     "You may not DELETE the last machine"
+    NO_DEL_ALL_ROWS_STRING  "You may not delete all the rows"
+    ATTEMPT_DEL_ALL_ROWS_STRING "Attempt to Delete All Rows"
+    NOTHING_SELECTED_STRING "Nothing Selected"
+    SELECT_ROW_STRING       "You must select one or more rows by clicking the row number"
+    RESTART_STRING          "You must restart the TrueTrak programs for the changes to take effect"
+    CHANGES_SAVED_STRING    "Changes have been saved"
+    GRID_NUMBER_STRING      "Number"
+    GRID_NAME_STRING        "Name"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    GRID_HEAD_COEF_STRING   "Head Coef"
+    GRID_ROD_COEF_STRING    "Rod Coef"
+    FONT_CHARSET_STRING     "ANSI_CHARSET"
+    ONLY_ONE_MACHINE_STRING "You should only have ONE MACHINE on this computer"
+    SURETRAK_CONTROLLED_STRING "This machine has a SureTrak Control"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

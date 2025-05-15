@@ -1,0 +1,66 @@
+4
+ENGLISH,-14,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+GERMAN,-14,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+SPANISH,-14,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ITALIAN,-14,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ABOUT_TO_DELETE_STRING	You are about to DELETE all information for this machine	You are about to DELETE all information for this machine	Usted esta apunto de ELIMINAR toda la informacion de esta máquina	Si stanno eliminando tutte le informazioni per questa macchina 
+ATTEMPT_DEL_ALL_ROWS_STRING	Attempt to Delete All Rows	Attempt to Delete All Rows	Intenta eliminar todas las filas	Tentativo di eliminare tutte le Righe 
+CALCULATE_PARAMETERS_USING	Calculate Parameters Using	Calculate Parameters Using	Calculé Parámetros Usando	Calcolare Parametri Usando
+CHANGES_COMPLETE	Changes have been made to the parts. 	Veränderungen an den Teilen gemacht.	Se han realizado cambios a las partes.	Sono state effettuate modifiche sulle parti.
+CHANGES_SAVED_STRING	Changes have been saved	Changes have been saved	Cambios han sido guardados	Le modifiche sono state salvate 
+CHOOSE_SERVO	Choose Your Servo Amplifier Board	Choose Your Servo Amplifier Board	Choose Your Servo Amplifier Board	Scegliere la propria Scherda di Servo Amplifier 
+CHOOSE_STRING	Choose	Choose	Elegir	Scegliere
+CHOOSE_WIRE_METHOD	Method Used to Choose Wires	Method Used to Choose Wires	Method Used to Choose Wires	Method Used to Choose Wires
+CLICK_ON_BOARD	Click on the board you have.	Click on the board you have.	Click on the board you have.	Cliccare sulla propria scheda.
+COLD_CHAMBER	Cold Chamber	Cold Chamber	Cámara Fria	Camera fredda
+CONTINUE_STRING	Do you wish to continue?	Do you wish to continue?	¿Desea continuar?	Si desidera continuare?
+CREATE_MACHINE	Create Machine	Create Maschine	Crear Maquina	Creare Macchina
+CREATE_NEW_MACHINE	Create New Machine	Create New Maschine	Crear Nueva Maquina	Creare Nuova Macchina
+DEFAULT_HMI_SETTINGS_UPDATE	Dwell Time, Pre Fast, Fast, Shot Full Forward, Intensification	Verweilzeit, Vor-Schnell, Schnell, Ganz nach vorn gedreht, Multiplikation	Tiempo de permanencia, Pre rápido, Rápido, Disparo Totalmente Adelante, Intensificación	 Tempo di Permanenza, Pre Veloce, Veloce, Filo totalmente avanti, Intensificazione
+DELETE_CURRENT_MACHINE	Delete the Current Machine	Delete the Current Machine	¿Eliminar Máquina Actual?	Elimiare la Macchina Corrente 
+DEVENT_TIME	Devent Time (Sec.)	Devent Time (Sec.)	Tiempo Devent (Seg.)	Tempo Devent (Sec.)
+DIF_CURVE_TYPE	Differential Curve Type	Differential Curve Type	Tipo de Curva Diferencial	Tipo di Curva Differenziale 
+DIGITAL_SERVO	The one on the right is the new Digital Servo Amp that plugs directly into the Sure-Trak2™ External Interface.	The one on the right is the new Digital Servo Amp that plugs directly into the Sure-Trak2™ External Interface.	The one on the right is the new Digital Servo Amp that plugs directly into the Sure-Trak2™ External Interface.	Questo sulla destra è il nuovo Servo Amp Digitale che si inserisce direttamente dentro l'Interfaccia Esterna Sure-Trak2™.	
+EDIT_DCURVE	Edit Differential Equations	Edit Differential Equations	Edit Differential Equations	Editare Equazioni Differenziali 
+EDIT_EQUATIONS	Edit Equations	Edit Equations	Editar Ecuaciones	Editare Equazioni
+EXTERNAL_SERVO	The one above is the older MVO-06596 External Servo Amp board.	The one above is the older MVO-06596 External Servo Amp board.	The one above is the older MVO-06596 External Servo Amp board.	Quella sopra è la scheda Servo Amp External MVO-06596 più vecchia.
+GRID_NUMBER_STRING	Number	Number	Número	Numero
+GRID_NAME_STRING	Name	Name	Nombre	Nome
+GRID_HEAD_COEF_STRING	Head Coef	Head Coef	Coeficiente de Pistón	Coef Testa Pistone
+GRID_ROD_COEF_STRING	Rod Coef	Rod Coef	Coeficiente de Vástago	Coef Stelo Pistone
+HMI_CONTROL	HMI Control	HMI Control	Control HMI	Controllo HMI
+HOT_CHAMBER	Hot Chamber	Hot Chamber	Cámara Caliente	Camera Calda
+LAST_MACHINE_STRING	You may not DELETE the last machine	You may not DELETE the last machine	Usted no puede ELIMINAR esta última máquina	Non eliminare l'ultima macchina
+LS_OFF_AT_EOS	Turn Limit Switches Off at EOS	Turn Limit Switches Off at EOS	Desactivar Interruptores de límite en la EOS	Spegnere il finecorsa a EOS
+MACHINE_DOWN	Machine Down	Machine Down	Máquina Inactiva	Macchina Inattiva
+MACHINE_ON_ANOTHER_COMPUTER	Machine is on another computer	Maschine is on another computer	Esta máquina se encuentra en otra computadora	La macchina è su un altro computer
+MACHINE_TYPE	Machine Type	Maschine Type	Tipo de Máquina	Tipo di Macchina
+MAIN_WINDOW_TITLE	Machine Setup	Maschine Setup	Ajuste de Máquina	Configurazione della Macchina
+MONITORING_OFF_FIRST_STRING	You must turn off monitoring first	You must turn off monitoring first	Tiene que desactivar Monitoreo	Disattivare prima il monitor
+NEED_FT2_RESET_BODY	You must reset the FasTrak2 Board for this change to take place.	You must reset the FasTrak2 Board for this change to take place.	You must reset the FasTrak2 Board for this change to take place.	Resetare la Scheda FasTrak2 Board per permettere lo scambio.
+NEED_FT2_RESET_INSTRUCT	Hold down the button, shown on the right, for 2 seconds.	Hold down the button, shown on the right, for 2 seconds.	Hold down the button, shown on the right, for 2 seconds.	Schiacciare il bottone, visibile sulla destra, per 2 secondi.
+NEED_FT2_RESET_TITLE	You have changed the Quadrature Divisor.	You have changed the Quadrature Divisor.	You have changed the Quadrature Divisor.	Il Divisore di Quadratura è stato modificato.
+NEED_NEW_PARM_TYPE_STRING	You should choose a different Parameter Pressure Type	You should choose a different Parameter Pressure Type	Debería escoger otro Parámetro de Presión	Scegliere un Tipo di Parametro di Pressione differente
+NEW_MACHINE	New Machine	New Machine	New Machine	Nuova Macchina
+NO_MORE_THAN	This field can have no more than	This field can have no more than	This field can have no more than	Questo campo non può avere più di
+NOTHING_SELECTED_STRING	Nothing Selected	Nothing Selected	Ninguno Selecionado	Non è stato Selezionato nulla
+NUMBER_OF_IMPACT_POINTS	Number of Impact Points	Number of Impact Points	Número de Puntos de Impacto	Numero di Punti di Impatto 
+ONLY_ONE_MACHINE_STRING	You should only have ONE MACHINE on this computer	You should only have ONE MASCHINE on this computer	Deberia tener solo UNA MAQUINA en esta Computadora	Si dovrebbe avere solo UNA MACCHINA su questo computer
+PULSE_OUTPUT_WIRE	Pulse Output Wire	Pulse Output Wire	Cable de Pulso de Salida	Cavo di Entrata di Pulsione
+PULSE_TIME	Pulse Time (Sec.)	Pulse Time (Sec.)	Tiempo de Pulso (Seg)	Tempo di Pulsione (Sec.)
+QUADRATURE_DIVISOR	Quadrature Divisor [1-255]	Quadrature Divisor [1-255]	Divisor de Cuadratura [1-255]	Divisore di Quadratura [1-255]
+REPLACE_BISCUIT_TIME	Replace Biscuit Time Delay with Time to Measure Biscuit	Replace Biscuit Time Delay with Time to Measure Biscuit	Reemplace Tiempo de Retraso de Galleta con Tiempo para Medir Galleta	Rimpiazzare il Tempo di Ritardo della Materozza con il Tempo di Misura della Materozza
+RESTART_STRING	You must restart the TrueTrak programs for the changes to take effect	You must restart the TrueTrak programs for the changes to take effect	Tiene que reiniciar el Programa True Trak para que los cambios sean asignados	Ripristinare i programmi TrueTrak per salvare le modifiche 
+SAVE_ALL_PARTS_REQUEST	You should restart Part Setup and Save All Parts.	Sie sollten Teil Setup neu starten und alle Teile speichern.	Debe reiniciar Ajuste de Parte y Guardar todas las Partes	Ripristinare le Configurazioni dello Stampi e Salvare tutti gli Stampi.
+SELECT_ROW_STRING	You must select one or more rows by clicking the row number	You must select one or more rows by clicking the row number	Debe elegir una o más filas dando click en el número de fila	Selezionare uno o più righe by cliccando il numero di riga
+SERVO_AMP_BOARD_TYPE	Servo Amplifier Board Type	Servo Amplifier Board Type	Tipo de ServoAmplificador	Tipo di Scheda di Servo Amplificatore 
+ST2_CONTROL	Sure-Trak2 Control	Sure-Trak2 Control	Control Sure-Trak2	Controllo Sure-Trak2
+SURETRAK_CONTROLLED_STRING	This machine has a SureTrak Control	This machine has a SureTrak Control	Esta máquina tiene Control SureTrak	Questa macchina ha un Controllo SureTrak 
+TIMEOUTS	Timeouts (Sec.)	Timeouts (Sec.)	Timeouts (Seg.)	Timeout (Sec.)
+UNABLE_TO_COMPLY_STRING	Unable to Comply	Nicht durchführbar	No se puede cumplir	Impossibile eseguire
+UPDATE_HMI_PART_SETTINGS	Do you want to set the HMI Limit Switches to default values?	Wollen Sie die HMI-Endschalter auf Standardwerte gesetzt?	¿Desea establecer los Interruptores Límite de HMI a valores predeterminados?	Configurare i Fine-corsa HMI come valori di default?
+USE_MULTIPART_RUNLIST	Use Multipart Runlist ( This REPLACES the Warmup Part )	Use Multipart Runlist ( This REPLACES the Warmup Part )	Use Multipart Runlist ( This REPLACES the Warmup Part )	Usare la Runlist del Multistampo ( Questo RIMPIAZZA il Warmup dello Stampo )
+VALVE_SET_AFTER_JOG	Valve Setting (%) After Jog Shot (See Help)	Valve Setting (%) After Jog Shot (See Help)	Ajuste de Válvula (%) Después de Disparo Jog (Vea Ayuda)	Configurazione della Valvola (%) Dopo il Ciclo Manuale (Vedere Aiuto)
+WITH_BINARY_VALVE	with Binary Valve	with Binary Valve	Con Válvula Binaria	Con Valvola Binaria
+WIRES_USED	Wires Used	Wires Used	Wires Used	Wires Used
+WIRE_NUMBERS	Wire Numbers	Wire Numbers	Wire Numbers	Wire Numbers

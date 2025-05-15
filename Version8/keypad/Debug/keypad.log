@@ -1,0 +1,16 @@
+﻿Build started 5/15/25 12:23:29 AM.
+     1>Project "C:\Sources\Version8\keypad\keypad.vcxproj" on node 2 (Build target(s)).
+     1>Build:
+         nmake /f "debug.mak"
+         
+         Microsoft (R) Program Maintenance Utility Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+     1>NMAKE : fatal error U1073: don't know how to make 'template.cpp'
+         Stop.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.MakeFile.Targets(38,5): error MSB3073: The command "nmake /f "debug.mak"" exited with code 2.
+     1>Done Building Project "C:\Sources\Version8\keypad\keypad.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.07

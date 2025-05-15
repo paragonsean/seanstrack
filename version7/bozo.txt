@@ -1,0 +1,618 @@
+ Volume in drive C has no label.
+ Volume Serial Number is B855-CAFF
+
+ Directory of C:\Sources\version7\asensorsync
+
+12/09/2009  04:46 PM             6,771 asensorsync.cpp
+               1 File(s)          6,771 bytes
+
+ Directory of C:\Sources\version7\bupres
+
+07/24/2007  11:57 AM             6,705 ab.cpp
+06/25/2008  02:26 PM            21,262 backup.cpp
+12/19/2006  10:38 AM            20,446 bupres.cpp
+12/14/2006  04:32 PM             9,140 dd.cpp
+12/14/2006  04:33 PM            10,756 delete.cpp
+01/08/2007  11:33 AM             3,053 fill.cpp
+06/10/2008  04:29 PM             5,186 loadzip.cpp
+09/17/2007  02:09 PM             3,447 purge.cpp
+12/14/2006  04:35 PM            10,312 renum.cpp
+06/06/2011  02:38 PM            24,171 restore.cpp
+07/24/2007  11:59 AM            12,009 save.cpp
+08/31/2009  01:30 PM            14,623 tb.cpp
+03/02/2007  03:57 PM            10,639 tr.cpp
+              13 File(s)        151,749 bytes
+
+ Directory of C:\Sources\version7\chooseshotest
+
+01/12/2011  01:44 PM            11,905 chooseshotest.cpp
+               1 File(s)         11,905 bytes
+
+ Directory of C:\Sources\version7\choosewire
+
+06/04/2004  02:22 PM            12,836 test.cpp
+               1 File(s)         12,836 bytes
+
+ Directory of C:\Sources\version7\convert
+
+08/16/2011  02:25 PM            15,602 convert.cpp
+               1 File(s)         15,602 bytes
+
+ Directory of C:\Sources\version7\copylog
+
+12/14/2006  05:04 PM            11,757 copylog.cpp
+               1 File(s)         11,757 bytes
+
+ Directory of C:\Sources\version7\copyv5
+
+12/09/2011  01:50 PM            16,695 copyv5.cpp
+               1 File(s)         16,695 bytes
+
+ Directory of C:\Sources\version7\createpart
+
+04/28/2010  08:50 AM             5,277 createpart.cpp
+08/06/2008  03:09 PM             2,718 touni.cpp
+               2 File(s)          7,995 bytes
+
+ Directory of C:\Sources\version7\demo
+
+03/05/2010  03:34 PM            22,229 demo.cpp
+03/12/2010  12:05 PM            21,011 monitor.cpp
+               2 File(s)         43,240 bytes
+
+ Directory of C:\Sources\version7\downtime
+
+01/12/2007  04:49 PM             3,821 category.cpp
+01/18/2007  11:40 AM            32,610 downtime.cpp
+               2 File(s)         36,431 bytes
+
+ Directory of C:\Sources\version7\dsbackup
+
+02/19/2010  01:48 PM            68,257 backupcl.cpp
+10/27/2011  10:33 AM            40,540 dsbackup.cpp
+06/28/2006  08:26 AM             8,446 global_file_settings.cpp
+               3 File(s)        117,243 bytes
+
+ Directory of C:\Sources\version7\dsinstall
+
+03/28/2012  10:40 AM            15,669 setup.cpp
+               1 File(s)         15,669 bytes
+
+ Directory of C:\Sources\version7\dsrestor
+
+10/27/2011  10:46 AM            44,850 dsrestor.cpp
+06/29/2006  04:26 PM            16,411 proclass.cpp
+               2 File(s)         61,261 bytes
+
+ Directory of C:\Sources\version7\dundas
+
+12/05/2001  10:22 AM            30,076 UGCELL.CPP
+02/20/2001  01:07 PM            42,884 UGCELTYP.CPP
+02/20/2001  01:13 PM            16,530 UGCNRBTN.CPP
+02/21/2001  02:42 PM             5,278 UGCTARRW.CPP
+01/07/2003  04:58 PM           245,636 UGCTRL.CPP
+02/20/2001  01:05 PM            14,788 UGDLTYPE.CPP
+02/21/2001  02:44 PM             9,485 UGDRWHNT.CPP
+02/13/2000  12:05 PM            28,766 UGDTASRC.CPP
+02/21/2001  05:34 PM            14,911 UGEDIT.CPP
+01/22/2000  10:31 AM             1,306 UGFORMAT.CPP
+02/20/2001  05:27 PM             7,293 UGGDINFO.CPP
+12/02/2002  10:35 AM            46,142 UGGRID.CPP
+02/16/2001  12:21 PM            11,179 UGHINT.CPP
+02/13/2000  09:27 AM             7,695 UGHSCROL.CPP
+02/13/2000  03:53 PM             7,395 UGLSTBOX.CPP
+02/08/2001  05:41 PM            33,696 UGMEMMAN.CPP
+06/01/2001  09:37 AM            19,138 UGMULTIS.CPP
+04/15/1999  04:45 PM            13,404 UGPRINT.CPP
+02/15/2001  04:23 PM             7,066 UGPTRLST.CPP
+02/20/2001  01:33 PM            22,966 UGSIDEHD.CPP
+02/25/2004  05:02 PM             2,435 UGSTRING.CPP
+03/06/2001  12:12 PM            26,218 UGTAB.CPP
+02/20/2001  01:54 PM            29,053 UGTOPHDG.CPP
+04/15/1999  04:45 PM            10,627 UGVSCROL.CPP
+              24 File(s)        653,967 bytes
+
+ Directory of C:\Sources\version7\editdown
+
+09/21/2006  09:38 AM             9,049 category.cpp
+11/02/2006  03:09 PM            48,068 editdown.cpp
+               2 File(s)         57,117 bytes
+
+ Directory of C:\Sources\version7\editpart
+
+12/21/2009  02:15 PM            48,685 calc.cpp
+11/20/2007  11:42 AM            36,004 choose_wire.cpp
+01/11/1999  06:00 PM               935 drawstr.cpp
+09/04/2012  03:11 PM           339,499 editpart.cpp
+08/19/2010  01:22 PM           329,156 editpart_new.cpp
+05/08/2012  12:20 PM            46,425 edparam.cpp
+05/30/2008  11:11 AM             4,711 PARTDATA.CPP
+12/11/2007  11:17 AM             8,072 save_dos.cpp
+               8 File(s)        813,487 bytes
+
+ Directory of C:\Sources\version7\emachine
+
+01/17/2007  04:14 PM            16,695 editdiff.cpp
+09/13/2012  02:59 PM            53,550 emachine.cpp
+               2 File(s)         70,245 bytes
+
+ Directory of C:\Sources\version7\empty
+
+04/15/1999  02:56 PM               155 empty.cpp
+               1 File(s)            155 bytes
+
+ Directory of C:\Sources\version7\esensor
+
+05/04/2012  10:25 AM            17,049 esensor.cpp
+               1 File(s)         17,049 bytes
+
+ Directory of C:\Sources\version7\eventman
+
+07/24/2007  12:19 PM            23,265 eventman.cpp
+07/24/2007  12:18 PM            24,701 mail.cpp
+               2 File(s)         47,966 bytes
+
+ Directory of C:\Sources\version7\fastrak
+
+03/31/1998  12:10 PM             6,410 FTCMD.CPP
+07/13/2006  01:37 PM            35,756 FTHIGH.CPP
+04/19/1999  10:12 AM             7,981 FTLOW.CPP
+               3 File(s)         50,147 bytes
+
+ Directory of C:\Sources\version7\ft2
+
+07/27/2012  03:42 PM           140,943 board_monitor.cpp
+08/06/2012  01:10 PM           283,308 ft2.cpp
+08/16/2012  06:03 AM            54,763 shotsave.cpp
+10/24/2006  09:57 AM             8,844 skip.cpp
+10/16/2007  11:38 AM             5,407 upload_copy_class.cpp
+               5 File(s)        493,265 bytes
+
+ Directory of C:\Sources\version7\ft2v706
+
+06/25/2009  03:01 PM           139,302 board_monitor.cpp
+09/18/2009  10:04 AM           270,832 ft2.cpp
+06/25/2009  03:54 PM            43,931 shotsave.cpp
+10/24/2006  09:57 AM             8,844 skip.cpp
+10/16/2007  11:38 AM             5,407 upload_copy_class.cpp
+               5 File(s)        468,316 bytes
+
+ Directory of C:\Sources\version7\ft95
+
+03/31/1998  12:10 PM             6,410 FTCMD.CPP
+07/14/2006  01:30 PM            35,753 FTHIGH.CPP
+05/11/1999  08:49 AM             3,076 FTLOW.CPP
+               3 File(s)         45,239 bytes
+
+ Directory of C:\Sources\version7\ftclas95
+
+05/10/1999  04:58 PM             8,357 FTCLAS95.CPP
+               1 File(s)          8,357 bytes
+
+ Directory of C:\Sources\version7\ftclasnt
+
+02/05/1999  11:24 AM            11,444 ftclasnt.cpp
+               1 File(s)         11,444 bytes
+
+ Directory of C:\Sources\version7\idleinput
+
+09/26/2007  10:07 AM             2,599 idleinput.cpp
+09/25/2007  03:28 PM             5,047 test.cpp
+               2 File(s)          7,646 bytes
+
+ Directory of C:\Sources\version7\idleinput2
+
+10/04/2007  01:39 PM             5,060 test.cpp
+               1 File(s)          5,060 bytes
+
+ Directory of C:\Sources\version7\Install
+
+08/16/2011  02:05 PM            10,637 menupdat.cpp
+08/08/2012  05:20 AM           129,189 setup.cpp
+               2 File(s)        139,826 bytes
+
+ Directory of C:\Sources\version7\JeditRes
+
+07/11/2002  02:31 PM            26,017 jeditres.cpp
+12/05/2002  02:25 PM            50,088 vtwcontrol.cpp
+04/05/2002  02:59 PM            11,469 windowlist.cpp
+               3 File(s)         87,574 bytes
+
+ Directory of C:\Sources\version7\machlist
+
+05/15/2006  10:52 AM             6,736 machlist.cpp
+               1 File(s)          6,736 bytes
+
+ Directory of C:\Sources\version7\menutest
+
+11/27/2001  12:53 PM            46,966 boxtest.cpp
+10/02/2008  02:30 PM            30,505 menuctrl.cpp
+10/10/2008  12:40 PM             5,185 menutest.cpp
+               3 File(s)         82,656 bytes
+
+ Directory of C:\Sources\version7\monall
+
+11/29/2007  03:55 PM             2,522 bid.cpp
+12/19/2007  12:09 PM            38,115 boards.cpp
+12/19/2007  12:18 PM            10,267 control.cpp
+10/25/2006  10:10 AM             2,316 down.cpp
+02/04/1999  04:50 PM               963 findindx.cpp
+06/05/2008  02:30 PM            62,307 getdata.cpp
+09/22/2008  09:48 AM            64,775 hardware.cpp
+09/22/2008  01:01 PM            26,555 ioex4.cpp
+03/15/2011  10:24 AM            23,191 monall.cpp
+10/25/2006  02:44 PM             1,094 nextshot.cpp
+12/19/2007  10:21 AM             3,936 sensor.cpp
+03/15/2011  10:25 AM            29,906 shotsave.cpp
+10/25/2006  11:05 AM             8,744 skip.cpp
+05/10/2005  01:57 PM             2,882 udp_socket.cpp
+10/25/2006  02:21 PM             2,702 wparam.cpp
+10/25/2006  02:26 PM             4,308 wprofile.cpp
+02/05/1999  11:04 AM             4,368 xdcrtest.cpp
+              17 File(s)        288,951 bytes
+
+ Directory of C:\Sources\version7\monedit
+
+10/02/2009  09:20 AM             7,930 monedit.cpp
+10/02/2009  02:11 PM            35,898 monitor.cpp
+               2 File(s)         43,828 bytes
+
+ Directory of C:\Sources\version7\netinstall
+
+03/28/2012  10:37 AM            12,426 setup.cpp
+               1 File(s)         12,426 bytes
+
+ Directory of C:\Sources\version7\NetSetup
+
+09/08/2008  02:07 PM            64,484 netsetup.cpp
+               1 File(s)         64,484 bytes
+
+ Directory of C:\Sources\version7\newprofile
+
+04/01/2010  04:53 PM            27,659 dconfig.cpp
+03/31/2010  10:02 AM             5,470 fixaxis.cpp
+04/01/2010  02:13 PM           342,491 profile.cpp
+               3 File(s)        375,620 bytes
+
+ Directory of C:\Sources\version7\oldprofile
+
+05/12/2008  03:51 PM            28,422 dconfig.cpp
+07/25/2006  12:37 PM             4,320 fixaxis.cpp
+08/21/2009  07:31 AM           343,151 profile.cpp
+               3 File(s)        375,893 bytes
+
+ Directory of C:\Sources\version7\optotest
+
+08/24/2004  02:39 PM             3,842 optotest.cpp
+               1 File(s)          3,842 bytes
+
+ Directory of C:\Sources\version7\pickwire
+
+10/20/2010  02:10 PM             7,591 pickwire.cpp
+               1 File(s)          7,591 bytes
+
+ Directory of C:\Sources\version7\postdata
+
+05/08/2006  09:12 AM            28,017 postdata.cpp
+04/06/2006  09:22 AM            24,862 update.cpp
+               2 File(s)         52,879 bytes
+
+ Directory of C:\Sources\version7\profile
+
+07/31/2006  11:11 AM            11,244 alarmexp.cpp
+02/05/1998  08:55 AM             2,789 bitmapcl.cpp
+10/26/2007  11:05 AM            38,955 box.cpp
+02/03/2009  10:18 PM             7,449 chospart.cpp
+02/03/2009  10:18 PM            17,383 chosshot.cpp
+11/08/2007  05:46 PM            14,471 chosshot_before_menuctrl.cpp
+08/04/2009  11:10 AM            13,095 colordef.cpp
+08/04/2009  11:13 AM             4,853 colors.cpp
+08/04/2009  11:14 AM             2,384 corner.cpp
+01/12/2007  10:17 AM             8,049 ctrlimit.cpp
+11/06/2006  09:47 AM            27,102 dbarcfg.cpp
+03/18/2011  01:07 PM            27,868 dconfig.cpp
+07/31/2006  01:51 PM            38,072 downbar.cpp
+01/17/2007  09:47 AM            17,679 editop.cpp
+01/17/2007  10:59 AM            16,966 editshif.cpp
+10/25/2006  09:29 AM            16,448 export.cpp
+03/31/2010  10:02 AM             5,470 fixaxis.cpp
+02/28/2001  12:50 PM             6,140 gridclas.cpp
+08/04/2009  11:14 AM             1,687 isalarm.cpp
+08/04/2009  11:15 AM             1,698 master.cpp
+08/04/2009  11:15 AM            24,051 mplot.cpp
+11/14/2006  12:04 PM            10,817 mulprint.cpp
+07/25/2006  01:59 PM             1,313 olmsted.cpp
+08/03/2006  08:50 AM            13,547 paramhis.cpp
+08/04/2009  11:16 AM            10,942 paramwin.cpp
+03/16/2009  04:46 PM            55,888 password.cpp
+08/27/2010  02:31 PM            23,476 plot.cpp
+08/16/2011  02:12 PM           344,098 profile.cpp
+11/20/2008  04:48 PM           311,478 profile_before_menuctrl.cpp
+08/04/2009  11:16 AM             8,388 rtmlist.cpp
+07/27/2006  12:58 PM             1,527 savepro.cpp
+08/04/2009  11:25 AM            44,582 status.cpp
+09/08/2008  04:20 PM            32,416 tcconfig.cpp
+10/13/2006  01:40 PM            47,254 trend.cpp
+10/10/2007  03:35 PM             5,589 viewpara.cpp
+08/03/2006  10:10 AM            10,395 vlbclass.cpp
+08/04/2009  11:26 AM            17,534 xaxis.cpp
+07/31/2006  09:24 AM            10,847 xdcrplot.cpp
+              38 File(s)      1,253,944 bytes
+
+ Directory of C:\Sources\version7\savepart
+
+06/16/2010  12:45 PM            88,457 savepart.cpp
+08/06/2008  03:09 PM             2,718 touni.cpp
+               2 File(s)         91,175 bytes
+
+ Directory of C:\Sources\version7\serialterm
+
+03/17/2010  01:43 PM            42,856 serialterm.cpp
+03/19/2010  04:35 PM            30,911 serial_monitor.cpp
+               2 File(s)         73,767 bytes
+
+ Directory of C:\Sources\version7\serialtest_install
+
+09/02/2010  04:11 PM             5,249 setup.cpp
+               1 File(s)          5,249 bytes
+
+ Directory of C:\Sources\version7\shiftrpt
+
+11/10/2006  12:19 PM            89,495 shiftrpt.cpp
+               1 File(s)         89,495 bytes
+
+ Directory of C:\Sources\version7\shutdown
+
+01/08/2009  09:52 PM             2,958 sd.cpp
+               1 File(s)          2,958 bytes
+
+ Directory of C:\Sources\version7\startup
+
+07/31/2007  12:20 PM             2,688 su.cpp
+               1 File(s)          2,688 bytes
+
+ Directory of C:\Sources\version7\stddown
+
+08/04/2006  10:11 AM            21,284 stddown.cpp
+               1 File(s)         21,284 bytes
+
+ Directory of C:\Sources\version7\subs
+
+12/09/2010  12:57 PM             6,004 adam_thermo_class.cpp
+09/25/2006  08:50 AM            20,332 alarmsum.cpp
+09/29/2003  12:22 PM            17,298 array.cpp
+06/16/2006  02:38 PM               799 ascfloat.cpp
+05/10/2012  05:54 PM            20,759 asensor.cpp
+03/02/2007  02:28 PM             8,094 autoback.cpp
+10/12/2000  01:08 PM             6,154 bitclass.cpp
+01/08/2007  11:14 AM             2,918 callfile.cpp
+06/16/2006  02:49 PM             8,370 catclass.cpp
+06/16/2006  02:54 PM             4,342 chaxis.cpp
+06/16/2010  10:08 AM            37,911 choose_wire.cpp
+07/27/2006  09:37 AM            16,571 client.cpp
+06/16/2006  02:56 PM             4,562 color.cpp
+08/26/2004  01:00 PM             2,877 colorcl.cpp
+06/06/2008  09:11 AM            11,982 computer.cpp
+06/13/2007  10:54 AM             6,835 copymach.cpp
+08/31/2010  02:17 PM            21,679 copypart.cpp
+09/15/2006  11:02 AM            43,346 csvclass.cpp
+08/14/2006  03:50 PM             1,828 current.cpp
+10/24/1997  11:27 AM             2,872 dateclas.cpp
+08/06/2012  01:00 PM            48,333 dbsubs.cpp
+07/11/2006  11:06 AM             3,854 dcurve.cpp
+04/15/1997  10:55 AM               808 dow.cpp
+11/02/2006  03:06 PM             7,391 downsubs.cpp
+09/25/2006  09:15 AM             5,872 downtime.cpp
+07/22/2008  03:31 PM             5,605 dstat.cpp
+10/02/2001  09:31 AM             2,259 dtotchar.cpp
+08/23/2006  09:34 AM             3,538 dynamic_file_name.cpp
+02/22/1999  12:26 PM             4,426 error_ms.cpp
+09/22/2006  03:33 PM             6,238 evclass.cpp
+07/06/2006  03:56 PM             2,232 execwait.cpp
+05/26/2004  12:54 PM             4,612 exists.cpp
+09/04/2002  12:58 PM             6,754 extract.cpp
+12/12/2003  09:58 AM             2,306 fifo.cpp
+08/06/2012  12:59 PM            18,355 fileclas.cpp
+09/21/2007  02:12 PM             4,758 fillpart.cpp
+01/19/2011  11:34 AM             5,724 fillpart_with_dir.cpp
+09/21/2007  02:13 PM             2,032 fillshot.cpp
+08/03/2006  04:30 PM             1,861 fix.cpp
+02/03/2009  10:10 PM            18,638 fontclas.cpp
+11/03/2010  02:51 PM             7,671 ft2_wire_bit_class.cpp
+09/20/2007  02:22 PM             6,724 ftanalog.cpp
+08/30/2010  04:53 PM             4,440 ftcalc.cpp
+09/13/2012  02:26 PM            27,185 ftiiclas.cpp
+08/19/2010  03:43 PM            26,356 ftiiclas_new.cpp
+10/17/2007  04:09 PM             5,902 ftii_file.cpp
+12/09/2011  09:50 AM            35,428 ftii_parameters.cpp
+07/29/2010  04:08 PM            33,239 ftii_parameters_edited.cpp
+01/21/2010  11:34 AM            57,938 ftii_shot_data.cpp
+03/11/1997  08:50 AM               610 ftime.cpp
+08/06/2008  09:14 AM             3,481 ftoasc.cpp
+08/23/2006  11:44 AM             8,453 genlist.cpp
+10/17/2007  02:07 PM             6,781 get_ini.cpp
+07/09/1998  02:01 PM               801 get_tc.cpp
+07/17/2006  02:39 PM             2,805 gexedir.cpp
+06/20/2006  09:16 AM             7,961 gpvar.cpp
+10/17/2007  04:15 PM             1,981 hex.cpp
+04/10/2003  01:16 PM               857 hourglas.cpp
+10/17/2007  02:02 PM            18,320 iniclass.cpp
+06/20/2006  01:59 PM             1,797 insalph.cpp
+02/10/2009  04:19 AM             1,245 is_empty.cpp
+10/17/2007  10:48 AM             2,467 itoasc.cpp
+04/27/2004  01:46 PM             2,032 killdir.cpp
+01/14/2008  12:18 PM            16,278 limit_switch_class.cpp
+03/05/2007  09:49 AM            21,907 listbox.cpp
+07/07/2006  03:56 PM             2,279 log_file_string.cpp
+08/23/2006  09:35 AM             1,040 machcomp.cpp
+09/13/2012  03:08 PM            22,582 machine.cpp
+08/19/2010  05:25 PM             6,591 machine_to_hmi.cpp
+10/30/2007  09:45 AM             8,636 machname.cpp
+07/24/2008  12:38 PM             9,992 marks.cpp
+07/10/2003  11:28 AM             4,264 maximize.cpp
+05/12/2010  09:50 AM            25,609 mem.cpp
+08/03/2006  03:44 PM             8,726 menu.cpp
+03/25/2009  03:22 PM            39,139 menuctrl.cpp
+08/11/2006  10:10 AM               484 mexists.cpp
+06/20/2006  01:49 PM             3,116 misc.cpp
+08/07/2006  02:45 PM               275 monrun.cpp
+10/13/2004  04:28 PM             3,655 msgclas.cpp
+03/08/2011  03:36 PM            18,012 nameclas.cpp
+06/13/2006  01:04 PM             1,282 namecopy.cpp
+07/19/2007  09:48 AM            17,207 names.cpp
+04/26/2006  09:39 AM            17,078 namesold.cpp
+05/19/2006  09:09 AM             8,819 optocontrol.cpp
+08/30/2010  01:58 PM            12,823 param.cpp
+10/31/2007  02:29 PM             5,954 param_index_class.cpp
+08/01/2012  02:15 PM            39,926 part.cpp
+08/23/2006  09:26 AM               964 partlist.cpp
+09/28/2007  09:38 AM             9,508 path.cpp
+09/18/2006  04:28 PM               952 pexists.cpp
+04/17/2007  11:00 AM             7,040 plookup.cpp
+02/03/1999  12:55 PM            20,740 plotclas.cpp
+05/12/2008  03:05 PM             5,690 plotsubs.cpp
+07/21/2000  09:48 AM             4,747 pointcl.cpp
+01/07/2009  10:39 PM            20,350 popctrl.cpp
+01/07/1999  11:41 AM             2,863 postsec.cpp
+07/31/2006  01:36 PM             7,029 profiles.cpp
+07/06/2011  03:05 PM             2,160 pw.cpp
+06/17/1997  11:40 AM             1,267 readline.cpp
+10/17/2007  02:44 PM            14,588 rectclas.cpp
+06/23/1995  08:50 AM               436 reverse.cpp
+08/07/2006  02:04 PM             2,781 ringcl.cpp
+04/22/1996  09:39 AM               736 rjust.cpp
+09/21/2006  02:41 PM             5,493 runlist.cpp
+07/11/2006  12:59 PM             2,343 semaphor.cpp
+07/06/2011  02:53 PM             8,386 setpoint.cpp
+10/13/2006  11:11 AM            14,812 shift.cpp
+08/28/2006  03:39 PM             2,760 shotclas.cpp
+10/20/2010  11:22 AM             2,428 shot_count.cpp
+03/05/2003  10:01 AM            14,715 sockcli.cpp
+04/02/2002  01:23 PM             3,460 sockqueue.cpp
+10/26/2006  04:05 PM             1,404 startpar.cpp
+06/14/2006  02:44 PM             2,782 start_of_shift.cpp
+07/11/2006  01:00 PM             3,103 stddown.cpp
+11/15/2007  01:20 PM             3,113 stparam.cpp
+04/24/2008  05:07 PM             9,347 stpres.cpp
+09/10/2008  10:46 AM            27,010 strarray.cpp
+07/06/2011  02:55 PM            36,706 stringcl.cpp
+02/05/2009  06:37 PM            12,630 stringtable.cpp
+04/17/2007  11:56 AM             8,212 structs.cpp
+08/12/2010  10:50 AM            14,473 stsetup.cpp
+12/05/2002  05:43 PM             6,712 temp_message.cpp
+09/08/1999  03:45 PM               643 textlen.cpp
+08/28/2006  08:59 AM             9,194 textlist.cpp
+10/17/2006  09:43 AM            14,594 time.cpp
+10/17/2006  09:51 AM            14,466 timeclas.cpp
+06/17/2003  11:47 AM             9,523 unitadj.cpp
+09/11/2006  10:59 AM             4,636 units.cpp
+02/11/1997  01:03 PM             3,886 updown.cpp
+09/09/2008  02:49 PM            45,713 v5tov7.cpp
+10/17/2007  02:13 PM             9,451 visigrid.cpp
+08/13/2001  02:47 PM            30,265 visiplot.cpp
+02/21/2009  09:17 PM            12,270 warmupcl.cpp
+05/17/2006  01:51 PM            15,039 wclass.cpp
+12/09/2011  09:15 AM            24,027 winsubs.cpp
+11/04/2010  02:29 PM             4,906 wire_class.cpp
+06/14/2006  04:09 PM             5,187 workclas.cpp
+06/17/1997  09:06 AM               853 writelin.cpp
+08/01/2000  04:04 PM             1,781 zero.cpp
+             139 File(s)      1,449,451 bytes
+
+ Directory of C:\Sources\version7\suretrak
+
+08/04/2006  10:19 AM             2,821 asensor.cpp
+08/04/2006  10:22 AM            42,580 cc.cpp
+10/24/2006  10:36 AM             3,179 curpart.cpp
+12/11/2007  11:53 AM            12,543 profile.cpp
+08/04/2006  03:05 PM            50,556 realtime.cpp
+12/11/2007  01:52 PM           118,900 suretrak.cpp
+08/04/2006  02:59 PM             4,714 xdcrtest.cpp
+               7 File(s)        235,293 bytes
+
+ Directory of C:\Sources\version7\t2
+
+01/06/2004  05:33 PM            25,868 ori_socket_monitor.cpp
+04/15/2010  09:47 AM            27,490 socket_monitor.cpp
+04/15/2010  02:45 PM            48,428 terminal.cpp
+               3 File(s)        101,786 bytes
+
+ Directory of C:\Sources\version7\template
+
+04/14/2009  04:23 PM             6,977 template.cpp
+               1 File(s)          6,977 bytes
+
+ Directory of C:\Sources\version7\test
+
+05/06/2003  11:24 AM             1,349 arraytest.cpp
+10/29/2004  09:20 AM            11,391 asctouni.cpp
+12/22/2004  10:50 AM               715 bozo.cpp
+06/05/2000  09:35 AM             6,803 CLIENTS1.CPP
+06/05/2000  09:35 AM             6,803 CLIENTST.CPP
+12/01/1999  09:59 AM             2,041 COMPARE.CPP
+12/05/2002  09:59 AM             2,207 create_directory_path.cpp
+12/11/2007  02:19 PM             2,455 ctest.cpp
+10/24/2007  05:19 PM             4,101 enumtest.cpp
+12/05/2002  10:04 AM             1,138 file_type.cpp
+08/07/2001  02:57 PM             3,247 firstry.cpp
+09/05/2000  02:09 PM             2,503 getfilelist.cpp
+03/13/2000  05:47 PM             1,175 GETTIME.CPP
+04/02/2003  02:56 PM             7,537 Header.cpp
+07/27/2000  03:29 PM             1,387 LOADTC~1.CPP
+08/14/2000  02:14 PM            14,943 oldugtest.cpp
+03/13/2000  05:01 PM             8,463 PING.CPP
+07/21/2000  09:12 AM             6,440 POINTCL.CPP
+11/17/2005  03:12 PM             3,500 posttest.cpp
+01/14/2004  10:44 AM             8,696 PROTOCSV.CPP
+11/09/2001  11:55 AM             1,166 SetCaretBlinkTime.cpp
+05/24/2000  09:15 AM             3,421 SOCKET~1.CPP
+06/01/2001  01:16 PM               411 start.cpp
+07/02/2003  01:23 PM               410 stltest.cpp
+05/09/2002  03:17 PM             3,683 stringtest.cpp
+08/24/1999  11:24 AM             8,955 STTEST.CPP
+07/28/2000  03:58 PM             1,861 TCPIP.CPP
+09/05/2003  08:49 AM             3,723 TCPIPOLD.CPP
+12/14/2007  02:35 PM             7,542 test.cpp
+02/23/2006  05:02 PM               531 test1.cpp
+02/16/2006  05:15 PM             5,004 testcopy.cpp
+08/03/1999  03:37 PM             4,043 TESTRES.CPP
+12/04/2001  11:10 AM             6,167 thomas.cpp
+05/24/2000  09:06 AM             3,767 THREADS.CPP
+07/08/2008  11:11 AM             3,704 touni.cpp
+07/02/2002  02:50 PM             4,642 touni2.cpp
+07/08/2008  01:41 PM             6,783 touni_all.cpp
+08/01/2001  10:07 AM               405 uc.cpp
+05/09/2005  03:53 PM             2,942 udp_socket.cpp
+01/07/2003  10:55 AM             6,301 UGTEST.CPP
+02/16/2000  01:50 PM            14,891 UGTEST1.CPP
+09/28/2001  02:16 PM             8,481 v4procsv.cpp
+              42 File(s)        195,727 bytes
+
+ Directory of C:\Sources\version7\test\header
+
+10/23/2001  10:36 AM             6,574 test.cpp
+               1 File(s)          6,574 bytes
+
+ Directory of C:\Sources\version7\v5setups
+
+10/17/2007  05:06 PM            33,257 v5setups.cpp
+               1 File(s)         33,257 bytes
+
+ Directory of C:\Sources\version7\visiedit
+
+03/18/2009  03:01 PM            14,427 visiedit.cpp
+               1 File(s)         14,427 bytes
+
+ Directory of C:\Sources\version7\vlinxtest
+
+05/10/2005  04:01 PM            19,934 serialtest.cpp
+               1 File(s)         19,934 bytes
+
+ Directory of C:\Sources\version7\vtextrac
+
+08/04/2009  11:29 AM            37,820 vtextrac.cpp
+               1 File(s)         37,820 bytes
+
+     Total Files Listed:
+             376 File(s)      8,442,726 bytes
+               0 Dir(s)  48,974,548,992 bytes free

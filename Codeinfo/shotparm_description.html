@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Shotparm.txt Description</title>
+</head>
+<body>
+<h2>Shotparm.txt Results File</h2>
+<p>
+Database files end in <b>.txt</b> and are fixed length with the fields separated by semicolons (;).
+Strings are enclosed with "double quotes".
+</p>
+
+<pre>
+\V5\Data Directory
+    |
+    +-- \M01 (Machine Directory)
+        |
+        +-- \RESULTS
+        |
+        +-- \VISITRAK (Part Directory)
+            |
+            +-- \RESULTS
+                SHOTPARM.TXT         Shot parameters for each shot
+</pre>
+
+<hr>
+
+<h4>SHOTPARM.TXT</h4>
+Shot parameters
+<table border="1" cellpadding="2">
+<tr>    <td>1</td> <td>Shot Number</td> <td>L6</td> <td>&nbsp;</td>    </tr>
+<tr>    <td>2</td> <td>Shot Date</td> <td>D</td> <td>mm/dd/yy</td>    </tr>
+<tr>    <td>3</td> <td>Shot Time</td> <td>T</td> <td>hh:mm:ss</td>    </tr>
+<tr>    <td>4</td> <td>Need Save</td> <td>I1</td> <td>Skip Save Flags [0  1  2]</td>    </tr>
+<tr>    <td>5</td> <td>Fill Time</td> <td>F12</td> <td>1 Parameters</td>    </tr>
+<tr>    <td>6</td> <td>Total Shot Time</td> <td>F12</td> <td>2</td>    </tr>
+<tr>    <td>7</td> <td>Slow Shot Time</td> <td>F12</td> <td>3</td>    </tr>
+<tr>    <td>8</td> <td>Fast Shot</td> <td>F12</td> <td>4</td>    </tr>
+<tr>    <td>9</td> <td>Fast Shot Rise Time</td> <td>F12</td> <td>5</td>    </tr>
+<tr>    <td>10</td> <td>Cycle Time</td> <td>F12</td> <td>6</td>    </tr>
+<tr>    <td>11</td> <td>User Time Int One</td> <td>F12</td> <td>7</td></tr>
+<tr>    <td>12</td> <td>User Time Int Two</td> <td>F12</td> <td>8</td></tr>
+<tr>    <td>13</td> <td>User Time Int Three</td> <td>F12</td> <td>9</td></tr>
+<tr>    <td>14</td> <td>User Time Int Four</td> <td>F12</td> <td>10</td></tr>
+<tr>    <td>15</td> <td>User Time Int Five</td> <td>F12</td> <td>11</td></tr>
+<tr>    <td>16</td> <td>Biscuit Size</td> <td>F12</td> <td>12</td></tr>
+<tr>    <td>17</td> <td>Calc Start Fast Shot</td> <td>F12</td> <td>13</td>    </tr>
+<tr>    <td>18</td> <td>Intens Pressure</td> <td>F12</td> <td>14</td>    </tr>
+<tr>    <td>19</td> <td>Intens Rise Time</td> <td>F12</td> <td>15</td>    </tr>
+<tr>    <td>20</td> <td>Eff Peak Intens</td> <td>F12</td> <td>16</td>    </tr>
+<tr>    <td>21</td> <td>Impact Pressure To Peak</td> <td>F12</td> <td>17</td>    </tr>
+<tr>    <td>22</td> <td>Intens Squeeze Distance</td> <td>F12</td> <td>18</td>    </tr>
+<tr>    <td>23</td> <td>Sleeve Full Velocity</td> <td>F12</td> <td>19</td>    </tr>
+<tr>    <td>24</td> <td>Runner Full Velocity</td> <td>F12</td> <td>20</td>    </tr>
+<tr>    <td>25</td> <td>Avg Fill Velocity</td> <td>F12</td> <td>21</td>    </tr>
+<tr>    <td>26</td> <td>User Velocity Pos One</td> <td>F12</td> <td>22</td>    </tr>
+<tr>    <td>27</td> <td>User Velocity Pos Two</td> <td>F12</td> <td>23</td>    </tr>
+<tr>    <td>28</td> <td>User Velocity Pos Three</td> <td>F12</td> <td>24</td>    </tr>
+<tr>    <td>29</td> <td>User Velocity Pos Four</td> <td>F12</td> <td>25</td>    </tr>
+<tr>    <td>30</td> <td>User Avg Vel Range One</td> <td>F12</td> <td>26</td>    </tr>
+<tr>    <td>31</td> <td>User Avg Vel Range Two</td> <td>F12</td> <td>27</td>    </tr>
+<tr>    <td>32</td> <td>User Avg Vel Range Three</td> <td>F12</td> <td>28</td>    </tr>
+<tr>    <td>33</td> <td>User Avg Vel Range Four</td> <td>F12</td> <td>29</td>    </tr>
+<tr>    <td>34</td> <td>Position P1</td> <td>F12</td> <td>30</td>    </tr>
+<tr>    <td>35</td> <td>Position P2</td> <td>F12</td> <td>31</td>    </tr>
+<tr>    <td>36</td> <td>Position P3</td> <td>F12</td> <td>32</td>    </tr>
+<tr>    <td>37</td> <td>Avg Slow Shot Velocity</td> <td>F12</td> <td>33</td>    </tr>
+<tr>    <td>38</td> <td>Avg Fast Shot Velocity</td> <td>F12</td> <td>34</td>    </tr>
+<tr>    <td>39</td> <td>Fast Shot Distance</td> <td>F12</td> <td>35</td>    </tr>
+<tr>    <td>40</td> <td>Avg Gate Velocity</td> <td>F12</td> <td>36</td>    </tr>
+<tr>    <td>41</td> <td>User Defined Parameter</td> <td>F12</td> <td>37</td>    </tr>
+<tr>    <td>&nbsp;</td> <td>...</td> <td>&nbsp;</td> <td>&nbsp;</td>    </tr>
+<tr>    <td>64</td> <td>Last Parameter</td> <td>F12</td> <td>60</td>    </tr>
+    </table>
+</body>
+</html>

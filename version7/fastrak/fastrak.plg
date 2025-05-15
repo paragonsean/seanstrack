@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: fastrak - Win32 Free--------------------
+</h3>
+
+
+Microsoft (R) Program Maintenance Utility   Version 6.00.8168.0
+Copyright (C) Microsoft Corp 1988-1998. All rights reserved.
+
+ cl /nologo /MT /W3 /O1 /D "WIN32" /D "_WINDOWS" /D "NDEBUG" /D "_LIB" /Fp"/sources/projects/include/free.pch" /Yu"windows.h" /Fo"free/" /c ftcmd.cpp
+ftcmd.cpp
+ cl /nologo /MT /W3 /O1 /D "WIN32" /D "_WINDOWS" /D "NDEBUG" /D "_LIB" /Fp"/sources/projects/include/free.pch" /Yu"windows.h" /Fo"free/" /c fthigh.cpp
+fthigh.cpp
+ cl /nologo /MT /W3 /O1 /D "WIN32" /D "_WINDOWS" /D "NDEBUG" /D "_LIB" /Fp"/sources/projects/include/free.pch" /Yu"windows.h" /Fo"free/" /c ftlow.cpp
+ftlow.cpp
+ link -lib /nologo /out:"..\freelib\fastrak.lib" free\ftcmd.obj free\fthigh.obj free\ftlow.obj
+
+
+
+<h3>Results</h3>
+fastrak.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

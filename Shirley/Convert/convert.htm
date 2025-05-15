@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Convert Units </title>
+	</head>
+
+	<body>
+		Distance: <input type="number" id="mm" onchange="do_mm_change()" value="160.0"> MM
+		<input type="number" id="in" onchange="do_in_change()" value="6.2992"> IN
+		<input type="number" id="x4" onchange="do_x4_change()"> X4 Counts <br>
+
+		Velocity: <input type="number" id="mps" onchange="do_mps_change()" value="0.8"> MPS
+		<input type="number" id="ips" onchange="do_ips_change()" value="31.496"> IPS
+		<input type="number" id="x1" onchange="do_x1_change()"> X1 Counts/Sec <br>
+
+		Distance Between Marks <input type="number" id="dbm" onchange="do_x4_change();do_x1_change();" value="4">
+		<input type="radio" id="unitIN" name="dbmUnit" onchange="do_x4_change();do_x1_change();" checked> IN
+		<input type="radio" id="unitMM" name="dbmUnit" onchange="do_x4_change();do_x1_change();"> MM
+
+		<script>
+
+		var mm_per_inch = 25.4;
+		var mm = document.getElementById("mm");
+		var inch = document.getElementById("in");
+		var x4 = document.getElementById("x4");
+		var mps = document.getElementById("mps");
+		var ips = document.getElementById("ips");
+		var x1 = document.getElementById("x1");
+		var dbm = document.getElementById("dbm");
+
+		var settingIN = false;
+		var settingMM = false;
+		var settingX4 = false;
+		var settingIPS = false;
+		var settingMPS = false;
+		var settingX1 = false;
+
+		// do_mm_change
+		function do_mm_change(){
+		    if(settingMM){
+		        settingMM = false;
+		        return;}
+
+		    settingIN = true;
+		    inch.value = mm.value / mm_per_inch;
+
+            settingX4 = true;
+		    if(document.getElementById("unitIN").checked){
+	            x4.value = 4*inch.value/dbm.value;
+		    }
+		    else {
+		        x4.value = 4*mm.value/dbm.value;
+		    }
+        };
+
+		// do_in_change
+		function do_in_change(){
+
+			if(settingIN){
+				settingIN = false;
+				return;}
+
+			settingMM = true;
+			mm.value = inch.value * mm_per_inch;
+			settingX4 = true;
+			if(document.getElementById("unitIN").checked){
+				x4.value = 4*inch.value/dbm.value;
+			}
+			else {
+				x4.value = 4*mm.value/dbm.value;
+			}
+		};
+
+		// do_x4_change
+		function do_x4_change(){
+
+			if(settingX4){
+				settingX4 = false;
+				return;}
+
+			settingMM = true;
+			settingIN = true;
+			if(document.getElementById("unitIN").checked){
+				inch.value = x4.value*dbm.value/4;
+				mm.value = inch.value*mm_per_inch;
+			}
+			else {
+				mm.value = x4.value*dbm.value/4;
+				inch.value = mm.value/mm_per_inch;
+			}
+		};
+
+		// do_x1_change
+		function do_x1_change(){
+
+			if(settingX1){
+				settingX1 = false;
+				return;}
+
+            settingIPS = true;
+            settingMPS = true;
+			if(document.getElementById("unitIN").checked){
+				ips.value = x1.value*dbm.value;
+				mps.value = ips.value*mm_per_inch/1000;
+			}
+			else {
+				mps.value = x1.value*dbm.value;
+				ips.value = mps.value/mm_per_inch;
+                settingMPS = true;
+				mps.value = mps.value / 1000;
+			}
+
+		};
+
+		// do_ips_change
+		function do_ips_change(){
+
+			if(settingIPS){
+				settingIPS = false;
+				return;}
+
+            settingMPS = true;
+			mps.value = ips.value * mm_per_inch / 1000;
+
+            settingX1 = true;
+			if(document.getElementById("unitIN").checked){
+				x1.value = ips.value;
+			}
+			else {
+				x1.value = mps.value;
+			}
+
+            settingX1 = true;
+			x1.value = x1.value / dbm.value;
+
+		};
+
+		// do_mps_change
+		function do_mps_change(){
+
+			if(settingMPS){
+				settingMPS = false;
+				return;}
+
+			ips.value = mps.value*1000/mm_per_inch;
+
+			settingX1 = true;
+			if(document.getElementById("unitIN").checked){
+				x1.value = ips.value;
+			}
+			else {
+				x1.value = mps.value*1000;
+			}
+
+			settingX1 = true;
+			x1.value = x1.value/dbm.value;
+		};
+
+
+		</script>
+	</body>
+
+</html>

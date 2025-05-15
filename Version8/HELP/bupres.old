@@ -1,0 +1,135 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033{\fonttbl{\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f2\fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f16\froman\fcharset238\fprq2 Times New Roman CE;}{\f17\froman\fcharset204\fprq2 Times New Roman Cyr;}{\f19\froman\fcharset161\fprq2 Times New Roman Greek;}{\f20\froman\fcharset162\fprq2 Times New Roman Tur;}
+{\f21\froman\fcharset186\fprq2 Times New Roman Baltic;}{\f28\fmodern\fcharset238\fprq1 Courier New CE;}{\f29\fmodern\fcharset204\fprq1 Courier New Cyr;}{\f31\fmodern\fcharset161\fprq1 Courier New Greek;}{\f32\fmodern\fcharset162\fprq1 Courier New Tur;}
+{\f33\fmodern\fcharset186\fprq1 Courier New Baltic;}}{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;
+\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{\widctlpar\adjustright \fs20\cgrid \snext0 Normal;}{\*
+\cs10 \additive Default Paragraph Font;}{\s15\widctlpar\adjustright \fs20\cgrid \sbasedon0 \snext15 endnote text;}{\s16\widctlpar\adjustright \fs20\cgrid \sbasedon0 \snext16 footnote text;}{\*\cs17 \additive \super \sbasedon10 footnote reference;}{\*
+\cs18 \additive \super \sbasedon10 endnote reference;}}{\info{\author Jay Wood}{\operator Jay Wood}{\creatim\yr2000\mo1\dy19\hr10\min22}{\revtim\yr2002\mo5\dy31\hr13\min28}{\version6}{\edmins33}{\nofpages12}{\nofwords683}{\nofchars3898}
+{\*\company Visi-Trak Corporation}{\nofcharsws0}{\vern89}}\widowctrl\endnotes\aendnotes\ftnnrlc\aftnnar\hyphcaps0\viewkind4\viewscale100 \fet1\sectd \linex0\sectdefaultcl {\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl2
+\pnucltr\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang{\pntxta )}}{\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl6
+\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl8\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang
+{\pntxtb (}{\pntxta )}}\pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super #{\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super t}{\f2\fs24\cgrid0 opic1}}${\footnote\ftnalt \pard\plain \nowidctlpar\adjustright 
+\fs20\cgrid {\cs18\super My Topic}}Visitrak}{\fs24\cgrid0  Backup/Restore Help
+\par 
+\par The backup and restore system includes the following components:
+\par 
+\par }{\fs24\uldb\cgrid0 Backup Data}{\v\fs24\cgrid0 backupdata}{\fs24\cgrid0 
+\par }{\fs24\uldb\cgrid0 Restore Data}{\v\fs24\cgrid0 restoredata}{\fs24\cgrid0 
+\par }{\fs24\uldb\cgrid0 Delete/Renumber Data}{\v\fs24\cgrid0 deletedata}{\fs24\cgrid0 
+\par }\pard \qc\nowidctlpar\adjustright {\fs24\cgrid0 \page }{\cs18\super #{\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super b}{\f2\fs24\cgrid0 ackupdata}}${\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {
+\cs18\super B}{\f2\fs24\cgrid0 ackup Data}}}{\b\fs30\cgrid0 Backup Setups and Data}{\fs30\cgrid0 
+\par }\pard \nowidctlpar\adjustright {\f2\fs24\cgrid0 This component allows you to backup your data.
+\par 
+\par }{\b\f2\fs24\cgrid0 Setups:}{\f2\fs24\cgrid0 
+\par Select this checkbox to backup your machine and part setups.
+\par 
+\par }{\b\f2\fs24\cgrid0 Scrap/Downtime:}{\f2\fs24\cgrid0 
+\par Select this checkbox to backup your scrap and downtime information.
+\par 
+\par }{\b\f2\fs24\cgrid0 Shot Profiles:}{\f2\fs24\cgrid0 
+\par Select this checkbox to backup your accrued shot profiles.
+\par 
+\par }{\b\f2\fs24\cgrid0 Shot Parameters:}{\f2\fs24\cgrid0 
+\par Select this checkbox to backup your accrued parameter data.
+\par 
+\par }{\b\f2\fs24\cgrid0 Alarm Data:}{\f2\fs24\cgrid0 
+\par Select this checkbox to backup your alarm summary data.
+\par 
+\par }{\b\f2\fs24\cgrid0 Purge Data:}{\f2\fs24\cgrid0 
+\par Select this checkbox to delete the parameter data and shot profiles once they have been backed up.
+\par 
+\par }{\b\f2\fs24\cgrid0 Save Last 50 Shots:}{\f2\fs24\cgrid0 
+\par Select this checkbox to preserve the parameter data and shot profiles for the most recent 50 shots when purging data. If you have not selected the Purge Data checkbox then this does nothing.
+\par 
+\par }{\b\f2\fs24\cgrid0 Most Recent Shots:
+\par }{\f2\fs24\cgrid0 Select this checkbox and enter the number of shots to save if you wish to only save that many of the most recent shots. This applies to both the profiles and parameters.
+\par 
+\par }{\b\f2\fs24\cgrid0 Backup Zip File:}{\f2\fs24\cgrid0 
+\par This is the name (including the drive and path) of the }{\f2\fs24\ul\cgrid0 zip\~file}{\v\f2\fs24\cgrid0 zipfile}{\f2\fs24\cgrid0  in which your backup data will be stored.
+\par }{\f2\fs24\cf6\cgrid0 Note: When saving to the A: drive you should only use simple names such as }{\b\f2\fs24\cf6\cgrid0 A:\\BACKUP.ZIP}{\f2\fs24\cf6\cgrid0  or }{\b\f2\fs24\cf6\cgrid0 A:\\W01.ZIP}{\f2\fs24\cf6\cgrid0 .}{\f2\fs24\cgrid0 \page }{
+\cs18\super #{\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super l}{\f2\fs24\cgrid0 oadzipfile}}${\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super L}{\f2\fs24\cgrid0 oad Zip File}}}{
+\f2\fs24\cgrid0 
+\par }\pard \qc\nowidctlpar\adjustright {\b\f2\fs30\cgrid0 Load Zip File}{\f2\fs30\cgrid0 
+\par }\pard \nowidctlpar\adjustright {\f2\fs24\cgrid0 
+\par This component allows you to load a zip file so that you can restore part setups or data.\page }{\cs18\super #{\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super r}{\f2\fs24\cgrid0 estoredata}}${\footnote\ftnalt \pard\plain 
+\nowidctlpar\adjustright \fs20\cgrid {\cs18\super R}{\f2\fs24\cgrid0 estore Data}}}{\f2\fs24\cgrid0 
+\par }\pard \qc\nowidctlpar\adjustright {\b\f2\fs30\cgrid0 Restore Data}{\f2\fs30\cgrid0 
+\par }\pard \nowidctlpar\adjustright {\f2\fs24\cgrid0 
+\par This component allows you to select and restore data that has been loaded from a zip file.
+\par 
+\par }{\b\f2\fs24\cgrid0 Setups:}{\f2\fs24\cgrid0 
+\par Select this checkbox to restore your machine and part setups.
+\par 
+\par }{\b\f2\fs24\cgrid0 Scrap/Downtime:}{\f2\fs24\cgrid0 
+\par Select this checkbox to restore your scrap and downtime information.
+\par 
+\par }{\b\f2\fs24\cgrid0 Shot Profiles:}{\f2\fs24\cgrid0 
+\par Select this checkbox to restore shot profiles.
+\par 
+\par }{\b\f2\fs24\cgrid0 Shot Parameters:}{\f2\fs24\cgrid0 
+\par Select this checkbox to restore parameter data.
+\par 
+\par }{\b\f2\fs24\cgrid0 Alarm Data:}{\f2\fs24\cgrid0 
+\par Select this checkbox to restore the alarm summary data. This will replace any existing alarm data.
+\par 
+\par }{\b\f2\fs24\cgrid0 SureTrak Pgm+Globals
+\par }{\f2\fs24\cgrid0 Select this checkbox to restore the global suretrak parameters such as the Jog Shot Valve Setting as well as the control program (CONTROL.PRG) that is downloaded to the control board.
+\par 
+\par }{\b\f2\fs24\cgrid0 Load Zip File:}{\f2\fs24\cgrid0 
+\par Press this button to choose a zip file to load. When the file has been unzipped, you will be presented with the list of machines and parts available to be restored.
+\par 
+\par }{\b\f2\fs24\cgrid0 Machine:}{\f2\fs24\cgrid0 
+\par Select the machine or machines to restore.
+\par 
+\par }{\b\f2\fs24\cgrid0 Part:}{\f2\fs24\cgrid0 
+\par If one machine is selected in the Machine listbox then a list of the available parts for that machine is displayed in this listbox. The number of shots that are contained in the backup is displayed for each par
+t. One or more parts may be selected. All of the data will be restored. If there is existing data and the new data has shot numbers that overlap the existing shot numbers, the new data will be renumbered starting with the shot number that is one past the 
+highest existing shot number.
+\par 
+\par }{\b\f2\fs24\cgrid0 Destination Machine:
+\par }\pard \sa60\nowidctlpar\adjustright {\f2\fs24\cgrid0 This listbox contains a list of the current machines. If you select one machine to restore from you have three options. 
+\par }\pard \fi-360\li360\sa60\nowidctlpar\tx360\adjustright {\f2\fs24\cgrid0 1.\tab If the machine exists already then that entry will be highlighted. If you press the begin button the data from the backup will be restored to the same machine. 
+\par 2.\tab If you choose a different machine in the Destination Machine listbox then the data will be restored to that machine.
+\par 3.\tab If the machine does not exist then no entry in the Destination machine Listbox will be selected. If you leave it this way then a new machine will be created.
+\par }\pard \nowidctlpar\adjustright {\f2\fs24\cgrid0 
+\par }\pard \qc\nowidctlpar\adjustright {\f2\fs24\cgrid0 \page }{\cs18\super #{\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super d}{\f2\fs24\cgrid0 eletedata}}${\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {
+\cs18\super D}{\f2\fs24\cgrid0 elete/Renumber Data}}}{\b\f2\fs30\cgrid0 Delete or Renumber Current Data}{\f2\fs30\cgrid0 
+\par }\pard \nowidctlpar\adjustright {\f2\fs24\cgrid0 
+\par This component allows you to delete or renumber acquired parameter data andprofiles from the TrueTrak system.
+\par }{\b\f2\fs24\cgrid0 Parameters:}{\f2\fs24\cgrid0 
+\par Select this checkbox to delete or renumber the current parameter data.
+\par 
+\par }{\b\f2\fs24\cgrid0 Profiles:}{\f2\fs24\cgrid0 
+\par Select this checkbox to delete or renumber the current shot profiles.
+\par 
+\par }{\b\f2\fs24\cgrid0 Delete:}{\f2\fs24\cgrid0 
+\par Select this button to delete the indicated data.
+\par 
+\par }{\b\f2\fs24\cgrid0 Renumber:}{\f2\fs24\cgrid0 
+\par Select this button to renumber the indicated data.
+\par All of the data will be renumbered. The starting number will be the one in the "First New Number" editbox. Each successive shot will be incremented by one.
+\par 
+\par }{\b\f2\fs24\cgrid0 First Key Number:}{\f2\fs24\cgrid0 
+\par If you are renumbering data, enter the first number (normally "1") here.
+\par 
+\par }{\b\f2\fs24\cgrid0 Machine:}{\f2\fs24\cgrid0 
+\par This listbox shows the current list of machines. If more than one machine is highlighted in this list then the delete or renumber actions will be applied to all parts on those machines.
+\par 
+\par }{\b\f2\fs24\cgrid0 Part:}{\f2\fs24\cgrid0 
+\par This listbox shows the list of parts when one machine is chosen in the "Machine" listbox. If more than one part is highlighted in this list then all the data for those parts will be deleted or renumbered
+\par 
+\par }{\b\f2\fs24\cgrid0 Shot:}{\f2\fs24\cgrid0 
+\par This listbox shows the list of shots when one part is chosen in the "Part" listbox. This is only shown when the data is to be deleted. Renumbering is always done to all the
+ data. The last two columns are used to indicate the type of data that exists. The first of these contains an "X" if there is parameter data. The second contains an "X" if there is a shot profile.
+\par Only selected data will be deleted. The "All" button can be used to select all of the data at once.\page }{\cs18\super #{\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super z}{\f2\fs24\cgrid0 ipfile}}${\footnote\ftnalt 
+\pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super Zi}{\f2\fs24\cgrid0 p File}}A}{\f2\fs24\cgrid0  single compressed file that contains a number of files and their associated paths.
+\par \page }{\cs18\super #{\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super p}{\f2\fs24\cgrid0 opbackup}}${\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super Popup B}{\f2\fs24\cgrid0 ackup}}Backup}{
+\f2\fs24\cgrid0  some or all of the setups or data to a zip file.
+\par \page }{\cs18\super #{\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super p}{\f2\fs24\cgrid0 oprestore}}${\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super Popup Re}{\f2\fs24\cgrid0 store}}Restore}{
+\f2\fs24\cgrid0  some or all of the setups or data from the temporary backup directory.
+\par \page }{\cs18\super #{\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super p}{\f2\fs24\cgrid0 opdelete}}${\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super Popup R}{\f2\fs24\cgrid0 estore}}Delete}{
+\f2\fs24\cgrid0  or renumber some or all of the parameter or profiles for a part.
+\par \page }{\cs18\super #{\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super p}{\f2\fs24\cgrid0 oploadzip}}${\footnote\ftnalt \pard\plain \nowidctlpar\adjustright \fs20\cgrid {\cs18\super Popup Lo}{\f2\fs24\cgrid0 ad Zip}}Restore}{
+\f2\fs24\cgrid0  the data from a zip file to the temporary backup directory so you can restore individual part setups and data.
+\par \page }{
+\par }}

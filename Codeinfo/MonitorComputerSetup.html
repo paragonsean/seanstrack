@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>How to Set Up a Monitoring Computer on a Network</title>
+<style type="text/css">
+<!--
+td { padding-left: 10; padding-right: 10  }
+-->
+</style>
+</head>
+<body>
+<center>
+<h2>How To Set Up a Monitoring Computer on a Network</h2></center>
+<p>
+The monitoring computer is defined as the computer that is connected to the FasTrak or FasTrak2 board and
+collects the data at the end of each shot.
+The following assumes you are setting up a network of only the monitoring computers, office
+workstations, and data archiver and that the monitoring computer is running Windows 98.
+<p>
+
+<h3>Computer Name and Workgroup Name</h3>
+<ul>
+<li><b>Right</b> click on the Network Neighborhood and select <b>Properties</b>.</li>
+<li>Click on the <b>Identification</b> tab.</li>
+<li>The <b>Computer name</b> should be set to a three character name such as <b>W01</b>, W02, etc. If you are running
+True-Trak Version 6.11 or higher the three character limit does not apply.</li>
+<li>The <b>Workgroup</b> should be set to <b>VISITRAK</b>.</li>
+</ul>
+
+<p>
+<h3>Network Setup</h3>
+<p>
+<ul>
+<li>Click on the <b>Configuration</b> tab.</li>
+<li>You should see the following.
+  <ul>
+  <li>Client for Microsoft Networks</li>
+  <li>A network adapter of some sort.
+  <li>Either NetBEUI protocol or TCP/IP protocol.
+    <ul>
+    <li>If you have the NetBEUI protocol there is nothing to configure.</li>
+    <li>if you have TCP/IP protocol you should.
+      <ul>
+      <li>Click once on the icon next to the TCP/IP. This will highlight that line.</li>
+      <li>Click on the <b>Properties</b> button to bring up the <b>TCP/IP Properties</b> dialog.</li>
+      <li>Set the <b>IP Address</b> to <b>192.168.254.101</b>. The last of these four numbers, <b>101</b>, must be different
+      for each computer. We normally start with 101 and then use 102, 103, etc.</li>
+      <li>Set the <b>Subnet Mask</b> to <b>255.255.255.0</b>.</li>
+      <li>Press <b>OK</b> to close the dialog.</li>
+      </ul></li>
+    </ul></li>
+  <li><b>File and printer sharing for Microsoft Networks</b>. If this is not present then...
+  <ul>
+  <li>Click on the <b>File and Print Sharing...</b> button.</li>
+  <li>Check the <b>I want to give others access to my files</b> checkbox.</li>
+  <li>Press the <b>OK</b> button to close the dialog.</li>
+  </ul></li>
+  </ul></li>
+
+<li>Remove any other protocols and clients.</li>
+<li>Press <b>OK.</b></li>
+<li>After you reboot, log in with the same name as the computer name and <b>No</b> password.</li>
+</ul>
+
+<h3>Setting the Computer to Boot Directly Into Windows</h3>
+<ul>
+<li><b>Right</b> click on the Network Neighborhood and choose <b>Properties</b>.
+<li>In the listbox under <b>Primary Network Login</b> choose <b>Windows Login</b></li>
+<li>Press the <b>OK</b> button.</li>
+<li>Windows will ask if you want to reboot. Click on the <b>No</b> button.</li>
+</ul>
+<p>
+
+<h3>Sharing the V5 Directory</h3>
+<ul>
+<li>Run "My Computer"</li>
+<li><b>Right</b> click the <b>C:\V5</b> folder.</li>
+<li>Choose "Sharing..."</li>
+<li>Click the <b>Shared As</b> button and the <b>Full</b> Button</li>
+<li>Click "OK"</li>
+</ul>
+
+<h3>Connecting the Computers</h3>
+<p>
+The main office workstation, usually called WS0, should have the True-Trak Network Setup program installed. Run
+this program. The following assumes you have Windows XP installed on the office workstation. If you don't have
+Windows XP the process is the same but the details are a little different. The idea is to access the computers through the
+Network Neighborhood and never as local drives.
+<p>
+If the monitoring computer you are installing already appears in the list of computers displayed by the program,
+usually because you are installing a new hard drive, do the following.
+<ul>
+<li>Click once on the existing line for the monitoring computer you are installing. This will highlight the line.</li>
+<li>Press the <b>Remove Computer(s)</b> button.</li>
+<li>Press the <b>OK</b> button when assed if you wish to continue.</li>
+</ul>
+
+Add the new computer as follows.
+<ul>
+<li>Press the <b>Brouse For Computers</b> button.</li>
+<li>Press the '+' next to <b>My Network Places</b>.</li>
+<li>Press the '+' next to <b>Entire Network</b>.</li>
+<li>Press the '+' next to <b>Microsoft Windows Network</b>.</li>
+<li>Press the '+' next to <b>VISITRAK</b>.</li>
+<li>Press the '+' next to the Monitoring Computer you are adding..</li>
+<li>A <b>V5</b> folder will appear. Click once on this folder to add it to the list of computers.</li>
+<li>Press the <b>OK</b> button to close the dialog.</li>
+<li>Click once on the new line, the one that represents the new monitoring computer, that has been added to the listbox.</li>
+<li>Make sure the <b>Type</b> is set to <b>Monitoring Computer</b>.</li>
+<li>Make sure there is a <b>Yes</b> in the <b>Shared Full</b> column on the right side of the screen.</li>
+<li>Highlight all the computers in the list by clicking once on the first entry and then holding down the <b>Shift</b> key
+while clicking on the last entry.</li>
+<li>Press the <b>Standard Connections</b> button to connect all of the computers. This will only affect
+the new monitoring computer, the office workstation(s), and the data archiver.</li>
+<li>Press <b>Save Changes</b> to save the changes to each computer.</li>
+</ul>
+
+Note that the changes will not take place until the True-Trak programs have been restarted on the computers that
+have changed.
+
+
+</body>
+</html>
+

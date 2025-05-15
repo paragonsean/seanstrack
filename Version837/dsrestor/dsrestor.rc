@@ -1,0 +1,221 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resrc1.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+MAINDIALOG DIALOGEX 0, 0, 227, 199
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Restore Option",-1,9,102,207,42,WS_GROUP
+    PUSHBUTTON      "Begin Restoring Chosen Files",BEGIN_RESTORE_BUTTON,25,152,176,14,BS_CENTER
+    GROUPBOX        "Status",-1,1,169,225,23,WS_GROUP
+    CTEXT           "Beginning Restore...",DS_STATUS_TBOX,2,179,223,10,NOT WS_GROUP
+    CONTROL         "Purge Existing Shots Before Restoring New Shots",PURGE_BEFORE_RESTORE_RADIOBUTTON,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,14,114,199,12
+    CONTROL         "Merge New Shots with Existing Shots",MERGE_WITH_EXISTING_RADIOBUTTON,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,14,127,199,12
+    LISTBOX         RESTORE_FILES_LISTBOX,19,14,188,66,LBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "Files To Restore",-1,50,0,124,12,SS_CENTERIMAGE | NOT WS_GROUP
+    PUSHBUTTON      "Choose Files To Restore",CHOOSE_FILES_BUTTON,30,84,164,14,BS_CENTER
+END
+
+ABOUT_DIALOG DIALOGEX 0, 0, 140, 50
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Data Archiver Restore Program"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CTEXT           "Version 8.14",-1,35,10,70,12,NOT WS_GROUP
+    DEFPUSHBUTTON   "Close",IDCANCEL,44,29,53,14,BS_CENTER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MAINMENU MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Minimize",                   MINIMIZE_MENU
+        MENUITEM "E&xit",                       EXIT_MENU
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About",                      ABOUT_MENU
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+DATA_SERVER_RESTORE_ICON ICON                    "DsRestor.ico"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resrc1.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 8,37,0,0
+ PRODUCTVERSION 8,37,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Visi-Trak Worldwide, LLC"
+            VALUE "FileDescription", "Data Archiver Restore Program"
+            VALUE "FileVersion", "8.37.0.0"
+            VALUE "InternalName", "dsrestor.exe"
+            VALUE "LegalCopyright", "Copyright © 2018"
+            VALUE "LegalTrademarks", "FasTrak2, Sure-Trak2, True-Trak 2020"
+            VALUE "OriginalFilename", "dsrestor.exe"
+            VALUE "ProductName", "True-Trak 2020 (tm) Monitoring and Control System"
+            VALUE "ProductVersion", "8.37.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    "MAINDIALOG", DIALOG
+    BEGIN
+    END
+
+    "ABOUT_DIALOG", DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    UNABLE_TO_CONTINUE_STRING "Restore: Unable to Continue"
+    CREATE_FAILED_STRING    "Create Failed"
+    RESTORE_NOT_FOUND_STRING "Restore Directory Not Found"
+    GET_RESTORE_FAILED_STRING "Unable to create restore directory name"
+    DIR_CREATE_FAIL         "Directory Creation Failure"
+    CANT_DO_THAT_STRING     "Unable to comply"
+    UNZIP_ERROR_STRING      "Error while unzipping file"
+    MERGING_SHOT_STRING     "Merging Shot Number: "
+    COPY_COMPLETE_STRING    "Restore Complete"
+    CREATING_NEW_MACHINE_STRING "Creating New Machine"
+    CREATING_NEW_PART_STRING "Creating New Part"
+    BEGIN_RESTORE_STRING    "Begin Restoring Chosen Files"
+    ABORT_RESTORE_STRING    "Stop Restoring"
+    RESTORE_THREAD_STRING   "Restore Thread"
+    UNABLE_TO_ALLOC_BUFFER_STRING "Unable to allocate file name buffer"
+END
+
+STRINGTABLE
+BEGIN
+    FILE_COMPLETE_STRING    "File Complete"
+    MACHINE_CREATE_ERROR_STRING "Unable to create new machine"
+    PART_CREATE_ERROR_STRING "Unable to create new part"
+    DEFAULT_PART_ERROR_STRING 
+                            "Unable to load a default part (there must be 1)"
+    LOW_VERSION_STRING      "Must be Version 8"
+END
+
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

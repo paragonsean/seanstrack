@@ -1,0 +1,105 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resrc1.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+MAINDIALOG DIALOGEX 0, 0, 173, 98
+STYLE DS_SETFONT | DS_3DLOOK | DS_CONTEXTHELP | WS_CHILD | WS_VISIBLE
+FONT 12, "Arial", 400, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Listen",ON_OFF_PB,0,0,83,14,BS_CENTER | NOT WS_TABSTOP
+    PUSHBUTTON      "Clear Counts",CLEAR_COUNTS_PB,87,0,84,14,BS_CENTER | NOT WS_TABSTOP
+    RTEXT           "My Address:",MY_ADDRESS_STATIC,5,23,78,12,SS_CENTERIMAGE
+    EDITTEXT        MY_ADDRESS_EB,84,23,61,12,ES_RIGHT
+    RTEXT           "My Port:",MY_PORT_STATIC,5,43,78,12,SS_CENTERIMAGE
+    EDITTEXT        MY_PORT_EB,84,43,62,12,ES_RIGHT
+    RTEXT           "Message Count:",MESSAGE_COUNT_STATIC,4,63,78,12,SS_CENTERIMAGE
+    LTEXT           "1",MESSAGE_COUNT_TB,83,63,78,12,SS_CENTERIMAGE
+    RTEXT           "Error Count:",ERROR_COUNT_STATIC,4,78,78,12,SS_CENTERIMAGE
+    LTEXT           "2",ERROR_COUNT_TB,83,78,78,12,SS_CENTERIMAGE
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resrc1.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    "MAINDIALOG", DIALOG
+    BEGIN
+        RIGHTMARGIN, 160
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

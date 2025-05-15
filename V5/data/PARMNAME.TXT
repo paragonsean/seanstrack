@@ -1,0 +1,37 @@
+  1;    5;"Fill Time                ";   32
+  2;    5;"Total Shot Time          ";   32
+  3;    5;"Slow Shot Time           ";   32
+  4;    5;"Fast Shot                ";   32
+  5;    5;"Fast Shot Rise Time      ";   32
+  6;    5;"Cycle Time               ";   16
+  7;    5;"User Time Int One        ";   32
+  8;    5;"User Time Int Two        ";   32
+  9;    5;"User Time Int Three      ";   32
+ 10;    5;"User Time Int Four       ";   32
+ 11;    5;"User Time Int Five       ";   32
+ 12;    5;"Biscuit Size             ";  256
+ 13;    5;"Calc Start Fast Shot     ";    2
+ 14;    5;"Intensification Pressure ";    4
+ 15;    5;"Intensification Rise Time";   16
+ 16;    5;"Eff Peak Intensification ";    4
+ 17;    5;"Impact Pressure to Peak  ";    4
+ 18;    5;"Intens Squeeze Distance  ";    1
+ 19;    5;"Sleeve Full Velocity     ";   64
+ 20;    5;"Runner Full Velocity     ";   64
+ 21;    5;"Average Fill Velocity    ";   64
+ 22;    5;"User Velocity Pos One    ";   64
+ 23;    5;"User Velocity Pos Two    ";   64
+ 24;    5;"User Velocity Pos Three  ";   64
+ 25;    5;"User Velocity Pos Four   ";   64
+ 26;    5;"User Avg Vel Range One   ";   64
+ 27;    5;"User Avg Vel Range Two   ";   64
+ 28;    5;"User Avg Vel Range Three ";   64
+ 29;    5;"User Avg Vel Range Four  ";   64
+ 30;    5;"Position P1              ";    2
+ 31;    5;"Position P2              ";    2
+ 32;    5;"Position P3              ";    2
+ 33;    5;"Avg Slow Shot Velocity   ";   64
+ 34;    5;"Avg Fast Show Velocity   ";   64
+ 35;    5;"Fast Shot Distance       ";    1
+ 36;    5;"Avg Gate Velocity        ";   64
+ 37;    5;"Pre-Impact Work          ";  512

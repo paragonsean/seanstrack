@@ -1,0 +1,276 @@
+Greg,
+
+These are the messages I have been using to communicate between my program and the
+tcp/ip board program that I wrote. They are just for your info and perusal.
+
+I think they are pretty straightforward but I hope you find them helpful.
+
+                         TCP/IP Board Communications
+
+All messages begin with a 2 byte message type followed by a 4 byte value telling
+how many bytes follow. This allows the socket monitors to always read 6 bytes and then
+to read the rest of the message. This is necessary because sockets don't know how long the
+individual messages are. They just get data in a stream.
+
+The 2 bytes following the length are a 16 bit unsigned value indicating the command type.
+The ones I use so far are.
+
+SET_COMMAND_MODE                      0x1
+SET_DATA_COLLECTION_MODE_REQ          0x2
+SET_PORT_ADDRESS                      0x3
+GET_BOARD_STATUS                      0x4
+GET_BOARD_PARAMETER                   0x5
+SET_BOARD_PARAMETER                   0x6
+SEND_COMMAND_BUSY                     0x7
+GET_SHOT_DATA                         0x8
+SET_POLLING_MS                        0x9
+REGISTER_FOR_STATUS_CHANGES           0xA
+UNREGISTER_FOR_STATUS_CHANGES         0xB
+REGISTER_FOR_CURRENT_VALUES           0xC
+UNREGISTER_FOR_CURRENT_VALUES         0xD
+GET_CURRENT_VALUES                    0xE
+READ_ALL_SETPOINTS                    0xF
+DO_TRANSDUCER_TEST                    0x10
+SEND_COMMAND_WO_CHECK                 0x11
+SET_ALL_SETPOINTS                     0x12
+READ_ST_PROFILE                       0x13
+READ_ST_GLOBALS                       0x14
+SET_ST_PROFILE                        0x15
+SET_ST_GLOBALS                        0x16
+GET_CONTROL_PROGRAM                   0x17
+SET_CONTROL_PROGRAM                   0x18
+CC_STATUS_MESSAGE                     0x19
+CC_ERROR_MESSAGE                      0x1A
+BEGIN_VALVE_TEST                      0x1B
+END_VALVE_TEST                        0x1C
+VALVE_TEST_DATA                       0x1D
+
+The command type is followed by the board number. The suretrak board is 0. The FasTrak board(s)
+begin with 1. At the present time I only support one FasTrak board.
+
+If there is a data buffer, it follows the board number.
+
+For the commands that request data, the message is echoed back with the data requested at the end.
+
+The details of each message are shown below.
++------------------------------------------------------------------------------+
+|Msg |Len|                             |     |                                 |
+|Type|   |Command                      |Board| Data                            |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  | 4 |SET_COMMAND_MODE             |   1 | None                            |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  | 4 |SET_DATA_COLLECTION_MODE_REQ |   1 | None                            |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  | 6 |SET_PORT_ADDRESS             | 0,1 | 0x1c0, 0x220, etc               |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  | 4 |GET_BOARD_STATUS             | 0,1 | None, Data is returned in an    |
+|    |   |                             |     | identical message except the    |
+|    |   |                             |     | length is 6 and the status word |
+|    |   |                             |     | follows the board number.       |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  | 6 |GET_BOARD_PARAMETER          | 0,1 | parameter read command          |
+|    |   |                             |     | e.g. to read biscuit size from  |
+|    |   |                             |     | the fastrak board the data      |
+|    |   |                             |     | word should be 0x7001.          |
+|    |   |                             |     |                                 |
+|    |   |                             |     | The return message is the same  |
+|    |   |                             |     | as the request with the result  |
+|    |   |                             |     | appended as an extra word on the|
+|    |   |                             |     | end                             |
++----+---+-----------------------------+-----+---------------------------------|
+| 1  | 8 |SET_BOARD_PARAMETER          | 0,1 | Command followed by value       |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |SEND_COMMAND_BUSY            | 0,1 | Command                         |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |GET_SHOT_DATA                |   1 | None, board returns a           |
+|    |   |                             |     | GET_SHOT_DATA message with the  |
+|    |   |                             |     | shot data appended on the end.  |
+|    |   |                             |     |                                 |
+|    |   |                             |     | time of shot                    |
+|    |   |                             |     | nof position based points       |
+|    |   |                             |     | nof time based points           |
+|    |   |                             |     | nof analog channels             |
+|    |   |                             |     | nof parameters                  |
+|    |   |                             |     | arrays                          |
+|    |   |                             |     | parameters                      |
+|    |   |                             |     |                                 |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |SET_POLLING_MS               | 0,1 | N of ms between polls           |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |REGISTER_FOR_STATUS_CHANGES  | 0,1 | None                            |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |UNREGISTER_FOR_STATUS_CHANGES| 0,1 | None                            |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |REGISTER_FOR_CURRENT_VALUES  | 0,1 | None                            |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |UNREGISTER_FOR_CURRENT_VALUES| 0,1 | None                            |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |GET_CURRENT_VALUES           | 0,1 | None, returns same message with |
+|    |   |                             |     | data appended.                  |
+|    |   |                             |     |                                 |
+|    |   |                             |     |     FasTrak       Sure-Trak     |
+|    |   |                             |     |     --------      -----------   |
+|    |   |                             |     |     CUR_POS       CUR_POS       |
+|    |   |                             |     |     CUR_VEL       CUR_VEL       |
+|    |   |                             |     |     CUR_ANA1      CUR_ANA1      |
+|    |   |                             |     |     CUR_ANA2      CUR_ANA2      |
+|    |   |                             |     |     CUR_ANA3      CUR_ANA3      |
+|    |   |                             |     |     CUR_ANA4      CUR_ANA4      |
+|    |   |                             |     |     CUR_ANA5      CURRENT_DAC   |
+|    |   |                             |     |     CUR_ANA6      INPUT_WORD    |
+|    |   |                             |     |     CUR_ANA7      OUTPUT_WORD   |
+|    |   |                             |     |     CUR_ANA8      BLOCK NO      |
+|    |   |                             |     |     INPUT_WORD                  |
+|    |   |                             |     |     OUTPUT_WORD                 |
+|    |   |                             |     |                                 |
+|    |   |                             |     |  This message also returned     |
+|    |   |                             |     |  continuously to anyone         |
+|    |   |                             |     |  registering for current        |
+|    |   |                             |     |  values.                        |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |READ_ALL_SETPOINTS           |   1 |  None, returns the following    |
+|    |   |                             |     |      TOT_STK_LEN_RD             |
+|    |   |                             |     |      MIN_STK_LEN_RD             |
+|    |   |                             |     |      TIM_DEL_BISC_RD            |
+|    |   |                             |     |      GN_CH1_RD_CMD              |
+|    |   |                             |     |      GN_CH2_RD_CMD              |
+|    |   |                             |     |      GN_CH3_RD_CMD              |
+|    |   |                             |     |      GN_CH4_RD_CMD              |
+|    |   |                             |     |      GN_CH5_RD_CMD              |
+|    |   |                             |     |      GN_CH6_RD_CMD              |
+|    |   |                             |     |      GN_CH7_RD_CMD              |
+|    |   |                             |     |      GN_CH8_RD_CMD              |
+|    |   |                             |     |      VEL_EOS_RD                 |
+|    |   |                             |     |      RD_FILL_DIST               |
+|    |   |                             |     |      RD_RUN_FILL_DIST           |
+|    |   |                             |     |      RD_MIN_VEL_FS              |
+|    |   |                             |     |      RD_VEL_RISE_TIME           |
+|    |   |                             |     |      RD_L_MIN_CSFS              |
+|    |   |                             |     |      RD_LS1                     |
+|    |   |                             |     |      RD_LS2                     |
+|    |   |                             |     |      RD_LS3                     |
+|    |   |                             |     |      RD_LS4                     |
+|    |   |                             |     |      RD_LS5                     |
+|    |   |                             |     |      RD_LS6                     |
+|    |   |                             |     |      RD_DELAY                   |
+|    |   |                             |     |      RD_MIN_VEL_EOS             |
+|    |   |                             |     |      RD_TIM_COLL_INTERVAL       |
+|    |   |                             |     |      RD_TIME_OUT_PERIOD         |
+|    |   |                             |     |      RD_ANA_POS1                |
+|    |   |                             |     |      RD_ANA_POS2                |
+|    |   |                             |     |      RD_ANA_POS3                |
+|    |   |                             |     |      RD_ANA_POS4                |
+|    |   |                             |     |      RD_STARTING_ANA_VAL        |
+|    |   |                             |     |      RD_ANA_POS_VAL1            |
+|    |   |                             |     |      RD_ANA_POS_VAL2            |
+|    |   |                             |     |      RD_ANA_POS_VAL3            |
+|    |   |                             |     |      RD_ANA_POS_VAL4            |
+|    |   |                             |     |      GET_BOARD_TYPE             |
+|    |   |                             |     |      GET_MACH_NO                |
+|    |   |                             |     |      RD_CRYSTAL_FREQ            |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  | 4 |DO_TRANSDUCER_TEST           | 0   | None, returns arrays of 2000    |
+|    |   |                             |     | bits, suretrak a,b, fastrak a,b |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  | 6 |SEND_COMMAND_WO_CHECK        | 0,1 | Command                         |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |SET_ALL_SETPOINTS            |   1 | Array of setpoints, same order  |
+|    |   |                             |     | as READ_ALL_SETPOINTS.          |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |READ_ST_PROFILE              | 0   | None, returns the following     |
+|    |   |                             |     |   RD_VEL1                       |
+|    |   |                             |     |   RD_ACCEL1                     |
+|    |   |                             |     |   RD_GOOSE1                     |
+|    |   |                             |     |   RD_POS1                       |
+|    |   |                             |     |   RD_LICMD1                     |
+|    |   |                             |     |   RD_LI_IO1                     |
+|    |   |                             |     |   RD_VAC1                       |
+|    |   |                             |     |   RD_VEL2                       |
+|    |   |                             |     |   RD_ACCEL2                     |
+|    |   |                             |     |   RD_GOOSE2                     |
+|    |   |                             |     |   RD_POS2                       |
+|    |   |                             |     |   RD_LICMD2                     |
+|    |   |                             |     |   RD_LI_IO2                     |
+|    |   |                             |     |   RD_VAC2                       |
+|    |   |                             |     |   RD_VEL3                       |
+|    |   |                             |     |   RD_ACCEL3                     |
+|    |   |                             |     |   RD_GOOSE3                     |
+|    |   |                             |     |   RD_POS3                       |
+|    |   |                             |     |   RD_LICMD3                     |
+|    |   |                             |     |   RD_LI_IO3                     |
+|    |   |                             |     |   RD_VAC3                       |
+|    |   |                             |     |   RD_VEL4                       |
+|    |   |                             |     |   RD_ACCEL4                     |
+|    |   |                             |     |   RD_GOOSE4                     |
+|    |   |                             |     |   RD_POS4                       |
+|    |   |                             |     |   RD_LICMD4                     |
+|    |   |                             |     |   RD_LI_IO4                     |
+|    |   |                             |     |   RD_VAC4                       |
+|    |   |                             |     |   RD_VEL5                       |
+|    |   |                             |     |   RD_ACCEL5                     |
+|    |   |                             |     |   RD_GOOSE5                     |
+|    |   |                             |     |   RD_POS5                       |
+|    |   |                             |     |   RD_LICMD5                     |
+|    |   |                             |     |   RD_LI_IO5                     |
+|    |   |                             |     |   RD_VAC5                       |
+|    |   |                             |     |   RD_VEL6                       |
+|    |   |                             |     |   RD_ACCEL6                     |
+|    |   |                             |     |   RD_GOOSE6                     |
+|    |   |                             |     |   RD_POS6                       |
+|    |   |                             |     |   RD_LICMD6                     |
+|    |   |                             |     |   RD_LI_IO6                     |
+|    |   |                             |     |   RD_VAC6                       |
+|    |   |                             |     |   RD_V_LOOP_GAIN                |
+|    |   |                             |     |   RD_BK_VEL1                    |
+|    |   |                             |     |   RD_BK_VEL2                    |
+|    |   |                             |     |   RD_BK_VEL3                    |
+|    |   |                             |     |   RD_BKGN1                      |
+|    |   |                             |     |   RD_BKGN2                      |
+|    |   |                             |     |   RD_BKGN3                      |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |READ_ST_GLOBALS              | 0   | None, returns the following     |
+|    |   |                             |     |   RD_VEL_DIVIDEND (lw)          |
+|    |   |                             |     |   RD_VEL_DIVIDEND (hw)          |
+|    |   |                             |     |   RD_P_CHECK_ZSPEED             |
+|    |   |                             |     |   RD_COUNTS_PER_UNIT            |
+|    |   |                             |     |   RD_NULL                       |
+|    |   |                             |     |   RD_LVDT_OFFSET                |
+|    |   |                             |     |   RD_JS_SETTING                 |
+|    |   |                             |     |   RD_RETR_SETTING               |
+|    |   |                             |     |   RD_FT_SETTING                 |
+|    |   |                             |     |   RD_VEL_MUL                    |
+|    |   |                             |     |   CRD_LS1                       |
+|    |   |                             |     |   CRD_LS2                       |
+|    |   |                             |     |   CRD_LS3                       |
+|    |   |                             |     |   CRD_LS4                       |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |SET_ST_PROFILE               | 0   | Array of setpoints, same order  |
+|    |   |                             |     | as READ_ST_PROFILE.             |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |SET_ST_GLOBALS               | 0   | Array of setpoints, same order  |
+|    |   |                             |     | as READ_ST_GLOBALS.             |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  | 4 |GET_CONTROL_PROGRAM          | 0   | None, returns entire control.prg|
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |SET_CONTROL_PROGRAM          | 0   | control.prg                     |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |CC_STATUS_MESSAGE            | 0   | Sent from board to sender of    |
+|    |   |                             |     | SET_CONTROL_PROGRAM. Each       |
+|    |   |                             |     | message has text of cc program  |
+|    |   |                             |     | status.                         |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |CC_ERROR_MESSAGE             | 0   | Sent from board to sender of    |
+|    |   |                             |     | SET_CONTROL_PROGRAM. Each       |
+|    |   |                             |     | message has text of cc error.   |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |BEGIN_VALVE_TEST             | 0   | Not yet implimented             |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |END_VALVE_TEST               | 0   | Not yet implimented             |
+|----+---+-----------------------------+-----+---------------------------------|
+| 1  |   |VALVE_TEST_DATA              | 0   | Not yet implimented             |
+|----+---+-----------------------------+-----+---------------------------------|
+| 2  | 0 |                             |     | Tells the board I am leaving    |
++------------------------------------------------------------------------------+
+
+
+Jay

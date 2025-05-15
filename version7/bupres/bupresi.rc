@@ -1,0 +1,449 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resrci.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Italian (Italy) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ITA)
+#ifdef _WIN32
+LANGUAGE LANG_ITALIAN, SUBLANG_ITALIAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+AUTO_BACKUP_DIALOG DIALOG DISCARDABLE  0, 0, 376, 180
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Save",AB_SAVE_PB,55,38,73,14
+    EDITTEXT        AB_RESTORE_NAME_EBOX,13,110,167,14,ES_AUTOHSCROLL
+    LTEXT           "Create a New Restore Point",IDC_STATIC,53,96,89,8
+    PUSHBUTTON      "Create",AB_CREATE_PB,78,126,40,14
+    LTEXT           "Automatic Backup Directory",IDC_STATIC,11,12,89,8
+    EDITTEXT        AB_AUTOBACKUPDIR_EBOX,12,22,161,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,8,92,175,77
+    LISTBOX         AB_HELP_LB,188,8,182,172,LBS_NOSEL | WS_VSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,8,8,175,78
+    LTEXT           "Press ""Save"" to make this the current Auto Backup directory and create a ""currrent"" backup.",
+                    IDC_STATIC,13,59,165,17
+    LTEXT           "Press ""Create"" to make a restore point of the current setups. All machine and part setups will be saved.",
+                    IDC_STATIC,17,142,161,26
+END
+
+BACKUP_DIALOG DIALOG DISCARDABLE  0, 0, 410, 185
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Backup",IDC_STATIC,4,4,87,76,WS_GROUP
+    CONTROL         "Setups",TB_SETUPS_CHECKBOX,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,13,15,41,12
+    CONTROL         "Scrap/Downtime",TB_SCRAP_DOWN_CHECKBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,28,73,12
+    CONTROL         "Shot Profiles",TB_PROFILE_CHECKBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,41,68,12
+    CONTROL         "Shot Parameters",TB_PARAM_CHECKBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,54,73,12
+    CONTROL         "Alarm Data",TB_ALARM_CHECKBOX,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,13,67,73,12
+    PUSHBUTTON      "All",TB_BACKUP_ALL_BUTTON,4,83,27,12,BS_CENTER
+    LTEXT           "Backup Zip File",IDC_STATIC,139,132,108,8,NOT WS_GROUP
+    LTEXT           "Machine",IDC_STATIC,97,1,31,9
+    LTEXT           "Part",IDC_STATIC,197,1,17,10
+    LTEXT           "Params",TB_PARAMS_STATIC,323,1,30,9
+    LTEXT           "Shots",TB_SHOTS_STATIC,358,1,26,9
+    CTEXT           "Applied to Profiles AND Parameters",IDC_STATIC,9,112,78,
+                    17,NOT WS_GROUP
+    LTEXT           "Shots",IDC_STATIC,244,118,21,8
+    GROUPBOX        "Purge Options",IDC_STATIC,2,101,104,80,WS_GROUP
+    CONTROL         "Purge Data",TB_PURGE_CHECKBOX,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,7,130,60,12
+    CONTROL         "Save Last 50 Shots",TB_LAST_50_CHECKBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,142,85,12
+    CONTROL         "Purge Downtimes",TB_PURGE_DOWNTIME_CHECKBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,154,71,12
+    CONTROL         "Purge Alarm Summaries",TB_PURGE_ALARMS_CHECKBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,166,95,10
+    LISTBOX         TB_MACHINE_LISTBOX,96,11,96,92,LBS_SORT |
+                    LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "All",TB_ALL_MACHINES_BUTTON,109,107,27,12,BS_CENTER
+    LISTBOX         TB_PART_LISTBOX,194,11,195,92,LBS_SORT | LBS_USETABSTOPS |
+                    LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Most Recent",TB_RECENT_XBOX,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,168,117,56,10
+    EDITTEXT        TB_RECENT_COUNT_EBOX,225,116,17,12,ES_AUTOHSCROLL
+    EDITTEXT        TB_ZIP_NAME_EDITBOX,139,143,144,12
+    PUSHBUTTON      "Begin",IDOK,187,161,50,17,BS_CENTER
+    PUSHBUTTON      "Zip Current Setup Files",TB_ALL_TEXT_FILES_PB,317,173,
+                    92,12
+END
+
+CHOOSE_FUNCTION DIALOG DISCARDABLE  0, 0, 231, 165
+STYLE WS_CHILD | WS_VISIBLE
+FONT 8, "Courier"
+BEGIN
+    PUSHBUTTON      "Backup",BACKUP_BUTTON,10,7,74,22,BS_CENTER |
+                    BS_MULTILINE
+    PUSHBUTTON      "Backup List",BACKUP_LIST_BUTTON,10,37,74,22,BS_CENTER |
+                    BS_VCENTER | BS_MULTILINE
+    PUSHBUTTON      "Restore",RESTORE_BUTTON,10,67,74,22,BS_CENTER |
+                    BS_MULTILINE
+    PUSHBUTTON      "Delete/Renumber",DELETE_BUTTON,10,97,74,22,BS_CENTER |
+                    BS_MULTILINE
+    PUSHBUTTON      "Auto Backup",AUTO_BACKUP_BUTTON,10,132,74,22,BS_CENTER |
+                    BS_MULTILINE
+    LTEXT           "Backup Setups, shots, parameter data, alarms, and downtimes.",
+                    IDC_STATIC,91,9,132,21
+    LTEXT           "Backup shots that have been added to the backup list file.",
+                    IDC_STATIC,91,41,133,19
+    LTEXT           "Restore data from previous backups.",IDC_STATIC,91,71,
+                    130,17
+    LTEXT           "Delete or renumber shots",IDC_STATIC,91,104,97,8
+    LTEXT           "Create or change the name of the Automatic Backup Directory",
+                    IDC_STATIC,90,131,137,19
+    LTEXT           "Create New Restore Points",IDC_STATIC,90,152,101,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,0,32,231,1
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,0,63,231,1
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,0,92,231,1
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,0,124,231,1
+END
+
+DELETE_DATA DIALOG DISCARDABLE  0, 0, 328, 184
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Operation",-1,108,52,68,39,WS_GROUP
+    GROUPBOX        "Data Types",-1,108,6,68,39,WS_GROUP
+    CTEXT           "Machine",-1,6,1,27,8
+    LTEXT           "Part",-1,5,72,21,8
+    LISTBOX         DD_MACHINE_LISTBOX,2,10,76,59,LBS_SORT | LBS_EXTENDEDSEL |
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         DD_PART_LISTBOX,2,82,102,99,LBS_SORT | LBS_EXTENDEDSEL |
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         DD_SHOT_LISTBOX,184,18,137,142,LBS_SORT |
+                    LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Parameters",DD_PARAMETERS_CHECKBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,115,16,55,12
+    CONTROL         "Profiles",DD_PROFILES_CHECKBOX,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,115,28,46,12
+    PUSHBUTTON      "Begin",IDOK,112,154,56,18,BS_CENTER
+    CONTROL         "Delete",DD_DELETE_RADIOBUTTON,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,116,63,39,12
+    CONTROL         "Renumber",DD_RENUMBER_RADIOBUTTON,"Button",
+                    BS_AUTORADIOBUTTON,116,75,44,12
+    EDITTEXT        DD_RENUMBER_EDITBOX,148,103,20,12
+    PUSHBUTTON      "All",DD_ALL_SHOTS_BUTTON,227,163,50,14,BS_CENTER
+    LTEXT           "Shot",-1,184,6,19,8,NOT WS_GROUP
+    LTEXT           "First New Number:",DD_RENUMBER_LABEL,119,99,27,23,NOT
+                    WS_GROUP
+    LTEXT           "Param /",-1,286,0,28,8,NOT WS_GROUP
+    LTEXT           "Profile",-1,296,8,30,8,NOT WS_GROUP
+    LTEXT           "Date",-1,220,7,19,8,NOT WS_GROUP
+END
+
+RESTORE_DIALOG DIALOG DISCARDABLE  0, 0, 425, 168
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Restore",IDC_STATIC,2,11,103,117,WS_GROUP
+    LTEXT           "Machine",IDC_STATIC,108,0,31,9
+    LTEXT           "Part",IDC_STATIC,177,0,17,10
+    LTEXT           "Params",TR_PARAMS_STATIC,269,0,30,9
+    LTEXT           "Shots",TR_SHOTS_STATIC,302,0,18,9
+    PUSHBUTTON      "Begin",IDOK,118,136,50,14,BS_CENTER
+    CONTROL         "Setups",TR_SETUPS_CHECKBOX,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,11,22,41,12
+    CONTROL         "Scrap/Downtime",TR_SCRAP_DOWN_CHECKBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,35,73,12
+    CONTROL         "Shot Profiles",TR_PROFILE_CHECKBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,48,68,12
+    CONTROL         "Shot Parameters",TR_PARAM_CHECKBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,61,73,12
+    CONTROL         "Alarm Data",TR_ALARM_CHECKBOX,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,11,74,73,12
+    CONTROL         "SureTrak Globals",TR_SURETRAK_CHECKBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,87,90,12
+    PUSHBUTTON      "All",TR_RESTORE_ALL_BUTTON,2,128,18,12,BS_CENTER
+    LISTBOX         TR_MACHINE_LISTBOX,107,10,65,66,LBS_SORT |
+                    LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         TR_PART_LISTBOX,175,10,150,66,LBS_SORT | LBS_USETABSTOPS |
+                    LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "All",TR_ALL_MACHINES_BUTTON,108,71,18,12,BS_CENTER
+    PUSHBUTTON      "Load Zip File",TR_LOAD_ZIP_FILE_BUTTON,201,71,87,14,
+                    BS_CENTER
+    LISTBOX         TR_DEST_LISTBOX,329,10,91,74,LBS_SORT |
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Destination Machine",IDC_STATIC,327,0,66,8
+    CONTROL         "Analog Sensor List",TR_ANALOGS_CHECKBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,100,90,12
+    CONTROL         "FasTrak Board List",TR_BOARDS_CHECKBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,113,90,12
+    LISTBOX         TR_AUTOBACKUPDIR_LISTBOX,202,99,131,65,LBS_SORT |
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Automatic Backups",TR_AUTOBACKUPDIR_TBOX,203,89,62,8
+    LTEXT           "Click an Automatic Backup to load those part setups.",
+                    IDC_STATIC,341,110,74,31
+END
+
+SAVING_PROGRESS DIALOG DISCARDABLE  0, 0, 164, 71
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Saving..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Machine:",-1,4,3,35,8,NOT WS_GROUP
+    LTEXT           "Part:",-1,4,13,19,8,NOT WS_GROUP
+    LTEXT           "File:",-1,4,23,16,8,NOT WS_GROUP
+    LTEXT           "M01",SAVING_MACHINE_TEXT_BOX,41,3,94,10,NOT WS_GROUP
+    LTEXT           "VisiTrak",SAVING_PART_TEXT_BOX,41,13,120,10,NOT
+                    WS_GROUP
+    LTEXT           "Text1",SAVING_FILE_TEXT_BOX,41,23,65,10,NOT WS_GROUP
+    PUSHBUTTON      "Stop",SAVING_CANCEL_BUTTON,56,47,50,14,BS_CENTER
+END
+
+BACKUP_LIST_DIALOG DIALOG DISCARDABLE  0, 0, 273, 165
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        TB_ZIP_NAME_EDITBOX,38,125,192,12
+    PUSHBUTTON      "Begin",IDOK,100,146,67,17,BS_CENTER
+    LTEXT           "Backup Zip File",IDC_STATIC,38,114,144,8,NOT WS_GROUP
+    LTEXT           "The following shots will be backed up",IDC_STATIC,39,2,
+                    119,8
+    LTEXT           "Machine",IDC_STATIC,17,14,31,8
+    LTEXT           "Part",BACKUP_LIST_PART_TBOX,85,14,15,8
+    LTEXT           "Shot",BACKUP_LIST_SHOT_TBOX,228,14,15,8
+    LISTBOX         BACKUP_LIST_LISTBOX,15,23,243,87,LBS_SORT |
+                    LBS_USETABSTOPS | LBS_NOINTEGRALHEIGHT | LBS_NOSEL |
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+NEW_MACHINE_NOTIFY_DIALOG DIALOG DISCARDABLE  0, 0, 199, 90
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New Machine Notification"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,74,67,50,14
+    LTEXT           "These won't be visible in any currently running programs until you restart the True-Trak 2020 software.",
+                    IDC_STATIC,31,27,148,26
+    LTEXT           "Note:",IDC_STATIC,9,17,18,8
+    LTEXT           "You have created one or more new machines.",IDC_STATIC,
+                    31,17,146,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE
+BEGIN
+    "BACKUP_DIALOG", DIALOG
+    BEGIN
+        RIGHTMARGIN, 354
+        BOTTOMMARGIN, 160
+    END
+
+    "CHOOSE_FUNCTION", DIALOG
+    BEGIN
+        RIGHTMARGIN, 212
+        BOTTOMMARGIN, 87
+    END
+
+    "DELETE_DATA", DIALOG
+    BEGIN
+        RIGHTMARGIN, 285
+    END
+
+    "RESTORE_DIALOG", DIALOG
+    BEGIN
+        RIGHTMARGIN, 422
+        BOTTOMMARGIN, 166
+    END
+
+    "SAVING_PROGRESS", DIALOG
+    BEGIN
+        RIGHTMARGIN, 141
+    END
+
+    "BACKUP_LIST_DIALOG", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 158
+    END
+
+    "NEW_MACHINE_NOTIFY_DIALOG", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 192
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "resrci.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+BUPRES_ICON             ICON    DISCARDABLE     "bupres.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    MUST_SELECT_FIRST_STRING "You must select a part first"
+    CANT_DO_THAT_STRING     "Unable to comply"
+    MAIN_CAPTION_STRING     "TrueTrak Backup/Restore"
+    EMPTY_DESTINATION_BOX   "You must fill in the destination path"
+    DIR_CREATE_FAIL         "Unable to create the destination directory"
+    COMPUTER_DIR_CREATE_FAIL "Unable to create the computer directory"
+    BACKUP_DATA_STRING      "Backup Setups and Data"
+    BACKUP_LIST_DATA_STRING "Backup from Backup List File"
+    RESTORE_DATA_STRING     "Restore Setups and Data"
+    DELETE_DATA_STRING      "Delete or Renumber Data"
+    AUTO_BACKUP_DATA_STRING "Automatic Backup Data"
+    DIRECTORY_NOT_EXIST_STRING "Directory doesn't exist"
+    NOTE_STRING             "Note"
+    NO_MEMORY_STRING        "Out of Memory"
+    SAVELIST_STRING         "SaveList Create"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    THREAD_CREATE_FAIL      "Unable to Create Thread"
+    NO_DISK_IN_DRIVE_STRING "No disk in Drive"
+    TRY_AGAIN_STRING        "Try Again?"
+    NO_MACHINE_STRING       "No Machine: Create it first using the machine editor"
+    NOTHING_TO_DO_STRING    "You have not selected anything to do"
+    NEED_ZIP_NAME_STRING    "You must supply a name for the ZIP file."
+    NO_ZIP_DIR_STRING       "Cannot create directory for Zip file."
+    EVENT_FAIL_STRING       "Cannot create waitfor event"
+    SEMAPHOR_FAIL_STRING    "Cannot own machine semaphor db"
+    DELETING_STRING         "Deleting..."
+    BACKING_UP_STRING       "Backing Up..."
+    RESTORING_STRING        "Restoring..."
+    RENUMBERING_STRING      "Renumbering..."
+    MACHINE_ON_OTHER_STRING "Machine is on another computer."
+    MUST_RESTORE_THERE_STRING "You must be at that computer to restore."
+    WILL_RESTOR_CURRENT_STRING
+                            "You are about to restore the CURRENT PART on this machine!"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    MONITOR_OFF_STRING      "Monitoring should be TURNED OFF.   Do you wish to continue restoring?"
+    CANT_LOAD_MACHINE_STRING "Source machine cannot be loaded!"
+    ZIP_FILES_STRING        "Zip Files"
+    CHOOSE_ZIP_FILE_STRING  "Choose Zip File to Load"
+    ADRIVE_SUBDIR_STRING    "Cannot save to an A drive subdirectory"
+    ZIP_OK_QUESTION_STRING  "Would you like the backup file name fixed?"
+    DEST_NOT_FOUND_STRING   "Destination Machine Not Found"
+    NOT_ON_WS0_STRING       "You should not create machines on WS0"
+    NO_SAVE_TO_BACKUPDIR_STRING "Cannot save to the \\V5\\BACKUP folder"
+    NO_EXES_DIR_FOUND_STRING "No EXES directory found"
+    AB_DIR_HELP_STRING      "Enter the name of the root directory for Auto Backups. Each Restore Point will be subdirectory of this root directory"
+    AB_NEW_DIR_HELP_STRING  "This is a new Auto Backup root directory. All setups will be backed up when you press Save."
+    AB_RP_HELP_STRING       "Creating a new restore point will keep a snapshot of the current setups in a subdirectory of the Auto Backup root directory."
+    COMPLETE_STRING         "Finished"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    COPYING_SETUPS_STRING   "Copying Setups..."
+    CREATING_DIRECTORY_STRING "Creating the directory... "
+    MACHINE_INTRO_STRING    "Machine : "
+    PART_INTRO_STRING       "  Part : "
+    NO_ROOT_DIR_STRING      "You cannot backup to a root directory"
+END
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE
+BEGIN
+    "AUTO_BACKUP_DIALOG", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 369
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Italian (Italy) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

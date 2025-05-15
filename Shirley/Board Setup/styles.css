@@ -1,0 +1,127 @@
+header {
+  text-align: center;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #999;
+}
+
+header h1 {
+font-family: Arial, sans-serif;
+font-size: 24px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+
+h2 {
+font-family: Arial, sans-serif;
+font-size: 18px;
+text-align: center;
+padding-top: 3px;
+padding-bottom: 3px;
+border-top: 1px solid #999;
+border-bottom: 1px solid #999;
+}
+
+h3 {
+margin-bottom: 0;
+padding-bottom: 5px;
+border-bottom: 0;
+}
+
+h4 {
+font-family: Arial, sans-serif;
+font-size: 16px;
+margin-top: 0;
+margin-bottom: 0;
+padding-top: 0;
+padding-bottom: 5px;
+border-bottom: 0;
+}
+
+dt {
+  font-weight: bold;
+  }
+
+dd {
+  padding-bottom: 10px;
+}
+dd p {
+    margin: 0;
+    border: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 5px;
+}
+
+img.floatright
+  {
+  float: right;
+  margin-right: 10px;
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  }
+
+img.floatleft
+  {
+  float: left;
+  margin-right: 10px;
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  }
+
+img.noborder
+  {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  }
+input.floatright
+  {
+  float: right;
+  }
+
+input.floatleft
+  {
+  float: left;
+  }
+
+.centerfig
+  {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+.centerfig figcaption
+  {
+  margin-top: 10px;
+  }
+
+p.def
+  {
+  font-weight: bold;
+  }
+
+ul {
+  list-style: none;
+  margin-top: 0;
+  padding-top: 0;
+  }
+
+a:link {
+  color: black;
+  }
+
+br.padded {
+padding-bottom: 5px;
+}
+
+td.padded {
+padding-left: 10px;
+}

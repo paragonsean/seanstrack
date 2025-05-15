@@ -1,0 +1,169 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resrc1.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+GENERALMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       EXIT_CHOICE
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Create\tIns",                CREATE_CHOICE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+EDIT_ANALOG_SENSOR DIALOG DISCARDABLE  0, 0, 483, 154
+STYLE DS_3DLOOK | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         SENSOR_DESC_LISTBOX,0,11,192,139,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        VARTYPE_CBOX,199,30,71,53,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        UNITS_CBOX,313,30,71,53,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        SENSOR_DESC_EBOX,199,11,224,13
+    EDITTEXT        LOW_VOLTS_EBOX,238,74,36,12
+    EDITTEXT        LOW_VALUE_EBOX,238,91,36,12
+    EDITTEXT        HIGH_VOLTS_EBOX,290,74,53,12
+    EDITTEXT        HIGH_VALUE_EBOX,290,90,53,12
+    EDITTEXT        TEST_VOLTS_EBOX,374,76,53,12
+    EDITTEXT        TEST_VALUE_EBOX,374,92,53,12
+    GROUPBOX        "Transducer I/O Ranges",IDC_STATIC,195,51,157,63
+    LTEXT           "Description",IDC_STATIC,199,0,40,8
+    GROUPBOX        "Test Calculator",IDC_STATIC,360,58,112,56
+    LTEXT           "Variable Type",IDC_STATIC,274,30,29,18
+    CTEXT           "Analog Sensor",IDC_STATIC,47,0,90,9
+    LTEXT           "Units",IDC_STATIC,388,33,20,9
+    RTEXT           "Volts",IDC_STATIC,213,75,22,8,NOT WS_GROUP
+    LTEXT           "PSI",TEST_UNITS_TBOX,430,93,35,10
+    LTEXT           "Volts",IDC_STATIC,428,79,20,10
+    RTEXT           "Low",IDC_STATIC,248,64,16,8,NOT WS_GROUP
+    RTEXT           "High",IDC_STATIC,308,63,16,8,NOT WS_GROUP
+    RTEXT           "PSI",UNITS_TBOX,200,93,34,8
+    LTEXT           "Note: After creating a new analog sensor you MUST RESTART all the True-Trak programs.",
+                    IDC_STATIC,195,116,288,10
+    LTEXT           "You should NOT do this when you are about to make a shot.",
+                    IDC_STATIC,195,127,192,8
+    DEFPUSHBUTTON   "Save Changes",SAVE_CHANGES_BUTTON,305,138,54,14
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resrc1.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    "EDIT_ANALOG_SENSOR", DIALOG
+    BEGIN
+        RIGHTMARGIN, 383
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+ESENSOR_ICON            ICON    DISCARDABLE     "esensor.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    NONE_STRING             "None"
+    CANNOT_COMPLY_STRING    "Unable To Comply"
+    MAIN_WINDOW_TITLE_STRING "Analog Sensor Setup"
+    UNABLE_TO_CONTINUE_STRING "Unable to continue"
+    NO_VARIABLE_TYPES_STRING "No Variable Types Found"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

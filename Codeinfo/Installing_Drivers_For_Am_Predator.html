@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Installing Win95 Drivers for American Preditor</title>
+</head>
+<body>
+<center><h3>Installing the American Preditor Drivers for Windows 95</h3></center>
+Right click on My Computer and choose <b>Properties</b>.
+<br>Click on the <b>Device Manager</b> tab.
+<br>
+If you don't have the Intel chipset drivers installed you will see a large question mark. If you click on the <b>+</b> sign to the left
+of the question mark you will see three smaller question marks labeled
+<br>PCI Bridge
+<br>PCI Ethernet Controller
+<br>PCI Universal Serial Bus
+<p>
+<ul>
+<li>If you do not have one already, create a C:\Drivers folder. Put the chipset floppy into the floppy drive and
+copy the Chipset and Ethernet folders to the C:\Drivers folder.</li>
+<li>Put the Win 95 VGA for Am Predator floppy into the floppy drive and copy the W95500.exe file to the C:\Drivers folder.</li>
+</ul>
+<h3>Installing the Chipset Drivers</h3>
+<ul>
+<li>Run C:\Drivers\Chipset\setup.exe</li>
+<li>At the Welcome screen, press <b>Next&gt</b>.</li>
+<li>At the licence screen, press <b>Yess</b>.</li>
+<li>Readme: Press <b>Next&gt</b></li>
+<li>Destination Location : <b>Next&gt</b></li>
+<li>Actions : <b>Next&gt</b></li>
+<li>Setup Complete. Choose <b>Yes I want to restart my computer now</b> and press <b>OK</b></li>
+<li>After the computer reboots you will get a series of "New Hardware Found" messages. These will stop at the
+<b>Update Device Driver Wizard</b> Press <b>Next&gt</b></li>
+<li>It will find the driver and you have only to press <b>Finish</b>.</li>
+<li>You will next be told that it can't find a file for the USB Controller. Press <b>Skip File</b></li>
+<li>You will be asked for another file for the USB Controller. Press <b>Skip File</b> again.</li>
+<li>When asked if you want to reboot, answer <b>Yes</b>.</li>
+<li>After rebooting, the computer will find New Hardware again. This time it will be the Primary IDE Controller.
+When it asks if you want to reboot, answer <b>No</b></li>
+
+<li>The computer will find the Secondary IDE Controller this time. When it asks if you want to reboot, answer <b>Yes</b>.</li>
+<li>Right click on My Computer and choose <b>Properties</b>. Click on the <b>Device Manager</b> tab</li>
+<li>Under <b>Universal Serial Bus Controller</b>, click once on the <b>Intel(r) 82371AB... PCI to USB Universal Host Controller</b>
+and then click the <b>Properties</b> button at the bottom of the screen. Under <b>Device Usage</b>, click the <b>Disable in this hardware profile</b> checkbox.</li>
+<li>Under <b>? Other Devices</b> you will find the <b>?PCI Ethernet Controller</b>. Click once on this and then press
+the <b>Properties</b> button. Click on the <b>Driver</b> tab and press the <b>Update Driver</b> button.
+<br>When asked "Do you want Windows to Search" select <b>Yes</b>. It will come back with "Unable to find". Press
+<b>Browse</b> and browse to C:\Drivers\Ethernet and press <b>OK</b> and then <b>OK</b>. It will come back with "Found
+drivers for Intel...". Press <b>Finish</b>.
+<br>You will be asked to Insert Disk. Click <b>OK</b>. It will come up with a Copying Files dialog looking for R100ent.sys. Browse to C:\Drivers\Ethernet
+again and then <b>OK</b>, <b>OK</b>. You will then be asked to provide a comptuer and workgroup name. Enter W01 and VISITRAK.
+<br>When you click <b>Close</b> the computer will ask for the Windows 95 CD. Pull down the listbox and choose C:\WIN95 and press <b>OK</b>.
+<br>Restart. When asked for a username and password enter W01 with no password. Press <b>OK</b>. When asked for passwords again just press <b>OK</b>.</li>
+<li>Right Click on the Network Neighborhood and choose <b>Properties</b>. Remove the <b>Client for Netware Networks</b> and the <b>IPX/SPX-Compatible</b> protocol.</li>
+<li>Press the <b>Add</b> button. Click <b>Protocol</b>. Press <b>Add</b>. Click <b>Microsoft</b> on the left and then
+<b>TCP/IP</b> on the right. Press <b>Ok</b></li>
+<li>Press the <b>File and Printer Sharing</b> button. Check the <b>I want to be able to give others access to my files</b>. Press
+<b>OK</b>. When asked to insert the disk, choose C:\WIN95.</li>
+<li>Remove the <b>NetBEUI</b> Protocol.</li>
+<li>Configure TCP/IP.</li>
+<li>Restart</li>
+<li>Right click the Network Neighborhood again and choose <b>Properties</b>. Pull down the <b>Primary Network Login</b> listbox
+and choose <b>Windows Login</b>. Press <b>OK</b>. You do not have to restart after this.</li>
+</ul>
+
+</body>
+</html>

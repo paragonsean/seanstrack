@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+
+<title> FasTrak Board Setup </title>
+
+<style>
+#boardTable{
+	width: 300px;
+	height: 300px;
+	border-style: solid;
+	overflow: auto;
+} 
+
+#boardTable, td, th{
+	border: 1px solid black;
+}
+
+div.machineList table {
+	display: block;
+	width: 300px;
+	height: 300px;
+	border-style: solid;
+	overflow: auto;
+}
+
+div.machineList table, td, th{	
+	border: 1px solid black;
+}
+
+h1 {
+	text-align: left;
+}
+</style>
+</head>
+
+<body>
+
+<h1> Boards At This Computer </h1>
+<div class="boardList">
+    <script type="text/javascript">
+    // define board number, address and tcp port
+	
+    var board_info = [
+    [1, "192.168.254.90", 20000],
+    [2, "192.168.254.91", 20000],
+    ];
+    //document.write(boardInfo);
+
+    /*******************************************************************
+    *                         makeBoardTable                           *
+    ********************************************************************/
+    function makeBoardTable( arr )
+    {
+    var result = "<table id='boardTable'><tr><th>Board Number</th><th>Board Address</th><th>Tcp Port</th></tr>";
+    
+    for ( var i=0; i<arr.length; i++ )
+        {
+        result += "<tr>"
+        for(var j=0; j<arr[i].length; j++)
+            {
+            result += "<td>" + arr[i][j] + "</td>";
+            }
+        result += "</tr>";
+        }
+    
+    result += "</table>";
+    return result;
+    }
+    document.write( makeBoardTable(board_info) );
+	
+	
+	
+	/*******************************************************************
+    *                          selectBoard                           *
+    ********************************************************************/
+	// select board, return the board number, TCP Address, and TCP Port
+    // display on the board number, TCP Address and TCP Port section respectively
+	
+	//exclude the first row (header)
+	var selectedBoardID;
+	var boards = $('div.boardList table tr').not(':first');
+	
+	
+	boards.on('click',function(){
+		// change the background color of selected row while restore the color of other rows
+		$('div.boardList table tr').not(this).css('background-color','white');
+		$(this).css('background-color','LightGray');
+		selectedBoardID = $(this).index();
+		// return the values
+		var boardNumber = $("div.boardList table").find('td').eq(3*selectedBoardID-3).text();
+		var boardAddress = $("div.boardList table").find('td').eq(3*selectedBoardID-2).text();
+		var tcpPort = $("div.boardList table").find('td').eq(3*selectedBoardID-1).text();
+		// change the values
+		var boardID = "bbn" + boardNumber;
+		$('#'+boardID).prop('checked',true);
+		$('#tcpAddress').val(boardAddress);
+		$('#tcpPort').val(tcpPort);
+	});
+	
+	
+	/*******************************************************************
+    *                Board Section BoardNumberChange                   *
+    ********************************************************************/
+	function bBoardNumberChange(){
+		var newvalue = document.querySelector('[name="bBoardNum"]:checked').value;
+		$("div.boardList table").find('td').eq(3*selectedBoardID-3).html(newvalue);
+	}
+	
+	/*******************************************************************
+    *                     TCP address change                           *
+    ********************************************************************/
+	function addressChange(){
+		var newvalue = document.getElementById("tcpAddress").value;
+		$("div.boardList table").find('td').eq(3*selectedBoardID-2).html(newvalue);
+	}
+	
+	/*******************************************************************
+    *                     TCP port change                           *
+    ********************************************************************/
+	function portChange(){
+		var newvalue = document.getElementById("tcpPort").value;
+		$("div.boardList table").find('td').eq(3*selectedBoardID-1).html(newvalue);
+	}
+	
+	/*******************************************************************
+    *                           newBoard                               *
+    ********************************************************************/
+	// new rows to be clicked.... 
+	function newBoard(){
+		//$('div.boardList table').append('<tr><td></td><td></td><td></td></tr>');
+		var table = document.getElementById('boardTable');
+		var row = table.insertRow(-1);
+		row.insertCell(0);
+		row.insertCell(1);
+		row.insertCell(2);
+		row.onclick = function(){
+			$('div.boardList table tr').not(this).css('background-color','white');
+			$(this).css('background-color','LightGray');
+			selectedBoardID = $(this).index();
+			
+		};
+		
+	}
+		
+	
+	/*******************************************************************
+    *                         deleteBoard                              *
+    ********************************************************************/
+	function deleteBoard(){
+		var table = document.getElementById('boardTable');
+		table.deleteRow(selectedBoardID);
+	}
+    </script>
+	
+	<h2> Board Number </h2>
+	<!-- board board number: bbn --> 
+	<input type="radio" name="bBoardNum" id="bbn1" value="1" onclick="bBoardNumberChange();">1
+	<input type="radio" name="bBoardNum" id="bbn2" value="2" onclick="bBoardNumberChange();">2
+	<input type="radio" name="bBoardNum" id="bbn3" value="3" onclick="bBoardNumberChange();">3
+	<input type="radio" name="bBoardNum" id="bbn4" value="4" onclick="bBoardNumberChange();">4
+	<input type="radio" name="bBoardNum" id="bbn5" value="5" onclick="bBoardNumberChange();">5
+	<input type="radio" name="bBoardNum" id="bbn6" value="6" onclick="bBoardNumberChange();">6
+	<input type="radio" name="bBoardNum" id="bbn7" value="7" onclick="bBoardNumberChange();">7
+	<input type="radio" name="bBoardNum" id="bbn8" value="8" onclick="bBoardNumberChange();">8
+	
+	<h2> TCP Address </h2>
+	<input type="text" id="tcpAddress" onchange="addressChange();">
+	
+	<h2> TCP Port </h2>
+	<input type="text" id="tcpPort" onchange="portChange();">
+	
+	<br>
+	<br>
+	<br>
+	<button onclick="newBoard()">New</button>
+	<button onclick="deleteBoard()">Delete</button>
+</div>
+
+
+<h1> Machines At This Computer </h1>
+
+<div class="machineList"> 
+	<script type="text/javascript">
+
+	// define machinename and boardnumber list, this should be INPUT from local files...
+	
+	//machineName is a string... repacked into an array...
+	var machineName = '<%- machineName %>'.split(',');
+	
+	//machineinfo is a string.... repacked into a list....
+	var machineInfo={};
+	var machineBoardNumber = '<%- JSON.stringify(machineBoardNumber) %>'.replace(/["]+/g,'').replace(/[{}]+/g,'').split(',');
+	
+	for (var i=0; i<machineBoardNumber.length; i++){
+		element = machineBoardNumber[i].split(':');
+		mName = element[0]; //machine name
+		bNumber = element[1]; // board number
+		machineInfo[mName]=bNumber;
+		}
+	
+	//for (var i=0;i<machineName.length;i++){
+	//	machineNameItem = machineName[i];
+	//	document.write(machineNameItem + ': ' + machineInfo[machineNameItem] + "<br/>");
+	//}
+	
+	/*******************************************************************
+    *                          makeMachineTable                           *
+    ********************************************************************/
+	function makeMachineTable(name, number){
+		var result = "<table><tr><th>Machine</th><th>Board Number</th></tr>";
+		for(var i = 0; i<name.length; i++){
+			result += "<tr><td>" + name[i] + "</td><td>" + number[name[i]] + "</td></tr>";
+			}
+		result += "</table>";
+		return result;
+		}
+	document.write(makeMachineTable(machineName, machineInfo));
+	
+	/*******************************************************************
+    *                          selectMachine                           *
+    ********************************************************************/
+	// select machine, return the board number and display on the board number section
+	
+	//exclude the first row (header)
+	var selectedRowID;
+	var rows = $('div.machineList table tr').not(':first');
+	rows.on('click',function(){
+		// change the background color of selected row while restore the color of other rows
+		$('div.machineList table tr').not(this).css('background-color','white');
+		$(this).css('background-color','LightGray');
+		var selected = $(this).text();
+		selectedRowID = $(this).index();
+		var selectedBoardNumber = selected.slice(-1);
+		var boardID = "mbn" + selectedBoardNumber;
+		$('#'+boardID).prop('checked',true);
+	});
+	
+
+	/*******************************************************************
+    *                          boardNumberChange                       *
+    ********************************************************************/
+	function boardNumberChange(){
+		var newvalue = document.querySelector('[name="boardNum"]:checked').value;
+		$("div.machineList table").find('td').eq(2*selectedRowID-1).html(newvalue);
+		$("div.machineList table tr:eq("+selectedRowID+")").css('background-color','white');
+	}
+	
+	/* NOT FINISHED!!unselect/restore background color when click on outside the two tables */
+	
+	</script>
+
+	<h2> Board Number </h2>
+	<!-- machine board number: mbn -->
+	<input type="radio" name="boardNum" id="mbn1" value="1" onclick="boardNumberChange();">1
+	<input type="radio" name="boardNum" id="mbn2" value="2" onclick="boardNumberChange();">2
+	<input type="radio" name="boardNum" id="mbn3" value="3" onclick="boardNumberChange();">3
+	<input type="radio" name="boardNum" id="mbn4" value="4" onclick="boardNumberChange();">4
+	<input type="radio" name="boardNum" id="mbn5" value="5" onclick="boardNumberChange();">5
+	<input type="radio" name="boardNum" id="mbn6" value="6" onclick="boardNumberChange();">6
+	<input type="radio" name="boardNum" id="mbn7" value="7" onclick="boardNumberChange();">7
+	<input type="radio" name="boardNum" id="mbn8" value="8" onclick="boardNumberChange();">8
+	
+	
+</div>
+
+</body>
+
+
+</html>

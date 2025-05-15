@@ -1,0 +1,342 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resrc1.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+STARTUP_DIALOG DIALOGEX 0, 0, 381, 282
+STYLE DS_SETFONT | DS_3DLOOK | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "This program will install the TrueTrak Software into the following directory. Change this before continuing if you would like to use a different directory.",WILL_INSTALL_STATIC,16,0,350,36,NOT WS_GROUP
+    DEFPUSHBUTTON   "Continue",IDOK,93,263,94,14,BS_CENTER
+    PUSHBUTTON      "Cancel",IDCANCEL,193,263,94,14,BS_CENTER
+    EDITTEXT        THIS_COMPUTER_EBOX,16,38,228,14
+    CONTROL         "Start Part Setups at TrueTrak Startup",PART_EDITOR_CHECKBOX,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,59,256,12
+    CONTROL         "Start Monitor Setups at TrueTrak Startup",MONITOR_SETUPS_CHECKBOX,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,72,256,12
+    CONTROL         "Start Board Monitor At TrueTrak Startup",START_MONITOR_CHECKBOX,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,85,256,12
+    CONTROL         "SureTrak2 Control Installed",SURETRAK_CONTROL_CHECKBOX,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,97,256,12
+    GROUPBOX        "Control Setup",RADIO_GROUPBOX,263,56,115,73,WS_GROUP
+    CONTROL         "",CHOICE_RECT,"Static",SS_BLACKFRAME,265,86,111,14
+    CONTROL         "IN",E20_RADIO,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,269,87,40,12
+    CONTROL         "MM",M2_RADIO,"Button",BS_AUTORADIOBUTTON,269,101,40,12
+    CONTROL         "MM",M20_RADIO,"Button",BS_AUTORADIOBUTTON,269,115,40,12
+    LTEXT           "IPS",E20_VEL_TB,310,87,30,12,SS_CENTERIMAGE | NOT WS_GROUP
+    LTEXT           "MPS",M2_VEL_TB,310,101,30,12,SS_CENTERIMAGE | NOT WS_GROUP
+    LTEXT           "MPS",M20_VEL_TB,310,115,30,12,SS_CENTERIMAGE | NOT WS_GROUP
+    LTEXT           "20P",E20_PITCH_TB,341,87,30,12,SS_CENTERIMAGE | NOT WS_GROUP
+    LTEXT           "2MM",M2_PITCH_TB,341,101,30,12,SS_CENTERIMAGE | NOT WS_GROUP
+    LTEXT           "20P",M20_PITCH_TB,341,115,30,12,SS_CENTERIMAGE | NOT WS_GROUP
+    CONTROL         "Automatically Start When the Computer Boots",START_AT_BOOT_XBOX,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,5,110,256,12
+    LTEXT           "Dist. Units",DIST_UNITS_TBOX,278,65,31,20,NOT WS_GROUP
+    LTEXT           "Vel. Units",VEL_UNITS_TBOX,310,65,30,20,NOT WS_GROUP
+    LTEXT           "Rod Pitch",ROD_PITCH_TBOX,341,65,30,20,NOT WS_GROUP
+    CONTROL         "Monitoring Computer",MONITORING_COMPUTER_RADIO,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,40,142,194,12
+    CONTROL         "Data Archiver",DATA_ARCHIVER_RADIO,"Button",BS_AUTORADIOBUTTON,40,154,194,12
+    CONTROL         "Local Installation",NO_NETWORK_RADIO,"Button",BS_AUTORADIOBUTTON,40,167,194,11
+    CONTROL         "Office Workstation",OFFICE_WORKSTATION_RADIO,"Button",BS_AUTORADIOBUTTON,40,179,194,12
+    CONTROL         "Use Restore Point",USE_RESTORE_POINT_XBOX,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,23,216,130,12
+    EDITTEXT        RESTORE_PATH_EBOX,24,237,286,15,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse for Restore Path",BROWSE_FOR_RESTORE_PB,156,215,149,14
+    GROUPBOX        "Recreate Machine(s) and Part(s) from an Existing Restore Point",RESTORE_PATH_GBOX,13,201,301,55
+    GROUPBOX        "Computer Type",CO_TYPE_STATIC,27,130,210,65
+END
+
+INSTALL_STATUS_DIALOG DIALOGEX 0, 0, 267, 147
+STYLE DS_SETFONT | DS_3DLOOK | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,109,96,50,14,BS_CENTER
+    LTEXT           "",STATUS_MSG_TEXTBOX,51,28,165,17,NOT WS_GROUP,WS_EX_DLGMODALFRAME
+    CTEXT           "",FILENAME_TEXTBOX,0,58,268,8,NOT WS_GROUP
+END
+
+FINISH_DIALOG DIALOG 0, 0, 267, 147
+STYLE DS_SETFONT | DS_3DLOOK | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,109,96,50,14,BS_CENTER
+    CTEXT           "Installation Complete",INS_COMPLETE_STATIC,43,47,181,9,NOT WS_GROUP
+END
+
+INSTALL_OR_UPDATE_DIALOG DIALOGEX 0, 0, 267, 147
+STYLE DS_SETFONT | DS_3DLOOK | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Install New TrueTrak System",INSTALL_NEW_BUTTON,49,46,169,16,BS_CENTER
+    PUSHBUTTON      "Update Existing TrueTrak System",UPDATE_EXISTING_BUTTON,49,70,169,16,BS_CENTER
+    PUSHBUTTON      "Cancel",IDCANCEL,49,94,169,16,BS_CENTER
+    PUSHBUTTON      "Help",IU_HELP,206,0,60,14,BS_VCENTER
+END
+
+CHOOSE_LANGUAGE_DIALOG DIALOGEX 0, 0, 165, 93
+STYLE DS_SETFONT | DS_3DLOOK | WS_CHILD | WS_VISIBLE
+FONT 14, "Arial", 400, 0, 0x0
+BEGIN
+    LISTBOX         LANGUAGE_LB,9,9,146,74,NOT WS_BORDER | WS_VSCROLL | WS_TABSTOP
+END
+
+UPDATE_STARTUP_DIALOG DIALOGEX 0, 0, 200, 93
+STYLE DS_SETFONT | DS_3DLOOK | WS_CHILD | WS_VISIBLE
+FONT 10, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "Continue",IDOK,31,64,60,14,BS_CENTER
+    PUSHBUTTON      "Cancel",IDCANCEL,110,64,60,14,BS_CENTER
+    LTEXT           "This program will update your existing TrueTrak Software to the latest version.",WILL_UPDATE_STATIC,12,9,181,24,NOT WS_GROUP
+    CTEXT           "Exit all TrueTrak programs before continuing.",EXIT_ALL_STATIC,0,38,198,12,SS_CENTERIMAGE | NOT WS_GROUP
+END
+
+FIND_DIRECTORY_DIALOG DIALOGEX 0, 0, 301, 236
+STYLE DS_SETFONT | DS_3DLOOK | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "Continue",IDOK,62,218,79,14,BS_CENTER
+    PUSHBUTTON      "Cancel",IDCANCEL,159,218,79,14,BS_CENTER
+    EDITTEXT        EXE_DIR_EDITBOX,100,43,184,14,NOT WS_TABSTOP
+    RTEXT           "Directory of Exes:",DIR_OF_EXES_STATIC,3,44,94,12,SS_CENTERIMAGE | NOT WS_GROUP
+    LTEXT           "The True-Trak Executables have been found in the following directory. If this is not correct, correct it before pressing the continue button",TT_EXES_STATIC,11,12,279,20,NOT WS_GROUP
+    CONTROL         "Start Part Editor at TrueTrak Startup",PART_EDITOR_CHECKBOX,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,61,276,12
+    CONTROL         "Start Board Monitor At TrueTrak Startup",AUTO_MONITOR_CHECKBOX,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,88,276,12
+    CONTROL         "SureTrak Control Installed",SURETRAK_CONTROL_CHECKBOX,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,101,276,12
+    CONTROL         "Start Monitor Setups at TrueTrak Startup",MONITOR_SETUPS_CHECKBOX,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,75,276,12
+    CONTROL         "Automatically Start When the Computer Boots",START_AT_BOOT_XBOX,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,114,276,12
+    CONTROL         "Copy FT2 Control Files",COPY_FT2_CONTROL_FILES_XBOX,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,127,238,12
+    LTEXT           "",NEW_FT2_CONTROL_FILE_TB,260,126,38,12,NOT WS_GROUP
+    CONTROL         "Monitoring Computer",MONITORING_COMPUTER_RADIO,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,35,158,179,10
+    CONTROL         "Data Archiver",DATA_ARCHIVER_RADIO,"Button",BS_AUTORADIOBUTTON,35,169,179,10
+    CONTROL         "Local Installation on the Data Archiver",NO_NETWORK_RADIO,
+                    "Button",BS_AUTORADIOBUTTON,35,181,179,10
+    CONTROL         "Office Workstation",OFFICE_WORKSTATION_RADIO,"Button",BS_AUTORADIOBUTTON,35,194,179,10
+    GROUPBOX        "Computer Type",CO_TYPE_STATIC,30,144,188,65,WS_GROUP
+END
+
+UPDATE_STATUS_DIALOG DIALOGEX 0, 0, 267, 139
+STYLE DS_SETFONT | DS_3DLOOK | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,89,107,89,14,BS_CENTER
+    LTEXT           "",STATUS_MSG_TEXTBOX,15,28,237,17,NOT WS_GROUP,WS_EX_DLGMODALFRAME
+    LTEXT           "E20",STATUS_MACHINE_TB,53,56,201,12,SS_CENTERIMAGE
+    LTEXT           "VISITRAK",STATUS_PART_TB,53,73,201,12,SS_CENTERIMAGE
+    RTEXT           "Machine",US_MACHINE_STATIC,4,56,44,12,SS_CENTERIMAGE
+    RTEXT           "Part",US_PART_STATIC,3,73,44,12,SS_CENTERIMAGE
+END
+
+STD_AUTO_BACKUP_DIALOG DIALOG 0, 0, 233, 54
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Use Standard Automatic Backup Directory"
+FONT 10, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Yes",IDOK,70,31,40,14,BS_CENTER
+    PUSHBUTTON      "No",IDCANCEL,117,31,40,14,BS_CENTER
+    CTEXT           "You have a D drive.\nWould you like to use d:\\autoback\\current as the Auto Backup Directory?",AUTO_BU_STATIC,1,6,229,22,NOT WS_GROUP
+END
+
+NOT_FT2_DIALOG DIALOG 0, 0, 166, 74
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "This is NOT a Fastrak2 System"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Yes",IDOK,33,34,40,14,BS_CENTER
+    PUSHBUTTON      "No",IDCANCEL,80,34,40,14,BS_CENTER
+    CTEXT           "You do not appear to have a complete P42 folder.\nWould you like to copy these files?",IDC_STATIC,1,6,161,22,NOT WS_GROUP
+    LTEXT           "Note: Don't copy these files to an office workstation.",IDC_STATIC,3,60,158,8
+END
+
+CHANGE_TO_CONTROL_DIALOG DIALOG 0, 0, 256, 100
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Machine Type Change"
+FONT 12, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Change this machine to a Sure-Trak2 Control",IDOK,50,28,156,14
+    PUSHBUTTON      "Do Nothing, this is a Monitor-Only system",IDCANCEL,50,46,156,14
+    LTEXT           "It appears that this is a Sure-Trak2 control system. If that is so then you should change the machine setup to indicate that.",IS_CTRL_STATIC,11,6,207,16
+    LTEXT           "The machine will be marked as a control system with a digital servo amplifier board.",MARK_AS_CTRL_STATIC,11,64,235,16
+    LTEXT           "You should save all parts on this machine when you restart the TrueTrak software.",SHOULD_SAVE_ALL_STATIC,11,82,220,15
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resrc1.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+MY_ICON                 ICON                    "icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    "STARTUP_DIALOG", DIALOG
+    BEGIN
+    END
+
+    "INSTALL_OR_UPDATE_DIALOG", DIALOG
+    BEGIN
+    END
+
+    "CHOOSE_LANGUAGE_DIALOG", DIALOG
+    BEGIN
+    END
+
+    "UPDATE_STARTUP_DIALOG", DIALOG
+    BEGIN
+    END
+
+    "FIND_DIRECTORY_DIALOG", DIALOG
+    BEGIN
+    END
+
+    "UPDATE_STATUS_DIALOG", DIALOG
+    BEGIN
+    END
+
+    "CHANGE_TO_CONTROL_DIALOG", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 93
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 8,37,0,0
+ PRODUCTVERSION 8,37,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Visi-Trak Worldwide, LLC"
+            VALUE "FileDescription", "Setup"
+            VALUE "FileVersion", "8.37.0.0"
+            VALUE "InternalName", "Setup"
+            VALUE "LegalCopyright", "Copyright © 2018"
+            VALUE "OriginalFilename", "setup.exe"
+            VALUE "ProductName", "True-Trak 2020(tm)"
+            VALUE "ProductVersion", "8.37.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    CURRENT_VERSION_STRING  "8.37"
+END
+
+STRINGTABLE
+BEGIN
+    DEFAULT_INSTALL_DIRECTORY_STRING "C:\\V5\\"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

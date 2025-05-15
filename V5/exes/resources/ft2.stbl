@@ -1,0 +1,207 @@
+4
+ENGLISH,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+GERMAN,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+SPANISH,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ITALIAN,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+0_TO_3	0-3	0-3	0-3	0-3
+4_TO_7	4-7	4-7	4-7	4-7
+8_TO_11	8-11	8-11	8-11	8-11
+12_TO_15	12-15	12-15	12-15	12-15
+ACC_ON_POS	Accumulator On Position	Accumulator On Position	Accumulator On Position	Accumulatore su Posizione
+ACCUMULATOR	ACCUMULATOR	ACCUMULATOR	ACCUMULATOR	ACCUMULATORE
+ADDRESS_STRING	Address	Adresse	Dirección	Indirizzo
+ALARM_TEST	Alarm Test	Alarm Test	Alarm Test	Test di Allarme
+ALT_STEP	Alternate Step	Alternate Step	Alternate Step	Passo Alternato 
+ALT_STEP_DESC	Alternate Start Step and then Accumulator On	Alternate Start Step and then Accumulator On	Alternate Start Step and then Accumulator On	Passo Alternato di Inizio e poi Accumulatore acceso
+AMP_1	Amp 1	Amp 1	Amp 1	Amp 1
+AMP_2	Amp 2	Amp 2	Amp 2	Amp 2
+AT_HOME	AT HOME	AT HOME	AT HOME	NELLA HOME
+AUTO_NULL	Auto NULL	Auto NULL	Auto NULL	Auto ANNULLAMENTO
+AUTO_NULL_BEGIN_STRING	Beginning AUTO NULL...	Automatisch referieren gestartet...	Inicio de AUTO Referencia	Inizio AUTO Annullamento...
+AUTO_NULL_FAIL_STRING	AUTO NULL FAILED- UNABLE TO CORRECT	AUTOMATISCHER REFERIERENFEHLER-LÄSST SICH NICHT KORRIGIEREN	ERROR EN AUTO REFERENCIA. NO SE PUEDE CORREGIR	ERRORE NELL'AUTO ANNULLAMENTO- IMPOSSIBILE CORREGGERE
+AUTO_NULL_SUCCESS_STRING	AUTO NULL SUCCESS	AUTOMATISCH REFERIEREN WAR ERFOLGREICH.	AUTO REFERENCIA OK	AUTO ANNULLAMENTO ESEGUITO
+BEGIN_MONITORING	Begin Monitoring	Begin Monitoring	Begin Monitoring	Inizio Monitoraggio
+BEGIN_UPLOAD_STRING	Uploading...	Hochladen...	Carga...	Caricamento...
+BIN_VALVE	Binary Valve	Binary Valve	Binary Valve	Valvola Binaria
+BLOCK_EXECUTION_ERROR_STRING	BLOCK EXECUTION ERROR	FEHLER BEI BLOCKABARBEITUNG	Error de Ejecución del Bloque	ERRORE DI ESECUZIONE DEL BLOCCO
+BLOCK_TIMEOUT_STRING	10 SECOND BLOCK TIMEOUT	BLOCK ZEITSPERRE von 10 Sekunden	Bloque en Tiempo de Espera de 10 sec.	10 SECONDI DI TIMEOUT AL BLOCCO
+BLOCK_TIMEOUT_WARNING_STRING	BLOCK TIMEOUT	BLOCKZEITSPERRE	BLOQUE TIEMPO DE ESPERA	TIMEOUT AL BLOCCO 
+BOARD_MONITOR_EVENT_FAIL_STRING	Failed to create Board Monitor event	Fehler: Modul-Überwachungs-Ereignis erzeugen	Error en la creacón de Boar Monitor Event	Errore nell'esecuzione degli eventi della Scheda del Monitor
+BOARD_MONITOR_THREAD_STRING	Board Monitor Thread	Teilprogramm(thread) Modulüberwachung	Error en Programa Board Monitor Thread	Thread di Monitoraggio della Scheda
+BOARD_MONITOR_WAIT_FAIL_STRING	BoardMonitorEvent wait failed	Fehler beim Warten auf BoardMonitorEvent	Error en Espera BoardMonitorEvent	Scheda degli Eventi di Monitoraggio fallita
+BOARD_STRING	Board	Modul	Modulo	Scheda
+CANT_OPEN_FILE_STRING	Cannot Open File	Datei lässt sich nicht öffnen	No se puede Abrir el Fichero	Impossibile Aprire il File
+CHAN_STRING	Chan	Chan	Chan	Canale
+CHOOSE_MONITOR_MA	Choose the machine to monitor from the following list.	Choose the machine to monitor from the following list.	Choose the machine to monitor from the following list.	Scegliere la macchina da monitorare per la lista seguente.
+CHOOSE_MON_MA_TITLE	Choose the Machine To Monitor	Choose the Machine To Monitor	Choose the Machine To Monitor	Scegliere la Macchina da Monitorare
+CLICK_TO_TOGGLE	Click an LED location to toggle the output on and off.	Click an LED location to toggle the output on and off.	Click an LED location to toggle the output on and off.	Cliccare su una locazione LED location per azionare le uscite acceso e spento.
+COM_STATUS_STRING	Comm Status	Comm Status	Estado de Comm	Stato di Comando
+COMMAND	Command	Command	Command	Comando
+CONNECTED_STRING	Connected	Angeschlossen	Conectado	Connesso
+CONNECTING_STRING	Connecting...	Anschließen...	Conectando...	Connessione in corso...
+CONNECTION_RESTORED	Connection Restored	Connection Restored	Connection Restored	Connessione Riparata
+CONTROL_ACTIVE_STRING	ACTIVE	AKTIV	ACTIVO	ATTIVO
+CONTROL_FATAL_STRING	FATAL ERROR	SCHWERWIEGENDER FEHLER	ERROR FATAL	ERRORE FATALE
+CONTROL_INPUT_18_STRING	Start Shot	Schussstart	Inicio Inyecciòn	Inizio Colpo
+CONTROL_INPUT_19_STRING	Follow Through	Stempeldurchfolge	Piston Adelante	Pistone Avanti
+CONTROL_INPUT_20_STRING	Retract	Rückzug	Piston Atràs	Ritiro
+CONTROL_INPUT_21_STRING	Jog Shot	Schusstippen	Inyecciòn Lenta	Ciclo Manuale
+CONTROL_INPUT_22_STRING	Manual Mode	Handbetrieb	Modo Manual	Modalità Manuale
+CONTROL_INPUT_23_STRING	At Home	Nullpunkt	En Posiciòn Nula	Alla Home
+CONTROL_INPUT_24_STRING	None	keines	Ninguno	Nessuno
+CONTROL_INPUT_25_STRING	None	keines	Ninguno	Nessuno
+CONTROL_INPUT_26_STRING	OK for VAC Fast	OK für VAC-Schnell	OK por VAC ràpido	OK per il VAC Veloce
+CONTROL_INPUT_27_STRING	Vacuum On	Vakuum ein	Vacìo On	Vuoto Acceso
+CONTROL_INPUT_28_STRING	Low Impact	Stossreduzierung	Bajo Impacto	Basso Impatto
+CONTROL_INPUT_29_STRING	Fill Test	Einfülltest	Test LLenado	Test di Riempimento
+CONTROL_MODULE	Control Module	Control Module	Control Module	Control Module
+CONTROL_WARNING_STRING	WARNING	WARNUNG	ATENCION	AVVERTIMENYO
+CREATE_FAILED_STRING	Create Failed	Fehler beim Einrichten	Error en el crear	Creazione Fallita
+CTL_OUTPUTS	Control Outputs	Control Outputs	Control Outputs	Controllo degli Outputs
+CTL_STATE	Control State:	Control State:	Control State:	Stato del Controllo:
+CUR_STEP	Current Step:	Current Step:	Current Step:	Passo Corrente:
+DEACTIVATE_CONTROL	This will DEACTIVATE the Control	This will DEACTIVATE the Control	This will DEACTIVATE the Control	Questo DISATTIVERA' il Controllo
+DIG_POT_GAIN	Digital Pot Current Gain (0-127)	Digital Pot Current Gain (0-127)	Digital Pot Current Gain (0-127)	Digital Pot Current Gain (0-127)
+DISCONNECTING_STRING	Disconnecting...	Abtrennen…...	Desconexion...	Disconnessione...
+DITHER_AMPL	Dither Amplitude	Dither Amplitude	Dither Amplitude	Ampiezza Dither
+DITHER_FREQ	Dither Frequency	Dither Frequency	Dither Frequency	Frequenza Dither
+DOWNTIME_ALARM_WIRE	Downtime Alarm Wire	Downtime Alarm Wire	Downtime Alarm Wire	Downtime Alarm Wire
+EVENT_LOG	Event Log	Event Log	Event Log	Log Eventi
+EXIT_RADIO	Exit: STOP Monitoring	Verlassen: Überwachung beenden	Salida: STOP Supervisión	Uscita: STOP Monitoraggio
+FILL_TEST	FILL TEST	FILL TEST	FILL TEST	TEST DI RIEMPIMENTO
+FILL_TEST_ABORT_STRING	FILL TEST ABORT	ABBRUCK EINFÜLLTEST	TEST DE LLENADO ABORTIDO	TEST DI RIEMPIMENTO ANNULLATO
+FOLLOW_THRU	FOLLOW THRU	FOLLOW THRU	FOLLOW THRU	PISTONE AVANTI
+FOLLOWING_OVERFLOW	FOLLOWING OVERFLOW	FOLLOWING OVERFLOW	FOLLOWING OVERFLOW	POSIZIONE FAGIOLO
+FT_VALVE_SET	FT Valve Setting (%)	FT Valve Setting (%)	FT Valve Setting (%)	Impostazione Valvola FT (%)
+GEN_STEP	Generated Step:	Generated Step:	Generated Step:	Passo Generato:
+GET_LIST1	Get Variables for List 1	Get Variables for List 1	Get Variables for List 1	Acquisisci Variabili per la Lista 1
+GET_LIST2	Get Variables for List 2	Get Variables for List 2	Get Variables for List 2	Acquisisci Variabili per la Lista 2
+GETTING_VAR	Getting Variable	Getting Variable	Getting Variable	Acquisizione Variabile
+INPUTS	Inputs	Inputs	Inputs	Entrate
+INVALID_BLOCK_STRING	INVALID BLOCK	UNGÜLTIGER BLOCK	Bloque no válido	BLOCCO INVALIDO
+INVALID_SHOT_NAME_STRING	Invalid Shot Name	Invalid Shot Name	Invalid Shot Name	Nome del Colpo non valido
+JOG_SHOT	JOG SHOT	JOG SHOT	JOG SHOT	MOVIMENTO DEL PISTONE 
+JOG_VALVE_SET	Jog Shot Valve Setting (%)	Jog Shot Valve Setting (%)	Jog Shot Valve Setting (%)	Impostazioni della Valvola del Movimento del Pistone (%)
+LIST1	List 1	List 1	List 1	Lista 1
+LIST2	List 2	List 2	List 2	Lista 2
+LOW_DISK_SPACE_STRING	The amount of free disk space is below 3 MB	Auf der Festplatte verbleiben nur noch 3 MB Speicherplatz.	Espacio libre en disco está por debajo de 3 MB.	The amount of free disk space is below 3 MB
+LOW_IMPACT	LOW IMPACT	LOW IMPACT	LOW IMPACT	IMPATTO BASSO
+LOW_PW_LEVEL_STRING	Password Level Too Low	Password Level Too Low	Nivel de contraseña demasiado bajo	Livello della Password troppo basso
+LS1	LS1	LS1	LS1	LS1
+LS2	LS2	LS2	LS2	LS2
+LS3	LS3	LS3	LS3	LS3
+LS4	LS4	LS4	LS4	LS4
+LS5	LS5	LS5	LS5	LS5
+LS6	LS6	LS6	LS6	LS6
+LVDT_DAC_COMP	LVDT DAC Compensation (mv)	LVDT DAC Compensation (mv)	LVDT DAC Compensation (mv)	Compensazione LVDT DAC (mv)
+LVDT_FEEDBACK	LVDT Feedback	LVDT Feedback	LVDT Feedback	Feedback LVDT
+MANUAL_INSTRUCTIONS	Adjust the valve until the Null Voltage is acceptable.	Adjust the valve until the Null Voltage is acceptable.	Adjust the valve until the Null Voltage is acceptable.	Aggiustare la valvola fino a quando il Voltaggio di Azzeramento è accettabile.
+MANUAL_MODE	MANUAL MODE	MANUAL MODE	MANUAL MODE	MANUAL MODE
+MANUAL_NULL	Manual Null	Manual Null	Manual Null	Azzueramentp Manual 
+MANUAL_NULLING_STRING	MANUAL NULLING ENABLED	REFERIEREN VON HAND FREIGESCHALTET.	ACTIVACION DE REFERENCIA A CERO MANUAL	MANUAL NULLING ENABLED
+MASTER_ENABLE_DROPPED_OUT_STRING	MASTER ENABLE DROPPED	FREISCHALT V. HAUPTKENNL EINGESTELLT	ACTIVACIÓN DE MASTER APAGADA	ATTIVAZIONE DEL MASTER ABILITATA 
+MAX_POS	Max Position	Max Position	Max Position	Posizione Massima
+MAX_VEL	Max Velocity (Estimated)	Max Velocity (Estimated)	Max Velocity (Estimated)	Velocità Massima (Stimata)
+MEAS_CMD	Measured Command	Measured Command	Measured Command	Comando Misurato
+MEAS_STRING	Meas	Meas	Meas	Meas
+MIN_LI	Min Low Impact Setting (%)	Min Low Impact Setting (%)	Min Low Impact Setting (%)	Impostazione di Impatto Minima Bassa (%)
+MINUS_5_VOLTS	-5 Volts	-5 Volts	-5 Volts	-5 Volts
+MISSING_STRING	missing from machine	fehlt von Maschine	falta de la máquina	mancante dalla macchina
+MON_OUTPUTS	Monitor Outputs	Monitor Outputs	Monitor Outputs	Uscite del Monitor
+MONITOR_MODULE	Monitor Module	Monitor Module	Monitor Module	Monitor Module
+MONITOR_STATUS_STRING	Monitor Status	Überwachung Status	Estado Supervisiòn	Stato del Monitor
+MONITOR_WINDOW_TITLE_STRING	FasTrak2	FasTrak2	FasTrak2	FasTrak2
+MONITOR_WIRE	Monitor Wire	Monitor Wire	Monitor Wire	Monitor Wire
+N0_NEW_AUTO_NULL_STRING	No new Auto Null Value has been received	Keine neuer automatischer Referierungswert erhalten	Ningùn Auto Valor de Referencia Cero se ha recibido	Nessun nuovo Valore di Azzeramento Automatico è stato ricevuto
+NAK_RECEIVED_STRING	*** Nak Received ***	*** Nak erhalten ***	*** Nak recibido ***	*** Nak Ricevuto ***
+NEW_SETUP_STRING	New Setup	Neue Einrichtung	Nuevo Setup	Nuove Impostazioni
+NO_CONNECT_STRING	Not Started	Nicht in Betrieb	No Iniciado	Non Iniziato
+NO_MASTER_ENABLE_STRING	NO MASTER ENABLE	KEINE HAUPTKENNLINIE VERFÜGBAR	FALTA ACTIVACION DE MASTER	MASTER NON ABILITATO
+NO_PROGRAM_STRING	NO PROGRAM	Kein PROGRAMM	FALTA PROGRAMA	NESSUN PROGRAMMA
+NO_RESPONSE_STRING	No Response to Upload	No Response to Upload	No hay respuesta en la carga	Nessuna Risposta dal Caricamento
+NO_MULTIPART_RUNLIST_PART	Multipart Runlist Part NOT FOUND!	KEIN Multipart Runlist gefunden!	Pieza de Multipart Runlist no se encuentra!	Multipart Runlist dello Stampo NON TROVATO!
+NO_SHOTS_SAVED_STRING	No shot data will be saved	Schussdaten werden nicht abgespeichert	Ningún dato de las inyecciones será memorizado	Nessun dato del colpo verrà salvato
+NO_UPLOAD_FILE_STRING	No Upload File!	Keine Datei hochzuladen!	Error carga Fichero!	Errore nell'Upload del File!
+NO_WARMUP_PART_STRING	Warmup Part NOT FOUND!	KEIN Vorwärmteil gefunden!	Pieza de Comienzo no se encuentra!	Warmup dello Stampo NON TROVATO!
+NORMAL_STEP	Normal Step	Normal Step	Normal Step	Passo Normale
+NOT_CONNECTED_STRING	Not Connected	Nicht angeschlossen	No Conectado	Non Connesso
+NOT_MONITORED_STRING	Not Monitored	Keine Überwachung	No Supervisado	Non Monitorato
+NULL_ALREADY_GOOD_STRING	NULL ALREADY GOOD-NO NEED TO CORRECT	BESTEHENDER NULLPUNKT BEDARF KEINER KORREKTUR	REFERENCIA A CERO OK. NO NECESSITA CORREGIR.	ANNULLAMENTO OTTIMO-NESSUN BISOGNO DI CORREZIONE
+NULL_DAC_COMP	Null DAC Compensation (mv)	Null DAC Compensation (mv)	Null DAC Compensation (mv)	Compensazione dell'Azzeramento DAC (mv)
+NULL_VOLTAGE	Null Voltage (= LVDT Feedback)	Null Voltage (= LVDT Feedback)	Null Voltage (= LVDT Feedback)	Azzeramento del Voltaggio (= LVDT Feedback)
+NUM_STRING	Num	Num	Num	Numero
+OFFSET_V_RANGE	-10 to 10 Volts, Press <Enter> to send	-10 to 10 Volts, Press <Enter> to send	-10 to 10 Volts, Press <Enter> to send	-10 to 10 Volts, Premere <Invio> per mandare
+OFFSET_VOLTAGE	Offset Voltage	Offset Voltage	Offset Voltage	Voltaggio Offset
+OK_FOR_VAC	OK FOR VAC FAST	OK FOR VAC FAST	OK FOR VAC FAST	OK PER IL VAC VELOCE
+OK_TO_RETRY	Press OK to retry the upload.	Press OK to retry the upload.	Press OK to retry the upload.	Premere OK per riprovare l'upload.
+OUTPUT_LIST_TITLE	Digital Outputs Set for This Part	Digital Outputs Set for This Part	Digital Outputs Set for This Part	Impostazioni delle Uscite Digitali Outputs per questo Stampo
+OUTPUTS	Outputs	Outputs	Outputs	Entrate
+PACKET_ERROR_STRING	Packet Error	Datenpaketfehler	Error Paqueta Datos	Errore del Pacchetto dei Dati
+PACKET_STRING	Packet	Datenpaket	Paqueda Datos	Pacchetto dei Dati
+PARK_VOLTAGE	Park Voltage	Park Voltage	Park Voltage	Voltaggio Park
+PART_STRING	Part	Gussteil	Pieza	Stampo
+PC_AXIS2	Pressure Control (Axis #2)	Pressure Control (Axis #2)	Pressure Control (Axis #2)	Controllo della Pressione (Assi #2)
+PLUS_5_VOLTS	+5 Volts	+5 Volts	+5 Volts	+5 Volts
+PRES_CTL	Pressure Control	Pressure Control	Pressure Control	Pressure Control
+PREV_UPLOAD_ABORT	The previous upload to this machine was ABORTED!	The previous upload to this machine was ABORTED!	The previous upload to this machine was ABORTED!	Il Caricamento precedente per questa macchina è stato ANNULLATO!
+PROGRAM_STOPPED_BY_USER_STRING	PGM STOPPED BY USER	PGM-HALT DURCH ANWENDER	MAQUINA APAGADA POR EL OPERADOR	PGM FERMATO DALL'OPERATORE
+RAW_LVDT	Raw LVDT Feedback	Raw LVDT Feedback	Raw LVDT Feedback	Feedback LVDT Puro
+READY_STRING	Ready	Startbereit	Listo	Pronto
+REPEATED_STRING	repeated from machine	wiederholt von Maschine	repetida de la máquina	ripetuto dalla macchina
+RESTARTED_STRING	Restarted	Erneut gestartet	Reinicio	Restarted
+RESTORE_VARS	Restore Saved Variables	Restore Saved Variables	Restore Saved Variables	Restore Saved Variables
+RETRACT	RETRACT	RETRACT	RETRACT	RITIRA
+RETRACT_VALVE_SET	Retract Valve Setting (%)	Retract Valve Setting (%)	Retract Valve Setting (%)	Ritira Impostazioni di Valvola (%)
+REVERT_TO_SAVED	Revert to Saved Values	Revert to Saved Values	Revert to Saved Values	Ritorna ai Valori Salvati
+SAV_AS_MASTER	Save as Master Trace	Save as Master Trace	Save as Master Trace	Salva come Master Trace
+SAVE_TSL	Save as Total Stroke Len	Save as Total Stroke Len	Save as Total Stroke Len	Salva come Corsa Totale del Pistone
+SAVE_VARS	Save Variables	Save Variables	Save Variables	Salvare le Variabili
+SAVING_SHOT_STRING	Saving Shot...	Schuss speichern...	Guardando Pieza...	Salvataggio del Colpo...
+SEND_TO_BOARD	Send to Board	Send to Board	Send to Board	Manda alla Scheda 
+SET_DAC	Set DAC	Set DAC	Set DAC	Impostazioni DAC
+SET_NULL_VOLTAGE	Set Null Voltage	Set Null Voltage	Set Null Voltage	Impostazioni Annullamento Voltaggio
+SHOT_COMPLETE	SHOT COMPLETE	SHOT COMPLETE	SHOT COMPLETE	COLPO COMPLETO
+SHOT_IN_PROGRESS	SHOT IN PROGRESS	SHOT IN PROGRESS	SHOT IN PROGRESS	COLPO IN PROGRESSO
+SHOTSAVE_EVENT_FAIL_STRING	Failed to create ShotSave event	Fehler beim Erstellen vonSchussspeicher-Ereignis	Failed to create ShotSave event	       Creazione degli eventi ShotSave non riuscita
+SHOTSAVE_NOT_RUNNING_STRING	Shotsave thread not running...	Schussspeicher-Programm läuft nicht...	ShotSave no esta activo	Shotsave non eseguibile...
+SHOTSAVE_THREAD_STRING	Shot Save Thread	Teilprogramm (thread) Schuss speichern	Error de Programa ShotSave Thread	Errore del Programma Shot Save 
+SHOTSAVE_WAIT_FAIL_STRING	ct in SHOTSAVE	Fehler: WaitForSingleObject in SCHUSSSPEICHER.	Error en almenacer Piezas	ct in SHOTSAVE
+SHOW_DIF	Show Only Differences	Show Only Differences	Show Only Differences	Mostra solo le Differenze
+SHUTTING_DOWN_MONITOR_STRING	Shutting down monitoring...	Überwachen abschalten…	Apagando Supervision...	Spegnendo il monitoraggio...
+SHUTTING_DOWN_REMOTE_STRING	Restarting the remote monitor...	Fernüberwachung wiederaufnehmen...	Reiniciando Monitor Remoto	Ripristino del monitor remoto...
+SHUTTING_DOWN_SHOTSAVE_STRING	Shutting down shot save thread...	Schuss speichern abschalten…	Apagando ShotSave Thread	Spegnendo il thread shot save...
+SLOW_SHOT	SLOW SHOT OUTPUT	SLOW SHOT OUTPUT	SLOW SHOT OUTPUT	USCITA LENTA DEL COLPO
+SPAN	Span	Span	Span	Span
+SPAN_RANGE	(0 to 127)	(0 to 127)	(0 to 127)	(0 di 127)
+SSV	Slow Shot Velocity	Slow Shot Velocity	Slow Shot Velocity	Velocità Lenta del Colpo
+STACK_OVERFLOW_STRING	STACK OVERFLOW	KELLERSPEICHERÜBERLAUF	Error de Stack Overflow	Errore di Stack dei Fagioli
+START_SHOT	START SHOT	START SHOT	START SHOT	START SHOT
+STATUS_TITLE	Status	Status	Estado	Stato
+TERMINAL_TITLE	Terminal	Terminal	Terminal	Terminale
+TEST_FATAL_ERROR_STRING	TEST ERROR	TESTFEHLER	ERROR DE PRUEBA	ERRORE DEL TEST
+TEST_WARNING_STRING	TEST WARNING	TEST-WARNUNG	AVISO DE PRUEBA	AVVERTENZA DEL TEST
+TIMEOUT_STRING	Timeout	Zeitsperre	Tiempo de Espera	Timeout
+TURN_OFF_ALL_OUTPUTS_STRING	Turn OFF All Outputs	ALLE Ausgänge ausschalten	Apagar TODAS Salidas	Spegni tutte le Uscite
+TURN_ON_ALL_OUTPUTS_STRING	Turn ON All Outputs	ALLE Ausgänge einschalten	Encender TODAS Salidas	Accendi tutte le Uscite 
+UNUSABLE_NULL_LEVEL_STRING	BEGINNING NULL EXCEEDS ALLOWABLE RANGE	ANFÄNGLICHER NULLPUNKT AUSSERHALB BEREICH	REFERENCIA INICIAL EXCEDE RANGO PERMISIBLE	INIZIO DELL'ANNULLAMENTO DEL SUPERAMENTO DEI RANGE PERMESSI 
+UPDATING_GRAPHLST_STRING	Updating GRAPHLST file...	Updating GRAPHLST file...	Actualizando Fichero GRAPHSLT...	Aggiornamento dei File GRAPHLST...
+UPDATING_SHOTPARM_STRING	Updating SHOTPARM file...	Updating SHOTPARM file...	Actualizando Fichero SHOTPARM...	Aggiornamento dei File SHOTPARM...
+UPLOAD_COMPLETE_STRING	Upload Complete	Hochladen erfolgreich beendet	Carga completa	Caricamento Completo
+UPLOAD_FAIL_STRING	Disconnect During Upload	Fehler beim Hochladen	Desconexion durante Upload	Disconnessione Durante il Caricamento
+UPLOAD_FILE	Upload File	Upload File	Upload File	Carica File
+VAC_ABORT_POS_TOO_LONG_STRING	VACUUM ABORT POS TOO LONG	VAKUUMABBRUCH: WEGSTRECKE ZU LANG	VACÍO ABORTIDO POSICIÓN DEMASIADO LARGO	ANNULLA POSIZIONE DI VUOTO TROPPO LUNGA
+VAC_ABORT_ZSPEED_STRING	VACUUM ABORT ZERO SPEED	VAKUUMABBRUCH VORSCHUB NULL	VACÍO ABORTIDO: velocidad cero	ANNULLA VELOCITA' ZERO DI VUOTO 
+VAC_ON	VACUUM ON	VACUUM ON	VACUUM ON	VUOTO ACCESO
+VALVE_START_VOLTS	Valve Start Voltage	Valve Start Voltage	Valve Start Voltage	Valvola di Inizio Voltaggio
+VALVE_TEST	Valve Test	Valve Test	Valve Test	Test di Valvola
+VERT_OPTO	O P T O	O P T O	O P T O	O P T O
+VERT_TEXT	T E X T	T E X T	T E X T	T E X T
+VERT_VOLTS	V O L T S	V O L T S	V O L T S	V O L T S
+VIEW	View	View	View	Visualizza
+VOLTS_PROMPT	Voltage:	Voltage:	Voltage:	Voltaggio:
+WAITING_FOR	Waiting for	Waiting for	Waiting for	In attesa di
+WISH_TO_CONTINUE	Do you wish to continue?	Do you wish to continue?	Do you wish to continue?	Si desidera continuare?
+ZERO	Zero	Zero	Zero	Zero
+ZERO_SPEED	ZERO SPEED	ZERO SPEED	ZERO SPEED	VELOCITA' ZERO
+ZERO_SPEED_POS	Zero Speed Check Pos	Zero Speed Check Pos	Zero Speed Check Pos	Controllo di Posizione di Velocità Zero
+ZERO_STROKE_LENGTH_STRING	MSL or TSL = 0!	MSL oder TSL = 0!	MSL o TSL = 0!	MSL or TSL = 0!

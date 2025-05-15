@@ -1,0 +1,29 @@
+﻿Build started 5/15/25 12:18:55 AM.
+     1>Project "C:\Sources\Version8\startup\startup.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt su.cpp
+         su.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"Debug\su.res" su.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Sources\Version8\truetrak\Debug\startup.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Sources\Version8\truetrak\Debug\startup.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Sources\Version8\truetrak\Debug\startup.lib" /MACHINE:X86 Debug\su.res
+         Debug\su.obj
+     1>su.obj : error LNK2019: unresolved external symbol "long __cdecl asctoint32(char const *)" (?asctoint32@@YAJPBD@Z) referenced in function _WinMain@16
+     1>su.obj : error LNK2019: unresolved external symbol "public: __thiscall STRING_CLASS::STRING_CLASS(void)" (??0STRING_CLASS@@QAE@XZ) referenced in function _WinMain@16
+     1>su.obj : error LNK2019: unresolved external symbol "public: __thiscall STRING_CLASS::~STRING_CLASS(void)" (??1STRING_CLASS@@QAE@XZ) referenced in function _WinMain@16
+     1>su.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::operator=(char const *)" (??4STRING_CLASS@@QAEXPBD@Z) referenced in function _WinMain@16
+     1>su.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::operator=(unsigned int)" (??4STRING_CLASS@@QAEXI@Z) referenced in function _WinMain@16
+     1>su.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::cat_path(char const *)" (?cat_path@STRING_CLASS@@QAEXPBD@Z) referenced in function _WinMain@16
+     1>su.obj : error LNK2019: unresolved external symbol "public: __thiscall FILE_CLASS::FILE_CLASS(void)" (??0FILE_CLASS@@QAE@XZ) referenced in function _WinMain@16
+     1>su.obj : error LNK2019: unresolved external symbol "public: __thiscall FILE_CLASS::~FILE_CLASS(void)" (??1FILE_CLASS@@QAE@XZ) referenced in function _WinMain@16
+     1>su.obj : error LNK2019: unresolved external symbol "public: void __thiscall FILE_CLASS::close(void)" (?close@FILE_CLASS@@QAEXXZ) referenced in function _WinMain@16
+     1>su.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall FILE_CLASS::open_for_update(char *)" (?open_for_update@FILE_CLASS@@QAEEPAD@Z) referenced in function _WinMain@16
+     1>su.obj : error LNK2019: unresolved external symbol "public: char * __thiscall FILE_CLASS::readline(void)" (?readline@FILE_CLASS@@QAEPADXZ) referenced in function _WinMain@16
+     1>su.obj : error LNK2019: unresolved external symbol "char const * __cdecl exe_directory(void)" (?exe_directory@@YAPBDXZ) referenced in function _WinMain@16
+     1>su.obj : error LNK2001: unresolved external symbol "private: static char * STRING_CLASS::emptystring" (?emptystring@STRING_CLASS@@0PADA)
+     1>C:\Sources\Version8\truetrak\Debug\startup.exe : fatal error LNK1120: 13 unresolved externals
+     1>Done Building Project "C:\Sources\Version8\startup\startup.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.92

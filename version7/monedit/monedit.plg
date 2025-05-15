@@ -1,0 +1,124 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: monedit - Win32 Free--------------------
+</h3>
+
+
+Microsoft (R) Program Maintenance Utility   Version 6.00.8168.0
+Copyright (C) Microsoft Corp 1988-1998. All rights reserved.
+
+ cl /nologo /MT /W3 /O1 /D "WIN32" /D "_WINDOWS" /D "NDEBUG" /Fp"../include/free.pch" /Yu"windows.h" /Fo"free/" /c monedit.cpp
+monedit.cpp
+ cl /nologo /MT /W3 /O1 /D "WIN32" /D "_WINDOWS" /D "NDEBUG" /Fp"../include/free.pch" /Yu"windows.h" /Fo"free/" /c monitor.cpp
+monitor.cpp
+ link  free\monedit.obj free\monitor.obj free\monedit.res
+Microsoft (R) Incremental Linker Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+monedit.obj : error LNK2001: unresolved external symbol __imp__SendMessageA@16
+monitor.obj : error LNK2001: unresolved external symbol __imp__SendMessageA@16
+monedit.obj : error LNK2001: unresolved external symbol "void __cdecl fix_dde_name(char *)" (?fix_dde_name@@YAXPAD@Z)
+monedit.obj : error LNK2001: unresolved external symbol _DdeGetData@16
+monedit.obj : error LNK2001: unresolved external symbol __imp__EndPaint@8
+monedit.obj : error LNK2001: unresolved external symbol __imp__BeginPaint@8
+monedit.obj : error LNK2001: unresolved external symbol __imp__CloseWindow@4
+monedit.obj : error LNK2001: unresolved external symbol __imp__IsIconic@4
+monedit.obj : error LNK2001: unresolved external symbol "void __cdecl register_for_event(char *,short,void (__cdecl*)(char *,short,struct HDDEDATA__ *))" (?register_for_event@@YAXPADFP6AX0FPAUHDDEDATA__@@@Z@Z)
+monedit.obj : error LNK2001: unresolved external symbol "void __cdecl client_dde_startup(struct HWND__ *)" (?client_dde_startup@@YAXPAUHWND__@@@Z)
+monedit.obj : error LNK2001: unresolved external symbol __imp__DefWindowProcA@16
+monedit.obj : error LNK2001: unresolved external symbol __imp__PostMessageA@16
+monitor.obj : error LNK2001: unresolved external symbol __imp__PostMessageA@16
+monedit.obj : error LNK2001: unresolved external symbol __imp__PostQuitMessage@4
+monedit.obj : error LNK2001: unresolved external symbol __imp__WinHelpA@16
+monedit.obj : error LNK2001: unresolved external symbol "unsigned char __cdecl get_exe_directory(char *)" (?get_exe_directory@@YAEPAD@Z)
+monitor.obj : error LNK2001: unresolved external symbol "unsigned char __cdecl get_exe_directory(char *)" (?get_exe_directory@@YAEPAD@Z)
+monedit.obj : error LNK2001: unresolved external symbol __imp__CreateDialogParamA@20
+monedit.obj : error LNK2001: unresolved external symbol "public: char * __thiscall COMPUTER_CLASS::whoami(void)" (?whoami@COMPUTER_CLASS@@QAEPADXZ)
+monedit.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall COMPUTER_CLASS::startup(void)" (?startup@COMPUTER_CLASS@@QAEEXZ)
+monedit.obj : error LNK2001: unresolved external symbol "unsigned char __cdecl names_startup(void)" (?names_startup@@YAEXZ)
+monedit.obj : error LNK2001: unresolved external symbol __imp__UpdateWindow@4
+monedit.obj : error LNK2001: unresolved external symbol __imp__ShowWindow@8
+monedit.obj : error LNK2001: unresolved external symbol __imp__CreateWindowExA@48
+monedit.obj : error LNK2001: unresolved external symbol __imp__RegisterClassA@4
+monedit.obj : error LNK2001: unresolved external symbol __imp__GetStockObject@4
+monedit.obj : error LNK2001: unresolved external symbol __imp__LoadIconA@8
+monedit.obj : error LNK2001: unresolved external symbol __imp__LoadCursorA@8
+monedit.obj : error LNK2001: unresolved external symbol __imp__DispatchMessageA@4
+monedit.obj : error LNK2001: unresolved external symbol __imp__TranslateMessage@4
+monedit.obj : error LNK2001: unresolved external symbol __imp__IsDialogMessageA@8
+monedit.obj : error LNK2001: unresolved external symbol __imp__GetMessageA@16
+monedit.obj : error LNK2001: unresolved external symbol "unsigned char __cdecl is_previous_instance(char *,char *)" (?is_previous_instance@@YAEPAD0@Z)
+monedit.obj : error LNK2001: unresolved external symbol "void __cdecl client_dde_shutdown(void)" (?client_dde_shutdown@@YAXXZ)
+monedit.obj : error LNK2001: unresolved external symbol "void __cdecl unregister_for_event(char *,short)" (?unregister_for_event@@YAXPADF@Z)
+monitor.obj : error LNK2001: unresolved external symbol "void __cdecl int32toasc(char *,long,long)" (?int32toasc@@YAXPADJJ@Z)
+monitor.obj : error LNK2001: unresolved external symbol __imp__GetDlgItemInt@16
+monitor.obj : error LNK2001: unresolved external symbol "unsigned char __cdecl is_checked(struct HWND__ *,int)" (?is_checked@@YAEPAUHWND__@@H@Z)
+monitor.obj : error LNK2001: unresolved external symbol "public: __thiscall LISTBOX_CLASS::~LISTBOX_CLASS(void)" (??1LISTBOX_CLASS@@QAE@XZ)
+monitor.obj : error LNK2001: unresolved external symbol "public: void __thiscall LISTBOX_CLASS::redraw_on(void)" (?redraw_on@LISTBOX_CLASS@@QAEXXZ)
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall LISTBOX_CLASS::setcursel(int)" (?setcursel@LISTBOX_CLASS@@QAEEH@Z)
+monitor.obj : error LNK2001: unresolved external symbol "public: int __thiscall LISTBOX_CLASS::insert(int,char *)" (?insert@LISTBOX_CLASS@@QAEHHPAD@Z)
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall LISTBOX_CLASS::remove(int)" (?remove@LISTBOX_CLASS@@QAEEH@Z)
+monitor.obj : error LNK2001: unresolved external symbol "public: int __thiscall LISTBOX_CLASS::current_index(void)" (?current_index@LISTBOX_CLASS@@QAEHXZ)
+monitor.obj : error LNK2001: unresolved external symbol "public: void __thiscall LISTBOX_CLASS::redraw_off(void)" (?redraw_off@LISTBOX_CLASS@@QAEXXZ)
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall LISTBOX_CLASS::init(struct HWND__ *,int)" (?init@LISTBOX_CLASS@@QAEEPAUHWND__@@H@Z)
+monitor.obj : error LNK2001: unresolved external symbol "void __cdecl post_impact_seconds(char *,short,short)" (?post_impact_seconds@@YAXPADFF@Z)
+monitor.obj : error LNK2001: unresolved external symbol "char * __cdecl copy_w_char(char *,char *,char)" (?copy_w_char@@YAPADPAD0D@Z)
+monitor.obj : error LNK2001: unresolved external symbol "public: __thiscall DB_TABLE::~DB_TABLE(void)" (??1DB_TABLE@@QAE@XZ)
+monitor.obj : error LNK2001: unresolved external symbol "void __cdecl poke_data(char *,char *,char *)" (?poke_data@@YAXPAD00@Z)
+monitor.obj : error LNK2001: unresolved external symbol "public: void __thiscall DB_TABLE::close(void)" (?close@DB_TABLE@@QAEXXZ)
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall DB_TABLE::unlock_record(void)" (?unlock_record@DB_TABLE@@QAEEXZ)
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall DB_TABLE::rec_update(void)" (?rec_update@DB_TABLE@@QAEEXZ)
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall DB_TABLE::put_long(unsigned short,long,short)" (?put_long@DB_TABLE@@QAEEGJF@Z)
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall DB_TABLE::get_next_key_match(short,unsigned char)" (?get_next_key_match@DB_TABLE@@QAEEFE@Z)
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall DB_TABLE::put_alpha(unsigned short,char const *,short)" (?put_alpha@DB_TABLE@@QAEEGPBDF@Z)
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall DB_TABLE::open(char *,short,short)" (?open@DB_TABLE@@QAEEPADFF@Z)
+monitor.obj : error LNK2001: unresolved external symbol "char * __cdecl codir_name(char *,char *)" (?codir_name@@YAPADPAD0@Z)
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall DB_TABLE::get_current_record(unsigned char)" (?get_current_record@DB_TABLE@@QAEEE@Z)
+monitor.obj : error LNK2001: unresolved external symbol "short __cdecl compare(char const *,char const *,short)" (?compare@@YAFPBD0F@Z)
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall DB_TABLE::get_alpha(char *,unsigned short,short)" (?get_alpha@DB_TABLE@@QAEEPADGF@Z)
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall DB_TABLE::get_next_record(unsigned char)" (?get_next_record@DB_TABLE@@QAEEE@Z)
+monitor.obj : error LNK2001: unresolved external symbol "char * __cdecl madir_name(char *,char *,char *)" (?madir_name@@YAPADPAD00@Z)
+monitor.obj : error LNK2001: unresolved external symbol "public: int __thiscall LISTBOX_CLASS::add(char *)" (?add@LISTBOX_CLASS@@QAEHPAD@Z)
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall PART_CLASS::find(char *,char *,char *)" (?find@PART_CLASS@@QAEEPAD00@Z)
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall MACHINE_CLASS::find(char *,char *)" (?find@MACHINE_CLASS@@QAEEPAD0@Z)
+monitor.obj : error LNK2001: unresolved external symbol "public: __thiscall PART_CLASS::PART_CLASS(void)" (??0PART_CLASS@@QAE@XZ)
+monitor.obj : error LNK2001: unresolved external symbol "public: __thiscall MACHINE_CLASS::MACHINE_CLASS(void)" (??0MACHINE_CLASS@@QAE@XZ)
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned long __thiscall DB_TABLE::nof_recs(void)" (?nof_recs@DB_TABLE@@QAEKXZ)
+monitor.obj : error LNK2001: unresolved external symbol __imp__EnableWindow@8
+monitor.obj : error LNK2001: unresolved external symbol __imp__GetDlgItem@8
+monitor.obj : error LNK2001: unresolved external symbol "unsigned char __cdecl set_text(struct HWND__ *,int,char const *)" (?set_text@@YAEPAUHWND__@@HPBD@Z)
+monitor.obj : error LNK2001: unresolved external symbol "char * __cdecl resource_string(struct HINSTANCE__ *,unsigned int)" (?resource_string@@YAPADPAUHINSTANCE__@@I@Z)
+monitor.obj : error LNK2001: unresolved external symbol __imp__SetDlgItemInt@16
+monitor.obj : error LNK2001: unresolved external symbol __imp__SendDlgItemMessageA@20
+monitor.obj : error LNK2001: unresolved external symbol "public: char * __thiscall LISTBOX_CLASS::selected_text(void)" (?selected_text@LISTBOX_CLASS@@QAEPADXZ)
+monitor.obj : error LNK2001: unresolved external symbol "void __cdecl resource_message_box(struct HINSTANCE__ *,unsigned int,unsigned int)" (?resource_message_box@@YAXPAUHINSTANCE__@@II@Z)
+monitor.obj : error LNK2001: unresolved external symbol __imp__IsWindowEnabled@4
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall LISTBOX_CLASS::replace(char *)" (?replace@LISTBOX_CLASS@@QAEEPAD@Z)
+monitor.obj : error LNK2001: unresolved external symbol "void __cdecl post_impact_n_ms(short *,short *,char *)" (?post_impact_n_ms@@YAXPAF0PAD@Z)
+monitor.obj : error LNK2001: unresolved external symbol "unsigned char __cdecl get_text(char *,struct HWND__ *,int,int)" (?get_text@@YAEPADPAUHWND__@@HH@Z)
+monitor.obj : error LNK2001: unresolved external symbol __imp__GetDialogBaseUnits@0
+monitor.obj : error LNK2001: unresolved external symbol "public: void __thiscall LISTBOX_CLASS::empty(void)" (?empty@LISTBOX_CLASS@@QAEXXZ)
+monitor.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall LISTBOX_CLASS::setcursel(char *)" (?setcursel@LISTBOX_CLASS@@QAEEPAD@Z)
+monitor.obj : error LNK2001: unresolved external symbol "char * __cdecl findchar(char,char *)" (?findchar@@YAPADDPAD@Z)
+monitor.obj : error LNK2001: unresolved external symbol "unsigned char __cdecl monitor_is_running(void)" (?monitor_is_running@@YAEXZ)
+monitor.obj : error LNK2001: unresolved external symbol __imp__MoveWindow@24
+monitor.obj : error LNK2001: unresolved external symbol __imp__GetClientRect@8
+monitor.obj : error LNK2001: unresolved external symbol __imp__GetDesktopWindow@0
+monitor.obj : error LNK2001: unresolved external symbol __imp__GetWindowRect@8
+monitor.obj : error LNK2001: unresolved external symbol "void __cdecl shrinkwrap(struct HWND__ *,struct HWND__ *)" (?shrinkwrap@@YAXPAUHWND__@@0@Z)
+monitor.obj : error LNK2001: unresolved external symbol "void __cdecl unicode_to_char(char *,char *)" (?unicode_to_char@@YAXPAD0@Z)
+monedit.exe : fatal error LNK1120: 89 unresolved externals
+NMAKE : fatal error U1077: 'link' : return code '0x460'
+Stop.
+Error executing nmake.
+
+
+
+<h3>Results</h3>
+monedit.exe - 94 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

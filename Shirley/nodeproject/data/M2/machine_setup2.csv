@@ -1,0 +1,23 @@
+Machine Type,1
+ Fast Trak Board Number,1
+ Is Sure Trak Control,N
+Rod Pitch,2MM
+Auto Shot Timeout (Sec.),30
+ Downtime Timeout (Sec.),45
+ Differential Curve Number,50
+Position Base Impact Points,10
+ Time Base Impact Points,11
+Post Impact Pressure Type,8
+ Operator Number,      17
+ Quadrature Divisor,1
+ Binary Valve Pulse Time,1
+Binary Valve Devent Time,.2
+ Binary Valve Pulse Wire,27
+ Valve Setting after Jog Shot,2
+Is Monitoring On,F
+ Is Alarm Monitoring On,T
+ Has Digital Servo,T
+ Has Pressure Control,T
+ Use Time To Measure BiscuitHas Binary Valve,T
+ Has HMI,T
+ LS Off At EOS,T

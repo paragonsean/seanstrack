@@ -1,0 +1,1815 @@
+<html>
+<head>
+<title>DevCentral Learning Center</title>
+<meta http-equiv="Keywords" content="DevCentral, Programming, Tutorials, Source, MFC, Java, Win32, Learning">
+<meta http-equiv="Description" content="The coolest site!">
+</head>
+<h3>Introduction to MFC Programming with Visual C++ Version 6.x</h3>
+<p>
+In this tutorial we will examine a simple MFC program piece by
+piece to gain an understanding of its structure and conceptual
+framework. We will start by looking at MFC itself and then examine
+how MFC is used to create applications.
+<H3>An Introduction to MFC</H3>
+<P>
+MFC is a large and extensive C++ class hierarchy that makes Windows
+application development significantly easier. MFC is compatible
+across the entire Windows family. As each new version of Windows
+comes out, MFC gets modified so that old code compiles and works
+under the new system. MFC also gets extended, adding new capabilities
+to the hierarchy and making it easier to create complete applications.
+<P>
+The advantage of using MFC and C++ - as opposed to directly accessing
+the Windows API from a C program-is that MFC already contains
+and encapsulates all the normal &quot;boilerplate&quot; code that
+all Windows programs written in C must contain. Programs written
+in MFC are therefore much smaller than equivalent C programs.
+On the other hand, MFC is a fairly thin covering over the C functions,
+so there is little or no performance penalty imposed by its use.
+It is also easy to customize things using the standard C calls
+when necessary since MFC does not modify or hide the basic structure
+of a Windows program.
+<P>
+The best part about using MFC is that it does all of the hard
+work for you. The hierarchy contains thousands and thousands of
+lines of correct, optimized and robust Windows code. Many of the
+member functions that you call invoke code that would have taken
+you weeks to write yourself. In this way MFC tremendously accelerates
+your project development cycle.
+<P>
+MFC is fairly large. For example, Version 4.0 of the hierarchy
+contains something like 200 different classes. Fortunately, you don't need
+to use all of them in a typical program. In fact, it is possible
+to create some fairly spectacular software using only ten or so
+of the different classes available in MFC. The hierarchy is broken
+into several different class categories which include (but is not limited
+to):
+<UL>
+<LI>Application Architecture
+<LI>Graphical Drawing and Drawing Objects
+<LI>File Services
+<LI>Exceptions
+<LI>Structures - Lists, Arrays, Maps
+<LI>Internet Services
+<LI>OLE 2
+<LI>Database
+<LI>General Purpose
+</UL>
+<P>
+We will concentrate on visual objects in these tutorials. The
+list below shows the portion of the class hierarchy that deals
+with application support and windows support.
+<UL>
+<LI>CObject
+<LI>CCmdTarget
+<LI>CWinThread
+<LI>CWinApp
+<LI>CWnd
+<LI>CFrameWnd
+<LI>CDialog
+<LI>CView
+<LI>CStatic
+<LI>CButton
+<LI>CListBox
+<LI>CComboBox
+<LI>CEdit
+<LI>CScrollBar
+</UL>
+
+<P>
+There are several things to notice in this list. First, most
+classes in MFC derive from a base class called <B>CObject</B>.
+This class contains data members and member functions that are
+common to most MFC classes. The second thing to notice is the
+simplicity of the list. The <B>CWinApp</B> class is used whenever
+you create an application and it is used only once in any program.
+The <B>CWnd</B> class collects all the common features found in
+windows, dialog boxes, and controls. The <B>CFrameWnd</B> class
+is derived from <B>CWnd</B> and implements a normal framed application
+window. <B>CDialog</B> handles the two normal flavors of dialogs:
+modeless and modal respectively. <B>CView</B> is used to give a user
+access to a document through a window. Finally, Windows supports six
+native control types: static text, editable text, push buttons,
+scroll bars, lists, and combo boxes (an extended form of list).
+Once you understand this fairly small number of pieces, you are
+well on your way to a complete understanding of MFC. The other
+classes in the MFC hierarchy implement other features such as
+memory management, document control, data base support, and so
+on.
+<P>
+To create a program in MFC, you either use its classes directly
+or, more commonly, you derive new classes from the existing classes.
+In the derived classes you create new member functions that allow
+instances of the class to behave properly in your application.
+You can see this derivation process in the simple program we used
+in Tutorial 1, which is described in greater detail below. Both <B>CHelloApp</B> and <B>CHelloWindow</B> are derived
+from existing MFC classes.
+<H3>Designing a Program </H3>
+
+<P>
+Before discussing the code itself, it is worthwhile to briefly
+discuss the program design process under MFC. As an example, imagine
+that you want to create a program that displays the message &quot;Hello
+World&quot; to the user. This is obviously a very simple application
+but it still requires some thought.
+<P>
+A &quot;hello world&quot; application first needs to create a
+window on the screen that holds the words &quot;hello world&quot;.
+It then needs to get the actual &quot;hello world&quot; words
+into that window. Three objects are required to accomplish this
+task:
+<OL>
+<LI>An application object which initializes the application and hooks it to Windows. The application object handles all low-level event processing.
+<LI>A window object that acts as the main application window.
+<LI>A static text object which will hold the static text label &quot;hello world&quot;.
+</OL>
+
+<P>
+Every program that you create in MFC will contain the first two
+objects. The third object is unique to this particular application.
+Each application will define its own set of user interface objects
+that display the application's output as well as gather input
+from the user.
+<P>
+Once you have completed the user interface design and decided
+on the controls necessary to implement the interface, you write
+the code to create the controls on the screen. You also write
+the code that handles the messages generated by these controls
+as they are manipulated by the user. In the case of a &quot;hello
+world&quot; application, only one user interface control is necessary.
+It holds the words &quot;hello world&quot;. More realistic applications
+may have hundreds of controls arranged in the main window and
+dialog boxes.<p>
+It is important to note that there are actually two different ways
+to create user controls in a program. The method described here uses
+straight C++ code to create the controls. In a large application, however,
+this method becomes painful. Creating the controls for an application containing
+50 or 100 dialogs using C++ code to do it would take an eon. Therefore,
+a second method uses <i>resource files</i> to create the controls
+with a graphical dialog editor. This method is much faster and works well
+on most dialogs.
+<p>
+<H3>Understanding the Code for &quot;hello world&quot;</H3>
+
+<P>
+The listing below shows the code for the simple &quot;hello world&quot;
+program that you entered, compiled and executed in Tutorial 1.
+Line numbers have been added to allow discussion of the code in
+the sections that follow. By walking through this program line
+by line, you can gain a good understanding of the way MFC is used
+to create simple applications.
+<P>
+If you have not done so already, please compile and execute the
+code below by following the instructions given in Tutorial 1.
+<PRE>
+1 //hello.cpp
+
+2 #include &lt;afxwin.h&gt;
+
+3 // Declare the application class
+4 class CHelloApp : public CWinApp
+5 {
+6   public:
+7       virtual BOOL InitInstance();
+8 };
+
+9 // Create an instance of the application class
+10 CHelloApp HelloApp;
+
+11 // Declare the main window class
+12 class CHelloWindow : public CFrameWnd
+13 {
+14  CStatic* cs;
+15  public:
+16  CHelloWindow();
+17 };
+
+18 // The InitInstance function is called each
+19 // time the application first executes.
+20 BOOL CHelloApp::InitInstance()
+21 {
+22  m_pMainWnd = new CHelloWindow();
+23  m_pMainWnd-&gt;ShowWindow(m_nCmdShow);
+24  m_pMainWnd-&gt;UpdateWindow();
+25  return TRUE;
+26 }
+
+27 // The constructor for the window class
+28 CHelloWindow::CHelloWindow()
+29 {
+30  // Create the window itself
+31  Create(NULL,
+32      &quot;Hello World!&quot;,
+33      WS_OVERLAPPEDWINDOW,
+34      CRect(0,0,200,200));
+35  // Create a static label
+36  cs = new CStatic();
+37  cs-&gt;Create(&quot;hello world&quot;,
+38      WS_CHILD|WS_VISIBLE|SS_CENTER,
+39      CRect(50,80,150,150),
+40      this);
+41 }
+</PRE>
+
+<P>
+Take a moment and look through this program. Get a feeling for
+the &quot;lay of the land.&quot; The program consists of six small
+parts, each of which does something important.
+<P>
+The program first includes <TT>afxwin.h</TT> (line 2). This header
+file contains all the types, classes, functions, and variables
+used in MFC. It also includes other header files for such things
+as the Windows API libraries.
+<P>
+Lines 3 through 8 derive a new application class named <B>CHelloApp
+</B>from the standard <B>CWinApp</B> application class declared
+in MFC. The new class is created so the <B>InitInstance</B> member
+function in the <B>CWinApp</B> class can be overridden. <B>InitInstance
+</B>is a virtual function that is called as the application begins
+execution.
+<P>
+In Line 10, the code declares an instance of the application object
+as a global variable. This instance is important because it causes
+the program to execute. When the application is loaded into memory
+and begins running, the creation of that global variable causes
+the default constructor for the <B>CWinApp</B> class to execute.
+This constructor automatically calls the <B>InitInstance</B> function
+defined in lines 18 though 26.
+<P>
+In lines 11 through 17, the <B>CHelloWindow</B> class is derived
+from the <B>CFrameWnd</B> class declared in MFC. <B>CHelloWindow
+</B>acts as the application's window on the screen. A new class
+is created so that a new constructor, destructor, and data member
+can be implemented.
+<P>
+Lines 18 through 26 implement the <B>InitInstance</B> function.
+This function creates an instance of the <B>CHelloWindow</B> class,
+thereby causing the constructor for the class in Lines 27 through
+41 to execute. It also gets the new window onto the screen.
+<P>
+Lines 27 through 41 implement the window's constructor. The constructor
+actually creates the window and then creates a static control
+inside it.
+<P>
+An interesting thing to notice in this program is that there is
+no <B>main</B> or <B>WinMain</B> function, and no apparent event
+loop. Yet we know from executing it in Tutorial 1 that it processed
+events. The window could be minimized and maximized, moved around,
+and so on. All this activity is hidden in the main application
+class <B>CWinApp</B> and we therefore don't have to worry about
+it-event handling is totally automatic and invisible in MFC.
+<P>
+The following sections describe the different pieces of this program
+in more detail. It is unlikely that all of this information will
+make complete sense to you right now: It's best to read through
+it to get your first exposure to the concepts. In Tutorial 3,
+where a number of specific examples are discussed, the different
+pieces will come together and begin to clarify themselves.
+<H3>The Application Object</H3>
+
+<P>
+Every program that you create in MFC will contain a single application
+object that you derive from the <B>CWinApp</B> class. This object
+must be declared globally (line 10) and can exist only once in
+any given program.
+<P>
+An object derived from the <B>CWinApp</B> class handles initialization
+of the application, as well as the main event loop for the program.
+The <B>CWinApp</B> class has several data members, and a number
+of member functions. For now, almost all are unimportant. If you
+would like to browse through some of these functions however,
+search for <B>CWinApp </B>in the MFC help file by choosing the
+<B>Search </B>option in the <B>Help</B> menu and typing in
+&quot;CWinApp&quot;. In the
+program above, we have overridden only one virtual function in
+<B>CWinApp</B>, that being the <B>InitInstance</B> function.
+<P>
+The purpose of the application object is to initialize and control
+your application. Because Windows allows multiple instances of
+the same application to run simultaneously, MFC breaks the initialization
+process into two parts and uses two functions-<B>InitApplication
+</B>and <B>InitInstance</B>-to handle it. Here we have used only
+the <B>InitInstance</B> function because of the simplicity of
+the application. It is called each time a new instance of the
+application is invoked. The code in Lines 3 through 8 creates
+a class called <B>CHelloApp</B> derived from <B>CWinApp</B>. It
+contains a new <B>InitInstance</B> function that overrides the
+existing function in <B>CWinApp</B> (which does nothing):
+<PRE>
+3 // Declare the application class
+4 class CHelloApp : public CWinApp
+5 {
+6   public:
+7       virtual BOOL InitInstance();
+8 };
+</PRE>
+
+<P>
+Inside the overridden <B>InitInstance</B> function at lines 18
+through 26, the program creates and displays the window using
+<B>CHelloApp</B>'s data member named <B>m_pMainWnd</B>:
+<PRE>
+18 // The InitInstance function is called each
+19 // time the application first executes.
+20 BOOL CHelloApp::InitInstance()
+21 {
+22  m_pMainWnd = new CHelloWindow();
+23  m_pMainWnd-&gt;ShowWindow(m_nCmdShow);
+24  m_pMainWnd-&gt;UpdateWindow();
+25  return TRUE;
+26 }
+</PRE>
+
+<P>
+The <B>InitInstance</B> function returns a TRUE value to indicate
+that initialization completed successfully. Had the function returned
+a FALSE value, the application would terminate immediately. We
+will see more details of the window initialization process in
+the next section.
+<P>
+When the application object is created at line 10, its data members
+(inherited from <B>CWinApp</B>) are automatically initialized.
+For example, <B>m_pszAppName</B>, <B>m_lpCmdLine</B>, and
+<B>m_nCmdShow</B> all contain appropriate values. See the MFC
+help file for more information. We'll see a use for one of these
+variables in a moment.
+<H3>The Window Object</H3>
+
+<P>
+MFC defines two types of windows: 1) frame windows, which are
+fully functional windows that can be re-sized, minimized, and
+so on, and 2) dialog windows, which are not re-sizable. A frame
+window is typically used for the main application window of a
+program.
+<P>
+In the code shown in listing 2.1, a new class named <B>CHelloWindow
+</B>is derived from the <B>CFrameWnd</B> class in lines 11 through 17:
+<PRE>
+11 // Declare the main window class
+12 class CHelloWindow : public CFrameWnd
+13 {
+14  CStatic* cs;
+15  public:
+16  CHelloWindow();
+17 };
+</PRE>
+
+<P>
+The derivation contains a new constructor, along with a data member
+that will point to the single user interface control used in the
+program. Each application that you create will have a unique set
+of controls residing in the main application window. Therefore,
+the derived class will have an overridden constructor that creates
+all the controls required in the main window. Typically this class
+will also have an overridden destructor to delete them when the
+window closes, but the destructor is not used here.
+In Tutorial 4, we will see that the derived
+window class will also declare a message handler to handle messages
+that these controls produce in response to user events.
+<P>
+Typically, any application you create will have a single main
+application window. The <B>CHelloApp</B> application class therefore
+defines a data member named <B>m_pMainWnd</B> that can point
+to this main window. To create the main window for this application,
+the <B>InitInstance</B> function (lines 18 through 26) creates
+an instance of <B>CHelloWindow</B> and uses <B>m_pMainWnd</B> to
+point to the new window. Our <B>CHelloWindow</B> object is created
+at line 22:
+<pre>
+18 // The InitInstance function is called each
+19 // time the application first executes.
+20 BOOL CHelloApp::InitInstance()
+21 {
+22  m_pMainWnd = new CHelloWindow();
+23  m_pMainWnd-&gt;ShowWindow(m_nCmdShow);
+24  m_pMainWnd-&gt;UpdateWindow();
+25  return TRUE;
+26 }
+</PRE>
+
+<P>
+Simply creating a frame window is not enough, however. Two other
+steps are required to make sure that the new window appears on
+screen correctly. First, the code must call the window's <B>ShowWindow
+</B>function to make the window appear on screen (line 23). Second,
+the program must call the <B>UpdateWindow</B> function to make
+sure that each control, and any drawing done in the interior of
+the window, is painted correctly onto the screen (line 24).
+<P>
+You may wonder where the <B>ShowWindow</B> and <B>UpdateWindow
+</B>functions are defined. For example, if you wanted to look
+them up to learn more about them, you might look in the MFC help
+file (use the <B>Search</B> option in the <B>Help
+</B>menu) at the <B>CFrameWnd</B> class description. <B>CFrameWnd
+</B>does not contain either of these member functions, however.
+It turns out that <B>CFrameWnd</B> inherits its behavior-as do
+all controls and windows in MFC-from the <B>CWnd</B> class (see
+figure 2.1). If you refer to <B>CWnd</B> in the MFC documentation,
+you will find that it is a huge class containing over 200 different
+functions. Obviously, you are not going to master this particular
+class in a couple of minutes, but among the many useful functions
+are <B>ShowWindow</B> and <B>UpdateWindow</B>.
+<P>
+Since we are on the subject, take a minute now to look up the
+<B>CWnd::ShowWindow</B> function in the MFC help file. You do
+this by clicking the help file's <B>Search</B> button and entering
+&quot;ShowWindow&quot;. As an alternative, find the section describing
+the <B>CWnd</B> class using the <B>Search</B> button, and then
+find the <B>ShowWindow</B> function under the Update/Painting
+Functions in the class member list. Notice that <B>ShowWindow
+</B>accepts a single parameter, and that the parameter can be
+set to one of ten different values. We have set it to a data member
+held by <B>CHelloApp</B> in our program, <B>m_nCmdShow</B> (line
+23). The <B>m_nCmdShow</B> variable is initialized based on conditions
+set by the user at application start-up. For example, the user
+may have started the application from the Program Manager and
+told the Program Manager to start the application in the minimized
+state by setting the check box in the application's properties
+dialog. The <B>m_nCmdShow</B> variable will be set to SW_SHOWMINIMIZED,
+and the application will start in an iconic state. The <B>m_nCmdShow
+</B>variable is a way for the outside world to communicate with
+the new application at start-up. If you would like to experiment,
+you can try replacing <B>m_nCmdShow</B> in the call to <B>ShowWindow
+</B>with the different constant values defined for <B>ShowWindow
+</B>. Recompile the program and see what they do.
+<P>
+Line 22 initializes the window. It allocates memory for it by
+calling the <B>new</B> function. At this point in the program's
+execution the constructor for the <B>CHelloWindow</B> is called.
+The constructor is called whenever an instance of the class is
+allocated. Inside the window's constructor, the window must create
+itself. It does this by calling the <B>Create</B> member function
+for the <B>CFrameWnd</B> class at line 31:
+<pre>
+27 // The constructor for the window class
+28 CHelloWindow::CHelloWindow()
+29 {
+30  // Create the window itself
+31  Create(NULL,
+32      &quot;Hello World!&quot;,
+33      WS_OVERLAPPEDWINDOW,
+34      CRect(0,0,200,200));
+</PRE>
+
+<P>
+Four parameters are passed to the create function. By looking
+in the MFC documentation you can see the different types. The
+initial NULL parameter indicates that a default class name be
+used. The second parameter is the title of the window that will
+appear in the title bar. The third parameter is the style attribute
+for the window. This example indicates that a normal, overlappable
+window should be created. Style attributes are covered in detail
+in Tutorial 3. The fourth parameter specifies that the window
+should be placed onto the screen with its upper left corner at
+point 0,0, and that the initial size of the window should be 200
+by 200 pixels. If the value <B>rectDefault</B> is used as the
+fourth parameter instead, Windows will place and size the window
+automatically for you.
+<P>
+Since this is an extremely simple program, it creates a single
+static text control inside the window. In this particular example,
+the program uses a single static text label as its only control,
+and it is created at lines 35 through 40. More on this step in
+the next section.
+<H3>The Static Text Control</H3>
+
+<P>
+The program derives the <B>CHelloWindow</B> class from the <B>CFrameWnd
+</B>class (lines 11 through 17). In doing so it declares a private
+data member of type <B>CStatic*</B>, as well as a constructor.
+<P>
+As seen in the previous section, the <B>CHelloWindow</B> constructor
+does two things. First it creates the application's window by
+calling the <B>Create</B> function (line 31), and then it allocates
+and creates the control that belongs inside the window. In this
+case a single static label is used as the only control. Object
+creation is always a two-step process in MFC. First, the memory
+for the instance of the class is allocated, thereby calling the
+constructor to initialize any variables. Next, an explicit Create
+function is called to actually create the object on screen. The
+code allocates, constructs, and creates a single static text object
+using this two-step process at lines 36 through 40:
+<pre>
+27 // The constructor for the window class
+28 CHelloWindow::CHelloWindow()
+29 {
+30  // Create the window itself
+31  Create(NULL,
+32      &quot;Hello World!&quot;,
+33      WS_OVERLAPPEDWINDOW,
+34      CRect(0,0,200,200));
+35  // Create a static label
+36  cs = new CStatic();
+37  cs-&gt;Create(&quot;hello world&quot;,
+38      WS_CHILD|WS_VISIBLE|SS_CENTER,
+39      CRect(50,80,150,150),
+40      this);
+41 }
+</PRE>
+
+<P>
+The constructor for the <B>CStatic</B> item is called when the
+memory for it is allocated, and then an explicit <B>Create</B> function
+is called to create the <B>CStatic</B> control's window. The parameters
+used in the <B>Create</B> function here are similar to those used
+for window creation at Line 31. The first parameter specifies
+the text to be displayed by the control. The second parameter
+specifies the style attributes. The style attributes are discussed
+in detail in the next tutorial but here we requested that the
+control be a child window (and therefore displayed within another
+window), that it should be visible, and that the text within the
+control should be centered. The third parameter determines the
+size and position of the static control. The fourth indicates
+the parent window for which this control is the child. Having
+created the static control, it will appear in the application's
+window and display the text specified.
+<H3>Conclusion</H3>
+
+<P>
+In looking at this code for the first time, it will be unfamiliar
+and therefore potentially annoying. Don't worry about it. The
+only part in the entire program that matters from an application
+programmer's perspective is the <B>CStatic</B> creation code at
+lines 36 through 40. The rest you will type in once and then ignore.
+In the next tutorial you will come to a full understanding of
+what lines 36 through 40 do, and see a number of options that
+you have in customizing a <B>CStatic</B> control.
+
+<h3>MFC Styles</h3>
+<I>Controls</I> are the user interface objects used to create
+interfaces for Windows applications. Most Windows applications
+and dialog boxes that you see are nothing but a collection of
+controls arranged in a way that appropriately implements the functionality
+of the program. In order to build effective applications, you
+must completely understand how to use the controls available in
+Windows. There are only six basic controls-<B>CStatic</B>, <B>CButton
+</B>, <B>CEdit</B>, <B>CList</B>, <B>CComboBox</B>, and <B>CScrollBar
+</B>-along with some minor variations (also note that Windows 95 added a
+collection of about 15 enhanced controls as well). You need to understand
+what each control can do, how you can tune its appearance and
+behavior, and how to make the controls respond appropriately to
+user events. By combining this knowledge with an understanding
+of menus and dialogs you gain the ability to create any Windows
+application that you can imagine. You can create controls either
+programatically as shown in this tutorial, or through resource
+files using the dialog resource editor. While the dialog editor
+is much more convenient, it is extremely useful to have a general
+understanding of controls that you gain by working with them programatically
+as shown here and in the next tutorial.
+<P>
+The simplest of the controls, <B>CStatic</B>, displays static
+text. The <B>CStatic</B> class has no data members and only a few
+member functions: the constructor, the <B>Create</B> function
+for getting and setting icons on static controls, and several others.
+It does not respond to user events. Because of its simplicity,
+it is a good place to start learning about Windows controls.
+<P>
+In this tutorial we will look at the <B>CStatic</B> class to understand
+how controls can be modified and customized. In the following
+tutorial, we examine the <B>CButton</B> and <B>CScrollBar</B> classes
+to gain an understanding of event handling. Once you understand
+all of the controls and classes, you are ready to build complete
+applications.
+<H3>The Basics</H3>
+
+<P>
+A <B>CStatic</B> class in MFC displays static text messages to
+the user. These messages can serve purely informational purposes
+(for example, text in a message dialog that describes an error),
+or they can serve as small labels that identify other controls.
+Pull open a File Open dialog in any Windows application and you
+will find six text labels. Five of the labels identify the lists,
+text area, and check box and do not ever change. The sixth displays
+the current directory and changes each time the current directory
+changes.
+<P>
+<B>CStatic</B> objects have several other display formats. By
+changing the <I>style</I> of a label it can display itself as
+a solid rectangle, as a border, or as an icon. The rectangular
+solid and frame forms of the <B>CStatic</B> class allow you to
+visually group related interface elements and to add separators
+between controls.
+<P>
+A <B>CStatic</B> control is always a child window to some parent
+window. Typically, the parent window is a main window for an application
+or a dialog box. You create the static control, as discussed in
+Tutorial 2, with two lines of code:
+<PRE>
+CStatic *cs;
+...
+cs = new CStatic();
+cs-&gt;Create(&quot;hello world&quot;,
+    WS_CHILD|WS_VISIBLE|SS_CENTER,
+    CRect(50,80, 150, 150),
+    this);
+</PRE>
+
+<P>
+This two-line creation style is typical of all controls created
+using MFC. The call to <B>new</B> allocates memory for an instance
+of the <B>CStatic</B> class and, in the process, calls the constructor
+for the class. The constructor performs any initialization needed
+by the class. The <B>Create</B> function creates the control at
+the Windows level and puts it on the screen.
+<P>
+The <B>Create</B> function accepts up to five parameters, as described
+in the MFC help file. Choose the <B>Search</B> option in the
+<B>Help</B> menu of Visual C++ and then enter <B>Create</B> so that you
+can select <B>CStatic::Create</B> from the list. Alternatively, enter
+<B>CStatic</B> in the search dialog and then click the <B>Members</B>
+button on its overview page.
+<P>
+Most of these values are self-explanatory. The <B>lpszText</B> parameter
+specifies the text displayed by the label. The <B>rect</B> parameter
+controls the position, size, and shape of the text when it's displayed
+in its parent window. The upper left corner of the text is determined
+by the upper left corner of the <B>rect</B> parameter and its
+bounding rectangle is determined by the width and height of the
+rect parameter. The <B>pParentWnd</B> parameter indicates the
+parent of the <B>CStatic</B> control. The control will appear
+in the parent window, and the position of the control will be
+relative to the upper left corner of the client area of the parent.
+The <B>nID</B> parameter is an integer value used as a control
+ID by certain functions in the API. We'll see examples of this
+parameter in the next tutorial.
+<P>
+The <B>dwStyle</B> parameter is the most important parameter.
+It controls the appearance and behavior of the control. The following
+sections describe this parameter in detail.
+<H3>CStatic Styles</H3>
+
+<P>
+All controls have a variety of display <I>styles</I>. Styles are
+determined at creation using the <B>dwStyle</B> parameter passed
+to the <B>Create</B> function. The style parameter is a bit mask
+that you build by or-ing together different mask constants. The
+constants available to a <B>CStatic</B> control can be found in
+the MFC help file (Find the page for the <B>CStatic::Create</B> function
+as described in the previous section, and click on the <B>Static
+Control Styles</B> link near the top of the page) and are also
+briefly described below:
+
+<H4>Valid styles for the CStatic class -</H4>
+
+Styles inherited from CWnd:
+
+<UL>
+<LI>WS_CHILD Mandatory for CStatic.
+<LI>WS_VISIBLE The control should be visible to the user.
+<LI>WS_DISABLED The control should reject user events.
+<LI>WS_BORDER The control's text is framed by a border.
+</UL>
+
+Styles native to CStatic:
+
+<UL>
+<LI>SS_BLACKFRAME The control displays itself as a rectangular
+border. Color is the same as window frames.
+<LI>SS_BLACKRECT The control displays itself as a filled rectangle.
+Color is the same as window frames.
+<LI>SS_CENTER The text is center justified.
+<LI>SS_GRAYFRAME The control displays itself as a rectangular
+border. Color is the same as the desktop.
+<LI>SS_GRAYRECT The control displays itself as a filled rectangle.
+Color is the same as the desktop.
+<LI>SS_ICON The control displays itself as an icon. The text string
+is used as the name of the icon in a resource file. The rect parameter
+controls only positioning.
+<LI>SS_LEFT The text displayed is left justified. Extra text is
+word-wrapped.
+<LI>SS_LEFTNOWORDWRAP The text is left justified, but extra text
+is clipped.
+<LI>SS_NOPREFIX &quot;&amp;&quot; characters in the text string
+indicate accelerator prefixes unless this attribute is used.
+<LI>SS_RIGHT The text displayed is right justified. Extra text
+is word-wrapped.
+<LI>SS_SIMPLE A single line of text is displayed left justified.
+Any CTLCOLOR messages must be ignored by the parent.
+<LI>SS_USERITEM User-defined item.
+<LI>SS_WHITEFRAME The control displays itself as a rectangular
+border. Color is the same as window backgrounds.
+<LI>SS_WHITERECT The control displays itself as a filled rectangle.
+Color is the same as window backgrounds.
+</UL>
+
+<P>
+These constants come from two different sources. The &quot;SS&quot;
+(Static Style) constants apply only to <B>CStatic</B> controls.
+The &quot;WS&quot; (Window Style) constants apply to all windows
+and are therefore defined in the <B>CWnd</B> object from which
+<B>CStatic</B> inherits its behavior. There are many other &quot;WS&quot;
+style constants defined in <B>CWnd</B>. They can be found by looking
+up the <B>CWnd::Create</B> function in the MFC documentation.
+The four above are the only ones that apply to a <B>CStatic</B>object.
+<P>
+A <B>CStatic</B> object will always have at least two style constants
+or-ed together: WS_CHILD and WS_VISIBLE. The control is not created
+unless it is the child of another window, and it will be invisible
+unless WS_VISIBLE is specified. WS_DISABLED controls the label's
+response to events and, since a label has no sensitivity to events
+such as keystrokes or mouse clicks anyway, specifically disabling
+it is redundant.
+<P>
+All the other style attributes are optional and control the appearance
+of the label. By modifying the style attributes passed to the
+<B>CStatic::Create</B> function, you control how the static object
+appears on screen. You can learn quite a bit about the different
+styles by using style attributes to modify the text appearance
+of the <B>CStatic</B> object, as discussed in the next section.
+
+<H3>CStatic Text Appearance</H3>
+
+<P>
+The code shown below is useful for understanding the behavior
+of the <B>CStatic</B> object. It is similar to the listing discussed
+in Tutorial 2, but it modifies the creation of the <B>CStatic
+</B>object slightly. Please turn to Tutorial 1 for instructions
+on entering and compiling this code.
+<PRE>
+//static1.cpp
+#include &lt;afxwin.h&gt;
+
+// Declare the application class
+class CTestApp : public CWinApp
+{
+public:
+    virtual BOOL InitInstance();
+};
+
+// Create an instance of the application class
+CTestApp TestApp;
+
+// Declare the main window class
+class CTestWindow : public CFrameWnd
+{
+    CStatic* cs;
+public:
+    CTestWindow();
+};
+
+// The InitInstance function is called
+// once when the application first executes
+BOOL CTestApp::InitInstance()
+{
+    m_pMainWnd = new CTestWindow();
+    m_pMainWnd-&gt;ShowWindow(m_nCmdShow);
+    m_pMainWnd-&gt;UpdateWindow();
+    return TRUE;
+}
+
+// The constructor for the window class
+CTestWindow::CTestWindow()
+{
+    CRect r;
+    // Create the window itself
+    Create(NULL,
+        &quot;CStatic Tests&quot;,
+        WS_OVERLAPPEDWINDOW,
+        CRect(0,0,200,200));
+
+    // Get the size of the client rectangle
+    GetClientRect(&amp;r);
+    r.InflateRect(-20,-20);
+
+    // Create a static label
+    cs = new CStatic();
+    cs-&gt;Create(&quot;hello world&quot;,
+        WS_CHILD|WS_VISIBLE|WS_BORDER|SS_CENTER,
+        r,
+        this);
+}
+</PRE>
+
+<P>
+The code of interest in listing 3.1 is in the function for the
+window constructor, which is repeated below with line numbers:
+<PRE>
+    CTestWindow::CTestWindow()
+    {
+        CRect r;
+
+        // Create the window itself
+1       Create(NULL,
+            &quot;CStatic Tests&quot;,
+            WS_OVERLAPPEDWINDOW,
+            CRect(0,0,200,200));
+        // Get the size of the client rectangle
+2       GetClientRect(&amp;r);
+3       r.InflateRect(-20,-20);
+        // Create a static label
+4       cs = new CStatic();
+5       cs-&gt;Create(&quot;hello world&quot;,
+            WS_CHILD|WS_VISIBLE|WS_BORDER|SS_CENTER,
+            r,
+            this);
+    }
+</PRE>
+
+<P>
+The function first calls the <B>CTestWindow::Create</B> function
+for the window at line 1. This is the <B>Create</B> function for
+the <B>CFrameWnd</B> object, since <B>CTestWindow</B> inherits
+its behavior from <B>CFrameWnd</B>. The code in line 1 specifies
+that the window should have a size of 200 by 200 pixels and that
+the upper left corner of the window should be initially placed
+at location 0,0 on the screen. The constant <B>rectDefault</B> can
+replace the <B>CRect</B> parameter if desired.
+<P>
+At line 2, the code calls <B>CTestWindow::GetClientRect</B>, passing
+it the parameter <B>&amp;r</B>. The <B>GetClientRect</B> function
+is inherited from the <B>CWnd</B> class (see the side-bar for
+search strategies to use when trying to look up functions in the
+Microsoft documentation). The variable <B>r</B> is of type <B>CRect
+</B>and is declared as a local variable at the beginning of the
+function.
+<P>
+Two questions arise here in trying to understand this code: 1)
+What does the <B>GetClientRect</B> function do? and 2) What does
+a <B>CRect</B> variable do? Let's start with question 1. When
+you look up the <B>CWnd::GetClientRect</B> function in the MFC
+documentation you find it returns a structure of type <B>CRect
+</B> that contains the size of the client rectangle of the particular
+window. It stores the structure at the address passed in as a
+parameter, in this case <B>&amp;r</B>. That address should point
+to a location of type <B>CRect</B>. The <B>CRect</B> type is a
+class defined in MFC. It is a convenience class used to manage
+rectangles. If you look up the class in the MFC documentation,
+you will find that it defines over 30 member functions and operators
+to manipulate rectangles.
+<P>
+In our case, we want to center the words &quot;Hello World&quot;
+in the window. Therefore, we use <B>GetClientRect</B> to get the
+rectangle coordinates for the client area. In line 3 we then call
+<B>CRect::InflateRect</B>, which symmetrically increases or decreases
+the size of a rectangle (see also CRect::DeflateRect). Here we have decreased the rectangle
+by 20 pixels on all sides. Had we not, the border surrounding
+the label would have blended into the window frame, and we would
+not be able to see it.
+<P>
+The actual <B>CStatic</B> label is created in lines 4 and 5. The
+style attributes specify that the words displayed by the label
+should be centered and surrounded by a border. The size and position
+of the border is determined by the <B>CRect</B> parameter <B>r
+</B>.
+<P>
+By modifying the different style attributes you can gain an understanding
+of the different capabilities of the <B>CStatic</B> Object. For
+example, the code below contains a replacement for the <B>CTestWindow
+</B>constructor function in the first listing.
+<PRE>
+CTestWindow::CTestWindow()
+{
+    CRect r;
+    // Create the window itself
+    Create(NULL,
+        &quot;CStatic Tests&quot;,
+        WS_OVERLAPPEDWINDOW,
+        CRect(0,0,200,200));
+
+    // Get the size of the client rectangle
+    GetClientRect(&amp;r);
+    r.InflateRect(-20,-20);
+
+    // Create a static label
+    cs = new CStatic();
+    cs-&gt;Create(&quot;Now is the time for all good men to \
+come to the aid of their country&quot;,
+        WS_CHILD|WS_VISIBLE|WS_BORDER|SS_CENTER,
+        r,
+        this);
+}
+</PRE>
+
+<P>
+The code above is identical to the previous except the text string
+is much longer. As you can see when you run the code, the <B>CStatic
+</B> object has wrapped the text within the specified bounding
+rectangle and centered each line individually.
+<P>
+If the bounding rectangle is too small to contain all the lines
+of text, then the text is clipped as needed to make it fit the
+available space. This feature of the <B>CStatic</B> object can
+be demonstrated by decreasing the size of the rectangle or increasing
+the length of the string.
+<P>
+In all the code we have seen so far, the style SS_CENTER has been
+used to center the text. The <B>CStatic</B> object also allows
+for left or right justification. Left justification is created
+by replacing the SS_CENTER attribute with an SS_LEFT attribute.
+Right justification aligns the words to the right margin rather
+than the left and is specified with the SS_RIGHT attribute.
+<P>
+One other text attribute is available. It turns off the word wrap
+feature and is used often for simple labels that identify other
+controls (see figure 3.1 for an example). The SS_LEFTNOWORDWRAP
+style forces left justification and causes no wrapping to take
+place.
+<H3>Rectangular Display Modes for CStatic</H3>
+
+<P>
+The <B>CStatic</B> object also supports two different rectangular
+display modes: solid filled rectangles and frames. You normally
+use these two styles to visually group other controls within a
+window. For example, you might place a black rectangular frame
+in a window to collect together several related editable areas.
+You can choose from six different styles when creating these rectangles:
+SS_BLACKFRAME, SS_BLACKRECT, SS_GRAYFRAME, SS_GRAYRECT, SS_WHITEFRAME,
+and SS_WHITERECT. The RECT form is a filled rectangle, while the
+FRAME form is a border. The color names are a little misleading-for
+example, SS_WHITERECT displays a rectangle of the same color as
+the window background. Although this color defaults to white,
+the user can change it with the Control Panel and the rectangle
+may not be actually white on some machines.
+<P>
+When a rectangle or frame attribute is specified, the <B>CStatic
+</B>'s text string is ignored. Typically an empty string is passed.
+Try using several of these styles in the previous code and observe
+the result.
+<H3>Fonts</H3>
+
+<P>
+You can change the font of a <B>CStatic</B> object by creating
+a <B>CFont</B> object. Doing so demonstrates how one MFC class
+can interact with another in certain cases to modify behavior
+of a control. The <B>CFont</B> class in MFC holds a single instance
+of a particular Windows font. For example, one instance of the
+<B>CFont</B> class might hold a Times font at 18 points while
+another might hold a Courier font at 10 points. You can modify
+the font used by a static label by calling the <B>SetFont</B> function
+that <B>CStatic</B> inherits from <B>CWnd</B>. The code below
+shows the code required to implement fonts.
+<PRE>
+CTestWindow::CTestWindow()
+{
+    CRect r;
+    // Create the window itself
+    Create(NULL,
+        &quot;CStatic Tests&quot;,
+        WS_OVERLAPPEDWINDOW,
+        CRect(0,0,200,200));
+    // Get the size of the client rectangle
+    GetClientRect(&amp;r);
+    r.InflateRect(-20,-20);
+    // Create a static label
+    cs = new CStatic();
+    cs-&gt;Create(&quot;Hello World&quot;,
+        WS_CHILD|WS_VISIBLE|WS_BORDER|SS_CENTER,
+        r,
+        this);
+
+    // Create a new 36 point Arial font
+    font = new CFont;
+    font-&gt;CreateFont(36,0,0,0,700,0,0,0,
+                ANSI_CHARSET,OUT_DEFAULT_PRECIS,
+                CLIP_DEFAULT_PRECIS,
+                DEFAULT_QUALITY,
+                DEFAULT_PITCH|FF_DONTCARE,
+                &quot;arial&quot;);
+    // Cause the label to use the new font
+    cs-&gt;SetFont(font);
+}
+</PRE>
+
+<P>
+The code above starts by creating the window and the <B>CStatic
+</B>object as usual. The code then creates an object of type
+<B>CFont</B>. The font variable should be declared as a data member
+in the <B>CTestWindow</B> class with the line &quot;CFont *font&quot;.
+The <B>CFont::CreateFont</B> function has 15 parameters (see the MFC
+help file), but only three matter in most cases. For example,
+the 36 specifies the size of the font in points, the 700 specifies
+the density of the font (400 is &quot;normal,&quot; 700 is &quot;bold,&quot;
+and values can range from 1 to 1000. The constants FW_NORMAL and
+FW_BOLD have the same meanings. See the FW constants in the API
+help file), and the word &quot;arial&quot; names the font to use.
+Windows typically ships with five True Type fonts (Arial, Courier
+New, Symbol, Times New Roman, and Wingdings), and by sticking
+to one of these you can be fairly certain that the font will exist
+on just about any machine. If you specify a font name that is
+unknown to the system, then the <B>CFont</B> class will choose
+the default font seen in all the other examples used in this tutorial.
+<P>
+For more information on the <B>CFont</B> class see the MFC documentation.
+There is also a good overview on fonts in the API on-line help
+file. Search for &quot;Fonts and Text Overview.&quot;
+<P>
+The <B>SetFont</B> function comes from the <B>CWnd</B> class.
+It sets the font of a window, in this case the <B>CStatic</B> child
+window. One question you may have at this point is, &quot;How
+do I know which functions available in <B>CWnd</B> apply to the
+<B>CStatic</B> class?&quot; You learn this by experience. Take
+half an hour one day and read through all the functions in <B>CWnd
+</B>. You will learn quite a bit and you should find many functions
+that allow you to customize controls. We will see other <B>Set
+</B>functions found in the <B>CWnd</B> class in the next tutorial.
+<H3>Conclusion</H3>
+
+<P>
+In this tutorial we looked at the many different capabilities
+of the <B>CStatic</B> object. We left out some of the <B>Set</B> functions
+inherited from the <B>CWnd</B> class so they can be discussed
+in Tutorial 4 where they are more appropriate.
+
+<H3>Looking up functions in the Microsoft Documentation</H3>
+
+<P>
+In Visual C++ Version 5.x, looking up functions that you are unfamiliar
+with is very simple. All of the MFC, SDK, Windows API, and C/C++ standard
+library functions have all been integrated into the same help system.
+If you are uncertain of where a function is defined or what syntax it
+uses, just use the <B>Search</B> option in the Help menu. All occurrences
+of the function are returned and you may look through them to select
+the help for the specific function that you desire.
+
+<H3>Compiling multiple executables</H3>
+
+<P>
+This tutorial contains several different example programs. There
+are two different ways for you to compile and run them. The first
+way is to place each different program into its own directory
+and then create a new project for each one. Using this technique,
+you can compile each program separately and work with each executeable
+simultaneously or independently. The disadvantage of this approach
+is the amount of disk space it consumes.
+<P>
+The second approach involves creating a single directory that
+contains all of the executables from this tutorial. You then create
+a single project file in that directory. To compile each program,
+you can edit the project and change its source file. When you
+rebuild the project, the new executable reflects the source file
+that you chose. This arrangement minimizes disk consumption, and
+is generally preferred.
+
+<h3>Message Maps</h3>
+
+Any user interface object that an application places in a window
+has two controllable features: 1) its appearance, and 2) its behavior
+when responding to events. In the last tutorial you gained an
+understanding of the <B>CStatic</B> control and saw how you can
+use style attributes to customize the appearance of user interface
+objects. These concepts apply to all the different control classes
+available in MFC.
+<P>
+In this tutorial we will examine the <B>CButton</B> control to
+gain an understanding of message maps and simple event handling.
+We'll then look at the <B>CScrollBar</B> control to see a somewhat
+more involved example.
+<H3>Understanding Message Maps</H3>
+
+<P>
+As discussed in Tutorial 2, MFC programs do not contain a main
+function or event loop. All of the event handling happens &quot;behind
+the scenes&quot; in C++ code that is part of the <B>CWinApp</B>
+class. Because it is hidden, we need a way to tell the invisible
+event loop to notify us about events of interest to the application.
+This is done with a mechanism called a <I>message map</I>. The
+message map identifies interesting events and then indicates functions
+to call in response to those events.
+<P>
+For example, say you want to write a program that will quit whenever
+the user presses a button labeled &quot;Quit.&quot; In the program
+you place code to specify the button's creation: you indicate
+where the button goes, what it says, etc. Next, you create a message
+map for the parent of the button-whenever a user clicks the button,
+it tries to send a message to its parent. By installing a message
+map for the parent window you create a mechanism to intercept
+and use the button's messages. The message map will request that
+MFC call a specific function whenever a specific button event occurs.
+In this case, a click on the quit button is the event of interest.
+You then put the code for quitting the application in the indicated
+function.
+<P>
+MFC does the rest. When the program executes and the user clicks
+the Quit button, the button will highlight itself as expected.
+MFC then automatically calls the right function and the program
+terminates. With just a few lines of code your program becomes
+sensitive to user events.
+<H3>The CButton Class</H3>
+
+<P>
+The <B>CStatic</B> control discussed in Tutorial 3 is unique in
+that it cannot respond to user events. No amount of clicking,
+typing, or dragging will do anything to a <B>CStatic</B> control
+because it ignores the user completely. However, The <B>CStatic
+</B> class is an anomaly. All of the other controls available
+in Windows respond to user events in two ways. First, they update
+their appearance automatically when the user manipulates them
+(e.g., when the user clicks on a button it highlights itself to
+give the user visual feedback). Second, each different control
+tries to send messages to your code so the program can respond
+to the user as needed. For example, a button sends a <I>command
+message</I> whenever it gets clicked. If you write code to receive
+the messages, then your code can respond to user events.
+<P>
+To gain an understanding of this process, we will start with the
+<B>CButton</B> control. The code below demonstrates the creation
+of a button.
+<PRE>
+// button1.cpp
+#include &lt;afxwin.h&gt;
+#define IDB_BUTTON 100
+// Declare the application class
+class CButtonApp : public CWinApp
+{
+public:
+    virtual BOOL InitInstance();
+};
+// Create an instance of the application class
+CButtonApp ButtonApp;
+// Declare the main window class
+class CButtonWindow : public CFrameWnd
+{
+    CButton *button;
+public:
+    CButtonWindow();
+};
+// The InitInstance function is called once
+// when the application first executes
+BOOL CButtonApp::InitInstance()
+{
+    m_pMainWnd = new CButtonWindow();
+    m_pMainWnd-&gt;ShowWindow(m_nCmdShow);
+    m_pMainWnd-&gt;UpdateWindow();
+    return TRUE;
+}
+// The constructor for the window class
+CButtonWindow::CButtonWindow()
+{
+    CRect r;
+    // Create the window itself
+    Create(NULL,
+        &quot;CButton Tests&quot;,
+        WS_OVERLAPPEDWINDOW,
+        CRect(0,0,200,200));
+
+    // Get the size of the client rectangle
+    GetClientRect(&amp;r);
+    r.InflateRect(-20,-20);
+
+    // Create a button
+    button = new CButton();
+    button-&gt;Create(&quot;Push me&quot;,
+        WS_CHILD|WS_VISIBLE|BS_PUSHBUTTON,
+        r,
+        this,
+        IDB_BUTTON);
+}
+</PRE>
+
+<P>
+The code above is nearly identical to the code discussed in previous
+tutorials. The <B>Create</B> function for the <B>CButton</B> class,
+as seen in the MFC help file, accepts five parameters. The first
+four are exactly the same as those found in the <B>CStatic</B>
+class. The fifth parameter indicates the resource ID for the button.
+The resource ID is a unique integer value used to identify the
+button in the message map. A constant value IDB_BUTTON has been
+defined at the top of the program for this value. The &quot;IDB_&quot;
+is arbitrary, but here indicates that the constant is an ID value
+for a Button. It is given a value of 100 because values less than
+100 are reserved for system-defined IDs. You can use any value
+above 99.
+<P>
+The style attributes available for the <B>CButton</B> class are
+different from those for the <B>CStatic</B> class. Eleven different
+&quot;BS&quot; (&quot;Button Style&quot;) constants are defined.
+A complete list of &quot;BS&quot; constants can be found using <B>Search</B>
+on CButton and selecting the &quot;button style&quot; link.
+Here we have used the BS_PUSHBUTTON style
+for the button, indicating that we want this button to display
+itself as a normal push-button. We have also used two familiar
+&quot;WS&quot; attributes: WS_CHILD and WS_VISIBLE. We will examine
+some of the other styles in later sections.
+<P>
+When you run the code, you will notice that the button responds
+to user events. That is, it highlights as you would expect. It
+does nothing else because we haven't told it what to do. We need
+to wire in a message map to make the button do something interesting.
+<H3>Creating a Message Map</H3>
+
+<P>
+The code below contains a message map as well as a new function
+that handles the button click (so the program beeps when the user
+clicks on the button). It is simply an extension of the prior
+code.
+<PRE>
+// button2.cpp
+#include &lt;afxwin.h&gt;
+#define IDB_BUTTON 100
+// Declare the application class
+class CButtonApp : public CWinApp
+{
+public:
+    virtual BOOL InitInstance();
+};
+// Create an instance of the application class
+CButtonApp ButtonApp;
+// Declare the main window class
+class CButtonWindow : public CFrameWnd
+{
+    CButton *button;
+public:
+    CButtonWindow();
+    afx_msg void HandleButton();
+    DECLARE_MESSAGE_MAP()
+};
+// The message handler function
+void CButtonWindow::HandleButton()
+{
+    MessageBeep(-1);
+}
+// The message map
+BEGIN_MESSAGE_MAP(CButtonWindow, CFrameWnd)
+    ON_BN_CLICKED(IDB_BUTTON, HandleButton)
+END_MESSAGE_MAP()
+// The InitInstance function is called once
+// when the application first executes
+BOOL CButtonApp::InitInstance()
+{
+    m_pMainWnd = new CButtonWindow();
+    m_pMainWnd-&gt;ShowWindow(m_nCmdShow);
+    m_pMainWnd-&gt;UpdateWindow();
+    return TRUE;
+}
+// The constructor for the window class
+CButtonWindow::CButtonWindow()
+{
+    CRect r;
+    // Create the window itself
+    Create(NULL,
+        &quot;CButton Tests&quot;,
+        WS_OVERLAPPEDWINDOW,
+        CRect(0,0,200,200));
+    // Get the size of the client rectangle
+    GetClientRect(&amp;r);
+    r.InflateRect(-20,-20);
+    // Create a button
+    button = new CButton();
+    button-&gt;Create(&quot;Push me&quot;,
+        WS_CHILD|WS_VISIBLE|BS_PUSHBUTTON,
+        r,
+        this,
+        IDB_BUTTON);
+}
+</PRE>
+
+<P>
+Three modifications have been made to the code:
+<OL>
+<LI>The class declaration for <B>CButtonWindow</B> now contains
+a new member function as well as a macro that indicates a message
+map is defined for the class. The <B>HandleButton</B> function,
+which is identified as a message handler by the use of the <B>afx_msg
+</B> tag, is a normal C++ function. There are some special constraints
+on this function which we will discuss shortly (e.g., it must
+be <B>void</B> and it cannot accept any parameters). The DECLARE_MESSAGE_MAP
+macro makes the creation of a message map possible. <I>Both the
+function and the macro must be public.</I>
+<LI>The <B>HandleButton</B> function is created in the same way
+as any member function. In this function, we called the <B>MessageBeep
+</B> function available from the Windows API.
+<LI>Special MFC macros create a message map. In the code, you
+can see that the BEGIN_MESSAGE_MAP macro accepts two parameters.
+The first is the name of the specific class to which the message
+map applies. The second is the base class from which the specific
+class is derived. It is followed by an ON_BN_CLICKED macro that
+accepts two parameters: The ID of the control and the function
+to call whenever that ID sends a command message. Finally, the
+message map ends with the END_MESSAGE_MAP macro.
+</OL>
+
+<P>
+When a user clicks the button, it sends a command message containing
+its ID to its parent, which is the window containing the button.
+That is default behavior for a button, and that is why this code
+works. The button sends the message to its parent because it is
+a child window. The parent window intercepts this message and
+uses the message map to determine the function to call. MFC handles
+the routing, and whenever the specified message is seen, the indicated
+function gets called. The program beeps whenever the user clicks
+the button.
+<P>
+The ON_BN_CLICKED message is the only interesting message sent
+by an instance of the <B>CButton</B> class. It is equivilent to
+the ON_COMMAND message in the <B>CWnd</B> class, and is simply
+a convenient synonym for it.
+<H3>Sizing Messages     </H3>
+
+<P>
+In the code above, the application's window, which is derived
+from the <B>CFrameWnd</B> class, recognized the button-click message
+generated by the button and responded to it because of its message
+map. The ON_BN_CLICKED macro added into the message map (search
+for the <B>CButton</B> overview as well as the the ON_COMMAND
+macro in the MFC help file) specifies the ID of the button and
+the function that the window should call when it receives a command
+message from that button. Since the button automatically sends
+to its parent its ID in a command message whenever the user clicks
+it, this arrangement allows the code to handle button events properly.
+<P>
+ The frame window that acts as the main window for this application
+is also capable of sending messages itself. There are about 100
+different messages available, all inherited from the <B>CWnd</B>
+class. By browsing through the member functions for the <B>CWnd
+</B> class in MFC help file you can see what all of these messages
+are. Look for any member function beginning with the word &quot;On&quot;.
+
+<P>
+You may have noticed that all of the code demonstrated so far
+does not handle re-sizing very well. When the window re-sizes,
+the frame of the window adjusts accordingly but the contents stay
+where they were placed originally. It is possible to make resized
+windows respond more attractively by recognizing resizing events.
+One of the messages that is sent by any window is a sizing message.
+The message is generated whenever the window changes shape. We
+can use this message to control the size of child windows inside
+the frame, as shown below:
+<PRE>
+// button3.cpp
+#include &lt;afxwin.h&gt;
+#define IDB_BUTTON 100
+// Declare the application class
+class CButtonApp : public CWinApp
+{
+public:
+    virtual BOOL InitInstance();
+};
+// Create an instance of the application class
+CButtonApp ButtonApp;
+// Declare the main window class
+class CButtonWindow : public CFrameWnd
+{
+    CButton *button;
+public:
+    CButtonWindow();
+    afx_msg void HandleButton();
+    afx_msg void OnSize(UINT, int, int);
+    DECLARE_MESSAGE_MAP()
+};
+// A message handler function
+void CButtonWindow::HandleButton()
+{
+    MessageBeep(-1);
+}
+// A message handler function
+void CButtonWindow::OnSize(UINT nType, int cx,
+    int cy)
+{
+    CRect r;
+    GetClientRect(&amp;r);
+    r.InflateRect(-20,-20);
+    button-&gt;MoveWindow(r);
+}
+// The message map
+BEGIN_MESSAGE_MAP(CButtonWindow, CFrameWnd)
+    ON_BN_CLICKED(IDB_BUTTON, HandleButton)
+    ON_WM_SIZE()
+END_MESSAGE_MAP()
+// The InitInstance function is called once
+// when the application first executes
+BOOL CButtonApp::InitInstance()
+{
+    m_pMainWnd = new CButtonWindow();
+    m_pMainWnd-&gt;ShowWindow(m_nCmdShow);
+    m_pMainWnd-&gt;UpdateWindow();
+    return TRUE;
+}
+// The constructor for the window class
+CButtonWindow::CButtonWindow()
+{
+    CRect r;
+    // Create the window itself
+    Create(NULL,
+        &quot;CButton Tests&quot;,
+        WS_OVERLAPPEDWINDOW,
+        CRect(0,0,200,200));
+    // Get the size of the client rectangle
+    GetClientRect(&amp;r);
+    r.InflateRect(-20,-20);
+
+    // Create a button
+    button = new CButton();
+    button-&gt;Create(&quot;Push me&quot;,
+        WS_CHILD|WS_VISIBLE|BS_PUSHBUTTON,
+        r,
+        this,
+        IDB_BUTTON);
+}
+</PRE>
+
+<P>
+To understand this code, start by looking in the message map for
+the window. There you will find the entry ON_WM_SIZE. This entry
+indicates that the message map is sensitive to sizing messages
+coming from the <B>CButtonWindow</B> object. Sizing messages are
+generated on this window whenever the user re-sizes it. The messages
+come to the window itself (rather than being sent to a parent
+as the ON_COMMAND message is by the button) because the frame
+window is not a child.
+<P>
+Notice also that the ON_WM_SIZE entry in the message map has no
+parameters. As you can see in the MFC documentation under the
+<B>CWnd</B> class, <I>it is understood that the ON_WM_SIZE entry
+in the message map will always call a function named <B>OnSize
+</B>, and that function must accept the three parameters shown
+</I>. The <B>OnSize</B> function must be a member function of
+the class owning the message map, and the function must be declared
+in the class as an <B>afx_msg</B> function (as shown in the definition
+of the <B>CButtonWindow</B> class).
+<P>
+If you look in the MFC documentation there are almost 100 functions
+named &quot;On...&quot; in the <B>CWnd</B> class. <B>CWnd::OnSize
+</B> is one of them. All these functions have a corresponding
+tag in the message map with the form ON_WM_. For example, ON_WM_SIZE
+corresponds to <B>OnSize</B>. None of the ON_WM_ entries in the
+message map accept parameters like ON_BN_CLICKED does. The parameters
+are assumed and automatically passed to the corresponding &quot;On...&quot;
+function like <B>OnSize</B>.
+<P>
+To repeat, because it is important: The <B>OnSize</B> function
+always corresponds to the ON_WM_SIZE entry in the message map.
+You must name the handler function <B>OnSize</B>, and it must
+accept the three parameters shown in the listing. You can find
+the specific parameter requirements of any <B>On...</B> function
+by looking up that function in the MFC help file. You can look
+the function up directly by typing <B>OnSize</B> into the search
+window, or you can find it as a member function of the <B>CWnd
+</B> class.
+<P>
+Inside the <B>OnSize</B> function itself in the code above, three
+lines of code modify the size of the button held in the window.
+You can place any code you like in this function.
+<P>
+The call to <B>GetClientRect</B> retrieves the new size of the
+window's client rectangle. This rectangle is then deflated, and
+the <B>MoveWindow</B> function is called on the button. <B>MoveWindow
+</B> is inherited from <B>CWnd</B> and re-sizes and moves the
+child window for the button in one step.
+<P>
+When you execute the program above and re-size the application's
+window, you will find the button re-sizes itself correctly. In
+the code, the re-size event generates a call through the message
+map to the <B>OnSize</B> function, which calls the <B>MoveWindow
+</B>function to re-size the button appropriately.
+<H3>Window Messages</H3>
+
+<P>
+By looking in the MFC documentation, you can see the wide variety
+of <B>CWnd</B> messages that the main window handles. Some are
+similar to the sizing message seen in the previous section. For
+example, ON_WM_MOVE messages are sent when a user moves a window,
+and ON_WM_PAINT messages are sent when any part of the window
+has to be repainted. In all of our programs so far, repainting
+has happened automatically because controls are responsible for
+their own appearance. If you draw the contents of the client area
+yourself with GDI commands (see the book &quot;<A HREF="http://www.iftech.com/index.asp?qmainframe=books.asp" >Windows NT Programming: An Introduction Using C++
+</A>&quot; for a complete explanation) the application is responsible
+for repainting any drawings it places directly in the window.
+In this context the ON_WM_PAINT message becomes important.
+<P>
+There are also some event messages sent to the window that are
+more esoteric. For example, you can use the ON_WM_TIMER message
+in conjunction with the <B>SetTimer</B> function to cause the
+window to receive messages at pre-set intervals. The code below
+demonstrates the process. When you run this code, the program
+will beep once each second. The beeping can be replaced by a number
+of useful processes.
+<PRE>
+// button4.cpp
+#include &lt;afxwin.h&gt;
+#define IDB_BUTTON 100
+#define IDT_TIMER1 200
+// Declare the application class
+class CButtonApp : public CWinApp
+{
+public:
+    virtual BOOL InitInstance();
+};
+// Create an instance of the application class
+CButtonApp ButtonApp;
+// Declare the main window class
+class CButtonWindow : public CFrameWnd
+{
+    CButton *button;
+public:
+    CButtonWindow();
+    afx_msg void HandleButton();
+    afx_msg void OnSize(UINT, int, int);
+    afx_msg void OnTimer(UINT);
+    DECLARE_MESSAGE_MAP()
+};
+// A message handler function
+void CButtonWindow::HandleButton()
+{
+    MessageBeep(-1);
+}
+// A message handler function
+void CButtonWindow::OnSize(UINT nType, int cx,
+    int cy)
+{
+    CRect r;
+    GetClientRect(&amp;r);
+    r.InflateRect(-20,-20);
+    button-&gt;MoveWindow(r);
+}
+// A message handler function
+void CButtonWindow::OnTimer(UINT id)
+{
+    MessageBeep(-1);
+}
+// The message map
+BEGIN_MESSAGE_MAP(CButtonWindow, CFrameWnd)
+    ON_BN_CLICKED(IDB_BUTTON, HandleButton)
+    ON_WM_SIZE()
+    ON_WM_TIMER()
+END_MESSAGE_MAP()
+// The InitInstance function is called once
+// when the application first executes
+BOOL CButtonApp::InitInstance()
+{
+    m_pMainWnd = new CButtonWindow();
+    m_pMainWnd-&gt;ShowWindow(m_nCmdShow);
+    m_pMainWnd-&gt;UpdateWindow();
+    return TRUE;
+}
+// The constructor for the window class
+CButtonWindow::CButtonWindow()
+{
+    CRect r;
+    // Create the window itself
+    Create(NULL,
+        &quot;CButton Tests&quot;,
+        WS_OVERLAPPEDWINDOW,
+        CRect(0,0,200,200));
+    // Set up the timer
+    SetTimer(IDT_TIMER1, 1000, NULL); // 1000 ms.
+    // Get the size of the client rectangle
+    GetClientRect(&amp;r);
+    r.InflateRect(-20,-20);
+    // Create a button
+    button = new CButton();
+    button-&gt;Create(&quot;Push me&quot;,
+        WS_CHILD|WS_VISIBLE|BS_PUSHBUTTON,
+        r,
+        this,
+        IDB_BUTTON);
+}
+</PRE>
+
+<P>
+Inside the program above we created a button, as shown previously,
+and left its re-sizing code in place. In the constructor for the
+window we also added a call to the <B>SetTimer</B> function. This
+function accepts three parameters: an ID for the timer (so that
+multiple timers can be active simultaneously, the ID is sent to
+the function called each time a timer goes off), the time in milliseconds
+that is to be the timer's increment, and a function. Here, we
+passed NULL for the function so that the window's message map
+will route the function automatically. In the message map we have
+wired in the ON_WM_TIMER message, and it will automatically call
+the <B>OnTimer</B> function passing it the ID of the timer that
+went off.
+<P>
+When the program runs, it beeps once each 1,000 milliseconds.
+Each time the timer's increment elapses, the window sends a message
+to itself. The message map routes the message to the <B>OnTimer
+</B> function, which beeps. You can place a wide variety of useful
+code into this function.
+<H3>Scroll Bar Controls</H3>
+
+<P>
+Windows has two different ways to handle scroll bars. Some controls,
+such as the edit control and the list control, can be created
+with scroll bars attached. When this is the case, the master control
+handles the scroll bars automatically. For example, if an edit
+control has its scroll bars active then, when the scroll bars
+are used, the edit control scrolls as expected without any additional
+code.
+<P>
+Scroll bars can also work on a stand-alone basis. When used this
+way they are seen as independent controls in their own right.
+You can learn more about scroll bars by referring to the <B>CScrollBar
+</B> section of the MFC reference manual. Scroll bar controls
+are created the same way we created static labels and buttons.
+They have four member functions that allow you to get and set
+both the range and position of a scroll bar.
+<P>
+The code shown below demonstrates the creation of a horizontal
+scroll bar and its message map.
+<pre>
+// sb1.cpp
+#include &lt;afxwin.h&gt;
+#define IDM_SCROLLBAR 100
+const int MAX_RANGE=100;
+const int MIN_RANGE=0;
+// Declare the application class
+class CScrollBarApp : public CWinApp
+{
+public:
+    virtual BOOL InitInstance();
+};
+// Create an instance of the application class
+CScrollBarApp ScrollBarApp;
+// Declare the main window class
+class CScrollBarWindow : public CFrameWnd
+{
+    CScrollBar *sb;
+public:
+    CScrollBarWindow();
+    afx_msg void OnHScroll(UINT nSBCode, UINT nPos,
+        CScrollBar* pScrollBar);
+    DECLARE_MESSAGE_MAP()
+};
+// The message handler function
+void CScrollBarWindow::OnHScroll(UINT nSBCode,
+    UINT nPos, CScrollBar* pScrollBar)
+{
+    MessageBeep(-1);
+}
+// The message map
+BEGIN_MESSAGE_MAP(CScrollBarWindow, CFrameWnd)
+    ON_WM_HSCROLL()
+END_MESSAGE_MAP()
+// The InitInstance function is called once
+// when the application first executes
+BOOL CScrollBarApp::InitInstance()
+{
+    m_pMainWnd = new CScrollBarWindow();
+    m_pMainWnd-&gt;ShowWindow(m_nCmdShow);
+    m_pMainWnd-&gt;UpdateWindow();
+    return TRUE;
+}
+// The constructor for the window class
+CScrollBarWindow::CScrollBarWindow()
+{
+    CRect r;
+    // Create the window itself
+    Create(NULL,
+        &quot;CScrollBar Tests&quot;,
+        WS_OVERLAPPEDWINDOW,
+        CRect(0,0,200,200));
+
+    // Get the size of the client rectangle
+    GetClientRect(&amp;r);
+    // Create a scroll bar
+    sb = new CScrollBar();
+    sb-&gt;Create(WS_CHILD|WS_VISIBLE|SBS_HORZ,
+        CRect(10,10,r.Width()-10,30),
+        this,
+        IDM_SCROLLBAR);
+    sb-&gt;SetScrollRange(MIN_RANGE,MAX_RANGE,TRUE);
+}
+</PRE>
+
+<P>
+Windows distinguishes between horizontal and vertical scroll bars
+and also supports an object called a <I>size box</I> in the <B>CScrollBar
+</B> class. A size box is a small square. It is formed at the
+intersection of a horizontal and vertical scroll bar and can be
+dragged by the mouse to automatically re-size a window. Looking
+at the code in listing 4.5, you can see that the <B>Create</B>
+function creates a horizontal scroll bar using the SBS_HORZ style.
+Immediately following creation, the range of the scroll bar is
+set for 0 to 100 using the two constants MIN_RANGE and MAX_RANGE
+(defined at the top of the listing) in the <B>SetScrollRange</B> function.
+<P>
+The event-handling function <B>OnHScroll</B> comes from the <B>CWnd
+</B> class. We have used this function because the code creates
+a horizontal scroll bar. For a vertical scroll bar you should
+use <B>OnVScroll</B>. In the code here the message map wires in
+the scrolling function and causes the scroll bar to beep whenever
+the user manipulates it. When you run the code you can click on
+the arrows, drag the thumb, and so on. Each event will generate
+a beep, but the thumb will not actually move because we have not
+wired in the code for movement yet.
+<P>
+Each time the scroll bar is used and <B>OnHScroll</B> is called,
+your code needs a way to determine the user's action. Inside the
+<B>OnHScroll</B> function you can examine the first parameter
+passed to the message handler, as shown below. If you use this
+code with the code above, the scroll bar's thumb will move appropriately
+with each user manipulation.
+<pre>
+// The message handling function
+void CScrollBarWindow::OnHScroll(UINT nSBCode,
+    UINT nPos, CScrollBar* pScrollBar)
+{
+    int pos;
+    pos = sb-&gt;GetScrollPos();
+    switch ( nSBCode )
+    {
+        case SB_LINEUP:
+            pos -= 1;
+            break;
+        case SB_LINEDOWN:
+            pos += 1;
+            break;
+        case SB_PAGEUP:
+            pos -= 10;
+            break;
+        case SB_PAGEDOWN:
+            pos += 10;
+            break;
+        case SB_TOP:
+            pos = MIN_RANGE;
+            break;
+        case SB_BOTTOM:
+            pos = MAX_RANGE;
+            break;
+
+        case SB_THUMBPOSITION:
+            pos = nPos;
+            break;
+        default:
+            return;
+    }
+    if ( pos &lt; MIN_RANGE )
+        pos = MIN_RANGE;
+    else if ( pos &gt; MAX_RANGE )
+        pos = MAX_RANGE;
+    sb-&gt;SetScrollPos( pos, TRUE );
+}
+</PRE>
+
+<P>
+The different constant values such as SB_LINEUP and SB_LINEDOWN
+are described in the <B>CWnd::OnHScroll</B> function documentation.
+The code above starts by retrieving the current scroll bar position
+using <B>GetScrollPos</B>. It then decides what the user did to
+the scroll bar using a switch statement. The constant value names
+imply a vertical orientation but are used in horizontal scroll
+bars as well: SB_LINEUP and SB_LINEDOWN apply when the user clicks
+the left and right arrows. SB_PAGEUP and SB_PAGEDOWN apply when
+the user clicks in the shaft of the scroll bar itself. SB_TOP
+and SB_BOTTOM apply when the user moves the thumb to the top or
+bottom of the bar. SB_THUMBPOSITION applies when the user drags
+the thumb to a specific position. The code adjusts the position
+accordingly, then makes sure that it's still in range before setting
+the scroll bar to its new position. Once the scroll bar is set,
+the thumb moves on the screen to inform the user visually.
+<P>
+A vertical scroll bar is handled the same way as a horizontal
+scroll bar except that you use the SBS_VERT style and the <B>OnVScroll
+</B> function. You can also use several alignment styles to align
+both the scroll bars and the grow box in a given client rectangle.
+
+<H3>Understanding Message Maps</H3>
+
+<P>
+The message map structure is unique to MFC. It is important that
+you understand why it exists and how it actually works so that
+you can exploit this structure in your own code.
+<P>
+Any C++ purist who looks at a message map has an immediate question:
+Why didn't Microsoft use virtual functions instead? Virtual functions
+are the standard C++ way to handle what mesage maps are doing
+in MFC, so the use of rather bizarre macros like DECLARE_MESSAGE_MAP
+and BEGIN_MESSAGE_MAP seems like a hack.
+<P>
+MFC uses message maps to get around a fundamental problem with
+virtual functions. Look at the <B>CWnd</B> class in the MFC help
+file. It contains over 200 member functions, all of which would
+have to be virtual if message maps were not used. Now look at
+all of the classes that subclass the <B>CWnd</B> class. For example,
+go to the contents page of the MFC help file and look at the visual
+object hierarchy. 30 or so classes in MFC use <B>CWnd</B> as their
+base class. This set includes all of the visual controls such
+as buttons, static labels, and lists. Now imagine that MFC used
+virtual functions, and you created an application that contained
+20 controls. Each of the 200 virtual functions in <B>CWnd</B>
+would require its own virtual function table, and each instance
+of a control would therefore have a set of 200 virtual function
+tables associated with it. The program would have roughly 4,000
+virtual function tables floating around in memory, and this is
+a problem on machines that have memory limitations. Because the
+vast majority of those tables are never used, they are unneeded.
+<P>
+Message maps duplicate the action of a virtual function table,
+but do so on an on-demand basis. When you create an entry in a
+message map, you are saying to the system, &quot;when you see
+the specified message, please call the specified function.&quot;
+Only those functions that actually get overridden appear in the
+message map, saving memory and CPU overhead.
+<P>
+ When you declare a message map with DECLARE_MESSAGE_MAP and BEGIN_MESSAGE_MAP,
+the system routes all messages through to your message map. If
+your map handles a given message, then your function gets called
+and the message stops there. However, if your message map does
+not contain an entry for a message, then the system sends that
+message to the class specified in the second parameter of BEGIN_MESSAGE_MAP.
+That class may or may not handle it and the proces repeats. Eventually,
+if no message map handles a given message, the message arrives
+at a default handler that eats it.
+<H3>Conclusion</H3>
+
+<P>
+All the message handling concepts described in this tutorial apply
+to every one of the controls and windows available in NT. In most
+cases you can use the ClassWizard to install the entries in the
+message map, and this makes the task much easier. For more information
+on the ClassWizard, AppWizard and the resource editors see the
+tutorials on these topics on the <a href="../../submfc.asp">
+MFC Tutorials page</a>.
+
+</body>
+</html>

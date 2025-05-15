@@ -1,0 +1,18 @@
+; This file is maintained by HCW. Do not modify this file directly.
+
+[OPTIONS]
+HCW=0
+ERRORLOG=FasTrak.err
+LCID=0x409 0x0 0x0 ;English (United States)
+REPORT=Yes
+CONTENTS=Topic1
+TITLE=FasTrak Application Help
+HLP=.\FasTrak.hlp
+
+[FILES]
+fastrak.rtf
+
+[MAP]
+machines    0x0001
+advmachines 0x0002
+parts       0x0003

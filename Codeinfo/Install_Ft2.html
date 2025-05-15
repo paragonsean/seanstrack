@@ -1,0 +1,90 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title>Installing the TrueTrak 2020 Monitoring Software for the FasTrak2</title>
+<style type="text/css">
+<!--
+span.indent1 { margin-left: 0.5in }
+span.indent2 { margin-left: 1.5in }
+ul li {list-style: disc }
+-->
+</style>
+</head>
+<body>
+<h2>Installing the TrueTrak 2020 Monitoring Software for the FasTrak2</h2>
+
+<h3>Copying the software from the CD to the Data Collection Terminal (DCT)</h3>
+<ol>
+<li>Run the <b>V604.exe</b> program. This will create a <b>C:\Install6.04</b>
+folder on your computer.
+</li>
+<li>Run the <b>FT2_Install.exe</b> program. This will create a <b>C:\Ft2_Setup</b> folder on your computer.</li>
+<li>Open the <b>C:\Install6.04</b> folder and run the <b>Setup.exe</b> program. This will install the
+TrueTrak 2020 ™ monitoring software on your system.</li>
+<li>  On the opening screen, choose <b>Install New TrueTrak System</b></li>
+<li>  On the next screen click the checkboxes next to
+    <ul>
+    <li>Start Part Editor at TrueTrak Startup</li>
+    <li>Start Board Monitor at TrueTrak Startup</li>
+    <li>FasTrak2</li>
+    </ul>
+</li>
+<li>Press the <b>Continue</b> Button to complete the installation.</li>
+</ol>
+
+<h3>Setting up the TCP/IP Addresses</h3>
+<ol>
+<li>Determine the TCP/IP addresses that you are going to use for the computer and the Board. If you are going to have
+more than one FasTrak2 board on the same network you will need a separate fixed address for each board. The
+default address for the board is <b>192.168.254.30</b> with a subnet mask of <b>255.255.255.0</b>.</li>
+
+<li>If you are using one of our computers, the computer will probably be set up with an address of <b>192.168.254.40</b>.</li>
+
+<li>If you need to change the address of the FasTrak2 board you will need to connect a serial cable from the COM1 port of the
+computer to the serial port of the FasTrak2 board.</li>
+<li>You will then need to put the FasTrak2 board into Germs mode by holding down the <b>SW7</b> button,
+pressing and releasing the <b>SW9</b> button, and then releasing the <b>SW7</b>. If you have done this
+correctly you will see that the led displays will show <b>88</b>.
+<li>You will then need to
+open an MS-Dos window. This is called a <b>Command Prompt</b>
+on newer versions of Windows.
+<br>Once in the MS_Dos window, enter <b>CD \Ft2_Setup</b> to move to that folder and then enter
+<b>T</b> to upload the program that allows you to change the TCP/IP address of the board.
+</li>
+<li>Once the program has been uploaded you will be shown the current network address. At the prompt, press the <b>A</b> key
+to go to the <b>Network Settings</b> menu and then the <b>C</b> key to change the settings.</li>
+<li>The first address that is displayed is the hardware address of the board. This does not need to be changed unless
+you have more than one FasTrak2 board on the same network. In that case you should change the last number of the
+hardware address so that each FasTrak2 board has a different one.</li>
+<li>The next address is the TCP/IP address. Change this as necessary.</li>
+<li>Skip the <b>nameserver ip address</b> by pressing <b>Enter</b>.</li>
+<li>The subnet mask is displayed next. Change this if you need to.</li>
+<li>Skip the <b>gateway ip address</b>.</li>
+<li>Press <b>B</b> to save the changes and then, when this is completed, press <b>Q</b> to return to the
+main menu and then <b>C</b> to exit the program.</li>
+<li>Press the <b>SW9</b> button on the FasTrak2 board to reset the board.</li>
+</ol>
+
+
+<h3>Setting up the Monitoring Software</h3>
+<ol>
+<li>Double click the <b>
+TrueTrak 2020 Monitoring System</b> icon that has been put on the desktop. This will run the programs.</li>
+<li>Pull down the <b>Monitor</b> menu on the main screen and choose <b>FasTrak Board Setup</b>.</li>
+<li>Change the Board Type of board number 1 from <b>Single</b> to <b>FasTrak2</b>.</li>b
+<li>Enter the TCP/IP address of the board into the <b>Address</b> editbox and <b>20000</b> into the <b>Port</b>
+editbox.</li>
+<li>Press <b>Save Changes</b></li>
+<li>Bring up the <b>Part Setup</b> program and choose the part you are going to monitor. Make any changes
+necessary on the part setup and then press the <b>Save Changes</b> button to save the setup. Press this even if you
+have not made any changes.</li>
+<li>Pull down the <b>Monitor</b> menu and choose <b>Monitor Setup</b> and make sure the correct machine and
+part are selected to be monitored.</li>
+<li>Bring up the <b>FasTrak2</b> monitoring program and exit from the program. Then rerun the program by
+pulling down the <b>Monitor</b> menu and choosing <b>FasTrak Board Monitor</b>. This time the program should
+show <b>Connected</b> in the Connected column.</li>
+</ol>
+
+</body>
+</html>
+

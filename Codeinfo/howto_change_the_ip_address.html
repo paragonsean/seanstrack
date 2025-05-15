@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>How to Change the IP addresss on a True-Trak 2020 &trade; with Two Ethernet Ports</title>
+</head>
+<body>
+<center><h2>How to Change the IP addresss on a True-Trak 2020 &trade; with Two Ethernet Ports</h2></center>
+Background:
+<p>
+The new True-Trak 2020&trade; systems have two ethernet ports. One of these is connected directly to the FasTrak21&trade; Board and the other can be connected to a network.
+<p>
+There are three ethernet ports involved here.
+<table border="1" cellpadding="10">
+<tr><td>&nbsp;</td> <td>Ethernet Port</td><td>Current TCP/IP Address</td><td>Desired TCP/IP Address</td></tr>
+<tr><td>1</td>      <td>FasTrak2&trade; Board </td>                            <td>192.168.254.99</td> <td>10.172.16.99</td>   </tr>
+<tr><td>2</td>      <td>Computer FasTrak2 Direct Connection</td> <td>192.168.254.100</td>  <td>10.172.16.100</td>   </tr>
+<tr><td>3</td>      <td>Computer Local Area Connection</td>      <td>Auto</td>           <td>192.168.254.100</td> </tr>
+</table>
+<p>
+Procedure:
+<p>
+You must change the FasTrak2&trade; Board address first. Then you can change the addresses of the computer's ports.
+
+<ol>
+<li>The procedure for changing the FasTrak2&trade; Board address is described in the FasTrak2 help. On the Plot screen, pull down the
+<b>Help</b> menu and choose <b>FasTrak2 Help</b>.</li>
+<li>On the bottom right of the screen, under <b>Misc.</b>, select <b>How to Change the IP address of the Board</b></li>
+<li>Press the <b>Click Here for Instructions</b> button.</li>
+<li>Follow the directions to change the address of the board to <b>10.172.16.99</b>.</li>
+<li>Shut down the True-Trak 2020&trade; software.
+<li>Open the Windows <b>Control Pannel</b> and double click on <b>Network Connections</b>.</li>
+<li><b>Right Click</b> on the <b>FasTrak2 Direct Connection</b> and choose <b>Properties</b>.</li>
+<li><b>Click</b> once on the <b>Internet Protocol (TCP/IP)</b> line to highlight it and then press the <b>Properties</b> button.</li>
+<li>Change the <b>IP Address</b> to <b>10.172.16.100</b>. Press the <b>OK</b> button to save the changes.</li>
+<li>Press the <b>OK</b> button on the properties screen to close that one.</li>
+<li><b>Right Click</b> on the <b>Local Area Connection</b> and choose <b>Properties</b>.</li>
+<li><b>Click</b> once on the <b>Internet Protocol (TCP/IP)</b> line to highlight it and then press the <b>Properties</b> button.</li>
+<li>Click on the <b>Use the following IP address</b> radio button.</li>
+<li>Change the <b>IP Address</b> to <b>192.168.254.100</b>.</li>
+<li>Change the <b>Subnet Mask</b> to <b>255.255.255.0</b> or whatever your network requires.</li>
+<li>Press the <b>OK</b> button to save the changes.</li>
+<li>Press the <b>OK</b> button on the properties screen to close that one.</li>
+<li>Restart Windows.</li>
+</ol>
+<p>
+Rules:
+<p>1. The first three numbers of the TCP/IP adresses of the ethernet ports on the <b>FasTrak2&trade; Board</b> and the <b>FasTrak2 Direct Connection</b> must be the same. The fourth number must be different.
+
+<p><table border="1" cellpadding="5">
+<tr><td>Ethernet Port</td><td>TCP/IP Address</td></tr>
+<tr><td>FasTrak2&trade; Board</td><td>10.172.16.99</td></tr>
+<tr><td>FasTrak2&trade; Direct Connection</td><td>10.172.16.100</td></tr>
+</table>
+<p>2. The first three numbers of the TCP/IP addresses of the ethernet ports on the <b>FasTrak2 Direct Connection</b> and the <b>Local Area Connection</b>
+must be different;
+<p><table border="1" cellpadding="5">
+<tr><td>Ethernet Port</td><td>TCP/IP Address</td></tr>
+<tr><td>FasTrak2&trade; Direct Connection</td><td>10.172.16.100</td></tr>
+<tr><td>Local Area Connection</td><td>192.168.254.100</td></tr>
+</table>
+<p>3. The <b>Local Area Connection</b> ethernet port can be set to <b>Obtain the IP address automatically</b>. This will not
+affect the communications with the FasTrak2&trade; Board as long as the first three numbers of the TCP/IP Addresses on your network
+are not the same as the ones on the FasTrak2&trade; Board and FasTrak2 Direct Connection ethernet ports.
+</ul>
+</body>
+</html>

@@ -1,0 +1,80 @@
+4
+ENGLISH,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+GERMAN,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+SPANISH,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ITALIAN,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+20P	20P	20P	20P	20P
+2MM	2MM	2MM	2MM	2MM
+AUTOBACK_DIR_SET	The Auto Backup Directory has been set to	The Auto Backup Directory has been set to	The Auto Backup Directory has been set to	L'Auto Backup della Directory è stato impostato su
+AUTO_BU	You have a D drive. Would you like to use d:\autoback\current as the Auto Backup Directory?	You have a D drive. Would you like to use d:\autoback\current as the Auto Backup Directory?	You have a D drive. Would you like to use d:\autoback\current as the Auto Backup Directory?	Hai un drive D. Vuoi usare il d:\autoback\corrente come la Directory di Auto Backup?
+BAD_RESTORE_PT	Restore Point does not exist	Restore Point does not exist	Restore Point does not exist	Il Punto di Ristoro non esiste
+BEGIN_INSTALL	Beginning Installation...	Beginning Installation...	Beginning Installation...	Inizio Installazione...
+BEGIN_UPDATE	Beginning Update...	Beginning Update...	Beginning Update...	Inizio Update...
+BROWSE_FOR_RES	Browse for Restore Path	Browse for Restore Path	Browse for Restore Path	Navigare per la Procedura di Ristoro
+CANT_CREATE_DIR	Could not create root directory	Could not create root directory	Could not create root directory	Impossibile creare una root di directory
+CANT_RENAME_DIR	Unable to rename directory!	Unable to rename directory!	Unable to rename directory!	Impossibile rinominare la directory!
+CHANGE_MA_TO_ST2	Change this machine to a Sure-Trak2 Control	Change this machine to a Sure-Trak2 Control	Change this machine to a Sure-Trak2 Control	Cambiare questa macchina in un Controllo Sure-Trak2
+CHOSEN_DIR	The Chosen Directory	The Chosen Directory	The Chosen Directory	La Directory Selezionata
+COPYING_DATA	Copying the Data	Copying the Data	Copying the Data	Copiando i Dati
+COPYING_EXES	Copying Executables	Copying Executables	Copying Executables	Copiando gli Eseguibili
+COPYING_PKZIP	Copying PKZip...	Copying PKZip...	Copying PKZip...	Copiando i PKZip...
+COPY_BY_HAND	***** You should copy these by hand. *****	***** You should copy these by hand. *****	***** You should copy these by hand. *****	***** E' consigliabile copiare queste manualmente. *****
+COPY_CHOOSE_WIRES	Copying New Choose-Wires.bmp file...	Copying New Choose-Wires.bmp file...	Copying New Choose-Wires.bmp file...	Copiando i nuovi file.bmp di cavo selezionati...
+COPY_FT2	Copy FT2 Control Files	Copy FT2 Control Files	Copy FT2 Control Files	Copia i File di Controllo FT2 
+COPY_HELP	Copying Help File...	Copying Help File...	Copying Help File...	Copiando i File d'Aiuto...
+COPY_NEW_DBS	Copying new databases...	Copying new databases...	Copying new databases...	Copiando i nuovi database...
+CO_TYPE	Computer Type	Computer Type	Computer Type	Tipo di Computer
+CREATE_FAIL	Creation Failure	Creation Failure	Creation Failure	Errore durante la Creazione 
+CREATING_DIRS	Creating Directories	Creating Directories	Creating Directories	Creando le Directory
+CTL_SETUP	Control Setup	Control Setup	Control Setup	Impostazioni di Controllo
+DA_CO	Data Archiver	Data Archiver	Data Archiver	Archivio dei Dati
+DIST_UNITS	Dist Units	Dist Units	Dist Units	Dista Unità
+DO_NOTHING	Do Nothing, this is a Monitor-Only system	Do Nothing, this is a Monitor-Only system	Do Nothing, this is a Monitor-Only system	Non fare nulla, questo è il sistema solo di Monitor
+EXES_DIR	Directory of Exes	Directory of Exes	Directory of Exes	Directory degli Eseguibili
+EXIT_ALL	Exit all TrueTrak programs before continuing.	Exit all TrueTrak programs before continuing.	Exit all TrueTrak programs before continuing.	Esci da tutti i programmi TrueTrak prima di continuare.
+INPUT_MANUALLY	You will have to enter it manually	You will have to enter it manually	You will have to enter it manually	Si deve entrare manualmente
+INSTALL_DIR_EXISTS	Installation Directory already exists	Installation Directory already exists	Installation Directory already exists	L'Installazione della Directory esiste già
+INSTALL_NEW	Install New True-Trak System	Install New True-Trak System	Install New True-Trak System	Installa il nuovo Sistema True-Trak
+INSTALL_THREAD	Installation Thread	Installation Thread	Installation Thread	Installazione del Thread
+IS_CTRL	It appears that this is a Sure-Trak2 control system. If that is so then you should change the machine setup to indicate that.	It appears that this is a Sure-Trak2 control system. If that is so then you should change the machine setup to indicate that.	It appears that this is a Sure-Trak2 control system. If that is so then you should change the machine setup to indicate that.	Sembra che questo sia un sistema di controllo Sure-Trak2. Se si verifica, cambiare le impostazioni di macchina che lo indicano.
+IU_TITLE	Choose Installation Type	Choose Installation Type	Choose Installation Type	Scegliere il Tipo di Installazione
+LOCAL_INS	Local Installation	Local Installation	Local Installation	Installazione Locale
+MARK_CTRL	The machine will be marked as a control system with a digital servo amplifier board.	The machine will be marked as a control system with a digital servo amplifier board.	The machine will be marked as a control system with a digital servo amplifier board.	La macchina sarà segnata come un sistema di controllo con una scheda digitale di servo amplificatore.
+MA_TYPE_CHANGE	Machine Type Change	Machine Type Change	Machine Type Change	Tipo di Cambio di Macchina
+MISSING_CONTROL_FILES	Some control files are missing!	Some control files are missing!	Some control files are missing!	Mancanza di alcuni File di controllo!
+MON_CO	Monitoring Computer	Monitoring Computer	Monitoring Computer	Monitoraggio del Computer
+MY_TITLE	True-Trak 2020(tm) Installation	True-Trak 2020(tm) Installation	True-Trak 2020(tm) Installation	Installazione di True-Trak 2020(tm) 
+NOT_A_RESTORE_PT	is NOT a RESTORE POINT	is NOT a RESTORE POINT	is NOT a RESTORE POINT	NON E' UN PUNTO DI RISTORO
+NOT_FIND_EXES	Could not find Exes directory	Could not find Exes directory	Could not find Exes directory	Impossibile trovare le directory degli Eseguibili 
+NO_CO_NAME	The computer name CANNOT be empty	The computer name CANNOT be empty	The computer name CANNOT be empty	Il campo del nome del computer NON PUO' essere vuoto
+NO_FILE	File Not Found	File Not Found	File Not Found	File Non Trovato
+NO_VISITRAK_INI	No VISITRAK.INI in Exes directory	No VISITRAK.INI in Exes directory	No VISITRAK.INI in Exes directory	Il file VISITRAK.INI non è stato trovato nella directory degli Eseguibili
+OFWRK	Office Workstation	Office Workstation	Office Workstation	Stazione di lavoro d'Ufficio
+OLD_DIR_RENAME	Old directory will be renamed to	Old directory will be renamed to	Old directory will be renamed to	La vecchia directory verrà rinominata
+PKZIP_COPY_FAIL Unable to copy PKZip file	Unable to copy PKZip file	Unable to copy PKZip file	Impossibile copiare il file PKZip
+PRE_IMPACT_WORK	Pre-Impact Work	Pre-Impact Work	Pre-Impact Work	Lavoro di Pre-Impact 
+RES_FROM	Recreate Machine(s) and Part(s) from an Existing Restore Point	Recreate Machine(s) and Part(s) from an Existing Restore Point	Recreate Machine(s) and Part(s) from an Existing Restore Point	Ricreare la/le Macchina/e e lo/gli Stampo/i da un Punto di Ristoro già Esistente 
+ROD_PITCH	Rod Pitch	Rod Pitch	Rod Pitch	Pitch del Pistone
+SHOULD_SAVE_ALL	You should save all parts on this machine when you restart the TrueTrak software.	You should save all parts on this machine when you restart the TrueTrak software.	You should save all parts on this machine when you restart the TrueTrak software.	Salvare tutti gli stampi su questa macchina quando si ripristina il software TrueTrak.
+SPACES_IN_PATH	There are spaces in the install directory!	There are spaces in the install directory!	There are spaces in the install directory!	Ci sono spazi nella directory di installazione!
+ST2_INSTALLED	SureTrak2 Control Installed	SureTrak2 Control Installed	SureTrak2 Control Installed	Controllo SureTrak2 Installato
+STARTUP_TITLE	True-Trak 2020 (tm) V8.25 Installation	True-Trak 2020 (tm) V8.25 Installation	True-Trak 2020 (tm) V8.25 Installation	Installazione di True-Trak 2020 (tm) V8.25
+START_AT_BOOT	Automatically Start When the Computer Boots	Automatically Start When the Computer Boots	Automatically Start When the Computer Boots	Accensione automatica quando il Computer Parte
+START_FT2	Start Board Monitor At TrueTrak Startup	Start Board Monitor At TrueTrak Startup	Start Board Monitor At TrueTrak Startup	Inizia la Scheda del Monitor All'Accensione di TrueTrak 
+START_MON_SETUPS	Start Monitor Setups at TrueTrak Startup	Start Monitor Setups at TrueTrak Startup	Start Monitor Setups at TrueTrak Startup	Inizia le Configurazioni del Monitor all'Accensione di TrueTrak
+START_PART_SETUPS	Start Part Setups at TrueTrak Startup	Start Part Setups at TrueTrak Startup	Start Part Setups at TrueTrak Startup	Inizia le Configurazioni dello Stampo all'Accensione di TrueTrak
+TT_EXES	The True-Trak Executables have been found in the following directory. If this is not correct, correct it before pressing the continue button	The True-Trak Executables have been found in the following directory. If this is not correct, correct it before pressing the continue button	The True-Trak Executables have been found in the following directory. If this is not correct, correct it before pressing the continue button	Gli Eseguibili di True-Trak sono stati trovati nella seguente directory. Se questo non è corretto, correggere l'errore prima di premere il tasto "continua"
+UNZIP_EXES	Unzipping new exes...	Unzipping new exes...	Unzipping new exes...	Creando i File zip dei nuovi eseguibili...
+UPDATE_DEF_BINVALVE	Copying default binary valve settings	Copying default binary valve settings	Copying default binary valve settings	Copiando le impostazioni di default delle valvole binarie
+UPDATE_DIFF_CURVES	Updating differential curves...	Updating differential curves...	Updating differential curves...	Update delle curve differenziali in corso...
+UPDATE_EXISTING	Update Existing True-Trak System	Update Existing True-Trak System	Update Existing True-Trak System	Update del Sistema True-Trak già Esistente
+UPDATE_PARAM_NAMES	Updating parameter names...	Updating parameter names...	Updating parameter names...	Update dei nomi dei parametri in corso...
+UPDATE_RODPITCH	Adding 1.6 mm sensor definitions	Adding 1.6 mm sensor definitions	Adding 1.6 mm sensor definitions	Aggiungendo 1.6 mm alle definizioni del sensore
+UPDATE_STARTUP_TITLE	Visi-Trak Worldwide V8.25 Update	Visi-Trak Worldwide V8.25 Update	Visi-Trak Worldwide V8.25 Update	Visi-Trak Worldwide V8.25 Update
+UPDATE_THREAD	Update Thread	Update Thread	Update Thread	Update del Thread
+UPDATE_UNITS	Updating units...	Updating units...	Updating units...	Update delle unità in corso...
+UPDATING_DATA	Updating the Data	Updating the Data	Updating the Data	Update dei Dati
+USE_RESTORE	Use Restore Point	Use Restore Point	Use Restore Point	Usa il Punto di Ristoro
+VEL_UNITS	Vel Units	Vel Units	Vel Units	Velocità delle Unità
+WILL_INSTALL	This program will install the TrueTrak Software into the following directory. Change this before continuing if you would like to use a different directory.	This program will install the TrueTrak Software into the following directory. Change this before continuing if you would like to use a different directory.	This program will install the TrueTrak Software into the following directory. Change this before continuing if you would like to use a different directory.	Questo programma installerà il Software TrueTrak Software nella directory seguente. Cambiare questa opzione prima di continuare se si vuole usare una directory differente.
+WILL_UPDATE	This program will update your existing TrueTrak Software to the latest version.	This program will update your existing TrueTrak Software to the latest version.	This program will update your existing TrueTrak Software to the latest version.	Questo programms aggiornerà la versione già esistente del tuo Software TrueTrak nella versione più recente.

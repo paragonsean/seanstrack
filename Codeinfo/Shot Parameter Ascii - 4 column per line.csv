@@ -1,0 +1,35 @@
+ 1,Fill Time,312.09,MS
+ 2,Total Shot Time,1475.8,MS
+ 3,Slow Shot Time,0,MS
+ 4,Fast Shot Time,1475.8,MS
+ 5,Fast Shot Rise Time,14.8,MS
+ 6,Cycle Time,55.14,SEC
+ 7,User Time Int One,0,MS
+ 8,User Time Int Two,0,MS
+ 9,User Time Int Three,0,MS
+10,User Time Int Four,0,MS
+11,User Time Int Five,0,MS
+12,Biscuit Size,75.5,MM
+13,Calc Start Fast Shot,0,MM
+14,Intensification Pressure,0.34,BAR
+15,Intensification Rise Time,500,MS
+16,Eff Peak Intensification,0.34,BAR
+17,Impact Pressure to Peak,0.34,BAR
+18,Intens Squeeze Distance,44,MM
+19,Sleeve Full Velocity,0.09,MPS
+20,Runner Full Velocity,0.08,MPS
+21,Average Fill Velocity,0.08,MPS
+22,User Velocity Pos One,0,MPS
+23,User Velocity Pos Two,0,MPS
+24,User Velocity Pos Three,0,MPS
+25,User Velocity Pos Four,0,MPS
+26,User Avg Vel Range One,0,MPS
+27,User Avg Vel Range Two,0,MPS
+28,User Avg Vel Range Three,0,MPS
+29,User Avg Vel Range Four,0,MPS
+30,Position P1,630.5,MM
+31,Position P2,655.5,MM
+32,Position P3,680.5,MM
+33,Avg Slow Shot Velocity,0,MPS
+34,Avg Fast Show Velocity,0.46,MPS
+35,Fast Shot Distance,,680.5,MM

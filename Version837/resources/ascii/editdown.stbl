@@ -1,0 +1,21 @@
+4
+ENGLISH,-14,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+GERMAN,-14,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+SPANISH,-14,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ITALIAN,-14,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+CANT_UPDATE	Cannot update downtime table	Cannot update downtime table	Cannot update downtime table	Aggiornamento Tabella Fermi non possibile
+CODE	Code	Code	Code	Codice
+CONTINUE_SCROLL	Continue to scroll?	Continue to scroll?	Continue to scroll?	Continuare a scrollare?	
+CONTINUE_QUESTION	Continue?	Continue?	Continue?	Continuare?
+EDIT_DOWNTIMES	Edit Downtimes	Edit Downtimes	Edit Downtimes	Modifica Fermi
+NEW_RECORD_NOT_SAVED	The new record has not been saved and will be deleted	The new record has not been saved and will be deleted	The new record has not been saved and will be deleted	Il nuovo record non è stato salvato e sarà eliminato
+NOTHING_TO_SAVE	Nothing To Save	Nothing To Save	Nothing To Save	Non ci sono dati da salvare
+NOT_FOUND	Not Found	Not Found	Not Found	Non trovato.
+NO_CHANGES_MADE	No changes have been made.	No changes have been made.	No changes have been made.	Nessuna modifica effettuata.
+PURGE_ALL	Purge All	Purge All	Purge All	Elimina tutti
+PURGE_ALL_DOWNTIMES	All but the last downtime will be DELETED	All but the last downtime will be DELETED	All but the last downtime will be DELETED	Tutti i fermi, tranne l'ultimo, saranno ELIMINATI
+REPLACE_ORIGINAL	Original will be REPLACED. Continue?	Original will be REPLACED. Continue?	Original will be REPLACED. Continue?	L'originale sarà SOSTITUITO. Continuare?
+RETURN_TO_NEW_STRING	Do you wish to return to the new record?	Do you wish to return to the new record?	Do you wish to return to the new record?	Ritornare al nuovo record?
+SAME_DATE	New Date = Old Date	New Date = Old Date	New Date = Old Date	Nuova Data = Vecchia Data
+SCROLL_CHANGES	Changes will be lost if you continue to scroll	Changes will be lost if you continue to scroll	Changes will be lost if you continue to scroll	Le modifiche saranno perse se continua lo scroll
+SEMAPHOR_FAIL	Cannot own machine semaphor db	Cannot own machine semaphor db	Cannot own machine semaphor db	Semaforo macchina db

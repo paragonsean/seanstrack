@@ -1,0 +1,16 @@
+4
+ENGLISH,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+GERMAN,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+SPANISH,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ITALIAN,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+3	251	251	251	0	0	0	128	128	128	224	224	224	0	0	0	128	128	128
+0	File	Datei	Fichero	File	0	0
+1	Save Changes	Save Changes	Save Changes	Save Changes	1003	10
+1	Cancel	Cancel	Cancel	Cancel	1004	0
+1	Save and Exit	Save and Exit	Save and Salida	Save and Exit	1005	0
+0	Edit	Edit	Edit	Edit	0	0
+1	Insert Row	Insert Row	Insert Row	Insert Row	1001	0
+1	Delete Row	Delete Row	Delete Row	Delete Row	1002	0
+0	Help	Hilfe	Ayuda	Help	0	0
+1	Help	Hilfe	Ayuda	Help	1006	0
+1	About	Info	Informaciòn	About	1007	0

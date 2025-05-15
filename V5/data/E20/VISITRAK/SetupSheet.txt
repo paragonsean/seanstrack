@@ -1,0 +1,10 @@
+PART NAME: CONN ROD                                                                   DIE: 1518 DME UNIT
+
+                                                     LADLE SET UP
+                  DIPPER SIZE: 3 LB.                               LADLE PROGRAM NUMBER: 1
+
+                                                 MACHINE SET UP
+DIE SPRAY PROGRAM NUMBER: 26                     LOWEST PROG POS: 38.50
+SPRAY MANIFOLD NUMBER: 15                            EJECT. TIMER: 1.4
+OIL TEMP.  (DIE TEMP. CONTROLLER) : 300-400 DEG.
+DWELL TIMER:   6.0

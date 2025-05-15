@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<TITLE> Methods And Properties </TITLE>
+</HEAD>
+<BODY>
+<CENTER>
+<H1> Using Methods and Properties </H1>
+<FORM NAME="frmTest">
+New URL:
+<INPUT TYPE="TEXT"  NAME="txtURL"><p>
+<INPUT TYPE="BUTTON" NAME="btnURL" VALUE="Change URL">
+</FORM>
+<SCRIPT LANGUAGE="VBScript">
+Sub btnURL_onClick
+Dim newURL
+newURL = Window.Document.frmTest.txtURL.Value
+Window.Alert "The current URL is " & Window.Location
+Window.Alert "The new URL will be " & newURL
+Window.Navigate newURL
+End Sub
+</SCRIPT>
+</CENTER>
+</BODY>
+</HTML>

@@ -1,0 +1,388 @@
+#$KContents
+Enumerate Network DrivesENUMERATE_NETWORK_DRIVES
+Set/Clear Check BoxesSET_CLEAR_CHECK_BOXES
+Set/Clear Radio ButtonsSET_CLEAR_RADIO_BUTTONS
+Set Listbox Tabs from Title PositionsSET_TABS_FROM_TITLES
+Select All Text in an EditboxSELECT_ALL_TEXT_IN_EDITBOX
+Windows Message HandlingWINDOWS_MESSAGE_HANDLING
+DialogBox/EndDialogDIALOG_BOX
+Text Control ColorTEXT_CONTROL_COLOR
+SocketsSockets
+
+
+#$KText Control Color
+WM_CTLCOLORSTATIC message is sent to the parent of a static control before the text is displayed. If you don't return a handle of a brush then the SetTextColor, etc., will be ignored.
+
+COLORREF WhiteColor  = RGB( 255, 255, 255 );
+HBRUSH BlackBrush = 0;
+HWND   MyStaticControl;
+
+case WM_CREATE:
+MyStaticControl= GetDlgItem( hWnd, STATIC_CONTROL_TBOX );  //STATIC_CONTROL_TBOX is the id
+BlackBrush = CreateSolidBrush( BlackColor );               //of the control in question
+break;
+
+case WM_CTLCOLORSTATIC:
+if ( MyStaticControl == (HWND) lParam )
+	{
+SetTextColor( (HDC) wParam, WhiteColor );
+SetBkMode( (HDC) wParam, TRANSPARENT );
+return (long) BlackBrush;
+	}
+case WM_DESTROY:
+if ( BlackBrush )
+    {
+    DeleteObject( BlackBrush );
+    BlackBrush = 0;
+    }
+PostQuitMessage( 0 );
+return 0;
+
+
+#$KSelect All Text in an Editbox
+
+void eb_select_all( HWND w, int id )
+{
+SendMessage( GetDlgItem(w, id), EM_SETSEL, 0, -1 );
+}
+
+
+#$KEnumerate Network Drives
+
+#include <windows.h>
+#include <winnetwk.h>   /* link to mpr.lib */
+
+#include "..\include\visiparm.h"
+#include "..\include\subs.h"
+
+/***********************************************************************
+*                             CHECK_FOR_V5                             *
+***********************************************************************/
+static void check_for_v5( TCHAR * rootdir )
+{
+TCHAR visitrak_ini[] = TEXT("\\EXES\\VISITRAK.INI");
+TCHAR s[MAX_PATH];
+
+lstrcpy( s, rootdir );
+lstrcat( s, visitrak_ini );
+
+if ( file_exists(s) )
+    cprintf( "\n\r V5 directory = [%s]", rootdir );
+}
+
+/***********************************************************************
+*                              ENUMERATE                               *
+***********************************************************************/
+BOOLEAN enumerate( NETRESOURCE * resource_to_enumerate )
+{
+HANDLE        hEnum;
+DWORD         i;
+DWORD         nof_bytes = 16384;      // 16K is a good size
+DWORD         nof_entries;
+DWORD         status;
+NETRESOURCE * pr;
+
+status = WNetOpenEnum(
+    RESOURCE_GLOBALNET,
+    RESOURCETYPE_ANY,
+    0,
+    resource_to_enumerate,
+    &hEnum
+    );
+
+if ( status != NO_ERROR )
+    return FALSE;
+
+pr = (NETRESOURCE *) GlobalAlloc( GPTR, nof_bytes );
+
+do  {
+    ZeroMemory( pr, nof_bytes );
+
+    /*
+    ----------------------------------------
+    I want to enumerate all possible entries
+    ---------------------------------------- */
+    nof_entries = 0xFFFFFFFF;
+    status = WNetEnumResource( hEnum, &nof_entries, pr, &nof_bytes );
+    if ( status == NO_ERROR )
+        {
+        for( i=0; i<nof_entries; i++ )
+            {
+            /*
+            ------------------------------------------------------------------
+            If this NETRESOURCE is a container, call the function recursively.
+            ------------------------------------------------------------------ */
+            if ( (pr[i].dwUsage & RESOURCEUSAGE_CONTAINER) == RESOURCEUSAGE_CONTAINER )
+                enumerate( &pr[i] );
+            else if ( (pr[i].dwUsage & RESOURCEUSAGE_CONNECTABLE) == RESOURCEUSAGE_CONNECTABLE )
+                {
+                if ( (pr[i].dwType & RESOURCETYPE_DISK) == RESOURCETYPE_DISK )
+                    check_for_v5( pr[i].lpRemoteName );
+                }
+
+            }
+        }
+
+    } while( status != ERROR_NO_MORE_ITEMS );
+
+GlobalFree((HGLOBAL) pr);
+
+status = WNetCloseEnum(hEnum);
+if ( status != NO_ERROR)
+    return FALSE;
+
+return TRUE;
+}
+
+/***********************************************************************
+*                    FIND_ALL_VISITRAK_DIRECTORIES                     *
+***********************************************************************/
+static BOOLEAN find_all_visitrak_directories( void )
+{
+return enumerate( 0 );
+}
+
+/***********************************************************************
+*                                 MAIN                                 *
+***********************************************************************/
+int main( void )
+{
+find_all_visitrak_directories();
+return 0;
+}
+
+#$KSockets
+
+int iError;
+
+iError = WSAStartup( MAKEWORD(2,0), &WSAData );
+if ( iError )
+	{
+	show( TEXT ("Startup error #%i.\r\n"), iError );
+	return TRUE ;
+	}
+show( TEXT("Started up %hs\r\n"), WSAData.szDescription );
+
+sock = socket( AF_INET, SOCK_STREAM, IPPROTO_TCP );
+if ( sock == INVALID_SOCKET )
+	{
+	show( TEXT("Socket creation error #%i.\r\n"), WSAGetLastError() );
+       WSACleanup();
+	return TRUE ;
+	}
+show( TEXT ("Socket %i created.\r\n"), sock );
+
+iError = WSAAsyncSelect( sock, hwnd, WM_SOCKET_NOTIFY, FD_CONNECT | FD_READ );
+if ( iError == SOCKET_ERROR )
+	{
+	show( TEXT ("WSAAsyncSelect error #%i.\r\n"), WSAGetLastError() );
+	closesocket( sock );
+	WSACleanup();
+	return TRUE ;
+	}
+/*
+---------------------------------------------------
+Call "connect" with IP address and time-server port
+--------------------------------------------------- */
+sa.sin_family           = AF_INET ;
+sa.sin_port             = htons( IPPORT_TIMESERVER ); 
+sa.sin_addr.S_un.S_addr = inet_addr( szIPAddr );
+connect(sock, (SOCKADDR *) &sa, sizeof( sa ));
+
+/*
+----------------------------------------------------------------------
+Connect" will return SOCKET_ERROR because even if it succeeds, it will 
+require blocking. The following only reports unexpected errors.
+---------------------------------------------------------------------- */
+iError = WSAGetLastError();
+if ( iError != WSAEWOULDBLOCK )
+	{
+	show( TEXT("Connect error #%i.\r\n"), iError );
+	closesocket(sock) ;
+	WSACleanup () ;
+	return TRUE ;
+	}
+
+show( TEXT("Connecting to %hs..."), szIPAddr );
+// The result of the "connect" call will be reported 
+// through the WM_SOCKET_NOTIFY message.
+// Set timer and change the button to "Cancel"
+
+#$KSet/Clear Radio Buttons
+#include <windows.h>
+
+HWND w
+int x;
+
+x = CHAN_1_BUTTON;
+CheckRadioButton( w, CHAN_1_BUTTON, CHAN_4_BUTTON, x );
+
+#$KSet/Clear Check Boxes
+
+This works on check boxes and radio buttons.
+#include <windows.h>
+
+HWND w;
+int  button_id;
+
+if ( IsDlgButtonChecked(w, button_id) == BST_CHECKED )
+    CheckDlgButton( hwnd, button_id, BST_UNCHECKED );
+else
+    CheckDlgButton( hwnd, button_id, BST_CHECKED );
+
+#$KSet Listbox Tab Stops From Title Positions
+
+static int id[] = {
+ ALARMSUM_SHIFT_STATIC,
+ ALARMSUM_PARAMETER_STATIC,
+ };
+
+const int n = sizeof(id)/sizeof(int);
+
+static int tabs[n];
+
+int        i;
+int        pixels_per_dialog_unit;
+int        left;
+HWND       w;
+RECT       r;
+
+if ( !ExportAlarmsDialogWindow )
+    return;
+
+r.bottom = 1;
+r.left   = 1;
+r.right  = 4;
+r.top    = 1;
+MapDialogRect( ExportAlarmsDialogWindow, &r );
+pixels_per_dialog_unit = r.right;
+
+w = GetDlgItem(ExportAlarmsDialogWindow, EXPORT_ALARMS_LISTBOX );
+GetWindowRect( w, &r );
+left = r.left;
+
+for ( i=0; i<n; i++ )
+    {
+    w = GetDlgItem(ExportAlarmsDialogWindow, id[i] );
+    GetWindowRect( w, &r );
+    tabs[i] = r.left - left;
+    tabs[i] *= 4;
+    tabs[i] /= pixels_per_dialog_unit;
+    }
+
+SendDlgItemMessage( ExportAlarmsDialogWindow, EXPORT_ALARMS_LISTBOX, LB_SETTABSTOPS, (WPARAM) n, (LPARAM) tabs );
+
+#$KWindow Message Handling
+
+int id;
+int cmd;
+
+id  = LOWORD( wParam );
+cmd = HIWORD( wParam );
+ 
+case WM_COMMAND:
+	switch ( id )
+		{
+		case CONNECTED_COMPUTER_LISTBOX:
+			if ( cmd == LBN_SELCHANGE )
+				{
+				do_connected_computer_select();
+				return TRUE;
+				}
+			if ( cmd == LBN_DBLCLK )
+				{
+				return TRUE;
+				}
+			break;
+
+		case BY_DAY_RADIO:
+			if ( cmd == BN_CLICKED )
+				do_by_day();
+				return TRUE;
+				}
+			break;
+		}
+
+#$KDialogBox
+
+void end_st_params_dialog( HWND w )
+{
+update_st_params( w );
+EndDialog( w, 0 );
+}
+
+BOOL CALLBACK st_params_dialog_proc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
+{
+int  id;
+id  = LOWORD( wParam );
+
+switch (msg)
+    {
+    case WM_INITDIALOG:
+        return TRUE;
+
+    case WM_CLOSE:
+        end_st_params_dialog( hWnd );
+        return TRUE;
+
+    case WM_HELP:
+        gethelp( HELP_CONTEXT, SURETRAK_PART_PARAMETER_HELP );
+        return TRUE;
+
+    case WM_CONTEXTMENU:
+        st_params_context_help( (HWND) wParam, lParam );
+        return TRUE;
+
+    case WM_COMMAND:
+        switch ( id )
+            {
+            case IDOK:
+                update_st_params( hWnd );
+                return TRUE;
+
+            case IDCANCEL:
+                end_st_params_dialog( hWnd );
+                return TRUE;
+            }
+        break;
+    }
+return FALSE;
+}
+
+DialogBox(
+	MainInstance,
+	TEXT("SURETRAK_PARAMETERS"),
+	MainDialogWindow,
+	(DLGPROC) st_params_dialog_proc 
+	);
+
+# toc
+$ Table of Contents
+K Table of Contents;Contents
+# TEXT_CONTROL_COLOR
+$ Text Control Color
+K Text Control Color;Color of Text Controls
+# SELECT_ALL_TEXT_IN_EDITBOX
+$ Select All Text in an Editbox
+K Select all text in an editbox;Editbox, select all text
+# ENUMERATE_NETWORK_DRIVES
+$ Enumerate Network Drives
+K Enumerate Network Drives;Network - enumerate resources;Disks - enumerate network drives
+# Sockets
+$ Sockets
+K Sockets
+# SET_CLEAR_RADIO_BUTTONS
+$ Set/Clear Radio Buttons
+K Set Radio Buttons;Clear Radio Buttons;Radio Buttons - Setting & Clearing
+# SET_CLEAR_CHECK_BOXES
+$ Set/Clear Check Boxes
+K Set Check Boxes;Clear Check Boxes;Check Boxes - Setting & Clearing
+# SET_TABS_FROM_TITLES
+$ Set Listbox Tabs from Title Positions 
+K Tabs - Setting Listbox Tabs;Listbox Tabs - Setting from Titles;Using Title Positions To Set Listbox Tabs
+# WINDOWS_MESSAGE_HANDLING
+$ Windows Message Handling
+K Windows Message Handling;Message Handling;Dialogproc Message Handling
+# DIALOG_BOX
+$ DialogBox
+K DialogBox;EndDialog;

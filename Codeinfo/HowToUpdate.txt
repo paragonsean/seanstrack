@@ -1,0 +1,19 @@
+Creating the Installation Directory
+
+1. Copy the v637.exe program to your C drive.
+2. Run the resulting c:\v637.exe file. This will create a c:\install6.37 directory on your computer.
+   This directory contains all the files you need to install a new system  or to update the an existing system.
+
+Updating an existing installation
+
+1. Run c:\install6.37\setup.exe.
+2. Press the "Update Existing TrueTrak System" button.
+3. On the next screen just press the "Continue" button.
+4. On the next screen you are presented with a number of options. These should already be filled in
+   with the current settings. If the "Copy Ft2 Control Files" checkbox is checked you should leave it
+   this way as these files are needed to talk to the FasTrak2 or SureTrak2 board.
+5. Press the "Continue" button to begin the update.
+
+Jay Wood
+jaywood@visi-trakworldwide.com
+216 524-2363 Ext 35

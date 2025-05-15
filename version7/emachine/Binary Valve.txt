@@ -1,0 +1,35 @@
+Here's my update. The only changes are to the order of the limit switches and that the values for the Fast and Pre Fast are based upon the ending position of the last step and not the next to last. This is because the last step is the fast shot step and is handled by the HMI and thus is not entered on the SureTrak profile.
+
+Al would like me to allow a final step after the one with the low impact command. This step would consist of the binary value for the binary valve. It would be entered into the "Velocity" column of the step after the low impact step.
+
+I would not put this value into the commands to the FT2 but would send it to the HMI instead.
+
+Jay
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+How to switch from a normal control to a binary valve control.
+
+Machine Based Changes:
+
+1. Change the Axis #1 valve type (V414) from 0 to 10.
+   The "10" indicates that this is a Prince Binary Valve and that there is no pilot valve.
+2. Change the Binary Valve Pulse Time (V416) to 1 second (V416=1000000).
+3. Change the Binary Valve Devent Time (V417) to .2 seconds (V417=200000).
+4. Change the Binary Valve Output Wire (V395) to 27 (V395=H04000000).
+
+
+Part Based Changes:
+
+1. Change the name of LS2 to "Pre Fast" and change the value to the end position of the
+   last control step - 3 inches.
+2. Change the name of LS3 to "Fast" and the value to the end position of the
+   last control step
+3. Change the name of LS4 to "Shot Full Forward" and change the value to the Total Stroke Length
+4. Change the output wire for LS5 from 26 to 19 (V382=H00040000).
+5. Change the output wire for LS6 from 27 to 20 (V383=H00080000).
+6. Change the name of LS6 to "Intensification".
+7. If there is no low impact on the last control step I should add one using the default low impact percentage.
+
+These changes will be made to all parts when a machine is changed to one with a binary valve. In addition there
+will be a button on the control screen that will recalculate the limit switch positions for Shot Full Forward,
+Pre Fast, and Fast.
+

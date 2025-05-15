@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<faults>
+	<fault index="1" message="CONTROL SWITCH IN WRONG POSITION FOR CELL OPERATION" />
+	<fault index="2" message="COVER CORE IN AND OUT LIMIT SWITCHES ON" />
+	<fault index="3" message="DCM EJECTION FORWARD AND RETURNED LIMIT SWITCHES ON" />
+	<fault index="4" message="COVER CORE TOOK TOO LONG TO INSERT" />
+	<fault index="5" message="COVER CORE TOOK TOO LONG TO PULL" />
+	<fault index="6" message="EJECTION NOT FORWARD WITHIN TIME LIMIT" />
+	<fault index="7" message="EJECTION NOT RETURNED WITHIN TIME LIMIT" />
+	<fault index="8" message="DIE TOOK TOO LONG TO CLOSE" />
+	<fault index="9" message="DIE TOOK TOO LONG TO OPEN" />
+	<fault index="10" message="CYCLE HAS TAKEN TOO LONG" />
+	<fault index="11" message="SHOT FOLLOW THRU FAULT" />
+	<fault index="12" message="SHOT RETURN LIMIT SWITCH FAULT" />
+	<fault index="13" message="SYSTEM FILTER IN BYPASS" />
+	<fault index="14" message="DCM RESERVOIR FLUID LEVEL LOW" />
+	<fault index="15" message="DCM LUBE BLOCK REAR PLATEN TOGGLES CYCLE PIN FAULT" />
+	<fault index="16" message="DCM LUBE BLOCK MOVABLE PLATEN TOGGLES CYCLE PIN FAULT" />
+	<fault index="17" message="DCM LUBE BLOCK BUMPER PLATE CYCLE PIN FAULT" />
+	<fault index="18" message="SPRAY ROBOT SAFETY MAT FAULT" />
+	<fault index="19" message="TRIM PRESS PENDANT NOT CLEAR" />
+	<fault index="20" message="TIP LUBE LEVEL IS LOW" />
+	<fault index="21" message="PRO-MANAGER PANEL OVER TEMPERATURE" />
+	<fault index="22" message="WAITING FOR SHOT ACCUMULATOR" />
+	<fault index="23" message="SHOT ACCUM. PRESSURE HIGH" />
+	<fault index="24" message="SHOT ACCUM. PRESSURE LOW" />
+	<fault index="25" message="WAITING FOR INTENSIFIER ACCUMULATOR" />
+	<fault index="26" message="VACUUM FAULT" />
+	<fault index="27" message="PLC BATTERY IS BAD OR MISSING" />
+	<fault index="28" message="LADLE FAULTED" />
+	<fault index="29" message="AUTO RECYCLE TIMEOUT FAULT" />
+	<fault index="30" message="DIE SLIDE LUBE PRESSURE HIGH" />
+	<fault index="31" message="LOW PRESSURE CLOSE FAULT" />
+	<fault index="32" message="DCM RESERVOIR FLUID TEMP CRITICAL" />
+	<fault index="33" message="SPRAY ROBOT CYCLE TOOK TOO LONG" />
+	<fault index="34" message="SPRAY ROBOT SERVOS NOT ENABLED FAULT" />
+	<fault index="35" message="EXTRACT ROBOT SERVOS NOT ENABLED FAULT" />
+	<fault index="36" message="TBM SYSTEM DISABLED IN PLC" />
+	<fault index="37" message="DCM SAFETY LATCH LIMIT IS HELD CLOSED" />
+	<fault index="38" message="BOTH DRAWBAR LIMIT SWITCHES MADE" />
+	<fault index="39" message="A-SQ. CANNOT START ON FORWARD LIMIT" />
+	<fault index="40" message="COVER CORE SETUP FAULT" />
+	<fault index="41" message="DIE COOLING WATER NOT FLOWING" />
+	<fault index="42" message="DCM LUBE BLOCK MOVABLE BUSHINGS AND WEARPADS CYCLE PIN FAULT" />
+	<fault index="43" message="SHOT PROPORTIONAL VALVE FILTER IN BYPASS" />
+	<fault index="44" message="PLC RACK 0 FAULTED" />
+	<fault index="45" message="DCM TOGGLES LOCKED LIMIT SWITCH IS HELD CLOSED" />
+	<fault index="46" message="EXTRACT ROBOT SAFETY MAT FAULT" />
+	<fault index="47" message="EMERGENCY RETURN PUSHBUTTON WAS PRESSED" />
+	<fault index="48" message="CLOSED LOOP FAST VALVE OPENING LIMIT FAULT" />
+	<fault index="49" message="BACK CORE #1 SETUP FAULT" />
+	<fault index="50" message="BACK CORE #2 SETUP FAULT" />
+	<fault index="51" message="FAST VALVE OPENING REPEATED CORRECTION FAULT" />
+	<fault index="52" message="CYCLE START PUSHBUTTON FAULT PENDANT" />
+	<fault index="53" message="CYCLE START PUSHBUTTON FAULT CONSOLE" />
+	<fault index="54" message="DIE EJECTOR LEFT SIDE NOT FORWARD WITHIN TIME LIMIT" />
+	<fault index="55" message="DIE EJECTOR LEFT SIDE NOT RETURNED WITHIN TIME LIMIT" />
+	<fault index="56" message="DIE EJECT FWD AND RET LIMIT SWITCHES LEFT SIDE BOTH ON" />
+	<fault index="57" message="DCM RESERVOIR FLUID CRITICALLY LOW" />
+	<fault index="58" message="DCM REAR PLATEN TOGGLES MANUAL FAULT" />
+	<fault index="59" message="DCM MOVABLE PLATEN TOGGLES MANUAL FAULT" />
+	<fault index="60" message="DCM BUMPER PLATE MANUAL FAULT" />
+	<fault index="61" message="DCM DIE HEIGHT LUBE MANUAL FAULT" />
+	<fault index="62" message="DCM MOVABLE BUSHINGS AND WEARPADS LUBE MANUAL FAULT" />
+	<fault index="63" message="DCM LUBE REAR PLATEN TOGGLES VALVE STUCK" />
+	<fault index="64" message="DCM LUBE MOVABLE PLATEN TOGGLES VALVE STUCK" />
+	<fault index="65" message="DCM LUBE BUMPER PLATE VALVE STUCK" />
+	<fault index="66" message="DCM LUBE MOVABLE BUSHINGS AND WEARPADS VALVE STUCK" />
+	<fault index="67" message="TRIM PRESS LUBE OVER PRESSURE FAULT" />
+	<fault index="68" message="TRIM PRESS SAFETY LATCH LIMIT IS HELD CLOSED" />
+	<fault index="69" message="TRIM PRESS FILTER IN BYPASS" />
+	<fault index="70" message="DCM LUBE DIE HEIGHT VALVE STUCK" />
+	<fault index="71" message="DCM LUBE BLOCK DIE HEIGHT CYCLE PIN FAULT" />
+	<fault index="72" message="TIE BAR #3 SPLIT RING IS IN LIMIT SWITCH NOT MADE (BOTTOM)" />
+	<fault index="73" message="TIE BAR #3 SPLIT RING IS OUT LIMIT SWITCH NOT MADE (BOTTOM)" />
+	<fault index="74" message="TIE BAR #3 SPLIT RING IS IN LIMIT SWITCH NOT MADE (TOP)" />
+	<fault index="75" message="TIE BAR #3 SPLIT RING IS OUT LIMIT SWITCH NOT MADE (TOP)" />
+	<fault index="76" message="TRIM PRESS LUBE CYCLE FAULT" />
+	<fault index="77" message="PLC RACK 1 FAULTED" />
+	<fault index="78" message="PRO-MANAGER NOT RESPONDING TO SHOTS" />
+	<fault index="79" message="EXTRACT PROGRAM SELECTED IS OUT OF RANGE" />
+	<fault index="80" message="EXTRACT ROBOT PROGRAM DATA WAS NOT CREATED" />
+	<fault index="81" message="EXTRACT ROBOT HAS ONE OR MORE PROGRAM TPP FILES NOT LOADED" />
+	<fault index="82" message="EXTRACT ROBOT WAS JOGGED AND HAS ABORTED" />
+	<fault index="83" message="EXTRACT ROBOT NOT AT HOME POSITION" />
+	<fault index="84" message="EXTRACT ROBOT COLLISION WAS DETECTED" />
+	<fault index="85" message="EXTRACT ROBOT SERVO ALARM" />
+	<fault index="86" message="EXTRACT ROBOT MISCELLANEOUS ALARM FAULT" />
+	<fault index="87" message="EXTRACT ROBOT SERVO DISCONNECT OPEN" />
+	<fault index="88" message="EXTRACT ROBOT GRIPPER FAILED TO CLOSE" />
+	<fault index="89" message="EXTRACT ROBOT GRIPPER FAILED TO OPEN" />
+	<fault index="90" message="EXTRACT ROBOT INDICATED NO PART IN GRIPPER" />
+	<fault index="91" message="EXTRACT ROBOT TIMED OUT WAITING FOR PART EJECT" />
+	<fault index="92" message="SPRAY ROBOT PROGRAM DIE NUMBER IS OUT OF RANGE" />
+	<fault index="93" message="SPRAY ROBOT PROGRAM DATA NOT CREATED" />
+	<fault index="94" message="SPRAY ROBOT HAS ONE OR MORE PROGRAM TPP FILES NOT LOADED" />
+	<fault index="95" message="SPRAY ROBOT WAS JOGGED AND HAS ABORTED" />
+	<fault index="96" message="SPRAY ROBOT NOT AT HOME" />
+	<fault index="97" message="SPRAY ROBOT COLLISION WAS DETECTED" />
+	<fault index="98" message="SPRAY ROBOT SERVO ALARM" />
+	<fault index="99" message="SPRAY ROBOT MISCELLANEOUS ALARM" />
+	<fault index="100" message="SPRAY ROBOT SERVO ALARM DISCONNECT OPEN" />
+	<fault index="101" message="SPRAY ROBOT FLOW RATE FOR SELECTED PRESET IS ZERO" />
+	<fault index="102" message="BACK CORE #1 IN AND OUT LIMIT SWITCHES ON" />
+	<fault index="103" message="BACK CORE #2 IN AND OUT LIMIT SWITCHES ON" />
+	<fault index="104" message="SPRAY ROBOT FLOW RATE FOR SELECTED PRESET EXCEEDS MAXIMUM" />
+	<fault index="105" message="SPRAY ROBOT ATOM AIR PSI FOR SELECTED PRESET EXCEEDS MAXIMUM" />
+	<fault index="106" message="BACK CORE #1 TOOK TO LONG TO INSERT" />
+	<fault index="107" message="BACK CORE #2 TOOK TO LONG TO INSERT" />
+	<fault index="108" message="SPRAY ROBOT FAN AIR PSI FOR SELECTED PRESET EXCEEDS MAXIMUM" />
+	<fault index="109" message="SPRAY ROBOT FLUID NOT SET BEFORE PRESET CALL" />
+	<fault index="110" message="BACK CORE #1 TOOK TO LONG TO PULL" />
+	<fault index="111" message="BACK CORE #2 TOOK TO LONG TO PULL" />
+	<fault index="112" message="SPRAY ROBOT FLOW RATE PRESET VALUE OUT OF TOLERANCE" />
+	<fault index="113" message="SPRAY ROBOT WATER TOTAL FLOW OUT OF TOLERANCE LOW" />
+	<fault index="114" message="TIE BAR #1 TONNAGE ABOVE PROCESS LIMIT" />
+	<fault index="115" message="TIE BAR #2 TONNAGE ABOVE PROCESS LIMIT" />
+	<fault index="116" message="TIE BAR #3 TONNAGE ABOVE PROCESS LIMIT" />
+	<fault index="117" message="TIE BAR #4 TONNAGE ABOVE PROCESS LIMIT" />
+	<fault index="118" message="TIE BAR #1 TONNAGE BELOW PROCESS LIMIT" />
+	<fault index="119" message="TIE BAR #2 TONNAGE BELOW PROCESS LIMIT" />
+	<fault index="120" message="TIE BAR #3 TONNAGE BELOW PROCESS LIMIT" />
+	<fault index="121" message="TIE BAR #4 TONNAGE BELOW PROCESS LIMIT" />
+	<fault index="122" message="SPUR GEAR #1 IS NOT INSERTED" />
+	<fault index="123" message="SPUR GEAR #2 IS NOT INSERTED" />
+	<fault index="124" message="SPUR GEAR #3 IS NOT INSERTED" />
+	<fault index="125" message="SPUR GEAR #4 IS NOT INSERTED" />
+	<fault index="126" message="TIE BAR #1 ENCODER SYSTEM FAILURE" />
+	<fault index="127" message="TIE BAR #2 ENCODER SYSTEM FAILURE" />
+	<fault index="128" message="TIE BAR #3 ENCODER SYSTEM FAILURE" />
+	<fault index="129" message="TIE BAR #4 ENCODER SYSTEM FAILURE" />
+	<fault index="130" message="TIE BAR #1 CRITICAL HIGH TONNAGE FAULT" />
+	<fault index="131" message="TIE BAR #2 CRITICAL HIGH TONNAGE FAULT" />
+	<fault index="132" message="TIE BAR #3 CRITICAL HIGH TONNAGE FAULT" />
+	<fault index="133" message="TIE BAR #4 CRITICAL HIGH TONNAGE FAULT" />
+	<fault index="134" message="TIE BAR #1 CRITICAL LOW TONNAGE FAULT" />
+	<fault index="135" message="TIE BAR #2 CRITICAL LOW TONNAGE FAULT" />
+	<fault index="136" message="TIE BAR #3 CRITICAL LOW TONNAGE FAULT" />
+	<fault index="137" message="TIE BAR #4 CRITICAL LOW TONNAGE FAULT" />
+	<fault index="138" message="TRIM PRESS MOV. CORE #1 SETUP FAULT" />
+	<fault index="139" message="TRIM PRESS MOV. CORE #2 SETUP FAULT" />
+	<fault index="140" message="TRIM PRESS MOV. CORE #3 SETUP FAULT" />
+	<fault index="141" message="TRIM PRESS STAT. CORE #1 SETUP FAULT" />
+	<fault index="142" message="PRO-MANAGER 30 SEC. TIME OUT FAULT" />
+	<fault index="143" message="TRIM PRESS MOV. CORE #1 TOOK TO LONG TO INSERT" />
+	<fault index="144" message="TRIM PRESS MOV. CORE #2 TOOK TO LONG TO INSERT" />
+	<fault index="145" message="TRIM PRESS MOV. CORE #3 TOOK TO LONG TO INSERT" />
+	<fault index="146" message="TRIM PRESS STAT. CORE #1 TOOK TO LONG TO INSERT" />
+	<fault index="147" message="PRO-MANAGER QUADRATURE SIGNAL FAULT" />
+	<fault index="148" message="TRIM PRESS MOV. CORE #1 TOOK TO LONG TO RETRACT" />
+	<fault index="149" message="TRIM PRESS MOV. CORE #2 TOOK TO LONG TO RETRACT" />
+	<fault index="150" message="TRIM PRESS MOV. CORE #3 TOOK TO LONG TO RETRACT" />
+	<fault index="151" message="TRIM PRESS STAT. CORE #1 TOOK TO LONG TO RETRACT" />
+	<fault index="152" message="TRIM PRESS MOV. CORE #1 BOTH LIMIT SWITCHES ARE MADE" />
+	<fault index="153" message="TRIM PRESS MOV. CORE #2 BOTH LIMIT SWITCHES ARE MADE" />
+	<fault index="154" message="TRIM PRESS MOV. CORE #3 BOTH LIMIT SWITCHES ARE MADE" />
+	<fault index="155" message="TRIM PRESS STAT. CORE #1 BOTH LIMIT SWITCHES ARE MADE" />
+	<fault index="156" message="VELOCITY A ABOVE PROCESS HIGH LIMIT" />
+	<fault index="157" message="VELOCITY A BELOW PROCESS LOW LIMIT" />
+	<fault index="158" message="VELOCITY B ABOVE PROCESS HIGH LIMIT" />
+	<fault index="159" message="VELOCITY B BELOW PROCESS LOW LIMIT" />
+	<fault index="160" message="VELOCITY C ABOVE PROCESS HIGH LIMIT" />
+	<fault index="161" message="PRO-MANAGER SELF TEST OR INTERNAL ERROR" />
+	<fault index="162" message="PLC RACK 2 FAULTED" />
+	<fault index="163" message="BAD PART DETECTED AT PART SENSE STATION" />
+	<fault index="164" message="VELOCITY C BELOW PROCESS LOW LIMIT" />
+	<fault index="165" message="BISCUIT LENGTH ABOVE PROCESS HIGH LIMIT" />
+	<fault index="166" message="PLC RACK 3 FAULTED" />
+	<fault index="167" message="DIE CLAMP SETUP FAULT" />
+	<fault index="168" message="BISCUIT LENGTH BELOW PROCESS LOW LIMIT" />
+	<fault index="169" message="CYCLE TIME ABOVE PROCESS HIGH LIMIT" />
+	<fault index="170" message="CYCLE TIME BELOW PROCESS LOW LIMIT" />
+	<fault index="171" message="PB PENDANT NOT ON LS FOR CYCLE START FROM PENDANT" />
+	<fault index="172" message="C-FRAME GUARD TOOK TO LONG TO LOCK" />
+	<fault index="173" message="FILL TIME ABOVE PROCESS HIGH LIMIT" />
+	<fault index="174" message="FILL TIME BELOW PROCESS LOW LIMIT" />
+	<fault index="175" message="AVERAGE FILL PRESSURE ABOVE PROCESS HIGH LIMIT" />
+	<fault index="176" message="AVERAGE FILL PRESSURE BELOW PROCESS LOW LIMIT" />
+	<fault index="177" message="INTENSIFIER PRESSURE RISE TIME ABOVE PROC. HIGH LIMIT" />
+	<fault index="178" message="INTENSIFIER PRESSURE RISE TIME BELOW PROCESS LOW LIMIT" />
+	<fault index="179" message="FINAL INTENSIFIER PRESSURE ABOVE PROCESS HIGH LIMIT" />
+	<fault index="180" message="FINAL INTENSIFIER PRESSURE BELOW PROCESS LOW LIMIT" />
+	<fault index="181" message="INTENSIFICATION STROKE ABOVE PROCESS HIGH LIMIT" />
+	<fault index="182" message="INTENSIFICATION STROKE BELOW PROCESS LOW LIMIT" />
+	<fault index="183" message="SPARE FAULT #183" />
+	<fault index="184" message="SORA REQUEST FAULT" />
+	<fault index="185" message="INCH SAFETY FAULT" />
+	<fault index="186" message="AUTO SQUARE DID NOT SEE BOTH BULL GEAR PROXES" />
+	<fault index="187" message="SPRAY ROBOT NOT AT HOME" />
+	<fault index="188" message="EXTRACT ROBOT NOT CLEAR OF DCM" />
+	<fault index="189" message="EXTRACT ROBOT NOT IN AUTO MODE" />
+	<fault index="190" message="TIE BAR #3 IS IN LIMIT SWITCH FAULT" />
+	<fault index="191" message="EXTRACT ROBOT NOT CLEAR FOR SPRAY CYCLE START" />
+	<fault index="192" message="SPRAY ROBOT CYCLE START FAULT" />
+	<fault index="193" message="DIE EJECTOR RIGHT SIDE FWD AND RET LS BOTH ON" />
+	<fault index="194" message="PART SENSE STATION LIMIT SWITCHES STUCK" />
+	<fault index="195" message="SPARE FAULT #195" />
+	<fault index="196" message="SHOT TIP WATER NOT FLOWING" />
+	<fault index="197" message="BALCONY LADDER GATE NOT CLOSED AND LOCKED" />
+	<fault index="198" message="WORKCELL SAFETY GATE FAULT" />
+	<fault index="199" message="DCM/TRIM PRESS CORE SETUP FAULT" />
+	<fault index="200" message="SPRAY ROBOT NOT IN AUTO MODE" />
+	<fault index="201" message="WORKCELL SAFETY FAULT" />
+	<fault index="202" message="SAFETY LATCH TOOK TO LONG TO ENGAGE" />
+	<fault index="203" message="A-SQ. TIE BAR TARGET POS. OUT OF TOLERANCE" />
+	<fault index="204" message="AUTO SQUARE SETUP FAULT" />
+	<fault index="205" message="SPARE FAULT #205" />
+	<fault index="206" message="DIE CLAMP SAFETY FAULT" />
+	<fault index="207" message="DRAW BAR LIMIT SWITCH FAULT" />
+	<fault index="208" message="CUSHION DIE OPEN LIMIT SWITCH FAULT" />
+	<fault index="209" message="TIE BAR #3 REAR LATCH TOOK TO LONG TO OPEN" />
+	<fault index="210" message="DIE NOT FULLY OPEN FOR TIE BAR PULL/SHOT OR EJECTION JOG" />
+	<fault index="211" message="TIE BAR #3 IS NOT INSERTED" />
+	<fault index="212" message="AUTO START UP ENABLED FAULT" />
+	<fault index="213" message="TRIM PRESS AUTO MODE REQUEST FAULT" />
+	<fault index="214" message="DIE NOT FULLY OPEN FOR SORA/CYCLE START" />
+	<fault index="215" message="SPARE FAULT #215" />
+	<fault index="216" message="DIE EJECTOR RIGHT SIDE NOT FORWARD WITHIN TIME LIMIT" />
+	<fault index="217" message="TRIM PRESS FAULT" />
+	<fault index="218" message="TIP LUBE DISC IS BLOWN" />
+	<fault index="219" message="SPRAY ROBOT WATER FLOW TOLERANCE HIGH" />
+	<fault index="220" message="SPRAY ROBOT WATER FLOW TOLERANCE LOW" />
+	<fault index="221" message="SPRAY ROBOT LUBE TOLERANCE HIGH" />
+	<fault index="222" message="DIE EJECTOR RIGHT SIDE NOT RETURNED WITHIN TIME LIMIT" />
+	<fault index="223" message="TIE BAR #2 SPLIT RING IS IN LIMIT SWITCH NOT MADE (BOTTOM)" />
+	<fault index="224" message="TIE BAR #2 SPLIT RING IS OUT LIMIT SWITCH NOT MADE (BOTTOM)" />
+	<fault index="225" message="TIE BAR #2 SPLIT RING IS IN LIMIT SWITCH NOT MADE (TOP)" />
+	<fault index="226" message="TIE BAR #2 SPLIT RING IS OUT LIMIT SWITCH NOT MADE (TOP)" />
+	<fault index="227" message="TIE BAR #2 IS IN LIMIT SWITCH FAULT" />
+	<fault index="228" message="TIE BAR #2 REAR LATCH TOOK TO LONG TO OPEN" />
+	<fault index="229" message="TIE BAR #2 IS NOT INSERTED" />
+	<fault index="230" message="DIE CLOSE VALVE IS CLOSED SENSOR NOT ON IN TIME LIMIT" />
+	<fault index="231" message="SPARE FAULT #231" />
+	<fault index="232" message="RIGHT SIDE POWER DOOR CONTROLLER FAULT" />
+	<fault index="233" message="RIGHT SIDE POWER DOOR IS CLOSED LS FAULT" />
+	<fault index="234" message="RIGHT SIDE POWER DOOR EDGE SAFETY FAULT" />
+	<fault index="235" message="RIGHT SIDE POWER DOOR TOOK TOO LONG TO CLOSE" />
+	<fault index="236" message="LOST RIGHT SIDE POWER DOOR IN POSITION FOR CYCLE" />
+	<fault index="237" message="RIGHT SIDE POWER DOOR TOOK TOO LONG TO OPEN" />
+	<fault index="238" message="LEFT SIDE POWER DOOR IS CLOSED LS FAULT" />
+	<fault index="239" message="LEFT SIDE POWER DOOR EDGE SAFETY FAULT" />
+	<fault index="240" message="LEFT SIDE POWER DOOR TOOK TOO LONG TO CLOSE" />
+	<fault index="241" message="LOST LEFT SIDE POWER DOOR IN POSITION FOR CYCLE" />
+	<fault index="242" message="LEFT SIDE POWER DOOR TOOK TOO LONG TO OPEN" />
+	<fault index="243" message="LEFT SIDE POWER DOOR CONTROLLER FAULT" />
+	<fault index="244" message="OPERATOR DOOR CLOSED RELAY FAILED" />
+	<fault index="245" message="HELPER DOOR CLOSED RELAY FAILED" />
+	<fault index="246" message="RIGHT SIDE PWR DOOR CYCLE START SAFETY NOT ON FOR CYCLE START" />
+	<fault index="247" message="LEFT SIDE PWR DOOR CYCLE START SAFETY NOT ON FOR CYCLE START" />
+	<fault index="248" message="OPERATOR DOOR MUST BE IN THE CLOSED POSITION TO JOG SHOT FWD" />
+	<fault index="249" message="HELPER DOOR MUST BE IN THE CLOSED POSITION TO JOG SHOT FWD" />
+	<fault index="250" message="HELPER TWO HAND ACKNOWLEDGE PUSHBUTTON FAULT" />
+	<fault index="251" message="SETUP MODE ACTIVATED WHILE IN SEMI-AUTO / AUTO MODE" />
+	<fault index="252" message="SETUP MODE RELAY FAILED" />
+	<fault index="253" message="DIE CLOSE ENABLE RELAY FAILED" />
+	<fault index="254" message="HELPER DOOR OR HELPER TWO-HAND SAFETY REQUIRED FOR THIS MOTION" />
+	<fault index="255" message="HELPER TWO-HAND ACKNOWLEDGE TIME HAS EXPIRED" />
+	<fault index="256" message="TOO MUCH TIME WITH NO MOTION WHILE MANUAL SAFETIES ENABLED" />
+	<fault index="257" message="DIE CLAMPS LUBE LEVEL IS CRITICAL LOW" />
+	<fault index="258" message="SPRAY ROBOT HOME LIMIT SWITCH STUCK" />
+	<fault index="259" message="SPARE FAULT 259" />
+	<fault index="260" message="DIE AREA CLEAR ACKNOWLEDGE TIME HAS EXPIRED" />
+</faults>

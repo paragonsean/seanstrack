@@ -1,0 +1,42 @@
+Dan,
+
+You will need to go here
+
+http://www.visi-trakworldwide.com/get.htm
+
+and get the v644.exe file. Copy this to the root directory of the C
+drive on the Data Archiver and run it to create a C:\Install6.44 directory. If that directory already exists, just tell the program to replace all.
+
+Go here
+
+http://www.visi-trakworldwide.com/getnet.htm
+
+and get the ns.exe file. Copy this to the root directory of whichever computer currently has the NetSetup program on it. Normally this is the Office Workstation but it might be the Data Archiver. The following directions will assume it is on the Office Workstation.
+
+Run the ns.exe from the root directory to create the c:\Install.ns directory on the Office Workstation..
+
+Go here
+
+http://www.visi-trakworldwide.com/getda.htm
+
+and get the da.exe file. Copy this to the root directory of the Data Archiver. Run the da.exe from the root directory to create the C:\Install.ds directory.
+
+At the new Data Archiver, do the following.
+
+Follow the attached directions to install the data archiver software.
+You will have a new V5DS directory. Make this Shared Full (allow
+others to change the files in this directory).
+
+Run the C:\Install.ds\Setup.exe program. Press the 'Begin" button to copy the new files to the
+At the Data Archiver, start the Data Archiver Backup Program.
+Pull down the "Edit" menu and choose "Global File Settings".
+ Press the "Save Changes" button.
+
+Run the NetSetup program that you installed on the
+Highlight the Data Archiver line in the listbox.
+Press the Standard Connections button and then the Save Changes button.
+
+Let me know if you have any problems with this. I'll be in the office
+tomorrow.
+
+Jay

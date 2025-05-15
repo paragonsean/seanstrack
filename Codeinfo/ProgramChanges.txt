@@ -1,0 +1,181 @@
+1,  Master Cylinder Limit = Follow Through Stop Position
+
+    Move the Follow Through Stop settings to the Global settings and rename it cylinder limit or something to that
+    effect. This setting is the maximum the cylinder will be allowed to extend in manual mode or during a follow
+    through. An update control_all.txt will also be required.
+
+    Jay:
+    I thought we changed this to part based because different molds have different cylinder limits.
+
+    Greg:
+    Perhaps we should discuss this further with Al and Ying. I suppose there is the possibility that the max.
+    cylinder limit could change with different dies.  If that's the case, then it probably makes sense to leave it
+    part based. In that case we'll use the current Follow Through Stop as the Master Cylinder Limit setting in manual
+    as well.
+
+2,  Limit Switch Wires
+
+    Wire # settings on the Limit Switch setups not meaningful.  Eliminate the wire setting.  Limit switch I/O
+    numbers are fixed. There should be no need to change them.
+
+    Jay:
+    I'll be happy to do this as it will simplify my screens and code.
+
+3,  Eliminate the "alternative step" in F10 Control Mods.
+
+    Add another profile step in the shot control setup screen and add a check box to turn on the accumulator at the
+    beginning of the step or at the end (valid for the first profile step only).
+
+    Step 26 in the control_all file would be set to:
+    .026 VA1V1ACV0PV2_W0.V3B1.34  For accumulator on at the beginning. This is the normal step.
+    .026 VA1V1ACV0PV2_W0.V3E1.34  For accumulator on at the end.
+
+    Step 25 would be left at .025 D0, which is what control_all defaults it to.
+
+    Jay:
+    I'm ok with this but it is going to be a big change as it involves changing the data base. I need to
+    find a place for the new value and I also need to create a new file of program line changes for the ft2. At
+    present there is a machine based file for this but no part based file. I also need to figure out how to create
+    this first step for parts that don't have it. I imagine I would do this by reading the old alternate step setup
+    and using that to create the new step.
+
+    If they are not using an alternate step then I would have nothing to change in the part setup, assuming that I
+    can always assume the accumulator is turned on at the end of the first step if there is no alternate step.
+
+    I will also have to do this same thing when I restore parts from backup files, both in the main program and in
+    the Data Archiver.
+
+4,  Realtime LVDT Feedback and Raw LVDT Feedback
+
+    We still have problems with the LVDT Feedback and the Raw LVDT Feedback in the F2 Set DAC screen. I believe the
+    measured command and LVDT readings in the realtime screen are also not working properly at times. Not sure if
+    it’s a board problem or a software problem.
+
+    Jay:
+    I keep thinking I've got this right but it appears I do not. I'll try to figure it out.
+
+5,  Default Part
+
+    Allow the user to create a "default" part then give them the option to use this as the basis for a new part.
+    They could still elect to use the current part as a template for the new part.
+
+    Jay:
+    We already have a default part of sorts, the NEWPART, that I did for Ed Wrench. All you have to do for a default
+    part is create a new part named DEFAULT. Then to create from the default part, click on DEFAULT and then
+    "Create Part". This is how Ed uses the NEWPART.
+
+6,  Disallow downloading when a cycle is in progress. What’s the current process and how can we improve it?
+    Is there a "window" in which a cycle start (start shot) could occur while a download is in progress?
+    How can we improve it?
+
+    Jay:
+    I won't upload from the time I get a cycle start until I get an ok from the ft2 or 2 seconds past retract.
+    This, of course, allows you to hit "Save Changes" just before the cycle start and mess everything up.
+
+    I believe I have this fixed in Version 7. I use the same rules there but I also don't stop the controller unless
+    the operator tells me to upload everything or if there is a new control_all file or if you save changes in the
+    alternate step, etc., in the Fastrak2 program. I also send everything if the ft2 board has changed. Otherwise I
+    just send the variables that have changed. Normally this is just a couple of variables.
+
+    I'm not sure this is going to work any more, however, as eliminating the alternate step moves the program step
+    .026 to a part setup change and this will, I assume, need to stop the controller.
+
+7,  Add Integral and Derivative gains to the shot control setup screen, under the velocity loop gain.  Normally the
+    Integral gain would be defaulted to one and the derivative would be set to zero. The Derivative gain is saved
+    in variable V212 and the Integral gain is saved in V443.
+
+    In most cases Integral and derivative gains will not be used. Perhaps we could use a checkbox to enable integral
+    and derivative gains.  Otherwise they would be grayed out.
+
+    Jay:
+    I've already made this change in V6.51, which we are testing.
+
+8,  The digital pot settings saved in variable V431 needs to be saved, perhaps in the global settings, and downloaded
+    to the board when a part is selected along with the other settings. This variable is written by the Set DAC and
+    Valve Test functions and flashed onto the board.  The problem is when a FTII board is replaced, V431 is not
+    updated when the new board is downloaded. Without the digital pots set correctly, the shot control will not work.
+    The solution now is to the Set DAC screen and change the span setting up or down and then return it to the
+    original setting. This will reflash V431 with the correct setting. The same must also be done in the Valve
+    test function.
+
+    Jay:
+    I save this value in the database now so I just have to send it every update. Version 7 would only send this if
+    the ft2 board has been changed.
+
+9,  If either Part Setup or FasTrak board Monitor are minimized, selecting Monitor -> Part Setup or
+    Monitor -> FasTrak Board Monitor from the plot screen does not bring them back up.  You have to click on the
+    minimized icon to restore them.  This is a problem for Zitai in that the plot screen covers up the toolbar due
+    to the low resolution screen they’re using.  You wind up having to minimize the plot screen to get to the
+    toolbar or to any minimized icons.
+
+    Jay:
+    I knew this wasn't working correctly but I didn't realize it was a big problem. The windows message I get is
+    somewhat obscure and I'm obviously missing the meaning sometimes. I'll try to fix it.
+
+Pressure control items:
+
+1,  The enable pressure control function does not seem to work.  When pressure control is disabled, V80 bit 0
+    should be cleared.  When pressure control is enabled, V80 bit 0 should be set.
+
+2,  If pressure control is not selected, gray out all of the pressure control items.
+
+3,  Eliminate the "Hardware closed loop" check boxes at each pressure control step and make one
+    "Hardware closed loop" box under the existing check boxes.  This should be a global pressure control setting.
+    If this box is checked, all pressure control steps will be "Hardware closed loop" and therefore bit 31 in the
+    pressure setting would be set for all pressure steps.
+
+4,  Add "Derivative gain" and "Integral gain" settings under the pressure loop gain setting.  Normally these would
+    be defaulted to zero.
+    V87 - Pressure control Integral gain.
+    V88 - Pressure control Derivative gain.
+    Done.
+
+5,  Pressure loop gain, Derivative gain and Integral gain would only be valid if the Proportional valve (%) were not
+    checked and the Hardware closed loop box were not checked.  Gray out for any other condition.
+
+6,  Add "Pressure control arm limit switch" to the pressure control screen.  This would be set with a value from
+    1 to 6 corresponding to the limit switch that would arm the pressure control.  The pressure control config. word
+    variable V80 bits 1 to 3 are set with "000" (LS1) to "101" (LS6) depending on which LS is chosen for the arm
+    setting.
+
+7,  Password protect everything in the pressure control setup screen except the profile setting itself.
+
+Greg:
+
+3,   Elimination of the Alternative Step:
+     That's an easy one for me.  I don't think the control_all file would have to change at all.  Let me know what I
+     could do to help you with this one.
+
+4,   LVDT and Raw LVDT feedback: Any possibility this is something I'm doing?  It does work sometimes.
+
+5,   NEWPART:   That should be OK, perhaps Ying could comment.
+
+6,   Downloading:
+     Eliminating the Alternative Step would require a change in the part setup to make a change to the first step (the
+     new alternative step so to speak).  I'd thought about designating an input for "Die Locked" that could be used
+     for this.  If a customer were concerned about the possibility of downloading just as a shot were taking place,
+     they could give us the die locked signal.  This signal could be used to stop downloading.  From die locked,
+     there's a lot of time before a shot will take place, eliminating any problem.  If die locked is not used, then it
+     could continue to work as it does now with CS / Start Shot.
+
+Pessure control variables for Derivative and Integral gains:
+V87 - Pressure control Integral gain.
+V88 - Pressure control Derivative gain.
+
+Jay:
+Do I have to stop the control to change this one line?
+
+Greg:
+I wouldn't think that you would have to stop the control program to change one line.  This isn't something people
+would change very often.
+
+Jay:
+
+I was just looking at the way I set the limit switch wires. If the position is set to zero in the part setup then the
+value I send to the board is 7FFFH. Would you ever set or clear this wire in this case or do you only set or clear the
+wire when you cross the setpoint?
+
+Greg:
+
+I only set and clear the wire when the setpoint is crossed.  Setting the LS value to 7FFF when the entered setpoint is
+zero is good.  Zitai wanted an entry of zero to disable a particular limit switch.  Sounds like that would do it.

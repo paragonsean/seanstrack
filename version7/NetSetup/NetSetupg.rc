@@ -1,0 +1,228 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "msresg.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// German (Germany) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+COMPUTER_DIALOG DIALOG DISCARDABLE  0, 0, 520, 223
+STYLE DS_3DLOOK | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Rechner",IDC_STATIC,8,9,28,8
+    LTEXT           "Verzeichnis",DIRECTORY_TBOX,42,9,37,8
+    LTEXT           "Typ",TYPE_TBOX,199,9,13,8
+    LTEXT           "Anschlüsse",CONNECTIONS_TBOX,266,9,37,8
+    LTEXT           "Online",ONLINE_TBOX,490,10,21,8
+    CTEXT           "Angeschlossene Rechner",CONNECTED_COMPUTERS_TBOX,275,
+                    141,94,10,WS_DISABLED
+    CTEXT           "Verfügbare Rechner",AVAILABLE_COMPUTERS_TBOX,409,141,93,
+                    10,WS_DISABLED
+    GROUPBOX        "Typ",TYPE_GBOX,87,137,100,49,WS_DISABLED
+    LISTBOX         COMPUTER_LISTBOX,6,19,507,114,LBS_SORT | LBS_USETABSTOPS | 
+                    LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Rechner überwachen",MONITORING_COMPUTER_RADIO,"Button",
+                    BS_AUTORADIOBUTTON | WS_DISABLED | WS_GROUP | WS_TABSTOP,
+                    97,147,85,10
+    CONTROL         "Arbeitsplatzsystem",OFFICE_WORKSTATION_RADIO,"Button",
+                    BS_AUTORADIOBUTTON | WS_DISABLED,97,159,73,10
+    CONTROL         "Datenserver ",DATA_SERVER_RADIO,"Button",
+                    BS_AUTORADIOBUTTON | WS_DISABLED,97,171,57,10
+    PUSHBUTTON      "Standardmäßige Anschlüsse",STANDARD_CONNECTIONS_BUTTON,
+                    196,147,58,28,BS_CENTER | BS_MULTILINE | WS_GROUP
+    LISTBOX         CONNECTED_COMPUTER_LISTBOX,260,153,125,58,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         AVAILABLE_COMPUTER_LISTBOX,392,153,126,58,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Änderungen &speichern",SAVE_CHANGES_BUTTON,166,203,86,
+                    14
+    LTEXT           "\\\\W01\\V5",CHECKING_DIR_TBOX,9,209,152,9
+    PUSHBUTTON      "&Hilfe",HELP_BUTTON,354,0,25,10
+    PUSHBUTTON      "Rechner Browse",BROUSE_COMPUTERS_BUTTON,8,148,73,12
+    PUSHBUTTON      "Rechner entfernen",REMOVE_COMPUTER_BUTTON,8,162,73,14
+    LTEXT           "Version",VERSION_TBOX,439,10,24,8
+    LTEXT           "Shared Full",SHARED_FULL_TBOX,465,2,24,17
+    LTEXT           "Version",VERSION_TBOX2,439,10,24,8
+    PUSHBUTTON      "Check for Duplicate Machines",
+                    CHECK_FOR_DUPLICATE_MACHINES_PB2,7,191,104,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    "COMPUTER_DIALOG", DIALOG
+    BEGIN
+        RIGHTMARGIN, 467
+        BOTTOMMARGIN, 203
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "msresg.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+NETSETUP_ICON           ICON    DISCARDABLE     "netsetup.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    MAIN_WINDOW_TITLE_STRING "Netzwerkrechner für VisiTrak einstellen."
+    MONITORING_COMPUTER_STRING "Rechner-Überwachung."
+    WORKSTATION_COMPUTER_STRING "Arbeitsplatzsystem"
+    DATA_SERVER_COMPUTER_STRING "Datenserver"
+    CANT_COMPLY_STRING      "Nicht durchführbar."
+    ERROR_WRITING_COMPUTER_STRING 
+                            "Fehler beim Schreiben zur  Datei COMPUTER.TXT"
+    DIR_TOO_LONG_STRING     "Verzeichnisname zu lang, maximal 25 Zeichen erlaubt."
+    YES_STRING              "Ja"
+    NO_STRING               "Nein"
+    CONFIRM_REMOVE_STRING   "Möchten Sie fortfahren?"
+    WILL_REMOVE_STRING      "Hell hinterlegter Rechner wird entfernt werden."
+    NEW_NAME_TOO_LONG_STRING "Der Name ist zu lang."
+    NO_NAME_ENTERED_STRING  "Bitte einen Namen eingegeben."
+    SAME_NAME_STRING        "Bitte einen anderen Namen eingeben."
+    CREATE_FAILED_STRING    "Fehler: Einrichten"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ENUMERATION_THREAD_STRING "Network Computer Search Thread"
+    ADD_COMPUTERS_FROM_LISTBOX_THREAD_STRING "Add Computers from Listbox"
+    NO_V5_FOLDER_FOUND_STRING "No V5 Folder Found"
+    NO_DATA_DIR_FOUND_STRING "\\DATA\\ not found in local directory"
+    COMPUTER_ALREADY_IN_LIST_STRING "This computer is already in the list"
+END
+
+#endif    // German (Germany) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+DUPLICATE_MACHINE_DIALOG DIALOG DISCARDABLE  0, 0, 167, 71
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Duplicate Machine Found"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "M01",DUP_MA_TBOX,51,7,91,8
+    LTEXT           "C01",DUP_CO_1_TBOX,59,19,103,8
+    LTEXT           "C02",DUP_CO_2_TBOX,59,31,103,8
+    PUSHBUTTON      "Add Anyway",IDOK,30,50,50,14,BS_CENTER | WS_GROUP
+    LTEXT           "Machine",IDC_STATIC,8,8,28,8
+    LTEXT           "exists on both",IDC_STATIC,8,18,44,8
+    LTEXT           "and",IDC_STATIC,38,30,14,8
+    PUSHBUTTON      "Cancel",IDCANCEL,86,50,50,14
+END
+
+DUPLICATE_MACHINE_CHECK_DIALOG DIALOG DISCARDABLE  0, 0, 167, 71
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Duplicate Machine Found"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "M01",DUP_MA_TBOX,51,7,91,8
+    LTEXT           "C01",DUP_CO_1_TBOX,59,19,103,8
+    LTEXT           "C02",DUP_CO_2_TBOX,59,31,103,8
+    LTEXT           "Machine",IDC_STATIC,8,8,28,8
+    LTEXT           "exists on both",IDC_STATIC,8,18,44,8
+    LTEXT           "and",IDC_STATIC,38,30,14,8
+    PUSHBUTTON      "Close",IDCANCEL,86,50,50,14
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

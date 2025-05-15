@@ -1,0 +1,108 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title>Data Archiver Backup</title>
+
+<style type="text/css">
+<!--
+span.indent1 { margin-left: 0.5in }
+span.indent2 { margin-left: 1.5in }
+ul li {list-style: disc }
+-->
+</style>
+</head>
+
+<body link="#0000FF" vlink="0000FF">
+
+<table border="1" width="100%">
+<tr align="center">
+<td width="25%"><a href="./dsbackup.htm">Overview</a></td>
+<td width="25%"><a href="./main_screen.htm">Main Screen</a></td>
+<td width="25%"><a href="./save_config.htm">Save Configuration</a></td>
+<td width="25%">Global File Settings</td>
+</tr>
+</table>
+<center><h2>Global File Settings</h2></center>
+
+<p><img src="./file_settings.jpg"></p>
+
+This screen allows you to set the names of the files that are created by the Data Archiver. There are two sections.
+<p>
+<hr>
+<p>
+The top portion of this screen is for the <b>Network Shot Parameter File</b>.
+The Data Archiver can combine the parameters from each shot on all the machines into a single file.
+The purpose of this function is to make it easy for customers to
+analyze the shot parameter data using a program like Excel.
+<p>
+
+<a name="filename"><a>
+<a href="./filename.htm"><h4>File Name:</h4></a>
+This is the path to the file that will be created for the shot parameter records. If you
+empty this or set it to <b>UNKNOWN</b> then no file will be created.
+
+<a name="record"><a>
+<a href="./record.htm"><h4>Record Format:</h4></a>
+This is the format of the record that is created when the program receives a shot from one of the
+machines being monitored. You can specify what goes into this record and where it goes.
+<p>
+<hr>
+<p>
+The bottom portion of the screen allows you to name the <b>zip files</b> created by the Data Archiver Backup program. There are
+two types of files.
+<p>
+Normally you would use one setting, one pair of names,
+for all the machines and specify enough information in the file names to
+differentiate the files. To do this, make sure the <b>Use a different setting for each machine</b> checkbox is NOT checked.
+<p>
+If that checkbox is checked then the listbox of machine names is made active and you can specify an entirely different
+filename for each machine.
+<p>
+Note that when you uncheck the <b>Use a different setting for each machine</b> checkbox the default filename is presented
+to be edited. This filename will be used for any new machines that are added later until you change the names for
+that machine.
+<p>
+<a name="pafile"><a>
+<a href="./pafile.htm"><h4>Part Results File:</h4></a>
+This is the file that is created when the program reaches one of the criteria (number of shots received
+or time of day) for zipping the shots. All of the saved shots and parameters are saved in this file.
+
+<a name="mafile"><a>
+<a href="./mafile.htm"><h4>Machine Results File:</h4></a>
+This is the file that is created at the same time as the Part Results file but only if there has been
+a change in the downtime status since the data was saved last.
+<hr>
+<center><h3>Mirror Drive Settings</h3></center>
+<p>
+If you want to automatically copy the backup zip files to a second drive you can specify a mirror drive.
+In order to do this you must edit the <b>c:\v5\exes\dsbackup.ini</b> file and insert the 
+following three lines at the beginning of the file.
+<pre>
+[Config]
+HaveMirror=Y
+MirrorRoot=E:
+</pre>
+The MirrorRoot is the root directory of the second drive. This does not have to be the actual root.
+If you are currently saving the zip files in the <b>c:\v5backup directory</b> and the MirrorRoot is
+<pre>
+MirrorRoot=E:
+</pre> 
+then the mirror files will be saved in the <b>E:\v5backup</b> directory.
+<p>
+If the MirrorRoot is 
+<pre>
+MirrorRoot=E:\vtw
+</pre>
+then the mirror files will be saved in the <b>E:\vtw\v5backup</b> directory.
+<p>
+You can also specify a network directory as the save location
+<pre>
+MirrorRoot=\\vtw-backup-computer
+</pre>
+This will save the mirror files in the <b>v5backup</b> directory of the computer named <b>vtw-backup-computer</b>. 
+<p>
+Note that in order to save to a network directory that directory, <b>v5backup</b> in this case, must already exist and be shared with full access.
+</body>
+</html>
+

@@ -1,0 +1,1 @@
+cl /nologo /MT /W3 /Zp1 /O1 /D "WIN32" /D "_CONSOLE" /D "NDEBUG" test.cpp user32.lib wsock32.lib LIBCMT.LIB

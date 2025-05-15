@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title id="edit_differential_equations_text">Edit Differential Equations</title>
+    <script src="../public/javascripts/module/table.js"></script>
+    <script src="../public/javascripts/lib/jquery-2.1.4.min.js"></script>
+    <script>
+        var selectID;
+
+        window.onload = function(){
+           var dcurveClasses = window.opener.dcurveList;
+           var dcurveArray = [];
+           //make dcurveClasses into a 2d array
+           for (var i = 0; i < dcurveClasses.length; i++){
+               dcurveArray[i] = dcurveClasses[i].getValStr().split(",");
+           }
+           document.getElementById("equation_table").tBodies[1].innerHTML = makeXYTableEdit(dcurveArray.length, 4, dcurveArray);
+            selectRowWH("equation_table",select);
+       }
+
+        function select(index){
+            selectID = index;
+            console.log(selectID);
+        }
+
+        function deleteEq(){
+            deleteRow("equation_table",selectID+1,1);
+        }
+
+        function save(){
+            var newTable = saveTableWH("equation_table");
+            var dataToSend = "?" + encodeURIComponent(newTable);
+            var saveTable = new XMLHttpRequest();
+            saveTable.open("POST","../data/DCURVE2.TXT" + dataToSend, true);
+            saveTable.onreadystatechange = function(){
+                alert("Changes Saved! You must restart the TrueTrak programs to the changes to take effect");
+            };
+            saveTable.send();
+        }
+
+        function cancel(){
+            window.close();
+        }
+
+        function insert(){
+            insertRowWH("equation_table",selectID+1,select);
+        }
+
+    </script>
+    <style>
+        #equation_table {
+            display: table-header-group;
+            border-style: solid;
+            position: absolute;
+            top: 50px;
+            left:0px;
+        }
+        #equation_table, td, th{
+            border: 1px solid black;
+        }
+
+    </style>
+
+</head>
+<body>
+    <button id="delete" onclick="deleteEq()">Delete</button>
+    <button id="save" onclick="save()">Save Changes</button>
+    <button id="cancel" onclick="cancel()">Cancel</button>
+    <button id="insert" onclick="insert()">Insert</button>
+
+    <table id="equation_table">
+        <tr><th>Number</th><th>Name</th><th>Head Coef</th><th>Rod Coef</th></tr>
+        <tbody></tbody>
+    </table>
+
+</body>
+</html>

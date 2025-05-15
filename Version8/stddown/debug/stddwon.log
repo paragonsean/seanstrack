@@ -1,0 +1,15 @@
+﻿Build started 5/15/25 12:18:56 AM.
+     1>Project "C:\Sources\Version8\stddown\stddwon.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stddown.cpp
+         stddown.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"Debug\StdDown.res" StdDown.rc 
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"Debug\StdDownc.res" StdDownc.rc 
+     1>RC : fatal error RC1110: could not open StdDownc.rc
+         
+     1>Done Building Project "C:\Sources\Version8\stddown\stddwon.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.71

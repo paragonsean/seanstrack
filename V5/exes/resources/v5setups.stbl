@@ -1,0 +1,15 @@
+4
+ENGLISH,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+GERMAN,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+SPANISH,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ITALIAN,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+BOARD_ADDR	Board Address	Board Address	Board Address	Indirizzo della Scheda
+BOARD_NUM	Board Number	Board Number	Board Number	Numero della Scheda
+BOARDS_AT_CO	Boards At This Computer	Boards At This Computer	Boards At This Computer	Schede a questo Computer
+MA_AT_CO	Machines At This Computer	Machines At This Computer	Machines At This Computer	Macchine a questo Computer
+NO_MORE_BOARDS	Cannot add another board	Cannot add another board	Cannot add another board	Impossibile aggiungere un'altra scheda
+ONLY_8_BOARDS	You cannot have more than 8 boards	You cannot have more than 8 boards	You cannot have more than 8 boards	Non si possono installare più di 8 schede
+TCP_ADDR	TCP Address	TCP Address	TCP Address	Indirizzo TCP
+TCP_PORT	TCP Port	TCP Port	TCP Port	Porto TCP 
+THIS_CO	This Computer	This Computer	This Computer	Questo Computer
+V5SETUPS_TITLE	FasTrak2 Board Setup	FasTrak2 Board Setup	FasTrak2 Board Setup	Setup della Scheda FasTrak2 

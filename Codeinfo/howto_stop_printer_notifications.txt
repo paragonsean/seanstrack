@@ -1,0 +1,6 @@
+   1. Open the Control Panel.
+   2. Select "Printers and Faxes."
+   3. Select "Server Properties" from the File menu at the top of the window. This opens the "Print Server Properties" window.
+   4. Click the Advanced Tab.
+   5. Uncheck the box next to "Show informational notifications for network printers."
+   6. Click OK.

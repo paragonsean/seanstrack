@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>NetSetup</Title>
+</HEAD>
+<BODY>
+
+The Visi-Trak Worldwide Network Setup Program allows you to change the
+way the computers are connected. Unlike most of the Visi-Trak ® programs
+this one does not need to be run from a particular location. You can run
+from a floppy disk if you wish. You should, however, run it from the
+same place every time, as it saves the current list of computers and
+connections in the same folder. The default location is <b>C:\VisiNet</b>.
+
+<p>
+
+When the program starts it displays it's current list of computers. If
+it has no list it brings up a choose folder window.
+<p>
+<img src="./Brouse.gif">
+<p>
+
+To add a computer to the list from this window open
+<b>My Network Places</b>, <b>Entire Network</b>, <b>Microsoft Windows Network</b> and then <b>Visitrak</b>,
+in that order. Click on the "+" next to the computer you wish to add and then
+click <b>once</b> on the
+<b>\V5</b> or, if you are adding the Data Archiver, <b>\V5DS</b> folder
+and the computer will be added to the main list box.
+<ul>
+<li>Try not to add the same computer twice.</li>
+<li>Be patient and wait for the computer to appear in
+the listbox of the main screen before clicking on another computer.</li>
+<li>Be sure to find the folder in <b>My Network Places</b> and
+<b>not</b> My Computer</li>
+</ul>
+
+<h3>Main Screen</h3>
+<p>
+<img src="./MainScreen.gif">
+<p>
+
+When you add a computer the program decides on the computer type based
+upon the network name of the computer as shown here.
+
+<center>
+<table border>
+<tr><td>Computer Name</td><td>Computer Type</td></tr>
+<td>\\FS</td><td>Data Archiver</td></tr>
+<td>\\W01 thru \\W99</td><td>Monitoring Computer (connected to DCM)</td></tr>
+<td>Anything Else</td><td>Office Workstation</td></tr>
+</table>
+</center>
+<p>The only other rule is that if the folder you click on is <b>V5DS</b> the program assumes this is a
+Data Archiver.
+<p>
+The program uses 3 character (or fewer) names to identify the computers. These are just names
+and do not have to match the actual names.
+<p>
+If the actual network name of the computer is longer than 3
+characters the program will try to truncate it to three characters.
+Sometimes this works, but if all the computers names begin with the same
+three characters then it, of course, will not work and you will have to
+enter a three character name.
+
+<h3>Connections</h3>
+In order for the programs to work correctly the computers need to talk
+to each other. The Monitoring Computer needs to know the path to any
+Office Workstations that want realtime updates and also the path to the
+Data Archiver, if there is one.
+<p>
+The Monitoring Computers should <b>not</b> know about each other.
+<p>
+The Office Workstations need to know the path to each of the Monitoring
+Computers, as does the Data Archiver.
+<p>
+If all of the Computers are online then you can connect them all by
+highlighting all of them, pressing the <b>Standard Connections</b>
+button, and then the <b>Save Changes</b> button.
+<p>
+<img src="./StdConnections.gif">
+<h3>Highlighting Computers</h3>
+
+The list of computers is a standard windows listbox. Hold down the
+<b>Ctrl</b> key while selecting with the mouse to select more than one.
+Select one and drag the mouse down to select a range.
+
+<h3>Saving Changes</h3>
+
+When you press the <b>Save Changes</b> button <font color="red">changes are only made to the highlighted computers</font> in the list.
+If the computer is not highlighted no changes are made to files on that computer.
+<p>
+A computer is not added to the list of saved computers until you actually save the settings to that computer so,
+for instance, if you add 10 computers to the list the first time the program is run and then you save the
+configuration of just one of the 10, the next time you run the program only the one computer will initially be
+in the list. Of course you can load the others again by pressing the <b>Add Computers</b> button. Once a computer
+is saved, it will remained saved unless you remove it.
+
+<h3>Changing Individual Computers</h3>
+
+If you highlight just one computer in the listbox the program will let you make changes to the configuration. You can change
+the following.
+<p>
+<img src="./SelectOne.gif">
+
+<ol>
+<li>You can change the type of computer by checking the appropriate radio button.</li>
+<li>You can change the list of Connected Computers. Click on an Available Computer to connect it. Click on a Connected
+Computer to unconnect it and move it to the Available list.</li>
+
+<li>You can change the name of the computer. This does not change the actual network
+name of the computer, just the name used by the Visi-Trak ® programs on
+other computers on the network. This name is not normally visible.
+<br>For example, if you have two computers, WS1 and WS10, this would
+allow you to refer to WS10 as WSA or W10, etc.</li>
+</ol>
+
+</BODY>
+</HTML>

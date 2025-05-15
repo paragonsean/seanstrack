@@ -1,0 +1,258 @@
+#include <windows.h>
+
+#include "..\include\visiparm.h"
+#include "..\include\nameclas.h"
+#include "..\include\computer.h"
+#include "..\include\dbclass.h"
+#include "..\include\fontclas.h"
+#include "..\include\listbox.h"
+#include "..\include\stringtable.h"
+#include "..\include\subs.h"
+#include "..\include\wclass.h"
+
+#include "extern.h"
+#include "resource.h"
+
+static TCHAR TabChar = TEXT( '\t' );
+static TCHAR NullChar = TEXT( '\0' );
+
+extern HWND MainWindow;
+static HWND MyWindow;
+void fill_machines( HWND w, UINT listbox_id );
+
+/***********************************************************************
+*                         CURRENT_MACHINE_NAME                         *
+***********************************************************************/
+static TCHAR * current_machine_name()
+{
+static STRING_CLASS machine_name;
+LISTBOX_CLASS lb;
+
+lb.init( MyWindow, CP_MACHINE_LB );
+machine_name = lb.selected_text();
+if ( machine_name.isempty() )
+    machine_name = MachineName;
+
+return machine_name.text();
+}
+
+/***********************************************************************
+*                              FILL_PARTS                              *
+***********************************************************************/
+static void fill_parts()
+{
+COMPUTER_CLASS c;
+STRING_CLASS   s;
+BOOLEAN        computer_is_online;
+LISTBOX_CLASS  lb;
+
+lb.init( MyWindow, CP_PART_LB );
+
+s = current_machine_name();
+if ( MachList.find(s) )
+    {
+    if ( c.find(MachList.computer_name()) )
+        {
+        hourglass_cursor();
+        computer_is_online = c.is_present();
+        restore_cursor();
+        if ( !computer_is_online )
+            {
+            lb.empty();
+            return;
+            }
+        }
+    }
+
+if ( MachList.find(current_machine_name()) )
+    {
+    fill_parts_and_counts_listbox( MyWindow, CP_PART_LB, MachList.computer_name(), MachList.name(), TabChar );
+    }
+}
+
+/***********************************************************************
+*                      COPY_SELECTIONS_TO_EXTERN                       *
+***********************************************************************/
+static void copy_selections_to_extern()
+{
+STRING_CLASS  s;
+LISTBOX_CLASS lb;
+TCHAR       * cp;
+
+lb.init( MyWindow, CP_PART_LB );
+
+if ( MachList.find(current_machine_name()) )
+    {
+    s = lb.selected_text();
+    cp = s.find( TabChar );
+    if ( cp )
+        *cp = NullChar;
+    if ( !s.isempty() )
+        {
+        ComputerName = MachList.computer_name();
+        MachineName =  MachList.name();
+        PartName = s;
+        }
+    }
+}
+
+/***********************************************************************
+*                           CHOOSE_THIS_PART                           *
+***********************************************************************/
+static void choose_this_part()
+{
+copy_selections_to_extern();
+SendMessage( MainWindow, WM_NEWPART, 0, 0L );
+SendMessage( MyWindow,   WM_CLOSE,   0, 0L );
+}
+/**********************************************************************
+*                            FILL_STATICS                             *
+**********************************************************************/
+static void fill_statics( HWND hWnd )
+{
+static HFONT      fonthandle = INVALID_FONT_HANDLE;
+static FONT_CLASS my_font;
+static STRING_CLASS my_language;
+
+struct RESOURCE_TEXT_ENTRY {
+    UINT id;
+    TCHAR * resource_name;
+    };
+
+static RESOURCE_TEXT_ENTRY rlist[] =
+    {
+    { CP_MACHINE_STATIC, TEXT("MACHINE_LABEL_STRING") },
+    { CP_PART_STATIC, TEXT("PART_LABEL_STRING") },
+    { CP_SHOTS_STATIC, TEXT("SHOTS_LABEL_STRING") },
+    { CP_PARMS_STATIC, TEXT("PARAMS_LABEL_STRING") }
+    };
+const int nr = sizeof(rlist)/sizeof(RESOURCE_TEXT_ENTRY);
+int          i;
+long         font_height;
+WINDOW_CLASS w;
+LPARAM       lParam;
+HFONT        old_fonthandle;
+
+if ( !hWnd )
+    {
+    if ( fonthandle != INVALID_FONT_HANDLE )
+        {
+        FontList.free_handle( fonthandle );
+        fonthandle = INVALID_FONT_HANDLE;
+        *my_font.lfFaceName = NullChar;
+        }
+    return;
+    }
+
+old_fonthandle = INVALID_FONT_HANDLE;
+
+if ( my_font == StringTable.fontclass() && my_language == CurrentLanguage )
+    return;
+
+my_language = CurrentLanguage;
+
+    
+if ( fonthandle != INVALID_FONT_HANDLE )
+    old_fonthandle = fonthandle;
+
+/*
+-----------------------------------
+Get the height of the existing font
+----------------------------------- */
+fonthandle = (HFONT) SendMessage( GetDlgItem(hWnd, rlist[0].id), WM_GETFONT, 0, 0 );
+if ( fonthandle != 0 )
+    {
+    i = GetObject( (HGDIOBJ) fonthandle, sizeof(my_font), (LPVOID) &my_font );
+    if ( i != 0 )
+        {
+        font_height = my_font.lfHeight;
+        my_font = StringTable.fontclass();
+        my_font.lfHeight = font_height;
+        fonthandle = FontList.get_handle( my_font );
+        if ( fonthandle != INVALID_FONT_HANDLE )
+            {
+            lParam = MAKELPARAM( FALSE, 0 );
+            for ( i=0; i<nr; i++ )
+                {
+                w = GetDlgItem( hWnd, rlist[i].id );
+                w.post( WM_SETFONT  , (WPARAM) fonthandle, lParam ); 
+                w.set_title( StringTable.find(rlist[i].resource_name) ); 
+                }
+            
+            lParam = MAKELPARAM( TRUE, 0 );
+            w = hWnd;
+            w.set_title( StringTable.find(TEXT("CHOOSE_PART_CAPTION")) );
+            InvalidateRect( hWnd, NULL, TRUE );
+            }
+        }
+    }
+            
+if ( old_fonthandle != INVALID_FONT_HANDLE )
+    FontList.free_handle( old_fonthandle );
+}
+
+/***********************************************************************
+*                             SET_MY_TABS                              *
+***********************************************************************/
+static void set_my_tabs()
+{
+LISTBOX_CLASS lb;
+lb.init( MyWindow, CP_PART_LB );
+lb.set_tabs( CP_PARMS_STATIC, CP_SHOTS_STATIC );
+}
+
+/***********************************************************************
+*                            CHOSPART_PROC                             *
+***********************************************************************/
+BOOL CALLBACK chospart_proc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
+{
+static int tabs[2] = { 42, 75 };
+int id;
+int cmd;
+
+id  = LOWORD( wParam );
+cmd = HIWORD( wParam );
+
+switch (msg)
+    {
+    case WM_INITDIALOG:
+        MyWindow = hWnd;
+        set_my_tabs();
+        return TRUE;
+
+    case WM_DBINIT:
+        fill_statics( hWnd );
+        fill_machines( MyWindow, CP_MACHINE_LB );
+        fill_parts();
+        SetFocus( GetDlgItem(MyWindow, CP_MACHINE_LB) );
+        return TRUE;
+
+    case WM_CLOSE:
+        ShowWindow( hWnd, SW_HIDE );
+        return TRUE;
+
+    case WM_SETFOCUS:
+        SetFocus( GetDlgItem(MyWindow, CP_MACHINE_LB) );
+        return TRUE;
+
+    case WM_COMMAND:
+        switch ( id )
+            {
+            case CP_PART_LB:
+                if ( cmd == LBN_DBLCLK )
+                    choose_this_part();
+                return TRUE;
+
+            case CP_MACHINE_LB:
+                if ( cmd == LBN_SELCHANGE )
+                    fill_parts();
+                return TRUE;
+
+            case IDOK:
+                choose_this_part();
+                return TRUE;
+            }
+    }
+
+return FALSE;
+}

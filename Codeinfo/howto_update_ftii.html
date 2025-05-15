@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>How to Update a FasTrak2 Board to a New Firmware Version</title>
+</head>
+<body>
+<ol>
+<li>Pull down the "Help" menu of the Plot program and choose "FasTrak2 Help".</li>
+<li>Under "Misc", click on "External Interface Boards".</li>
+<li>Look at your external interface board and compare it to the photos to determine which you have (Rev B or Rev E).</li>
+<li>If you don't have a Rev E board give me a call.
+<li>Shut down all True-Trak software.</li>
+<li>Rename the current C:\Ftii directory to C:\Ftii_Old</li>
+<li>Copy the ftii_files.exe program to the root directory and run it from there. It will create a C:\Ftii directory and copy
+the new ftii files there.</li>
+<li>Unplug any network cables to the monitoring computer. You should only have one cable from the cpu board
+to the blue ethernet switch and another from the blue ethernet switch to the FasTrak2 board.</li>
+<li>Run the "terminal.exe" program in the C:\Ftii directory.</li>
+<li>The title of this program is "FasTrak2 Terminal" followed by the ip address of the FasTrak2 board. If this is not the address of
+the board that you wish to update then pull down the "Edit" menu and choose "Address". Enter the ip address of the board in the
+editbox to the right of "Tcp/Ip Address". The "Port" should be "20000". Press the "Save Changes" button for this to take effect.</li>
+<li>At the bottom of the screen is an editbox. Enter "OV" ( letter o letter v) and press Enter. This will ask the board to identify
+the version of firmware that is currently loaded.
+<br>
+You should get a response from the board similar to the following.
+<pre>R:5#cyc_chip_14010201
+R:6#cyc_7_04, monitor_and_control, interrupt driven control, polled Ethernet, UDP, handshake, ad_loop19</pre>
+If the response begins with "R:6#cyc" then this is a newer version of the FasTrak2 board called a "Cyclone" board. If the
+response begins with "R:6:emc" then this is the older FasTrak2 board.
+<br>The number after the above strings is the current firmware version. In the example above the firmware version is 7_04. On
+yours it will say 4_14c. I am pretty sure you have one of the older FasTrak2 boards and not the Cyclone board.
+</li>
+<li>Pull down the "File" menu and choose "Upload File".</li>
+<li>Press the "Flash 6" radio button if this is the older FasTrak2 board or "Flash 7" if this is a Cyclone board.</li>
+<li>Make sure the "All Files" box is checked.</li>
+<li>Press "Begin" to upload all the files.</li>
+<li>When the uploads are complete, enter "NM" in the editbox at the bottom of the screen and press Enter. The board should
+respond with the current ethernet settings.
+<pre># Network Settings
+
+# N1	ethernet address: 14:13:12:11:16:15
+# N2	ip address: 192.168.254.99
+# N3	nameserver ip address: 165.227.1.1
+# N4	subnet mask: 255.255.255.0
+# N5	gateway ip address: 10.0.0.255
+# N6	Reserved
+#
+# N7	Remote IO ip address: 10.0.0.55
+# N8	Remote IO port: 502
+# N9	Remote IO type: 1
+#	1 == MODBUS
+# NM	To view this menu
+# NF	To flash network settings after making changes</pre>
+</li>
+<li>Even though these appear correct, reenter the tcp/ip address of the board.
+<br>
+N2 192.168.254.99
+<br>and press Enter.
+<br>Be sure to enter a space after the "N2".
+</li>
+<li>Flash this address by entering "NF" and pressing Enter.</li>
+<li>Reset the FasTrak2 board.</li>
+<li>Start the True-Trak software.</li>
+</ol>
+</body>
+</html>

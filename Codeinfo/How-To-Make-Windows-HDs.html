@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>How to Make Windows Hard Drives (Win95, Win98) for Advantec and Ampro Boards</title>
+</head>
+<body>
+<h3>How to Make Windows Hard Drives (Win95, Win98) for Advantec and Ampro Boards</h3>
+<ul>
+<li>The following assumes you are using a 60GB HD. The procedure is a little different depending upon the size. The goal
+is to make one or two 20GB partitions on the drive.</li>
+<li>There is a drive on the cpu already. This is Win95 and is configured as the master. Put the new, unpartitioned, drive on as the slave and
+boot into Win95.</li>
+<li>Open a Dos window.</li>
+<li>Enter <b>FDISK</b> at the command line. When it asks if you want to enable large disk support answer <b>Yes</b>.</li>
+<li>Change disk, option 5, to the second disk (60GB).</li>
+<li>Create a primary dos partition. When it asks if you want to use the maximum size, answer <b>No</b>.</li>
+<li>Set the size to <b>33%</b></li>
+<li>Exit.</li>
+<li>Exit the dos window (type <b>EXIT</b>).</li>
+<li>Restart Windows.</li>
+<li>Open a DOS window.</li>
+<li>Enter the following:
+<br><b>FORMAT&nbsp;&nbsp; /U&nbsp;&nbsp;  D:</b>
+<br><b>D:</b>
+<br><b>DIR&nbsp;&nbsp;C:\*.ZIP</b>&nbsp;&nbsp;&nbsp;&lt;&lt;&lt; This will let you see the names of the zip files.
+<br><b>PKZIP25&nbsp;&nbsp;-EXT&nbsp;&nbsp;-DIR&nbsp;&nbsp;-ATT=ALL&nbsp;&nbsp;C:\WC95.ZIP</b></li>
+<li>Exit to Windows</li>
+<li>Copy either the V575.exe or V6.17.exe to the D drive</li>
+<li>Shutdown</li>
+<li>Put the new drive in as the Master.</li>
+<li>Boot from the floppy</li>
+<li>Run FDISK</li>
+<li>Set partition 1 to be the ACTIVE partition.</li>
+<li>Remove the floppy disk and reboot.</li>
+</ul>
+
+</body>
+</html>

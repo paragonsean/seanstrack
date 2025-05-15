@@ -1,0 +1,5 @@
+  9;"ADMIN               ";"Administrator                 "
+  0;"OPERATOR            ";"Operator                      "
+ 10;"DEFAULT             ";"Default                       "
+  4;"SETUP               ";"Setup                         "
+  5;"ENGINEER            ";"Engineer                      "

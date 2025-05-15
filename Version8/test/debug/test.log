@@ -1,0 +1,28 @@
+﻿Build started 5/15/25 12:23:29 AM.
+     1>Project "C:\Sources\Version8\test\test.vcxproj" on node 2 (Build target(s)).
+     1>Build:
+         nmake /f "debug.mak"
+         
+         Microsoft (R) Program Maintenance Utility Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         	cl /nologo /MTd /W3 /Zp1 /Z7 /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /Fp"..\include\debug.pch" /YX"windows.h" /Fo"debug/" /c test.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/YXwindows.h'
+         test.cpp
+     1>test.cpp(54): warning C4101: 's3' : unreferenced local variable
+     1>test.cpp(54): warning C4101: 's2' : unreferenced local variable
+     1>test.cpp(54): warning C4101: 's1' : unreferenced local variable
+         	rc /l 0x409 /fo"debug\test.res" test.rc
+         Microsoft (R) Windows (R) Resource Compiler Version 6.3.9600.17336
+         
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         
+         	link libcmtd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib comctl32.lib advapi32.lib shell32.lib ole32.lib uuid.lib mpr.lib wsock32.lib ..\debuglib\v5subs.lib /nologo /subsystem:windows /incremental:no /pdb:"debug\test.pdb" /NODEFAULTLIB:libcmt.lib /debug /machine:I386 /out:"debug/test.exe" debug\test.obj ..\empty\debug\empty.obj debug\test.res
+         	copy debug\test.exe \v8\exes
+                 1 file(s) copied.
+     1>Done Building Project "C:\Sources\Version8\test\test.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.81

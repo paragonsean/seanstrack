@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+	<script src="../public/javascripts/parm/visiparm.js"></script>
+	<script src="../public/javascripts/lib/jquery-2.1.4.min.js"></script>
+    <script src="../public/javascripts/class/Machine.js"></script>
+    <script src="../public/javascripts/module/data.js"></script>
+	<script type="text/javascript">
+
+        /*******************************************************************
+         *                          initialize                        *
+         ********************************************************************/
+        //machineName is a list of machine names
+        //var machineName = [];
+        //machines is array of machine object, each object is identified by its name machineName: {machine object}
+        var machines = [];
+        //machineInfo is array of machineName: boardNumber pairs
+        var machineInfo = [];
+        //att is an array of attribute names in the file, different from names of the machine class
+       // var att = [];
+        //board_info is a list of board number,board address,tcp port
+        var board_info = [];
+
+        var reqMachine = new XMLHttpRequest();
+        var reqBoard = new XMLHttpRequest();
+        var reqMachineSetup = []; // array of xmlhttprequest objects for machines
+
+        var boardFile = ".." + data_path + "/" + board_setup_file;
+
+        function initialize(){
+
+            var sourceFolder = "../getDirectories" + "?" + encodeURIComponent("data");
+            reqMachine.open("GET",sourceFolder,true);
+            reqMachine.onreadystatechange = function(){
+                if((reqMachine.readyState == 4) && (reqMachine.status == 200)) {
+                    var machineList = reqMachine.responseText.split(",");
+                    var count = 0;
+                    for(var i = 0; i < machineList.length; i++) {
+                        (function(i) {
+                            var machineName = machineList[i];
+                            var setupFile = ".." + data_path + "/" + machineName + "/" + machine_setup_file;
+                            reqMachineSetup[i] = new XMLHttpRequest();
+                            reqMachineSetup[i].open("GET", setupFile, true);
+                            reqMachineSetup[i].onreadystatechange = function () {
+                                if ((reqMachineSetup[i].readyState == 4) && (reqMachineSetup[i].status == 200)) {
+                                    // setTimeout(function () {
+                                    var readData = readWAtt(reqMachineSetup[i].responseText);
+                                    var attValue = readData["attValue"];
+                                    //create machine object to store all fields
+                                    machines[machineName] = new Machine(attValue,machineName);
+                                    machineInfo[machineName] = parseInt(machines[machineName].fasTrakBoardNumber);//parseInt(secondLineCont[1]);
+                                    count++;
+                                    if(count==machineList.length){
+                                        document.getElementById("machineTable").innerHTML = makeMachineTable(machineList, machineInfo);
+                                        $('#machineTable tr').not(':first').on('click', selectMachine);}
+                                }
+                            }
+                            reqMachineSetup[i].send();
+                        })(i);
+                    }
+                }
+            }
+            reqMachine.send();
+
+
+            reqBoard.open("GET",boardFile);
+            reqBoard.onreadystatechange = function() {
+                if ((reqBoard.readyState == 4) && (reqBoard.status == 200)) {
+                    var text = reqBoard.responseText;
+                    board_info = readWOAtt(text);
+                    document.getElementById("boardTable").innerHTML = makeBoardTable(board_info);
+                    //make the board clickable
+                    $('#boardTable tr').not(':first').on('click',selectBoard);
+                }
+            }
+            reqBoard.send();
+        }
+	
+    /*******************************************************************
+    *                         makeBoardTable                           *
+    ********************************************************************/
+    function makeBoardTable( arr )
+    {
+    var result = "<tr><th>Board Number</th><th>Board Address</th><th>Tcp Port</th></tr>";
+    
+    for ( var i=0; i<arr.length; i++ )
+        {
+        result += "<tr>";
+        for(var j=0; j<arr[i].length; j++)
+            {
+            result += "<td>" + arr[i][j].replace(/"/g,"") + "</td>";
+            }
+        result += "</tr>";
+        }
+
+    return result;
+    }
+
+	/*******************************************************************
+    *                          selectBoard                           *
+    ********************************************************************/
+	// select board, return the board number, TCP Address, and TCP Port
+    // display on the board number, TCP Address and TCP Port section respectively
+	
+	//exclude the first row (header)
+	var selectedBoardID;
+
+
+    function selectBoard()
+    {
+		// change the background color of selected row while restore the color of other rows
+		$('#boardTable tr').not(this).css('background-color','white');
+		$(this).css('background-color','LightGray');
+		selectedBoardID = $(this).index();
+		// return the values
+		var boardNumber = $("#boardTable").find('td').eq(3*selectedBoardID-3).text();
+		var boardAddress = $("#boardTable").find('td').eq(3*selectedBoardID-2).text();
+		var tcpPort = $("#boardTable").find('td').eq(3*selectedBoardID-1).text();
+		// change the values
+		var boardID = "bbn" + boardNumber;
+		$('#'+boardID).prop('checked',true);
+		$('#tcpAddress').val(boardAddress);
+		$('#tcpPort').val(tcpPort);
+	}
+        /*******************************************************************
+    *                Board Section BoardNumberChange                   *
+    ********************************************************************/
+	function bBoardNumberChange(){
+		var newvalue = document.querySelector('[name="bBoardNum"]:checked').value;
+		$("#boardTable").find('td').eq(3*selectedBoardID-3).html(newvalue);
+	}
+	
+	/*******************************************************************
+    *                     TCP address change                           *
+    ********************************************************************/
+	function addressChange(){
+		var newvalue = document.getElementById("tcpAddress").value;
+		$("#boardTable").find('td').eq(3*selectedBoardID-2).html(newvalue);
+	}
+	
+	/*******************************************************************
+    *                     TCP port change                           *
+    ********************************************************************/
+	function portChange(){
+		var newvalue = document.getElementById("tcpPort").value;
+		$("#boardTable").find('td').eq(3*selectedBoardID-1).html(newvalue);
+	}
+	
+	/*******************************************************************
+    *                           newBoard                               *
+    ********************************************************************/
+	// new rows to be clicked.... 
+	function newBoard(){
+		//$('#boardTable').append('<tr><td></td><td></td><td></td></tr>');
+		var table = document.getElementById('boardTable');
+		var row = table.insertRow(-1);
+		row.style.height = "25px";
+		row.insertCell(0);
+		row.insertCell(1);
+		row.insertCell(2);
+		row.onclick = function(){
+			$('#boardTable tr').not(this).css('background-color','white');
+			$(this).css('background-color','LightGray');
+			selectedBoardID = $(this).index();
+			// clear the values in the board number, tcp address and tcp port sections...
+			document.getElementById("tcpAddress").value='';
+			document.getElementById("tcpPort").value='';
+			document.querySelector('[name="bBoardNum"]:checked').checked = false;
+		}
+		
+	}
+		
+	
+	/*******************************************************************
+    *                         deleteBoard                              *
+    ********************************************************************/
+	function deleteBoard(){
+		var table = document.getElementById('boardTable');
+		table.deleteRow(selectedBoardID);
+	}
+
+	/*******************************************************************
+    *                          makeMachineTable                           *
+    ********************************************************************/
+	function makeMachineTable(name, number){
+		var result = "<tr><th>Machine</th><th>Board Number</th></tr>";
+		for(var i = 0; i<name.length; i++){
+			result += "<tr><td>" + name[i] + "</td><td>" + number[name[i]] + "</td></tr>";
+			}
+		return result;
+		}
+
+	
+	/*******************************************************************
+    *                          selectMachine                           *
+    ********************************************************************/
+	// select machine, return the board number and display on the board number section
+	
+	//exclude the first row (header)
+	var selectedRowID;
+    function selectMachine(){
+		// change the background color of selected row while restore the color of other rows
+		$('#machineTable tr').not(this).css('background-color','white');
+		$(this).css('background-color','LightGray');
+		var selected = $(this).text();
+		selectedRowID = $(this).index();
+		var selectedBoardNumber = selected.slice(-1);
+		var boardID = "mbn" + selectedBoardNumber;
+		$('#'+boardID).prop('checked',true);
+	}
+	
+
+	/*******************************************************************
+    *                          boardNumberChange                       *
+    ********************************************************************/
+	function boardNumberChange(){
+		var newvalue = document.querySelector('[name="boardNum"]:checked').value;
+		$("#machineTable").find('td').eq(2*selectedRowID-1).html(newvalue);
+		$("#machineTable tr:eq("+selectedRowID+")").css('background-color','white');
+	}
+	
+	/* NOT FINISHED!!unselect/restore background color when click on outside the two tables */
+	
+	/*******************************************************************
+	*                          saveChanges                             *
+	********************************************************************/
+	// save the table values into JSON format
+	function saveChanges(){
+
+		var boardTable, machineTable;
+
+		boardTable = "";
+        var table = document.getElementById("boardTable");
+        //skip the first row
+        for (var i = 1, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var j = 0, col; col = row.cells[j]; j++) {
+                //iterate through columns
+                //columns would be accessed using the "col" variable assigned in the for loop
+                boardTable += col.innerHTML.toString() + ",";
+            }
+            //remove the last ;
+            boardTable = boardTable.slice(0,-1);
+            //add newline character
+            boardTable += "\n";
+
+        }
+        //remove the last newline character
+        boardTable = boardTable.slice(0,-1);
+
+        var dataToSend = "?" + encodeURIComponent(boardTable);
+        reqBoard.open("POST",boardFile + dataToSend, true);
+        reqBoard.onreadystatechange = function(){}  //do nothing... but fixed sth...
+        reqBoard.send();
+
+
+		machineTable = new Array();
+		$('#machineTable tr').each(function(row, tr){
+			machineTable[row] = {
+				"machine name": $(tr).find('td:eq(0)').text(), // machine name
+				"board number": $(tr).find('td:eq(1)').text() // board number
+			}
+		});
+		machineTable.shift();
+
+        //write new board number to the machine class
+        for(var i = 0; i < machineTable.length; i++){
+            machines[machineTable[i]["machine name"]].fasTrakBoardNumber = machineTable[i]["board number"];
+        }
+
+        //save the machine classes to setup files
+        for(var i = 0; i < machineTable.length; i++){
+            var ma = machines[machineTable[i]["machine name"]]; //machine object
+            var maVal = ma.getValArr(); //attribute values of the machine object
+			var maAtt = ma.getAttArr(); //attribute name arry of the machine object
+            var result = writeWAtt(maAtt,maVal);
+            var dataToSend = "?" + encodeURIComponent(result);
+            reqMachineSetup[i].open("POST","../data/"+machineTable[i]["machine name"]+"/machine_setup2.csv"+dataToSend);
+            reqMachineSetup[i].onreadystatechange=function(){};
+            reqMachineSetup[i].send();
+        }
+    }
+</script>
+
+
+
+<style>
+
+
+#boardTable {
+	display: block;
+	width: 300px;
+	height: 300px;
+	border-style: solid;
+	overflow: auto;
+	position: absolute;
+	left: 350px;
+	top: 150px;
+}
+
+#boardTable, td, th{
+	border: 1px solid black;
+	
+}
+
+#machineTable {
+	display: block;
+	width: 300px;
+	height: 300px;
+	border-style: solid;
+	overflow: auto;
+	position: absolute;
+	top: 600px;
+	left:350px;
+}
+
+#machineTable, td, th{	
+	border: 1px solid black;
+}
+
+</style>
+</head>
+
+<body onload="initialize()">
+	
+<title> FasTrak Board Setup </title>
+
+<h1 style="position: absolute; top: 10px; left: 500px;"> FasTrak Board Setup </h1>
+
+
+<h2 style="position: absolute; top: 60px; left: 500px;"> Boards At This Computer </h2>
+
+<div class='boardChange' style="position: absolute; left: 700px; top: 150px;">	
+	<button onclick="newBoard()">New</button>
+	<button onclick="deleteBoard()">Delete</button>
+</div>
+
+<div class='boardSetting' style="position: absolute; left: 700px; top: 180px;">	
+	<h3> Board Number </h3>
+	<!-- board board number: bbn --> 
+	<input type="radio" name="bBoardNum" id="bbn1" value="1" onclick="bBoardNumberChange();">1
+	<input type="radio" name="bBoardNum" id="bbn2" value="2" onclick="bBoardNumberChange();">2
+	<input type="radio" name="bBoardNum" id="bbn3" value="3" onclick="bBoardNumberChange();">3
+	<input type="radio" name="bBoardNum" id="bbn4" value="4" onclick="bBoardNumberChange();">4
+	<input type="radio" name="bBoardNum" id="bbn5" value="5" onclick="bBoardNumberChange();">5
+	<input type="radio" name="bBoardNum" id="bbn6" value="6" onclick="bBoardNumberChange();">6
+	<input type="radio" name="bBoardNum" id="bbn7" value="7" onclick="bBoardNumberChange();">7
+	<input type="radio" name="bBoardNum" id="bbn8" value="8" onclick="bBoardNumberChange();">8
+	
+	<h3> TCP Address </h3>
+	<input type="text" id="tcpAddress" onchange="addressChange();">
+	
+	<h3> TCP Port </h3>
+	<input type="text" id="tcpPort" onchange="portChange();">
+</div>	
+
+<div><table id="boardTable"></table></div>
+
+
+<h2 style="position: absolute; top: 500px; left: 500px;"> Machines At This Computer </h2>
+<div><table id="machineTable"></table></div>
+<div class='machineSetting' style="position: absolute; left: 700px; top: 600px;">
+
+<h3> Board Number </h3>
+	<!-- machine board number: mbn -->
+	<input type="radio" name="boardNum" id="mbn1" value="1" onclick="boardNumberChange();">1
+	<input type="radio" name="boardNum" id="mbn2" value="2" onclick="boardNumberChange();">2
+	<input type="radio" name="boardNum" id="mbn3" value="3" onclick="boardNumberChange();">3
+	<input type="radio" name="boardNum" id="mbn4" value="4" onclick="boardNumberChange();">4
+	<input type="radio" name="boardNum" id="mbn5" value="5" onclick="boardNumberChange();">5
+	<input type="radio" name="boardNum" id="mbn6" value="6" onclick="boardNumberChange();">6
+	<input type="radio" name="boardNum" id="mbn7" value="7" onclick="boardNumberChange();">7
+	<input type="radio" name="boardNum" id="mbn8" value="8" onclick="boardNumberChange();">8
+	
+<br> 
+<br>  
+<input type="button" id="savechanges" value="Save Changes" style="height: 30px; font-size: 80%" onclick = "saveChanges();">
+</div>
+
+</body>
+
+
+</html>

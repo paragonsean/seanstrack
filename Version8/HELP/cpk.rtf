@@ -1,0 +1,39 @@
+{\rtf1\ansi
+{\fonttbl
+{\f0\froman Times New Roman;}
+{\f1\fdecor Courier New;}
+{\f2\fswiss Arial;}
+}
+\deff1
+
+#{\footnote topic1}
+${\footnote My Topic}
+Visi-Trak Statistical Summary Calculations
+\par
+\par
+\par
+Xbar is the average of all the data.
+\par
+\par
+The standard deviation (s) is the square root of the average
+ variance of the groups. If the group size is 1 then this
+ is the same as the standard deviation of all the data.
+\par
+\par
+The Z values are based upon the upper (UCL) and lower (LCL)
+ control limits.
+\par
+\par
+
+Zucl = |xbar-UCL|/s
+\par
+Zlcl = |xbar-LCL|/s
+\par
+Zmin = minimum( Zlcl, Zucl )
+\par
+cpk  = Zmin / 3.0            {\i Note - If the groupsize is 1 this is Ppk.}
+\par
+%out = Percent outside of the alarm limits.
+\page
+}
+

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Choose Wire</title>
+    <script src="../public/javascripts/lib/jquery-2.1.4.min.js"></script>
+    <script src="../public/javascripts/lib/jquery.imagemapster.min.js"></script>
+    <script src="../public/javascripts/module/data.js"></script>
+    <script>
+        var readData = new XMLHttpRequest();
+        readData.open("GET","../data/FasTrak2 Digital Inputs and Outputs.csv",true);
+        readData.onreadystatechange = handleResponse;
+        readData.send();
+
+        var wireNumberOutput = window.opener.document.getElementById("pulse_output").innerHTML;
+
+        function handleResponse(){
+            if((readData.readyState == 4) && (readData.status == 200)) {
+                var rawText = readData.responseText;
+                var wireInfo = readWOAttJSON(rawText);
+
+
+                var outputString = '{';
+                for (var i = 0; i < wireInfo.length; i++){
+                    outputString += '"'+wireInfo[i].opto_screw + '": "Opto Wire Number ' + wireInfo[i].opto_screw + ' I/O Number ' + wireInfo[i].truetrak_wire + '",';
+                }
+                outputString = outputString.slice(0,-1) + "}";
+                var output = JSON.parse(outputString);
+
+                var image = $("#map");
+                image.mapster({
+                    singleSelect: true,
+                    fillColor: 'ffa500',
+                    mapKey:"number",
+                    listKey:"number",
+                    fillOpacity: 1,
+                    noHrefIsMask:false,
+                    onClick: function(e){
+                        $("#window").html(output[e.key]);
+                        var target = wireInfo.filter(function(obj){
+                            return obj.opto_screw == e.key;
+                        });
+                        wireNumberOutput = target[0].truetrak_wire;
+                    }
+                });
+
+
+            }
+        }
+
+        function cancelButton(){
+            window.close();
+        }
+
+        function okButton(){
+            window.opener.wireChange(wireNumberOutput);
+            window.close();
+        }
+
+        function manualEntry(){
+            window.opener.open("manualEnterWire.html","","");
+            window.close();
+        }
+    </script>
+</head>
+<body>
+<img id="map" src="../public/images/Choose-Wires.png" alt="choose sire" usemap="#wiremap" style="width:578px;height:361px;">
+<map name="wiremap">
+    <area shape="circle" coords="18,195,8" alt="1" href="#" number="1">
+    <area shape="circle" coords="18,226,8" alt="2" href="#" number="2">
+    <area shape="circle" coords="53,195,8" alt="3" href="#" number="3">
+    <area shape="circle" coords="53,226,8" alt="4" href="#" number="4">
+    <area shape="circle" coords="91,195,8" alt="5" href="#" number="5">
+    <area shape="circle" coords="91,226,8" alt="6" href="#" number="6">
+    <area shape="circle" coords="126,195,8" alt="7" href="#" number="7">
+    <area shape="circle" coords="126,226,8" alt="8" href="#" number="8">
+    <area shape="circle" coords="164,195,8" alt="9" href="#" number="9">
+    <area shape="circle" coords="164,226,8" alt="10" href="#" number="10">
+    <area shape="circle" coords="200,195,8" alt="11" href="#" number="11">
+    <area shape="circle" coords="200,226,8" alt="12" href="#" number="12">
+    <area shape="circle" coords="238,195,8" alt="13" href="#" number="13">
+    <area shape="circle" coords="238,226,8" alt="14" href="#" number="14">
+    <area shape="circle" coords="273,195,8" alt="15" href="#" number="15">
+    <area shape="circle" coords="273,226,8" alt="16" href="#" number="16">
+
+    <area shape="rect" coords="9,   0,  15,  37" alt="17" nohref number="1">
+    <area shape="rect" coords="9,   0,  15,  87" alt="18" nohref number="2">
+    <area shape="rect" coords="58,   0,  64,  37" alt="19" nohref number="3">
+    <area shape="rect" coords="58,   0,  64,  87" alt="20" nohref number="4">
+    <area shape="rect" coords="82,   0,  88,  37" alt="21" nohref number="5">
+    <area shape="rect" coords="82,   0,  88,  87" alt="22" nohref number="6">
+    <area shape="rect" coords="132,   0, 138,  37" alt="23" nohref number="7">
+    <area shape="rect" coords="132,   0, 138,  87" alt="24" nohref number="8">
+    <area shape="rect" coords="156,   0, 162,  37" alt="25" nohref number="9">
+    <area shape="rect" coords="156,   0, 162,  87" alt="26" nohref number="10">
+    <area shape="rect" coords="205,   0, 211,  37" alt="27" nohref number="11">
+    <area shape="rect" coords="205,   0, 211,  87" alt="28" nohref number="12">
+    <area shape="rect" coords="230,   0, 236,  37" alt="29" nohref number="13">
+    <area shape="rect" coords="230,   0, 236,  87" alt="30" nohref number="14">
+    <area shape="rect" coords="279,   0, 285,  37" alt="31" nohref number="15">
+    <area shape="rect" coords="279,   0, 285,  87" alt="32" nohref number="16">
+
+    <area shape="rect" coords="390,  23, 400,  30" alt="33" nohref number="1">
+    <area shape="rect" coords="357,  23, 400,  30" alt="34" nohref number="2">
+    <area shape="rect" coords="390,  41, 400,  48" alt="35" nohref number="3">
+    <area shape="rect" coords="357,  41, 400,  48" alt="36" nohref number="4">
+    <area shape="rect" coords="390,  59, 400,  66" alt="37" nohref number="5">
+    <area shape="rect" coords="357,  59, 400,  66" alt="38" nohref number="6">
+    <area shape="rect" coords="390,  77, 400,  84" alt="39" nohref number="7">
+    <area shape="rect" coords="357,  77, 400,  84" alt="40" nohref number="8">
+    <area shape="rect" coords="390,  95, 400, 102" alt="41" nohref number="9">
+    <area shape="rect" coords="357,  95, 400, 102" alt="42" nohref number="10">
+    <area shape="rect" coords="390, 113, 400, 120" alt="43" nohref number="11">
+    <area shape="rect" coords="357, 113, 400, 120" alt="44" nohref number="12">
+    <area shape="rect" coords="390, 131, 400, 138" alt="45" nohref number="13">
+    <area shape="rect" coords="357, 131, 400, 138" alt="46" nohref number="14">
+    <area shape="rect" coords="390, 149, 400, 156" alt="47" nohref number="15">
+    <area shape="rect" coords="357, 149, 400, 156" alt="48" nohref number="16">
+
+
+
+</map>
+
+<div id="window" style="width:578px;height:50px;border:1px solid black"></div>
+<button id="manual_entry" onclick="manualEntry()">Manual Entry</button>
+<button id="ok" onclick="okButton()">OK</button>
+<button id="cancel" onclick="cancelButton()">Cancel</button>
+</body>
+</html>

@@ -1,0 +1,1198 @@
+05/08/2006 14:00:21 OO1=~10
+05/08/2006 14:00:21 R:5#06000000
+05/08/2006 14:00:21 OO1=~10
+05/08/2006 14:00:21 R:6#emc_4_14C , monitor_and_control, interrupt driven control, polled Ethernet, UDP, handshake
+05/08/2006 14:00:21 O_ISW1=ffff
+05/08/2006 14:00:22 Current Step = 2 Startup
+05/08/2006 14:00:22 Status Word 1 = UNKNOWN
+05/08/2006 14:00:22 Fault OFF
+05/08/2006 14:00:24 Current Step = 6 Waiting for AT HOME
+05/08/2006 14:00:24 Status Word 1 = ACTIVE
+05/08/2006 14:00:24 Fault ON
+05/08/2006 14:00:43 Current Step = 12 Waiting for START SHOT
+05/08/2006 14:00:43 At Home ON
+05/08/2006 14:00:45 O_ISW1=68ffff
+05/08/2006 14:00:45 Current Step = 76 MANUAL MODE
+05/08/2006 14:00:45 Retract ON
+05/08/2006 14:00:45 Manual Mode ON
+05/08/2006 14:02:51 Current Step = 12 Waiting for START SHOT
+05/08/2006 14:02:51 Manual Mode OFF
+05/08/2006 14:03:00 O_ISW1=40ffff
+05/08/2006 14:03:00 Retract OFF
+05/08/2006 14:03:13 R:20 #Cycle start detected!
+05/08/2006 14:03:14 Current Step = 26 Making a SHOT
+05/08/2006 14:03:14 Pump On ON
+05/08/2006 14:03:14 Slow Shot ON
+05/08/2006 14:03:14 Accumulator ON
+05/08/2006 14:03:14 Pos =    2.73, Vel =    8.6500, Meas CMD = 1.71, LVDT Feedback = 3.61
+05/08/2006 14:03:14 Current Step = 27 Making a SHOT
+05/08/2006 14:03:14 Pos =   14.24, Vel =   29.5500, Meas CMD = 2.61, LVDT Feedback = 5.41
+05/08/2006 14:03:15 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 14:03:15 OutBit 21 ON
+05/08/2006 14:03:15 OutBit 22 ON
+05/08/2006 14:03:15 Pos =   25.80, Vel =    4.3000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:03:15 Pos =   25.81, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:03:16 OO1=10
+05/08/2006 14:03:16 MonOut 4 ON
+05/08/2006 14:03:16 Pos =   25.82, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:03:16 Pos =   25.82, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:03:22 Pos =   25.84, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:03:22 Pos =   25.84, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:03:22 Pos =   25.84, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:03:22 Pos =   25.84, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:03:24 Current Step = 54 Waiting for RETRACT
+05/08/2006 14:03:24 Follow Through ON
+05/08/2006 14:03:27 Pump On OFF
+05/08/2006 14:03:27 Follow Through OFF
+05/08/2006 14:03:40 O_ISW1=48ffff
+05/08/2006 14:03:40 Current Step = 64 
+05/08/2006 14:03:40 Retract ON
+05/08/2006 14:03:40 Slow Shot OFF
+05/08/2006 14:03:40 Accumulator OFF
+05/08/2006 14:03:40 Current Step = 12 Waiting for START SHOT
+05/08/2006 14:03:40 OutBit 21 OFF
+05/08/2006 14:03:40 OutBit 22 OFF
+05/08/2006 14:03:51 R:20 #Cycle start detected!
+05/08/2006 14:03:51 O_ISW1=43ffff
+05/08/2006 14:03:51 Current Step = 26 Making a SHOT
+05/08/2006 14:03:51 Pump On ON
+05/08/2006 14:03:51 Start Shot ON
+05/08/2006 14:03:51 Retract OFF
+05/08/2006 14:03:51 Slow Shot ON
+05/08/2006 14:03:51 Accumulator ON
+05/08/2006 14:03:51 Pos =    0.70, Vel =    9.5500, Meas CMD = 1.71, LVDT Feedback = 3.62
+05/08/2006 14:03:51 Current Step = 27 Making a SHOT
+05/08/2006 14:03:51 Start Shot OFF
+05/08/2006 14:03:51 Pos =    7.49, Vel =   30.2500, Meas CMD = 2.61, LVDT Feedback = 5.42
+05/08/2006 14:03:52 Current Step = 28 Making a SHOT
+05/08/2006 14:03:52 OutBit 21 ON
+05/08/2006 14:03:52 OutBit 22 ON
+05/08/2006 14:03:52 Pos =   25.20, Vel =  133.3500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:03:53 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 14:03:53 Pos =   25.77, Vel =    0.2000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:03:53 Pos =   25.79, Vel =    0.2000, Meas CMD = 5.1, LVDT Feedback = 9.89
+05/08/2006 14:03:53 OO1=10
+05/08/2006 14:03:54 Pos =   25.80, Vel =    0.2000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:03:54 Pos =   25.80, Vel =    0.2000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:03:54 Pos =   25.80, Vel =    0.2000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:03:55 Pos =   25.80, Vel =    0.2000, Meas CMD = 5.1, LVDT Feedback = 9.9
+05/08/2006 14:03:57 Pos =   25.80, Vel =    0.2000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:04:01 Current Step = 54 Waiting for RETRACT
+05/08/2006 14:04:01 Follow Through ON
+05/08/2006 14:04:05 Pump On OFF
+05/08/2006 14:04:05 Follow Through OFF
+05/08/2006 14:04:18 O_ISW1=48ffff
+05/08/2006 14:04:18 Current Step = 64 
+05/08/2006 14:04:18 Retract ON
+05/08/2006 14:04:18 Slow Shot OFF
+05/08/2006 14:04:18 Accumulator OFF
+05/08/2006 14:04:18 Current Step = 12 Waiting for START SHOT
+05/08/2006 14:04:18 OutBit 21 OFF
+05/08/2006 14:04:18 OutBit 22 OFF
+05/08/2006 14:04:28 R:20 #Cycle start detected!
+05/08/2006 14:04:28 O_ISW1=42ffff
+05/08/2006 14:04:28 Current Step = 25 Making a SHOT
+05/08/2006 14:04:28 Pump On ON
+05/08/2006 14:04:28 Start Shot ON
+05/08/2006 14:04:28 Retract OFF
+05/08/2006 14:04:28 Slow Shot ON
+05/08/2006 14:04:28 Pos =    0.00, Vel =    0.0000, Meas CMD = 1.91, LVDT Feedback = 4.0
+05/08/2006 14:04:29 Current Step = 27 Making a SHOT
+05/08/2006 14:04:29 Start Shot OFF
+05/08/2006 14:04:29 Accumulator ON
+05/08/2006 14:04:29 Pos =    5.49, Vel =   28.1500, Meas CMD = 2.61, LVDT Feedback = 5.4
+05/08/2006 14:04:29 Pos =   20.60, Vel =   29.3000, Meas CMD = 2.61, LVDT Feedback = 5.39
+05/08/2006 14:04:30 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 14:04:30 OutBit 21 ON
+05/08/2006 14:04:30 OutBit 22 ON
+05/08/2006 14:04:30 Pos =   25.75, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:04:30 Pos =   25.76, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:04:31 OO1=10
+05/08/2006 14:04:31 Pos =   25.77, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:04:31 Pos =   25.79, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:04:32 Pos =   25.79, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:04:35 Pos =   25.79, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:04:35 Pos =   25.79, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:04:42 Pump On OFF
+05/08/2006 14:04:55 O_ISW1=48ffff
+05/08/2006 14:04:55 Retract ON
+05/08/2006 14:05:38 Current Step = 76 MANUAL MODE
+05/08/2006 14:05:38 Manual Mode ON
+05/08/2006 14:05:38 Slow Shot OFF
+05/08/2006 14:05:38 Accumulator OFF
+05/08/2006 14:05:39 OutBit 21 OFF
+05/08/2006 14:05:39 OutBit 22 OFF
+05/08/2006 14:16:14 Current Step = 76 MANUAL MODE
+05/08/2006 14:16:14 Status Word 1 = ACTIVE
+05/08/2006 14:22:14 V319_1840
+05/08/2006 14:22:33 OO1=~10
+05/08/2006 14:22:33 R:5#06000000
+05/08/2006 14:22:33 OO1=~10
+05/08/2006 14:22:33 R:6#emc_4_14C , monitor_and_control, interrupt driven control, polled Ethernet, UDP, handshake
+05/08/2006 14:22:33 O_ISW1=68ffff
+05/08/2006 14:22:37 OO1=~10
+05/08/2006 14:22:38 R:5#06000000
+05/08/2006 14:22:38 OO1=~10
+05/08/2006 14:22:38 R:6#emc_4_14C , monitor_and_control, interrupt driven control, polled Ethernet, UDP, handshake
+05/08/2006 14:22:38 O_ISW1=68ffff
+05/08/2006 14:23:10 V319_1840
+05/08/2006 14:23:40 V319_1840
+05/08/2006 14:24:10 V319_1840
+05/08/2006 14:24:40 V319_1840
+05/08/2006 14:25:10 V319_1840
+05/08/2006 14:25:40 V319_1840
+05/08/2006 14:26:10 V319_1840
+05/08/2006 14:26:40 V319_1840
+05/08/2006 14:27:10 V319_1840
+05/08/2006 14:27:38 OO1=~10
+05/08/2006 14:27:38 R:5#06000000
+05/08/2006 14:27:38 OO1=~10
+05/08/2006 14:27:38 R:6#emc_4_14C , monitor_and_control, interrupt driven control, polled Ethernet, UDP, handshake
+05/08/2006 14:27:38 O_ISW1=68ffff
+05/08/2006 14:28:10 V319_1840
+05/08/2006 14:28:40 V319_1840
+05/08/2006 14:29:10 V319_1840
+05/08/2006 14:29:40 V319_1840
+05/08/2006 14:30:10 V319_1840
+05/08/2006 14:30:40 V319_1840
+05/08/2006 14:31:10 V319_1840
+05/08/2006 14:31:40 V319_1840
+05/08/2006 14:32:10 V319_1840
+05/08/2006 14:33:10 V319_1840
+05/08/2006 14:33:40 V319_1840
+05/08/2006 14:34:10 V319_1840
+05/08/2006 14:35:10 V319_1840
+05/08/2006 14:36:10 V319_1840
+05/08/2006 14:37:10 V319_1840
+05/08/2006 14:37:47 OO1=~10
+05/08/2006 14:37:47 R:5#06000000
+05/08/2006 14:37:47 OO1=~10
+05/08/2006 14:37:47 R:6#emc_4_14C , monitor_and_control, interrupt driven control, polled Ethernet, UDP, handshake
+05/08/2006 14:37:47 O_ISW1=68ffff
+05/08/2006 14:37:59 Current Step = 76 MANUAL MODE
+05/08/2006 14:37:59 Status Word 1 = ACTIVE
+05/08/2006 14:37:59 MonOut 4 OFF
+05/08/2006 14:39:24 Current Step = 93 Making a JOG SHOT
+05/08/2006 14:39:24 Pump On ON
+05/08/2006 14:39:24 Retract OFF
+05/08/2006 14:39:24 Jog Shot ON
+05/08/2006 14:39:24 Slow Shot ON
+05/08/2006 14:39:24 O_ISW1=71ffff
+05/08/2006 14:39:24 Current Step = 76 MANUAL MODE
+05/08/2006 14:39:24 Pump On OFF
+05/08/2006 14:39:24 Retract ON
+05/08/2006 14:39:24 Jog Shot OFF
+05/08/2006 14:39:24 Slow Shot OFF
+05/08/2006 14:39:24 O_ISW1=68ffff
+05/08/2006 14:40:14 Current Step = 12 Waiting for START SHOT
+05/08/2006 14:40:14 Manual Mode OFF
+05/08/2006 14:40:23 O_ISW1=40ffff
+05/08/2006 14:40:23 Retract OFF
+05/08/2006 14:40:29 R:20 #Cycle start detected!
+05/08/2006 14:40:29 Current Step = 26 Making a SHOT
+05/08/2006 14:40:29 Pump On ON
+05/08/2006 14:40:29 Slow Shot ON
+05/08/2006 14:40:29 Accumulator ON
+05/08/2006 14:40:29 Pos =    2.88, Vel =    9.0500, Meas CMD = 1.71, LVDT Feedback = 3.29
+05/08/2006 14:40:30 Current Step = 27 Making a SHOT
+05/08/2006 14:40:30 Pos =   15.46, Vel =   30.5000, Meas CMD = 2.61, LVDT Feedback = 5.42
+05/08/2006 14:40:30 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 14:40:30 OutBit 21 ON
+05/08/2006 14:40:30 OutBit 22 ON
+05/08/2006 14:40:30 Pos =   25.89, Vel =    0.5500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:40:31 Pos =   25.90, Vel =    0.5500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:40:31 OO1=10
+05/08/2006 14:40:32 MonOut 4 ON
+05/08/2006 14:40:32 Pos =   25.91, Vel =    0.5500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:40:32 Pos =   25.91, Vel =    0.5500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:40:34 Pos =   25.91, Vel =    0.5500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:40:34 Pos =   25.91, Vel =    0.5500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:40:34 Pos =   25.91, Vel =    0.5500, Meas CMD = 5.11, LVDT Feedback = 9.88
+05/08/2006 14:40:35 Pos =   25.91, Vel =    0.5500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:40:43 Pump On OFF
+05/08/2006 14:40:55 O_ISW1=48ffff
+05/08/2006 14:40:56 Retract ON
+05/08/2006 14:41:12 Current Step = 76 MANUAL MODE
+05/08/2006 14:41:12 Manual Mode ON
+05/08/2006 14:41:12 Slow Shot OFF
+05/08/2006 14:41:12 Accumulator OFF
+05/08/2006 14:41:13 OutBit 21 OFF
+05/08/2006 14:41:13 OutBit 22 OFF
+05/08/2006 14:41:51 OO1=~10
+05/08/2006 14:41:51 R:5#06000000
+05/08/2006 14:41:51 OO1=~10
+05/08/2006 14:41:51 R:6#emc_4_14C , monitor_and_control, interrupt driven control, polled Ethernet, UDP, handshake
+05/08/2006 14:41:51 O_ISW1=68ffff
+05/08/2006 14:42:00 Current Step = 12 Waiting for START SHOT
+05/08/2006 14:42:00 Status Word 1 = ACTIVE
+05/08/2006 14:42:00 Manual Mode OFF
+05/08/2006 14:42:00 MonOut 4 OFF
+05/08/2006 14:42:05 O_ISW1=40ffff
+05/08/2006 14:42:05 Retract OFF
+05/08/2006 14:42:14 R:20 #Cycle start detected!
+05/08/2006 14:42:14 Current Step = 26 Making a SHOT
+05/08/2006 14:42:14 Pump On ON
+05/08/2006 14:42:14 Slow Shot ON
+05/08/2006 14:42:14 Accumulator ON
+05/08/2006 14:42:14 Pos =    2.25, Vel =    8.8000, Meas CMD = 1.71, LVDT Feedback = 3.64
+05/08/2006 14:42:15 Current Step = 27 Making a SHOT
+05/08/2006 14:42:15 Pos =   13.35, Vel =   30.7500, Meas CMD = 2.61, LVDT Feedback = 5.4
+05/08/2006 14:42:15 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 14:42:15 OutBit 21 ON
+05/08/2006 14:42:15 OutBit 22 ON
+05/08/2006 14:42:15 Pos =   25.77, Vel =    0.5500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:42:16 Pos =   25.80, Vel =    0.5500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:42:16 OO1=10
+05/08/2006 14:42:17 MonOut 4 ON
+05/08/2006 14:42:17 Pos =   25.80, Vel =    0.5500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:42:17 Pos =   25.80, Vel =    0.5500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:42:18 Pos =   25.80, Vel =    0.5500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:42:18 Pos =   25.80, Vel =    0.5500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:42:21 Pos =   25.81, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:42:21 Pos =   25.81, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:42:28 Pump On OFF
+05/08/2006 14:42:40 O_ISW1=48ffff
+05/08/2006 14:42:41 Retract ON
+05/08/2006 14:42:49 Current Step = 76 MANUAL MODE
+05/08/2006 14:42:49 Manual Mode ON
+05/08/2006 14:42:49 Slow Shot OFF
+05/08/2006 14:42:49 Accumulator OFF
+05/08/2006 14:42:50 OutBit 21 OFF
+05/08/2006 14:42:50 OutBit 22 OFF
+05/08/2006 14:46:51 Current Step = 12 Waiting for START SHOT
+05/08/2006 14:46:51 Manual Mode OFF
+05/08/2006 14:47:00 Retract OFF
+05/08/2006 14:47:00 O_ISW1=40ffff
+05/08/2006 14:47:21 R:20 #Cycle start detected!
+05/08/2006 14:47:21 Current Step = 26 Making a SHOT
+05/08/2006 14:47:21 Pump On ON
+05/08/2006 14:47:21 Start Shot ON
+05/08/2006 14:47:21 Slow Shot ON
+05/08/2006 14:47:21 Accumulator ON
+05/08/2006 14:47:21 Pos =    1.06, Vel =   13.4500, Meas CMD = 1.71, LVDT Feedback = 3.61
+05/08/2006 14:47:22 Current Step = 27 Making a SHOT
+05/08/2006 14:47:22 Start Shot OFF
+05/08/2006 14:47:22 Pos =    9.36, Vel =   30.8000, Meas CMD = 2.61, LVDT Feedback = 5.41
+05/08/2006 14:47:22 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 14:47:22 OutBit 21 ON
+05/08/2006 14:47:22 OutBit 22 ON
+05/08/2006 14:47:22 Pos =   25.66, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:47:23 Pos =   25.71, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.88
+05/08/2006 14:47:23 OO1=10
+05/08/2006 14:47:24 Pos =   25.73, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:47:24 Pos =   25.73, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:47:25 Pos =   25.74, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:47:25 Pos =   25.74, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 14:47:26 Pos =   25.74, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:47:28 Pos =   25.74, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 14:47:35 Pump On OFF
+05/08/2006 14:47:48 Retract ON
+05/08/2006 14:47:48 O_ISW1=48ffff
+05/08/2006 14:48:01 Current Step = 76 MANUAL MODE
+05/08/2006 14:48:01 Manual Mode ON
+05/08/2006 14:48:01 Slow Shot OFF
+05/08/2006 14:48:01 Accumulator OFF
+05/08/2006 14:48:03 OutBit 21 OFF
+05/08/2006 14:48:03 OutBit 22 OFF
+05/08/2006 14:51:52 OO1=~10
+05/08/2006 14:51:52 R:5#06000000
+05/08/2006 14:51:52 OO1=~10
+05/08/2006 14:51:52 R:6#emc_4_14C , monitor_and_control, interrupt driven control, polled Ethernet, UDP, handshake
+05/08/2006 14:51:52 O_ISW1=68ffff
+05/08/2006 14:51:52 Current Step = 2 Startup
+05/08/2006 14:51:52 Status Word 1 = UNKNOWN
+05/08/2006 14:51:52 MonOut 4 OFF
+05/08/2006 14:51:52 Fault OFF
+05/08/2006 14:51:54 Current Step = 76 MANUAL MODE
+05/08/2006 14:51:54 Status Word 1 = ACTIVE
+05/08/2006 14:51:54 Fault ON
+05/08/2006 15:11:14 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:11:14 Manual Mode OFF
+05/08/2006 15:11:23 O_ISW1=40ffff
+05/08/2006 15:11:23 Retract OFF
+05/08/2006 15:11:40 R:20 #Cycle start detected!
+05/08/2006 15:11:40 Current Step = 26 Making a SHOT
+05/08/2006 15:11:40 Pump On ON
+05/08/2006 15:11:40 Start Shot ON
+05/08/2006 15:11:40 Slow Shot ON
+05/08/2006 15:11:40 Accumulator ON
+05/08/2006 15:11:40 Pos =    0.48, Vel =   31.7000, Meas CMD = 1.71, LVDT Feedback = 3.63
+05/08/2006 15:11:41 Current Step = 27 Making a SHOT
+05/08/2006 15:11:41 Start Shot OFF
+05/08/2006 15:11:41 Pos =    7.16, Vel =   31.1000, Meas CMD = 2.61, LVDT Feedback = 5.41
+05/08/2006 15:11:41 Current Step = 28 Making a SHOT
+05/08/2006 15:11:41 OutBit 21 ON
+05/08/2006 15:11:41 OutBit 22 ON
+05/08/2006 15:11:41 Pos =   25.01, Vel =  131.9500, Meas CMD = 5.1, LVDT Feedback = 9.89
+05/08/2006 15:11:42 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:11:42 Pos =   25.80, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:11:42 Pos =   25.80, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:11:43 OO1=10
+05/08/2006 15:11:43 MonOut 4 ON
+05/08/2006 15:11:43 Pos =   25.81, Vel =    0.1500, Meas CMD = 5.1, LVDT Feedback = 9.89
+05/08/2006 15:11:43 Pos =   25.81, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:11:44 Pos =   25.81, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:11:44 Pos =   25.81, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:11:45 Pos =   25.81, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:11:51 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:11:51 Follow Through ON
+05/08/2006 15:11:54 Pump On OFF
+05/08/2006 15:11:54 Follow Through OFF
+05/08/2006 15:12:07 O_ISW1=48ffff
+05/08/2006 15:12:07 Current Step = 64 
+05/08/2006 15:12:07 Retract ON
+05/08/2006 15:12:07 Slow Shot OFF
+05/08/2006 15:12:07 Accumulator OFF
+05/08/2006 15:12:08 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:12:08 OutBit 21 OFF
+05/08/2006 15:12:08 OutBit 22 OFF
+05/08/2006 15:12:18 R:20 #Cycle start detected!
+05/08/2006 15:12:18 O_ISW1=42ffff
+05/08/2006 15:12:18 Current Step = 26 Making a SHOT
+05/08/2006 15:12:18 Start Shot ON
+05/08/2006 15:12:18 Retract OFF
+05/08/2006 15:12:18 Slow Shot ON
+05/08/2006 15:12:18 Accumulator ON
+05/08/2006 15:12:18 Pos =    0.00, Vel =    0.0000, Meas CMD = 1.71, LVDT Feedback = 3.84
+05/08/2006 15:12:18 Current Step = 27 Making a SHOT
+05/08/2006 15:12:18 Pump On ON
+05/08/2006 15:12:18 Start Shot OFF
+05/08/2006 15:12:18 Pos =    6.06, Vel =   30.4000, Meas CMD = 2.61, LVDT Feedback = 5.42
+05/08/2006 15:12:19 Current Step = 28 Making a SHOT
+05/08/2006 15:12:19 Pos =   21.31, Vel =   29.4500, Meas CMD = 5.11, LVDT Feedback = 5.41
+05/08/2006 15:12:19 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:12:19 OutBit 21 ON
+05/08/2006 15:12:19 OutBit 22 ON
+05/08/2006 15:12:19 Pos =   25.80, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:12:20 Pos =   25.80, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:12:20 OO1=10
+05/08/2006 15:12:20 Pos =   25.81, Vel =    0.0500, Meas CMD = 5.1, LVDT Feedback = 9.89
+05/08/2006 15:12:21 Pos =   25.82, Vel =    0.0500, Meas CMD = 5.12, LVDT Feedback = 9.9
+05/08/2006 15:12:21 Pos =   25.82, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:12:22 Pos =   25.82, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:12:24 Pos =   25.82, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:12:31 Pump On OFF
+05/08/2006 15:12:44 O_ISW1=48ffff
+05/08/2006 15:12:45 Retract ON
+05/08/2006 15:13:13 Current Step = 76 MANUAL MODE
+05/08/2006 15:13:13 Manual Mode ON
+05/08/2006 15:13:13 Slow Shot OFF
+05/08/2006 15:13:13 Accumulator OFF
+05/08/2006 15:13:14 OutBit 21 OFF
+05/08/2006 15:13:14 OutBit 22 OFF
+05/08/2006 15:14:18 O_ISW1=71ffff
+05/08/2006 15:14:18 Current Step = 93 Making a JOG SHOT
+05/08/2006 15:14:18 Pump On ON
+05/08/2006 15:14:18 Retract OFF
+05/08/2006 15:14:18 Jog Shot ON
+05/08/2006 15:14:18 Slow Shot ON
+05/08/2006 15:14:18 O_ISW1=68ffff
+05/08/2006 15:14:18 Current Step = 76 MANUAL MODE
+05/08/2006 15:14:18 Pump On OFF
+05/08/2006 15:14:18 Retract ON
+05/08/2006 15:14:18 Jog Shot OFF
+05/08/2006 15:14:18 Slow Shot OFF
+05/08/2006 15:14:47 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:14:47 Manual Mode OFF
+05/08/2006 15:14:56 O_ISW1=40ffff
+05/08/2006 15:14:56 Retract OFF
+05/08/2006 15:15:04 Start Shot ON
+05/08/2006 15:15:04 R:20 #Cycle start detected!
+05/08/2006 15:15:04 Current Step = 27 Making a SHOT
+05/08/2006 15:15:04 Pump On ON
+05/08/2006 15:15:04 Start Shot OFF
+05/08/2006 15:15:04 Slow Shot ON
+05/08/2006 15:15:04 Accumulator ON
+05/08/2006 15:15:04 Pos =    4.99, Vel =   33.1500, Meas CMD = 2.61, LVDT Feedback = 5.4
+05/08/2006 15:15:05 Pos =   20.43, Vel =   30.2500, Meas CMD = 2.61, LVDT Feedback = 5.41
+05/08/2006 15:15:05 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:15:05 OutBit 21 ON
+05/08/2006 15:15:05 OutBit 22 ON
+05/08/2006 15:15:05 Pos =   25.71, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:15:06 Pos =   25.73, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.88
+05/08/2006 15:15:06 OO1=10
+05/08/2006 15:15:07 Pos =   25.74, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:15:07 Pos =   25.74, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:15:08 Pos =   25.74, Vel =    0.0500, Meas CMD = 5.1, LVDT Feedback = 9.89
+05/08/2006 15:15:08 Pos =   25.74, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:15:09 Pos =   25.74, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:15:11 Pos =   25.75, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.88
+05/08/2006 15:15:18 Pump On OFF
+05/08/2006 15:15:30 O_ISW1=48ffff
+05/08/2006 15:15:31 Retract ON
+05/08/2006 15:15:46 Current Step = 76 MANUAL MODE
+05/08/2006 15:15:46 Manual Mode ON
+05/08/2006 15:15:46 Slow Shot OFF
+05/08/2006 15:15:46 Accumulator OFF
+05/08/2006 15:15:48 OutBit 21 OFF
+05/08/2006 15:15:48 OutBit 22 OFF
+05/08/2006 15:15:56 Current Step = 6 Waiting for AT HOME
+05/08/2006 15:15:56 Manual Mode OFF
+05/08/2006 15:15:56 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:16:05 O_ISW1=40ffff
+05/08/2006 15:16:05 Retract OFF
+05/08/2006 15:16:13 R:20 #Cycle start detected!
+05/08/2006 15:16:14 Current Step = 26 Making a SHOT
+05/08/2006 15:16:14 Pump On ON
+05/08/2006 15:16:14 Slow Shot ON
+05/08/2006 15:16:14 Accumulator ON
+05/08/2006 15:16:14 Pos =    2.92, Vel =    9.2500, Meas CMD = 1.71, LVDT Feedback = 3.63
+05/08/2006 15:16:14 Current Step = 27 Making a SHOT
+05/08/2006 15:16:14 Pos =   15.74, Vel =   30.6500, Meas CMD = 2.61, LVDT Feedback = 5.41
+05/08/2006 15:16:15 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:16:15 OutBit 21 ON
+05/08/2006 15:16:15 OutBit 22 ON
+05/08/2006 15:16:15 Pos =   25.71, Vel =    3.9000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:16:15 Pos =   25.74, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:16:16 OO1=10
+05/08/2006 15:16:16 Pos =   25.76, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:16:17 Pos =   25.76, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:16:20 Pos =   25.76, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:16:20 Pos =   25.76, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:16:20 Pos =   25.76, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:16:20 Pos =   25.76, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:16:24 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:16:24 Follow Through ON
+05/08/2006 15:16:27 Pump On OFF
+05/08/2006 15:16:27 Follow Through OFF
+05/08/2006 15:16:40 O_ISW1=48ffff
+05/08/2006 15:16:40 Current Step = 64 
+05/08/2006 15:16:40 Retract ON
+05/08/2006 15:16:40 Slow Shot OFF
+05/08/2006 15:16:40 Accumulator OFF
+05/08/2006 15:16:41 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:16:41 OutBit 21 OFF
+05/08/2006 15:16:41 OutBit 22 OFF
+05/08/2006 15:16:51 R:20 #Cycle start detected!
+05/08/2006 15:16:51 O_ISW1=43ffff
+05/08/2006 15:16:51 Current Step = 26 Making a SHOT
+05/08/2006 15:16:51 Pump On ON
+05/08/2006 15:16:51 Retract OFF
+05/08/2006 15:16:51 Slow Shot ON
+05/08/2006 15:16:51 Accumulator ON
+05/08/2006 15:16:51 Pos =    3.33, Vel =    9.2000, Meas CMD = 1.71, LVDT Feedback = 3.61
+05/08/2006 15:16:52 Current Step = 27 Making a SHOT
+05/08/2006 15:16:52 Pos =   16.98, Vel =   30.3500, Meas CMD = 2.61, LVDT Feedback = 5.41
+05/08/2006 15:16:52 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:16:52 OutBit 21 ON
+05/08/2006 15:16:52 OutBit 22 ON
+05/08/2006 15:16:52 Pos =   25.70, Vel =    3.5000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:16:53 Pos =   25.73, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:16:53 OO1=10
+05/08/2006 15:16:54 Pos =   25.74, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:16:54 Pos =   25.75, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:16:55 Pos =   25.75, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:16:55 Pos =   25.75, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:16:58 Pos =   25.75, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:16:58 Pos =   25.75, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:17:05 Pump On OFF
+05/08/2006 15:17:18 O_ISW1=48ffff
+05/08/2006 15:17:18 Retract ON
+05/08/2006 15:17:36 Current Step = 76 MANUAL MODE
+05/08/2006 15:17:36 Manual Mode ON
+05/08/2006 15:17:36 Slow Shot OFF
+05/08/2006 15:17:36 Accumulator OFF
+05/08/2006 15:17:38 OutBit 21 OFF
+05/08/2006 15:17:38 OutBit 22 OFF
+05/08/2006 15:18:08 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:18:08 Manual Mode OFF
+05/08/2006 15:18:17 O_ISW1=40ffff
+05/08/2006 15:18:17 Retract OFF
+05/08/2006 15:18:25 R:20 #Cycle start detected!
+05/08/2006 15:18:25 Current Step = 26 Making a SHOT
+05/08/2006 15:18:25 Start Shot ON
+05/08/2006 15:18:25 Slow Shot ON
+05/08/2006 15:18:25 Accumulator ON
+05/08/2006 15:18:25 Pos =    0.00, Vel =    0.0000, Meas CMD = 1.71, LVDT Feedback = 0.95
+05/08/2006 15:18:26 Current Step = 27 Making a SHOT
+05/08/2006 15:18:26 Pump On ON
+05/08/2006 15:18:26 Start Shot OFF
+05/08/2006 15:18:26 Pos =    5.26, Vel =   32.4000, Meas CMD = 2.61, LVDT Feedback = 5.41
+05/08/2006 15:18:26 Pos =   20.26, Vel =   30.0000, Meas CMD = 2.61, LVDT Feedback = 5.41
+05/08/2006 15:18:27 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:18:27 OutBit 21 ON
+05/08/2006 15:18:27 OutBit 22 ON
+05/08/2006 15:18:27 Pos =   25.69, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:18:27 Pos =   25.70, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:18:28 OO1=10
+05/08/2006 15:18:28 Pos =   25.71, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:18:29 Pos =   25.71, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:18:29 Pos =   25.71, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:18:30 Pos =   25.71, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:18:32 Pos =   25.71, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:18:36 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:18:36 Follow Through ON
+05/08/2006 15:18:39 Pump On OFF
+05/08/2006 15:18:39 Follow Through OFF
+05/08/2006 15:18:52 O_ISW1=48ffff
+05/08/2006 15:18:52 Current Step = 64 
+05/08/2006 15:18:52 Retract ON
+05/08/2006 15:18:52 Slow Shot OFF
+05/08/2006 15:18:52 Accumulator OFF
+05/08/2006 15:18:53 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:18:53 OutBit 21 OFF
+05/08/2006 15:18:53 OutBit 22 OFF
+05/08/2006 15:19:03 R:20 #Cycle start detected!
+05/08/2006 15:19:03 O_ISW1=43ffff
+05/08/2006 15:19:03 Current Step = 26 Making a SHOT
+05/08/2006 15:19:03 Pump On ON
+05/08/2006 15:19:03 Retract OFF
+05/08/2006 15:19:03 Slow Shot ON
+05/08/2006 15:19:03 Accumulator ON
+05/08/2006 15:19:03 Pos =    3.20, Vel =    9.0000, Meas CMD = 1.71, LVDT Feedback = 3.6
+05/08/2006 15:19:04 Current Step = 27 Making a SHOT
+05/08/2006 15:19:04 Pos =   16.55, Vel =   30.3500, Meas CMD = 2.61, LVDT Feedback = 5.37
+05/08/2006 15:19:04 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:19:04 OutBit 21 ON
+05/08/2006 15:19:04 OutBit 22 ON
+05/08/2006 15:19:04 Pos =   25.68, Vel =    0.3000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:19:05 Pos =   25.70, Vel =    0.3000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:19:05 OO1=10
+05/08/2006 15:19:06 Pos =   25.71, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:19:06 Pos =   25.71, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:19:09 Pos =   25.73, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:19:09 Pos =   25.73, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:19:09 Pos =   25.73, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:19:09 Pos =   25.73, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:19:17 Pump On OFF
+05/08/2006 15:19:30 O_ISW1=48ffff
+05/08/2006 15:19:30 Retract ON
+05/08/2006 15:19:37 Current Step = 76 MANUAL MODE
+05/08/2006 15:19:37 Manual Mode ON
+05/08/2006 15:19:37 Slow Shot OFF
+05/08/2006 15:19:37 Accumulator OFF
+05/08/2006 15:19:38 O_ISW1=71ffff
+05/08/2006 15:19:38 Current Step = 93 Making a JOG SHOT
+05/08/2006 15:19:38 Pump On ON
+05/08/2006 15:19:38 Retract OFF
+05/08/2006 15:19:38 Jog Shot ON
+05/08/2006 15:19:38 Slow Shot ON
+05/08/2006 15:19:39 O_ISW1=68ffff
+05/08/2006 15:19:39 Current Step = 76 MANUAL MODE
+05/08/2006 15:19:39 Pump On OFF
+05/08/2006 15:19:39 Retract ON
+05/08/2006 15:19:39 Jog Shot OFF
+05/08/2006 15:19:39 Slow Shot OFF
+05/08/2006 15:19:46 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:19:46 Manual Mode OFF
+05/08/2006 15:19:55 Retract OFF
+05/08/2006 15:19:55 O_ISW1=40ffff
+05/08/2006 15:20:06 R:20 #Cycle start detected!
+05/08/2006 15:20:07 Current Step = 27 Making a SHOT
+05/08/2006 15:20:07 Pump On ON
+05/08/2006 15:20:07 Slow Shot ON
+05/08/2006 15:20:07 Accumulator ON
+05/08/2006 15:20:07 OutBit 21 OFF
+05/08/2006 15:20:07 OutBit 22 OFF
+05/08/2006 15:20:07 Pos =    4.56, Vel =   37.0500, Meas CMD = 2.61, LVDT Feedback = 5.37
+05/08/2006 15:20:07 Pos =   19.94, Vel =   29.9000, Meas CMD = 2.61, LVDT Feedback = 5.42
+05/08/2006 15:20:08 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:20:08 OutBit 21 ON
+05/08/2006 15:20:08 OutBit 22 ON
+05/08/2006 15:20:08 Pos =   25.60, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:20:08 Pos =   25.63, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:20:09 OO1=10
+05/08/2006 15:20:09 Pos =   25.64, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:20:10 Pos =   25.64, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:20:10 Pos =   25.65, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:20:11 Pos =   25.65, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:20:13 Pos =   25.65, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:20:13 Pos =   25.65, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:20:16 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:20:16 Follow Through ON
+05/08/2006 15:20:19 Pump On OFF
+05/08/2006 15:20:19 Follow Through OFF
+05/08/2006 15:20:32 O_ISW1=48ffff
+05/08/2006 15:20:32 Current Step = 64 
+05/08/2006 15:20:32 Retract ON
+05/08/2006 15:20:32 Slow Shot OFF
+05/08/2006 15:20:32 Accumulator OFF
+05/08/2006 15:20:33 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:20:33 OutBit 21 OFF
+05/08/2006 15:20:33 OutBit 22 OFF
+05/08/2006 15:20:43 R:20 #Cycle start detected!
+05/08/2006 15:20:43 O_ISW1=43ffff
+05/08/2006 15:20:43 Current Step = 27 Making a SHOT
+05/08/2006 15:20:43 Pump On ON
+05/08/2006 15:20:43 Retract OFF
+05/08/2006 15:20:43 Slow Shot ON
+05/08/2006 15:20:43 Accumulator ON
+05/08/2006 15:20:43 Pos =    4.09, Vel =    9.7500, Meas CMD = 2.61, LVDT Feedback = 4.97
+05/08/2006 15:20:44 Pos =   19.51, Vel =   30.4000, Meas CMD = 2.61, LVDT Feedback = 5.39
+05/08/2006 15:20:44 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:20:44 OutBit 21 ON
+05/08/2006 15:20:44 OutBit 22 ON
+05/08/2006 15:20:44 Pos =   25.68, Vel =    0.2500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:20:45 Pos =   25.70, Vel =    0.2500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:20:45 OO1=10
+05/08/2006 15:20:46 Pos =   25.70, Vel =    0.2500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:20:46 Pos =   25.71, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.91
+05/08/2006 15:20:49 Pos =   25.71, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:20:49 Pos =   25.73, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:20:49 Pos =   25.73, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:20:49 Pos =   25.73, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:20:53 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:20:53 Follow Through ON
+05/08/2006 15:20:57 Pump On OFF
+05/08/2006 15:20:57 Follow Through OFF
+05/08/2006 15:21:09 O_ISW1=48ffff
+05/08/2006 15:21:10 Current Step = 64 
+05/08/2006 15:21:10 Retract ON
+05/08/2006 15:21:10 Slow Shot OFF
+05/08/2006 15:21:10 Accumulator OFF
+05/08/2006 15:21:10 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:21:10 OutBit 21 OFF
+05/08/2006 15:21:10 OutBit 22 OFF
+05/08/2006 15:21:21 R:20 #Cycle start detected!
+05/08/2006 15:21:21 O_ISW1=43ffff
+05/08/2006 15:21:21 Current Step = 26 Making a SHOT
+05/08/2006 15:21:21 Pump On ON
+05/08/2006 15:21:21 Retract OFF
+05/08/2006 15:21:21 Slow Shot ON
+05/08/2006 15:21:21 Accumulator ON
+05/08/2006 15:21:21 Pos =    2.25, Vel =    8.7000, Meas CMD = 1.72, LVDT Feedback = 3.59
+05/08/2006 15:21:21 Current Step = 27 Making a SHOT
+05/08/2006 15:21:21 Pos =   13.49, Vel =   30.7000, Meas CMD = 2.61, LVDT Feedback = 5.39
+05/08/2006 15:21:22 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:21:22 OutBit 21 ON
+05/08/2006 15:21:22 OutBit 22 ON
+05/08/2006 15:21:22 Pos =   25.65, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:21:22 Pos =   25.68, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:21:23 OO1=10
+05/08/2006 15:21:23 Pos =   25.69, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:21:24 Pos =   25.70, Vel =    0.1000, Meas CMD = 5.1, LVDT Feedback = 9.89
+05/08/2006 15:21:24 Pos =   25.70, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:21:25 Pos =   25.70, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:21:27 Pos =   25.70, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:21:27 Pos =   25.70, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:21:31 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:21:31 Follow Through ON
+05/08/2006 15:21:34 Pump On OFF
+05/08/2006 15:21:34 Follow Through OFF
+05/08/2006 15:21:47 O_ISW1=48ffff
+05/08/2006 15:21:47 Current Step = 64 
+05/08/2006 15:21:47 Retract ON
+05/08/2006 15:21:47 Slow Shot OFF
+05/08/2006 15:21:47 Accumulator OFF
+05/08/2006 15:21:48 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:21:48 OutBit 21 OFF
+05/08/2006 15:21:48 OutBit 22 OFF
+05/08/2006 15:21:58 R:20 #Cycle start detected!
+05/08/2006 15:21:58 O_ISW1=43ffff
+05/08/2006 15:21:58 Current Step = 26 Making a SHOT
+05/08/2006 15:21:58 Pump On ON
+05/08/2006 15:21:58 Start Shot ON
+05/08/2006 15:21:58 Retract OFF
+05/08/2006 15:21:58 Slow Shot ON
+05/08/2006 15:21:58 Accumulator ON
+05/08/2006 15:21:58 Pos =    1.40, Vel =   12.6500, Meas CMD = 1.72, LVDT Feedback = 3.61
+05/08/2006 15:21:59 Current Step = 27 Making a SHOT
+05/08/2006 15:21:59 Start Shot OFF
+05/08/2006 15:21:59 Pos =   10.45, Vel =   30.3500, Meas CMD = 2.61, LVDT Feedback = 5.39
+05/08/2006 15:21:59 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:21:59 OutBit 21 ON
+05/08/2006 15:21:59 OutBit 22 ON
+05/08/2006 15:21:59 Pos =   25.60, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.88
+05/08/2006 15:22:00 Pos =   25.64, Vel =    0.2000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:22:01 OO1=10
+05/08/2006 15:22:01 Pos =   25.65, Vel =    0.2000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:22:01 Pos =   25.65, Vel =    0.2000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:22:02 Pos =   25.66, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:22:04 Pos =   25.66, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:22:04 Pos =   25.66, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:22:04 Pos =   25.66, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:22:08 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:22:08 Follow Through ON
+05/08/2006 15:22:12 Pump On OFF
+05/08/2006 15:22:12 Follow Through OFF
+05/08/2006 15:22:25 Current Step = 64 
+05/08/2006 15:22:25 Retract ON
+05/08/2006 15:22:25 Slow Shot OFF
+05/08/2006 15:22:25 Accumulator OFF
+05/08/2006 15:22:25 O_ISW1=48ffff
+05/08/2006 15:22:25 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:22:25 OutBit 21 OFF
+05/08/2006 15:22:25 OutBit 22 OFF
+05/08/2006 15:22:36 R:20 #Cycle start detected!
+05/08/2006 15:22:36 Current Step = 26 Making a SHOT
+05/08/2006 15:22:36 Start Shot ON
+05/08/2006 15:22:36 Retract OFF
+05/08/2006 15:22:36 Slow Shot ON
+05/08/2006 15:22:36 Accumulator ON
+05/08/2006 15:22:36 Pos =    0.00, Vel =    0.0000, Meas CMD = 1.71, LVDT Feedback = 3.59
+05/08/2006 15:22:36 O_ISW1=42ffff
+05/08/2006 15:22:36 Current Step = 27 Making a SHOT
+05/08/2006 15:22:36 Pump On ON
+05/08/2006 15:22:36 Start Shot OFF
+05/08/2006 15:22:36 Pos =    6.16, Vel =   29.3500, Meas CMD = 2.61, LVDT Feedback = 5.41
+05/08/2006 15:22:37 Current Step = 28 Making a SHOT
+05/08/2006 15:22:37 Pos =   21.32, Vel =   30.0500, Meas CMD = 5.11, LVDT Feedback = 5.4
+05/08/2006 15:22:37 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:22:37 OutBit 21 ON
+05/08/2006 15:22:37 OutBit 22 ON
+05/08/2006 15:22:37 Pos =   25.65, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:22:38 Pos =   25.66, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:22:38 OO1=10
+05/08/2006 15:22:38 Pos =   25.68, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:22:39 Pos =   25.69, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:22:39 Pos =   25.69, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:22:42 Pos =   25.69, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:22:42 Pos =   25.69, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:22:46 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:22:46 Follow Through ON
+05/08/2006 15:22:49 Pump On OFF
+05/08/2006 15:22:49 Follow Through OFF
+05/08/2006 15:23:02 O_ISW1=48ffff
+05/08/2006 15:23:03 Current Step = 64 
+05/08/2006 15:23:03 Retract ON
+05/08/2006 15:23:03 Slow Shot OFF
+05/08/2006 15:23:03 Accumulator OFF
+05/08/2006 15:23:03 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:23:03 OutBit 21 OFF
+05/08/2006 15:23:03 OutBit 22 OFF
+05/08/2006 15:23:13 R:20 #Cycle start detected!
+05/08/2006 15:23:13 O_ISW1=43ffff
+05/08/2006 15:23:14 Current Step = 27 Making a SHOT
+05/08/2006 15:23:14 Pump On ON
+05/08/2006 15:23:14 Retract OFF
+05/08/2006 15:23:14 Slow Shot ON
+05/08/2006 15:23:14 Accumulator ON
+05/08/2006 15:23:14 Pos =    4.00, Vel =    9.2500, Meas CMD = 2.61, LVDT Feedback = 3.59
+05/08/2006 15:23:14 Pos =   19.25, Vel =   30.2500, Meas CMD = 2.61, LVDT Feedback = 5.41
+05/08/2006 15:23:15 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:23:15 OutBit 21 ON
+05/08/2006 15:23:15 OutBit 22 ON
+05/08/2006 15:23:15 Pos =   25.60, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:23:15 Pos =   25.61, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:23:16 OO1=10
+05/08/2006 15:23:16 Pos =   25.64, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:23:17 Pos =   25.64, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:23:17 Pos =   25.64, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:23:18 Pos =   25.64, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:23:20 Pos =   25.64, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:23:20 Pos =   25.65, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:23:24 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:23:24 Follow Through ON
+05/08/2006 15:23:27 Pump On OFF
+05/08/2006 15:23:27 Follow Through OFF
+05/08/2006 15:23:40 O_ISW1=48ffff
+05/08/2006 15:23:40 Current Step = 64 
+05/08/2006 15:23:40 Retract ON
+05/08/2006 15:23:40 Slow Shot OFF
+05/08/2006 15:23:40 Accumulator OFF
+05/08/2006 15:23:41 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:23:41 OutBit 21 OFF
+05/08/2006 15:23:41 OutBit 22 OFF
+05/08/2006 15:23:51 R:20 #Cycle start detected!
+05/08/2006 15:23:51 O_ISW1=43ffff
+05/08/2006 15:23:51 Current Step = 26 Making a SHOT
+05/08/2006 15:23:51 Pump On ON
+05/08/2006 15:23:51 Retract OFF
+05/08/2006 15:23:51 Slow Shot ON
+05/08/2006 15:23:51 Accumulator ON
+05/08/2006 15:23:51 Pos =    3.04, Vel =    8.9000, Meas CMD = 1.72, LVDT Feedback = 3.6
+05/08/2006 15:23:52 Current Step = 27 Making a SHOT
+05/08/2006 15:23:52 Pos =   16.00, Vel =   30.2500, Meas CMD = 2.61, LVDT Feedback = 5.4
+05/08/2006 15:23:52 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:23:52 OutBit 21 ON
+05/08/2006 15:23:52 OutBit 22 ON
+05/08/2006 15:23:52 Pos =   25.57, Vel =    0.4500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:23:53 Pos =   25.60, Vel =    0.4500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:23:53 OO1=10
+05/08/2006 15:23:54 Pos =   25.61, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:23:54 Pos =   25.61, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:23:55 Pos =   25.61, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:23:55 Pos =   25.63, Vel =    0.0000, Meas CMD = 5.1, LVDT Feedback = 9.9
+05/08/2006 15:23:58 Pos =   25.63, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:23:58 Pos =   25.63, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:24:01 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:24:01 Follow Through ON
+05/08/2006 15:24:05 Pump On OFF
+05/08/2006 15:24:05 Follow Through OFF
+05/08/2006 15:24:18 O_ISW1=48ffff
+05/08/2006 15:24:18 Current Step = 64 
+05/08/2006 15:24:18 Retract ON
+05/08/2006 15:24:18 Slow Shot OFF
+05/08/2006 15:24:18 Accumulator OFF
+05/08/2006 15:24:18 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:24:18 OutBit 21 OFF
+05/08/2006 15:24:18 OutBit 22 OFF
+05/08/2006 15:24:29 R:20 #Cycle start detected!
+05/08/2006 15:24:29 O_ISW1=43ffff
+05/08/2006 15:24:29 Current Step = 26 Making a SHOT
+05/08/2006 15:24:29 Pump On ON
+05/08/2006 15:24:29 Start Shot ON
+05/08/2006 15:24:29 Retract OFF
+05/08/2006 15:24:29 Slow Shot ON
+05/08/2006 15:24:29 Accumulator ON
+05/08/2006 15:24:29 Pos =    1.38, Vel =   12.2000, Meas CMD = 1.71, LVDT Feedback = 3.62
+05/08/2006 15:24:29 Current Step = 27 Making a SHOT
+05/08/2006 15:24:29 Start Shot OFF
+05/08/2006 15:24:29 Pos =   10.38, Vel =   30.7500, Meas CMD = 2.61, LVDT Feedback = 5.43
+05/08/2006 15:24:30 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:24:30 OutBit 21 ON
+05/08/2006 15:24:30 OutBit 22 ON
+05/08/2006 15:24:30 Pos =   25.54, Vel =    5.1500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:24:30 Pos =   25.57, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:24:31 OO1=10
+05/08/2006 15:24:31 Pos =   25.60, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:24:32 Pos =   25.60, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:24:33 Pos =   25.60, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:24:34 Pos =   25.60, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:24:35 Pos =   25.60, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:24:35 Pos =   25.60, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:24:39 Follow Through ON
+05/08/2006 15:24:39 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:24:42 Pump On OFF
+05/08/2006 15:24:42 Follow Through OFF
+05/08/2006 15:24:55 Current Step = 64 
+05/08/2006 15:24:55 Retract ON
+05/08/2006 15:24:55 Slow Shot OFF
+05/08/2006 15:24:55 Accumulator OFF
+05/08/2006 15:24:55 O_ISW1=48ffff
+05/08/2006 15:24:56 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:24:56 OutBit 21 OFF
+05/08/2006 15:24:56 OutBit 22 OFF
+05/08/2006 15:25:06 R:20 #Cycle start detected!
+05/08/2006 15:25:06 Current Step = 26 Making a SHOT
+05/08/2006 15:25:06 Start Shot ON
+05/08/2006 15:25:06 Retract OFF
+05/08/2006 15:25:06 Slow Shot ON
+05/08/2006 15:25:06 Accumulator ON
+05/08/2006 15:25:06 Pos =    0.00, Vel =    0.0000, Meas CMD = 1.71, LVDT Feedback = 3.94
+05/08/2006 15:25:06 O_ISW1=42ffff
+05/08/2006 15:25:07 Current Step = 27 Making a SHOT
+05/08/2006 15:25:07 Pump On ON
+05/08/2006 15:25:07 Start Shot OFF
+05/08/2006 15:25:07 Pos =    6.05, Vel =   30.1500, Meas CMD = 2.61, LVDT Feedback = 5.42
+05/08/2006 15:25:07 Current Step = 28 Making a SHOT
+05/08/2006 15:25:07 Pos =   21.35, Vel =   30.0500, Meas CMD = 5.11, LVDT Feedback = 5.43
+05/08/2006 15:25:08 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:25:08 OutBit 21 ON
+05/08/2006 15:25:08 OutBit 22 ON
+05/08/2006 15:25:08 Pos =   25.60, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:25:08 Pos =   25.61, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:25:09 OO1=10
+05/08/2006 15:25:09 Pos =   25.63, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:25:09 Pos =   25.63, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:25:10 Pos =   25.64, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:25:12 Pos =   25.64, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:25:12 Pos =   25.64, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:25:17 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:25:17 Follow Through ON
+05/08/2006 15:25:20 Pump On OFF
+05/08/2006 15:25:20 Follow Through OFF
+05/08/2006 15:25:33 O_ISW1=48ffff
+05/08/2006 15:25:33 Current Step = 64 
+05/08/2006 15:25:33 Retract ON
+05/08/2006 15:25:33 Slow Shot OFF
+05/08/2006 15:25:33 Accumulator OFF
+05/08/2006 15:25:34 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:25:34 OutBit 21 OFF
+05/08/2006 15:25:34 OutBit 22 OFF
+05/08/2006 15:25:44 R:20 #Cycle start detected!
+05/08/2006 15:25:44 O_ISW1=42ffff
+05/08/2006 15:25:44 Current Step = 26 Making a SHOT
+05/08/2006 15:25:44 Pump On ON
+05/08/2006 15:25:44 Retract OFF
+05/08/2006 15:25:44 Slow Shot ON
+05/08/2006 15:25:44 Accumulator ON
+05/08/2006 15:25:44 Pos =    2.75, Vel =    8.9500, Meas CMD = 1.71, LVDT Feedback = 3.6
+05/08/2006 15:25:45 Current Step = 27 Making a SHOT
+05/08/2006 15:25:45 Pos =   15.04, Vel =   30.7000, Meas CMD = 2.62, LVDT Feedback = 5.39
+05/08/2006 15:25:45 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:25:45 OutBit 21 ON
+05/08/2006 15:25:45 OutBit 22 ON
+05/08/2006 15:25:45 Pos =   25.75, Vel =    0.6500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:25:46 Pos =   25.75, Vel =    0.6500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:25:46 OO1=10
+05/08/2006 15:25:47 Pos =   25.79, Vel =    0.0500, Meas CMD = 5.1, LVDT Feedback = 9.89
+05/08/2006 15:25:47 Pos =   25.79, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:25:48 Pos =   25.79, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:25:49 Pos =   25.79, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:25:50 Pos =   25.79, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:25:50 Pos =   25.79, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:25:54 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:25:54 Follow Through ON
+05/08/2006 15:25:58 Pump On OFF
+05/08/2006 15:25:58 Follow Through OFF
+05/08/2006 15:26:11 O_ISW1=48ffff
+05/08/2006 15:26:11 Current Step = 64 
+05/08/2006 15:26:11 Retract ON
+05/08/2006 15:26:11 Slow Shot OFF
+05/08/2006 15:26:11 Accumulator OFF
+05/08/2006 15:26:11 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:26:11 OutBit 21 OFF
+05/08/2006 15:26:11 OutBit 22 OFF
+05/08/2006 15:26:22 R:20 #Cycle start detected!
+05/08/2006 15:26:22 O_ISW1=43ffff
+05/08/2006 15:26:22 Current Step = 26 Making a SHOT
+05/08/2006 15:26:22 Pump On ON
+05/08/2006 15:26:22 Start Shot ON
+05/08/2006 15:26:22 Retract OFF
+05/08/2006 15:26:22 Slow Shot ON
+05/08/2006 15:26:22 Accumulator ON
+05/08/2006 15:26:22 Pos =    1.01, Vel =   13.4000, Meas CMD = 1.71, LVDT Feedback = 3.62
+05/08/2006 15:26:22 Current Step = 27 Making a SHOT
+05/08/2006 15:26:22 Start Shot OFF
+05/08/2006 15:26:22 Pos =    9.24, Vel =   30.7500, Meas CMD = 2.61, LVDT Feedback = 5.4
+05/08/2006 15:26:23 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:26:23 OutBit 21 ON
+05/08/2006 15:26:23 OutBit 22 ON
+05/08/2006 15:26:23 Pos =   25.75, Vel =    0.0000, Meas CMD = 5.1, LVDT Feedback = 9.89
+05/08/2006 15:26:23 Pos =   25.80, Vel =    0.8000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:26:24 OO1=10
+05/08/2006 15:26:24 Pos =   25.82, Vel =    0.0500, Meas CMD = 5.1, LVDT Feedback = 9.89
+05/08/2006 15:26:25 Pos =   25.84, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:26:25 Pos =   25.84, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:26:26 Pos =   25.84, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:26:27 Pos =   25.84, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:26:28 Pos =   25.84, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:26:32 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:26:32 Follow Through ON
+05/08/2006 15:26:35 Pump On OFF
+05/08/2006 15:26:35 Follow Through OFF
+05/08/2006 15:26:48 Current Step = 64 
+05/08/2006 15:26:48 Retract ON
+05/08/2006 15:26:48 Slow Shot OFF
+05/08/2006 15:26:48 Accumulator OFF
+05/08/2006 15:26:48 O_ISW1=48ffff
+05/08/2006 15:26:49 Current Step = 10 Trapping START SHOT
+05/08/2006 15:26:49 OutBit 21 OFF
+05/08/2006 15:26:49 OutBit 22 OFF
+05/08/2006 15:26:49 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:26:59 R:20 #Cycle start detected!
+05/08/2006 15:26:59 O_ISW1=43ffff
+05/08/2006 15:27:00 Current Step = 27 Making a SHOT
+05/08/2006 15:27:00 Pump On ON
+05/08/2006 15:27:00 Retract OFF
+05/08/2006 15:27:00 Slow Shot ON
+05/08/2006 15:27:00 Accumulator ON
+05/08/2006 15:27:00 Pos =    4.00, Vel =    8.7500, Meas CMD = 2.61, LVDT Feedback = 3.37
+05/08/2006 15:27:00 Pos =   18.74, Vel =   29.5000, Meas CMD = 2.61, LVDT Feedback = 5.41
+05/08/2006 15:27:01 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:27:01 OutBit 21 ON
+05/08/2006 15:27:01 OutBit 22 ON
+05/08/2006 15:27:01 Pos =   25.79, Vel =    0.4000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:27:01 Pos =   25.80, Vel =    0.4000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:27:02 OO1=10
+05/08/2006 15:27:02 Pos =   25.81, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:27:03 Pos =   25.82, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:27:03 Pos =   25.82, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:27:04 Pos =   25.82, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:27:05 Pos =   25.82, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.91
+05/08/2006 15:27:06 Pos =   25.82, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:27:10 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:27:10 Follow Through ON
+05/08/2006 15:27:13 Pump On OFF
+05/08/2006 15:27:13 Follow Through OFF
+05/08/2006 15:27:26 O_ISW1=48ffff
+05/08/2006 15:27:26 Current Step = 64 
+05/08/2006 15:27:26 Retract ON
+05/08/2006 15:27:26 Slow Shot OFF
+05/08/2006 15:27:26 Accumulator OFF
+05/08/2006 15:27:27 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:27:27 OutBit 21 OFF
+05/08/2006 15:27:27 OutBit 22 OFF
+05/08/2006 15:27:37 R:20 #Cycle start detected!
+05/08/2006 15:27:37 O_ISW1=42ffff
+05/08/2006 15:27:37 Current Step = 26 Making a SHOT
+05/08/2006 15:27:37 Pump On ON
+05/08/2006 15:27:37 Retract OFF
+05/08/2006 15:27:37 Slow Shot ON
+05/08/2006 15:27:37 Accumulator ON
+05/08/2006 15:27:37 Pos =    2.70, Vel =    9.4500, Meas CMD = 1.71, LVDT Feedback = 3.6
+05/08/2006 15:27:38 Current Step = 27 Making a SHOT
+05/08/2006 15:27:38 Pos =   14.82, Vel =   30.5000, Meas CMD = 2.61, LVDT Feedback = 5.4
+05/08/2006 15:27:38 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:27:38 OutBit 21 ON
+05/08/2006 15:27:38 OutBit 22 ON
+05/08/2006 15:27:38 Pos =   25.76, Vel =    0.2500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:27:39 Pos =   25.79, Vel =    0.2500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:27:39 OO1=10
+05/08/2006 15:27:40 Pos =   25.80, Vel =    0.2500, Meas CMD = 5.11, LVDT Feedback = 9.91
+05/08/2006 15:27:40 Pos =   25.80, Vel =    0.2500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:27:41 Pos =   25.80, Vel =    0.2500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:27:43 Pos =   25.81, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.91
+05/08/2006 15:27:43 Pos =   25.81, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.91
+05/08/2006 15:27:43 Pos =   25.81, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.91
+05/08/2006 15:27:47 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:27:47 Follow Through ON
+05/08/2006 15:27:51 Pump On OFF
+05/08/2006 15:27:51 Follow Through OFF
+05/08/2006 15:28:04 O_ISW1=48ffff
+05/08/2006 15:28:04 Current Step = 64 
+05/08/2006 15:28:04 Retract ON
+05/08/2006 15:28:04 Slow Shot OFF
+05/08/2006 15:28:04 Accumulator OFF
+05/08/2006 15:28:04 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:28:04 OutBit 21 OFF
+05/08/2006 15:28:04 OutBit 22 OFF
+05/08/2006 15:28:15 R:20 #Cycle start detected!
+05/08/2006 15:28:15 O_ISW1=43ffff
+05/08/2006 15:28:15 Current Step = 26 Making a SHOT
+05/08/2006 15:28:15 Pump On ON
+05/08/2006 15:28:15 Start Shot ON
+05/08/2006 15:28:15 Retract OFF
+05/08/2006 15:28:15 Slow Shot ON
+05/08/2006 15:28:15 Accumulator ON
+05/08/2006 15:28:15 Pos =    1.29, Vel =    7.0000, Meas CMD = 1.71, LVDT Feedback = 3.61
+05/08/2006 15:28:15 Current Step = 27 Making a SHOT
+05/08/2006 15:28:15 Start Shot OFF
+05/08/2006 15:28:15 Pos =   10.15, Vel =   30.6500, Meas CMD = 2.61, LVDT Feedback = 5.42
+05/08/2006 15:28:16 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:28:16 OutBit 21 ON
+05/08/2006 15:28:16 OutBit 22 ON
+05/08/2006 15:28:16 Pos =   25.75, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:28:16 Pos =   25.79, Vel =    0.3000, Meas CMD = 5.1, LVDT Feedback = 9.9
+05/08/2006 15:28:17 OO1=10
+05/08/2006 15:28:17 Pos =   25.80, Vel =    0.3000, Meas CMD = 5.1, LVDT Feedback = 9.89
+05/08/2006 15:28:18 Pos =   25.81, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:28:18 Pos =   25.81, Vel =    0.0000, Meas CMD = 5.1, LVDT Feedback = 9.89
+05/08/2006 15:28:20 Pos =   25.81, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:28:21 Pos =   25.82, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:28:21 Pos =   25.82, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:28:25 Follow Through ON
+05/08/2006 15:28:25 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:28:28 Follow Through OFF
+05/08/2006 15:28:29 Pump On OFF
+05/08/2006 15:28:41 Current Step = 64 
+05/08/2006 15:28:41 Retract ON
+05/08/2006 15:28:41 Slow Shot OFF
+05/08/2006 15:28:41 Accumulator OFF
+05/08/2006 15:28:41 O_ISW1=48ffff
+05/08/2006 15:28:42 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:28:42 OutBit 21 OFF
+05/08/2006 15:28:42 OutBit 22 OFF
+05/08/2006 15:28:52 R:20 #Cycle start detected!
+05/08/2006 15:28:52 Current Step = 26 Making a SHOT
+05/08/2006 15:28:52 Start Shot ON
+05/08/2006 15:28:52 Retract OFF
+05/08/2006 15:28:52 Slow Shot ON
+05/08/2006 15:28:52 Accumulator ON
+05/08/2006 15:28:52 Pos =    0.00, Vel =    0.0000, Meas CMD = 1.71, LVDT Feedback = 3.66
+05/08/2006 15:28:52 O_ISW1=43ffff
+05/08/2006 15:28:53 Current Step = 27 Making a SHOT
+05/08/2006 15:28:53 Pump On ON
+05/08/2006 15:28:53 Start Shot OFF
+05/08/2006 15:28:53 Pos =    6.11, Vel =   29.9000, Meas CMD = 2.61, LVDT Feedback = 5.42
+05/08/2006 15:28:53 Current Step = 28 Making a SHOT
+05/08/2006 15:28:53 Pos =   21.40, Vel =   30.1000, Meas CMD = 5.11, LVDT Feedback = 5.61
+05/08/2006 15:28:54 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:28:54 OutBit 21 ON
+05/08/2006 15:28:54 OutBit 22 ON
+05/08/2006 15:28:54 Pos =   25.76, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:28:54 Pos =   25.77, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:28:55 OO1=10
+05/08/2006 15:28:55 Pos =   25.79, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:28:55 Pos =   25.80, Vel =    0.1000, Meas CMD = 5.1, LVDT Feedback = 9.89
+05/08/2006 15:28:56 Pos =   25.80, Vel =    0.1000, Meas CMD = 5.1, LVDT Feedback = 9.9
+05/08/2006 15:28:56 Pos =   25.80, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:28:57 Pos =   25.80, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:29:03 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:29:03 Follow Through ON
+05/08/2006 15:29:06 Pump On OFF
+05/08/2006 15:29:06 Follow Through OFF
+05/08/2006 15:29:19 O_ISW1=48ffff
+05/08/2006 15:29:19 Current Step = 64 
+05/08/2006 15:29:19 Retract ON
+05/08/2006 15:29:19 Slow Shot OFF
+05/08/2006 15:29:19 Accumulator OFF
+05/08/2006 15:29:20 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:29:20 OutBit 21 OFF
+05/08/2006 15:29:20 OutBit 22 OFF
+05/08/2006 15:29:30 R:20 #Cycle start detected!
+05/08/2006 15:29:30 O_ISW1=43ffff
+05/08/2006 15:29:30 Current Step = 26 Making a SHOT
+05/08/2006 15:29:30 Pump On ON
+05/08/2006 15:29:30 Retract OFF
+05/08/2006 15:29:30 Slow Shot ON
+05/08/2006 15:29:30 Accumulator ON
+05/08/2006 15:29:30 Pos =    3.17, Vel =    9.4000, Meas CMD = 1.71, LVDT Feedback = 3.6
+05/08/2006 15:29:31 Current Step = 27 Making a SHOT
+05/08/2006 15:29:31 Pos =   16.34, Vel =   30.1500, Meas CMD = 2.61, LVDT Feedback = 5.42
+05/08/2006 15:29:31 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:29:31 OutBit 21 ON
+05/08/2006 15:29:31 OutBit 22 ON
+05/08/2006 15:29:31 Pos =   25.80, Vel =    1.1500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:29:32 Pos =   25.84, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:29:32 OO1=~10
+05/08/2006 15:29:33 MonOut 4 OFF
+05/08/2006 15:29:33 Pos =   25.85, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:29:33 Pos =   25.85, Vel =    0.1500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:29:34 Pos =   25.85, Vel =    0.1500, Meas CMD = 5.1, LVDT Feedback = 9.89
+05/08/2006 15:29:36 Pos =   25.86, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:29:36 Pos =   25.86, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:29:36 Pos =   25.86, Vel =    0.0000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:29:40 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:29:40 Follow Through ON
+05/08/2006 15:29:44 Pump On OFF
+05/08/2006 15:29:44 Follow Through OFF
+05/08/2006 15:29:56 O_ISW1=48ffff
+05/08/2006 15:29:57 Current Step = 64 
+05/08/2006 15:29:57 Retract ON
+05/08/2006 15:29:57 Slow Shot OFF
+05/08/2006 15:29:57 Accumulator OFF
+05/08/2006 15:29:57 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:29:57 OutBit 21 OFF
+05/08/2006 15:29:57 OutBit 22 OFF
+05/08/2006 15:30:07 R:20 #Cycle start detected!
+05/08/2006 15:30:07 O_ISW1=43ffff
+05/08/2006 15:30:08 Current Step = 26 Making a SHOT
+05/08/2006 15:30:08 Pump On ON
+05/08/2006 15:30:08 Retract OFF
+05/08/2006 15:30:08 Slow Shot ON
+05/08/2006 15:30:08 Accumulator ON
+05/08/2006 15:30:08 Pos =    1.85, Vel =   11.3000, Meas CMD = 1.71, LVDT Feedback = 3.58
+05/08/2006 15:30:08 Current Step = 27 Making a SHOT
+05/08/2006 15:30:08 Pos =   11.71, Vel =   29.6000, Meas CMD = 2.61, LVDT Feedback = 5.38
+05/08/2006 15:30:09 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:30:09 OutBit 21 ON
+05/08/2006 15:30:09 OutBit 22 ON
+05/08/2006 15:30:09 Pos =   25.80, Vel =    1.6000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:30:09 Pos =   25.85, Vel =    0.6500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:30:10 OO1=~10
+05/08/2006 15:30:10 Pos =   25.88, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:30:11 Pos =   25.89, Vel =    0.0500, Meas CMD = 5.1, LVDT Feedback = 9.89
+05/08/2006 15:30:12 Pos =   25.89, Vel =    0.0500, Meas CMD = 5.1, LVDT Feedback = 9.89
+05/08/2006 15:30:14 Pos =   25.90, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:30:14 Pos =   25.90, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:30:14 Pos =   25.90, Vel =    0.0500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:30:18 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:30:18 Follow Through ON
+05/08/2006 15:30:21 Pump On OFF
+05/08/2006 15:30:21 Follow Through OFF
+05/08/2006 15:30:34 O_ISW1=48ffff
+05/08/2006 15:30:34 Current Step = 64 
+05/08/2006 15:30:34 Retract ON
+05/08/2006 15:30:34 Slow Shot OFF
+05/08/2006 15:30:34 Accumulator OFF
+05/08/2006 15:30:35 Current Step = 12 Waiting for START SHOT
+05/08/2006 15:30:35 OutBit 21 OFF
+05/08/2006 15:30:35 OutBit 22 OFF
+05/08/2006 15:30:45 R:20 #Cycle start detected!
+05/08/2006 15:30:45 O_ISW1=42ffff
+05/08/2006 15:30:45 Current Step = 26 Making a SHOT
+05/08/2006 15:30:45 Pump On ON
+05/08/2006 15:30:45 Start Shot ON
+05/08/2006 15:30:45 Retract OFF
+05/08/2006 15:30:45 Slow Shot ON
+05/08/2006 15:30:45 Accumulator ON
+05/08/2006 15:30:45 Pos =    0.88, Vel =    5.9500, Meas CMD = 1.71, LVDT Feedback = 3.6
+05/08/2006 15:30:46 Current Step = 27 Making a SHOT
+05/08/2006 15:30:46 Start Shot OFF
+05/08/2006 15:30:46 Pos =    8.75, Vel =   30.7500, Meas CMD = 2.61, LVDT Feedback = 5.38
+05/08/2006 15:30:46 Current Step = 49 Waiting for FOLLOW THROUGH
+05/08/2006 15:30:46 OutBit 21 ON
+05/08/2006 15:30:46 OutBit 22 ON
+05/08/2006 15:30:46 Pos =   25.75, Vel =    4.3500, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:30:47 Pos =   25.86, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:30:48 OO1=~10
+05/08/2006 15:30:48 Pos =   25.89, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:30:48 Pos =   25.90, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:30:49 Pos =   25.90, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:30:51 Pos =   25.90, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.89
+05/08/2006 15:30:51 Pos =   25.90, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:30:51 Pos =   25.90, Vel =    0.1000, Meas CMD = 5.11, LVDT Feedback = 9.9
+05/08/2006 15:30:56 Current Step = 54 Waiting for RETRACT
+05/08/2006 15:30:56 Follow Through ON

@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>V5 on Windows NT4</title>
+</head>
+<body>
+
+<center><h3>Windows NT Problems</h3></center>
+<p>
+The main problem with Windows NT is that you must set up a user account for each computer
+that is going to access a shared directory.
+<p>
+For example, a monitoring computer communicates with both WS0 and FS. If the monitoring
+computer is an NT system then you must set up a user account for each of these.
+<p>
+The user account is set up using the <b>Login Name</b> and <b>Password</b> of the other computers.
+Let me use the Data Server as an example.
+<p>
+Normally we set the Primary Network Logon of the Data Server
+(in the network properties) to
+<b>Windows Logon</b> so that the computer does not ask for a logon when
+it boots up. You can find out what the current logon is by choosing to log in as another user.
+On most Microsoft systems (except for 98) you do this by choosing <b>Shutdown</b> from the <b>Start</b>
+menu and then choose <b>Close all programs and log on as a different user</b>.
+<p>
+In order for windows to log you in automatically you must have the password set to nothing.
+<p>
+If you log in as <b>FS</b> with no password then in order for you to access the
+files on the NT monitoring computer you must create a new user on the monitoring computer
+(<b>Start</b>, <b>Programs</b>, <b>Administrative Tools (Common)</b>, <b>User Manager</b>).
+The new user must have a username of <b>FS</b> and no password. I usually make the user a power user and make
+sure to set the <b>Password Never Expires</b> checkbox.
+</body>
+</html>
+

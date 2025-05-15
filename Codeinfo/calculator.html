@@ -1,0 +1,115 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title>Calculator Formulas</title>
+<style type="text/css">
+<!--
+span.indent1 { margin-left: 0.5in }
+span.indent2 { margin-left: 1.5in }
+ul li {list-style: disc }
+-->
+</style>
+</head>
+<body>
+<h3>Calculator Formulas</h3>
+<pre>
+Plunger Diameter        PLUNGER_DIAMETER_EBOX          input
+Plunger Area            PLUNGER_AREA_TBOX              plunger_diameter^2 * pi/4
+Dry Shot Length         DRY_SHOT_LENGTH_EBOX           input
+Shot Sleeve Volume      SHOT_SLEEVE_VOL_TBOX           dry_shot_length * plunger_area
+Casting Weight          CASTING_WEIGHT_EBOX            input: weight of the cast parts ( no runner, overflow, or biscuit )
+Overflow Weight         OVERFLOW_WEIGHT_EBOX           input: weight of all overflow
+Cavity Weight           CAVITY_WEIGHT_TBOX             casting weight + overflow weight
+Weight R + B            WEIGHT_R_AND_B_EBOX            input: weight of the runner and biscuit
+Total Shot Weight       TOTAL_SHOT_WEIGHT_TBOX         casting + overlow + runner + biscuit
+Density                 DENSITY_TBOX                   From alloy choice
+Volume of Shot          VOLUME_OF_SHOT_TBOX            Total Show Weight / Density
+% Shot Sleeve Full      PERCENT_SLEEVE_FULL_TBOX       ( Volume of Shot / Shot Sleeve Volume ) * 100
+SSF Posn (P1)           P1_POSITION_TBOX               Dry Shot Length * ( 1 - (%Shot Sleeve Full / 100) )
+Biscuit Length          BISCUIT_LEN_EBOX               Input
+Biscuit Volume          BISCUIT_VOLUME_TBOX            Biscuit Length * Plunger Area
+Biscuit Weight          BISCUIT_WEIGHT_TBOX            Biscuit Volume * density
+Runner Weight           RUNNER_WEIGHT_TBOX             Weight_R_+_B - Biscuit Weight
+Runner Volume           RUNNER_VOLUME_TBOX             Runner Weight / density
+Dist to Fill Runner     DIST_TO_FILL_RUNNER_TBOX       Runner Volume / Plunger Area
+Metal at Gate (P2)      METAL_AT_GATE_TBOX             P1  + Dist to Fill Runner
+Velocity During Fill    VEL_DURING_FILL_EBOX           Input: Fast Shot Velocity
+Gate Area               GATE_AREA_EBOX                 Input: Area of the Gate
+Gate Velocity           GATE_VELOCITY_EBOX             (Velocity During Full * Plunger Area) / Gate Area
+Cavity Volume           CAVITY_VOLUME_TBOX             Cavity Weight / Density
+Sweep to Fill Cavity    SWEEP_TO_FILL_CAVITY_TBOX      Cavity Volume / Plunger Area
+Filltime                FILLTIME_EBOX                  1000 * Sweep to Fill Cavity / Velocity During Fill ( note: 1000 = ms/sec)
+Intens Press            INTENS_PRESSURE_EBOX           Input
+Plunger/Gate Ratio      PLUNGER_GATE_RATIO_TBOX        Plunger Area / Gate Area
+Hydraulic Cylinder Dia  CYLINDER_DIAMETER_EBOX         Input
+Hydraulic Cylinder Area CYLINDER_AREA_TBOX             Hydraulic Cylinder Dia^2 * pi/4
+Metal Pressure          METAL_PRESSURE_TBOX            Intens Pres * Hydraulic Cylinder Area / Plunger Area
+Area Cast/Ovrflw/Spray  AREA_CAST_OVRFLW_EBOX          Input: Projected plain area of casting, overflow, runner, and biscuit
+Opening Force           OPENING_FORCE_TBOX             (Metal Pressure * Area Cast/Ovrflw/Spray) converted to Tons
+
+plunger diameter = input;
+
+                  pi
+plunger_area    = --- * plunger_diameter^2
+                   4
+
+shot_sleeve_volume = dry_shot_length * plunger_area
+
+casting weight     = CASTING_WEIGHT_EBOX =
+cavity weight      = CAVITY_WEIGHT_EBOX = casting weight + overflow weight
+
+total_shot_weight  = cavity_weight + weight_r_and_b
+
+volume_of_shot     = total_shot_weight / density
+
+%_shot_sleeve_full = volume_of_shot / shot_sleeve_volume * 100
+
+shot_sleeve_full_position = dry_shot_length * ( 1.0 - %_shot_sleeve_full/100.0 )
+
+biscuit_volume = plunger_area * biscuit_length
+
+biscuit_weight = biscuit_volume * metal_density
+
+runner_weight  = weight_r_and_b - biscuit_weight
+runner_volume  = runner_weight / density
+
+distance_to_fill_runner = runner_volume / plunger_area
+
+metal_at_gate_position = shot_sleeve_full_position + distance_to_fill_runner
+
+gate_velocity = velocity_during_fill * plunger_area / gate_area
+
+cavity_volume = cavity_weight / density
+
+
+sweep_to_fill_cavity = cavity_volume / plunger_area
+
+fill_time = 1000 * sweep_to_fill_cavity / velocity_during_fill    { note: 1000 = ms/sec }
+
+    If the filltime is changed:
+
+        velocity_during_fill = 1000 * sweep_to_fill_cavity / fill_time
+
+        gate_velocity = velocity_during_fill * plunger_area / gate_area
+
+
+    If the gate velocity is changed:
+
+        velocity_during_fill = gate_velocity * gate_area / plunger_area
+
+        fill_time = 1000 * sweep_to_fill_cavity / velocity_during_fill
+
+
+                 pi
+cylinder_area = --- * cylinder_diameter^2
+                 4
+
+metal_pressure = intens_pressure * cylinder_area / plunger_area
+
+
+opening_force = convert_to_tons( metal_pressure * area_cast_overflow_spray )
+</pre>
+
+</body>
+</html>
+

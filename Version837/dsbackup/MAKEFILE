@@ -1,0 +1,26 @@
+OPS = -c -v -Od -tWM -WE
+
+dsbackup.exe : dsbackup.obj backupcl.obj dsbackup.res
+  TLink32 @&&|
+   -Tpe -aa -c -x +
+\APPS\BC5\LIB\c0w32.obj+
+dsbackup.obj+
+backupcl.obj
+dsbackup.exe
+
+..\lib\v5subs.lib+
+..\lib\al210.lib+
+\APPS\BC5\LIB\import32.lib+
+\APPS\BC5\LIB\cw32mt.lib
+
+|
+   brc32 dsbackup.res dsbackup.exe
+
+backupcl.obj :  backupcl.cpp backupcl.h
+  Bcc32 $(OPS) backupcl.cpp
+
+dsbackup.obj :  dsbackup.cpp backupcl.h
+  Bcc32 $(OPS) dsbackup.cpp
+
+dsbackup.res : dsbackup.rc
+   brcc32 dsbackup.rc

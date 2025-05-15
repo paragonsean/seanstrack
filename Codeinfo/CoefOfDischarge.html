@@ -1,0 +1,36 @@
+                 Q
+Cd = -----------------------
+               +-      -+
+               | g*2*PM |
+     Ga * sqrt |------- |
+               |   y    |
+               +-      -+
+
+
+               +-      -+
+               |   y    |
+Cd = Gv * sqrt |------- |
+               | g*2*PM |
+               +-      -+
+
+Co = shot cylinder diameter
+Po = plunger diameter
+Pa = plunger area
+Gv = gate velocity (ips)
+Cd = coefficient of discharge
+Ga = gate area
+Q  = flow through the gate (volume per second e.g. in**3/sec)
+Pv = plunger velocity
+Qt = total volume through the gate (in**3)
+PM = required metal pressure (psi)
+PH = required hydraulic pressure (psi)
+Ft = cavity fill time
+g  = gravity acceleration = 386 ips (?)
+y  = weight density of the metal ( alum=.095, zinc = .221, magnesium = .063 )
+
+Q = Qt/Ft
+Q = Pa*Pv
+Gv = Q/Ga
+Pv = Q/(0.7854 * Po**2)
+Q = .7854 * Pv * Po**2
+

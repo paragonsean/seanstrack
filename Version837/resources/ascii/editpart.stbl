@@ -1,0 +1,326 @@
+4
+ENGLISH,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+GERMAN,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+SPANISH,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ITALIAN,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ABOUT_TO_DEL	You are about to DELETE all information for this part	You are about to DELETE all information for this part	You are about to DELETE all information for this part	Si stanno ELIMINANDO tutte le informazioni per questa parte
+ACCEL	Accel	Accel	Acel	Accelerazione
+ADD_PARAMETER	Add	Add	Añadir	Aggiungi
+ADVANCED_SETUP	Advanced Setup	Advanced Setup	Configuracion Avanzada	Configurazione avanzata
+ADVANCED_TAB	Advanced	Weitere Einstellungen	Avanzado	Avanzata
+ALARM_LIMITS	Alarm Limits	Alarm Limits	Límites de Alarmas	Limiti allarmi
+ALARM_TIMEOUT	Alarm Timeout (Sec)	Alarm Timeout (Sec)	Tiempo de Espera Alarma (Seg)	Allarme Timeout (Sec)
+ALARM_WIRE	Alarm Wire	Alarm Wire	Cable de Alarma	Cavo dell'Allarme
+ALL_PARTS	All Parts On Selected Machine	All Parts On Selected Machine	Todas las Partes de la Máquina Seleccionada	Tutte le Parti sulla Macchina Selezionata
+ALL_PARTS_ALL_MA	All Parts On All Machines	All Parts On All Machines	Todas las Partes en Todas las Máquinas	Tutte le Parti su tutte le Macchine
+ALLOY	Alloy	Alloy	Alloy	Lega
+ANALOG_SENSOR_SETUPS	Analog Sensor Setups	Analog Sensor Setups	Configuración de Sesores Análogos	Configurazione dei Sensori Analoghi
+AREA_CAST	Area Cast/Ovrflw/Spray	Area Cast/Ovrflw/Spray	Area Cast/Ovrflw/Spray	Area Cast/Ovrflw/Spray
+ARM_PERCENT	Arm %	Arm %	Brazo %	Braccio %
+AVAILABLE_AT_EOS	Available at EOS	Available at EOS	Disponible en EOS	Disponibile su EOS
+BASE	Base	Base	Base	Base
+BASIC_SETUP	Basic Setup	Basic Setup	Configuración Básica	Configurazione Base
+BASIC_TAB	Basic	Grundeinstellungen	Básico	Base
+BEGIN_COPYING	Begin Copying	Begin Copying	Empezando Copia	Inizio Copia
+BISCUIT_LEN	Biscuit Length	Biscuit Length	Biscuit Length	Lunghezza della Materozza
+BISCUIT_TIME_DELAY	Biscuit Time Delay (Sec)	Verzögerung Tablette(n)	Tiempo de Retardo de Galleta (Seg)	Tempo di Ritardo della Materozza (Sec)
+BISCUIT_VOL	Biscuit Volume	Biscuit Volume	Biscuit Volume	Volume della Materozza
+BISCUIT_WT	Biscuit Weight	Biscuit Weight	Biscuit Weight	Peso della Materozza
+BREAK_1	Break Setting #1	Break Setting #1	Break Setting #1	Impostazione di Rottura #1
+BREAK_2	Break Setting #2	Break Setting #2	Break Setting #2	Impostazione di Rottura #2
+BREAK_3	Break Setting #3	Break Setting #3	Break Setting #3	Impostazione di Rottura #3
+BREAK_SETTINGS	Break Settings	Break Settings	Ajuste Break	Impostazioni di Rottura
+CALCULATED_PARAMETER	Calculated Parameter	Calculated Parameter	Parametro Calulado	Parametri Calcolati
+CALCULATOR	Calculator	Kalkulationen	Calculadora	Calcolatore
+CASTING_WEIGHT	Casting Weight	Casting Weight	Casting Weight	Peso del Getto
+CAVITY_SWEEP	Sweep to Fill Cavity	Sweep to Fill Cavity	Sweep to Fill Cavity	Movimento per riempire la Cavità
+CAVITY_VOL	Cavity Volume	Cavity Volume	Cavity Volume	Volume della Cavità
+CAVITY_WEIGHT	Cavity Weight	Cavity Weight	Cavity Weight	Peso della Cavità 
+CH_1_LABEL	Ch 1	Ch 1	Ch 1	Ch 1
+CH_2_LABEL	Ch 2	Ch 2	Ch 2	Ch 2
+CH_3_LABEL	Ch 3	Ch 3	Ch 3	Ch 3
+CH_4_LABEL	Ch 4	Ch 4	Ch 4	Ch 4
+CH_5_LABEL	Ch 5	Ch 5	Ch 5	Ch 5
+CH_6_LABEL	Ch 6	Ch 6	Ch 6	Ch 6
+CH_7_LABEL	Ch 7	Ch 7	Ch 7	Ch 7
+CH_8_LABEL	Ch 8	Ch 8	Ch 8	Ch 8
+CHANGE_FOCUS	F10: Change Focus	F10: Change Focus	F10: Cambio de enfoque	F10: Cambia Focalizzazione
+CHANGE_INFO	Change Information	Change Information	Change Information	Change Information
+CHANGE_MA_SETUP	You should change the Machine Setup	You should change the Machine Setup	You should change the Machine Setup	Non cambiare il Setup della Macchina
+CHANGES_NOT_SAVED	Changes Not Saved	Changes Not Saved	Cambios No Guardados	Modifiche Non Salvate
+CHANNEL_AXIS_LABELS	Channel Axis Labels	Channel Axis Labels	Etiquetas de Canal de Eje	Etichette delle Assi del Canale
+CHANNEL_NAMES	Channel Names	Channel Names	Nombres de Canal	Nomi del Canale
+CHANNEL_NAMES_HELP	Channel names are displayed on the Plot when Continuous Channels is selected on the Display Setup Screen	Channel names are displayed on the Plot when Continuous Channels is selected on the Display Setup Screen	Nombres de los Canales se muestran en la Gráfica cuando los Canales Continuos son seleccionados en la pantalla de configuración	I Nomi dei Canali sono visibili sul Diagramma mentre i Canali Continui vengono selezionati sullo Schermo di Impostazione del Display
+CHANNELS_TAB	Channels	Kanäle	Canales	Canali
+CHOOSE_PARAM_TYPE	Choose the type of parameter you wish to create:	Choose the type of parameter you wish to create:	Elija el tipo de Parámetro que desea crear:	Scegliere il tipo di parametro che si desidera creare:
+CHOOSE_WIRE	Choose Wire	Choose Wire	Choose Wire	Scegliere il Cavo
+CLICK_ON_MODULE	Click on the module you wish to use or press Tab to use the next module.	Click on the module you wish to use or press Tab to use the next module.	Click on the module you wish to use or press Tab to use the next module.	Cliccare sul modulo che si desidera usare o premere Tab per usare il prossimo modulo.
+CMPS	CMPS	cm/s	Cm/Seg	CMPS
+CMULTIPLE_CAPTION	Select Machines to Copy To	Select Machines to Copy To	Seleccione Máquinas a Copiar a	Selezionare Macchine per Copiare in
+COMMAND_NAME	File to Execute	File to Execute	File to Execute	File to Execute
+COPY_P1_P2	Copy P1 and P2 to Part Setup	Copy P1 and P2 to Part Setup	Copy P1 and P2 to Part Setup	Copiare P1 e P2 per impostare la Parte 
+COPY_REF_TRACE	Copy Reference Trace	Kopieren Masterkurve	Copiar Curva de Referencia	Copiare la Curva Madre
+COPY_TO_EXISTING_PARTS	Copy to Existing Parts	In vorhandeneTeile kopieren	Copiar a Piezas Existentes	Copiare gli Stampi Esistenti
+COPY_TO_OTHER_MACHINES	Copy to Other Machine	In andere Maschine kopieren	Copiar a Otra Máquina	Copiare ad altre Macchine
+CREATE_PART	Create New Part	Gussteil neu einrichten	Crear Nueva Pieza	Creare Nuova Parte
+CREATE_POPUP	Popup Entry on CREATE PART	Popup Entry on CREATE PART	Entrada Emergente en CREAR PIEZA	Imput Popup per CREARE LO STAMPO
+CURRENT_PART	This is the Current Part	Dies ist das aktuelle Gussteil	Esta es la Pieza actual	Questo è lo Stampo Corrente 
+CURRENT_VALUE	Current Value	Current Value	Valor Actual	Valore Attuale
+CYL_AREA	Hydraulic Cylinder Area	Hydraulic Cylinder Area	Hydraulic Cylinder Area	Area del Cilindro Idraulico
+CYL_DIA	Hydraulic Cylinder Dia	Hydraulic Cylinder Dia	Hydraulic Cylinder Dia	Diametro del Cilindro Idraulico
+DELETE_ALL_SHOTS	All shots and parameters will be deleted	Alle Gussteile und Parametern werden gelöscht	Todas las inyecciones y los parámetros serán borrados	Tutte le Iniezioni e Parametri verranno eliminati
+DELETE_PART	&Delete This Part	Diesen Teil löschen	Eliminar esta Pieza	Eliminare questo Stampo
+DENSITY	Density	Density	Density	Densità
+DERIVATIVE_GAIN	Derivative Gain	Derivative Gain	Ganancia Derivativa	Guadagno derivativo
+DIGITAL_INPUT	Digital Input	Digital Input	Entrada Digital	Input Digitale
+DIGITAL_POT_GAIN	Digital Pot Gain	Digital Pot Gain	Pot de guadagnancia Digital	Pot di Guadagno Digitale
+DISTANCE_UNITS	Distance Units:	Maeinheiten:	Unidades de distancia:	Unità di Distanza:
+DRY_SHOT_LENGTH	Dry Shot Length	Dry Shot Length	Dry Shot Length	Lunghezza del Colpo a Secco 
+EDIT_MULTIPART_RUNLIST	Edit Multipart Runlist	Edit Multipart Runlist	Editar Multiparte en Lista de Ejecución	Modificare la Lista di Esecuzione Multistampo
+EDIT_STRING	Edit	Edit	Edit	Modificare
+EDITPART_CAPTION	Part Setup	Gussteil-Einstellungen	Configuración de Pieza	Imposta stampo
+ENABLE_PRES_CONTROL	Enable Pressure Control	Enable Pressure Control	Habilitar Control de Presión	Consenti il Controllo di Pressione
+END_POS_MARK_1	Vel Range 1 End Pos	Vel Range 1 End Pos	Vel Range 1 End Pos	Vel Range 1 End Pos
+END_POS_MARK_2	Vel Range 2 End Pos	Vel Range 2 End Pos	Vel Range 2 End Pos	Vel Range 2 End Pos
+END_POS_MARK_3	Vel Range 3 End Pos	Vel Range 3 End Pos	Vel Range 3 End Pos	Vel Range 3 End Pos
+END_POS_MARK_4	Vel Range 4 End Pos	Vel Range 4 End Pos	Vel Range 4 End Pos	Vel Range 4 End Pos
+ENDING_POS	Ending Pos	Ending Pos	Pos Final	Posizione Finale
+ENDING_POSITION	Ending Position	Ending Position	Posición Final	Posizione Finale
+EOF_FS_VEL	End of Fast Shot Velocity	End of Fast Shot Velocity	Final de Disparo de Alta Velocidad	Fine del Colpo ad Alta Velocità
+EVALUATE_STRING	Evaluate	Evaluate	Evaluate	Evaluate
+EXTENDED_CHANNEL	Extended Channel	Extended Channel	Canal Extendido	Canale Esteso
+EXTENDED_CHANNELS	Extended Channels	Extended Channels	Canales Extendidos	Canali Estesi
+EXTENDED_CHANNELS_CAPTION	Choose the Analog Sensors for the Extended Channels	Choose the Analog Sensors for the Extended Channels	Choose the Analog Sensors for the Extended Channels	Scegli i Sensori Analoghi per i Canali Estesi
+EXTENDED_INPUT	FasTrak2 Extended Analog Input	FasTrak2 Extended Analog Input	Entradas Análogas Extendidas de FasTrak2	Input Analogo Esteso per FasTrak2 
+EXTERNAL_PARAMETER	External Parameter	External Parameter	Parámetro Externo	Parametro Esterno
+EXTERNAL_PARAMETER_FILE	External Parameter File	External Parameter File	Archivo de Parámetro externo	File di Parametro Esterno
+FAST_SHOT_PULSE	FS Pulse	FS Pulse	Pulso FS	Pulsione FS 
+FASTRAK_ANALOG_INPUT	FasTrak Analog Input	FasTrak Analog Input	Entrada Análoga FasTrak	Input Analogo FasTrak 
+FASTRAK_CHANNELS	FasTrak Channels	FasTrak Channels	Canales FasTrak	Canali FasTrak
+FASTRAK_ONOFF_INPUT	FasTrak On/Off Input	FasTrak On/Off Input	Entradas On/Off FasTrak	Input FasTrak Acceso/Spento 
+FILL_VEL	Velocity During Fill	Velocity During Fill	Velocity During Fill	Velocità Durante il Riempimento
+FIVE_VOLT_RANGE	+-5 V	+-5 V	+-5 V	+-5 V
+FPM	FPM	F/m	PPM	FPM
+FS_START_POS	Fast Shot Start Position	Fast Shot Start Position	Posición de Inicio de Disparo Rápido	Posizione di Inizio Colpo Rapido
+FT_CALC	FasTrak Calculated Input	FasTrak Calculated Input	FasTrak Calculated Input	Input FasTrak Calcolato
+FT_DIGITAL	FasTrak Digital Input	FasTrak Digital Input	FasTrak Digital Input	Input Digitale FasTrak
+FT_EXTENDED_ANALOG	FasTrak2 Extended Analog Input	FasTrak2 Extended Analog Input	FasTrak2 Extended Analog Input	Input FasTrak Analogo Esteso
+FT_EXTERNAL_PARAM	FasTrak2 External Parameter	FasTrak2 External Parameter	FasTrak2 External Parameter	Parametro Esterno FasTrak
+FT_ONOFF	FasTrak On/Off Input	FasTrak On/Off Input	FasTrak On/Off Input	Input FasTrak Acceso/Spento 
+FT_PEAK_FS_VEL	FasTrak2 Peak Fs Velocity	FasTrak2 Peak Fs Velocity	FasTrak2 Peak Fs Velocity	Velocità di Picco FasTrak2 Fs 
+FT_STATIC_TEXT_PARAM	FasTrak2 Static Text Parameter	FasTrak2 Static Text Parameter	FasTrak2 Static Text Parameter	Parametro di Testo Statico FasTrak2 
+FT_STOP_POS	Follow Through Stop Pos	Follow Through Stop Pos	Pos de Paro de Acompañamiento	Posizione Pistone Avanti 
+FT_TARGET	Target Value Position	Target Value Position	Target Value Position	Valore di Posizione Obiettivo
+FT2_ANALOG_CHANNEL	FasTrak2 Analog Channel	FasTrak2 Analog Channel	Canal Análogo FasTrak2	Canale Analogo FasTrak2
+GATE_AREA	Gate Area	Gate Area	Gate Area	Area Attacco di Colata
+GATE_VEL	Gate Velocity	Gate Velocity	Gate Velocity	Velocità all'Attacco
+GOOD_SHOT	Good Shot	Good Shot	Buen Disparo	Pezzo Buono
+GOOD_SHOT_NO_WARNINGS	Turn on Good Shot Wire only if there are NO WARNINGS	Turn on Good Shot Wire only if there are NO WARNINGS	Encienda Cable de Buen Disparo sólo si NO HAY AVISOS	Accendere il Cavo del Pezzo Buono solo se non ci sono AVVERTENZE
+HARDWARE_CLOSED_LOOP	Hardware Closed Loop	Hardware Closed Loop	Lazo Cerrado de Hardware	Loop dell'Hardware Chiuso
+HAS_PART	Has Part	Has Part	Pieza Tiene	Pezzo Completo
+HOLD_TIME	Hold Time	Hold Time	Tiempo Sostenido	Tempo di Sostenimento
+IMPACT_PARAM_FILE	Impact Parameter File	Impact Parameter File	Impact Parameter File	Impact Parameter File
+INPUT_COMMAND	Input Command	Input Command	Entrada de Comando	Input di Comando 
+INPUT_NUMBER	Input Number	Input Number	Entrada de Número	Numero di Input
+INPUT_WIRE_NUMBER	Input Wire Number	Input Wire Number	Entrada de Número de Cable	Input del Numero di Cavo
+INPUT_WIRE_PROMPT	Input Wire Number (18,32)	Input Wire Number (18,32)	Entrada de Número de Cable (18,32)	Input del Numero di Cavo (18,32)
+INTEGRAL_GAIN	Integral Gain	Integral Gain	Ganancia Integral	Guadagno Integrale
+INTENS_PRES	Intensification Pres	Intensification Pres	Intensification Pres	Pressione di Moltiplicazione
+INTERNAL_NAME	Internal Name	Internal Name	Nombre Interno	Nome Interno
+INTERNAL_PARAM	Internal Parameter	Internal Parameter	Internal Parameter	Parametro Interno
+INVALID_LI_ENTRY	Invalid SureTrak Entry in Part Editor	Invalid SureTrak Entry in Part Editor	Invalid SureTrak Entry in Part Editor	Attacco SureTrak nella Modifica dello Stampo Invalido
+INVALID_SHOT_NAME	Invalid Shot Name	Invalid Shot Name	Invalid Shot Name	Invalid Shot Name
+INVALID_SHOT_NAME_DATE_DLG	Click OK to use a standard Shot Name Template containing the date and time. Click Cancel to resolve this issue manually. If you choose Cancel changes to this part will not be saved.	Click OK to use a standard Shot Name Template containing the date and time. Click Cancel to resolve this issue manually. If you choose Cancel changes to this part will not be saved.	Click OK to use a standard Shot Name Template containing the date and time. Click Cancel to resolve this issue manually. If you choose Cancel changes to this part will not be saved.	Click OK to use a standard Shot Name Template containing the date and time. Click Cancel to resolve this issue manually. If you choose Cancel changes to this part will not be saved.
+INVALID_SHOT_NAME_NUM_DLG	Click OK to use a standard Shot Name Template containing the shot number. Click Cancel to resolve this issue manually. If you choose Cancel changes to this part will not be saved.	Click OK to use a standard Shot Name Template containing the shot number. Click Cancel to resolve this issue manually. If you choose Cancel changes to this part will not be saved.	Click OK to use a standard Shot Name Template containing the shot number. Click Cancel to resolve this issue manually. If you choose Cancel changes to this part will not be saved.	Click OK to use a standard Shot Name Template containing the shot number. Click Cancel to resolve this issue manually. If you choose Cancel changes to this part will not be saved.
+IS_CURRENT_PA	This is the Current Part	This is the Current Part	This is the Current Part	Questo è lo Stampo Attuale
+LABEL	Label	Label	Etiquetas	Etichetta
+LAST_PART	You cannot delete the last part	You cannot delete the last part	You cannot delete the last part	Impossibile eliminare l'ultimo Stampo
+LI_GT	Low impact command must be at least 	Low impact command must be at least 	Low impact command must be at least	Il Freno deve essere almeno 
+LIMIT_SWITCHES	Limit Switches	Limit Switches	Limit Switches	Fine-corsa
+LINE_TYPE	Line Type	Line Type	Tipo de Linea	Tipo di Linea
+LOAD_AND_SAVE	Press Begin to load and save every part.	Press Begin to load and save every part.	Press Begin to load and save every part.	Premere Inizia per caricare e salvare ogni stampo.
+LOW_IMPACT	Low Impact	Low Impact	Bajo Impacto	Impatto Minimo
+LOW_IMPACT_FROM_INPUT	Low Impact From Input	Low Impact From Input	Bajo Impacto desde Entrada	Freno da Input
+LOW_PASSWORD	Your Password Level is too low	Your Password Level is too low	Your Password Level is too low	Il livello della tua Password è troppo basso
+LS_DESC	Limit Switch Description	Limit Switch Description	Descripción de Limit Switch	Descrizione di Fine-corsa
+LS_POS	Limit Switch Position	Limit Switch Position	Posición de Limit Switch	Posizione di Fine-corsa
+LS_WIRE	Limit Switch Wire	Limit Switch Wire	Cable de Limit Switch	Cavo di Fine-corsa
+MACHINE_HAS_BINARY_VALVE	This machine has a binary valve	Diese Maschine hat eine Binäre Ventile	Esta máquina tiene una válvula binaria	Questa macchina ha una Valvola Binaria 
+MACHINE_NAME	Machine Name	Machine Name	Nombre de Máquina	Nome della Macchina
+MACHINE_NOT_MONITORED	Machine Not Monitored	Maschine wird nicht überwacht	Máquina No Monitoreada	Macchina Non Monitorata
+MANUAL_ENTRY	Manual Entry	Manual Entry	Manual Entry	Entrata Manuale
+MARK_SOURCE_DESC	Mark Source Description	Mark Source Description	Descripción de Origen de Marca	Descrizione della Marca di Origine
+MARKS_TAB	Marks	Textmarken	Marcas	Marche
+MARKS_TO_ADD	Marks to Add	Marks to Add	Añadir Marca	Marche da Aggiungere
+MEASURE_AVERAGE_VELOCITY	Measure Average Velocity in These Ranges	Measure Average Velocity in These Ranges	Medir Velocidad Promedio a Estas Posiciónes	Misura la Media della Velocità in queste Posizioni
+MEASURE_VELOCITY	Measure Velocity at These Positions	Measure Velocity at These Positions	Medir Velocidad a Estas Posiciónes	Misura la Velocità a queste Posizioni
+METAL_AT_GATE	Metal at Gate (P2)	Metal at Gate (P2)	Metal at Gate (P2)	Metallo all' Attacco (P2)
+MIN_CSFS_POS	Minimum CSFS Position	Min. CSFS-Vegstrecke	Posición Mínima CSFS	Posizione CSFS Minima
+MIN_CSFS_VEL	Minimum CSFS Velocity	Min. CSFS-Vorschub	Velocidad Mínima CSFS	Velocità CSFS Minima
+MISSING_FILE	Missing File	Missing File	Missing File	Missing File
+MISSING_FILE_DESC	The list of analog sensors for each channel is missing.	The list of analog sensors for each channel is missing.	The list of analog sensors for each channel is missing.	La lista di sensori analoghi per ogni canale si sta perdendo.
+MISSING_FILE_ACTION	You should set this up in the Channels Tab and save the changes.	You should set this up in the Channels Tab and save the changes.	You should set this up in the Channels Tab and save the changes.	Impostare i dati nella Tab dei Canali e salvare le modifiche.
+MONITOR_POPUP	Popup Entry on MONITOR THIS PART	Popup Entry on MONITOR THIS PART	Entrada Emergente en Monitoreo de Pieza	Popup in Entrata  nel MONITOR DI QUESTO STAMPO
+MONITOR_THIS_PART	Monitor This Part	Dieses Teil überwachen	Monitorar esta Pieza	Monitorare Questo Stampo
+MSL_TOO_SMALL	Min Stroke Lenth may be TOO SMALL	Min Stroke Lenth may be TOO SMALL	Min Stroke Lenth may be TOO SMALL	La Lunghezza Minima del Fine-corsa è TROPPO CORTA
+MULTIPART_RUNLIST	Multipart Runlist	Multipart Runlist	Multipart Runlist	Lista degli Stampi Multipli
+MUST_SELECT	You must select a part first	You must select a part first	You must select a part first	Selezionare prima uno stampo
+MUST_SPECIFY_LAST_STEP_END_POS	You must specify an end position for the last step	Sie müssen eine Endposition für den letzten Schritt eingeben	Debe especificar una posición final para el último paso	Specificare una posizione di fine per l'ultimo passo
+MUST_SPECIFY_LAST_STEP_LOW_IMPACT	You must specify a Low Impact Setting (Enter 5% if you are not using Low Impact	Sie müssen einen Low Impact-Einstellung (Geben Sie 5%, wenn Sie nicht mit Low Impact arbeiten)	Debe especificar un Valor de Bajo Impacto (Entre el 5% si no se está trabajando con bajo impacto)	Specificare un'impostazione di Basso Impatto (5% se non si sta usando un Basso Impatto)
+NEW_PARM_NAME	New Parameter Name	New Parameter Name	New Parameter Name	Nuovo Nome di Parametro 
+NEW_PART_NAME	New Part Name	Name für neues Teil	Nombre Nueva Pieza	Nuovo Nome di Stampo
+NO_ASENSOR_END	is not valid.	is not valid.	is not valid.	Non valido.
+NO_ASENSOR_LINE2	______  It has been replaced with the default sensor.  ______	______  It has been replaced with the default sensor.  ______	______  It has been replaced with the default sensor.  ______	______  E' stato rimpiazzato con un sensore di default.  ______
+NO_ASENSOR_START	The Analog Sensor for Channel	The Analog Sensor for Channel	The Analog Sensor for Channel	Sensore Analogo per il Canale
+NO_BOTH_PERCENT	You cannot put % in both accel and velocity	You cannot put % in both accel and velocity	You cannot put % in both accel and velocity	Impossibile mettere % sia nell'accelerazione che in velocità
+NO_DEL_INTERNAL_PARAM	You cannot remove internal parameters	You cannot remove internal parameters	You cannot remove internal parameters	Impossibile rimuovere i parametri interni 
+NO_LAST_STEP_END_POS_FOUND	No End Position Specified for Last Control Step	Kein Endposition für Letztes Steuerzeichen Schritt angegeben	Posición final para el último Paso de Control No Especificada	Nessuna Fine di Posizione Specificata per l'Ultimo Passo di Controllo
+NO_LAST_STEP_LOW_IMPACT_FOUND	No Low Impact Setting On Last Control Step	Kein Low Impact-Einstellung auf Letztes Steuerzeichen Schritt	No Hay Ajuste de Valor de Bajo Impacto para el último paso de control	Nessuna Impostazione di Impatto Minimo sull'ultimo Passo di Controllo 
+NO_PART_SELECTED	No part is selected.	No part is selected.	No part is selected.	Nessuno Stampo è stato selezionato.
+NO_SPACES_IN_SHOT_NAME	No SPACES in the Shot Name	Bitte keine Leerzeichen im Namen Schuss	No ESPACIOS en el Nombre de Disparo	Nessuno SPAZIO nel Nome del Colpo
+NOT_CURRENT_PART	Not the Current Part	Nicht das aktuelle Gussteil	No es la Pieza Actual	Non è lo Stampo Corrente
+NOT_ST_MA	This is NOT a SureTrak2 Machine!	This is NOT a SureTrak2 Machine!	This is NOT a SureTrak2 Machine!	Questo NON E' una Macchina SureTrak2!
+OFF_TO_ON	Transition from Off to On	Transition from Off to On	Transición de Off a On	Transizione da Spento ad Acceso
+OFFSET	Offset	Offset	Offset	Offset
+ON_TO_OFF	Transition from On to Off	Transition from On to Off	Transición de On a Off	Transizione da Acceso a Spento
+ONE_OR_MORE	One or more break gains were changed from 0 to 1	One or more break gains were changed from 0 to 1	One or more break gains were changed from 0 to 1	One or more break gains were changed from 0 to 1
+OPENING_FORCE	Opening Force	Opening Force	Opening Force	Forza di Apertura 
+OUTPUT_VOLT_RANGE	Output Voltage Range	Output Voltage Range	Rango de Voltaje de Salida	Range dei Volt in Uscita  
+OUTPUT_WIRE	Output Wire	Output Wire	Cable de Salida	Cavo di Uscita
+OUTPUT_WIRE_TITLE	Enter the Output Wire Number	Enter the Output Wire Number	Enter the Output Wire Number	Inserire il Numero del Cavo di Uscita
+OVERFLOW_WEIGHT	Overflow Weight	Overflow Weight	Overflow Weight	Peso dei Fagioli
+P1_TO_P3	Distance from P1 to P3	Abstand von P1 zu P3	Distancia entre P1 y P3	Distanza da P1 a P3
+P2_TO_P3	Distance from P2 to P3	Abstand von P2 zu P3	Distancia entre P2 y P3	Distanza da P2 a P3
+PARAM_DESC	Parameter Description	Parameter Description	Descripción de Parámetro	Descrizione del Parametro
+PARAMETER_LIMIT	Parameter Limit	Parameter Limit	Límite de Parámetro	Limite del Parametro
+PARAMETER_NAMES	Parameter Names	Parameter Names	Nombres de Parámetros	Nome del Parametro
+PARAMETER_SORT_ORDER	Parameter Sort Order	Parameter Sort Order	Orden corto de Parámetro	Ordinamento del Parametro
+PARAMETER_TYPE	Parameter Type	Parameter Type	Tipo de Parámetro	Tipo di Parametro
+PARAMETERS_TAB	Parameters	Parameter	Parámetros	Parametri
+PART_DISPLAY_SETUP	Part Display Setup	Part Display Setup	Configuración de Display de Pieza	Configurazione del Display dello Stampo
+PARTS_TO_COPY_TO	Parts To Copy To	Parts To Copy To	Copiar Partes A	Copiare Stampi da a
+PC_ARM_LS	Pressure Control Arm Limit Switch	Pressure Control Arm Limit Switch	Control de Presión de Brazo Limit Switch	Fine-corsa per il Controllo della Pressione Minima
+PC_PROFILE_SETUP	Pressure Control Profile Setup	Pressure Control Profile Setup	Control de Presión de Perfil de Configuración	Controllo della Pressione per l'Impostazione del Profilo
+PEAK_FS_VELOCITY	Peak Fast Shot Velocity	Peak Fast Shot Velocity	Pico de Velocidad de Disparo Rápido	Velocità Massima del Colpo
+PERCENT_NOT_ALLOWED	Percent requires Total Open Loop	Prozent erfordert Insgesamt Open Loop	Porcentaje requiere Lazo Abierto Totalmento	La Percent richiede l'Apertura Totale del Loop
+PERCENT_ONLY	(% only, no pressure feedback)	(% only, no pressure feedback)	(solo %, no retroalimentación de presión)	(% solo, nessun feedback di pressione)
+PERCENT_SSF	% Shot Sleeve Full	% Shot Sleeve Full	% Shot Sleeve Full	% Totale di Manicotto del Colpo 
+PLUNGER_AREA	Plunger Area	Plunger Area	Plunger Area	Area del Pistone
+PLUNGER_GATE_RATIO	Plunger/Gate Ratio	Plunger/Gate Ratio	Plunger/Gate Ratio	Pistone/Rapporto dell'Attacco 
+POPUP_STATIC_TEXT_CAPTION	Enter Static Text Parameter	Enter Static Text Parameter	Ingresar Texto Estático Parámetro	Inserire il Testo del Parametro Statico
+POS_DURING_SHOT	Position During Shot	Position During Shot	Posición Durante el Disparo	Posizione Durante il Colpo
+POSITIONS_TAB	Positions	Wegstrecken	Posiciones	Posizioni
+POSITIVE_ONLY	Positive Commands Only	Positive Commands Only	Sólo Comandos Positivos	Solo Comandi Positivi
+PRES_CONTROL_TAB	Pressure Control	SureTrak-Druckregelung	Control de Presión	Controllo di Pressione
+PRES_FOR_RESPONSE	Pres for Response Time	Druck für Reaktionszeit	Presión por Tiempo de Respuesta	Pressione del Tempo di Risposta
+PRES_LOOP_GAIN	Pressure Loop Gain	Pressure Loop Gain	Ganancia de Lazo de Presión	Guadagno del Loop di Pressione 
+PRES_SENSOR	Pressure Sensor	Pressure Sensor	Sensor de Presión	Pressione del Sensore
+PROFILE_MARKS	Profile Marks	Profile Marks	Marcas de Perfil	Marche di Profilo
+RAMP_STRING	Ramp	Ramp	Rampa	Rampa
+READ_FROM_EXTERNAL_FILE	Read Shot Name from an External File	Read Shot Name from an External File	Leer Nombre de Disparo desde Archivo Externo	Leggere il Nome del Colpo da un File Esterno
+RECOMMENDED_MSL	The Recommended Minimum Stroke Length = 	The Recommended Minimum Stroke Length = 	The Recommended Minimum Stroke Length =	Lunghezza del Fine-corsa Minima Raccomandata =
+REFERENCE_TRACE	Reference Trace	Reference Trace	Rastro de Referencia	Tracciato di Riferenza
+RELOAD	Reload Saved Setup	Gespeich.Einstellg. &zurückladen	Recargar Configuración Guardada	Ricarica le Configurazioni Salvate
+REMOVE_PARAMETER	Remove	Remove	Remover	Rimuovere
+RESULT_STRING	Result	Result	Result	Result
+RETRACT_CONTROL	Retract Control	Retract Control	Control de Retraído	Controllo di Ritrattamento
+RETRACT_ENABLE	Enable Retract Control	Enable Retract Control	Habilitar Control de Retraído	Abilitare il Controllo di Ritrattamento
+RETRACT_PERCENT	Retract %	Retract %	Retraído %	Ritrattare %
+RETRACT_VOLTS	Retract Volts	Retract Volts	Retraer Voltios	Ritratta Voltaggi
+RETURN_TO_PARAMETERS	Return to Parameters	Return to Parameters	Regresar a Parámetros	Ritorna ai Parametri
+RUNNER_FILL_DIST	Runner Fill Distance	Runner Fill Distance	Runner Fill Distance	Distanza di Riempimento del Canale di Colata
+RUNNER_VOL	Runner Volume	Runner Volume	Runner Volume	Volume del Canale di Colata
+RUNNER_WT	Runner Weight	Runner Weight	Runner Weight	Peso del Canale di Colata
+SAME_PART_ALL_MA	Same Part On All Machines	Same Part On All Machines	Misma Parte en Todas las Máquinas	Stesso Stampo su tutte le Macchine
+SAMPLE_AT	Sample At	Sample At	Muestra En	Campiona a
+SAMPLE_RANGE	Sample Range	Sample Range	Rango de Muestra	Range del Campione
+SAVE_ALL_ONLY_PARTS	Only parts on this computer will be saved	Only parts on this computer will be saved	Only parts on this computer will be saved	Verranno salvati solo gli stampi su questo computer
+SAVE_ALL_PARTS	Save All Parts	Bewahren Sie alle Teile	Guardar todas las Piezas	Salva Tutti gli Stampi
+SAVE_ALL_PRESS_BEGIN	Press Begin to load and save every part. If you have not saved the current part, you sould cancel and save.	Press Begin to load and save every part. If you have not saved the current part, you sould cancel and save.	Press Begin to load and save every part. If you have not saved the current part, you sould cancel and save.	Premere Inizia per caricare e salvare ogni stampo. Se lo stampo corrente non è stato salvato, cancellare e salvare.
+SAVING_VEL_CHANGES	Saving Velocity Changes	Saving Velocity Changes	Saving Velocity Changes	Saving Velocity Changes
+SECTIONS_TO_COPY	Sections To Copy	Sections To Copy	Secciones a Copiar	Sezioni da Copiare
+SELECTED_PARTS	Selected Parts	Selected Parts	Piezas Selecionadas	Stampi Selezionati
+SET_LIMIT_SWITCHES	Set Limit Switches at These Positions	Set Limit Switches at These Positions	Ajustar Limit Switch a Estas Posiciones	Impostare i Fine-corsa a queste Posizioni
+SETUP_SHEET_TAB	Setup	Einstellungen	Configuración	Configurazioni
+SHOT_COMPLETE	Shot Complete	Shot Complete	Disparo Completo	Colpo Completo
+SHOT_COUNT_PURGE	Purge Shots Before Reset	Loeschen Schuesse vor Start	Purgar Inyecciones Antes del Reset	Epurare i Colpi prima del Reset
+SHOT_COUNT_RESET	Shot Count Reset	Schuss Zahler zuruckzusetzen	Resetear Contador de Disparos	Reset del Contatore dei Colpi 
+SHOT_COUNT_RESET_ENABLE	Enable Shot Count Reset	Aktivieren Schuss Zahler zuruckzusetzen	Habilitar el Reset del Contador de Disparos	Abilita il Reset del Contatore di Colpi
+SHOT_COUNT_RESET_TIME	Reset Times	Reset Times	Resetear Tiempos	Resetta Tempi
+SHOT_EVENT_OUTPUTS	Shot Event Outputs	Shot Event Outputs	Shot Event Outputs	Shot Event Outputs
+SHOT_EVENTS	Edit Shot Event Outputs	Edit Shot Event Outputs	Editar Salidas de Evento de Disparo	Modifica le Uscite dell'Evento del Colpo 
+SHOT_NAME	Shot Name	Schuss Namen	Nombre Disparo	Nome del Colpo
+SHOT_NAME_ERROR	Shot Name Error	Schuss Namen Fehler	Error de Nombre de Disparo	Errore del Nome del Colpo
+SHOT_NAME_EXAMPLE	Example	Beispiel	Ejemplo	Esempio
+SHOT_NAME_HAS_CHANGED	The shot name length has changed	Die Länge des Namens des Schusses ist verändert	La Longitud de Nombre de Disparo ha Cambiado	Il nome del colpo è stato modificato
+SHOT_NAME_RESET	Shot Name Reset	Shot Name Reset	Reset Nombre de Disparo	Il Nome del Colpo è stato Resettato
+SHOT_NAME_TEMPLATE	Template	Vorlage	Plantilla	Modello
+SHOT_SAVE_COMPLETE	Shot Save Complete	Shot Save Complete	Disparo Completo Guardado	Salvataggio del Colpo Completato
+SHOT_SLEEVE_VOL	Shot Sleeve Volume	Shot Sleeve Volume	Shot Sleeve Volume	Volume del Manicotto del Colpo
+SINGLE_POINT	Single Point	Single Point	Single Point	Single Point
+SMOOTH_MULTIPLIER	Multiplier	Multiplier	Multiplicador	Moltiplicatore
+SMOOTH_N	N	N	N	N
+SMOOTH_SETTINGS	Smooth Settings	Smooth Settings	Ajuste Suave	Settaggio Morbido
+SOME_LI_CHANGED	Some SureTrak Low Impact Commands were changed to the minimum	Some SureTrak Low Impact Commands were changed to the minimum	Some SureTrak Low Impact Commands were changed to the minimum	Alcuni Comandi SureTrak a Basso Impatto sono stati modificat al Minimo
+SSF_POS	SSF Position (P1)	SSF Position (P1)	SSF Position (P1)	Posizione SSF (P1)
+ST_GLOBAL_PARAMS	SureTrak Global Parameters	SureTrak Global Parameters	SureTrak Global Parameters	Parametri Globali SureTrak
+ST_PARAMS	SureTrak Parameters	SureTrak Parameters	SureTrak Parameters	Parametri SureTrak
+ST2_PROGRAM_ABORT	ST2 Program Abort	ST2 Program Abort	Abortar Programa ST2	Interrompi Programma ST2
+START_POS_MARK_1	Vel Range 1 Start Pos	Vel Range 1 Start Pos	Vel Range 1 Start Pos	Vel Range 1 Start Pos
+START_POS_MARK_2	Vel Range 2 Start Pos	Vel Range 2 Start Pos	Vel Range 2 Start Pos	Vel Range 2 Start Pos
+START_POS_MARK_3	Vel Range 3 Start Pos	Vel Range 3 Start Pos	Vel Range 3 Start Pos	Vel Range 3 Start Pos
+START_POS_MARK_4	Vel Range 4 Start Pos	Vel Range 4 Start Pos	Vel Range 4 Start Pos	Vel Range 4 Start Pos
+STARTING_POSITION	Starting Position	Starting Position	Posición de Inicio	Posizione Iniziale 
+STATIC_TEXT_PARAMETER	Static Text Parameter	Static Text Parameter	Parámetro de Texto Estatico	Testo Statico del Parametro
+SUBTRACT_STRING	Subtract	Subtract	Substraer	Rimozione
+SURETRAK_STEPS	SureTrak Steps	SureTrak Steps	Pasos SureTrak	Passi SureTrak 
+SURETRAK_TAB	Shot Control	Sure&Trak-Steuerung	Control de Inyección	Controllo del Colpo
+TARGET_INPUT	Target Value Position	Target Value Position	Valor de Objetivo de Posición	Valore di Obiettivo della Posizione
+TARGET_VALUE	Target Value	Target Value	Valor de Objetivo	Valore di Obiettivo
+TEN_VOLT_RANGE	+-10 V	+-10 V	+-10 V	+-10 V
+THIRTY_SECOND_TIMEOUT	Thirty Second Timeout	Thirty Second Timeout	Tiempo de espera Treinta Segundos	Timeout di Trenta Secondi
+TIME_DURING_INTENS	Time (MS) During Intensification	Time (MS) During Intensification	Tiempo (MS) Durante la Intensificación	Tempo (MS) Durante la Moltiplicazione
+TIME_FOR_INTENS	Time for Intens Pres (MS)	Nachdruckzeit (ms)	Tiempo para Presión de Intensificacion (MS)	Tempo per la Pressione di Intensificazione (MS)
+TIME_POS_STRING	Time/Pos	Time/Pos	Tiempo/Pos	Tempo/Pos
+TIME_TO_MEASURE_BISCUIT	Time to Measure Biscuit (Sec)	Zeit zu Messen, Tablette (Sek)	Tiempo para medir Galleta (seg)	Tempo di Misura della Materozza (Sec)
+TOTAL_OPEN_LOOP	Total Open Loop	Total Open Loop	Lazo Abirto Total	Loop Aperto Totalmente
+TOTAL_SHOT_WEIGHT	Total Shot Weight	Total Shot Weight	Total Shot Weight	Peso Totale del Colpo
+TRANSITION_TYPE	Transition Type	Transition Type	Tipo de Transición	Tipo di Transizione
+TRIGGER_HIGH	Transition from OFF to ON	Transition from OFF to ON	Transición de OFF  a ON	Transizione da SPENTO ad ACCESO
+TRIGGER_LOW	Transition from ON to OFF	Transition from ON to OFF	Transición de ON a Off	Transizione da ACCESO a SPENTO
+TRIGGER_TYPE	Trigger Type	Trigger Type	Tipo de Gatillo	Tipo di Trigger
+TRIGGER_WHEN_GT	Trigger when Greater	Trigger when Greater	Trigger when Greater	Trigger when Greater
+TRIGGER_WHEN_LT	Trigger when Smaller	Trigger when Smaller	Trigger when Smaller	Trigger when Smaller
+TWO_VOLT_RANGE	+-2.5 V	+-2.5 V	+-2.5 V	+-2.5 V
+YOU_MUST_SAVE	You must Save Changes in the Part Setup as well.	You must Save Changes in the Part Setup as well.	You must Save Changes in the Part Setup as well.	Salvare le Modifiche della Configurazione dello Stampo.
+USE_PLUNGER_DIA	Use Plunger Diameter from Part Setup	Use Plunger Diameter from Part Setup	Use Plunger Diameter from Part Setup	Usare il Diametro del Pistone dalla Configurazione dello Stampo
+USER_DEFINED_POS	User Defined Pos.	User Defined Pos.	Pos. Definida por Usuario	Posizione Definita dell'Utente
+VAC_SWITCH	Vac Switch	Vac Switch	Switch de Vac	Start Vuoto
+VACUUM_WAIT	Vacuum Wait	Vacuum Wait	Espera de Vacio	Attesa Vuoto
+VALVE_PARK_PERCENT	Valve Park %	Valve Park %	Valve Park %	Valve Park %
+VALVE_PARK_VOLTS	Valve Park Volts	Valve Park Volts	Voltaje de Válvula Park	Settaggio della Valvola di Voltaggio
+VEL_CHANGES	Vel. Changes	Vel. Changes	Vel. Changes	Cambi di Velocità
+VEL_LOOP_GAIN	Velocity Loop Gain	Velocity Loop Gain	Velocity Loop Gain	Velocità di Guadagno di Loop
+VEL_POS_MARK_1	Velocity Position 1	Velocity Position 1	Velocity Position 1	Posizione di Velocità 1
+VEL_POS_MARK_2	Velocity Position 2	Velocity Position 2	Velocity Position 2	Posizione di Velocità 2
+VEL_POS_MARK_3	Velocity Position 3	Velocity Position 3	Velocity Position 3	Posizione di Velocità 3
+VEL_POS_MARK_4	Velocity Position 4	Velocity Position 4	Velocity Position 4	Posizione di Velocità 4
+VELOCITY_FOR_RISE	Velocity for Rise CSFS	Steigrate für CSFS	Velocidad de Aumento CSFS	Velocità di Aumento CSFS
+VELOCITY_LOOP_GAIN	Velocity Loop Gain	Velocity Loop Gain	Velocidad de Ganancia de Lazo	Velocità di Guadagno di Loop
+VELOCITY_UNITS	Velocity Units:	Vorschub-Einh:	Unidades de Velocidad:	Unità di Velocità:
+VERTICAL	Vertical	Vertical	Vertical	Verticale
+VOL_OF_SHOT	Volume of Shot	Volume of Shot	Volume of Shot	Volume del Colpo
+WARMUP_IF_STRING	if Wire	if Wire	Si Cable	Se il Cavo
+WARMUP_PART	Warmup Part	Warmup Part	Pieza de Precalentamiento	Stampo di Riscaldamento
+WARMUP_PART_FOR	This is a warmup part for: 	This is a warmup part for: 	This is a warmup part for:	Questo è uno stampo di riscaldamento per:
+WARMUP_SHOT	Warmup Shot	Warmup Shot	Disparo de Precalentamiento	Colpo di Riscaldamento
+WARNING_LIMITS	Warning Limits	Warning Limits	Limites de advertencia	Limiti di Avvertenza
+WARNING_SHOT	Warning Shot	Warning Shot	Advertencia de Disparo	Colpo di Avvertenza
+WEIGHT_R_B	Weight R+B	Weight R+B	Weight R+B	Peso R+B
+WHEN_TO_SAMPLE	When to Sample	When to Sample	Cuando realizar Muestra	Mostra quando campionare
+WIRES_1_16	Wires 1-16 are monitor outputs.	Wires 1-16 are monitor outputs.	Wires 1-16 are monitor outputs.	I cavi 1-16 sono uscite del monitor.
+WIRES_17_32	Wires 17-32 are control outputs.	Wires 17-32 are control outputs.	Wires 17-32 are control outputs.	I cavi 17-32 sono uscite del controllo.
+WISH_TO_CONTINUE	Do you wish to continue?	Do you wish to continue?	Do you wish to continue?	Si desidera continuare?
+WT_UNITS	Weight Units:	Weight Units:	Weight Units:	Unità di Peso:
+ZERO_NOT_VALID	Zero is not a valid entry	Zero is not a valid entry	Zero is not a valid entry	Zero is not a valid entry
+ZERO_SPEED_OUTPUT	Zero Speed Output	Zero Speed Output	Salida de Velocidad Cero	Entrata di Velocità Zero

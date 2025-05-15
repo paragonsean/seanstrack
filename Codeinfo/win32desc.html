@@ -1,0 +1,811 @@
+<html>
+<head>
+<title>Win32 Programming</title>
+<link rel=stylesheet type="text/css" href="styles/gen_styles.css" title="Win32 Programming">
+</head>
+<body>
+<hr>
+<center><h3 id="enumerate" class="nopad">Enumerate Network Drives</h3></center>
+<hr>
+<pre>
+#include &lt;windows.h&gt;
+#include &lt;winnetwk.h&gt;   /* link to mpr.lib */
+
+#include "..\include\visiparm.h"
+#include "..\include\subs.h"
+
+/***********************************************************************
+*                             CHECK_FOR_V5                             *
+***********************************************************************/
+static void check_for_v5( TCHAR * rootdir )
+{
+TCHAR visitrak_ini[] = TEXT("\\EXES\\VISITRAK.INI");
+TCHAR s[MAX_PATH];
+
+lstrcpy( s, rootdir );
+lstrcat( s, visitrak_ini );
+
+if ( file_exists(s) )
+    cprintf( "\n\r V5 directory = [%s]", rootdir );
+}
+
+/***********************************************************************
+*                              ENUMERATE                               *
+***********************************************************************/
+BOOLEAN enumerate( NETRESOURCE * resource_to_enumerate )
+{
+HANDLE        hEnum;
+DWORD         i;
+DWORD         nof_bytes = 16384;      // 16K is a good size
+DWORD         nof_entries;
+DWORD         status;
+NETRESOURCE * pr;
+
+status = WNetOpenEnum(
+    RESOURCE_GLOBALNET,
+    RESOURCETYPE_ANY,
+    0,
+    resource_to_enumerate,
+    &hEnum
+    );
+
+if ( status != NO_ERROR )
+    return FALSE;
+
+pr = (NETRESOURCE *) GlobalAlloc( GPTR, nof_bytes );
+
+do  {
+    ZeroMemory( pr, nof_bytes );
+
+    /*
+    ----------------------------------------
+    I want to enumerate all possible entries
+    ---------------------------------------- */
+    nof_entries = 0xFFFFFFFF;
+    status = WNetEnumResource( hEnum, &nof_entries, pr, &nof_bytes );
+    if ( status == NO_ERROR )
+        {
+        for( i=0; i&lt;nof_entries; i++ )
+            {
+            /*
+            ------------------------------------------------------------------
+            If this NETRESOURCE is a container, call the function recursively.
+            ------------------------------------------------------------------ */
+            if ( (pr[i].dwUsage & RESOURCEUSAGE_CONTAINER) == RESOURCEUSAGE_CONTAINER )
+                enumerate( &pr[i] );
+            else if ( (pr[i].dwUsage & RESOURCEUSAGE_CONNECTABLE) == RESOURCEUSAGE_CONNECTABLE )
+                {
+                if ( (pr[i].dwType & RESOURCETYPE_DISK) == RESOURCETYPE_DISK )
+                    check_for_v5( pr[i].lpRemoteName );
+                }
+
+            }
+        }
+
+    } while( status != ERROR_NO_MORE_ITEMS );
+
+GlobalFree((HGLOBAL) pr);
+
+status = WNetCloseEnum(hEnum);
+if ( status != NO_ERROR)
+    return FALSE;
+
+return TRUE;
+}
+
+/***********************************************************************
+*                    FIND_ALL_VISITRAK_DIRECTORIES                     *
+***********************************************************************/
+static BOOLEAN find_all_visitrak_directories( void )
+{
+return enumerate( 0 );
+}
+
+/***********************************************************************
+*                                 MAIN                                 *
+***********************************************************************/
+int main( void )
+{
+find_all_visitrak_directories();
+return 0;
+}
+</pre>
+<hr>
+<center><h3 id="setcheck" class="nopad">Set/Clear Check Boxes</h3></center>
+<hr>
+This works on check boxes and radio buttons.
+<pre>
+#include &lt;windows.h&gt;
+
+HWND w;
+int  button_id;
+
+if ( IsDlgButtonChecked(w, button_id) == BST_CHECKED )
+    CheckDlgButton( hwnd, button_id, BST_UNCHECKED );
+else
+    CheckDlgButton( hwnd, button_id, BST_CHECKED );
+</pre>
+<hr>
+<center><h3 id="setradio" class="nopad">Set/Clear Radio Buttons</h3></center>
+<hr>
+<pre>
+#include &lt;windows.h&gt;
+
+HWND w
+int x;
+
+x = CHAN_1_BUTTON;
+CheckRadioButton( w, CHAN_1_BUTTON, CHAN_4_BUTTON, x );
+</pre>
+
+If you are using auto radio buttons you can do the same thing by
+simulating pressing the radio button. This way the dialog proc gets
+a BN_CLICKED notification just as though I had pushed the button.
+<br>
+<pre>
+HWND bw;
+
+x  = CHAN_1_BUTTON;
+bw = GetDlgItem( hwnd, x );
+if ( !is_checked(bw) )
+    PostMessage( bw, BM_CLICK, 0, 0 );
+</pre>
+<hr>
+<center><h3 id="setlistab" class="nopad">Set Listbox Tabs from Titles</h3></center>
+<hr>
+<pre>
+static int id[] = {
+ ALARMSUM_SHIFT_STATIC,
+ ALARMSUM_PARAMETER_STATIC,
+ };
+
+const int n = sizeof(id)/sizeof(int);
+
+static int tabs[n];
+
+int        i;
+int        pixels_per_dialog_unit;
+int        left;
+HWND       w;
+RECT       r;
+
+if ( !ExportAlarmsDialogWindow )
+    return;
+
+r.bottom = 1;
+r.left   = 1;
+r.right  = 4;
+r.top    = 1;
+MapDialogRect( ExportAlarmsDialogWindow, &r );
+pixels_per_dialog_unit = r.right;
+
+w = GetDlgItem(ExportAlarmsDialogWindow, EXPORT_ALARMS_LISTBOX );
+GetWindowRect( w, &r );
+left = r.left;
+
+for ( i=0; i&lt;n; i++ )
+    {
+    w = GetDlgItem(ExportAlarmsDialogWindow, id[i] );
+    GetWindowRect( w, &r );
+    tabs[i] = r.left - left;
+    tabs[i] *= 4;
+    tabs[i] /= pixels_per_dialog_unit;
+    }
+
+SendDlgItemMessage( ExportAlarmsDialogWindow, EXPORT_ALARMS_LISTBOX, LB_SETTABSTOPS, (WPARAM) n, (LPARAM) tabs );
+</pre>
+
+<hr>
+<center><h3 id="selalltext" class="nopad">Select All Text in an Editbox</h3></center>
+<hr>
+<pre>
+void eb_select_all( HWND w, int id )
+{
+SendMessage( GetDlgItem(w, id), EM_SETSEL, 0, -1 );
+}
+
+</pre>
+<hr>
+<center><h3 id="getfilepointer" class="nopad">GetFilePointer Macro</h3></center>
+<hr>
+<pre>
+There is no GetFilePointer function in win32 but SetFilePointer returns the
+current pointer so you can get the current pointer:
+
+current_position = SetFilePointer( fh, 0, NULL, FILE_CURRENT );
+
+This starts at the current position, increments zero bytes, and returns the new current position.
+</pre>
+<hr>
+<center><h3 id="winmessage" class="nopad">Windows Message Handling</h3></center>
+<hr>
+<pre>
+int id;
+int cmd;
+
+id  = LOWORD( wParam );
+cmd = HIWORD( wParam );
+
+case WM_COMMAND:
+    switch ( id )
+        {
+        case CONNECTED_COMPUTER_LISTBOX:
+            if ( cmd == LBN_SELCHANGE )
+                {
+                do_connected_computer_select();
+                return TRUE;
+                }
+            if ( cmd == LBN_DBLCLK )
+                {
+                return TRUE;
+                }
+            break;
+
+        case BY_DAY_RADIO:
+            if ( cmd == BN_CLICKED )
+                do_by_day();
+                return TRUE;
+                }
+            break;
+        }
+</pre>
+
+<hr>
+<center><h3 id="wm_exitsizemove" class=nopad>When am I done moving a window</h3></center><hr>
+While I drag a window the window_proc receives WM_MOVE messages continuously. When I am done, and release the
+left button of the mouse, the window_proc receives a WM_EXITSIZEMOVE message. Spy also shows the window receiving
+a WM_LBUTTONUP message but this does not reach the window_proc.
+<pre>
+static BOOLEAN NcButtonDown = FALSE;
+static BOOLEAN Moving       = FALSE;
+
+switch (msg)
+    {
+    case WM_NCLBUTTONDOWN:     // You get this when the left button is depressed on the title bar
+        NcButtonDown = TRUE;
+        break;
+
+    case WM_MOVE:
+        if ( NcButtonDown )
+            Moving = TRUE;
+        break;
+
+    case WM_EXITSIZEMOVE:
+        if ( Moving )
+            {
+            NcButtonDown = FALSE;
+            Moving       = FALSE;
+            do_move_complete();
+            }
+        break;
+    }
+</pre>
+
+<hr>
+<center><h3 id="dialog" class=nopad>DialogBox/EndDialog</h3></center><hr>
+<p>
+<pre>
+void end_st_params_dialog( HWND w )
+{
+update_st_params( w );
+EndDialog( w, 0 );
+}
+
+BOOL CALLBACK st_params_dialog_proc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
+{
+int  id;
+id  = LOWORD( wParam );
+
+switch (msg)
+    {
+    case WM_INITDIALOG:
+        return TRUE;
+
+    case WM_CLOSE:
+        end_st_params_dialog( hWnd );
+        return TRUE;
+
+    case WM_HELP:
+        gethelp( HELP_CONTEXT, SURETRAK_PART_PARAMETER_HELP );
+        return TRUE;
+
+    case WM_CONTEXTMENU:
+        st_params_context_help( (HWND) wParam, lParam );
+        return TRUE;
+
+    case WM_COMMAND:
+        switch ( id )
+            {
+            case IDOK:
+                update_st_params( hWnd );
+                return TRUE;
+
+            case IDCANCEL:
+                end_st_params_dialog( hWnd );
+                return TRUE;
+            }
+        break;
+    }
+return FALSE;
+}
+
+DialogBox(
+    MainInstance,
+    TEXT("SURETRAK_PARAMETERS"),
+    MainDialogWindow,
+    (DLGPROC) st_params_dialog_proc
+    );
+</pre>
+
+<hr>
+<center><h3 id="textcolor" class=nopad>Text Control Color</h3></center><hr>
+<p>
+The WM_CTLCOLORSTATIC message is sent to the parent of a static control before the text is displayed. If you don't return a handle of a brush then the SetTextColor, etc., will be ignored.
+</p>
+<p>
+Note: the background color of dialog boxes is COLOR_BTNFACE. If you want to use it
+then make the brush like: MyBrush = CreateSolidBrush( GetSysColor(COLOR_BTNFACE) );
+</p>
+
+<pre>
+const COLORREF WhiteColor  = RGB( 255, 255, 255 );
+static HBRUSH BlackBrush = 0;
+static HWND   MyStaticControl;
+
+case WM_CREATE:
+    MyStaticControl= GetDlgItem( hWnd, STATIC_CONTROL_TBOX );  //STATIC_CONTROL_TBOX is the id
+    BlackBrush = CreateSolidBrush( BlackColor );               //of the control in question
+    break;
+
+case WM_CTLCOLORSTATIC:
+    if ( MyStaticControl == (HWND) lParam )
+        {
+        SetTextColor( (HDC) wParam, WhiteColor );
+        SetBkMode( (HDC) wParam, TRANSPARENT );
+        return (long) BlackBrush;
+        }
+
+case WM_DESTROY:
+    if ( BlackBrush )
+        {
+        DeleteObject( BlackBrush );
+        BlackBrush = 0;
+        }
+
+    PostQuitMessage( 0 );
+    return 0;
+</pre>
+
+<hr>
+<center><h3 id="sockets" class=nopad>Sockets</h3></center><hr>
+
+<pre>
+int iError;
+
+iError = WSAStartup( MAKEWORD(2,0), &WSAData );
+if ( iError )
+    {
+    show( TEXT ("Startup error #%i.\r\n"), iError );
+    return TRUE ;
+    }
+show( TEXT("Started up %hs\r\n"), WSAData.szDescription );
+
+sock = socket( AF_INET, SOCK_STREAM, IPPROTO_TCP );
+if ( sock == INVALID_SOCKET )
+    {
+    show( TEXT("Socket creation error #%i.\r\n"), WSAGetLastError() );
+       WSACleanup();
+    return TRUE ;
+    }
+show( TEXT ("Socket %i created.\r\n"), sock );
+
+iError = WSAAsyncSelect( sock, hwnd, WM_SOCKET_NOTIFY, FD_CONNECT | FD_READ );
+if ( iError == SOCKET_ERROR )
+    {
+    show( TEXT ("WSAAsyncSelect error #%i.\r\n"), WSAGetLastError() );
+    closesocket( sock );
+    WSACleanup();
+    return TRUE ;
+    }
+/*
+---------------------------------------------------
+Call "connect" with IP address and time-server port
+--------------------------------------------------- */
+sa.sin_family           = AF_INET ;
+sa.sin_port             = htons( IPPORT_TIMESERVER );
+sa.sin_addr.S_un.S_addr = inet_addr( szIPAddr );
+connect(sock, (SOCKADDR *) &sa, sizeof( sa ));
+
+/*
+----------------------------------------------------------------------
+Connect" will return SOCKET_ERROR because even if it succeeds, it will
+require blocking. The following only reports unexpected errors.
+---------------------------------------------------------------------- */
+iError = WSAGetLastError();
+if ( iError != WSAEWOULDBLOCK )
+    {
+    show( TEXT("Connect error #%i.\r\n"), iError );
+    closesocket(sock) ;
+    WSACleanup () ;
+    return TRUE ;
+    }
+
+show( TEXT("Connecting to %hs..."), szIPAddr );
+// The result of the "connect" call will be reported
+// through the WM_SOCKET_NOTIFY message.
+// Set timer and change the button to "Cancel"
+
+</pre>
+
+<hr>
+<center><h3 id="fullscreen" class=nopad>Full Screen</h3></center><hr>
+
+If you want to size your window to fill the screen except for the system toolbar you can do the following.
+
+<pre>
+static void startup( int cmd_show )
+{
+STRING_CLASS title;
+WNDCLASS wc;
+RECT     r;
+
+wc.lpszClassName = MyClassName;
+wc.hInstance     = MainInstance;
+wc.lpfnWndProc   = (WNDPROC) main_proc;
+wc.hCursor       = LoadCursor( NULL, IDC_ARROW );
+wc.hIcon         = LoadIcon( MainInstance, TEXT("MY_ICON") );
+wc.lpszMenuName  = TEXT("MainMenu");
+wc.hbrBackground = (HBRUSH) (COLOR_WINDOW+1);  /* Use standard background */
+wc.style         = CS_HREDRAW | CS_VREDRAW;
+wc.cbClsExtra    = 0;
+wc.cbWndExtra    = 0;
+
+RegisterClass( &wc );
+
+title = resource_string( MAIN_WINDOW_TITLE_STRING );
+SystemParametersInfo( SPI_GETWORKAREA, 0, (void *) &r, 0);
+
+SysRect = r;
+
+CreateWindow(
+    MyClassName,
+    title.text(),
+    WS_OVERLAPPEDWINDOW,
+    r.left, r.top,                         // X,y
+    r.right-r.left, r.bottom - r.top,      // W,h
+    NULL,
+    NULL,
+    MainInstance,
+    NULL
+    );
+
+MainWindow.show( cmd_show );
+UpdateWindow( MainWindow.handle() );
+}
+
+</pre>
+<hr>
+<center><h3 id="background" class=nopad>Getting the Backgound Brush of the Parent Window</h3></center><hr>
+<pre>
+HWND parent = GetParent( hWnd );
+HBRUSH b = (HBRUSH) GetClassLong( parent, GCL_HBRBACKGROUND );
+if ( b )
+    whatever( b );
+</pre>
+
+<hr>
+<center><h3 id="groupbox" class=nopad>GroupBox Messages</h3></center><hr>
+Groupboxes normally process no messages. This is normally desired but if you want mouse messages and
+such you have to trap the WM_NCHITTEST, the only message that is normally sent to the groupbox,
+and pass that to the defwindowproc. The following is taken from code that subclasses window controls.
+
+<pre>
+    switch ( msg )
+        {
+        case WM_NCHITTEST:
+            if ( (mce->style & BS_GROUPBOX) == BS_GROUPBOX )
+                return DefWindowProc( hWnd, msg, wParam, lParam );
+            break;
+        }
+</pre>
+
+<hr>
+<center><h3 id="registry" class=nopad>Reading the Desktop dir from the Registry</h3></center><hr>
+<pre>
+#include &lt;windows.h&gt;
+#include &lt;shlobj.h&gt;
+
+static TCHAR ShellFolderKey[] = TEXT( "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders" );
+
+TCHAR buf[MAX_PATH];
+ULONG buf_size;
+DWORD lpType;
+HKEY  hCU;
+bool  have_key;
+
+have_key = false;
+if ( RegOpenKeyEx(HKEY_LOCAL_MACHINE, ShellFolderKey, 0, KEY_QUERY_VALUE, &hCU) == ERROR_SUCCESS )
+    {
+    buf_size = MAX_PATH * sizeof(TCHAR);
+    if ( RegQueryValueEx( hCU, TEXT( "Common Desktop"), NULL, &lpType, (unsigned char *) &buf, &buf_size) == ERROR_SUCCESS )
+        have_key = true;
+    RegCloseKey(hCU);
+    }
+
+/*
+-----------------------------------------
+Win95 doesn't normally have the above key
+----------------------------------------- */
+if ( RegOpenKeyEx(HKEY_CURRENT_USER, ShellFolderKey, 0, KEY_QUERY_VALUE, &hCU) == ERROR_SUCCESS )
+    {
+    buf_size = MAX_PATH * sizeof(TCHAR);
+    if ( RegQueryValueEx( hCU, TEXT("Desktop"), NULL, &lpType, (unsigned char *) &buf, &buf_size) == ERROR_SUCCESS )
+        have_key = true;
+    RegCloseKey(hCU);
+    }
+
+/*
+------------------------------------------------------------------------
+If you are going to make a desktop link, you add the name.lnk as follows
+------------------------------------------------------------------------ */
+append_filename_to_path(  buf, TEXT("Data Server Restore.lnk") );
+
+</pre>
+
+<hr>
+<center><h3 id="create_link" class=nopad>Creating a Link on the Desktop</h3></center><hr>
+<pre>
+#include &lt;windows.h&gt;
+#include &lt;shlobj.h&gt;
+
+TCHAR SorcFileName[] = TEXT( "C:\\V5\\Exes\\Dsrestore.exe" );
+TCHAR LinkFileName[] = TEXT( "C:\\WINNT\\Profiles\\All Users\\Desktop\\Data Server Restore.lnk" );
+TCHAR LinkDesc[]     = TEXT( "Data Server Restore" );
+
+HRESULT        result;
+IShellLink   * psl;
+IPersistFile * ppf;
+WCHAR          ws[MAX_PATH];
+
+if ( CoInitialize(0) == S_OK )
+    {
+    result = CoCreateInstance( CLSID_ShellLink, NULL, CLSCTX_INPROC_SERVER, IID_IShellLink, (void**) &psl );
+    if ( SUCCEEDED(result) )
+        {
+        result = psl->QueryInterface( IID_IPersistFile, (void**) &ppf );
+        if ( SUCCEEDED(result) )
+            {
+            psl->SetPath( SorcFileName );
+            psl->SetDescription( LinkDesc );
+
+            #ifdef UNICODE
+                lstrcpy( ws, LinkFileName );
+            #else
+                MultiByteToWideChar( CP_ACP, 0, LinkFileName, -1, ws, MAX_PATH );
+            #endif
+
+            ppf->Save( ws, TRUE );
+
+            ppf->Release();
+            }
+
+        psl->Release();
+        }
+
+    CoUninitialize();
+    }
+
+</pre>
+
+<hr>
+<center><h3 id="plusplus" class=nopad>Define a postfix ++ operator</h3></center><hr>
+In order to define a ++ operator to be postfix you need to put "int" between the parentheses. Otherwise
+the compiler makes it prefix.
+
+<pre>
+void OUTPUT_WIRE_CLASS::operator++(int)
+{
+}
+</pre>
+
+<hr>
+<center><h3 id="stringarray" class=nopad>Declare an Array of Strings</h3></center><hr>
+
+<pre>
+
+TCHAR *column_name[] = {
+    { TEXT("CATEGORY") },
+    { TEXT("SUB_CAT") },
+    { TEXT("START_TIME") },
+    { TEXT("END_TIME") }
+    };
+
+column_name[0] points to the string "CATEGORY", etc.
+
+</pre>
+
+<hr>
+<center><h3 id="new_pointer_array" class=nopad>Allocating an array of Pointers to Pointers</h3></center><hr>
+This looks trivial but I was always trying to do a new (TCHAR *)[100] which doesn't work. Do it this way.
+
+<pre>
+TCHAR ** label;
+
+label = new TCHAR *[100];
+
+</pre>
+
+<hr>
+<center><h3 id="pass_pointer_by_reference" class=nopad>Passing a Pointer by Reference</h3></center><hr>
+This looks trivial but I was always trying to do a new (TCHAR *) & dest which doesn't work. Do it this way.
+
+<pre>
+In this case I want to return a pointer to a location in a passed STRING_CLASS.
+void get_pointer_to_number( TCHAR * & dest, STRING_CLASS & s )
+{
+TCHAR * cp;
+cp = s.last_char();
+cp-=6;
+dest = cp;
+}
+
+void main_prog()
+{
+TCHAR * cp;
+STRING_CLASS shot_name;
+shot_name = TEXT("A745TC00001B");
+get_pointer_to_number( cp, shot_name );
+}
+</pre>
+
+<hr>
+<center><h3 id="forward_reference" class=nopad>Define a forward reference when two classes each contain a pointer to the other</h3></center><hr>
+You just declare the second class without defining it, as shown here:
+
+<pre>
+class MENU_CONTROL_ENTRY;
+
+class MENU_ITEM_ENTRY
+    {
+    public:
+    MENU_CONTROL_ENTRY * owner;
+
+    MENU_ITEM_ENTRY();
+    ~MENU_ITEM_ENTRY();
+    };
+
+class MENU_CONTROL_ENTRY
+    {
+    public:
+    MENU_ITEM_ENTRY * main;
+
+    MENU_CONTROL_ENTRY();
+    ~MENU_CONTROL_ENTRY();
+    };
+
+</pre>
+
+<hr>
+<center><h3 id="dundas_multiline" class=nopad>Multiline Text  in Dundas Grid</h3></center><hr>
+
+The multiline setting is in the extended cell type. set it as follows
+
+<pre>
+long     ori_cell_type_ex;
+
+ori_cell_type_ex = cell.GetCellTypeEx();
+cell.SetCellTypeEx( UGCT_NORMALMULTILINE );
+...
+cell.SetCellTypeEx( ori_cell_type_ex );
+</pre>
+
+<hr>
+<center><h3 id="dundas_setalignment" class=nopad>Setting the Cell Text Alignment in a Dundas Grid</h3></center><hr>
+
+<pre>
+int CUGCell::SetAlignment( short align )
+short CUGCell::GetAlignment()
+</pre>
+
+Legal values are UG_ALIGNLEFT, UG_ALIGNRIGHT, UG_ALIGNCENTER, UG_ALIGNTOP, UG_ALIGNBOTTOM, UG_ALIGNVCENTER.
+
+<hr>
+<center><h3 id="getsystemmetrics" class=nopad>Getting the height of the menu</h3></center><hr>
+<pre>
+int menu_height_in_pixels;
+
+menu_height_in_pixels = GetSystemMetrics( SM_CYMENU );
+
+</pre>
+
+<hr>
+<center><h3 id="getkeystate" class=nopad>Getting the shift key state</h3></center><hr>
+<pre>
+if ( GetKeyState(VK_SHIFT) < 0 )
+    {
+    do_shift_key_pressed_function();
+    }
+</pre>
+<hr>
+<center><h3 id="wm_char" class=nopad>Getting WM_CHAR messages in a Dialog Box control</h3></center><hr>
+If you make a child control to be used in a dialog box you will get no WM_CHAR messages unless you respond to
+WM_GETDLGCODE messages and tell the dialog box what kind of stuff you want. The following asks for characters and tabs.
+
+<pre>
+
+case WM_GETDLGCODE:
+    return DLGC_WANTCHARS | DLGC_WANTTAB;
+
+</pre>
+
+<hr>
+<center><h3 id="sleep" class=nopad>Sleeping or Waiting</h3></center><hr>
+<pre>
+DWORD ms = 1000;
+
+Sleep( ms );
+</pre>
+
+<hr>
+<center><h3 id="timer" class=nopad>Timer</h3></center><hr>
+<br>Once you create a timer, with the SetTimer command, it continues to fire until you kill it.
+<pre>
+const  UINT TIMER_MS  = 10000;
+static UINT MyTimerId = 0;
+    case WM_DBINIT:
+        MyTimerId = SetTimer( hWnd, 0, TIMER_MS, NULL );
+        return TRUE;
+
+    case WM_TIMER:
+        /*
+        --------------------------------------------------------------------------------------
+        If you don't kill the timer it will repeat automatically. Kill and restart as shown
+        here if you want to be sure you don't take longer to do whatever than the timer takes.
+        -------------------------------------------------------------------------------------- */
+        if ( (UINT)wParam == MyTimerId )
+            {
+            KillTimer( hWnd, MyTimerId );
+            MyTimerId = 0;
+            do_whatever();
+            MyTimerId = SetTimer( hWnd, 0, TIMER_MS, NULL );
+            }
+        return 0;
+
+    case WM_DESTROY:
+        /*
+        ---------------------------------
+        I don't know if this is necessary
+        --------------------------------- */
+        if ( MyTimerId )
+            {
+            KillTimer( hWnd, MyTimerId );
+            MyTimerId = 0;
+            }
+        break;
+</pre>
+
+<hr>
+<center><h3 id="visible" class=nopad>Visibility</h3></center><hr>
+<pre>
+SW_HIDE
+SW_SHOW
+BOOL ShowWindow( HWND hWnd, int nCmdShow );
+BOOL IsWindowVisible( HWND hWnd );
+</pre>
+<hr><center><h3 id="enable" class=nopad>Enable</h3></center><hr>
+<pre>
+BOOL EnableWindow(
+    HWND hWnd,	// handle to window
+    BOOL bEnable 	// flag for enabling or disabling input
+   );
+</pre>
+
+<hr>
+<center><h3 id="fonts" class=nopad>Fonts</h3></center><hr>
+<ul>
+<li>DEFAULT_GUI_FONT is MS Sans Serif</li>
+<li>SYSTEM_FONT is Tahoma for w2k and xp, MS Sans Serif for all earlier</li>
+</ul>
+both of these are very similar to Arial. Of the three, Arial is the cleanest.
+</body>
+</html>

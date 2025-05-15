@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/flotr2.min.js"></script>
+
+<script>
+var req = new XMLHttpRequest();
+var sensors = [];
+var selectedID;
+var selectedPointID;
+
+/***********************************************************************
+*                                askServer                             *
+***********************************************************************/
+function askServer(){
+req.open("GET","getsensor",true);
+req.onreadystatechange = handleServerResponse;
+req.send();
+}
+
+/***********************************************************************
+*                         handleServerResponse                         *
+                          where everything runs...
+***********************************************************************/
+function handleServerResponse()
+{
+if ( (req.readyState == 4) && (req.status == 200) )
+    {
+	var text = req.responseText;
+
+	var sensors_line = text.split('\n');
+	var sensors_count = sensors_line.length;
+
+	/*
+	------------------------------------------------------------------------------
+	Check if the last line is actually empty. if so, exclude the last empty record
+	------------------------------------------------------------------------------ */
+	if ( sensors_line[sensors_line.length-1] == "" )
+	    {
+		sensors_line = sensors_line.slice(0,-1);
+		sensors_count = sensors_line.length;
+	    }
+
+	for ( var i = 0; i < sensors_count; i++ )
+	    {
+		var attr = sensors_line[i].split(",");
+		//Analog_sensor(desc, units, vartype, low_volts, low_value, high_volts, high_value, points)
+		var len = attr.length;
+
+		/*
+		--------------------------------
+		Points start from 7th to the end
+		-------------------------------- */
+		var points = [];
+		for ( var j = 7; j < len; j++ )
+		    {
+			points[j-7] = JSON.parse( attr[j].replace(" ", ",") );
+		    }
+
+		/*
+		----------------------------
+		Points attribute is an array
+		---------------------------- */
+		sensors[i] = new Analog_sensor(attr[0],attr[1],attr[2],attr[3],attr[4],attr[5],attr[6],points);
+		//console.log(sensors[i].desc);
+	    }
+	/*
+	----------------------------------
+	Initialize analog sensor inventory
+	---------------------------------- */
+	document.getElementById("descriptionTable").innerHTML = iniDescriptionTable(sensors);
+	/*
+	----------------------------------------------------------------------------
+	Set description, variable type, unit, transducer table with the first sensor
+	---------------------------------------------------------------------------- */
+	selectedID = 0;
+	initialize(0);
+
+	$("#descriptionTable tr").not(':first').on("click", selectSensor);
+	document.getElementById("transducerTable").addEventListener("input",transducerTableChange);
+
+
+	document.getElementById("testVolts").addEventListener("input",testVoltsChange);
+	document.getElementById("testValue").addEventListener("input",testValueChange);
+	}
+}
+
+
+/***********************************************************************
+*                         ANALOG_SENSOR_CLASS                          *
+***********************************************************************/
+function Analog_sensor(desc, units, vartype, low_volts, low_value, high_volts, high_value, points)
+{
+this.desc = desc;
+this.units = units;
+this.vartype = vartype;
+this.low_volts = low_volts;
+this.high_volts = high_volts;
+this.low_value = low_value;
+this.high_value = high_value;
+this.points = points;  //all the points user enter, including max/min values
+
+this.max_volts_level = 0; // not used
+this.max_volts = 0; // not used
+this.m = [];  ///not saved
+this.b = [];   ///not saved
+}
+
+/*******************************************************************
+*                        initialize                                *
+********************************************************************/
+function initialize(index)
+{
+/*
+---------------
+Set description
+--------------- */
+document.getElementById("description").value = sensors[index].desc;
+
+//set variable type
+$("#variableType").val(sensors[index].vartype);
+//set unit
+$("#unit").val(sensors[index].units);
+//set transducer table
+document.getElementById("transducerTable").innerHTML = makeTransducerTable(index);
+//document.close(); //important!!
+transducerTableChange();
+//update unit at the test calculator
+document.getElementById("testValueUnit").innerHTML = $("#unit").find("option:selected").text();
+//transducer table selectable
+$("#transducerTable tr").not(':first').on("click", selectPoint);
+//when change sensor, the point set to 1
+selectedPointID = 1;
+}
+
+/*******************************************************************
+*                        iniDescriptionTable                       *
+********************************************************************/
+function iniDescriptionTable(s)
+{
+var result = "<tr><th>Analog Sensor</th><tr>";
+for (var i = 0; i < s.length; i++)
+    {
+    result += "<tr><td>" + s[i].desc + "</td></tr>";
+    }
+return result;
+}
+
+/*******************************************************************
+*                        makeTransducerTable                       *
+********************************************************************/
+//this should read everthing from the points...
+function makeTransducerTable(index){
+	var result = "<tr><th>Volts</th><th id='transducerTableUnit'>" + $("#unit").find("option:selected").text() + "</th></tr>";
+	var len = sensors[selectedID].points.length;
+	for (var i = 0; i < len; i++){
+		result = result + "<tr><td><div contenteditable>" + sensors[selectedID].points[i][0] + "</div></td><td><div contenteditable>"
+		+ sensors[selectedID].points[i][1] + "</div></td></tr>";
+	}
+	return result;
+}
+
+/*******************************************************************
+*                        addPoint                                  *
+********************************************************************/
+function addPoint()
+{
+//console.log(selectedID);
+var table = document.getElementById( "transducerTable" );
+var row   = table.insertRow( selectedPointID+1 );
+row.style.height = "25px";
+var sel = table.getElementsByTagName("tr")[selectedPointID].getElementsByTagName("div");
+row.insertCell(0).innerHTML = "<div contenteditable>" + sel[0].innerHTML + "</div>";
+row.insertCell(1).innerHTML = "<div contenteditable>" + sel[1].innerHTML + "</div>";
+
+/*
+--------------------
+Make it clickable!!!
+-------------------- */
+row.onclick = selectPoint;
+}
+
+/*******************************************************************
+*                        makePoints                                  *
+********************************************************************/
+function makePoints(){
+	var table = document.getElementById("transducerTable");
+	for (var r = 1, m = table.rows.length; r < m; r++){  //skip the header
+		sensors[selectedID].points[r-1] = [parseFloat(table.rows[r].cells[0].getElementsByTagName("div")[0].innerHTML),
+		parseFloat(table.rows[r].cells[1].getElementsByTagName("div")[0].innerHTML)];
+		//sensors[selectedID].points[r-1] = [parseFloat(table.rows[r].cells[0].innerHTML),
+		//parseFloat(table.rows[r].cells[1].innerHTML)];
+	}
+
+	//save points in the points field of sensor class
+	//sort the points based on volts value in ascending order, sort by volts first, and then value
+	//however, function is monotonic increasing, if volts are in increasing order, so must values
+	sensors[selectedID].points.sort(function(a,b){
+		if(a[0]<b[0]) return -1;
+		if(a[0]>b[0]) return 1;
+		if(a[1]<b[1]) return -1;
+		if(a[1]>b[1]) return 1;
+		return 0;
+	});
+	//console.log(sensors[selectedID].points);
+}
+
+/*******************************************************************
+*                        calFunc                                   *
+********************************************************************/
+function calFunc(x1,y1,x2,y2){
+	var slope = (y2-y1)/(x2-x1);
+	var interc = y1-slope*x1;
+	return [slope, interc];
+}
+
+/*******************************************************************
+*                        calFuncAll                                 *
+********************************************************************/
+function calFuncAll(){
+	var len = sensors[selectedID].points.length;
+	for (var i=0; i<len-1; i++){
+		var res = calFunc(sensors[selectedID].points[i][0],sensors[selectedID].points[i][1],sensors[selectedID].points[i+1][0],sensors[selectedID].points[i+1][1]);
+		sensors[selectedID].m[i] = res[0];
+		sensors[selectedID].b[i] = res[1];
+	}
+	//update sensors attributes
+	//sensors[selectedID].m = m;
+	//sensors[selectedID].b = b;
+}
+
+/*******************************************************************
+*                        updateMinMax                     *
+********************************************************************/
+function updateMinMax(){
+
+	var len = sensors[selectedID].points.length;
+	//sort array in ascending order
+	var voltsArr = [];
+	var valueArr = [];
+	for (var i=0; i<len; i++){
+		voltsArr[i] = sensors[selectedID].points[i][0];
+		valueArr[i] = sensors[selectedID].points[i][1];
+	}
+	//
+	//update min/max values
+	//console.log(voltsArr);
+	//console.log(Math.min.apply(Math,voltsArr).toString());
+
+	sensors[selectedID].low_volts = Math.min.apply(Math,voltsArr).toString();
+	sensors[selectedID].high_volts = Math.max.apply(Math,voltsArr).toString();
+	sensors[selectedID].low_value = Math.min.apply(Math,valueArr).toString();
+	sensors[selectedID].high_value = Math.max.apply(Math,valueArr).toString();
+
+
+}
+
+/*******************************************************************
+*                        transducerTableChange                     *
+********************************************************************/
+function transducerTableChange(){
+	makePoints();
+	//console.log(points);
+	//calculate slope and intercept
+	calFuncAll();
+	//update min/max volts/value
+	updateMinMax();
+	//draw plot
+	drawPlot();
+
+	//console.log(points);
+	//console.log(sensors[selectedID]);
+}
+/*******************************************************************
+*                        drawPlot                                  *
+********************************************************************/
+function drawPlot(){
+	if(sensors[selectedID].points==[]) {
+		makePoints();
+	}
+	Flotr.draw(
+		document.getElementById("transducerChart"),
+		[{data: sensors[selectedID].points, lines:{show:true}}],
+		{xaxis: {title: "Volts", min: parseFloat(sensors[selectedID].low_volts), max: parseFloat(sensors[selectedID].high_volts)},
+		yaxis: {title: $("#unit").find("option:selected").text(), min: parseFloat(sensors[selectedID].low_value), max: parseFloat(sensors[selectedID].high_value)}}
+	);
+	//console.log(plot.options.yaxis.title);
+}
+
+/*******************************************************************
+*                        selectSensor                                *
+********************************************************************/
+function selectSensor(){
+	$('#descriptionTable tr').not(this).css('background-color','white');
+	$(this).css('background-color','LightGray');
+	selectedID = $(this).index()-2;
+	initialize(selectedID);
+}
+
+/*******************************************************************
+*                       findParVolts
+           find the parameters with volts known
+********************************************************************/
+function findParVolts(vlt){
+	if(sensors[selectedID].points==[]) {
+		makePoints();
+		calFuncAll();
+	}
+	var len = sensors[selectedID].points.length;
+	//sort array in ascending order
+	var srt = [];
+	for (var i=0; i<len; i++){
+		srt[i] = sensors[selectedID].points[i][0];
+	}
+	//array should already be sorted in ascending order
+	//srt.sort(function(a,b){return a-b});
+	//check the range of volts/value
+	if(vlt < srt[0]) alert("Please enter a number larger than " + sensors[selectedID].low_volts);
+	else if(vlt > srt[len-1]) alert("Please enter a number smaller than " + sensors[selectedID].high_volts);
+	else {
+		for (var i=1; i<len; i++){
+			if (vlt < srt[i]) break;
+		}
+	}
+	return i-1; // index for m and b
+
+}
+
+/*******************************************************************
+*                       testVoltsChange
+
+********************************************************************/
+function testVoltsChange(){
+	var volt = parseFloat(document.getElementById("testVolts").value);
+	var paraIndex = findParVolts(volt);
+	var value = sensors[selectedID].m[paraIndex] * volt + sensors[selectedID].b[paraIndex];
+	document.getElementById("testValue").value = value;
+}
+
+/*******************************************************************
+*                       findParValue
+           find the parameters with value known
+********************************************************************/
+function findParValue(vlu){
+	if(sensors[selectedID].points==[]) {
+		makePoints();
+		calFuncAll();
+	}
+	var len = sensors[selectedID].points.length;
+	var srt = [];
+	for (var i=0; i<len; i++){
+		srt[i] = sensors[selectedID].points[i][1]; // value array
+	}
+	//array should already be increasing
+	//srt.sort(function(a,b){return a-b});
+	//check the range of volts/value
+	if(vlu < srt[0]) alert("Please enter a number larger than " + sensors[selectedID].low_value);
+	else if(vlu > srt[len-1]) alert("Please enter a number smaller than " + sensors[selectedID].high_value);
+	else {
+		for (var i=1; i<len; i++){
+			if (vlu < srt[i]) break;
+		}
+	}
+	return i-1; // index for m and b
+
+}
+
+/*******************************************************************
+*                       testValueChange
+
+********************************************************************/
+function testValueChange(){
+	var vlu = parseFloat(document.getElementById("testValue").value);
+	var paraIndex = findParValue(vlu);
+	var volt = (vlu - sensors[selectedID].b[paraIndex])/sensors[selectedID].m[paraIndex];
+	document.getElementById("testVolts").value = volt;
+}
+/*******************************************************************
+*                       descriptionChange
+                   update the description field
+********************************************************************/
+function descriptionChange(){
+	sensors[selectedID].desc = document.getElementById("description").value;
+	$("#descriptionTable tr").eq(selectedID + 2).find("td").html(sensors[selectedID].desc);
+
+}
+/*******************************************************************
+*                       variableTypeChange
+                   update the variable type field
+********************************************************************/
+function variableTypeChange(){
+	sensors[selectedID].vartype = document.getElementById("variableType").value;
+
+}
+
+/*******************************************************************
+*                       unitChange
+                   update the variable type field
+********************************************************************/
+function unitChange(){
+	sensors[selectedID].units = document.getElementById("unit").value;
+	//unit on the transducer table
+	$("#transducerTableUnit").html($("#unit").find("option:selected").text());
+	//unit in plot
+	$(".flotr-axis-title-y1").html($("#unit").find("option:selected").text());
+	//unit in calculator
+	$("#testValueUnit").html($("#unit").find("option:selected").text());
+}
+
+/*******************************************************************
+*                        selectPoint                                *
+********************************************************************/
+function selectPoint(){
+	$('#transducerTable tr').not(this).css('background-color','white');
+	$(this).css('background-color','LightGray');
+	selectedPointID = $(this).index();
+	//console.log("select point ID" + selectedPointID);
+
+}
+
+/*******************************************************************
+*                       deletePoint
+********************************************************************/
+function deletePoint(){
+	var table = document.getElementById("transducerTable");
+	table.deleteRow(selectedPointID);
+
+	//delete the last point in sensors.points
+	//this wont lose data since the makepoints will read everything again
+	//this is to avoid data duplication
+	//console.log("before" + sensors[selectedID].points.length);
+	sensors[selectedID].points = sensors[selectedID].points.slice(0,-1);
+	//console.log("after" + sensors[selectedID].points.length);
+
+	transducerTableChange();
+
+}
+
+/*******************************************************************
+*                       saveChanges
+********************************************************************/
+function saveChanges(){
+	//save everything into a big string...
+
+	var result = "";
+
+	for (var i = 0; i < sensors.length; i++){
+		//delete the comma between volt and value in sensors.points
+		var points = JSON.stringify(sensors[i].points).replace(/,/g," ").replace(/\]\]/g,"]").replace(/\[\[/g,"[").replace(/\] \[/g,"],[");
+		//console.log(sensors[i].points);
+		result = result + sensors[i].desc + "," + sensors[i].units + "," + sensors[i].vartype + "," +
+					sensors[i].low_volts + "," + sensors[i].low_value + "," +
+					sensors[i].high_volts + "," + sensors[i].high_value + "," +
+					points + "\n";
+	}
+
+
+	//encode the string, encodeURIComponent also escapes # while encodeURI doesnt
+	var dataToSend = "?" + encodeURIComponent(result);
+	req.open("POST","postsensor" + dataToSend, true);
+	req.onreadystatechange = function(){}  //do nothing... but fixed sth...
+	req.send();
+}
+
+/*******************************************************************
+*                       newSensor
+********************************************************************/
+function newSensor(){
+	var table = document.getElementById("descriptionTable");
+	var row = table.insertRow(selectedID + 3);
+	row.style.height = "20px";
+	var sel = table.getElementsByTagName("tr")[selectedID + 2].getElementsByTagName("td");
+	row.insertCell(0).innerHTML = sel[0].innerHTML;
+
+	//copy everything of the selected sensor to the new one
+	//Analog_sensor(desc, units, vartype, low_volts, low_value, high_volts, high_value, points)
+	var selSensor = sensors[selectedID];
+
+	var newSensor = new Analog_sensor(selSensor.desc,selSensor.units,selSensor.vartype,
+									selSensor.low_volts,selSensor.low_value,selSensor.high_volts,
+									selSensor.high_value,selSensor.points.slice());
+	sensors.splice(selectedID + 1, 0, newSensor);
+	//console.log(sensors);
+
+
+	//make it clickable!!!
+	row.onclick = selectSensor;
+
+}
+</script>
+<style>
+#descriptionTable {
+	display: block;
+	width: 300px;
+	height: 500px;
+	overflow: auto;
+	position: absolute;
+	border-style: solid;
+	border-width: 1px;
+	left: 150px;
+	top: 20px;
+}
+
+#descriptionTable td{
+	border: 1px solid black;
+}
+
+#descriptionBox{
+	position: absolute;
+	left: 500px;
+	top:70px;
+}
+
+#variableTypeBox{
+	position: absolute;
+	left: 500px;
+	top: 150px;
+}
+
+#unitBox{
+	position: absolute;
+	left: 700px;
+	top: 150px;
+}
+
+#transducerBox{
+	position: absolute;
+	left: 500px;
+	top: 230px;
+}
+
+#transducerTable{
+border-style: solid;
+	border-width: 1px;
+}
+
+#transducerTable td{
+	border: 1px solid black;
+	height: 25px;
+	width: 80px;
+}
+
+#transducerChart{
+	position: absolute;
+	left: 700px;
+	top: 230px;
+	width: 300px;
+	height: 300px;
+}
+
+#testCalculatorBox{
+	position: absolute;
+	left: 1050px;
+	top: 230px;
+	width: 200px;
+	height: 150px;
+}
+
+#newSensorButton{
+	position: absolute;
+	top: 20px;
+	left: 500px;
+}
+
+</style>
+</head>
+
+<body onload="askServer()">
+
+
+<title> Analog Sensor Setup </title>
+
+<div><table id='descriptionTable'></table></div>
+<div id="newSensorButton"><button onclick="newSensor()">Create a New Sensor</button></div>
+<div id="descriptionBox">Description<br>
+	<input id="description" type="text" size="50" onchange="descriptionChange()">
+</div>
+<div id="variableTypeBox">Variable Type<br>
+	<select id="variableType" onchange="variableTypeChange()">
+		<option value="">None</option>
+		<option value="1">Distance</option>
+		<option value="2">Position</option>
+		<option value="4">Pressure</option>
+		<option value="8">Temperature</option>
+		<option value="16">Time</option>
+		<option value="32">Time Interval</option>
+		<option value="64">Velocity</option>
+		<option value="128">Volume</option>
+		<option value="256">Area</option>
+		<option value="512">Work</option>
+		<option value="1024">Weight</option>
+		<option value="2048">Density</option>
+	</select>
+</div>
+<div id="unitBox">Unit<br>
+	<select id="unit" onchange="unitChange()">
+		<option value="">NONE</option>
+		<option value="1">IN</option>
+		<option value="2">CM</option>
+		<option value="3">FT</option>
+		<option value="4">SEC</option>
+		<option value="5">IPS</option>
+		<option value="6">FPM</option>
+		<option value="7">CMPS</option>
+		<option value="8">PSI</option>
+		<option value="9">BAR</option>
+		<option value="10">MM</option>
+		<option value="11">MPS</option>
+		<option value="12">°F</option>
+		<option value="13">°C</option>
+		<option value="14">VOLTS</option>
+		<option value="15">KG/CM^2</option>
+		<option value="16">MS</option>
+		<option value="17">IN-LB</option>
+		<option value="18">KJ</option>
+		<option value="19">LBS</option>
+		<option value="20">KG</option>
+		<option value="21">IN^3</option>
+		<option value="22">CM^3</option>
+		<option value="23">MM^3</option>
+		<option value="24">IN^2</option>
+		<option value="25">CM^2</option>
+		<option value="26">MM^2</option>
+		<option value="27">LB/IN^3</option>
+		<option value="28">G/CM^3</option>
+		<option value="29">INCH-HG</option>
+		<option value="30">DIN</option>
+		<option value="31">MEGAPA</option>
+		<option value="32">mBAR</option>
+	<select>
+</div>
+
+<div id="transducerBox">Transducer I/O Ranges
+	<table id="transducerTable"></table>
+	<br>
+	<button onclick = "addPoint()">Add Point</button>
+	<button onclick = "deletePoint()">Delete Point</button>
+	<br>
+	<br>
+	<button onclick = "saveChanges()">Save Changes</button>
+</div>
+<div id="transducerChart"></div>
+<div id="testCalculatorBox">Test Calculator<br>
+	<input type="text" style="width:80px" id="testVolts"><b>Volts</b><br>
+	<input type="text" style="width:80px" id="testValue"><b id="testValueUnit"></b>
+</div>
+
+
+
+
+</body>
+
+
+</html>

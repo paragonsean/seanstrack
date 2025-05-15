@@ -1,0 +1,78 @@
+
+
+
+    Computer Name: JAYSNEWDELL
+    DNS Host Name: JaysNewDell
+    System info : Windows 2000 Professional (Build 2600)
+    Processor : x86 Family 15 Model 75 Stepping 2, AuthenticAMD
+    List of installed hotfixes : 
+        KB835221WXP
+        KB873339
+        KB885250
+        KB885835
+        KB887472
+        KB889673
+        KB891781
+        KB896256
+        KB896358
+        KB896423
+        KB896424
+        KB899588
+        KB899591
+        KB901214
+        KB904706
+        KB906569
+        KB908519
+        KB908531
+        KB908673
+        KB911562
+        KB911564
+        KB911567
+        KB912919
+        KB912945
+        KB914388
+        KB917159
+        KB917344
+        KB918439
+        KB918899
+        KB919007
+        KB920214
+        KB920670
+        KB920683
+        KB920685
+        KB921398
+        KB921883
+        KB922616
+        Q147222
+
+
+Netcard queries test . . . . . . . : Passed
+    [WARNING] The net card 'Broadcom 440x 10/100 Integrated Controller' may not be working because it has not received any packets.
+
+
+
+Per interface results:
+
+    Adapter : Local Area Connection 3
+
+        Netcard queries test . . . : Passed
+
+
+Global results:
+
+
+Domain membership test . . . . . . : Passed
+    Dns domain name is not specified.
+    Dns forest name is not specified.
+
+
+NetBT transports test. . . . . . . : Passed
+    List of NetBt transports currently configured:
+        NetBT_Tcpip_{30F27A88-31D2-4E9A-B00A-4D3FA6E9D6D5}
+    1 NetBt transport currently configured.
+
+
+Winsock test . . . . . . . . . . . : Passed
+
+
+The command completed successfully

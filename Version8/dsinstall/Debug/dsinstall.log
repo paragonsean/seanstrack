@@ -1,0 +1,42 @@
+﻿Build started 5/15/25 12:18:36 AM.
+     1>Project "C:\Sources\Version8\dsinstall\dsinstall.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt setup.cpp
+         setup.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"Debug\Setup.res" Setup.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Sources\Version8\truetrak\Debug\dsinstall.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Sources\Version8\truetrak\Debug\dsinstall.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Sources\Version8\truetrak\Debug\dsinstall.lib" /MACHINE:X86 Debug\Setup.res
+         Debug\setup.obj
+     1>setup.obj : error LNK2019: unresolved external symbol __imp__InitCommonControls@0 referenced in function _WinMain@16
+     1>setup.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl file_exists(char *)" (?file_exists@@YAEPAD@Z) referenced in function "unsigned char __cdecl wait_for_file(char *)" (?wait_for_file@@YAEPAD@Z)
+     1>setup.obj : error LNK2019: unresolved external symbol "long __cdecl asctoint32(char const *)" (?asctoint32@@YAJPBD@Z) referenced in function "public: int __thiscall STRING_CLASS::int_value(void)" (?int_value@STRING_CLASS@@QAEHXZ)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: __thiscall STRING_CLASS::STRING_CLASS(void)" (??0STRING_CLASS@@QAE@XZ) referenced in function "void __cdecl startup(int)" (?startup@@YAXH@Z)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: __thiscall STRING_CLASS::~STRING_CLASS(void)" (??1STRING_CLASS@@QAE@XZ) referenced in function "void __cdecl startup(int)" (?startup@@YAXH@Z)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::operator=(char const *)" (??4STRING_CLASS@@QAEXPBD@Z) referenced in function "void __cdecl startup(int)" (?startup@@YAXH@Z)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::cat_path(char const *)" (?cat_path@STRING_CLASS@@QAEXPBD@Z) referenced in function "void __cdecl begin(void)" (?begin@@YAXXZ)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall STRING_CLASS::replace(char,char)" (?replace@STRING_CLASS@@QAEEDD@Z) referenced in function "void __cdecl begin(void)" (?begin@@YAXXZ)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: __thiscall INI_CLASS::~INI_CLASS(void)" (??1INI_CLASS@@QAE@XZ) referenced in function "void __cdecl begin(void)" (?begin@@YAXXZ)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall INI_CLASS::set_file(char const *)" (?set_file@INI_CLASS@@QAEEPBD@Z) referenced in function "void __cdecl begin(void)" (?begin@@YAXXZ)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: char * __thiscall INI_CLASS::get_string(char const *,char const *)" (?get_string@INI_CLASS@@QAEPADPBD0@Z) referenced in function "void __cdecl begin(void)" (?begin@@YAXXZ)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: __thiscall LISTBOX_CLASS::~LISTBOX_CLASS(void)" (??1LISTBOX_CLASS@@QAE@XZ) referenced in function "void __cdecl `dynamic atexit destructor for 'Lb''(void)" (??__FLb@@YAXXZ)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: int __thiscall LISTBOX_CLASS::add(char *)" (?add@LISTBOX_CLASS@@QAEHPAD@Z) referenced in function "int __cdecl copy_one_file(char *,char *)" (?copy_one_file@@YAHPAD0@Z)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: int __thiscall LISTBOX_CLASS::count(void)" (?count@LISTBOX_CLASS@@QAEHXZ) referenced in function "void __cdecl scroll_listbox_to_last_entry(void)" (?scroll_listbox_to_last_entry@@YAXXZ)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall LISTBOX_CLASS::init(struct HWND__ *)" (?init@LISTBOX_CLASS@@QAEEPAUHWND__@@@Z) referenced in function "long __stdcall main_proc(struct HWND__ *,unsigned int,unsigned int,long)" (?main_proc@@YGJPAUHWND__@@IIJ@Z)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall LISTBOX_CLASS::set_top_index(int)" (?set_top_index@LISTBOX_CLASS@@QAEEH@Z) referenced in function "void __cdecl scroll_listbox_to_last_entry(void)" (?scroll_listbox_to_last_entry@@YAXXZ)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: int __thiscall LISTBOX_CLASS::top_index(void)" (?top_index@LISTBOX_CLASS@@QAEHXZ) referenced in function "void __cdecl scroll_listbox_to_last_entry(void)" (?scroll_listbox_to_last_entry@@YAXXZ)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: int __thiscall LISTBOX_CLASS::visible_row_count(void)" (?visible_row_count@LISTBOX_CLASS@@QAEHXZ) referenced in function "void __cdecl scroll_listbox_to_last_entry(void)" (?scroll_listbox_to_last_entry@@YAXXZ)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: void __thiscall WINDOW_CLASS::show(int)" (?show@WINDOW_CLASS@@QAEXH@Z) referenced in function "void __cdecl startup(int)" (?startup@@YAXH@Z)
+     1>setup.obj : error LNK2019: unresolved external symbol "public: void __thiscall WINDOW_CLASS::post(unsigned int)" (?post@WINDOW_CLASS@@QAEXI@Z) referenced in function "public: void __thiscall WINDOW_CLASS::close(void)" (?close@WINDOW_CLASS@@QAEXXZ)
+     1>setup.obj : error LNK2019: unresolved external symbol "char * __cdecl copystring(char *,char const *)" (?copystring@@YAPADPADPBD@Z) referenced in function "int __cdecl copy_one_file(char *,char *)" (?copy_one_file@@YAHPAD0@Z)
+     1>setup.obj : error LNK2019: unresolved external symbol "char const * __cdecl exe_directory(void)" (?exe_directory@@YAPBDXZ) referenced in function "int __cdecl copy_one_file(char *,char *)" (?copy_one_file@@YAHPAD0@Z)
+     1>setup.obj : error LNK2019: unresolved external symbol "void __cdecl append_filename_to_path(char *,char const *)" (?append_filename_to_path@@YAXPADPBD@Z) referenced in function "void __cdecl create_desktop_link(char *,char *,char *)" (?create_desktop_link@@YAXPAD00@Z)
+     1>setup.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl set_text(struct HWND__ *,char const *)" (?set_text@@YAEPAUHWND__@@PBD@Z) referenced in function "void __cdecl begin(void)" (?begin@@YAXXZ)
+     1>setup.obj : error LNK2019: unresolved external symbol "char * __cdecl resource_string(struct HINSTANCE__ *,unsigned int)" (?resource_string@@YAPADPAUHINSTANCE__@@I@Z) referenced in function "char * __cdecl resource_string(unsigned int)" (?resource_string@@YAPADI@Z)
+     1>setup.obj : error LNK2001: unresolved external symbol "private: static char * STRING_CLASS::emptystring" (?emptystring@STRING_CLASS@@0PADA)
+     1>C:\Sources\Version8\truetrak\Debug\dsinstall.exe : fatal error LNK1120: 26 unresolved externals
+     1>Done Building Project "C:\Sources\Version8\dsinstall\dsinstall.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.23

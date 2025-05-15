@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<translations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<translation id="machine_setup_text">
+		<English>Machine Setup</English>
+		<Chinese>机器设置</Chinese>
+	</translation>
+	<translation id="create_new_machine_text">
+		<English>Create New Machine</English>
+		<Chinese>新建机器</Chinese>
+	</translation>
+	<translation id="delete_the_current_machine_text">
+		<English>Delete the Current Machine</English>
+		<Chinese>删除当前机器</Chinese>
+	</translation>
+</translations>

@@ -1,0 +1,17 @@
+opto_light,opto_screw,truetrak_wire,terminal_strip,description
+1,1,17,69B,Slow Shot Output
+2,2,18,69A,Accumulator Output
+3,3,19,68B,
+4,4,20,68A,
+1,5,21,67B,Valve Test in Operation
+2,6,22,67A,
+3,7,23,66B,
+4,8,24,66A,
+1,9,25,65B,
+2,10,26,65A,Limit Switch 5
+3,11,27,64B,Limit Switch 6
+4,12,28,64A,Warning Active Low
+1,13,29,63B,Limit Switch 1
+2,14,30,63A,Limit Switch 2
+3,15,31,62B,Limit Switch 3
+4,16,32,62A,Limit Switch 4

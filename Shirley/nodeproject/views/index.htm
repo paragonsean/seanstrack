@@ -1,0 +1,56 @@
+<!--temporary index -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <script src="../public/javascripts/lib/jquery-2.1.4.min.js"></script>
+ <script src="../public/javascripts/module/translation.js"></script>
+ <script>
+
+  var sensor_setup_url;
+  var board_setup_url;
+  var machine_setup_url;
+
+  function toChinese(){
+   sensor_setup_url = "/views/analog_sensor_setup0714.htm?Chinese";
+   board_setup_url = "/views/boardSetup0729.htm?Chinese";
+   machine_setup_url = "/views/machineSetup.html?Chinese";
+
+   translation("../translations/index.xml","Chinese");
+
+   hrefChange();
+  }
+
+  function toEnglish(){
+   sensor_setup_url = "/views/analog_sensor_setup0714.htm";
+   board_setup_url = "/views/boardSetup0729.htm";
+   machine_setup_url = "/views/machineSetup.html";
+
+   translation("../translations/index.xml","English");
+
+   hrefChange();
+  }
+
+  function hrefChange(){
+   $("#sensor_setup_url_text").attr("href",sensor_setup_url);
+   $("#board_setup_url_text").attr("href",board_setup_url);
+   $("#machine_setup_url_text").attr("href",machine_setup_url);
+  }
+ </script>
+ </head>
+<body>
+<p>this is a temporary index<br> 
+the structure of the project is as follows:
+ 1) data: all the data
+ 2) public: front-end code which includes images, javascripts, stylesheets
+ 3) routes: back-end/nodejs code
+ 4) views: front-end html
+ 5) server.js: back-end route controller, the master/boss</p>
+<a id="sensor_setup_url_text" href = "/views/analog_sensor_setup0714.htm">analog sensor setup</a>
+<a id="board_setup_url_text" href = "/views/boardSetup0729.htm">board setup</a>
+<a id="machine_setup_url_text" href = "/views/machineSetup.html">machine setup</a>
+<button onclick="toEnglish()">English</button>
+<button onclick="toChinese()">Chinese</button>
+</body>
+</html>
+

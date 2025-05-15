@@ -1,0 +1,24 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: V5Subs - Win32 Free--------------------
+</h3>
+
+
+Microsoft (R) Program Maintenance Utility   Version 6.00.8168.0
+Copyright (C) Microsoft Corp 1988-1998. All rights reserved.
+
+ cl /nologo /MT /W3 /Zp1 /O1 /D "WIN32" /D "_WINDOWS" /D "NDEBUG" /D "_LIB" /Fp"../include/free.pch" /Yu"windows.h" /Fo"free/" /c FTANALOG.CPP
+FTANALOG.CPP
+ link -lib /nologo /out:"..\freelib\v5subs.lib" free\alarmsum.obj free\array.obj free\ascfloat.obj  free\asensor.obj free\bitclass.obj free\callfile.obj free\catclass.obj free\chaxis.obj  free\client.obj free\color.obj free\computer.obj free\converta.obj free\copymach.obj  free\copypart.obj free\createco.obj free\current.obj free\dateclas.obj free\dbsubs.obj  free\dcurve.obj free\dow.obj free\downsubs.obj free\downtime.obj free\dstat.obj free\dtotchar.obj  free\dynamic_file_name.obj  free\error_ms.obj free\evclass.obj free\execwait.obj free\exists.obj free\extract.obj  free\fifo.obj free\fileclas.obj free\fillpart.obj  free\fillshot.obj free\fix.obj free\fontclas.obj free\ftanalog.obj  free\ftii_file.obj free\ftii_parameters.obj free\ftii_shot_data.obj free\ftiiclas.obj  free\ftime.obj free\ftoasc.obj free\genlist.obj free\getshot.obj free\get_ini.obj  free\get_tc.obj free\gexedir.obj free\gpvar.obj free\hex.obj free\hourglas.obj free\iniclass.obj  free\insalph.obj free\is_empty.obj free\itoasc.obj free\killdir.obj free\listbox.obj  free\machcomp.obj free\machine.obj free\machname.obj free\marks.obj free\maximize.obj  free\mem.obj free\menu.obj free\mexists.obj free\misc.obj free\monrun.obj  free\namecopy.obj free\names.obj free\param.obj free\part.obj free\part_analog_sensor.obj free\path.obj  free\pexists.obj free\plookup.obj free\plotclas.obj free\plotsubs.obj free\pointcl.obj free\postsec.obj  free\profiles.obj free\pw.obj  free\readline.obj free\rectclas.obj free\reverse.obj free\ringcl.obj free\rjust.obj  free\runlist.obj  free\semaphor.obj free\sensor.obj free\shift.obj free\shotclas.obj free\sockcli.obj free\startpar.obj  free\stddown.obj free\stpres.obj free\strarray.obj  free\stparam.obj free\stringcl.obj free\structs.obj free\stsetup.obj free\textlen.obj  free\textlist.obj free\temp_message.obj free\time.obj  free\timeclas.obj free\unitadj.obj free\units.obj free\updown.obj free\visigrid.obj free\visiplot.obj  free\warmupcl.obj free\wclass.obj free\winsubs.obj free\workclas.obj free\writelin.obj free\z
+ero.obj
+
+
+
+<h3>Results</h3>
+V5Subs.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

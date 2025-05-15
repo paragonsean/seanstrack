@@ -1,0 +1,45 @@
+﻿Build started 5/15/25 12:18:30 AM.
+     1>Project "C:\Sources\Version8\copylog\copylog.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt copylog.cpp
+         copylog.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"Debug\CopyLog.res" CopyLog.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Sources\Version8\truetrak\Debug\copylog.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Sources\Version8\truetrak\Debug\copylog.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Sources\Version8\truetrak\Debug\copylog.lib" /MACHINE:X86 Debug\CopyLog.res
+         Debug\copylog.obj
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: __thiscall STRING_CLASS::STRING_CLASS(void)" (??0STRING_CLASS@@QAE@XZ) referenced in function "void __cdecl update_sample_record(void)" (?update_sample_record@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: __thiscall STRING_CLASS::STRING_CLASS(char const *)" (??0STRING_CLASS@@QAE@PBD@Z) referenced in function "void __cdecl update_sample_record(void)" (?update_sample_record@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: __thiscall STRING_CLASS::~STRING_CLASS(void)" (??1STRING_CLASS@@QAE@XZ) referenced in function "void __cdecl update_sample_record(void)" (?update_sample_record@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall STRING_CLASS::isempty(void)" (?isempty@STRING_CLASS@@QAEEXZ) referenced in function "void __cdecl save_changes(void)" (?save_changes@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::operator=(char const *)" (??4STRING_CLASS@@QAEXPBD@Z) referenced in function "void __cdecl get_connect_list(void)" (?get_connect_list@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::operator=(class STRING_CLASS const &)" (??4STRING_CLASS@@QAEXABV0@@Z) referenced in function "void __cdecl save_changes(void)" (?save_changes@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: bool __thiscall STRING_CLASS::get_text(struct HWND__ *)" (?get_text@STRING_CLASS@@QAE_NPAUHWND__@@@Z) referenced in function "void __cdecl save_changes(void)" (?save_changes@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: bool __thiscall STRING_CLASS::set_text(struct HWND__ *)" (?set_text@STRING_CLASS@@QAE_NPAUHWND__@@@Z) referenced in function "void __cdecl update_sample_record(void)" (?update_sample_record@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall NAME_CLASS::get_exe_dir_file_name(char const *)" (?get_exe_dir_file_name@NAME_CLASS@@QAEEPBD@Z) referenced in function "void __cdecl startup(int)" (?startup@@YAXH@Z)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall NAME_CLASS::get_exe_dir_file_name(class STRING_CLASS &,char const *)" (?get_exe_dir_file_name@NAME_CLASS@@QAEEAAVSTRING_CLASS@@PBD@Z) referenced in function "void __cdecl save_changes(void)" (?save_changes@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: __thiscall COMPUTER_CLASS::COMPUTER_CLASS(void)" (??0COMPUTER_CLASS@@QAE@XZ) referenced in function "void __cdecl save_changes(void)" (?save_changes@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: class STRING_CLASS & __thiscall COMPUTER_CLASS::name(void)" (?name@COMPUTER_CLASS@@QAEAAVSTRING_CLASS@@XZ) referenced in function "void __cdecl save_changes(void)" (?save_changes@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall COMPUTER_CLASS::is_this_computer(void)" (?is_this_computer@COMPUTER_CLASS@@QAEEXZ) referenced in function "void __cdecl save_changes(void)" (?save_changes@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall COMPUTER_CLASS::next(void)" (?next@COMPUTER_CLASS@@QAEEXZ) referenced in function "void __cdecl save_changes(void)" (?save_changes@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: void __thiscall COMPUTER_CLASS::rewind(void)" (?rewind@COMPUTER_CLASS@@QAEXXZ) referenced in function "void __cdecl save_changes(void)" (?save_changes@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall COMPUTER_CLASS::startup(void)" (?startup@COMPUTER_CLASS@@QAEEXZ) referenced in function "void __cdecl startup(int)" (?startup@@YAXH@Z)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: __thiscall LISTBOX_CLASS::~LISTBOX_CLASS(void)" (??1LISTBOX_CLASS@@QAE@XZ) referenced in function "void __cdecl `dynamic atexit destructor for 'StatusListbox''(void)" (??__FStatusListbox@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: int __thiscall LISTBOX_CLASS::add(char *)" (?add@LISTBOX_CLASS@@QAEHPAD@Z) referenced in function "void __cdecl save_changes(void)" (?save_changes@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall LISTBOX_CLASS::init(struct HWND__ *,int)" (?init@LISTBOX_CLASS@@QAEEPAUHWND__@@H@Z) referenced in function "int __stdcall copylog_dialog_proc(struct HWND__ *,unsigned int,unsigned int,long)" (?copylog_dialog_proc@@YGHPAUHWND__@@IIJ@Z)
+     1>copylog.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl log_file_string(class STRING_CLASS &,char *,char *,class STRING_CLASS &,class STRING_CLASS &,class STRING_CLASS &)" (?log_file_string@@YAEAAVSTRING_CLASS@@PAD1000@Z) referenced in function "void __cdecl update_sample_record(void)" (?update_sample_record@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl unknown(char *)" (?unknown@@YAEPAD@Z) referenced in function "void __cdecl get_connect_list(void)" (?get_connect_list@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl set_text(struct HWND__ *,int,char const *)" (?set_text@@YAEPAUHWND__@@HPBD@Z) referenced in function "int __stdcall copylog_dialog_proc(struct HWND__ *,unsigned int,unsigned int,long)" (?copylog_dialog_proc@@YGHPAUHWND__@@IIJ@Z)
+     1>copylog.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl is_checked(struct HWND__ *)" (?is_checked@@YAEPAUHWND__@@@Z) referenced in function "void __cdecl save_changes(void)" (?save_changes@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl is_checked(struct HWND__ *,int)" (?is_checked@@YAEPAUHWND__@@H@Z) referenced in function "void __cdecl save_changes(void)" (?save_changes@@YAXXZ)
+     1>copylog.obj : error LNK2019: unresolved external symbol "char * __cdecl resource_string(struct HINSTANCE__ *,unsigned int)" (?resource_string@@YAPADPAUHINSTANCE__@@I@Z) referenced in function "char * __cdecl resource_string(unsigned int)" (?resource_string@@YAPADI@Z)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: void __thiscall WINDOW_CLASS::show(int)" (?show@WINDOW_CLASS@@QAEXH@Z) referenced in function "void __cdecl startup(int)" (?startup@@YAXH@Z)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: void __thiscall WINDOW_CLASS::post(unsigned int)" (?post@WINDOW_CLASS@@QAEXI@Z) referenced in function "int __stdcall copylog_dialog_proc(struct HWND__ *,unsigned int,unsigned int,long)" (?copylog_dialog_proc@@YGHPAUHWND__@@IIJ@Z)
+     1>copylog.obj : error LNK2019: unresolved external symbol "public: void __thiscall WINDOW_CLASS::shrinkwrap(struct HWND__ *)" (?shrinkwrap@WINDOW_CLASS@@QAEXPAUHWND__@@@Z) referenced in function "int __stdcall copylog_dialog_proc(struct HWND__ *,unsigned int,unsigned int,long)" (?copylog_dialog_proc@@YGHPAUHWND__@@IIJ@Z)
+     1>copylog.obj : error LNK2001: unresolved external symbol "private: static char * STRING_CLASS::emptystring" (?emptystring@STRING_CLASS@@0PADA)
+     1>C:\Sources\Version8\truetrak\Debug\copylog.exe : fatal error LNK1120: 29 unresolved externals
+     1>Done Building Project "C:\Sources\Version8\copylog\copylog.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.25

@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="UDebug|Win32">
+      <Configuration>UDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C9D814F7-BFBE-47EA-A90C-362165E22968}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UDebug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='UDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UDebug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='UDebug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="adam_thermo_class.cpp" />
+    <ClCompile Include="alarmsum.cpp" />
+    <ClCompile Include="analog_sensor_class.cpp" />
+    <ClCompile Include="array.cpp" />
+    <ClCompile Include="ascfloat.cpp" />
+    <ClCompile Include="asensor.cpp" />
+    <ClCompile Include="autoback.cpp" />
+    <ClCompile Include="bitclass.cpp" />
+    <ClCompile Include="callfile.cpp" />
+    <ClCompile Include="catclass.cpp" />
+    <ClCompile Include="chaxis.cpp" />
+    <ClCompile Include="choose_wire.cpp" />
+    <ClCompile Include="client.cpp" />
+    <ClCompile Include="color.cpp" />
+    <ClCompile Include="colorcl.cpp" />
+    <ClCompile Include="computer.cpp" />
+    <ClCompile Include="copymach.cpp" />
+    <ClCompile Include="copypart.cpp" />
+    <ClCompile Include="csvclass.cpp" />
+    <ClCompile Include="current.cpp" />
+    <ClCompile Include="dateclas.cpp" />
+    <ClCompile Include="dbsubs.cpp" />
+    <ClCompile Include="dbupsize.cpp" />
+    <ClCompile Include="db_to_vdb.cpp" />
+    <ClCompile Include="dcurve.cpp" />
+    <ClCompile Include="dow.cpp" />
+    <ClCompile Include="downsubs.cpp" />
+    <ClCompile Include="downtime.cpp" />
+    <ClCompile Include="dstat.cpp" />
+    <ClCompile Include="dtotchar.cpp" />
+    <ClCompile Include="dynamic_file_name.cpp" />
+    <ClCompile Include="error_ms.cpp" />
+    <ClCompile Include="evclass.cpp" />
+    <ClCompile Include="event_client.cpp" />
+    <ClCompile Include="execwait.cpp" />
+    <ClCompile Include="exists.cpp" />
+    <ClCompile Include="external_parameter.cpp" />
+    <ClCompile Include="extract.cpp" />
+    <ClCompile Include="fifo.cpp" />
+    <ClCompile Include="fileclas.cpp" />
+    <ClCompile Include="fillpart.cpp" />
+    <ClCompile Include="fillpart_with_dir.cpp" />
+    <ClCompile Include="fillshot.cpp" />
+    <ClCompile Include="fix.cpp" />
+    <ClCompile Include="fontclas.cpp" />
+    <ClCompile Include="ft2_wire_bit_class.cpp" />
+    <ClCompile Include="ftanalog.cpp" />
+    <ClCompile Include="ftcalc.cpp" />
+    <ClCompile Include="ftiiclas.cpp" />
+    <ClCompile Include="ftiiclas_new.cpp" />
+    <ClCompile Include="ftii_file.cpp" />
+    <ClCompile Include="ftii_parameters.cpp" />
+    <ClCompile Include="ftii_shot_data.cpp" />
+    <ClCompile Include="ftime.cpp" />
+    <ClCompile Include="ftoasc.cpp" />
+    <ClCompile Include="genlist.cpp" />
+    <ClCompile Include="get_ini.cpp" />
+    <ClCompile Include="get_tc.cpp" />
+    <ClCompile Include="gexedir.cpp" />
+    <ClCompile Include="gpvar.cpp" />
+    <ClCompile Include="hex.cpp" />
+    <ClCompile Include="hourglas.cpp" />
+    <ClCompile Include="iniclass.cpp" />
+    <ClCompile Include="insalph.cpp" />
+    <ClCompile Include="is_empty.cpp" />
+    <ClCompile Include="itoasc.cpp" />
+    <ClCompile Include="killdir.cpp" />
+    <ClCompile Include="limit_switch_class.cpp" />
+    <ClCompile Include="listbox.cpp" />
+    <ClCompile Include="log_file_string.cpp" />
+    <ClCompile Include="machcomp.cpp" />
+    <ClCompile Include="machine.cpp" />
+    <ClCompile Include="machine_to_hmi.cpp" />
+    <ClCompile Include="machname.cpp" />
+    <ClCompile Include="marks.cpp" />
+    <ClCompile Include="maximize.cpp" />
+    <ClCompile Include="mem.cpp" />
+    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="menuctrl.cpp" />
+    <ClCompile Include="mexists.cpp" />
+    <ClCompile Include="misc.cpp" />
+    <ClCompile Include="monrun.cpp" />
+    <ClCompile Include="msgclas.cpp" />
+    <ClCompile Include="multistring.cpp" />
+    <ClCompile Include="nameclas.cpp" />
+    <ClCompile Include="namecopy.cpp" />
+    <ClCompile Include="names.cpp" />
+    <ClCompile Include="namesold.cpp" />
+    <ClCompile Include="network.cpp" />
+    <ClCompile Include="optocontrol.cpp" />
+    <ClCompile Include="param.cpp" />
+    <ClCompile Include="param_index_class.cpp" />
+    <ClCompile Include="part.cpp" />
+    <ClCompile Include="partlist.cpp" />
+    <ClCompile Include="path.cpp" />
+    <ClCompile Include="pexists.cpp" />
+    <ClCompile Include="plookup.cpp" />
+    <ClCompile Include="plotclas.cpp" />
+    <ClCompile Include="plotsubs.cpp" />
+    <ClCompile Include="pointcl.cpp" />
+    <ClCompile Include="popctrl.cpp" />
+    <ClCompile Include="postsec.cpp" />
+    <ClCompile Include="profiles.cpp" />
+    <ClCompile Include="purge.cpp" />
+    <ClCompile Include="pw.cpp" />
+    <ClCompile Include="readline.cpp" />
+    <ClCompile Include="rectclas.cpp" />
+    <ClCompile Include="reverse.cpp" />
+    <ClCompile Include="ringcl.cpp" />
+    <ClCompile Include="rjust.cpp" />
+    <ClCompile Include="runlist.cpp" />
+    <ClCompile Include="semaphor.cpp" />
+    <ClCompile Include="servicelog.cpp" />
+    <ClCompile Include="setpoint.cpp" />
+    <ClCompile Include="shift.cpp" />
+    <ClCompile Include="shotclas.cpp" />
+    <ClCompile Include="shot_count.cpp" />
+    <ClCompile Include="shot_name.cpp" />
+    <ClCompile Include="shot_name_reset.cpp" />
+    <ClCompile Include="sockcli.cpp" />
+    <ClCompile Include="socket_client.cpp" />
+    <ClCompile Include="socket_server.cpp" />
+    <ClCompile Include="sockqueue.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="startpar.cpp" />
+    <ClCompile Include="start_of_shift.cpp" />
+    <ClCompile Include="statics.cpp" />
+    <ClCompile Include="static_text_parameter.cpp" />
+    <ClCompile Include="stddown.cpp" />
+    <ClCompile Include="stparam.cpp" />
+    <ClCompile Include="stpres.cpp" />
+    <ClCompile Include="strarray.cpp" />
+    <ClCompile Include="stringcl.cpp" />
+    <ClCompile Include="stringtable.cpp" />
+    <ClCompile Include="structs.cpp" />
+    <ClCompile Include="stsetup.cpp" />
+    <ClCompile Include="temp_message.cpp" />
+    <ClCompile Include="textlen.cpp" />
+    <ClCompile Include="textlist.cpp" />
+    <ClCompile Include="time.cpp" />
+    <ClCompile Include="timeclas.cpp" />
+    <ClCompile Include="unitadj.cpp" />
+    <ClCompile Include="units.cpp" />
+    <ClCompile Include="updown.cpp" />
+    <ClCompile Include="v5tov7.cpp" />
+    <ClCompile Include="vdbclass.cpp" />
+    <ClCompile Include="visigrid.cpp" />
+    <ClCompile Include="visiplot.cpp" />
+    <ClCompile Include="warmupcl.cpp" />
+    <ClCompile Include="wclass.cpp" />
+    <ClCompile Include="winsubs.cpp" />
+    <ClCompile Include="wire_class.cpp" />
+    <ClCompile Include="workclas.cpp" />
+    <ClCompile Include="writelin.cpp" />
+    <ClCompile Include="zero.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="choose_wire.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

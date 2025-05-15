@@ -1,0 +1,139 @@
+cd subs
+del /Q free\*.*
+nmake -ffree.mak
+cd..
+
+cd dundas
+del /Q free\*.*
+nmake -ffree.mak
+cd..
+
+cd bupres
+del /Q free\*.*
+nmake -ffree.mak RCFILE="bupres%1.rc"
+cd..
+
+cd convert
+del /Q free\*.*
+nmake -ffree.mak RCFILE="convert%1.rc"
+cd..
+
+cd copylog
+del /Q free\*.*
+nmake -ffree.mak RCFILE="copylog%1.rc"
+cd..
+
+cd copyv5
+del /Q free\*.*
+nmake -ffree.mak RCFILE="copyv5.rc"
+cd..
+
+cd createpart
+del /Q free\*.*
+nmake -ffree.mak
+cd..
+
+cd downtime
+del /Q free\*.*
+nmake -ffree.mak RCFILE="downtime%1.rc"
+cd..
+
+cd dsbackup
+del /Q free\*.*
+nmake -ffree.mak RCFILE="dsbackup%1.rc"
+cd..
+
+cd dsrestor
+del /Q free\*.*
+nmake -ffree.mak RCFILE="dsrestor%1.rc"
+cd..
+
+cd editdown
+del /Q free\*.*
+nmake -ffree.mak RCFILE="editdown%1.rc"
+cd..
+
+cd editpart
+del /Q free\*.*
+nmake -ffree.mak RCFILE="editpart%1.rc"
+cd..
+
+cd emachine
+del /Q free\*.*
+nmake -ffree.mak RCFILE="emachine%1.rc"
+cd..
+
+cd esensor
+del /Q free\*.*
+nmake -ffree.mak RCFILE="esensor%1.rc"
+cd..
+
+cd eventman
+del /Q free\*.*
+nmake -ffree.mak RCFILE="eventman%1.rc"
+cd..
+
+cd ft2
+del /Q free\*.*
+nmake -ffree.mak RCFILE="ft2%1.rc"
+cd..
+
+cd Install
+del /Q free\*.*
+nmake -ffree.mak RCFILE="setup%1.rc"
+cd..
+
+cd monedit
+del /Q free\*.*
+nmake -ffree.mak RCFILE="monedit%1.rc"
+cd..
+
+cd netsetup
+del /Q free\*.*
+nmake -ffree.mak RCFILE="netsetup%1.rc"
+cd..
+
+cd profile
+del /Q free\*.*
+nmake -ffree.mak RCFILE="profile%1.rc"
+cd..
+
+cd savepart
+del /Q free\*.*
+nmake -ffree.mak RCFILE="savepart.rc"
+cd..
+
+cd shiftrpt
+del /Q free\*.*
+nmake -ffree.mak RCFILE="shiftrpt%1.rc"
+cd..
+
+cd shutdown
+del /Q free\*.*
+nmake -ffree.mak RCFILE="shutdown%1.rc"
+cd..
+
+cd startup
+del /Q free\*.*
+nmake -ffree.mak
+cd..
+
+cd stddown
+del /Q free\*.*
+nmake -ffree.mak RCFILE="stddown%1.rc"
+cd..
+
+cd v5setups
+del /Q free\*.*
+nmake -ffree.mak RCFILE="v5setups%1.rc"
+cd..
+
+cd visiedit
+del /Q free\*.*
+nmake -ffree.mak RCFILE="visiedit%1.rc"
+cd..
+
+cd vtextrac
+del /Q free\*.*
+nmake -ffree.mak RCFILE="vtextrac%1.rc"
+cd..

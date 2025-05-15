@@ -1,0 +1,9 @@
+!MS$FREEFORM
+! Microsoft Developer Studio generated include file.
+! Used by EditPart.rc
+!
+      integer, parameter :: FT_CHANNEL_4_LISTBOX2           = 1054
+      integer, parameter :: FT_CHANNEL_4_LISTBOX3           = 1055
+      integer, parameter :: FT_CHANNEL_4_LISTBOX4           = 1056
+      integer, parameter :: FT_CHANNEL_4_LISTBOX5           = 1057
+      integer, parameter :: IDC_STATIC                      = 65535

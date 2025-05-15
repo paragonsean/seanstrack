@@ -1,0 +1,25 @@
+; This file is maintained by HCW. Do not modify this file directly.
+
+[OPTIONS]
+ERRORLOG=Bupres.err
+LCID=0x409 0x0 0x0 ; English (United States)
+REPORT=Yes
+CONTENTS=Topic1
+TITLE=Backup/Restore Help
+HLP=Bupres.hlp
+
+[FILES]
+.\bupres.rtf
+
+[MAP]
+backupdata=0x0001
+backuplistfile=10         ; Backup List File
+backuplistpopup=11
+deletedata=0x0004
+popbackup=0x0006
+popdelete=0x0008
+poploadzip=0x0009
+poprestore=0x0007
+restoredata=0x0003
+topic1=0x0005
+zipfile=0x0002

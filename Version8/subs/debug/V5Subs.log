@@ -1,0 +1,314 @@
+﻿Build started 5/15/25 12:19:01 AM.
+     1>Project "C:\Sources\Version8\subs\V5Subs.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt adam_thermo_class.cpp alarmsum.cpp analog_sensor_class.cpp array.cpp ascfloat.cpp asensor.cpp autoback.cpp bitclass.cpp callfile.cpp catclass.cpp chaxis.cpp choose_wire.cpp client.cpp color.cpp colorcl.cpp computer.cpp copymach.cpp copypart.cpp csvclass.cpp current.cpp dateclas.cpp dbsubs.cpp dbupsize.cpp db_to_vdb.cpp dcurve.cpp dow.cpp downsubs.cpp downtime.cpp dstat.cpp dtotchar.cpp dynamic_file_name.cpp error_ms.cpp evclass.cpp execwait.cpp exists.cpp external_parameter.cpp extract.cpp fifo.cpp fileclas.cpp fillpart.cpp fillpart_with_dir.cpp fillshot.cpp fix.cpp fontclas.cpp ft2_wire_bit_class.cpp ftanalog.cpp ftcalc.cpp ftiiclas.cpp ftiiclas_new.cpp ftii_file.cpp ftii_parameters.cpp ftii_parameters_edited.cpp ftii_shot_data.cpp ftime.cpp ftoasc.cpp genlist.cpp get_ini.cpp get_tc.cpp gexedir.cpp gpvar.cpp hex.cpp hourglas.cpp iniclass.cpp insalph.cpp is_empty.cpp itoasc.cpp killdir.cpp limit_switch_class.cpp listbox.cpp log_file_string.cpp machcomp.cpp machine.cpp machine_to_hmi.cpp machname.cpp marks.cpp maximize.cpp mem.cpp menu.cpp menuctrl.cpp mexists.cpp misc.cpp monrun.cpp msgclas.cpp multistring.cpp nameclas.cpp namecopy.cpp names.cpp namesold.cpp optocontrol.cpp param.cpp param_index_class.cpp part.cpp partlist.cpp path.cpp pexists.cpp plookup.cpp plotclas.cpp plotsubs.cpp pointcl.cpp popctrl.cpp postsec.cpp profiles.cpp purge.cpp pw.cpp readline.cpp rectclas.cpp reverse.cpp ringcl.cpp rjust.cpp runlist.cpp semaphor.cpp setpoint.cpp shift.cpp shotclas.cpp shot_count.cpp shot_name.cpp shot_name_reset.cpp sockcli.cpp sockqueue.cpp Source.cpp startpar.cpp start_of_shift.cpp statics.cpp static_text_parameter.cpp stddown.cpp stparam.cpp stpres.cpp strarray.cpp stringcl.cpp stringtable.cpp structs.cpp stsetup.cpp temp_message.cpp textlen.cpp textlist.cpp time.cpp timeclas.cpp unitadj.cpp units.cpp updown.cpp v5tov7.cpp vdbclass.cpp visigrid.cpp visiplot.cpp warmupcl.cpp wclass.cpp winsubs.cpp wire_class.cpp workclas.cpp writelin.cpp zero.cpp
+         zero.cpp
+         writelin.cpp
+         workclas.cpp
+         wire_class.cpp
+         winsubs.cpp
+         wclass.cpp
+         warmupcl.cpp
+         visiplot.cpp
+         visigrid.cpp
+         vdbclass.cpp
+         v5tov7.cpp
+         updown.cpp
+         units.cpp
+         unitadj.cpp
+         timeclas.cpp
+         time.cpp
+         textlist.cpp
+         textlen.cpp
+         temp_message.cpp
+         stsetup.cpp
+         Generating Code...
+         Compiling...
+         structs.cpp
+         stringtable.cpp
+         stringcl.cpp
+         strarray.cpp
+         stpres.cpp
+         stparam.cpp
+         stddown.cpp
+         static_text_parameter.cpp
+         statics.cpp
+         start_of_shift.cpp
+         startpar.cpp
+         Source.cpp
+         sockqueue.cpp
+         sockcli.cpp
+         shot_name_reset.cpp
+         shot_name.cpp
+         shot_count.cpp
+         shotclas.cpp
+         shift.cpp
+         setpoint.cpp
+         Generating Code...
+         Compiling...
+         semaphor.cpp
+         runlist.cpp
+         rjust.cpp
+         ringcl.cpp
+         reverse.cpp
+         rectclas.cpp
+         readline.cpp
+         pw.cpp
+         purge.cpp
+         profiles.cpp
+         postsec.cpp
+         popctrl.cpp
+         pointcl.cpp
+         plotsubs.cpp
+         plotclas.cpp
+         plookup.cpp
+         pexists.cpp
+         path.cpp
+         partlist.cpp
+         part.cpp
+         Generating Code...
+         Compiling...
+         param_index_class.cpp
+         param.cpp
+         optocontrol.cpp
+         namesold.cpp
+     1>c:\sources\version8\subs\..\include\computer.h(7): error C2146: syntax error : missing ';' before identifier 'name'
+     1>c:\sources\version8\subs\..\include\computer.h(7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version8\subs\..\include\computer.h(23): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version8\subs\..\include\computer.h(25): error C2143: syntax error : missing ';' before '&'
+     1>c:\sources\version8\subs\..\include\computer.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version8\subs\..\include\computer.h(25): warning C4183: 'whoami': missing return type; assumed to be a member function returning 'int'
+     1>c:\sources\version8\subs\..\include\computer.h(26): error C2143: syntax error : missing ';' before '&'
+     1>c:\sources\version8\subs\..\include\computer.h(26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version8\subs\..\include\computer.h(26): warning C4183: 'name': missing return type; assumed to be a member function returning 'int'
+     1>c:\sources\version8\subs\..\include\computer.h(29): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version8\subs\..\include\computer.h(31): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version8\subs\..\include\computer.h(31): error C2535: 'BOOLEAN COMPUTER_CLASS::is_present(void)' : member function already defined or declared
+                 c:\sources\version8\subs\..\include\computer.h(30) : see declaration of 'COMPUTER_CLASS::is_present'
+     1>c:\sources\version8\subs\..\include\computer.h(36): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version8\subs\..\include\computer.h(36): error C2535: 'BOOLEAN COMPUTER_CLASS::online_status(void)' : member function already defined or declared
+                 c:\sources\version8\subs\..\include\computer.h(35) : see declaration of 'COMPUTER_CLASS::online_status'
+     1>c:\sources\version8\subs\..\include\computer.h(40): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version8\subs\..\include\computer.h(42): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version8\subs\..\include\computer.h(42): error C2535: 'BOOLEAN COMPUTER_CLASS::startup(void)' : member function already defined or declared
+                 c:\sources\version8\subs\..\include\computer.h(41) : see declaration of 'COMPUTER_CLASS::startup'
+     1>c:\sources\version8\subs\..\include\computer.h(23): error C2065: 'new_name' : undeclared identifier
+     1>c:\sources\version8\subs\..\include\computer.h(23): error C2228: left of '.text' must have class/struct/union
+                 type is 'unknown-type'
+     1>c:\sources\version8\subs\..\include\computer.h(29): error C2228: left of '.text' must have class/struct/union
+     1>c:\sources\version8\subs\..\include\names.h(38): error C2065: 'BACKUP_LIST_DB' : undeclared identifier
+     1>c:\sources\version8\subs\..\include\names.h(99): error C2065: 'FTII_LIMIT_SWITCH_WIRES_FILE' : undeclared identifier
+     1>c:\sources\version8\subs\..\include\names.h(107): error C2065: 'STPART_DATA' : undeclared identifier
+     1>c:\sources\version8\subs\..\include\names.h(123): error C2065: 'TEMP_SHOTPARM_DB' : undeclared identifier
+     1>namesold.cpp(57): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version8\subs\..\include\computer.h(12) : see declaration of 'COMPUTER_CLASS'
+     1>namesold.cpp(57): error C2660: 'lstrcpyA' : function does not take 1 arguments
+     1>namesold.cpp(93): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version8\subs\..\include\computer.h(12) : see declaration of 'COMPUTER_CLASS'
+     1>namesold.cpp(93): error C2660: 'lstrcpyA' : function does not take 1 arguments
+     1>namesold.cpp(287): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version8\subs\..\include\computer.h(12) : see declaration of 'COMPUTER_CLASS'
+     1>namesold.cpp(299): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version8\subs\..\include\computer.h(12) : see declaration of 'COMPUTER_CLASS'
+     1>namesold.cpp(325): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version8\subs\..\include\computer.h(12) : see declaration of 'COMPUTER_CLASS'
+     1>namesold.cpp(335): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version8\subs\..\include\computer.h(12) : see declaration of 'COMPUTER_CLASS'
+         names.cpp
+     1>c:\sources\version8\subs\..\include\computer.h(7): error C2146: syntax error : missing ';' before identifier 'name'
+     1>c:\sources\version8\subs\..\include\computer.h(7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version8\subs\..\include\computer.h(23): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version8\subs\..\include\computer.h(25): error C2143: syntax error : missing ';' before '&'
+     1>c:\sources\version8\subs\..\include\computer.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version8\subs\..\include\computer.h(25): warning C4183: 'whoami': missing return type; assumed to be a member function returning 'int'
+     1>c:\sources\version8\subs\..\include\computer.h(26): error C2143: syntax error : missing ';' before '&'
+     1>c:\sources\version8\subs\..\include\computer.h(26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\sources\version8\subs\..\include\computer.h(26): warning C4183: 'name': missing return type; assumed to be a member function returning 'int'
+     1>c:\sources\version8\subs\..\include\computer.h(29): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version8\subs\..\include\computer.h(31): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version8\subs\..\include\computer.h(31): error C2535: 'BOOLEAN COMPUTER_CLASS::is_present(void)' : member function already defined or declared
+                 c:\sources\version8\subs\..\include\computer.h(30) : see declaration of 'COMPUTER_CLASS::is_present'
+     1>c:\sources\version8\subs\..\include\computer.h(36): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version8\subs\..\include\computer.h(36): error C2535: 'BOOLEAN COMPUTER_CLASS::online_status(void)' : member function already defined or declared
+                 c:\sources\version8\subs\..\include\computer.h(35) : see declaration of 'COMPUTER_CLASS::online_status'
+     1>c:\sources\version8\subs\..\include\computer.h(40): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version8\subs\..\include\computer.h(42): error C2061: syntax error : identifier 'STRING_CLASS'
+     1>c:\sources\version8\subs\..\include\computer.h(42): error C2535: 'BOOLEAN COMPUTER_CLASS::startup(void)' : member function already defined or declared
+                 c:\sources\version8\subs\..\include\computer.h(41) : see declaration of 'COMPUTER_CLASS::startup'
+     1>c:\sources\version8\subs\..\include\computer.h(23): error C2065: 'new_name' : undeclared identifier
+     1>c:\sources\version8\subs\..\include\computer.h(23): error C2228: left of '.text' must have class/struct/union
+                 type is 'unknown-type'
+     1>c:\sources\version8\subs\..\include\computer.h(29): error C2228: left of '.text' must have class/struct/union
+     1>c:\sources\version8\subs\..\include\names.h(38): error C2065: 'BACKUP_LIST_DB' : undeclared identifier
+     1>c:\sources\version8\subs\..\include\names.h(99): error C2065: 'FTII_LIMIT_SWITCH_WIRES_FILE' : undeclared identifier
+     1>c:\sources\version8\subs\..\include\names.h(107): error C2065: 'STPART_DATA' : undeclared identifier
+     1>c:\sources\version8\subs\..\include\names.h(123): error C2065: 'TEMP_SHOTPARM_DB' : undeclared identifier
+     1>names.cpp(57): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version8\subs\..\include\computer.h(12) : see declaration of 'COMPUTER_CLASS'
+     1>names.cpp(57): error C2660: 'lstrcpyA' : function does not take 1 arguments
+     1>names.cpp(93): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version8\subs\..\include\computer.h(12) : see declaration of 'COMPUTER_CLASS'
+     1>names.cpp(93): error C2660: 'lstrcpyA' : function does not take 1 arguments
+     1>names.cpp(287): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version8\subs\..\include\computer.h(12) : see declaration of 'COMPUTER_CLASS'
+     1>names.cpp(299): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version8\subs\..\include\computer.h(12) : see declaration of 'COMPUTER_CLASS'
+     1>names.cpp(325): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version8\subs\..\include\computer.h(12) : see declaration of 'COMPUTER_CLASS'
+     1>names.cpp(335): error C2039: 'directory' : is not a member of 'COMPUTER_CLASS'
+                 c:\sources\version8\subs\..\include\computer.h(12) : see declaration of 'COMPUTER_CLASS'
+         namecopy.cpp
+         nameclas.cpp
+         multistring.cpp
+         msgclas.cpp
+         monrun.cpp
+         misc.cpp
+         mexists.cpp
+         menuctrl.cpp
+         menu.cpp
+         mem.cpp
+         maximize.cpp
+         marks.cpp
+         machname.cpp
+         machine_to_hmi.cpp
+         machine.cpp
+         Generating Code...
+         Compiling...
+         machcomp.cpp
+         log_file_string.cpp
+         listbox.cpp
+         limit_switch_class.cpp
+         killdir.cpp
+         itoasc.cpp
+         is_empty.cpp
+         insalph.cpp
+         iniclass.cpp
+         hourglas.cpp
+         hex.cpp
+         gpvar.cpp
+         gexedir.cpp
+         get_tc.cpp
+         get_ini.cpp
+         genlist.cpp
+         ftoasc.cpp
+         ftime.cpp
+         ftii_shot_data.cpp
+         ftii_parameters_edited.cpp
+     1>c1xx : fatal error C1083: Cannot open source file: 'ftii_parameters_edited.cpp': No such file or directory
+         Generating Code...
+         Compiling...
+         ftii_parameters.cpp
+         ftii_file.cpp
+         ftiiclas_new.cpp
+     1>ftiiclas_new.cpp(727): error C2556: 'void FTII_VAR_ARRAY::set(int,unsigned int)' : overloaded function differs only by return type from 'bool FTII_VAR_ARRAY::set(int,unsigned int)'
+                 c:\sources\version8\subs\..\include\ftii.h(272) : see declaration of 'FTII_VAR_ARRAY::set'
+     1>ftiiclas_new.cpp(727): error C2371: 'FTII_VAR_ARRAY::set' : redefinition; different basic types
+                 c:\sources\version8\subs\..\include\ftii.h(272) : see declaration of 'FTII_VAR_ARRAY::set'
+         ftiiclas.cpp
+         ftcalc.cpp
+         ftanalog.cpp
+         ft2_wire_bit_class.cpp
+     1>c1xx : fatal error C1083: Cannot open source file: 'ft2_wire_bit_class.cpp': No such file or directory
+         fontclas.cpp
+         fix.cpp
+         fillshot.cpp
+         fillpart_with_dir.cpp
+     1>fillpart_with_dir.cpp(129): error C3861: 'shot_count': identifier not found
+         fillpart.cpp
+         fileclas.cpp
+         fifo.cpp
+         extract.cpp
+         external_parameter.cpp
+         exists.cpp
+         execwait.cpp
+         evclass.cpp
+         error_ms.cpp
+         Generating Code...
+         Compiling...
+         dynamic_file_name.cpp
+         dtotchar.cpp
+         dstat.cpp
+         downtime.cpp
+         downsubs.cpp
+         dow.cpp
+         dcurve.cpp
+         db_to_vdb.cpp
+         dbupsize.cpp
+         dbsubs.cpp
+         dateclas.cpp
+         current.cpp
+         csvclass.cpp
+     1>c:\sources\version8\subs\..\include\csvclass.h(93): error C2061: syntax error : identifier 'CSV_TABLE'
+     1>c:\sources\version8\subs\..\include\csvclass.h(106): error C2065: 'fo' : undeclared identifier
+     1>c:\sources\version8\subs\..\include\csvclass.h(130): error C3861: 'put_alpha': identifier not found
+     1>csvclass.cpp(25): error C2373: 'NullChar' : redefinition; different type modifiers
+                 csvclass.cpp(16) : see declaration of 'NullChar'
+     1>csvclass.cpp(41): error C2065: 'RECORD_DELIMITER' : undeclared identifier
+     1>csvclass.cpp(41): fatal error C1903: unable to recover from previous error(s); stopping compilation
+         copypart.cpp
+         copymach.cpp
+         computer.cpp
+         colorcl.cpp
+         color.cpp
+         client.cpp
+         choose_wire.cpp
+         Generating Code...
+         Compiling...
+         chaxis.cpp
+         catclass.cpp
+         callfile.cpp
+         bitclass.cpp
+         autoback.cpp
+         asensor.cpp
+         ascfloat.cpp
+         array.cpp
+         analog_sensor_class.cpp
+     1>analog_sensor_class.cpp(13): error C2146: syntax error : missing ';' before identifier 'EmptySensor'
+     1>analog_sensor_class.cpp(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>analog_sensor_class.cpp(15): error C2143: syntax error : missing ';' before '*'
+     1>analog_sensor_class.cpp(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>analog_sensor_class.cpp(15): error C2086: 'int ANALOG_SENSOR_RUN_CLASS' : redefinition
+                 analog_sensor_class.cpp(13) : see declaration of 'ANALOG_SENSOR_RUN_CLASS'
+     1>analog_sensor_class.cpp(22): error C2653: 'ANALOG_SENSOR_EDIT_CLASS' : is not a class or namespace name
+     1>analog_sensor_class.cpp(27): error C2065: 'volts' : undeclared identifier
+     1>analog_sensor_class.cpp(28): error C2065: 'value' : undeclared identifier
+     1>analog_sensor_class.cpp(30): error C2065: 'n' : undeclared identifier
+     1>analog_sensor_class.cpp(31): error C2065: 'volts' : undeclared identifier
+     1>analog_sensor_class.cpp(32): error C2065: 'value' : undeclared identifier
+     1>analog_sensor_class.cpp(37): error C2065: 'value' : undeclared identifier
+     1>analog_sensor_class.cpp(45): error C2653: 'ANALOG_SENSOR_EDIT_CLASS' : is not a class or namespace name
+     1>analog_sensor_class.cpp(49): error C2065: 'n' : undeclared identifier
+     1>analog_sensor_class.cpp(54): error C2065: 'volts' : undeclared identifier
+     1>analog_sensor_class.cpp(55): error C2065: 'value' : undeclared identifier
+     1>analog_sensor_class.cpp(56): error C2065: 'n' : undeclared identifier
+     1>analog_sensor_class.cpp(61): error C2065: 'n' : undeclared identifier
+     1>analog_sensor_class.cpp(63): error C2065: 'volts' : undeclared identifier
+     1>analog_sensor_class.cpp(63): error C2228: left of '.empty' must have class/struct/union
+     1>analog_sensor_class.cpp(64): error C2065: 'value' : undeclared identifier
+     1>analog_sensor_class.cpp(64): error C2228: left of '.empty' must have class/struct/union
+     1>analog_sensor_class.cpp(72): error C2653: 'ANALOG_SENSOR_EDIT_CLASS' : is not a class or namespace name
+     1>analog_sensor_class.cpp(73): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>analog_sensor_class.cpp(74): error C2065: 'units' : undeclared identifier
+     1>analog_sensor_class.cpp(75): error C2065: 'max_volts_level' : undeclared identifier
+     1>analog_sensor_class.cpp(76): error C2065: 'vartype' : undeclared identifier
+     1>analog_sensor_class.cpp(77): error C2065: 'n' : undeclared identifier
+     1>analog_sensor_class.cpp(78): error C2065: 'volts' : undeclared identifier
+     1>analog_sensor_class.cpp(79): error C2065: 'value' : undeclared identifier
+     1>analog_sensor_class.cpp(80): warning C4508: 'ANALOG_SENSOR_EDIT_CLASS' : function should return a value; 'void' return type assumed
+     1>analog_sensor_class.cpp(85): error C2653: 'ANALOG_SENSOR_EDIT_CLASS' : is not a class or namespace name
+     1>analog_sensor_class.cpp(85): fatal error C1903: unable to recover from previous error(s); stopping compilation
+         alarmsum.cpp
+         adam_thermo_class.cpp
+     1>adam_thermo_class.cpp(22): error C2065: 'ED_DATA_NOT_SET' : undeclared identifier
+     1>adam_thermo_class.cpp(38): error C2065: 'ED_DATA_NOT_SET' : undeclared identifier
+     1>adam_thermo_class.cpp(47): error C2065: 'ED_DATA_NOT_SET' : undeclared identifier
+     1>adam_thermo_class.cpp(58): error C2065: 'ED_DATA_NOT_SET' : undeclared identifier
+     1>adam_thermo_class.cpp(129): error C2065: 'ED_DATA_NOT_SET' : undeclared identifier
+     1>adam_thermo_class.cpp(131): error C2065: 'ED_DATA_NOT_SET' : undeclared identifier
+     1>adam_thermo_class.cpp(142): error C2065: 'ED_DATA_NOT_SET' : undeclared identifier
+         Generating Code...
+     1>Done Building Project "C:\Sources\Version8\subs\V5Subs.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:36.90

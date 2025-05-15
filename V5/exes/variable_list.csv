@@ -1,0 +1,215 @@
+V000,ACCEL #1
+V001,VEL #1
+V002,ENDING POS #1
+V003,WHILE IO INDICATOR #1
+V004,ACCEL #2
+V005,VEL #2
+V006,ENDING POS #2
+V007,WHILE IO INDICATOR #2
+V008,ACCEL #3
+V009,VEL #3
+V010,ENDING POS #3
+V011,WHILE IO INDICATOR #3
+V012,ACCEL #4
+V013,VEL #4
+V014,ENDING POS #4
+V015,WHILE IO INDICATOR #4
+V016,ACCEL #5
+V017,VEL #5
+V018,ENDING POS #5
+V019,WHILE IO INDICATOR #5
+V020,ACCEL #6
+V021,VEL #6
+V022,ENDING POS #6
+V023,WHILE IO INDICATOR #6
+V024,ACCEL #7
+V025,VEL #7
+V026,ENDING POS #7
+V027,WHILE IO INDICATOR #7
+V028,ACCEL #8
+V029,VEL #8
+V030,ENDING POS #8
+V031,WHILE IO INDICATOR #8
+V032,ACCEL #9
+V033,VEL #9
+V034,ENDING POS #9
+V035,WHILE IO INDICATOR #9
+V036,ACCEL #10
+V037,VEL #10
+V038,ENDING POS #10
+V039,WHILE IO INDICATOR #10
+V040,ACCEL #11
+V041,VEL #11
+V042,ENDING POS #11
+V043,WHILE IO INDICATOR #11
+V044,ACCEL #12
+V045,VEL #12
+V046,ENDING POS #12
+V047,WHILE IO INDICATOR #12
+V048,ACCEL #13
+V049,VEL #13
+V050,ENDING POS #13
+V051,WHILE IO INDICATOR #13
+V052,ACCEL #14
+V053,VEL #14
+V054,ENDING POS #14
+V055,WHILE IO INDICATOR #14
+V056,ACCEL #15
+V057,VEL #15
+V058,ENDING POS #15
+V058,WHILE IO INDICATOR #15
+V060,ACCEL #16
+V061,VEL #16
+V062,ENDING POS #16
+V063,WHILE IO INDICATOR #16
+V064,ACCEL #17
+V065,VEL #17
+V066,ENDING POS #17
+V067,WHILE IO INDICATOR #17
+V068,ACCEL #18
+V069,VEL #18
+V070,ENDING POS #18
+V071,WHILE IO INDICATOR #18
+V072,ACCEL #19
+V073,VEL #19
+V074,ENDING POS #19
+V075,WHILE IO INDICATOR #19
+V076,ACCEL #20
+V077,VEL #20
+V078,ENDING POS #20
+V079,WHILE IO INDICATOR #20
+V080,Disable pressure control
+V081,Pressure loop gain.
+V082,Pressure control arm setting,Volts * 1000
+V083,Pressure control loop time,uS
+V084,Pressure control retract setting,Volts * 1000
+V085,Pressure control park setting
+V086,Last pressure control block
+V087,Pressure control I gain
+V088,Pressure control D gain
+V089,Reserved for additional pressure control parameter
+V090,RAMP #1,mS
+V091,PRESSURE CMD #1,Volts * 1000
+V092,END TIME #1,mS
+V093,RAMP #2,mS
+V094,PRESSURE CMD #2,Volts * 1000
+V095,END TIME #2,mS
+V096,RAMP #3,mS
+V097,PRESSURE CMD #3,Volts * 1000
+V098,END TIME #3,mS
+V200,PROPORTIONAL_GN_SETTING1
+V201,INTEGRAL_GN_SETTING1
+V202,DERIVATIVE_GN_SETTING1
+V203,INTEGRATOR_LIMIT_SETTING1
+V204,ACCEL_FEEDFORWARD_SETTING1
+V205,VEL_FEEDFORWARD_SETTING1
+V206,TORQUE_LIMIT_SETTING1,Volts * 1000
+V207,PEAK_TORQUE_SETTING1,Volts * 1000
+V208,POS_BREAK_POINT_SETTING1
+V209,POS_BREAK_GAIN_SETTING1
+V210,SETTLING_ACCURACY_SETTING1
+V212,VEL_LOOP_DERIVATIVE_GN_SETTING1
+V223,SAMPLE_TIME_SETTING1,uS
+V224,SENSOR_TYPE_SETTING1 1=Encoder 2=Hi-res
+V225,PROPORTIONAL_GN_SETTING2
+V226,INTEGRAL_GN_SETTING2
+V227,DERIVATIVE_GN_SETTING2
+V228,INTEGRATOR_LIMIT_SETTING2
+V229,ACCEL_FEEDFORWARD_SETTING2
+V230,VEL_FEEDFORWARD_SETTING2
+V231,TORQUE_LIMIT_SETTING2
+V232,PEAK_TORQUE_SETTING2
+V233,POS_BREAK_POINT_SETTING2
+V234,POS_BREAK_GAIN_SETTING2
+V235,SETTLING_ACCURACY_SETTING2
+V236,VEL_LOOP_GAIN_SETTING2
+V237,VEL_LOOP_DERIVATIVE_GN_SETTING2
+V238,VEL_LOOP_BK_VEL1_SETTING2
+V239,VEL_LOOP_BK_VEL2_SETTING2
+V240,VEL_LOOP_BK_VEL3_SETTING2
+V241,VEL_LOOP_BKGN1_SETTING2
+V242,VEL_LOOP_BKGN2_SETTING2
+V243,VEL_LOOP_BKGN3_SETTING2
+V244,DITHER_TIME_SETTING2
+V245,DITHER_AMPL_SETTING2
+V246,NULL_OFFSET_SETTING2
+V247,LVDT_OFFSET_SETTING2
+V248,SAMPLE_TIME_SETTING2
+V249,SENSOR_TYPE_SETTING2
+V300,Clock frequency,Hz
+V313,Config word 1
+V314,Config word 1 monitor only
+V318,Total stroke length,x4 counts
+V319,Minimum stroke length,x4 counts
+V320,Minimum velocity for EOS calculation,X1 pulses / sec
+V321,Time delay biscuit
+V322,End of shot velocity,X1 pulses / sec
+V323,Fill distance,X4 counts
+V324,Runner fill distance,X4 counts
+V325,Min. position for CSFS,X4 counts
+V326,Velocity for CSFS,X1 pulses / sec
+V327,Velocity for rise time calculation,X1 pulses / sec
+V328,Timed collection interval,uS
+V329,Number of timed collection data points 2000 max
+V330,Time out period,mS
+V340,VEL_LOOP_GAIN_SETTING1
+V341,Break velocity #1,X1 pulses / sec
+V342,Break velocity #2,X1 pulses / sec
+V343,Break velocity #3,X1 pulses / sec
+V344,Break gain #1,multiplier X 1000
+V345,Break gain #2,multiplier X 1000
+V346,Break gain #3,multiplier X 1000
+V347,DITHER_FREQ_SETTING1
+V348,DITHER_AMPL_SETTING1 zero here will disable dither
+V349,Zero speed check position,X4 counts
+V350,NULL_OFFSET_SETTING1
+V351,LVDT_OFFSET_SETTING1
+V352,Jog shot setting,Voltage X 1000
+V353,Follow through setting,Volts * 1000
+V354,Follow through stop position,X4 counts, to disable - set out beyond what the cylinder can stroke
+V355,Retract setting,voltage X 1000
+V357,Sensor deviation,X4 counts
+V361,Amp #1 board level LVDT offset,Volts * 1000
+V362,Amp #2 board level LVDT offset, Volts * 1000
+V366,Limit switch 1 axis 1,X4 counts
+V367,Limit switch 2 axis 1,X4 counts
+V368,Limit switch 3 axis 1,X4 counts
+V369,Limit switch 4 axis 1,X4 counts
+V370,Limit switch 5 axis 1,X4 counts
+V371,Limit switch 6 axis 1,X4 counts
+V378,LS1_1 output wire mask
+V379,LS2_1 output wire mask
+V380,LS3_1 output wire mask
+V381,LS4_1 output wire mask
+V382,LS5_1 output wire mask
+V383,LS6_1 output wire mask
+V384,LS1_2 output wire mask
+V385,LS2_2 output wire mask
+V386,LS3_2 output wire mask
+V387,LS4_2 output wire mask
+V388,LS5_2 output wire mask
+V389,LS6_2 output wire mask
+V390,Oscilloscope mode trigger,Volts * 1000
+V391,Oscilloscope mode trigger channel 17 ?20
+V392,Oscilloscope mode sample interval,uS
+V393,Update block ramp time,uS
+V394,ZSPEED output mask
+V395,Binary valve ouput mask
+V414,Amp #1 pilot and control valve types 10 == Prince binary valve enable when supported in TrueTrak software
+V415,Amp #2 pilot and control valve types 10 == Prince binary valve enable when supported in TrueTrak software
+V416,Binary valve pulse time,uS
+V417,Binary valve devent time,uS
+V428,Analog delay value when using a revE external interface
+V429,Analog mode 5 or 7 are acceptable - Both do exactly the same thing
+V430,LVDT demodulator settings 0-255 Originally 83 (0x53) set to 211 (0xd3) to reverse sec polarity and make
+V431,Digital pot gain settings
+V442,Analog delay value when using a revB external interface
+V443,VEL_LOOP_INTEGRAL_GN_SETTING1
+V444,VEL_LOOP_INTEGRAL_GN_SETTING2
+V447,Control File Date
+V448,Last Upload Date
+V449,Dac 4 for retract control
+V450,Retract arm setting
+V451,Retract setting
+V500,V500 (Not used by ft2) Bit0: 1=Shot control enabled 0=monitor only
+V502,Followthrough stop command,Volts * 1000

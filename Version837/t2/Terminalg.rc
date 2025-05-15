@@ -1,0 +1,160 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resrcg.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// German (Germany) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+MY_ICON                 ICON    DISCARDABLE     "terminal.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+TCPIP_SETUP_DIALOG DIALOG DISCARDABLE  0, 0, 172, 70
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "FasTrak II Terminal Tcp/Ip Setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "Tcp/Ip Address",-1,10,15,60,8,NOT WS_GROUP
+    EDITTEXT        TCP_IP_ADDRESS_EBOX,75,14,78,10,WS_GROUP
+    RTEXT           "Port",-1,10,29,60,8,NOT WS_GROUP
+    EDITTEXT        TCP_IP_PORT_EBOX,75,28,78,10,WS_GROUP
+    DEFPUSHBUTTON   "Änderungen &speichern",IDOK,19,46,80,12
+    PUSHBUTTON      "Abbrechen",IDCANCEL,101,46,50,12
+END
+
+UPLOAD_FILE_NAME_DIALOG DIALOG DISCARDABLE  0, 0, 278, 133
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Upload Ascii File to FasTrak II"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Upload File Name:",IDC_STATIC,0,5,63,12
+    EDITTEXT        UPLOAD_FILE_NAME_EBOX,64,4,201,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "Begin",IDOK,77,116,56,14,BS_CENTER
+    PUSHBUTTON      "Cancel",IDCANCEL,141,116,56,14,BS_CENTER
+    CONTROL         "Flash 4 Monitor Only",SELECT_4M_RADIO,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,23,31,80,12
+    CONTROL         "Flash 4 Control",SELECT_4C_RADIO,"Button",
+                    BS_AUTORADIOBUTTON,23,46,70,12
+    CONTROL         "Flash 5",SELECT_5_RADIO,"Button",BS_AUTORADIOBUTTON,23,
+                    60,70,12
+    CONTROL         "Flash 6",SELECT_6_RADIO,"Button",BS_AUTORADIOBUTTON,23,
+                    74,70,12
+    CONTROL         "Flash 7",SELECT_7_RADIO,"Button",BS_AUTORADIOBUTTON,23,
+                    88,70,12
+    GROUPBOX        "Upload Set",IDC_STATIC,8,20,105,85,WS_GROUP
+    CONTROL         "All Files",UPLOAD_ALL_FILES_XBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,225,118,41,10
+    LISTBOX         FILES_LB,117,24,158,86,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MAINMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Upload File",                UPLOAD_FILE_CHOICE
+        MENUITEM "&Write listbox to listbox.txt", WRITE_LISTBOX_CHOICE
+        MENUITEM "&Write profile",              WRITE_PROFILE_CHOICE
+        MENUITEM "&Write CSV",                  WRITE_CSV_CHOICE
+        MENUITEM "E&xit",                       EXIT_CHOICE
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Address",                    SET_ADDRESS_CHOICE
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Clear Listbox",              CLEAR_LISTBOX_CHOICE
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resrcg.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    MAIN_WINDOW_TITLE_STRING "FasTrak2 Terminal"
+END
+
+#endif    // German (Germany) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

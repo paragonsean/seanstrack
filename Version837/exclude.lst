@@ -1,0 +1,15 @@
+*.obj
+*.exe
+*.map
+*.aps
+*.dsp
+*.plg
+*.res
+*.pch
+*.pdb
+*.dsw
+*.ncb
+*.opt
+*.old
+*.new
+*.lib

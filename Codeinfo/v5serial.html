@@ -1,0 +1,258 @@
+<html>
+<head>
+<title>True-Trak 2020&trade; Serial Line Output</title>
+<style type="text/css">
+td { padding-left: 10; padding-right: 10  }
+em { font-style: normal; font-weight: bolder; }
+</style>
+</head>
+<body>
+<h3>True-Trak 2020&trade; Serial Line Output</h3>
+
+It is possible to send shot information to a serial port and/or to a file at the end of
+each shot. This is set up using entries in the
+<b>\V5\EXES\MONALL.INI</b> file. All entries are in the <b>[Config]</b> section.
+
+The following line tells the program to open "COM1" for output.
+
+<pre>
+EosComPort=COM1     Set to "None" to turn off serial outputs
+EosComSpeed=9600
+EosComParity=N      { N=none, O=odd, E=Even, S=Space, M=mark }
+EosComBits=8        bits per byte
+EosComStop=1        { 1, 1.5, 2 }
+EosComCts=Y         { Y, N } CTS handshake (RTS is always high)
+EosComDsr=Y         { Y, N } DSR handshake (DTR is always high)
+EosComXonXoff=Y     { Y, N } Xon/Xoff handshake
+EosFixedWidth=None  Number of characters for parameter values or "None" to disable.
+EosOutputFile=C:\V5\Exes\stamp.txt  This the output to be sent to a file.
+                    You must still have EosComPort set to COM1 but nothing will be sent to the port.
+                    Delete this line if you later decide to output to the serial port.
+EosMachineName=E20  This will allow you to use a computer that monitors many machines to drive a stamp machine for one of them.
+                    Delete this line if this computer monitors one machine.
+</pre>
+
+The following lines override the default good shot indicators: "A", "W", "G".
+<pre>
+EosHaveAlarmShot=Alarm      Prints the word "Alarm" if at least one parameters is in alarm
+EosHaveWarningShot=Warning  Prints the word "Warning" if there are no alarms but at least one parameter is in warning
+EosHaveGoodShot=Good        Prints the word "Good" if there are no Warnings and no Alarms
+</pre>
+
+<h4>Delimiters</h4>
+Each field in the output is separated by a character. The
+default character is a comma. You can change this. Three examples
+are shown below. The second sets the delimiter to a tab character. The last example, a
+backslash followed by a zero, tells the program to <em>use no delimiter between fields</em>.
+<pre>
+EosComDelimitChar=;
+EosComDelimitChar=\t
+EosComDelimitChar=\0
+</pre>
+
+If you want a carriage return and line feed at the end of each
+line, include the following line.
+
+<pre>
+EosComEol=\r\n
+</pre>
+
+<h4>Hex Upload Files</h4>
+<p>You can specify a file to send before the message and another to send after the message. These are for fixed content that doesn't change. You specify them as follows.</p>
+<pre>
+EosStartFile=startfile.txt
+EosEndFile=endfile.txt
+</pre>
+These files are assumed to be in the C:\V5\Exes directory. If you don't want to use these just leave the names blank.
+<p>
+The files are assumed to contain two hex digits for each character. Each pair of digits should be separated by a single space. You can place a comment at the end of the line by beginning it with a non-hex character. Include as many lines as you wish. For example, the following lines in startfile.txt would cause "Start up" to be inserted before the message.</p>
+<pre>
+53 74 61 72 74 ; Start
+20             ; Space
+75 70          ; up
+</pre>
+<p>No characters will be inserted except those represented by hex codes in the lines.</p>
+
+<h4>Serial Setup Line</h4>
+<p>The message that is output is controlled by the setup line. The setup line
+  contains a list, in order, of the outputs desired.
+</p>
+<p>
+Each outout is separated by a comma (except for the last). The
+outputs are:
+<p>
+<center>
+
+<table border width="75%" bgcolor=floralwhite>
+<tr><td colspan="2" bgcolor=moccasin align=center>Tags for Serial Output</td></tr>
+<tr><td>Axx</td>   <td>Alarm state indicator (alarm, warning, good) of parameter xx [0-119] e.g. A5,A24,</td></tr>
+<tr><td>D</td>     <td>Date mm/dd/yyyy</td></tr>
+<tr><td>D0</td>    <td>Date mmddyy</td></tr>
+<tr><td>G</td>     <td>Prints an indicator for alarm, warning, or good shot</td></tr>
+<tr><td>J</td>     <td>Julian Date, Jan 1 = 1,   Dec 31 = 365.</td></tr>
+<tr><td>J3</td>    <td>Julian Date, Jan 1 = 001, Dec 31 = 365.</td></tr>
+<tr><td>L</td>     <td>Inserts a Line Feed (only works with ',' delimiter)</td></tr>
+<tr><td>M</td>     <td>Machine Name</td></tr>
+<tr><td>P</td>     <td>Part Name</td></tr>
+<tr><td>PD</td>    <td>Plunger Diameter</td></tr>
+<tr><td>Q</td>     <td>Insert text, use \1 for control character. "QV015," inserts "V015" into the line.</td></tr>
+<tr><td>R</td>     <td>Inserts a Carriage Return (only works with ',' delimiter)</td></tr>
+<tr><td>S6</td>    <td>Shot Number with optional length. No length, "S", means variable length (Shot 32 would be "32"), specified length, "S6", means left pad with zeros (Shot 32 would be "000032").</td></tr>
+<tr><td>T</td>     <td>Time hh:mm:ss</td></tr>
+<tr><td>T0</td>    <td>Time hhmmss</td></tr>
+<tr><td>T1</td>    <td>Time hhmm</td></tr>
+<tr><td>Y</td>     <td>Last Digit of the current year. 2009 = 9, 2010 = 0, etc.</td></tr>
+<tr><td>Y2</td>    <td>Last 2 Digits of the current year. 2009 = 09</td></tr>
+<tr><td>1</td>     <td>Parameter 1</td></tr>
+<tr><td>2</td>     <td>Parameter 2</td></tr>
+<tr><td>&nbsp;</td><td>...</td></tr>
+</table>
+</center>
+
+<pre>
+EosComSetup=M,P,S6,D,T,1,2,3,4
+</pre>
+
+results in the following output (assuming ',' delemiter and no eol).
+
+<pre>
+M01,VISITRAK,000032,02/27/1998,12:34:53,28.9112,626.432,574.342,51.8590
+</pre>
+
+If you only wanted the shot number you would use the following line.
+
+<pre>
+EosComSetup=S
+</pre>
+
+This would give the following output for shot number 32
+
+<pre>
+32
+</pre>
+
+<pre>
+EosComSetup=S6
+</pre>
+
+This would give the following output. Note that this is only of use with shot names that consist of the
+shot number only.
+
+<pre>
+000032
+</pre>
+
+If you want to start the message with STX (02H) and end with ETX (03H) then
+add the following setup line.
+
+<pre>
+EosNeedsStxEtx=Y
+</pre>
+
+The parameters are shown below.
+<p>
+<center>
+<table border bgcolor=floralwhite>
+
+<tr><td align=center colspan="4" bgcolor=moccasin>Visi-Trak Parameters</td></tr>
+<tr><td align="right">0</td><td>Fill Time</td>                    <td>18</td><td>Sleeve Full Velocity</td></tr>
+<tr><td align="right">1</td><td>Total Shot Time</td>              <td>19</td><td>Runner Full Velocity</td></tr>
+<tr><td align="right">2</td><td>Slow Shot Time</td>               <td>20</td><td>Average Fill Velocity</td></tr>
+<tr><td align="right">3</td><td>Fast Shot</td>                    <td>21</td><td>User Velocity Pos One</td></tr>
+<tr><td align="right">4</td><td>Fast Shot Rise Time</td>          <td>22</td><td>User Velocity Pos Two</td></tr>
+<tr><td align="right">5</td><td>Cycle Time</td>                   <td>23</td><td>User Velocity Pos Three</td></tr>
+<tr><td align="right">6</td><td>User Time Int One</td>            <td>24</td><td>User Velocity Pos Four</td></tr>
+<tr><td align="right">7</td><td>User Time Int Two</td>            <td>25</td><td>User Avg Vel Range One</td></tr>
+<tr><td align="right">8</td><td>User Time Int Three</td>          <td>26</td><td>User Avg Vel Range Two</td></tr>
+<tr><td align="right">9</td><td>User Time Int Four</td>           <td>27</td><td>User Avg Vel Range Three</td></tr>
+<tr><td align="right">10</td><td>User Time Int Five</td>          <td>28</td><td>User Avg Vel Range Four</td></tr>
+<tr><td align="right">11</td><td>Biscuit Size</td>                <td>29</td>     <td>Position P1</td></tr>
+<tr><td align="right">12</td><td>Calc Start Fast Shot</td>        <td>30</td><td>Position P2</td></tr>
+<tr><td align="right">13</td><td>Intensification Pressure</td>    <td>31</td><td>Position P3</td></tr>
+<tr><td align="right">14</td><td>Intensification Rise Time</td>   <td>32</td><td>Avg Slow Shot Velocity</td></tr>
+<tr><td align="right">15</td><td>Eff Peak Intensification</td>    <td>33</td><td>Avg Fast Show Velocity</td></tr>
+<tr><td align="right">16</td><td>Impact Pressure to Peak</td>     <td>34</td><td>Fast Shot Distance</td></tr>
+<tr><td align="right">17</td><td>Intens Squeeze Distance</td>     <td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+</center>
+<p>
+
+<h4>Shot and Parameter Alarm and Warning Indicators</h4>
+
+<p>The 'G' output tag tells the program to write an 'A', 'W', or 'G' to indicate the alarm state of the shot.</p>
+
+'A' indicates that at least one parameter had a value outside of the alarm limits.<br>
+'W' indicates that there were no parameters in alarm but at least one had a value outside the warning limits.<br>
+'G' indicates that all parameters were within the alarm and warning limits.
+
+<p>The symbols, 'A', 'W', and 'G' can be set to any string that you wish. This is done by editing the
+C:\V5\EXES\MONALL.INI file and changing the following lines (enter them in the [Config] section if they don't
+exist). In the examples below the single character symbols have been changed to words.</p>
+
+<ul>
+<li>EosHaveAlarmShot=Alarm</li>
+<li>EosHaveGoodShot=Good</li>
+<li>EosHaveWarningShot=Warning</li>
+</ul>
+
+<p>The 'A' output tag tells the program to write an 'A', 'W', or 'G' to indicate the alarm state of a
+single parameter.</p>
+
+<p>"A11", for example, tells the program to write the alarm state of the Biscuit Size parameter. "A12" would do
+the same for the Calculated Start of Fast Shot parameter.</p>
+
+<p>As with the shot indicators, the symbols used for the parameter indicators can be set in the [Config]
+section of the C:\V5\EXES\MONALL.INI file. The following examples illustrate this.</p>
+<ul>
+<li>EosHaveAlarmParameter=Alarm</li>
+<li>EosHaveGoodParameter=Good</li>
+<li>EosHaveWarningParameter=Warning</li>
+</ul>
+
+<h4>Two Line Output</h4>
+If you want the date followed by a carriage return and line feed and then the time.
+<pre>
+EosComSetup=D,R,L,T
+</pre>
+
+<h4>Fixed Width Parameter Fields</h4>
+If you need to have fixed width fields for the parameter values you can set the width by entering the
+following line
+<pre>
+EosFixedWidth=10
+</pre>
+
+Setting the value to a non-numeric string returns you to variable length values.
+<pre>
+EosFixedWidth=None
+</pre>
+
+The difference can be seen in the following example. The setup line is
+<pre>
+EosComSetup=0,3,4,5,11,12,13
+</pre>
+
+If the fixed width is set to <b>10</b> you get the following output.
+<pre>
+    45.326;    61.726;       0.0;    15.204;    0.9875;     2.053;    2500.0
+</pre>
+
+If it is set to <b>None</b> you get the following output.
+<pre>
+45.326;61.725;0.0;15.117;0.9875;2.053;2500.0
+</pre>
+
+If you want the stamp machine to write only if there are no alarms, add the following line;
+<pre>
+EosOnlyIfNoAlarm=Y
+</pre>
+<h4>Output File Setup</h4>
+<p>When you specify an output file (EosOutputFile) the program writes the end of shot data to the specified file. You define what is to be included
+in the same way as you do for the serial line output (EosComSetup). Normally you will want the file output to be different from the serial output.</p>
+
+<p>The (EosOutputFileSetup) is used for this setup. You specify the output just as you do with the EosComSetup.</p>
+<p>If there is no EosOutputFileSetup then the program will use the EosComSetup for the output file.</p>
+
+</body>
+</html>
+

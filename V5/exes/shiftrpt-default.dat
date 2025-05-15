@@ -1,0 +1,19 @@
+3
+E20
+M2
+M20
+2
+-15,0,0,0,400,0,0,0,0,3,2,1,34,Verdana
+-48,0,0,0,400,0,0,0,0,3,2,1,34,Verdana
+ShowLegend=Y
+0,0,796,332
+StartMonths=
+StartWeeks=
+StartDays=
+StartShifts=0
+EndMonths=
+EndWeeks=
+EndDays=
+EndShifts=0
+Current Shift Downtimes
+C:\V5\EXES\shift_report.csv

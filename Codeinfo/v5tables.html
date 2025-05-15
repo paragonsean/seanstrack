@@ -1,0 +1,1240 @@
+<html>
+<head>
+<title>V5 Tables</title>
+<link rel=stylesheet type="text/css" href="styles/gen_styles.css" title="V5 Tables">
+</head>
+<body>
+<pre>
+\V5\Data Directory
+    <a href="#add">ADD</a>   New password file
+    <a href="#asensor">ASENSOR</a>   Analog sensor setup data
+    <a href="#color">COLOR</a>     List of colors
+    <a href="#computer">COMPUTER</a>  List of computers and their directory locations
+    <a href="#dcurve">DCURVE</a>    List of differential curve types
+    <a href="#density">DENSITY</a>   Metal liquid and solid densities
+    <a href="#downcat">DOWNCAT</a>   Downtime categories
+    <a href="#downscat">DOWNSCAT</a>  Downtime subcategories
+    <a href="#downscatc">DOWNSCATC</a>  Downtime subcategories with color information
+    <a href="#fixchan">FIXCHAN</a>  Fixed axis limits for channels
+    <a href="#fixpres">FIXPRES</a>  Fixed axis limits for pressures
+    <a href="#operator">OPERATOR</a>  List of operators
+    <a href="#parmname">PARMNAME</a>  Internal Parameter List
+    <a href="#polyeq">POLYEQ</a>    Polynomial equations
+    <a href="#psensor">PSENSOR</a>   Position sensor setup data
+    <a href="#rodpitch">RODPITCH</a>  List of rod pitches
+    <a href="#shift">SHIFT</a>     List of shift times
+    <a href="#stddown">STDDOWN</a> List of standard down times
+    <a href="#units">UNITS</a>     List of units
+    <a href="#vartype">VARTYPE</a>   List of variable types (pressure, distance, etc)
+    <a href="#velcvt">VELCVT</a>    Multipliers to convert dist/sec to velocity units
+    |
+    +-- \C01 (Computer Directory)
+        <a href="#boards">BOARDS</a>      Fastrak and Suretrak Boards
+        <a href="#ftii_boards">FTII_BOARDS</a> Fastrak II Boards
+        <a href="#machset">MACHSET</a>     Machine setup data
+        <a href="#stparam">STPARAM</a>     SureTrak Parameter Data
+        |
+        +-- \M01 (Machine Directory)
+            <a href="#ftii_editor_settings">FTII_EDITOR_SETTINGS</a> Global editor setting (ini file)
+            <a href="#ftii_global_settings">FTII_GLOBAL_SETTINGS</a> Global Suretrak Settings (free form)
+            <a href="#parts">PARTS</a>                Part Setup Data (formerly Spedita)
+            <a href="#plookup">PLOOKUP</a>              Last shot info for parts
+            <a href="#dstat">DSTAT</a>                Current machine status
+            <a href="#runlist">RUNLIST</a>              List of parts to run with SureTrak Input bits
+            |
+            +-- \RESULTS
+                <a href="#downtime">DOWNTIME</a>   Downtime Results for this machine
+            |
+            +-- \VISITRAK (Part Directory)
+                <a href="#ctrlimit">CTRLIMIT</a>   Control Limits for statistical summary
+                <a href="#ftanalog">FTANALOG</a>   FastTrak analog inputs
+                <a href="#ftchan">FTCHAN</a>     FastTrak channel list
+                <a href="#ftiiwires">ftii_limit_switch_wires</a> FT2 Limit Switch Wires
+                <a href="#ftii_part_settings">FTII_PART_SETTINGS</a> FT2 Part Settings
+                <a href="#marklist">MARKLIST</a>   Marks for graphs
+                <a href="#parmlist">PARMLIST</a>   Inputs for this part (formerly Valarm)
+                <a href="#stsetup">STSETUP</a>    SureTrak Setup Data
+                <a href="#stlimits">STLIMITS</a>   SureTrak Limit Switch Positions
+                <a href="#subparts">SUBPARTS</a>   List of sub-parts and cavity count
+                <a href="#warmup">WARMUP</a>       Warmup part name and activation wire
+                STPART.DAT (freeform, one line per variable), for part based
+                           suretrak parameters.
+                |
+                +-- \RESULTS
+                    <a href="#alarmsum">ALARMSUM</a>         Alarm summary
+                    <a href="#shotparm">SHOTPARM</a>           Shot parameters (formerly Visispc and Analog)
+                    <a href="#graphlst">GRAPHLST</a>         List of shot profiles
+                    00000001.DAT     Shot profile for shot 1
+                    00000010.DAT     Shot profile for shot 10
+                    LASTSHOT.DAT     Shot profile for last shot
+                    VISITRAK.MAS
+</pre>
+
+<hr>
+<center><h3 class=nopad>V5 Directory</h3></center>
+<hr>
+
+<h4 id="add">ADD</h4>
+New password table with owner column. This allows me to save the name of the person
+changing the password level.
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Level</td> <td>S3</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Password</td> <td>A20</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Owner</td> <td>A30</td>
+    </tr>
+    </table>
+
+<h4 id="asensor">ASENSOR</h4>
+Analog sensor parameters
+<table border="1" cellpadding="2">
+    <tr>
+      <td>1</td>
+      <td>Analog Sensor Number</td>
+      <td>S3</td>
+      <td>[0,999]</td>
+      </tr>
+    <tr>
+        <td>2</td> <td>Description</td> <td>A25</td> <td>&nbsp;</td>
+        </tr>
+    <tr>
+        <td>3</td> <td>High</td> <td>F12</td> <td>&nbsp;</td>
+        </tr>
+    <tr>
+        <td> 4</td> <td>Low</td> <td>F12</td> <td>&nbsp;</td>
+        </tr>
+    <tr>
+        <td>5</td>
+        <td>Variable Type</td>
+        <td>U5</td>
+        <td>&nbsp;</td>
+        </tr>
+    <tr>
+    <td>6</td> <td>Units</td> <td>S2</td> <td>&nbsp;</td>
+    </tr><tr>
+    <td> 9</td> <td>Calc gain</td> <td>S3</td> <td>&nbsp;</td>
+    </tr><tr>
+    <td>10</td> <td>Multiplier</td> <td>F12</td> <td>&nbsp;</td>
+    </tr><tr>
+    <td>11</td> <td>Subtrahend</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+    <tr>
+    <td>12</td> <td>Divisor</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+    <tr>
+    <td>13</td> <td>Adder</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+    <tr>
+    <td>15</td> <td>Milli Volt Convert</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+    <tr>
+    <td>16</td> <td>Polynomial Equation</td> <td>S3</td> <td>[1,999]</td>
+    </tr>
+    </table>
+
+<h4 id="color">COLOR</h4>
+<table border="1" cellpadding="2">
+  <tr><td>1</td> <td>Color Name</td> <td>A12</td><td>&nbsp;</td></tr>
+  <tr><td>2</td> <td>Red</td>        <td>S3</td> <td>Decimal 0-255</td></tr>
+  <tr><td>3</td> <td>Green</td>      <td>S3</td> <td>&nbsp;</td></tr>
+  <tr><td>4</td> <td>Blue</td>       <td>S3</td> <td>&nbsp;</td></tr>
+    </table>
+
+<h4 id="computer">COMPUTER</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Computer Number</td> <td>A3</td> <td>"C01", "1", etc.</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Computer Directory</td> <td>A25</td> <td>&nbsp;</td>
+    </tr>
+    </table>
+
+<h4 id="dcurve">DCURVE</h4>
+Differential curve definitions (also used for metal pressure)
+
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Curve Number</td> <td>S3</td> <td>[1,999]</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Description</td> <td>A25</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Head Coefficient</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Rod Coefficient</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+    </table>
+
+<h4 id="density">DENSITY</h4>
+Metal Densities (liquid and solid )
+
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Density Number</td> <td>S3</td> <td>[1,999]</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Name</td> <td>A25</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Units</td><td>S2</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Solid Density</td> <td>F7</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>5</td> <td>Liquid Density</td> <td>F7</td> <td>&nbsp;</td>
+    </tr>
+    </table>
+
+<h4 id="downcat">DOWNCAT</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Index</td> <td>A2</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Category</td> <td>A15</td>
+    </tr>
+    </table>
+
+<h4 id="downscat">DOWNSCAT</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Index</td> <td>A2</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Sub-Index</td> <td>A2</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Sub-Category</td> <td>A15</td>
+    </tr>
+    </table>
+
+<h4 id="downscatc">DOWNSCATC</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Index</td> <td>A2</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Sub-Index</td> <td>A2</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Sub-Category</td> <td>A15</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Color</td> <td>A6</td> <td>Hex RGB</td>
+    </tr>
+
+    </table>
+
+<h4 id="fixchan">FIXCHAN</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Enabled</td> <td>A1</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Minimum</td> <td>F12</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Maximum</td> <td>F12</td>
+    </tr>
+    </table>
+
+<h4 id="fixpres">FIXPRES</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Enabled</td> <td>A1</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Minimum</td> <td>F12</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Maximum</td> <td>F12</td>
+    </tr>
+    </table>
+
+<h4 id="operator">OPERATOR</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Operator Number</td> <td>A8</td>
+    </tr>
+<tr>
+    <td>2</td> <td>First Name</td> <td>A15</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Last Name</td> <td>A15</td>
+    </tr>
+    </table>
+
+<h4 id="parmname">PARMNAME</h4>
+Internal Parameter Definitions
+<table border="1" cellpadding="2">
+    <tr>
+    <td>1</td> <td>Parameter Number</td> <td>S3</td> <td>[1,37]</td>
+    </tr>
+    <tr>
+    <td>2</td> <td>Machine Type</td> <td>U5</td> <td>{COLD_CHAMBER_TYPE  HOT_CHAMBER_TYPE}</td>
+    </tr>
+    <tr>
+    <td>3</td> <td>Parameter Name</td> <td>A25</td> <td>&nbsp;</td>
+    </tr>
+    <tr>
+    <td>4</td> <td>Variable Type</td> <td>U5</td> <td>{DISTANCE_VAR, POSITION_VAR, ..., WORK_VAR}</td>
+    </tr>
+    </table>
+
+<h4 id="psensor">PSENSOR</h4>
+Position Sensor Data
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Rod Pitch</td> <td>A3</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Distance Units</td> <td>S2</td> <td>{INCH_UNITS, CM_UNITS, etc.}</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Velocity Units</td> <td>S2</td> <td>{IPS_UNITS, MPS_UNITS}</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Clock Mhz</td> <td>S3</td> <td>{4, 12}</td>
+    </tr>
+<tr>
+    <td>5</td> <td>Velocity Factor</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>6</td> <td>X1 Position Divisor</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>7</td> <td>X4 Position Divisor</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>8</td> <td>Min Velocity</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>9</td> <td>Distance Between Marks</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>10</td> <td>Description</td> <td>A25</td> <td>&nbsp;</td>
+    </tr>
+    </table>
+
+<h4 id="polyeq">POLYEQ</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Equation Number</td> <td>S3</td> <td> [1,999]</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Description</td> <td>A25</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Coef 0</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Coef 1</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>5</td> <td>Coef 2</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>6</td> <td>Coef 3</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>7</td> <td>Coef 4</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>8</td> <td>Coef 5</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>9</td> <td>Coef 6</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>10</td> <td>Coef 7</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>11</td> <td>Coef 8</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>12</td> <td>Coef 9</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+    </table>
+
+<h4 id="rodpitch">RODPITCH</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Rod Pitch</td> <td>A3</td> <td>"20P", "4MM", etc.</td>
+    </tr>
+    </table>
+
+<h4 id="shift">SHIFT</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Day of the week</td> <td>A9</td> <td>"Sunday", "Monday",...,"Saturday"</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Shift Number</td> <td>S2</td> <td>[1, 99]</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Actual Day of the Week</td> <td>A9</td> <td>"Sunday", "Monday",...,"Saturday"</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Start Time</td> <td>A8</td> <td>23:30:47</td>
+    </tr>
+    </table>
+
+<h4 id="stddown">STDDOWN</h4>
+Standard Down Times
+<table border="1" cellpadding="2">
+<tr>
+<tr>
+    <td>1</td> <td>Catagory</td> <td>A2</td><td>&nbsp;</td><td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>1</td> <td>Sub-Category</td> <td>A2</td><td>&nbsp;</td><td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Start Time</td> <td>A8</td> <td>23:30:47</td> <td>This is a string, NOT a time</td>
+    </tr>
+<tr>
+    <td>4</td> <td>End Time</td> <td>A8</td> <td>23:30:47</td> <td>This is a string, NOT a time</td>
+    </tr>
+    </table>
+
+<h4 id="units">UNITS</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>ID</td> <td>S2</td> <td>[0,99]</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Variable Type</td> <td>U5</td> <td>{DISTANCE_VAR, POSITION_VAR, ..., WORK_VAR}</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Units</td> <td>A7</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Seconds per Vel Unit</td> <td>F12</td> <td>1.0 if not velocity</td>
+    </tr>
+    </table>
+
+<h4 id="vartype">VARTYPE</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Value (bitset)</td> <td>U5</td> <td>{1,2,4,...,2048}</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Name</td> <td>A25</td> <td>&nbsp;</td>
+    </tr>
+    </table>
+
+<h4 id="velcvt">VELCVT</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Distance ID</td> <td>S2</td> <td>{INCH_UNITS, CM_UNITS, etc.}</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Velocity ID</td> <td>S2</td> <td>{IPS_UNITS, MPS_UNITS, FPM_UNITS, etc.}</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Multiplier</td> <td>F12</td> <td>Convert dist/sec to velocity</td>
+    </tr>
+    </table>
+
+<br>
+<hr><center><h3 class=nopad>Computer Directory</h3></center><hr>
+
+<h4 id="boards">BOARDS</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Board Number</td> <td>S2</td> <td>[1,8]</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Board Address</td> <td>S5</td> <td>{220h, 240h, ..., 340h}</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Board Type</td> <td>S5</td> <td>{SINGLE_MACHINE_BOARD_TYPE, MUX_BOARD_TYPE}</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Clock Mhz</td> <td>S3</td> <td>{4, 12 }</td>
+    </tr>
+<tr>
+    <td>5</td> <td>Cycles per Time Count</td> <td>S3</td> <td>Currently 4 ( Time Counts )</td>
+    </tr>
+<tr>
+    <td>6</td> <td>Counts per Pos Mark</td> <td>S3</td> <td>Currently 4 ( Position Counts )</td>
+    </tr>
+    </table>
+
+<h4 id="ftii_boards">FTII_BOARDS</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Board Number</td> <td>I2</td> <td>[1,n]</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Tcp/Ip Address</td> <td>S15</td> <td>{192.168.254.254}</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Tcp/Ip Port Number</td> <td>S5</td> <td>{0,..,65535}</td>
+    </tr>
+    </table>
+
+<h4 id="ftii_editor_settings">FTII_EDITOR_SETTINGS.INI</h4>
+This is an ini file that contains a [Config] section for the following
+<br>MinLowImpactPercent=1200.0
+<br>LS1Description=POUR HOLE COVER
+<br>LS2Description=CLOSE VACUUM
+<br>LS3Description=CHECK VACUUM
+<br>LS4Description=INTENSIFICATION
+<br>LS5Description=UNKNOWN
+<br>LS6Description=UNKNOWN
+<br>MaxVelocity=100.0
+<br>VacuumLimitSwitch=2
+
+<h4 id="ftii_global_settings">FTII_GLOBAL_SETTINGS.TXT</h4>
+This is a free form text file, not a table. Each line is the value of one of the
+suretrak globals, e.g.
+<br>V350=0
+
+<h4 id="machset">MACHSET (Versions 5 and 6</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Machine Number</td> <td>A3</td> <td>"M01", "1", "One", etc.</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Machine Type</td> <td>U5</td> <td>{COLD_CHAMBER_TYPE, HOT_CHAMBER_TYPE}</td>
+    </tr>
+<tr>
+    <td>3</td> <td>FasTrak Board Number</td> <td>S2</td> <td>[1,8]</td>
+    </tr>
+<tr>
+    <td>4</td> <td>FasTrak Mux Channel</td> <td>S2</td> <td>[1,8] (Same as sent to FT board)</td>
+    </tr>
+<tr>
+    <td>5</td> <td>SureTrak Controlled</td> <td>A1</td> <td>Boolean (Y/N) Only used by ft2</td>
+    </tr>
+<tr>
+    <td>6</td> <td>Current Part Name</td> <td>A8</td> <td>e.g. "VISITRAK"</td>
+    </tr>
+<tr>
+    <td>7</td> <td>Rod Pitch</td> <td>A3</td> <td>Rod pitch [ 10P, 20P, ...]</td>
+    </tr>
+<tr>
+    <td>8</td> <td>Profile Skip Count</td> <td>S6</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>9</td> <td>Profile Acquire Count</td> <td>S6</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>10</td> <td>Profile Time Skip</td> <td>S4</td> <td>Sec.</td>
+    </tr>
+<tr>
+    <td>11</td> <td>Profile Monitor Flags</td> <td>U5</td> <td>{SKIP_COUNT_BIT, SKIP_TIME_BIT, ACQUIRE_ALL_BIT, ACQUIRE_NONE_BIT}</td>
+    </tr>
+<tr>
+    <td>12</td> <td>Max Profiles Saved</td> <td>L7</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>13</td> <td>Param Skip Count</td> <td>S6</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>14</td> <td>Param Acquire Count</td> <td>S6</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>15</td> <td>Param Time Skip</td> <td>S4</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>16</td> <td>Param Monitor Flags</td> <td>U5</td> <td>{SKIP_COUNT_BIT, SKIP_TIME_BIT, ACQUIRE_ALL_BIT, ACQUIRE_NONE_BIT}</td>
+    </tr>
+<tr>
+    <td>17</td> <td>Max Param Saved</td> <td>L7</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>18</td> <td>Monitor Flags</td> <td>U5</td> <td>{MA_NO_MONITORING, MA_MONITORING_ON, MA_ALARM_MONITORING_ON, MA_HAS_DIGITAL_SERVO, MA_HAS_PRESSURE_CONTROL}</td>
+    </tr>
+<tr>
+    <td>19</td> <td>Auto Shot Timeout Seconds</td> <td>S4</td> <td>Auto shot but no shot (FT board level)</td>
+    </tr>
+<tr>
+    <td>20</td> <td>Cycle Timeout Seconds</td> <td>S4</td> <td>No shot => Machine down</td>
+    </tr>
+<tr>
+    <td>21</td> <td>Differential Curve Type</td> <td>U3</td> <td>DCURVE field 1, 0 => No Differential Curve</td>
+    </tr>
+<tr>
+    <td>22</td> <td>Position Impact Points</td> <td>S4</td> <td>N of pts to check for impact pres spike</td>
+    </tr>
+<tr>
+    <td>23</td> <td>Time Impact Points</td> <td>S4</td> <td>N of pts to check for impact pres spike</td>
+    </tr>
+<tr>
+    <td>24</td> <td>Pre-impact Pressure Type</td> <td>U5</td> <td>{ROD_PRESSURE_CURVE, HEAD_PRESSURE_CURVE, DIFF_PRESSURE_CURVE}</td>
+    </tr>
+<tr>
+    <td>25</td> <td>Post-impact Pressure Type</td> <td>U5</td> <td>{ROD_PRESSURE_CURVE, HEAD_PRESSURE_CURVE, DIFF_PRESSURE_CURVE}</td>
+    </tr>
+<tr>
+    <td>26</td> <td>Current Operator Number</td> <td>A8</td> <td>&nbsp;</td>
+    </tr>
+    </table>
+
+<h4 id="stparam">STPARAM</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Velocity Divisor</td> <td>L12</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Null DAC Compensation</td> <td>L12</td>
+    </tr>
+<tr>
+    <td>3</td> <td>LVDT DAC Compensation</td> <td>L12</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Zero Speed Check Position</td> <td>F8</td>
+    </tr>
+<tr>
+    <td>5</td> <td>Counts Per Unit</td> <td>F8</td>
+    </tr>
+<tr>
+    <td>6</td> <td>Jog Valve Percent</td> <td>F8</td>
+    </tr>
+<tr>
+    <td>7</td> <td>Retract Valve Percent</td> <td>F8</td>
+    </tr>
+<tr>
+    <td>8</td> <td>FT Valve Percent</td> <td>F8</td>
+    </tr>
+<tr>
+    <td>9</td> <td>Velocity Multiplier</td> <td>F8</td>
+    </tr>
+<tr>
+    <td>10</td> <td>Min Low Impact Percent</td> <td>F8</td>
+    </tr>
+<tr>
+    <td>11</td> <td>Limit Switch 1 Desc</td> <td>A25</td>
+    </tr>
+<tr>
+    <td>12</td> <td>Limit Switch 2 Desc</td> <td>A25</td>
+    </tr>
+<tr>
+    <td>13</td> <td>Limit Switch 3 Desc</td> <td>A25</td>
+    </tr>
+<tr>
+    <td>14</td> <td>Limit Switch 4 Desc</td> <td>A25</td>
+    </tr>
+    </table>
+<br>
+<hr>
+<center><h3 class=nopad>Machine Directory</h3></center>
+<hr>
+
+<h4 id="parts">PARTS</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Part Name</td> <td>A8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Distance Units</td> <td>S2</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Velocity Units</td> <td>S2</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Pressure Units</td> <td>S2</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>5</td> <td>Total Stroke Len</td> <td>F8</td> <td>0-100 in.</td>
+    </tr>
+<tr>
+    <td>6</td> <td>Min Stroke Length</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>7</td> <td>Time Delay Biscuit</td> <td>L7</td> <td>Not Hot Chamber</td>
+    </tr>
+<tr>
+    <td>8</td> <td>End of Shot Velocity</td> <td>F8</td> <td>0-500 ips.</td>
+    </tr>
+<tr>
+    <td>9</td> <td>Sleeve Fill Distance</td> <td>F8</td> <td>P1->P3</td>
+    </tr>
+<tr>
+    <td>10</td> <td>Runner Fill Distance</td> <td>F8</td> <td>P2->P3</td>
+    </tr>
+<tr>
+    <td>11</td> <td>Min Velocity for CSFS</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>12</td> <td>Velocity for Rise CSFS</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>13</td> <td>Min CSFS Position</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>14</td> <td>Limit 1</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>15</td> <td>Limit 2</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>16</td> <td>Limit 3</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>17</td> <td>Limit 4</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>18</td> <td>User Vel 1</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>19</td> <td>User Vel 2</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>20</td> <td>User Vel 3</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>21</td> <td>User Vel 4</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>22</td> <td>User Avg St 1</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>23</td> <td>User Avg St 2</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>24</td> <td>User Avg St 3</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>25</td> <td>User Avg St 4</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>26</td> <td>User Avg End 1</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>27</td> <td>User Avg End 2</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>28</td> <td>User Avg End 3</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>29</td> <td>User Avg End 4</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>30</td> <td>Plunger Diameter</td> <td>F8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>31</td> <td>Time for Intens Pres</td> <td>L7</td> <td>Intens pres at this time if > 0</td>
+    </tr>
+<tr>
+    <td>32</td> <td>Pres for Response Time</td> <td>F8</td> <td>Intens resp. time when pres gets here if > 0</td>
+    </tr>
+<tr>
+    <td>33</td> <td>Ms per time sample</td> <td>S5</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>34</td> <td>N of Time Samples</td> <td>S5</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>35</td> <td>Production Enabled</td> <td>A1</td> <td>(Y/N)</td>
+    </tr>
+<tr>
+    <td>36</td> <td>Head Pressure Channel</td> <td>S2</td> <td>[1,4]</td>
+    </tr>
+<tr>
+    <td>37</td> <td>Rod Pressure Channel</td> <td>S2</td> <td>[1,4]</td>
+    </tr>
+    </table>
+
+<h4 id="plookup">PLOOKUP</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Part Name</td> <td>A8</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Last Shot Number</td> <td>L6</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Date of Last Shot</td> <td>D</td>
+    </tr>
+<tr>
+    <td>5</td> <td>Time of Last Shot</td> <td>T</td>
+    </tr>
+    </table>
+
+<h4 id="dstat">DSTAT</h4>
+One record table with the current machine status.
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Code</td> <td>A4</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Date</td> <td>D</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Time</td> <td>T</td>
+    </tr>
+    </table>
+
+<h4 id="runlist">RUNLIST</h4>
+<table border="1" cellpadding="2">
+    <tr><td>1</td> <td>Bits</td>      <td>A8</td> <td>Suretrak Input Bit or Bits (hex) that tell me to run this part if on</td></tr>
+    <tr><td>2</td> <td>Part Name</td> <td>A8</td><td>Part to run</td></tr>
+    </table>
+
+<h4 id="semaphor">SEMAPHOR</h4>
+No fields, reclen of 5. Table lock used for sync only.
+
+<br>
+<hr><center><h3 class=nopad>Machine Results Directory</h3></center><hr>
+
+
+<h4 id="downtime">DOWNTIME</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Date</td> <td>D</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Time</td> <td>T</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Category Number</td> <td>A2</td>
+    </tr>
+<tr>
+    <td>4</td> <td>SubCategory Number</td> <td>A2</td>
+    </tr>
+<tr>
+    <td>5</td> <td>Operator Number</td> <td>A8</td>
+    </tr>
+<tr>
+    <td>6</td> <td>Part Name</td> <td>A8</td>
+    </tr>
+    </table>
+
+<br>
+<hr><center><h3 class=nopad>Part Directory</h3></center><hr>
+
+<h4 id="ctrlimit">CTRLIMIT</h4>
+Control Limits for statistical summary
+{This file can be deleted. The program will create a new one.}
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Parameter Number</td> <td>S3</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Lower Control Limit</td> <td>F12</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Upper Control Limit</td> <td>F12</td>
+    </tr>
+    </table>
+
+<h4 id="ftanalog">FTANALOG</h4>
+ FastTrak Analog Inputs
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Input Number</td> <td>S3</td> <td>Parameter Number [1,MAX_PARMS]</td>
+    </tr>
+<tr>
+    <td>2</td> <td>FT Channel Number</td> <td>S2</td> <td>[1,8]</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Pos or Time Base</td> <td>A1</td> <td>'P' = Position, 'T' = Time</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Pos or Time Value</td> <td>F1</td> <td>Where or when to sample</td>
+    </tr>
+<tr>
+    <td>5</td> <td>Units</td> <td>S2</td> <td>&nbsp;</td>
+    </tr>
+    </table>
+<br>
+New: FTANALOG.CSV = comma delimited text file
+
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Parameter Number</td> <td>Parameter Number [1,MAX_PARMS]</td>
+    </tr>
+<tr>
+    <td>2</td> <td>FT2 Channel Number</td> <td>[1,24]</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Result Type</td>  <td> SINGLE_POINT_RESULT_TYPE, MAX_RESULT_TYPE, MIN_RESULT_TYPE, AVG_RESULT_TYPE</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Independent Variable Type</td> <td>POSITION_VAR, TIME_VAR, TRIGGER_WHEN_GREATER, TRIGGER_WHEN_SMALLER</td>
+    </tr>
+<tr>
+    <td>5</td> <td>Independent Variable Value</td> <td>Sample Point for FT_ANALOG_INPUT, wire for FT_EXTENDED_ANALOG_INPUT</td>
+    </tr>
+<tr>
+    <td>6</td> <td>End Value</td> <td>End of sample interval for FT_ANALOG_INPUT</td>
+    </tr>
+    </table>
+<br>
+The ftanalog settings are used in addition to the parmlist settings for FT_ANALOG_INPUT, FT_TARGET_INPUT, AND FT_EXTENDED_ANALOG_INPUT parameters.
+
+<h4 id="ftchan">FTCHAN</h4>
+ FastTrak channel list
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>FT Channel Number</td> <td>S2</td> <td>[1,8]</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Analog Sensor Number</td> <td>S3</td> <td>&nbsp;</td>
+    </tr>
+    </table>
+
+<h4 id="ftiiwires">FTII_LIMIT_SWITCH_WIRES.DAT</h4>
+FT2 Limit Switch Wires
+<br>This is a free form text file with one wire per line.
+<ol>
+    <li>Limit Switch #1 Wire Number</li>
+    <li>Limit Switch #2 Wire Number</li>
+    <li>Limit Switch #3 Wire Number</li>
+    <li>Limit Switch #4 Wire Number</li>
+    <li>Limit Switch #5 Wire Number</li>
+    <li>Limit Switch #6 Wire Number</li>
+    </ol>
+
+<h4 id="ftii_part_settings">FTII_PART_SETTINGS.TXT</h4>
+This is a free form text file with the part settings in the same form as the ftii_control_program.txt.
+<br>e.g.
+<br>V318=688
+<br>or
+<br>.UV0=0
+<br>.UV1=30|H80000000
+<p>As the ftii_control_program.txt file is being uploaded, these values are substitited for the
+ones in that file.
+
+<h4 id="marklist">MARKLIST</h4>
+<table border="1" cellpadding="4">
+    <tr>
+        <td>1</td> <td>Parameter Type</td> <td>A1</td> <td>'P'arameter, 'S'tart, 'E'nd, 'V'el pos</td>
+        </tr>
+    <tr>
+        <td>2</td> <td> Parameter Number</td> <td>S3</td> <td>&nbsp;</td>
+        </tr>
+    <tr>
+        <td>3</td> <td>Symbol</td> <td>A8</td> <td>"NONE" => use only label</td>
+        </tr>
+    <tr>
+    <td>4</td> <td>Color</td> <td>A12</td> <td>&nbsp;</td>
+    </tr>
+    <tr>
+    <td>5</td> <td>Label</td> <td>A5</td> <td>Ascii like P1, P2, Von, Voff, etc.</td>
+    </tr>
+    <tr>
+    <td>6</td> <td>Enabled</td> <td>A1</td> <td>Y/N</td>
+    </tr>
+    </table>
+
+<h4 id="parmlist">PARMLIST</h4>
+ Formerly Valarm
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Parameter Number</td> <td>S3</td> <td>Position in SHOTPARM table [1,MAX_PARMS]</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Input Type</td> <td>S2</td> <td>Internal, FT Analog, FT On/Off, FT Digital</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Input Number</td> <td>S3</td> <td>FT_ON_OFF_INPUT number (FT2 1000 means high to low), Digital Wire (17-32)</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Variable Type</td> <td>S5</td> <td>Vartype</td>
+    </tr>
+<tr>
+    <td>5</td> <td>Units</td> <td>S2</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>6</td> <td>Description</td> <td>A20</td> <td>= Display Name</td>
+    </tr>
+<tr>
+    <td>7</td> <td>High Warning Limit</td> <td>F1</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>8</td> <td>High Warning Wire Number</td> <td>S2</td> <td>Human Wire No.[1,16] (0=>None) w-- for bit no.</td>
+    </tr>
+<tr>
+    <td>9</td> <td>Low Warning Limit</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>10</td> <td>Low Warning Wire Number</td> <td>S2</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>11</td> <td>High Alarm Limit</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>12</td> <td>High Alarm Wire Number</td> <td>S2</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>13</td> <td>Low Alarm Limit</td> <td>F12</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>14</td> <td>Low Alarm Wire Number</td> <td>S2</td> <td>&nbsp;</td>
+    </tr>
+    </table>
+
+<h4 id="ststeps">STSTEPS</h4>
+SureTrak Profile Steps
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Accel</td> <td>A8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Velocity</td> <td>A8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>3</td> <td>End Position</td> <td>A8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Low Impact Position</td> <td>A8</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>5</td> <td>Vacuum Wait</td> <td>A1</td> <td>Y/N</td>
+    </tr>
+<tr>
+    <td>6</td> <td>Low Impact from Input</td> <td>A1</td> <td>Y/N</td>
+    </tr>
+    </table>
+
+<h4 id="stlimits">STLIMITS</h4>
+Old SureTrak Setup Data, This has been replaced by the stlimits.dat file, which follows
+<table border="1" cellpadding="2">
+    <tr>
+    <td>1</td><td>Limit Switch Pos #1</td> <td>A8</td>
+    </tr>
+    <tr>
+    <td>2</td><td>Limit Switch Pos #2</td> <td>A8</td>
+    </tr>
+    <tr>
+    <td>3</td><td>Limit Switch Pos #3</td> <td>A8</td>
+    </tr>
+    <tr>
+    <td>4</td><td>Limit Switch Pos #4</td> <td>A8</td>
+    </tr>
+    <tr><td>5</td><td>Break Gain #1 Velociy</td> <td>F8</td></tr>
+    <tr><td>6</td><td>Break Gain #1 Gain</td> <td>F8</td></tr>
+    <tr><td>7</td><td>Break Gain #2 Velociy</td> <td>F8</td></tr>
+    <tr><td>8</td><td>Break Gain #2 Gain</td> <td>F8</td></tr>
+    <tr><td>9</td><td>Break Gain #3 Velociy</td> <td>F8</td></tr>
+    <tr><td>10</td><td>Break Gain #3 Gain</td> <td>F8</td></tr>
+    <tr><td>11</td><td>Velocity Loop Gain</td> <td>F8</td></tr>
+    <tr><td>12</td><td>Stop Position</td> <td>F8</td></tr>
+    </table>
+
+<h4 id="stlimits">STLIMITS.DAT</h4>
+ SureTrak Setup Data
+<ol>
+    <li>Limit Switch Pos #1</li>
+    <li>Limit Switch Pos #2</li>
+    <li>Limit Switch Pos #3</li>
+    <li>Limit Switch Pos #4</li>
+    <li>Break Gain #1 Velociy</li>
+    <li>Break Gain #2 Velociy</li>
+    <li>Break Gain #3 Velociy</li>
+    <li>Break Gain #1 Gain</li>
+    <li>Break Gain #2 Gain</li>
+    <li>Break Gain #3 Gain</li>
+    <li>Velocity Loop Gain</li>
+    <li>Stop Position</li>
+    </ol>
+
+<h4 id="subparts">SUBPARTS</h4>
+<table border="1" cellpadding="2">
+    <tr>
+    <td>1</td> <td>Name</td> <td>A8</td>
+    </tr>
+    <tr>
+    <td>2</td> <td>Cavities</td> <td>S3</td>
+    </tr>
+    </table>
+
+<h4 id="warmup">WARMUP</h4>
+<table border="1" cellpadding="2">
+    <tr><td>1</td> <td>Enabled</td> <td>A1</td> <td>(Y/N)</td></tr>
+    <tr><td>2</td> <td>Run if On</td> <td>A1</td> <td>(Y/N) Y means run the warmup part when the wire is on.</td></tr>
+    <tr><td>3</td> <td>Wire</td> <td>A4</td> <td>Opto wire number (SureTrak Input, 30=Intensifier Enabled)</td></tr>
+    <tr><td>4</td> <td>Part Name</td> <td>A8</td><td>Part to run during warmup</td></tr>
+    </table>
+
+<br>
+<hr><center><h3 class=nopad>Results Directory</h3></center><hr>
+
+<h4 id="shotparm">SHOTPARM</h4>
+Shot parameters
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Shot Number</td> <td>L6</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Shot Date</td> <td>D</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Shot Time</td> <td>T</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Need Save</td> <td>I1</td> <td>Skip Save Flags [0  1  2]</td>
+    </tr>
+<tr>
+    <td>5</td> <td>Fill Time</td> <td>F12</td> <td>1 Parameters</td>
+    </tr>
+<tr>
+    <td>6</td> <td>Total Shot Time</td> <td>F12</td> <td>2</td>
+    </tr>
+<tr>
+    <td>7</td> <td>Slow Shot Time</td> <td>F12</td> <td>3</td>
+    </tr>
+<tr>
+    <td>8</td> <td>Fast Shot</td> <td>F12</td> <td>4</td>
+    </tr>
+<tr>
+    <td>9</td> <td>Fast Shot Rise Time</td> <td>F12</td> <td>5</td>
+    </tr>
+<tr>
+    <td>10</td> <td>Cycle Time</td> <td>F12</td> <td>6</td>
+    </tr>
+<tr>
+    <td>11</td> <td>User Time Int One</td> <td>F12</td> <td>7</td>
+    </tr>
+<tr>
+    <td>12</td> <td>User Time Int Two</td> <td>F12</td> <td>8</td>
+    </tr>
+    <tr>
+    <td>13</td> <td>User Time Int Three</td> <td>F12</td> <td>9</td>
+    </tr>
+<tr>
+    <td>14</td> <td>User Time Int Four</td> <td>F12</td> <td>10</td>
+    </tr>
+<tr>
+    <td>15</td> <td>User Time Int Five</td> <td>F12</td> <td>11</td>
+    </tr>
+<tr>
+    <td>16</td> <td>Biscuit Size</td> <td>F12</td> <td>12</td>
+    </tr>
+<tr>
+    <td>17</td> <td>Calc Start Fast Shot</td> <td>F12</td> <td>13</td>
+    </tr>
+<tr>
+    <td>18</td> <td>Intens Pressure</td> <td>F12</td> <td>14</td>
+    </tr>
+<tr>
+    <td>19</td> <td>Intens Rise Time</td> <td>F12</td> <td>15</td>
+    </tr>
+<tr>
+    <td>20</td> <td>Eff Peak Intens</td> <td>F12</td> <td>16</td>
+    </tr>
+<tr>
+    <td>21</td> <td>Impact Pressure To Peak</td> <td>F12</td> <td>17</td>
+    </tr>
+<tr>
+    <td>22</td> <td>Intens Squeeze Distance</td> <td>F12</td> <td>18</td>
+    </tr>
+<tr>
+    <td>23</td> <td>Sleeve Full Velocity</td> <td>F12</td> <td>19</td>
+    </tr>
+<tr>
+    <td>24</td> <td>Runner Full Velocity</td> <td>F12</td> <td>20</td>
+    </tr>
+<tr>
+    <td>25</td> <td>Avg Fill Velocity</td> <td>F12</td> <td>21</td>
+    </tr>
+<tr>
+    <td>26</td> <td>User Velocity Pos One</td> <td>F12</td> <td>22</td>
+    </tr>
+<tr>
+    <td>27</td> <td>User Velocity Pos Two</td> <td>F12</td> <td>23</td>
+    </tr>
+<tr>
+    <td>28</td> <td>User Velocity Pos Three</td> <td>F12</td> <td>24</td>
+    </tr>
+<tr>
+    <td>29</td> <td>User Velocity Pos Four</td> <td>F12</td> <td>25</td>
+    </tr>
+<tr>
+    <td>30</td> <td>User Avg Vel Range One</td> <td>F12</td> <td>26</td>
+    </tr>
+<tr>
+    <td>31</td> <td>User Avg Vel Range Two</td> <td>F12</td> <td>27</td>
+    </tr>
+<tr>
+    <td>32</td> <td>User Avg Vel Range Three</td> <td>F12</td> <td>28</td>
+    </tr>
+<tr>
+    <td>33</td> <td>User Avg Vel Range Four</td> <td>F12</td> <td>29</td>
+    </tr>
+<tr>
+    <td>34</td> <td>Position P1</td> <td>F12</td> <td>30</td>
+    </tr>
+<tr>
+    <td>35</td> <td>Position P2</td> <td>F12</td> <td>31</td>
+    </tr>
+<tr>
+    <td>36</td> <td>Position P3</td> <td>F12</td> <td>32</td>
+    </tr>
+<tr>
+    <td>37</td> <td>Avg Slow Shot Velocity</td> <td>F12</td> <td>33</td>
+    </tr>
+<tr>
+    <td>38</td> <td>Avg Fast Shot Velocity</td> <td>F12</td> <td>34</td>
+    </tr>
+<tr>
+    <td>39</td> <td>Fast Shot Distance</td> <td>F12</td> <td>35</td>
+    </tr>
+<tr>
+    <td>40</td> <td>Avg Gate Velocity</td> <td>F12</td> <td>36</td>
+    </tr>
+<tr>
+    <td>&nbsp;</td> <td>...</td> <td>&nbsp;</td> <td>&nbsp;</td>
+
+    </tr>
+<tr>
+    <td>64</td> <td>Last Parameter</td> <td>F12</td> <td>60</td>
+    </tr>
+    </table>
+
+<h4 id="graphlst">GRAPHLST</h4>
+<table border="1" cellpadding="2">
+
+<tr>
+    <td>1</td> <td>Shot Number</td> <td>L7</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Shot Date</td> <td>D</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Shot Time</td> <td>T</td> <td>&nbsp;</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Need Save</td> <td>A1</td> <td>Boolean (Y/N)</td>
+    </tr>
+    </table>
+
+<h4 id="alarmsum">ALARMSUM</h4>
+<table border="1" cellpadding="2">
+<tr>
+    <td>1</td> <td>Date</td> <td>D</td>
+    </tr>
+<tr>
+    <td>2</td> <td>Shift</td> <td>L2</td>
+    </tr>
+<tr>
+    <td>3</td> <td>Parameter Number</td> <td>L3</td>
+    </tr>
+<tr>
+    <td>4</td> <td>Low Warning or Total Count</td> <td>L6</td>
+    </tr>
+<tr>
+    <td>5</td> <td>High Warning or Total Warning Count</td> <td>L6</td>
+    </tr>
+<tr>
+    <td>6</td> <td>Low Alarm or Total Alarm Count</td> <td>L6</td>
+    </tr>
+<tr>
+    <td>7</td> <td>High Alarm</td> <td>L6</td>
+    </tr>
+    </table>
+
+</body>
+</html>

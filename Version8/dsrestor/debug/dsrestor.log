@@ -1,0 +1,16 @@
+﻿Build started 5/15/25 12:18:37 AM.
+     1>Project "C:\Sources\Version8\dsrestor\dsrestor.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt dsrestor.cpp proclass.cpp
+         proclass.cpp
+         dsrestor.cpp
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"Debug\dscrstori.res" dscrstori.rc 
+     1>RC : fatal error RC1110: could not open dscrstori.rc
+         
+     1>Done Building Project "C:\Sources\Version8\dsrestor\dsrestor.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.18

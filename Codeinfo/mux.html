@@ -1,0 +1,235 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title></title>
+<link rel=stylesheet type="text/css" href="styles/gen_styles.css">
+</head>
+<body>
+<h3 id="home">Registers</h3>
+
+<table border title="Registers">
+<tr><td>&nbsp;</td><td>Size</td><td>Read (WSR=0)</td>               <td>Write (WSR=0)</td></tr>
+<tr><td>00</td> <td>2</td><td>ZERO REGISTER (LO)</td> <td>&nbsp;</td></tr>
+<tr><td>02</td> <td>1</td><td>AD_RESULT (LO)</td>     <td>AD_COMMAND</td></tr>
+<tr><td>03</td> <td>1</td><td>AD_RESULT (HI)</td>     <td>HSI_MODE</td></tr>
+<tr><td>04</td> <td>1</td><td>HSI_TIME (LO)</td>      <td>HSI_TIME (LO)</td></tr>
+<tr><td>05</td> <td>1</td><td>HSI_TIME (HI)</td>      <td>HSI_TIME (HI)/td></tr>
+<tr><td>06</td> <td>1</td><td>HSI_STATUS</td>         <td>HS0_COMMAND</td></tr>
+<tr><td>07</td> <td>1</td><td>SBUF (RX)</td>          <td>SBUF (TX)</td></tr>
+<tr><td>08</td> <td>1</td><td>INT_MASK</td>           <td>INT_MASK</td></tr>
+<tr><td>09</td> <td>1</td><td>INT_PEND</td>           <td>INT_PEND</td></tr>
+<tr><td>0a</td> <td>1</td><td>TIMER1 (LO)</td> <td>WATCHDOG</td> </tr>
+<tr><td>0b</td> <td>1</td><td>TIMER1 (HI)</td> <td>IOC2</td> </tr>
+<tr><td>0c</td> <td>1</td><td>TIMER2 (LO)</td> <td>TIMER2 (LO)</td> </tr>
+<tr><td>0d</td> <td>1</td><td>TIMER2 (HI)</td> <td>TIMER2 (HI)</td> </tr>
+<tr><td>0e</td> <td>1</td><td>PORT0</td> <td>BAUD RATE</td> </tr>
+<tr><td>0f</td> <td>1</td><td>PORT1</td> <td>PORT1</td> </tr>
+<tr><td>10</td> <td>1</td><td>PORT2</td> <td>PORT2</td> </tr>
+<tr><td>11</td> <td>1</td><td>SP_STAT</td> <td>SP_CON</td> </tr>
+<tr><td>12</td> <td>1</td><td>INT_PEND1</td> <td>INT_PEND1</td> </tr>
+<tr><td>13</td> <td>1</td><td>INT_MASK1</td> <td>INT_MASK1</td> </tr>
+<tr><td>14</td> <td>1</td><td>WSR</td> <td>WSR</td> </tr>
+<tr><td>15</td> <td>1</td><td>IOS0</td> <td>IOC0</td> </tr>
+<tr><td>16</td> <td>1</td><td>IOS1</td> <td>IOC1</td> </tr>
+<tr><td>17</td> <td>1</td><td>IOS2</td> <td>PWM_CONTROL</td> </tr>
+<tr><td>18</td> <td>2</td><td>STACK POINTER</td> <td>STACK POINTER</td> </tr>
+<tr><td>1a</td> <td>2</td><td>x</td> <td></td> </tr>
+<tr><td>1c</td> <td>2</td><td>rst</td> <td></td> </tr>
+<tr><td>1e</td> <td>2</td><td>ctr</td> <td></td> </tr>
+<tr><td>20</td> <td>2</td><td>temp_d_io</td> <td></td> </tr>
+<tr><td>22</td> <td>2</td><td>offset</td> <td></td> </tr>
+<tr><td>24</td> <td>2</td><td>temp_ana[0]</td> <td></td> </tr>
+<tr><td>26</td> <td>2</td><td>temp_ana[1]</td> <td></td> </tr>
+<tr><td>28</td> <td>2</td><td>temp_ana[2]</td> <td></td> </tr>
+<tr><td>2a</td> <td>2</td><td>temp_ana[3]</td> <td></td> </tr>
+<tr><td>2c</td> <td>2</td><td>temp_ana[4]</td> <td></td> </tr>
+<tr><td>2e</td> <td>2</td><td>status</td> <td></td> </tr>
+<tr><td>30</td> <td>2</td><td>max_time_points</td> <td></td> </tr>
+<tr><td>32</td> <td>2</td><td>new_hso_tim1<td> <td></td> </tr>
+<tr><td>34</td> <td>2</td><td>ls1</td> <td></td> </tr>
+<tr><td>36</td> <td>2</td><td>ls2</td> <td></td> </tr>
+<tr><td>38</td> <td>2</td><td>ls3</td> <td></td> </tr>
+<tr><td>3a</td> <td>2</td><td>ls4</td> <td></td> </tr>
+<tr><td>3c</td> <td>2</td><td>mach_mask</td> <td></td> </tr>
+<tr><td>3e</td> <td>1</td><td>temp_imask1</td> <td></td> </tr>
+<tr><td>3f</td> <td>1</td><td>zspeed</td> <td></td> </tr>
+<tr><td>40</td> <td>1</td><td>temp_ioc2</td> <td></td> </tr>
+<tr><td>41</td> <td>1</td><td>temp_misc</td> <td></td> </tr>
+<tr><td>42</td> <td>1</td><td>temp_int_mask</td> <td>temp_int_mask</td> </tr>
+<tr><td>43</td> <td>1</td><td>gn_ch1</td> <td></td> </tr>
+<tr><td>44</td> <td>1</td><td>gn_ch2</td> <td></td> </tr>
+<tr><td>45</td> <td>1</td><td>gn_ch3</td> <td></td> </tr>
+<tr><td>46</td> <td>1</td><td>gn_ch4</td> <td></td> </tr>
+<tr><td>47</td> <td>1</td><td>past_min_vel_eos</td> <td></td> </tr>
+<tr><td>48</td> <td>1</td><td>int_flag</td> <td></td> </tr>
+<tr><td>49</td> <td>1</td><td>auto_collection</td> <td></td> </tr>
+<tr><td>4a</td> <td>1</td><td>reg_tst_flg</td> <td></td> </tr>
+<tr><td>4b</td> <td>1</td><td>mach_no</td> <td></td> </tr>
+<tr><td>4c</td> <td>1</td><td>mode</td> <td></td> </tr>
+<tr><td>4d</td> <td>1</td><td>last_mach_monitored</td> <td></td> </tr>
+<tr><td>4e</td> <td>2</td><td>crystal_freq</td> <td></td> </tr>
+<tr><td>50</td> <td>4</td><td>vel_cnt_total</td> <td></td> </tr>
+<tr><td>54</td> <td>4</td><td>ss_vel_cnt</td> <td></td> </tr>
+<tr><td>58</td> <td>4</td><td>fs_vel_cnt</td> <td>fs_vel_cnt</td> </tr>
+<tr><td>5c</td> <td>4</td><td>rt_vel_cnt</td> <td>rt_vel_cnt</td> </tr>
+<tr><td>60</td> <td>4</td><td>tim_coll_interval</td> <td>tim_coll_interval</td> </tr>
+<tr><td>64</td> <td>2</td><td>tim1_ovfl_ctr</td>     <td>tim1_ovfl_ctr</td> </tr>
+<tr><td>66</td> <td>1</td> <td>no1_on_flag</td> <td></td> </tr>
+<tr><td>67</td> <td>1</td> <td>no2_on_flag</td> <td></td> </tr>
+<tr><td>68</td> <td>1</td> <td>no3_on_flag</td> <td></td> </tr>
+<tr><td>69</td> <td>1</td> <td>no4_on_flag</td> <td></td> </tr>
+<tr><td>6a</td> <td>1</td> <td>input_pos_checking</td> <td></td> </tr>
+<tr><td>6b</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>6c</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>6d</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>6e</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>6f</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>70</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>71</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>72</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>73</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>74</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>75</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>76</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>77</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>78</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>79</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>7a</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>7b</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>7c</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>7d</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>7e</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>7f</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>80</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>81</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>82</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>83</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>84</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>85</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>86</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>87</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>88</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>89</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>8a</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>8b</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>8c</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>8d</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>8e</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>8f</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>90</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>91</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>92</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>93</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>94</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>95</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>96</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>97</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>98</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>99</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>9a</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>9b</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>9c</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>9d</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>9e</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>9f</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>a0</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>a1</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>a2</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>a3</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>a4</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>a5</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>a6</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>a7</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>a8</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>a9</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>aa</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>ab</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>ac</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>ad</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>ae</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>af</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>b0</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>b1</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>b2</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>b3</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>b4</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>b5</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>b6</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>b7</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>b8</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>b9</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>ba</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>bb</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>bc</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>bd</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>be</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>bf</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>c0</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>c1</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>c2</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>c3</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>c4</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>c5</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>c6</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>c7</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>c8</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>c9</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>ca</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>cb</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>cc</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>cd</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>ce</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>cf</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>d0</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>d1</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>d2</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>d3</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>d4</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>d5</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>d6</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>d7</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>d8</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>d9</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>da</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>db</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>dc</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>dd</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>de</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>df</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>e0</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>e1</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>e2</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>e3</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>e4</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>e5</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>e6</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>e7</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>e8</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>e9</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>ea</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>eb</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>ec</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>ed</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>ee</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>ef</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>f0</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>f1</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>f2</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>f3</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>f4</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>f5</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>f6</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>f7</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>f8</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>f9</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>fa</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>fb</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>fc</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>fd</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>fe</td> <td>1</td> <td></td> <td></td> </tr>
+<tr><td>ff</td> <td>1</td> <td></td> <td></td> </tr>
+</table>
+
+</body>
+</html>
+

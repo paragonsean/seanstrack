@@ -1,0 +1,133 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "CopyLog", "..\copylog\copylog.dsp", "{0D6457EB-EE27-44CF-995A-A981265A6400}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "DsBackup", "..\dsbackup\DsBackup.dsp", "{28C9D08C-EFFF-4C04-85DC-30511AB9F3C3}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "EMachine", "..\emachine\EMachine.dsp", "{85B54BFE-9AD3-4E81-BDF4-C7EAD131911F}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "ESensor", "..\esensor\ESensor.dsp", "{32767AA1-ABC5-4949-B8C3-DE396A1C48FE}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "EventMan", "..\EventMan\EventMan.dsp", "{32AD204E-6929-4F23-8423-20B375800957}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "NetSetup", "..\NetSetup\NetSetup.dsp", "{0A3D70EB-ECD6-4379-9A62-B7003997DD22}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "Setup", "..\Install\setup.dsp", "{CB68F671-5A53-48E9-A8D1-CB39A91AC831}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "StdDown", "..\stddown\StdDown.dsp", "{1E95AFE1-AABB-4633-8394-0714B427EF52}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Terminal", "..\t2\Terminal.vcxproj", "{7BBB82B6-7145-441F-94AE-12EABBD55735}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "V5Subs", "..\subs\V5Subs.dsp", "{6D973941-C707-45FD-A734-03B9DF57C75A}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "bupres", "..\bupres\bupres.dsp", "{420E15F0-9FA1-400D-83BF-B3606B0AF7AB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chooseshotest", "..\chooseshotest\chooseshotest.vcxproj", "{1A4D3408-A772-4400-AA00-7DB36E6F89DF}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "convert", "..\convert\convert.dsp", "{4F0985E1-474C-43A7-8680-9830A8E410FA}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "copyv5", "..\copyv5\copyv5.dsp", "{1CC0D2A3-8548-4431-B4E9-41299E2F41E0}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "createpart", "..\createpart\createpart.dsp", "{4B4EBD97-0FC2-4AE1-B07A-12FEAC00837E}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "demo", "..\demo\demo.dsp", "{32728D37-7836-4CB3-A779-6E5BFE8D9A68}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "downtime", "..\downtime\downtime.dsp", "{FAF7BFF2-AEDE-422E-AABE-92394E96A4D9}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "dsrestor", "..\dsrestor\dsrestor.dsp", "{6C82CA6C-DF40-40B7-AF7E-C4B77AFDA6D4}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "editdown", "..\editdown\editdown.dsp", "{CCE1D1E4-1CBC-40F4-8C03-D7A7C8294D0B}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "editpart", "..\editpart\editpart.dsp", "{E405872A-2F8F-4BCB-AE87-5F5A5582238F}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "ft2", "..\ft2\ft2.dsp", "{E9022D31-107F-432C-8F7D-3E55681840AD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "keypad", "..\keypad\keypad.vcxproj", "{AB94B568-3959-4F2F-B35E-7E9202E8BC2A}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "monedit", "..\monedit\monedit.dsp", "{2A52ECEB-D3EB-462E-81A9-DC23755BD7A2}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "profile", "..\profile\profile.dsp", "{5624D9C1-C55A-4815-9022-C57655669B27}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "savepart", "..\savepart\savepart.dsp", "{4FF26352-52D6-425E-9A58-22F2128860A1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "serialin", "..\serialin\serialin.vcxproj", "{E0649679-881F-474A-999B-51D41F7F71AC}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "serialtest", "..\serialtest\serialtest.dsp", "{61A23FAE-ED93-46B8-9D0D-40C238402396}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "shiftrpt", "..\shiftrpt\shiftrpt.dsp", "{983BA252-372D-4A11-AE80-72897B307172}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "..\test\test.vcxproj", "{50FED016-3030-4D8E-863D-B6361715F743}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "v5setups", "..\v5setups\v5setups.dsp", "{7E9BBE07-3D86-4EB9-9D80-D29E375708D5}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "visiedit", "..\visiedit\visiedit.dsp", "{FCCA687F-F39E-4CEE-9AFE-84D81300BD78}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "vtextrac", "..\vtextrac\vtextrac.dsp", "{8AEA045F-BC59-4DC5-BB6E-1F5123665112}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Free|Win32 = Free|Win32
+		Release|Win32 = Release|Win32
+		Template|Win32 = Template|Win32
+		UFree|Win32 = UFree|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BBB82B6-7145-441F-94AE-12EABBD55735}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7BBB82B6-7145-441F-94AE-12EABBD55735}.Debug|Win32.Build.0 = Debug|Win32
+		{7BBB82B6-7145-441F-94AE-12EABBD55735}.Free|Win32.ActiveCfg = Free|Win32
+		{7BBB82B6-7145-441F-94AE-12EABBD55735}.Free|Win32.Build.0 = Free|Win32
+		{7BBB82B6-7145-441F-94AE-12EABBD55735}.Release|Win32.ActiveCfg = Free|Win32
+		{7BBB82B6-7145-441F-94AE-12EABBD55735}.Release|Win32.Build.0 = Free|Win32
+		{7BBB82B6-7145-441F-94AE-12EABBD55735}.Template|Win32.ActiveCfg = Template|Win32
+		{7BBB82B6-7145-441F-94AE-12EABBD55735}.Template|Win32.Build.0 = Template|Win32
+		{7BBB82B6-7145-441F-94AE-12EABBD55735}.UFree|Win32.ActiveCfg = UFree|Win32
+		{7BBB82B6-7145-441F-94AE-12EABBD55735}.UFree|Win32.Build.0 = UFree|Win32
+		{1A4D3408-A772-4400-AA00-7DB36E6F89DF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1A4D3408-A772-4400-AA00-7DB36E6F89DF}.Debug|Win32.Build.0 = Debug|Win32
+		{1A4D3408-A772-4400-AA00-7DB36E6F89DF}.Free|Win32.ActiveCfg = Template|Win32
+		{1A4D3408-A772-4400-AA00-7DB36E6F89DF}.Free|Win32.Build.0 = Template|Win32
+		{1A4D3408-A772-4400-AA00-7DB36E6F89DF}.Release|Win32.ActiveCfg = Release|Win32
+		{1A4D3408-A772-4400-AA00-7DB36E6F89DF}.Release|Win32.Build.0 = Release|Win32
+		{1A4D3408-A772-4400-AA00-7DB36E6F89DF}.Template|Win32.ActiveCfg = Template|Win32
+		{1A4D3408-A772-4400-AA00-7DB36E6F89DF}.Template|Win32.Build.0 = Template|Win32
+		{1A4D3408-A772-4400-AA00-7DB36E6F89DF}.UFree|Win32.ActiveCfg = Template|Win32
+		{1A4D3408-A772-4400-AA00-7DB36E6F89DF}.UFree|Win32.Build.0 = Template|Win32
+		{AB94B568-3959-4F2F-B35E-7E9202E8BC2A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AB94B568-3959-4F2F-B35E-7E9202E8BC2A}.Debug|Win32.Build.0 = Debug|Win32
+		{AB94B568-3959-4F2F-B35E-7E9202E8BC2A}.Free|Win32.ActiveCfg = Free|Win32
+		{AB94B568-3959-4F2F-B35E-7E9202E8BC2A}.Free|Win32.Build.0 = Free|Win32
+		{AB94B568-3959-4F2F-B35E-7E9202E8BC2A}.Release|Win32.ActiveCfg = Free|Win32
+		{AB94B568-3959-4F2F-B35E-7E9202E8BC2A}.Release|Win32.Build.0 = Free|Win32
+		{AB94B568-3959-4F2F-B35E-7E9202E8BC2A}.Template|Win32.ActiveCfg = Template|Win32
+		{AB94B568-3959-4F2F-B35E-7E9202E8BC2A}.Template|Win32.Build.0 = Template|Win32
+		{AB94B568-3959-4F2F-B35E-7E9202E8BC2A}.UFree|Win32.ActiveCfg = Free|Win32
+		{AB94B568-3959-4F2F-B35E-7E9202E8BC2A}.UFree|Win32.Build.0 = Free|Win32
+		{E0649679-881F-474A-999B-51D41F7F71AC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E0649679-881F-474A-999B-51D41F7F71AC}.Debug|Win32.Build.0 = Debug|Win32
+		{E0649679-881F-474A-999B-51D41F7F71AC}.Free|Win32.ActiveCfg = Template|Win32
+		{E0649679-881F-474A-999B-51D41F7F71AC}.Free|Win32.Build.0 = Template|Win32
+		{E0649679-881F-474A-999B-51D41F7F71AC}.Release|Win32.ActiveCfg = Release|Win32
+		{E0649679-881F-474A-999B-51D41F7F71AC}.Release|Win32.Build.0 = Release|Win32
+		{E0649679-881F-474A-999B-51D41F7F71AC}.Template|Win32.ActiveCfg = Template|Win32
+		{E0649679-881F-474A-999B-51D41F7F71AC}.Template|Win32.Build.0 = Template|Win32
+		{E0649679-881F-474A-999B-51D41F7F71AC}.UFree|Win32.ActiveCfg = Template|Win32
+		{E0649679-881F-474A-999B-51D41F7F71AC}.UFree|Win32.Build.0 = Template|Win32
+		{50FED016-3030-4D8E-863D-B6361715F743}.Debug|Win32.ActiveCfg = Debug|Win32
+		{50FED016-3030-4D8E-863D-B6361715F743}.Debug|Win32.Build.0 = Debug|Win32
+		{50FED016-3030-4D8E-863D-B6361715F743}.Free|Win32.ActiveCfg = Free|Win32
+		{50FED016-3030-4D8E-863D-B6361715F743}.Free|Win32.Build.0 = Free|Win32
+		{50FED016-3030-4D8E-863D-B6361715F743}.Release|Win32.ActiveCfg = Free|Win32
+		{50FED016-3030-4D8E-863D-B6361715F743}.Release|Win32.Build.0 = Free|Win32
+		{50FED016-3030-4D8E-863D-B6361715F743}.Template|Win32.ActiveCfg = Template|Win32
+		{50FED016-3030-4D8E-863D-B6361715F743}.Template|Win32.Build.0 = Template|Win32
+		{50FED016-3030-4D8E-863D-B6361715F743}.UFree|Win32.ActiveCfg = Free|Win32
+		{50FED016-3030-4D8E-863D-B6361715F743}.UFree|Win32.Build.0 = Free|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

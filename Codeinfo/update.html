@@ -1,0 +1,1823 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>V5 Updates</title>
+<link rel=stylesheet type="text/css" href="styles/gen_styles.css" title="V5 Update">
+</head>
+<body>
+
+<ol>
+    <li>Changed three files to add stuff for the work calculations</li>
+    <p>
+    <table>
+        <tr><td>DCURVE.TXT</td><td>Added Alumax work equation</td></tr>
+        <tr><td>PARMNAME.TXT</td><td>Added PreImpact Work</td></tr>
+        <tr><td>UNITS.TXT</td><td>Added Work Units</td></tr>
+        </table>
+    </p>
+    </ol>
+
+<h4>18-Feb-97</h4>
+<ol>
+    <li>Changed operator number from numeric to alpha in the operator db. This
+    was because I had made this field alpha in machset. Machset would have
+    to be upgraded but the operator db is not used by anyone yet so I can
+    replace it. Alpha numbers are consistant with the way I do it in v4.
+    <br>
+    File to copy: OPERATOR.TXT
+    </li>
+    </ol>
+
+<h4>20-Feb-97</h4>
+<ol>
+    <li>Added the shift table, basicly the same as before.
+    <br>
+    File to copy: SHIFT.TXT
+    </li>
+    </ol>
+
+<h4>27-Feb-97</h4>
+<ol>
+    <li>Changed DOWNCAT.TXT. Added DOWNSCAT.TXT.
+    <br>These were not used before this, copy them both.</li>
+    </ol>
+
+<h4>04-Mar-97</h4>
+<ol>
+  <li>Added DSTAT.TXT to machine directory. New Table.</li>
+  <li>Added DOWNTIME.TXT to machine results directory. New Table.</li>
+  <li>Files to copy: DSTAT.TXT, DOWNTIME.TXT</li>
+  </ol>
+
+<h4>07-Mar-97</h4>
+<ol>
+    <li>Added following to visitrak.ini
+    <br>WarningColor=0096C6
+    <br>SureTrakPath=c:\windows\desktop\SureTrak Control Interface.pif</li>
+    </ol>
+
+<h4>18-Mar-97 </h4>
+<ol>
+    <li>Issued <font color="slateblue"><b>V5.02</b></font> to Alumax</li>
+
+    <li>No downtime as yet. Nor multi-parameter dde;</li>
+    <li>Fixed the following:
+    <p><table border>
+    <tr>
+    <td>Bupres </td><td>         Lock up if restore with nothing to do.</td>
+    </tr><tr>
+    <td>Part Editor </td><td>    Wake up with current part. Create new becomes current part.
+                    Buttons instead of menu.</td>
+    </tr><tr>
+    <td>Profile </td><td>        Overlay => all post impact start at 0.
+                    Was showing alarms based upon reference trace.
+                    Export parameters to excel.
+                    Color Config.</td>
+    </tr><tr>
+    <td>Monitor Config</td><td> One window. Improved interface.</td>
+    </tr><tr>
+    <td>Ft Board Setup</td><td> New</td>
+    </tr><tr>
+    <td>Update</td><td>New - Updates to current version.</td>
+    </tr>
+    </table></p></li>
+    <li>The ones sent to alumax have a bug in the monitor config program
+        so that changes to the counts are not saved unless you
+        change something that causes and update like toggling the alarms
+        on and off.</li>
+    </ol>
+
+<h4>10-Apr-97</h4>
+<ol>
+    <li>I am now up to <font color="slateblue"><b>V5.04</b></font>.</li>
+    <li>I changed the way the data collection works. There is a
+        semaphor.txt file now (one for each machine). I buffer the shots if someone else
+        has a lock on the semaphore (MONALL now has one thread for data acquisition and one
+        for filing the data.</li>
+    <li>I have added shifts (but no shift editor) and downtimes. There is an editor for
+        downtime categories. I am working on the downtime editor. Still need backup and restore
+        and export.</li>
+    </ol>
+
+<h4>17-Apr-97</h4>
+<ol>
+    <li>I changed the downtime table to eliminate the shift date and shift. I added creation of semaphor.txt in MACHINE_CLASS::save.</li>
+
+    <li>Downtimes work. The downtime editor works. Backup and restore works for downtimes but purge does not work yet and restore does not combine, it only replaces.</li>
+
+    <li>There is no extract for downtimes yet.</li>
+
+    <li>I added two new events. downtime and parameter data. No one uses the parameter data yet. Editdown pokes a downtime event but monall does not. Monall looks for the event and updates his downtime status.</li>
+
+    <li>I changed dstat to look at times and not to save an old time over a new one.</li>
+
+    <li>Backup and restore use the semaphor now, as do monall and editdown.</li>
+    </ol>
+
+<h4 id="v505">18-Apr-97</h4>
+<ol>
+    <li>Issued <font color="slateblue"><b>V5.05</b></font></li>
+    </ol>
+
+<h4>21-Apr-97</h4>
+<ol>
+    <li>Found a bug in monall. I wasn't closing the graphlst table.</li>
+    <li>I changed monall so it pays attention to the max saved parameter and deletes the oldest parameter and profile when necessary.</li>
+    </ol>
+
+<h4>22-Apr-97</h4>
+<ol>
+    <li>Monall now issues downtime events.</li>
+    </ol>
+
+<h4>24-Apr-97</h4>
+<ol>
+    <li>I have the parameter events working but I have been unable to get excel to receive them.</li>
+    <li>I changed the part editor so that parameter types cannot be changed after creation.</li>
+    </ol>
+
+<h4>28-Apr-97</h4>
+<ol>
+    <li>Excel is happy now.</li>
+    </ol>
+
+<h4>02-May-97</h4>
+<ol>
+    <li>I added a monall.ini file to \v5\exes. The only entry so far is
+    <code>
+    <br>[Config]
+    <br>DdeParamDelimiter=\t
+    </code>
+    </li>
+    <li>I have added this to the update program.</li>
+    <li>I have found that the ftanalog.txt files are defined to have a two byte field at the end which I do not use and which has blanks in it now. I need to remove this field in v5.08.</li>
+    </ol>
+
+<h4>16-May-97</h4>
+<ol>
+    <li>Issued <font color="slateblue"><b>V5.07</b></font> because 5.06 got mixed up with the lawyer's version.</li>
+    <li>I added the ability to change the background color of the plot.</li>
+    <li>I also added an F5 Toggle between pos and time based. This was for the lawyer's version but I kept it for the regular version as well.</li>
+    </ol>
+
+<h4>05-Jun-97</h4>
+<ol>
+    <li>The v4 to v5 conversion program is working. I still need to add the reference traces.</li>
+    <li>I changed the part editor so it would change the units of the parameters when I change the units in the basic setup. I also made it convert the existing numbers. I don't know if this is a good thing or not.</li>
+    <li>At Sam Norville's request I changed the work calculation to remove the change from in-lb to KJ.</li>
+    </ol>
+
+<h4>13-Jun-97</h4>
+<ol>
+    <li> I decided not to use network dde for the eventman to eventman transfers because of the complications involved.</li>
+    <li>I got the system talking across computers using mailslots instead. Each mailslot name is \\tmi66\mailslot\v5\eventman, where I replace the tmi66 with the name of the computer on the network.</li>
+    </ol>
+
+<h4>18-Jun-97</h4>
+<ol>
+    <li> Made up a list for choosing realtime machines. This list is kept in a
+         text file called rtmach.lst in the exe's directory. I was going to
+         put it into an ini file but the string might have been too long. As it
+         is, each machine to be monitored real time is on a new line. You can
+         make the file up in edit if you want.</li>
+    </ol>
+
+<h4>17-Jul-97</h4>
+<ol>
+    <li>Added SureTrak step editor to part editor.</li>
+    <li>Added STSTEPS.TXT and STLIMITS.TXT to the part directory and to the update program.</li>
+    <li>Put a separate checkbox on the copy to existing screen for the suretrak steps.</li>
+    </ol>
+
+<h4>28-Jul-97</h4>
+<ol>
+    <li>Added about box that shows version number.</li>
+    <li>Changed FasTrak setup program to not create computer directories when I add the name of a network computer and to not try to delete the actual directory when I delete a network computer entry.</li>
+    </ol>
+
+<h4>01-Aug-97</h4>
+<ol>
+    <li>Changed monedit so he can start the board monitor if it is not already started.</li>
+    <li>Moved reset_machine to the monitor thread so monall doesn't die if the monedit message comes in when he is acquiring data. Still have a problem with manual control however.</li>
+    </ol>
+
+<h4>14-Aug-97</h4>
+<ol>
+   <li>Added entries in monall.ini to control the parameter event string.
+    <br>Default is to do it the way I do it now.
+    <br>New keys are:
+    <br>     DdeParamShowMachine=Y
+    <br>     DdeParamShowPart=Y
+    <br>     DdeParamShowDate=Y
+    <br>     DdeParamShowTime=Y
+    <br>     DdeParamShowShot=Y
+    <br>     DdeParamParmList=1,2,3,4,5,6,7,8,9,10,...,59,60
+    </li>
+    </ol>
+
+<h4>08-Oct-97</h4>
+<ol>
+    <li>I changed eventman to exit the mailslot thread if the GetMailSlotInfo call fails.</li>
+    <li>I need to try this version to see if it fixes the problem of dying if there is no vredir.</li>
+    </ol>
+
+<h4>09-Oct-97</h4>
+<ol>
+    <li> Got the suretrak working.</li>
+    <li> Profile changes in the editor are downloaded by the suretrak command interface program if it is running.</li>
+    <li>Added radio buttons to the four limit switches so you can tell the program which is to be used for the vacuum wait.
+        The editor program uses this when plotting.</li>
+    </ol>
+
+<h4 id="boxscreen">20-Oct-97</h4>
+<ol>
+    <li>Added Box Screen. Added tooltips to the box screen.</li>
+    <li>Fixed bug in editdown. The event message had an extra part name in it, making it too long.</li>
+    </ol>
+
+<h4>31-Oct-97</h4>
+<ol>
+    <li>Added Alarm summary screen.</li>
+    </ol>
+
+<h4>04-Nov-97</h4>
+<ol>
+    <li>Greg found that I was downloading the wrong gain to the fastrak channels. I was loading the gain for channel 2 to channel 1, etc. I fixed this.</li>
+    <li>I also fixed the suretrak downloads so they are speedier (another problem Greg had).</li>
+    <li>I added the ini files to the v5exes.zip file on the install disk.</li>
+    </ol>
+
+<h4>02-Dec-97</h4>
+<ol>
+    <li>Got the cc working from the suretrak program rather than calling c:\p42\cc.exe. Added an editor to the suretrak program for editing control.prg (in the computer directory).</li>
+    <li>Add a control.msg in the computer directory as well. This is edited alongside the control program and is a list of messages to display at each step.</li>
+    <li>Added passwords. These are stored in password.txt in the root directory.</li>
+    <li>Changed the realtime button to be a real button. This changes to red when it is off. You can also press this by pressing the R key.</li>
+    <li>Changed the box screen to change monitoring to one machine when the user clicks a box, causing me to go to the standard screen. The realtime button is set to "One machine" when this is done.</li>
+    <li>Changed the setup program to copy these files if they do not exist. Made a default set of passwords including DEFAULT at level 9, the maximum level I use.</li>
+    <li>New files are:
+       <br>C:\V5\DATA\PASSWORD.TXT
+       <br>C:\V5\DATA\C01\CONTROL.PRG
+       <br>C:\V5\DATA\C01\CONTROL.MSG</li>
+    </ol>
+
+<h4>07-Jan-98</h4>
+<ol>
+    <li>I wasn't printing the first of multiple selections. I fixed that.</li>
+    <li>I also fixed the print routine so it prints the reference trace (I never implimented that).</li>
+    <li>I finalized <font color="slateblue"><b>V5.19</b></font> and gave a copy to Al to take to India.</li>
+    </ol>
+
+<h4>09-Jan-98</h4>
+<ol>
+    <li>I found a bug in the box screen, it was no longer showing the red box when an autoshot was received. I fixed this.</li>
+    <li>I changed "Realtime On" to "Live Shots", "RealTime Off" to "Selected Shot", and "One Machine" to "Live Shots, One Machine", ala Ying.</li>
+    <li>I changed the select shots routine to not toggle the realtime until someone selects a shot.</li>
+    </ol>
+
+<h4 id="v522">07-Feb-98</h4>
+<ol>
+    <li>Issued <font color="slateblue"><b>V5.22</b></font></li>
+    <li>This has a trend chart with cursor line but without the shot number and date on the cursor line.</li>
+    <li>X-Bar works as well.</li>
+    <li>Eventman is hidden when I first start him up. You need to run it again to see it on the taskbar. When you exit from the plot program you now have the option of exiting all Visi-Trak programs.</li>
+    </ol>
+
+<h4>11-Feb-98</h4>
+<ol>
+    <li>Fixed the shut-down dialog to work from the keyboard.</li>
+    <li>Fixed the trend chart cursor to work better when the choose parameters is chosen.</li>
+    <li>Sent 5.23 to HPM.</li>
+    </ol>
+
+<h4>16-Feb-98</h4>
+<ol>
+    <li>Fixed Profile to ignore the RealtimeMachineList if there is only one computer.</li>
+    <li>Fixed the backup program to highlight the part at startup if there is only one machine.</li>
+    </ol>
+
+<h4>17-Feb-98</h4>
+<ol>
+    <li>Cleaned up the menus some.</li>
+    <li>Moved Analog Sensors to a button on the part editor.</li>
+    <li>Added help topic to menu</li>
+    <li>Fixed the units in the Metal Temperature parameter in the install.</li>
+
+    <li>Issued <font color="slateblue"><b>V5.24</b></font> to Kevin to take to gm powertrain.</li>
+    <li>Made the program remember the standard profile screen type (normal or zabish).</li>
+    <li>Save and restore the screen type and standard profile screen type.</li>
+    </ol>
+
+<h4>25-Feb-98</h4>
+<ol>
+    <li>Cleaned up the v4to5 program so it found the C:\v5\exes directory correctly and so it wouldn't think there was a current shot when there wasn't.</li>
+    <li>Cleaned up setup.exe so it sets the HaveSuretrak and Version when installing.</li>
+    <li>Issued <font color="slateblue"><b>V5.26</b></font> for Ying to take to Merc.</li>
+    </ol>
+
+<h4>27-Feb-98</h4>
+<ol>
+    <li>Added status bar for the main menu</li>
+    </ol>
+
+<h4>02-Mar-98</h4>
+<ol>
+    <li>Added check to editpart so you can't delete the current monitor part.</li>
+    </ol>
+
+<h4>04-Mar-98</h4>
+<ol>
+    <li>Added password levels to buttons in Suretrak.</li>
+    <li>Added ExitAllDefault=Y to DISPLAY.INI to all you to exit all programs as the default.</li>
+    <li>Changed trend so I erase the first zoom line if you click outside the plot or press ESC.</li>
+    </ol>
+
+<h4>05-Mar-98</h4>
+<ol>
+    <li>Turned off realtime after zoom, turn back on after unzoom.</li>
+    <li>Added ability to start part editor at startup.</li>
+    <li>Board monitor and suretrak start minimized.</li>
+    <li>Added ability to start monitor setups at startup.</li>
+    <li>Got downtime working still no backup and restore.</li>
+    <li>Part editor finds the currently monitored part if not started by profile.</li>
+    <li>Part editor defaults to suretrak profile if suretrak is active.</li>
+    <li>Part editor now has a minimize button.</li>
+    </ol>
+
+<h4>09-Mar-98</h4>
+<ol>
+    <li>Fixed downtime summary esc key backup.</li>
+    </ol>
+
+<h4>10-Mar-98</h4>
+<ol>
+    <li>Fixed bug caused by looking for dropout points and not looking for -1 from fastrak.</li>
+    <li>Fixed bug in suretrak null valve test. Wasn't saving properly and was too quick looking for auto null.</li>
+    <li>Fixed the low impact min in the editor (so you can't set the level below the min).</li>
+    </ol>
+
+<h4 id="diskspace">11-Mar-98</h4>
+<ol>
+    <li>Added check for 3 MB of diskspace before saving</li>
+    <li>Fixed unzoom so it goes back to pos/time.</li>
+    </ol>
+
+<h4 id="stbackup">16-Mar-98</h4>
+<ol>
+    <li>Added suretrak globals and control.prg, control.msg, and the valve profile to the backup program.</li>
+    </ol>
+
+<h4>19-Mar-98</h4>
+<ol>
+    <li>Fixed Auto Null function in suretrak. It wasn't working because I forgot to call the update_parameters function on the st board after calling SET_NULL. I was also increasing the valve output in the wrong direction (+/-).</li>
+    <li>Once the auto null was done it took two tries to get it into the global parameter screen. I fixed this.</li>
+    <li>The suretrak program was missing updates from editpart. This was because I had changed
+        the su program to start programs minimized. The suretrak program checked to see if it
+        was minimized and was skipping some sections. I removed this check so I get statuses from the board all the time now.</li>
+    </ol>
+
+<h4>20-Mar-98</h4>
+<ol>
+    <li>I changed the v4to5 program so it will use the C01 name for v4 computer 1.</li>
+    <li>I added a section to copy the suretrak globals if this is a suretrak machine.</li>
+    </ol>
+
+<h4>01-Apr-98</h4>
+<ol>
+    <li>I fixed the monall program to work correctly with multiplex boards. It was stopping occasionally because I was getting a VIS_DATA_READY the next time I looked at the status, which I took to be the same as before.</li>
+    <li>I issued <font color="slateblue"><b>V5.33</b></font> to Al.</li>
+    </ol>
+
+<h4 id="alarmprint">02-Apr-98</h4>
+<ol>
+    <li>I finished the alarm summary printout.</li>
+    <li>I changed editpart to only check for the min low impact level if there is a suretrak control.</li>
+    </ol>
+
+<h4>09-Apr-98</h4>
+<ol>
+    <li>I put the list of parameters with the rest of the trend screen setup.</li>
+    <li>I added a popup menu to the trend chart to display the entire range of data.</li>
+    </ol>
+
+<h4>13-Apr-98</h4>
+<ol>
+    <li>I added a dialog to calculate the equation for the analog sensors.</li>
+    <li>I recompiled all the sources (I was getting aborts with the 5.32 monall (which I have not released except one copy to Ying). This appears to have fixed the problem.</li>
+    <li>I took out the short_wait() calls in wait_for_busy_bit_clear() in the BOARD_CONTROL_CLASS so that it is now like the one in version 4. = This didn't work! and I took it out!</li>
+    <li>The suretrak program now looks for the FtClearCmdWait in monall.ini and sets the wait count if it is there.</li>
+    <li>If you click the vacuum wait box in the suretrak part editor screen then I disable the end of shot position editbox and put an indicator next to the limit switch that is designated to do this. If that limit switch is blank, I nag the operator.</li>
+    </ol>
+
+<h4>22-Apr-98</h4>
+<ol>
+    <li>I fixed a bug in the trend chart program that kept redisplaying the error message when you chose too many parameters. The only way out of this was to press F6 to toggle to the big letters screen.</li>
+    </ol>
+
+<h4>24-Apr-98</h4>
+<ol>
+    <li>Got much of Ioex4 working. Gave a copy to Al to take to India (v5.33).</li>
+    </ol>
+
+<h4 id="v534">29-Apr-98</h4>
+<ol>
+    <li>Fixed the Live Shots box to make the trend chart live.</li>
+    <li>Added the command and data box to ioex4.</li>
+    <li>Issued <font color="slateblue"><b>V5.34</b></font> to Ying for his trip to Oklahoma. This has the new help file on a separate disk.</li>
+    <li>After that, I changed nextshot.cpp in monall. In the unlikely event that there is no plookup record, I was appending one instead of inserting in a sorted order.</li>
+    <li>Changed renumber in bupres to change the plookup number if I have renumbered to a higher value that the current one.</li>
+    </ol>
+
+<h4>04-May-98</h4>
+<ol>
+    <li>Fixed the "This Computer Number" in the v5setups.exe when the password is not high enough to show the computer list.</li>
+    </ol>
+
+<h4>05-May-98</h4>
+<ol>
+    <li>Moved ftclass.h to the include directory.</li>
+    <li>Rewrote visiport to work with more than one board.</li>
+    <li>Added ftclasnt directory and support for suretrak on NT 4.0.</li>
+    <li>Changed the install program so it doesn't copy menus when updating.</li>
+    </ol>
+
+<h4>07-May-98</h4>
+<ol>
+    <li>Changed execwait.cpp to wait for signal on process handle rather than for a !STILL_ACTIVE.</li>
+    </ol>
+
+<h4>13-May-98</h4>
+<ol>
+    <li>Sent NT hard drive to HPM with V5.35 interim version. I think the next version will be V5.36 even though I haven't issued 5.35 yet.</li>
+    <li>I fixed the problem Garry Getz had with shift 3 being before shift 1. This caused a problem because I was indexing with both date and shift. I removed the code that did a get_next_key_record on 2 keys and that fixed the problem.</li>
+    <li>I fixed the trend chart so it wouldn't leave big gaps in data that rounded up too much.</li>
+    <li>I made the restore program show the name of the profiles as they are copied to the backup directory.</li>
+    <li>Changed the editpart program so you can edit the current part on remote machines if this is not a suretrak system and if your level is 10 or above.</li>
+    </ol>
+
+<h4>14-May-98</h4>
+<ol>
+    <li>Added current password level to password dialog.</li>
+    </ol>
+
+<h4>19-May-98</h4>
+<ol>
+    <li>I fixed (some more) the problem with the alarm summary. I was still reading the file incorrectly.</li>
+    <li>I added a check to the restore program to make sure the machine being restored does not exist on another computer. If so, I give up (I should make this work I suppose but I'm not sure I understand the ramifications yet).</li>
+    <li>I also had a check for the current computer not existing. I can't imagine how this might happen but I gave up without putting out a message. I added a message.</li>
+    </ol>
+
+<h4>20-May-98</h4>
+<ol>
+    <li>Fixed the trend chart. It was resetting the chart type to trend if I set it to xbar and I was realtime.</li>
+    <li>Fixed the shutdown in profile so if I shutdown eventman I let him shut me down instead of trying to do everything myself and getting out of sync.</li>
+    </ol>
+
+<h4>28-May-98</h4>
+<ol>
+    <li>Fixed memory leak in eventman. Added support for data server events.</li>
+    </ol>
+
+<h4>03-Jun-98</h4>
+<ol>
+    <li>Issued <font color="slateblue"><b>V5.36</b></font> using 28-May-98 executables</li>
+    </ol>
+
+<h4 id="v537">08-Jun-98</h4>
+<ol>
+    <li>Fixed bug in eventman that passed the password changes to all network computers.</li>
+    <li>Send <font color="slateblue"><b>V5.37</b></font> to Bill at itt lester (Ying intercepted and will take tomorrow).</li>
+    </ol>
+
+<h4>09-Jun-98</h4>
+<ol>
+    <li>Fixed the part editor so it will show changes to a new ft_onoff input as soon as they are made. It worked before but showed NONE as the units even though I clicked on input 1, 2, 3, or 4. If I saved the changes and reloaded, it was ok.</li>
+    </ol>
+
+<h4>12-Jun-98</h4>
+<ol>
+    <li>On 10 Mar I fixed what I thought was a bug. I checked for a 0xFFFF count from the
+        FasTrak board when calculating pre-impact velocity and returned a zero if the count
+        was 0xFFFF. It turns out I really don't want to do this because the velocity is just
+        real slow but not zero.</li>
+    <li>I removed the two lines in the velocity_from_count routine that returned a 0.0 if the
+        count was 0xFFFF (this makes the routine return the min velocity instead of zero, since
+        velocity is velocity_factor / counts, and counts is unsigned.</li>
+    </ol>
+
+<h4>24-Jun-98</h4>
+<ol>
+    <li>I changed the suretrak backup to copy all the files from the c:\p42 directory if they exist.</li>
+    <li>I was copying the last_pro, params.sav, and control.prg to the root when I should have been copying to the a:\p42 directory. I fixed this.</li>
+    </ol>
+
+<h4>30-Jun-98</h4>
+<ol>
+    <li>I changed the suretrak control program so it deactivates the control
+        before downloading. This was because Al found that sometimes I was
+        setting the start shot output during a download. This is not a good
+        thing to do.</li>
+   </ol>
+
+<h4>17-Jul-98</h4>
+<ol>
+    <li>JV found that if you start to run the valve test in the suretrak program and
+       the valve test screen appears and asks you a question (I forget which) and then
+       you minimize everything, the suretrak program cannot be maximized again. I
+       changed the message boxes to sysmodal, which should correct this. This should appear
+       in V5.38.</li>
+    </ol>
+
+<h4 id="printscreen">21-Jul-98</h4>
+<ol>
+    <li>Added multiple print to profile program for Bill Sharp at Lester Tech Center. Changed the choose shots dialog to include machine and part choice.</li>
+    <li>I trap the Print Screen and do a quick print. I have to clear the clipboard after this as print screen also captures the entire screen.</li>
+    </ol>
+
+<h4 id="statsum">07-Aug-98</h4>
+    <li>Changed the color on the last 50 plot for missing parameters from red to green.</li>
+    <li>Added statistical summary screen.</li>
+    <li>Issued <font color="slateblue"><b>V5.38</b></font> to Brian to take to VW along with the final versions of the data server backup and restore.</li>
+    </ol>
+
+<h4>11-Aug-98</h4>
+<ol>
+    <li>Changed the downtime editor so it doesn't get mad if there is no downtime table. It now allows you to create an entry from scratch.</li>
+    </ol>
+
+<h4>14-Aug-98</h4>
+<ol>
+    <li>Added the ability to fix the analog and velocity axes.</li>
+    </ol>
+
+<h4>24-Aug-98</h4>
+<ol>
+  <li>Finished adding the zoom box to the printed output.</li>
+  <li>Fixed dsbackup.exe to count profiles, not events.</li>
+  <li>Added purge button to editdown</li>
+  </ol>
+
+<h4>26-Aug-98</h4>
+<ol>
+  <li>Changed dsbackup to copy from zero if new &lt; old.</li>
+  <li>Changed dsbackup not to copy if no new data</li>
+  </ol>
+
+<h4>01-Sep-98</h4>
+<ol>
+  <li>Got the operator name edit program working.</li>
+  <li>Fixed the cpk to calculate within group std dev on stat summary</li>
+  </ol>
+
+<h4>03-Sep-98</h4>
+<ol>
+  <li>Added serial output of shot number for mercruise</li>
+  <li>Fixed a bug (found by Bill at ITT) wherein I didn't reload the parameters if the user double clicked on a shot from the trend screen.</li>
+  </ol>
+
+<h4>08-Sep-98</h4>
+<ol>
+  <li>Fixed bug in box screen (caused by same thing as trend screen).</li>
+  </ol>
+
+<h4>14-Sep-98</h4>
+<ol>
+  <li>Changed alarmsum class to not get upset if there is no file.</li>
+  </ol>
+
+<h4>15-Sep-98</h4>
+<ol>
+  <li>Changed alltext.sc to abort when tempdir already exists (daaa).</li>
+  </ol>
+
+<h4>22-Sep-98</h4>
+<ol>
+  <li>Fixed a bug in the fixed axis code and in the code that loaded the display configuration for the channels.</li>
+  </ol>
+
+<h4>23-Sep-98</h4>
+<ol>
+  <li>Finished the data server backup program for now. It still won't let you acquire more than one shot but you can shot skip or time skip.</li>
+  <li>I also changed from get_shotsave_semaphore to waitfor_shotsave_semaphore because I was having problems talking to my NT monitoring computer.</li>
+  </ol>
+
+<h4>25-Sep-98</h4>
+<ol>
+  <li>Fixed data server acquire. Issued 5.40 to Ying to take to VW. Started 5.41 because</li>
+  <li>Al found a bug in the editor that didn't use a percent scale on the suretrak plot.<br>I fixed that.</li>
+  </ol>
+
+<h4>27-Sep-98</h4>
+<ol>
+  <li>Fixed bug in suretrak profile (editpart), which didn't use percent for a scale if all the steps were percents.</li>
+  <li>Issued official <font color="slateblue"><b>V5.41</b></font> Update (neither 5.39 nor 5.40 were ever official).</li>
+  </ol>
+
+<h4>14-Oct-98</h4>
+<ol>
+    <li>Added following line to vartype.txt in \v5\data<br>1024;"Weight                   "</li>
+    <li>Added following lines to units.txt.
+    <code>
+    <br>   19; 1024;"LBS    ";        1.00
+    <br>   20; 1024;"KG     ";        1.00
+    </code>
+    </li>
+    </ol>
+
+<h4>16-Oct-98</h4>
+<ol>
+    <li>Changed normal restore to use shotsave semaphor and to restore over
+        the network if you are WS0. You can make yourself WS0 by adding
+        the following to visitrak.ini
+    <br>[Config]
+    <br>WorkstationZero=JAY
+     <p>This will make the "JAY" computer the office workstation.</p></li>
+    <li>I fixed the buttons in part edit to gray out more intelligently. They were
+        being set before the password level was known. I also changed them so you can
+        never delete the current part across the network.</li>
+    <li>I changed the plot program so it will turn white marks to black when printing.</li>
+    </ol>
+
+<h4>20-Oct-98</h4>
+<ol>
+    <li>If you use a differential curve >= 50 then I will record it during the pre-impact.
+    <li>I fixed the v4to5 so it does the post impact pressure type correctly.
+    <li>Brian found that the purge button on the editdown screen did not activate.
+       I was sending the request for the first password level from the second window.
+       On nt this works, but on win95 the request gets there before the registration.
+       I changed it so the main window sends the first request as well.</li>
+    </ol>
+
+<h4>21-Oct-98</h4>
+<ol>
+    <li>Added areas and volumes and one density to units.txt</li>
+    </ol>
+
+<h4 id="nodifcurv">27-Oct-98</h4>
+<ol>
+    <li>Changed the differential curve so the curve (NOT the parameters) is recalculated whenever it is displayed.</li>
+    <li>Monall no longer saves the differential curve. It creates it to calculate the parameters and then forgets about it.</li>
+    <li>I added an editor for the equations (to emachine).</li>
+    </ol>
+
+<h4>28-Oct-98</h4>
+<ol>
+   <li>Changed the suretrak program so it turns off the valve test bit after null valve and regular valve tests.</li>
+    </ol>
+
+<h4>04-Nov-98</h4>
+<ol>
+     <li>Added following line to vartype.txt in \v5\data
+     <br><code>    2048;"Density                  "</code></li>
+
+     <li>Added following lines to units.txt.
+     <code>
+     <br>21;  128;"IN^3   ";        1.00
+     <br>22;  128;"CM^3   ";        1.00
+     <br>23;  128;"MM^3   ";        1.00
+     <br>24;  256;"IN^2   ";        1.00
+     <br>25;  256;"CM^2   ";        1.00
+     <br>26;  256;"MM^2   ";        1.00
+     <br>27; 2048;"LB/IN^3";        1.00
+     <br>28; 2048;"G/CM^3 ";        1.00</code></li>
+    <li>Added conversions for areas and volumes to unitadj.cpp.</li>
+    </ol>
+
+<h4>06-Nov-98</h4>
+<ol>
+    <li>Added Control Program Mods screen to the suretrak program so you can edit lines 4 and 44 without using the edit program.</li>
+    <li>Put a password level on the edit control program button in the service tools dialog.
+    <br>{ visitrak.ini }
+    <br>[ButtonLevels]
+    <br>EditControlButton=10</li>
+    <li>Got the calculator working, sort of.</li>
+    </ol>
+
+<h4>10-Nov-98</h4>
+<ol>
+    <li>Fixed bug in part editor so that if you don't have a vacuum check position and you click on vacuum check then I go to the proper box after displaying the error message.</li>
+    <li>Made the install program delete all but the proper machine if you are installing a suretrak system.</li>
+    </ol>
+
+<h4>11-Nov-98</h4>
+<ol>
+    <li>I added a download button to the suretrak screen and made all of the buttons on the main screen work from the keyboard.</li>
+    <li>Added a delete button to the alarm summary screen.</li>
+    </ol>
+
+<h4>12-Nov-98</h4>
+<ol>
+    <li>Fixed the spreadsheet in emachine to update as you type, to move the current cell when you click on a cell, and when you click on a row.</li>
+    </ol>
+
+<h4>18-Nov-98</h4>
+<ol>
+    <li>Fixed the fastrak test functions in monall. I was using the send_command instead of send_cmd_wo_check. In the ram test I was using wait_for_cmd_clear. This didn't wait long enough. I changed all tests to use a while loop.</li>
+    </ol>
+
+<h4>19-Nov-98</h4>
+<ol>
+    <li>Fixed the download button on the main suretrak screen to download the parameters and the profile as well as the control program.</li>
+    </ol>
+
+<h4 id="v542">09-Dec-98</h4>
+<ol>
+    <li>Issued <b><font color="slateblue">v5.42</font></b>
+    </ol>
+
+<h4>15-Dec-98</h4>
+<ol>
+    <li>Fixed a bug in the make ms-dos disk for the suretrak. If the config.sys file was not present in the c:\p42 directory, then I gave up. Config.sys is not in the new suretrak p42 directory.</li>
+    </ol>
+
+<h4>22-Dec-98</h4>
+<ol>
+    <li>Adjusted the way the passwords work for the suretrak control interface program. Al wanted most of the buttons grayed unless the operator were suficiently wonderful. I added <b>SureTrakSetupLevel</b> to the [ButtonLevels] section of visitrak.ini.</li>
+    <li>Moved the Zero Speed Check Position to the part editor. Added a new database (STPART.DAT) which is a freeform, one line per value, database.</li>
+    </ol>
+
+<h4>??-Jan-99</h4>
+<ol>
+    <li> Windows 95 does NOT initialize the serial port (what the serial port settings are for I do not know). I added a bunch of ini-file settings and an initialization routine to the program.</li>
+    </ol>
+
+<h4>02-Feb-99</h4>
+<ol>
+    <li> Al and I found that the problem with the suretrak having NO PROGRAM after the download was an error in the control program. The courier new font capital O is exactly the same as a zero.</li>
+    <li> I should have issued an error but didn't. I fixed the program to issue many more errors (there are still more to add). Updated file is suretrak.exe.</li>
+    </ol>
+
+<h4>04-Feb-99</h4>
+<ol>
+    <li> I fixed the parttov5 program for Joe Pultz. I wasn't terminating the file name of the last shot (Duh), and was deleting the table before I was done with it (Duh) and wasn't converting the plookup table at all (Duh).</li>
+    <li> Updated files are partext.sc and parttov5.exe.</li>
+    </ol>
+
+<h4 id="v543">23-Mar-99</h4>
+<ol>
+    <li>Made changes to 5,42
+    <ul>
+        <li>Remove the pre-impact pressure display on the pos_time plot</li>
+        <li>Remove the overlay and reference trace display from the position-only plot.</li>
+        <li>Gray the choices for pre analogs in the display config if pos-time</li>
+        <li>Made 2-Feb changes to st</li>
+        </ul>
+    </li>
+    <li>Issued <b><font color="slateblue">v5.43</font></b></li>
+    </ol>
+
+<h4>07-Apr-99</h4>
+<ol>
+  <li>I copied the changes to the 2-Feb suretrak changes to the current version (the current version is the one I am working on with the pressure input).
+  <li>I fixed the problem in the part editor whereby the end of shot window got messed if the vacuum wait was checked and a different part selected.
+  <li>I added the stpart.dat file to the list of files to copy in copypart.
+  </ol>
+
+<h4>23-Apr-99</h4>
+<ol>
+    <li>Made changes to monall in v542\monall directory for Tom Renert. This fixes the serial port init problem as I promised him long ago.
+    <li>I sent the new exe and directions to Scott Savage, who is the guy from allen-bradley. He will be going to GM Powertrain on Thursday to try it out.
+    </ol>
+
+<h4>14-May-99</h4>
+<ol>
+    <li>Got all programs except data server and v4 translations working under ms compiler. Sergey is done with the translation.</li>
+    <li>Changed the inputs and outputs from radio buttons to CTEXT controls. The radio
+        buttons are not supposed to be used this way and windows was resetting the WS_TABSTOP
+        whenever I checked a radio button, meaning that if the user tabbed past the last
+        pushbutton, windows would take them to the radio button.
+        I also added a green background for these controls. </li>
+    <li>I made a trial 5.44 unicode version. I changed the suretrak setup of each of the three parts to correspond to the part in question. I remains to be seen whether we should put more reasonable parts (25in total stroke length rather than 7 for example).</li>
+    <li>Sergey added two new functions to the asensor.h and asensor.cpp for getting the high and low values.</li>
+    <li>Sergey finished the pressure control screen (the plain-jane one). We uploaded it to the \\fs\projects\editpart\show directory. He also uploaded a new copy of stlimits.h which has the pressure control steps added. I need to be careful not to copy this yet.</li>
+    <li>I increased the size of the listbox for the courner parameter select so that all eight show.</li>
+    <li>When I changed back to the V5.43 suretrak code I lost the code that updated the suretrak parameters in editpart without the close button. I changed this. I always copy the changes but don't save to disk until the operator chooses "Save changes".</li>
+    <li>Made the esensor listbox a little longer.</li>
+    </ol>
+
+<h4>22-Jun-99</h4>
+<ol>
+    <li>Joe Pultz sent me his data server. The problem he has been having was caused by the
+        greenlief library choking on a year 2000 file (actually 2099). Why the file has this
+        date is not known to me. Only the microsoft compiled programs have a problem.</li>
+    <li>I moved dsbackup and dsrestor back to borlandc and my problems have gone away. I'm going to leave them there for now, as the greenlief library doesn't work with unicode anyway.</li>
+    </ol>
+
+<h4>20-Jul-99</h4>
+<ol>
+    <li>Added shift editor to profile. Added "Edit Shifts" menu item to profile.mnu.
+    <p>
+    <table border>
+        <tr><td> New file</td><td>editshif.cpp</td></tr>
+        <tr><td>Modified files</td><td>profile.cpp
+            <br>profile.rc
+            <br>resource.h</td></tr>
+        </table>
+    </p></li>
+    </ol>
+
+<h4>21-Jul-99</h4>
+<ol>
+    <li>Added error message to eventman if data server name is too long.</li>
+    <li>Changed monall to stop trying to download parameters if I get a fail on set_delay.
+    This allows the operator to go to the diagnostics but the operator has to restart the
+    program when he is done.</li>
+    </ol>
+
+<h4>06-Aug-99</h4>
+<ol>
+    <li>Fixed bug in profile that prevented me from finding the current part in the choose part dialog
+    <li>Fixed VisiEdit so it prompts for save when you exit with changes.
+    </ol>
+
+<h4>20-Aug-99</h4>
+<ol>
+    <li>Added a monitor wire to monall for CTC. Copied to borland code to send to him.</li>
+    <li>Also sent a new version of profile with a fix for the downtime editor bug where I didn't close the downtime file when leaving.</li>
+    <li>Details of changes are:
+    <p>
+    <table border>
+        <tr>
+        <td>hardware.cpp</td>
+        <td>get_monitor_wire reads the wire number from the monall.ini file
+                  and checks to see that it is legal.
+                  <br>
+                  If the machine goes down and I am monitoring downtime then I turn
+                  off the monitor wire at that time. I also turn it off if the machine
+                  was downed by adding a new downtime record from the downtime editor.
+                  <br>
+                  This code is in boards.cpp (as in b.refresh_downtime_state).
+                  </td>
+        </tr>
+        <tr>
+        <td>boards.cpp</td>
+        <td>I moved the setwire and clearwire functions to the HARDWARE_BOARD_ENTRY
+        class (actually struct). I moved the wirebit function into boards.cpp
+        as well even though it is also used in hardware.cpp.
+        <br>
+        I turn on the monitor wire when the board is initialized.
+        </td>
+        </tr>
+        <tr>
+        <td>getdata.cpp</td>
+        <td>Turn on the monitor wire if the shot is ok.</td>
+        </tr>
+        </table></p>
+    </li>
+    </ol>
+
+<h4>23-Aug-99</h4>
+<ol>
+    <li>Added ClearMonitorWireOnDown=Y to monall.ini to tell me to clear the monitor wire if the machine goes down. If this is not 'Y' then I turn the bit on when I start monall and off when I exit.</li>
+    <li>I changed dstat so it saves new human downs over old ones.</li>
+    </ol>
+
+<h4>27-Aug-99</h4>
+<ol>
+    <li>Fixed part editor so when you change the total stroke length, the suretrak plot changes as well.</li>
+    <li>Fixed the help file so the table of contents is in the file.</li>
+    <li>Added help for the monitor wire (see 20-Aug).</li>
+    <li>Changed the default help call to go to the table of contents instead of "Getting Started".</li>
+    </ol>
+
+<h4>30-Aug-99</h4>
+<ol>
+    <li>Changed calculator to calculate the numbers for the part editor correctly.
+    <br>The distance from p2 to p3 is the Sweep To Fill Cavity.
+    <br>The distance from p1 to p3 is the above plus the Dist To Fill Runner.</li>
+    <li>I changed the current analog display in the suretrak monitor to operate from the main screen and to position itself in the upper right corner.</li>
+    </ol>
+
+<h4>31-Aug-99</h4>
+<ol>
+    <li>Changed the auto shot display to green with a thin border.
+    <li>Removed the menu item that let you hide the autoshot window.
+    <li>Fixed suretrak transducer test so it doesn't take the st board out of control mode.
+    </ol>
+
+<h4 id="peprint">15-Sep-99</h4>
+<ol>
+    <li>I changed dbsubs so after two open tries I wait 10 ms between tries.
+    <li>Finished part editor print.
+    <li>Fixed up help. Added context help to suretrak screen.
+    <li>Fixed opening force in calculator.
+    <li>Increased open timeout count in write_param (monall) to 150 from 20.
+    </ol>
+
+<h4>16-Sep-99</h4>
+<ol>
+  <li>Fixed downbar to show downtime data even if there are no shots.
+  </ol>
+
+<h4 id="smooth">17-Sep-99</h4>
+<ol>
+  <li>Added smoothing to the profile program
+  </ol>
+
+<h4>24-Sep-99</h4>
+<ol>
+  <li>Fixed bug in editpart. When the channels were changed, the units in the parameters were not changed as well.
+  <li>Added export alarm summary to main menu and to help file.
+  <li>Added export parameters to help file.
+  <li>Added export downtimes to help file. (I added this feature a couple of weeks ago).
+  </ol>
+
+<h4>12-Oct-99</h4>
+<ol>
+  <li>Stopped adding 1 to the csfs index that I get from the FT.
+  <li>Added help for function keys.
+  </ol>
+
+<h4>20-Oct-99</h4>
+<ol>
+    <li> Fixed bug in dsbackup so it doesn't read the bup directory and so it copies the default backup directory to new machines.</li>
+  </ol>
+
+<h4>22-Oct-99</h4>
+<ol>
+    <li> Found a bug in sensor.cpp. I had made a local copy of the AnalogSensorList variable in the find function.</li>
+    </ol>
+
+<h4>25-Oct-99</h4>
+<ol>
+    <li> Changed listbox.cpp so it checks for null strings before trying to set the current select.</li>
+    </ol>
+
+<h4>08-Nov-99</h4>
+<ol>
+    <li> Fixed bug in the replace_char_with_null that takes a set of characters to replace. The version I had would have hung.</li>
+    </ol>
+
+<h4 id="halfinfix">18-Nov-99</h4>
+<ol>
+    <li> Added Greg's .5" min fix to the suretrak programs in 5.45.</li>
+    </ol>
+
+<h4>30-Nov-99</h4>
+<ol>
+    <li> I changed the suretrak program to be more intelligent about modifying the first step. If there is no remark at the end, I use a default alternate step. If this is not a first step, I don't let you change it.</li>
+    <li> Somewhere along the line I added an editor for densities that are used in the calculator.</li>
+    <li> Made a new release of V5.46 (Note that I have never released 5.45 except to Japan but I am skipping it just in case). This is still a release candidate and is not official yet.</li>
+    </ol>
+
+<h4>01-Dec-99</h4>
+<ol>
+     <li>Fixed the new routine that decides whether an alternate first step is valid. I wasn't
+         looking for '-' or '.' characters as the start characters of floats.</li>
+    </ol>
+
+<h4>02-Dec-99</h4>
+<ol>
+    <li>Fixed bugs in Monedit. These were caused by assigning static pointers to resource_string returns (not me).</li>
+    </ol>
+
+<h4 id="v546">06-Dec-99</h4>
+<ol>
+    <li>Release <b><font color="slateblue">v5.46</font></b> (Finally). First all-Microsoft release. Did NOT release a new unicode version.</li>
+    </ol>
+
+<h4>08-Dec-99</h4>
+<ol>
+  <li>Finished the NetSetup program, non-unicode version.
+  </ol>
+
+<h4>14-Dec-99</h4>
+<ol>
+  <li>Changed dstat to create dstat.txt if it doesn't exist
+  <li>Changed dbsubs to unlock the current record before closing the file.
+  </ol>
+
+<h4>12-Jan-00</h4>
+<ol>
+  <li>Fixed the overlay and ref trace post impact (I was not adjusting for the fixed interval).
+  <li>Finished new help file with new additions for valve setup and test functions for the fastrak and suretrak.
+  </ol>
+
+<h4>13-Jan-00</h4>
+<ol>
+  <li>Fixed plot so it uses both profiles and reference profile to set the axis limits. Also fixed the plot program so it doesn't plot outside of a region.
+  <li>Fixed install program so it correctly deletes the other machines on a suretrak install.
+  </ol>
+
+<h4>14-Jan-00</h4>
+<ol>
+  <li>Added differential pressure to zoom boxes.
+  </ol>
+
+<h4>21-Jan-00</h4>
+<ol>
+  <li>Gave <b><font color="slateblue">v5.47</font></b> to Ying to take to Ganton.
+  </ol>
+
+<h4>24-Jan-00</h4>
+<ol>
+    <li>Added edit differential equation screen to help. Added help to the editdiff program in emachine.
+    </ol>
+
+<h4>18-Feb-00</h4>
+<ol>
+    <li>Changed bupres so it allows you to restore to a different machine.</li>
+    <li>Also added the ability to create a new machine.</li>
+    <li>Updated bupres help.</li>
+    </ol>
+
+<h4>22-Feb-00</h4>
+<ol>
+    <li>Fixed a bug in dbsubs.cpp. get_rec was using the recbuflen instead of multiplying
+        by sizeof(TCHAR). This could never have worked in the unicode version so I must have
+        put it in recently.</li>
+    </ol>
+
+<h4 id="fatalerr">24-Feb-00</h4>
+<ol>
+    <li>Put the fatal error number back onto the suretrak display. I don't think it was ever there in V5.
+    </ol>
+
+<h4>02-Mar-00</h4>
+<ol>
+    <li>Released <b><font color="slateblue">v5.48</font></b> to Al.</li>
+    </ol>
+
+<h4>03-Mar-00</h4>
+<ol>
+  <li>Released 5.48 to Conrad.
+</ol>
+
+<h4>07-Mar-00</h4>
+<ol>
+    <li>When I pressed f8 on the profile screen I would try to go to all shots on the trend screen. I fixed this.</li>
+    <li>I was missing a point in the avg fill velocity calc sometimes. This made major differences
+        in the numbers, causing lunt to wonder what was up, as v*t should be constant. I fixed
+        this by using the indexes as I should have to begin with but the problem remains that the end of
+        shot is not being calculated accurately enough for the fill time to have any meaning.
+    <br>As it is, the last point can represent half of the fill time. Sometimes we get this point as
+        part of the shot and sometimes we do not.</li>
+    </ol>
+
+<h4>08-Mar-00</h4>
+<ol>
+    <li>I changed the monall so that he only calculates the post-impact velocity when the position changes.
+        He uses all of the time since the last position change and then interpolates all of the points
+        inbetween. This is not strictly correct but is probably close enough.
+    <li>Changed the calculator to use liquid density instead of solid density.
+    <li>Changed the profile program to plot the position when in time based mode. I had stopped doing
+        this for some reason. I also was not resetting the y position axis limits when I changed from
+        time-based to pos-time based.
+    <li>I changed the routine that gets position index from a float to round up if necessary. I also
+        changed the average_fill_velocity to use indexes instead of float parameters for the positions,
+        thus making the fill time and avg fill velocity correctly related.
+    </ol>
+
+<h4>09-Mar-00</h4>
+<ol>
+  <li>Began making install for V5.49. Added a NEWPART which has everything set to 0.0 and no master trace.
+  <li>Changed setup.exe to look for missing density.db and profile.mnu. Tried it on a 5.0 install. everything seems ok.
+  </ol>
+
+<h4>16-Mar-00</h4>
+<ol>
+  <li>Tom Kies found that I was using the MSGothic font in EditPart. Since this font doesn't normally exist on windows systems, Windows uses the closest thing. On Tom's computer this is a symbol font.
+  <li>I changed editpart to use the Arial font for ansi and MS Mincho for Japanese. I used 14 as the size for each.
+  <li>I added this to the 5.49 install.
+  </ol>
+
+<h4 id="alarmfix">22-Mar-00</h4>
+<ol>
+  <li>Monall was not initializing the alarm summary counts correctly at the beginning of a shift (actually it was in alarmsum.cpp). I added this to the 5.49 install.
+  </ol>
+
+<h4>23-Mar-00</h4>
+<ol>
+  <li>Changed profile to display pressure curves from 0.0 when not zooming. This is the way I did it in 5.43 and previous. Added to 5.49 install
+  </ol>
+
+<h4>20_Apr-00</h4>
+<ol>
+  <li>Released <b><font color="slateblue">V5.49</font></b>
+  </ol>
+
+<h4>24-Apr-00</h4>
+<ol>
+    <li>Found a bug in my string class. I wasn't initializing my pointer when i create a string like STRING_CLASS s = "Hi"; I think this is ok, as I don't think I do this anywhere.
+    </ol>
+
+<h4>27-Apr-00</h4>
+<ol>
+    <li>Found a bug in monall which is really a bug in the database routines.
+    <br>t.put_alpha(PLOOKUP_PART_NAME_OFFSET, ph.part_name, PART_NAME_LEN);
+    <br>have_rec = t.get_next_key_match(1, TRUE);
+    <p>If this returns false, I have overwritten the part name that I set with whatever was the last record that I read from the file.</p>
+    <p>If there is no record for the current part in plookup (there should always be a record)
+        then what I did was duplicate the last part that I read. And I kept doing this every shot
+        because I never made a record for the current part.</p>
+    <p>I fixed nextshot but I have not fixed dbsubs.cpp yet. I'm not sure whether this is a bug or just the way it works.</p></li>
+    </ol>
+
+<h4>28-Apr-00</h4>
+<ol>
+  <li>I fixed the bug in dbsubs.cpp. Now, if you do not find something, the program restores the search buffer to the record buffer. I believe this is how it should work.
+  </ol>
+
+<h4>30-Jun-00</h4>
+<ol>
+  <li>Changed monall to recognize 8 channel board when displaying current values in ioex4
+  </ol>
+
+<h4>06-Jul-00</h4>
+<ol>
+    <li>Changed the parameter history to only set the focus back to the main window if he has
+    the focus. This fixed a problem with the Japanese version not working at all at times.
+    <br>
+    I also added the ParamHistoryWindow to the list of modeless dialogs that I check for
+    window messages. I had never done this as I have no controls on that dialog but it is
+    probably wise to do it.
+    </li>
+    <li>Changed extract to use only numeric characters. This is because CharToOEM dies
+    a horrible death if you pass it a Japanese character.
+    </li>
+    </ol>
+
+<h4>10-Jul-00</h4>
+<ol>
+  <li>Changed profile so that if IsHPM is true then I don't ever display position-based pressure.
+  <li>Changed profile so I only use pre-impact data for calculating the min velocity for pos-based displays.
+  </ol>
+
+<h4>15-Aug-00</h4>
+<ol>
+  <li>Changed the sort order of operator.txt from high to low to low to high. This was in Editop.cpp and was backwards.
+  <li>Changed UgEdit.cpp in the dundas stuff to set the text length to one character when there is nothing in the string. This prevents the edit box from covering all the cells to the end of the line if the cell is blank and you edit it.
+  </ol>
+
+<h4>16-Aug-00</h4>
+<ol>
+  <li>Fixed the metric calculator. It never has been correct. I wasn't using the correct value for the density nor was I using the correct pressure if it was not psi. Duh.
+  </ol>
+
+<h4 id="pkzip25">25-Aug-00</h4>
+<ol>
+    <li>Changed the install and backup/restore programs to use pkzip25 instead of the old dos
+    program. This increased the number of floppies to 3. I changed the setup.exe to
+    read these in order.</li>
+    <p>
+    <table border cellpadding="10">
+    <tr><td>Disk 1</td><td> pkzip25.exe
+           <br>data files
+           <br>v5data.zip
+           <br>v5dataj.zip</td>
+           </tr>
+    <tr><td>Disk 2</td><td> v5exes.zip</td>
+        </tr>
+    <tr><td>Disk 3</td><td> v5help.zip or v5helpj.zip</td>
+        </tr>
+    </table>
+    </li>
+    </ol></p>
+<h4>07-Sep-00</h4>
+<ol>
+  <li>Added an option to the install program to create a set of floppies.
+  <li>Changed the install program to rename an existing v5 directory to oldv51, oldv52, etc.
+  <li>Added pictures to the help on the basic and advanced part editor and creating a part.
+  <li>Added a new section on starting the part editor.
+  </ol>
+
+<h4>04-Oct-00</h4>
+<ol>
+  <li>Made a new V5.52. Gave it to Al to play with. Not released yet.
+  </ol>
+
+
+<h4>11-Oct-00</h4>
+<ol>
+  <li>Made a new help file for V5.52 (I still haven't released it yet so I'm allowed). This put graphics in the sections on setting up a new sensor type and on choosing it for a channel.
+  </ol>
+
+<h4>12-Oct-00</h4>
+<ol>
+  <li>Added fixed y axis levels to the trend chart.
+  </ol>
+
+<h4>16-Oct-00</h4>
+<ol>
+  <li>Added trend chart, w/fixed levels, to the help file.
+  </ol>
+
+<h4>17-Oct-00</h4>
+<ol>
+  <li>Changed the install program to use the boot drive as the default installation location.
+      This was done primarily for the japanese version. They like to have dual boot computers
+      and when they install it defaults to C: which is wrong half the time.</li>
+  </ol>
+
+<h4>18-Oct-00</h4>
+<ol>
+  <li>I changed the install program again, this time to have the update also start looking on the boot drive.
+  </ol>
+
+<h4 id="v552">23-Oct-00</h4>
+<ol>
+  <li>Issued <font color="slateblue"><b>v5.52</b></font> and 5.52u
+  </ol>
+
+<h4 id="v553">30-Oct-00</h4>
+<ol>
+  <li>Issued <font color="slateblue"><b>v5.53</b></font> (Actually I gave a copy to Brian DeBoer on Friday but it had a bug in the setup.exe which tried to rename the monallnt.exe and suretrnt.exe before copying them. I fixed that.</li>
+  <li>I fixed a bug in 5.52 that displayed 2.996 as 2.100. Duh.</li>
+  </ol>
+
+<h4>08-Nov-00</h4>
+<ol>
+  <li>I found the bug (!) that caused me to crash with the new hp drivers. It was caused by the optimizer loading the float registers with garbage when I didn't initialize xmin and xmax (float values).</li>
+  <li>This was in the calculate_yaxis_limits function and was getting called when I got a wm_paint message. Why the HP killed it and not the others is beyond me.</li>
+  </ol>
+
+<h4 id="v554">26-Jan-01</h4>
+<ol>
+  <li>Restored pre-impact pressure traces.</li>
+  <li>Issued <font color="slateblue"><b>V5.54</b></font></li>
+  </ol>
+
+<h4>12-Feb-01</h4>
+<ol>
+  <li>Added password level (editpart.ini) to the parameters tab of the part editor. If
+      you aren't at that level you can't see the edit window nor can you create or delete
+      parameters.</li>
+  <li>Changed suretrak program so you can no longer edit the velocity multiplier,
+      counts per unit, or the velocity dividend.  </li>
+  </ol>
+
+<h4 id="v555">21-Feb-01</h4>
+<ol>
+  <li>Issued <font color="slateblue"><b>V5.55</b></font></li>
+  </ol>
+
+<h4>28-Feb-01</h4>
+<ol>
+  <li>Changed all Dundas programs to use hpen, hfont, and hbitmap instead of pointers.</li>
+  <li>Cleaned up memory leaks in Dundas font code.</li>
+  </ol>
+
+<h4 id="ft_timeout">13-Mar-01</h4>
+<ol>
+  <li>Changed the <font color="red"><b>FasTrak Timeout</b></font> message to appear even though you are not viewing shots
+      from that machine. The message now includes the machine number.</li>
+  </ol>
+
+<h4 id="v557">04-Apr-01</h4>
+<ol>
+  <li>Restored the profile program to 5.50h displays</li>
+  <li>Issued <font color="slateblue"><b>V5.57</b></font></li>
+  </ol>
+
+<h4 id="v558">24-Apr-01</h4>
+<ol>
+  <li>Changed the Version number to 5.50h</li>
+  <li>First <font color="red"><b>Visi-Trak<sup>&reg;</sup> Worldwide</b></font> version</li>
+  <li>Modified helpfile to change to new name</li>
+  <li>Issued <font color="slateblue"><b>V5.50h</b></font></li>
+  </ol>
+
+<h4 id="v558j">01-Jun-01</h4>
+<ol>
+  <li>New Japan Version (No changes to japanese resources).</li>
+  <li>Issued <font color="slateblue"><b>V5.58 Japan</b></font></li>
+  </ol>
+
+<h4 id="v559">01-Aug-01</h4>
+<ol>
+  <li>Fixed bug in Part Editor. If you left in the suretrak setup and restarted the editor it
+  would be on the suretrak tab but the basic part setup would be showing.</li>
+  <li>Fixed bug in the parameter export program. I was calculating the buffer length by subtracting
+      pointers. For pointers to TCHAR this gives the difference in characters but I was using it as bytes.
+      The same change was made to export.cpp, alarmexp.cpp, dbarcfg.cpp.</li>
+  <li>Took out all of the position based displays</li>
+  <li>Issued new Japan Version as well. Labeled <font color="slateblue"><b>V5.59</b></font></li>
+  </ol>
+<h4 id="v560">10-Aug-01</h4>
+<ol>
+  <li>Divided time-based plot into 3 sections of equal width. SS, FS, Intensification.</li>
+  <li>Ying had me resample from the data using fixed time intervals in each of the above three sections
+      (the last section is not resampled, as it is already time based)</li>
+  <li>Made new version 4 that is totally time based.</li>
+  <li>Issued <font color="slateblue"><b>V5.60</b></font></li>
+  </ol>
+
+<h4 id="v561">17-Sep-01</h4>
+<ol>
+  <li>Restored code to 5.50h display</li>
+  <li>Added "ST" to SureTrak error messages</li>
+  <li>Recompiled all to include bug fixes</li>
+  <li>Note: new setup.exe and v5help.zip files on 24-Sep to fix version</li>
+  <li>Issued <font color="slateblue"><b>V5.61</b></font></li>
+  </ol>
+
+<h4 id="v562">24-Sep-01</h4>
+<ol>
+  <li>Foreign version. If the locale is not USA then show the pressure traces.</li>
+  <li>Otherwise identical to 5.61</li>
+  <li>Issued <font color="slateblue"><b>V5.62</b></font></li>
+  </ol>
+
+<h4 id="v563">08-Oct-01</h4>
+<ol>
+  <li>Issued new dsbackup.exe <font color="slateblue"><b>(3-Oct-01)</b></font>. This adds a check box to skip downtime data.
+      Dsbackup and dsrestor are still in the V5 directory and are still compiled with bcc32</li>
+  <li>Fixed profile.exe so it doesn't display pressure in a position only zoom.</li>
+  <li>Interpolate P3.</li>
+  <li>Issued <font color="slateblue"><b>V5.63</b></font></li>
+  </ol>
+
+<h4 id="v564">09-Oct-01</h4>
+<ol>
+  <li>Added new monall.exe for BDW. This allows the serial output to be just like V4</li>
+  <li>Issued <font color="slateblue"><b>V5.64</b></font></li>
+  </ol>
+
+<h4 id="v565">15-Nov-01</h4>
+<ol>
+  <li>Changed SURETRAK_SETUP_CLASS to delete old table. I was only trying to delete it if it didn't exist.</li>
+  <li>Replaced the <b>Jumper Settings for the MVO-06596 LVDT SERVO AMP Board</b> in the help file with Al's new version
+      with the correct settings for the Omstead valves.</li>
+  <li>Added a utility (scitov5) for copying suretrak profiles from the P42\profile directory to V5.</li>
+  <li>Changed the null_valve dialog to display the current null voltage with a green or red background</li>
+  <li>Change the current values display in Monall to show volts and bar graphs and to only display
+      selected channels. Which channels are selected is saved for next time.</li>
+  <li>Issued <font color="slateblue"><b>V5.65</b></font></li>
+  </ol>
+<h4 id="v566">01-Mar-02</h4>
+<ol>
+  <li>Added a setup sheet to the part editor (and made the part editor dialog wider in the process).</li>
+  <li>Added a dialog to show what position sensor I am looking for if I can't find one. I also changed
+  monall to not die when there is no position sensor.</li>
+  <li>Added an option to the export parameters dialog to export to a csv file.</li>
+  <li>Added an editor to set up the standard downtimes.</li>
+  <li>Changed monall to read the standard downtimes (stddown.txt) table and use these for autodown.</li>
+  <li>Added export to csv and standard downtimes to help file.</li>
+  <li>Added the ability to set the levels for editing parts on other computers. You can even edit the suretrak
+      setup on the current remote part if you really want to.</li>
+  <li>Fixed a minor bug in editpart. The copy to other machines dialog wasn't being positioned correctly because
+      I was calling the routine to position the copy to other parts dialog.</li>
+  <li>Added an down time alarm wire that will be turned on when the machine goes down. You put the
+      DownTimeAlarmWire=6 (or 7 or 8) in the monall.ini file.</li>
+  <li>Fixed the part editor so it updates the parameter units when you change the channel.</li>
+  <li>Added the setup sheet to the part setup printout.</li>
+  <li>Changed the downtime editor so you can use the keyboard for everything. If you press the enter key I
+  save the changes and exit.</li>
+  <li>Added LockOnAlarm to monall so that if you are multiplexing and a machine turns on an alarm wire then
+      I will lock on that machine until the alarm wire goes out</li>
+  <li>Added <b>Subtract Timeout Seconds from Auto Down</b> to Downtime Configuration</li>
+  <li>Fixed the renumber routine in bupres to display the file numbers as it updates them.</li>
+  <li>Added new error messages to the db open for file/path not found and lock timeout.</li>
+  <li>Issued <font color="slateblue"><b>V5.66</b></font></li>
+  </ol>
+
+<h4 id="v567">14-Mar-02</h4>
+<ol>
+  <li>Restored preimpact pressure traces and position based master traces.</li>
+  <li>Issued <font color="slateblue"><b>V5.67</b></font></li>
+  </ol>
+
+<h4 id="v568">20-Mar-02</h4>
+<ol>
+  <li>Remove pre-impact pressure if shot was taken before 3/13/2002.</li>
+  <li>Allow overlay and ref trace if position only or zoom.</li>
+  <li>Add red "Control Inactive" to suretrak step description</li>
+  <li>Added a mask for the high bit of the Suretrak Dac Word.</li>
+  <li>Made the opto test button default to a level 20. The Edit Control Pgm to 11.</li>
+  <li>Issued <font color="slateblue"><b>V5.68</b></font></li>
+  </ol>
+
+<h4 id="v569">13-May-02</h4>
+<ol>
+  <li>Fixed a bug in the part editor so I print the suretrak settings even if I can't edit them.</li>
+  <li>Made setup.exe create a desktop icon instead of a start menu icon and added option to create
+      a link in the startup folder.</li>
+  <li>Updated the setup help file</li>
+  <li>Added new password table with owner name for use with password change log for Mark Potratz</li>
+  <li>Changed password table editor to use dundas.</li>
+  <li>Added ft board error if I can't init the board in monall</li>
+  <li>Updated the password help file.</li>
+  <li>Made netsetup check for a <b>V5</b> after the last backslash when I am enumerating the network shares.
+    If it is not V5 then I don't even check. Exe date is 17-Apr-02</li>
+  <li>Made the edit box text on the editpart suretrak profile screen <font color="red">red</font> if the contents have changed.</li>
+  <li>Put the <b>Velocity Loop Gain</b> and <b>Break Gain</b> settings on the suretrak profile screen</li>
+  <li>Changed the FindString library function to ignore case.</li>
+  <li>Added a log file for password changes</li>
+  <li>Fixed a bug in the time functions that put incorrect dates in when subtracting timeout seconds</li>
+  <li>Added create_directory to bupres so it creates a subdirectories if necessary, even on the a drive.</li>
+  <li>Issued <font color="slateblue"><b>V5.69</b></font></li>
+  </ol>
+
+<h4 id="v570">29-May-02</h4>
+<ol>
+  <li>I made bupres automatically insert a backslash after x: in the backup zip file if there isn't one.</li>
+  <li>Added a <b>EffPeakSkipCount=5</b> to <b>[Config]</b> section of <b>monall.ini</b>. This is the number of post
+      impact points I skip before beginning to search for the largest position.
+      <br>I put this in because Mark Preston of J L French has a machine that has little intensification
+      and sometimes the bounce at impact is the farthest the plunger travels,
+      so I get the intensification pressure at point 2, which is wrong.
+      <br>The default is 5 points. You can set it to zero.</li>
+  <li>Updated password help file.</li>
+  <li>Changed definition of Effective Peak Intens Pressure in the help file</li>
+  <li>You can only edit the password table if you are at the <font color="red">highest</font> level in the password file.</li>
+  <li>Bupres can save just the last n profiles and parameters.</li>
+  <li>Issued <font color="slateblue"><b>V5.70</b></font></li>
+  </ol>
+
+<h4 id="v571">06-Aug-02</h4>
+<ol>
+  <li>Added a Downtime Entry Screen which automatically pops up if there is an autodown event for the
+      current computer.</li>
+  <li>Added a menu item on the main monall screen that will take you directly to the current ft values
+      screen. Level defaults to 9. Can be changed in monall.ini.</li>
+  <li>Added ability to change the level at which the <b>FasTrak Board Interface</b> menu item appears on the
+      main menu.</li>
+  <li>Renamed the german resources in the part editor so they don't show up, as that is not ready.</li>
+  <li>Bupres won't let you save to the \v5\backup folder anymore.</li>
+  <li>Adding SaveAllAlarmShots=Y to [Config] in Monall.ini saves all shots with a least one alarm.</li>
+  <li>SureTrak program now uses the current machine that is being monitored rather than just the first
+      machine in the list.</li>
+  <li>Fixed the suretrak so it displays green null voltage from -.5 to +.5 volts and red otherwise. I had
+      been only displaying green from -.1 to +.1</li>
+  <li>Changed the profile program to use the double_to_tchar subroutine to display positions. The number
+      of decimal places is 1 if the max pos &gt;= 1000, 3 if &lt; 10, and 2 otherwise.</li>
+  <li>Found a bug in the FIXED_SCREEN_CLASS in profile\dconfig.cpp. If there was no database (fixpres.txt)
+      it made no array but still tried to access it. Result is that with a new install the program bombs with
+      access violation during start up.</li>
+  <li>Changed the listbox class to separate the set_tabs from the pixel to dialog units parts</li>
+  <li>Changed shotsave.cpp in monall so that if he can't init the serial port he forgets that there is one</li>
+
+  <li>Issued <font color="slateblue"><b>V5.71</b></font></li>
+  </ol>
+
+<h4 id="v572">31-Oct-02</h4>
+<ol>
+  <li>Part editor no longer overwrites the post impact sample time when it saves a part.</li>
+  <li>Added toggle focus to part editor.</li>
+  <li>Added warmup part. This added two classes, the WARMUP_CLASS and the RUNLIST_CLASS.</li>
+  <li>Added ability to set level below where save changes button is enabled that will allow operator
+    to save just the velocity changes. This was for Mark Potratz.</li>
+  <li>Changed the corner parameter list and trend chart setups so they can be saved by part instead of globally.</li>
+  <li>Added an options screen where you can set the various global options such as required password levels and
+      alarm wire options.</li>
+  <li>Bug fix: I was reading the analog sensor vartype as a float and converting to unsigned short in sensor.cpp in subs and monall.</li>
+  <li>Issued <font color="slateblue"><b>V5.72</b></font></li>
+  </ol>
+
+<h4 id="v573">08-Jan-03</h4>
+<ol>
+  <li>Fixed the bug that locked up the Downtime popup screen.</li>
+  <li>Added reflected inputs </li>
+  <li>Added backup individual shots</li>
+  <li>Issued <font color="slateblue"><b>V5.73</b></font></li>
+  </ol>
+
+<h4 id="v574">05-Feb-03</h4>
+<ol>
+  <li>V5setups now displays a list of network computers and automatically determines the address of the
+  V5 folder at that computer.</li>
+  <li>Removed the reflected inputs and added a digital input parameter type.</li>
+  <li>Issued <font color="slateblue"><b>V5.74</b></font></li>
+  </ol>
+
+<h4 id="v575">16-Sep-03</h4>
+<ol>
+  <li>Added a check for N in EosComPort so I won't try to open None.</li>
+  <li>Added next/prev shots on arrow keys</li>
+  <li>Added listbox to bupres backup list.</li>
+  <li>Added Valve Start Step to Control Program Mods.</li>
+  <li>Fixed zoom to display channels if channels are being displayed</li>
+  <li>Fixed a bug in the shift routine that put 2095 in the date in the alarm summary at week's start.</li>
+  <li>Issued <font color="slateblue"><b>V5.75</b></font></li>
+  </ol>
+
+<h4 id="v600">31-Oct-03</h4>
+<ol>
+  <li>Added support for FasTrak2, monitor only.</li>
+  <li>Issued <font color="slateblue"><b>V6.00</b></font></li>
+  </ol>
+
+<h4 id="v603">18-Nov-03</h4>
+<ol>
+  <li>Added Null Valve Screen to ftii.exe.</li>
+  <li>Added Transducer Plot to profile.exe.</li>
+  <li>Added Downtime to ftii.exe.</li>
+  <li>Issued <font color="slateblue"><b>V6.03</b></font></li>
+  </ol>
+
+<h4 id="v605">03-Feb-04</h4>
+<ol>
+  <li>Added Max | Min | Avg Ftanalog</li>
+  <li>Switched to UDP</li>
+  <li>Issued <font color="slateblue"><b>V6.05</b></font></li>
+  </ol>
+
+<h4 id="v608">18-Mar-04</h4>
+<ol>
+  <li>Replace grid with dynamic controls</li>
+  <li>Fixed Downtime</li>
+  <li>Added MonitorWire</li>
+  <li>Added DowntimeAlarmWire</li>
+  <li>Issued <font color="slateblue"><b>V6.08</b></font></li>
+  </ol>
+
+<h4 id="v609">23-Apr-04</h4>
+<ol>
+  <li>Added Office Workstation and Local Data Archiver options to install</li>
+  <li>Made install copy the correct ftii_control_program.txt and ftii.ini files based on whether
+      this is a control or not.</li>
+  <li>Added help to ft2. This required a 4th floppy.</li>
+  <li>Fixed the bug in the parameter calculations for sleeve full vel, runner full vel, and fill velocity</li>
+  <li>Moved smoothing to the display setup screen. Allow you to pick which channels to smooth.</li>
+  <li>In the trend chart setup you can choose which parameters appear on the statistical summary screen.</li>
+  <li>Use Flash emc_4_11.flash and emc_chip_06000000.hexout.flash</li>
+  <li>Issued <font color="slateblue"><b>V6.09</b></font></li>
+  </ol>
+
+<h4 id="v611">12-Jul-04</h4>
+<ol>
+  <li>Max chars in the computer path, including the Data Archiver, is now 255.</li>
+  <li>Downtime Summary screen can display all cats and subcats at the same time.</li>
+  <li>FasTrak2 has a new screen for changing the alternate first step and the retract voltage.</li>
+  <li>Added a check in the part setup so that if the msl is less than the start of the
+  fast shot step in the control setup that I warn the user.</li>
+  <li>Added 100 pitch for ft2. I automatically change the V314 config word as it goes by to divide by 5</li>
+  <li>Added suretrak settings to the ft2 flash help.</li>
+  <li>Fixed a small memory leak in the profile program.</li>
+  <li>Issued <font color="slateblue"><b>V6.11</b></font></li>
+  </ol>
+
+<h4 id="v612">30-Aug-04</h4>
+<ol>
+  <li>Downtime Shift Report (English Only)</li>
+  <li>Downtime Shift Report Help (English Only)</li>
+  <li>Fixed bug that, when editing parameters was prohibited, would let you edit the parameters if you double clicked on them.</li>
+  <li>Changed the part editor so that if you are a monitor system I use the limit switches from the positions screen.</li>
+  <li>I zeroed the bits in the ftii_control_program.txt for limit switches (V378-V383) on the monitor only system so that it will not use the wires on the
+  monitor connector (the same ones used by the alarms).</li>
+  <li>I changed the part editor so you can select the wires to be used for limit switches. This ONLY works for monitor systems. Any wire not
+  used for limit switches can be used for alarms.</li>
+  <li>In order for the change in limit switch settings I needed to know which machine was suretrak. There was a bit for this
+  in the machset table which I had never used. I put a checkbox on the Machine Setup screen for this.</li>
+  <li>Combined the Basic and Advanced screens in the Machine Setup program.</li>
+  <li>I changed the three individual machset tables used for control systems so the suretrak_controlled field is set to Y. Thus on new
+  installs the machine will be set as a control.</li>
+  <li>I changed the install program to look for updates to older systems (pre 6.12) and set the suretrak_controled field in the
+  machset table to Y if this is a control system.</li>
+  <li>Fixed a bug in the shift routine that was adding seven days if the shift was late Saturday and I was on Sunday.</li>
+  <li>I made the fixed axis display work for all 8 channels if the board is a fastrak2.</li>
+  <li>Issued <font color="slateblue"><b>V6.12</b></font></li>
+  </ol>
+
+<h4 id="v614">10-Sep-04</h4>
+<ol>
+  <li>Fixed a bug in the box screen. I was trying to read the .pro file for the alarm values, which didn't work with
+  ft2 files.</li>
+  <li>Cleaned up the color edit for downtimes by replacing the sliders with scroll bars.</li>
+  <li>Added choose font to the status screen and cleaned up the interface when changing the column widths.</li>
+  <li>Added help for status screen changes.</li>
+  <li>Issued <font color="slateblue"><b>V6.14</b></font></li>
+  </ol>
+
+<h4 id="v615">24-Sep-04</h4>
+<ol>
+  <li>I was saving all the shots no matter what the settigs. I fixed this.</li>
+  <li>Al had some changes to the help file which I added. These were valve setup instructions and
+alternate step instructions for the suretrak2</li>
+  <li>Issued <font color="slateblue"><b>V6.15</b></font></li>
+  </ol>
+
+<h4 id="v616">05-Nov-04</h4>
+<ol>
+  <li>I changed the ft2 monitor program to use the third set of points instead of the second to figure out the analog channels. This is because the board puts a bad point in the second set of the first shot. After that it is ok.</li>
+  <li>I added a checkbox to save the raw counts to the csv file instead of the converted data</li>
+  <li>I added, at Al's request, a textbox with the description of the current step for the ft2 control just like the one for the suretrak. For now I only look in the exes folder for the control.msg file.</li>
+  <li>I changed the FILE_CLASS to retry opens (all opens) up to 10 times if there is a sharing violation.</li>
+  <li>I found that the part setup was replacing all the parameter pressure units with the head pressure units. I changed this so it only replaces the internal pressure units.</li>
+  <li>A bug which prevented alarming on the Intensification Squeeze Distance was fixed.
+</li>
+  <li>Issued <font color="slateblue"><b>V6.16</b></font></li>
+  </ol>
+
+<h4 id="v617">19-Nov-04</h4>
+<ol>
+  <li>The backup program wasn't saving the new ftii_ctrl_prog_steps.txt file, which I use for the alternate first step. I fixed this.</li>
+  <li>Greg found that in the Machine Setup if you change the Sure-Trak2 setting I don't set the has_changed flag and the change is not saved unless you change something else (like toggle the Calc Params type).</li>
+  <li>Saving the changes in the shift report was confusing as changes to the title are saved to the current file and so if you make a new report and then save to a new name all the changes also appear in the old report. I put a warning to this effect in the Ranges dialog.</li>
+  <li>When I upload the ft2 all alarms are turned off. I wasn't clearing my bit list and so never turned them back on. I changed the board monitor so it clears the alarm_bits when it completes an upload.</li>
+  <li>Added the asensor, boards, and ftii_boards to the bupres.</li>
+  <li>Issued <font color="slateblue"><b>V6.17</b></font></li>
+  </ol>
+
+<h4 id="v619">14-Dec-04</h4>
+<ol>
+  <li>A table of contents and index were added to the FasTrak2™ Help</li>
+  <li>A problem in the FasTrak2™ Board Monitor program when monitoring multiple FasTrak2™ boards was fixed</li>
+  <li>Issued <font color="slateblue"><b>V6.19</b></font></li>
+  </ol>
+
+<h4 id="v620">20-Jan-05</h4>
+<ol>
+  <li>I wasn't copyting the new ft2 message file (C:\V5\Exes\CONTROL.MSG) during the install. I fixed this.</li>
+  <li>Al changed the control.msg for the FT2. (76,79,Waiting for MANUAL MODE). (6.20b only)</li>
+  <li>The ftii_control_program.txt in the previous versions (6.17-6.20 & 6.20a was the one with V instead of .UV.</li>
+  <li>I hadn't increased the number of points in the data arrays in the profile program and couldn't display ft2 shots with over 30 inches. I fixed this.</li>
+  <li>Issued <font color="slateblue"><b>V6.20b</b></font></li>
+  </ol>
+
+<h4 id="v621">11-Feb-05</h4>
+<ol>
+  <li>Outputs for limit switches and alarms are now chosen by clicking on pictures of the opto boards. I also added an editbox input (right click) override</li>
+  <li>I don't upload to the st2 between start shot and retract + 2 sec.</li>
+  <li>I use +'s for uploads. This increases the upload time but reduces naks.</li>
+  <li>I show "Uploading..." and Upload Complete" and an * at the end when uploads are disabled.</li>
+  <li>I restored the help file for the shift report (it had disappeared).</li>
+  <li>I put in the digital input parameter for the FT2. I hadn't done this because AMT was the only one using it. AMT has FT2's now.</li>
+  <li>I fixed the bug in the filltime</li>
+  <li>Issued <font color="slateblue"><b>V6.21</b></font></li>
+  </ol>
+
+<h4 id="v622">25-Feb-05</h4>
+<ol>
+  <li>When purging during backup I wasn't deleteing the pr2 files. I fixed this.</li>
+  <li>Issued <font color="slateblue"><b>V6.22</b></font></li>
+  </ol>
+
+<h4 id="v623">18-May-05</h4>
+<ol>
+  <li>Sure-Trak2 systems can now sample the 8 static channels before or after the shot. Pre-shot samples are triggered by
+  digital inputs</li>
+  <li>The fastrak2 program was changed to always set the output bits to correct a bug where the bits were cleared but
+  the program was unaware of this.</li>
+  <li>Issued <font color="slateblue"><b>V6.23</b></font></li>
+  </ol>
+
+<h4 id="v624">31-May-05</h4>
+<ol>
+  <li>Follow Through Stop Command was added to the SureTrak2 Part Setup screen.</li>
+  <li>The Alternate Step can be open loop (%) for the SureTrak2.</li>
+  <li>Fixed a bug where the retry after a nak was set to 30 seconds instead of 3</li>
+  <li>Issued <font color="slateblue"><b>V6.24</b></font></li>
+  </ol>
+
+<h4 id="v625">14-Jun-05</h4>
+<ol>
+  <li>Took out the ftii_control_program.txt and replaced it with the same one used in 6.23. This removed the code for the
+  ft stop position. If you need that then you will need to copy the txt file by hand.</li>
+  <li>When I enter the set dac screen I now send out a V351=0, which sets the lvdt compensation to zero. When I exit the screen I
+  restore the global value from the globals file.</li>
+  <li>Issued <font color="slateblue"><b>V6.25</b></font></li>
+  </ol>
+
+<h4 id="v626">15-Jul-05</h4>
+<ol>
+  <li>Greg found that the st2 will halt with an overflow after 20 entries into manual mode. He fixed this
+  with a new version of the ftii_control_program.txt which changes step 78 to jump to step 2 instead of step 1.</li>
+  <li>ftii_control_program.txt is the only difference between 6.25 and 6.26 except for changes to the help and install files
+  to use the new version numbers.</li>
+  <li>Issued <font color="slateblue"><b>V6.26</b></font></li>
+  </ol>
+
+<h4 id="v627">23-Aug-05</h4>
+<ol>
+  <li>A typo in the ftii_control_program.txt was preventing the control from jogging (line 79 of the
+  program). This was fixed.</li>
+  <li>Issued <font color="slateblue"><b>V6.27</b></font></li>
+  </ol>
+
+
+<h4 id="v628">00-Jun-05</h4>
+<ol>
+  <li>Fixed a small memory leak in password.cpp. I wasn't deleting the buffer used when writing the password log file.</li>
+  <li>Added a monitor log file which records the operator name, etc, whenever the currently monitored part is changed in the
+  part setup or in the monitor setup.</li>
+  <li>Added purge alarm summaries to bupres. I also make bupres check the board when restoring. I have been saving
+  the board information in the machine directory of the backup. I now use this to determine if this is an ftii
+  machine or not and try to do something intelligent when I restore.</li>
+  <li>Made the popup downtime entry so you can down a machine manually. Added a menu item for this purpose.</li>
+  <li>Fixed a bug in the downtime entry popup that was preventing the changes therefrom from showing up on
+  the box screen.</li>
+  <li>Gray the ok button on the downtime entry popup screen unless the entry is a valid cat and subcat.</li>
+  <li>Gave the fatal error message a red background on the main ft2 screen.</li>
+  <li></li>
+  <li></li>
+  <li>Issued <font color="slateblue"><b>V6.25</b></font></li>
+  </ol>
+
+<h4 id="v629">28-Oct-05</h4>
+<ol>
+  <li>The Backup and Restore program was renaming FasTrak2 master traces to the old name, making
+  them invisible. This has been repaired and the Plot program fixes this problem if it see it.</li>
+  <li>Support was added for a 1.6mm position sensor. The update program automatically adds this sensor
+  to the list of sensors.</li>
+  <li>I fixed the ft2 program so the realtime screen displays the correct analog labels when it first starts</li>
+  <li>The part editor will now nag you if you edit the st setup on a ftii machine but the machine is not set as a
+  st2 control in the machine setup.</li>
+  <li>Issued <font color="slateblue"><b>V6.29</b></font></li>
+  </ol>
+
+<h4 id="v630">18-Nov-05</h4>
+<ol>
+  <li>I fixed a bug in the FT2 program that prevented me from using wire 1 for a limit switch (or alarm either, I think).</li>
+  <li>If you have it checked on the options screen FT2 sets the valve test in operation bit when you enter set dac, null valve, or valve test, and turns it off when you leave.</li>
+  <li>If you change the control profile on a ft2 machine that isn't marked control I issue a nag.</li>
+  <li>I set the suretrak2 big correctly during install of metric controls.</li>
+  <li>Issued <font color="slateblue"><b>V6.30</b></font></li>
+  </ol>
+
+<h4 id="v631">28-Oct-05</h4>
+<ol>
+  <li>Su now opens startup.lst for update, locking the file, to prevent two at once.</li>
+  <li>You can now cancel adding a new parameter.</li>
+  <li>I no longer keep the graphlst and parmlist files open while I paint the screen.</li>
+  <li>FT2 displays analogs correctly in mode 7.</li>
+  <li>I increased the null valve display to have three decimal places.</li>
+  <li>FT2 creates shotparm.txt if it doesn't exist</li>
+  <li>I increased the default number of times I try to open a table from 20 to 30.</li>
+  <li>I renamed the st2 control files and load the correct one based upon the flash version.</li>
+  <li>No more "Create Floppies" button.</li>
+  <li>Issued <font color="slateblue"><b>V6.31</b></font></li>
+  </ol>
+
+<h4 id="v632">14-Feb-06</h4>
+<ol>
+  <li>Greg added control5e.txt for systems with the old analog servo amp board</li>
+  <li>I added a choose servo amp board setup to the Machine Setup which I use to decide whether to load control5e.txt</li>
+  <li>I added the raw lvdt reading to the set dac screen.</li>
+  <li>FT2 wasn't changing the dac to 3 when the second amp was chosen. I fixed this.</li>
+  <li>Added buttons for testing the new boards. These are activated by entering "t" in the ft2 terminal editbox.</li>
+  <li>I changed the create_table routine to copy the file name before using it to prevent dstat and semaphor from overwriting eachother's buffers.</li>
+  <li>I put a check in FT2 so he doesn't save shots with missing data.</li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li>Issued <font color="slateblue"><b>V6.32</b></font></li>
+  </ol>
+
+<h4 id="v633">28-Oct-05</h4>
+<ol>
+  <li></li>
+  <li></li>
+  <li>Issued <font color="slateblue"><b>V6.33</b></font></li>
+  </ol>
+
+<h4 id="v634">28-Oct-05</h4>
+<ol>
+  <li></li>
+  <li></li>
+  <li>Issued <font color="slateblue"><b>V6.34</b></font></li>
+  </ol>
+<h4 id="v635">28-Oct-05</h4>
+<ol>
+  <li>I was using the downtime timeout for the autoshot timeout. This is fixed.</li>
+  <li></li>
+  <li></li>
+  <li>Issued <font color="slateblue"><b>V6.35</b></font></li>
+  </ol>
+<h4 id="v636">28-Oct-05</h4>
+<ol>
+  <li></li>
+  <li></li>
+  <li>Issued <font color="slateblue"><b>V6.36</b></font></li>
+  </ol>
+<h4 id="v637">28-Oct-05</h4>
+<ol>
+  <li></li>
+  <li></li>
+  <li>Issued <font color="slateblue"><b>V6.37</b></font></li>
+  </ol>
+<h4 id="v638">28-Oct-05</h4>
+<ol>
+  <li></li>
+  <li></li>
+  <li>Issued <font color="slateblue"><b>V6.38</b></font></li>
+  </ol>
+<h4 id="v639">28-Oct-05</h4>
+<ol>
+  <li></li>
+  <li></li>
+  <li>Issued <font color="slateblue"><b>V6.39</b></font></li>
+  </ol>
+<h4 id="v640">28-Oct-05</h4>
+<ol>
+  <li></li>
+  <li></li>
+  <li>Issued <font color="slateblue"><b>V6.40</b></font></li>
+  </ol>
+<h4 id="v641">28-Oct-05</h4>
+<ol>
+  <li></li>
+  <li></li>
+  <li>Issued <font color="slateblue"><b>V6.41</b></font></li>
+  </ol>
+
+<h4 id="v700">28-Oct-05</h4>
+<ol>
+  <li></li>
+  <li></li>
+  <li>Issued <font color="slateblue"><b>V7.00</b></font></li>
+  </ol>
+
+</body>
+</html>

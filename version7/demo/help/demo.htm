@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Demo Board Monitor</Title>
+
+<style type="text/css">
+
+h3 {
+  font-family: Helvetica, Arial, sans-serif; }
+  }
+
+</style>
+
+</HEAD>
+<BODY>
+<img src="./Overview.jpg">
+<br clear="all">
+<h3>Current Monitor Part</h3>
+
+The <b>Current Monitor Part</b> is the part currently selected to be
+monitored. You choose this in the <b>Monitor Setup</b> program.
+
+<h3>Source Folder</h3>
+The program simulates monitoring by copying shots, one by one, from a source
+folder which you can choose.
+<p>
+To choose a new source folder
+press the <b>Brouse</b> button and brouse to
+a folder that contains shots, which look like <b>003012.pro</b>. Select one of the shots,
+it doesn't matter which one you select as they will all be used, and then press the <b>Open</b>
+button to select this folder as the current source. The folder path will be shown in red when you first
+select it. When you press the <b>Start</b> button the program will begin using the new source folder and
+will change the color of the path to black.
+
+Following is a picture of the Brouse dialog. I have expanded the folder tree so show where a normal
+results folder is located (in this case for machine <b>3</b> and part <b>7200901</b>
+<br clear="all">
+<img src="./Brouse.jpg">
+<br clear="all">
+<h3>Cycle Time</h3>
+This is used to tell how often to make a shot if the <b>Manual Mode</b> checkbox is not checked.
+<h3>Manual Mode</h3>
+If you check this a small cycle start (CS) button will appear in the upper right hand section of the
+screen. Pressing this button will make a shot.
+<h3>Continuous</h3>
+If this is checked then when the last shot file has been read the program will start again at the start of the list.
+If this is not checked then the program will stop making shots after reading all of the profiles.
+<h3>Start</h3>
+Pressing this button tells the program to begin getting shots from
+the displayed source folder. If the path name of the source folder is shown in red then it will be changed
+to black once you have pressed this button.
+<p>
+In any case, the program makes a list of all the profiles in the selected source folder, sorts the list, and
+then begins getting shots from the folder beginning with the first entry in the sorted list of profiles.
+
+
+</BODY>
+</HTML>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title id="create_machine_text">Create Machine</title>
+    <script>
+        function okClick(){
+            var name = document.getElementById("new_name").value;
+            var machineList = window.opener.machines;
+            var count=0;
+            for (var i = 0; i < machineList.length; i++){
+                if(name==machineList[i].name){
+                    alert("Machine Already Exists");
+                    break;
+                }
+                count++;
+                if(count==machineList.length){
+                    window.opener.copyMachine(name);
+                    window.close();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <p id="new_machine_name_text">New Machine Name</p>
+    <input type="text" style="width:200px" id="new_name">
+    <button onclick="okClick()">OK</button>
+</body>
+</html>

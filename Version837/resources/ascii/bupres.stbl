@@ -1,0 +1,88 @@
+4
+ENGLISH,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+GERMAN,-12,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+SPANISH,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+ITALIAN,-13,0,0,0,400,0,0,0,0,3,2,1,34,Arial
+AB_DIR	Automatic Backup Directory	Automatic Backup Directory	Automatic Backup Directory	Directory per Backup Automatico
+ALARM_DATA	Alarm Data	Alarm Data	Alarm Data	Allarmi
+AND_PARMS	And Parameters	And Parameters	And Parameters	E Parametri
+ASENSOR_LIST	Analog Sensor List	Analog Sensor List	Analog Sensor List	Lista Sensori Analogici
+AUTO_BUP	Auto Backup	Auto Backup	Auto Backup	Auto Backup
+AUTO_BUP_TITLE	Automatic Data Backup	Automatic Data Backup	Automatic Data Backup	Backup Dati Automatico
+AUTO_BUPS	Automatic Backups	Automatic Backups	Automatic Backups	Backup automatici
+BACKING_UP	Backing Up...	Backing Up...	Backing Up...	Back Up in corso...
+BACKUP	Backup	Backup	Backup	Backup
+BACKUP_LIST	Backup List	Backup List	Backup List	Lista dei Backup
+BR_TITLE	Backup and Restore	Backup and Restore	Backup and Restore	Backup e Ripristino
+BUP_LIST_TITLE	Backup from Backup List File	Backup from Backup List File	Backup from Backup List File	Backup dalla Lista dei File di Backup
+BUP_SETUPS	Backup Setups, shots, parameter data, alarms, and downtimes.	Backup Setups, shots, parameter data, alarms, and downtimes.	Backup Setups, shots, parameter data, alarms, and downtimes.	Backup Configurazioni, Iniezioni, Parametri, Allarmi, e Fermi Macchina.
+BUP_SHOTS	Backup shots that have been added to the backup list file.	Backup shots that have been added to the backup list file.	Backup shots that have been added to the backup list file.	Backup di Iniezioni aggiunte alla lista dei file di Backup.
+BUP_TITLE	Backup Setups and Data	Backup Setups and Data	Backup Setups and Data	Backup Impostazioni e Dati
+BUP_ZIP_FILE	Backup Zip File	Backup Zip File	Backup Zip File	Backup Zip File
+CANT_LOAD_MA	Source machine cannot be loaded!	Source machine cannot be loaded!	Source machine cannot be loaded!	Macchina da cui copiare non può essere caricata!
+CHOOSE_ZIP	Choose Zip File to Load	Choose Zip File to Load	Choose Zip File to Load	Selezionare File Zip da caricare
+CLICK_AUTO	Click an Automatic Backup to load those part setups.	Click an Automatic Backup to load those part setups.	Click an Automatic Backup to load those part setups.	Seleziona un Backup Automatico per caricare le Configurazioni Stampo.
+COPYING_SETUPS	Copying Setups...	Copying Setups...	Copying Setups...	Copiando i Setup...
+CREATE	Create	Create	Create	Crea
+CREATE_AUTO_DIR	Create or change the name of the Automatic Backup Directory	Create or change the name of the Automatic Backup Directory	Create or change the name of the Automatic Backup Directory	Crea o cambia il nome della Directory di Backup Automatica 
+CREATE_RES_PT	Create New Restore Points	Create New Restore Points	Create New Restore Points	Crea Nuovi Punti di Ristoro 
+CREATING_DIR	Creating the directory... 	Creating the directory... 	Creating the directory... 	Creando la directory... 
+DATA_TYPES	Data Types	Data Types	Data Types	Tipo di Dati
+DEBUG_BUP	Debug Setup File Backup	Debug Setup File Backup	Debug Setup File Backup	Eliminare i File Setup di Backup 
+DEF_PATH	C:\autoback\current	C:\autoback\current	C:\autoback\current	
+DEL_SHOTS	Delete Shots	Delete Shots	Delete Shots	Eliminare le curve
+DEL_TITLE	Delete Data	Delete Data	Delete Data	Eliminare i Dati
+DELETING...	Deleting...	Deleting...	Deleting...	Eliminando...
+DEST_MA	Destination Machine	Destination Machine	Destination Machine	Destinazione di Macchina
+DIR_CREATE_FAIL	Unable to create the destination directory	Unable to create the destination directory	Unable to create the destination directory	Incapace di creare la destinazione di directory
+EX_ZIP_PATH	e.g. C:\VISI-BACKUPS\BACKUP.ZIP	e.g. C:\VISI-BACKUPS\BACKUP.ZIP	e.g. C:\VISI-BACKUPS\BACKUP.ZIP	e.g. C:\VISI-BACKUPS\BACKUP.ZIP
+EXAMPLE:	Example:	Example:	Example:	Esempio:
+FOLLOWING_SHOTS	The following shots will be backed up	The following shots will be backed up	The following shots will be backed up	Le curve seguenti verranno archiviate 
+FT_BD_LIST	FasTrak2 Board List	FasTrak2 Board List	FasTrak2 Board List	Lista di schede FasTrak2 
+HAVE_NEW_MA	You have created one or more new machines.	You have created one or more new machines.	You have created one or more new machines.	Hai creato una o più macchine nuove.
+LAST50	Save Last 50 Shots	Save Last 50 Shots	Save Last 50 Shots	Salva le ultime 50 curve
+LOAD_ZIP	Load Zip File	Load Zip File	Load Zip File	Carica File Zip
+MA_INTRO	Machine : 	Machine : 	Machine : 	Macchina : 
+MA_ON_OTHER_CO	Machine is on another computer.	Machine is on another computer.	Machine is on another computer.	La Macchina è su un altro computer.
+MON_OFF	Monitoring should be TURNED OFF. Do you wish to continue restoring?	Monitoring should be TURNED OFF. Do you wish to continue restoring?	Monitoring should be TURNED OFF. Do you wish to continue restoring?	Il Monitoraggio verrà INTERROTTO. Si desidera continuare il ripristino?
+MOST_RECENT	Most Recent	Most Recent	Most Recent	Più Recente
+MUST_BE_AT_CO	You must be at that computer to restore.	You must be at that computer to restore.	You must be at that computer to restore.	Il ripristino deve avvenire sull'altro computer.
+NEED_RESTART	These won't be visible in any currently running programs until you restart the True-Trak 2020 software.	These won't be visible in any currently running programs until you restart the True-Trak 2020 software.	These won't be visible in any currently running programs until you restart the True-Trak 2020 software.	Non saranno visibili in nessun programma aperto attualmente finché il software True-Trak 2020 non verrà riavviato.
+NEED_ZIP_NAME	You must supply a name for the ZIP file.	You must supply a name for the ZIP file.	You must supply a name for the ZIP file.	Fornire un nome per il file ZIP.
+NEW_RES_PT	Create a New Restore Point	Create a New Restore Point	Create a New Restore Point	Creare un Nuovo Restore Point
+NEXT_SHOT	Next Shot Number	Next Shot Number	Next Shot Number	Prossimo Numero di Curva
+NO_BUP	Unable to Backup Data	Unable to Backup Data	Unable to Backup Data	Impossibile applicare il Backup dei Dati
+NO_DEST_MA	Destination Machine Not Found	Destination Machine Not Found	Destination Machine Not Found	Destinazione della Macchina Non Trovata
+NO_DISK	No Disk in Drive	No Disk in Drive	No Disk in Drive	Nessun Disco nel Drive
+NO_EXES_DIR	No EXES directory found	No EXES directory found	No EXES directory found	Nessun EXE trovato nella directory 
+NO_MA	No Machine: Create it first using Machine Setup	No Machine: Create it first using Machine Setup	No Machine: Create it first using Machine Setup	Nessuna Macchina: Crearla usando prima il Setup della Macchina 
+NO_MA_ON_WS	You should not create machines on a workstation	You should not create machines on a workstation	You should not create machines on a workstation	Impossibile creare macchine su una stazione di lavoro
+NO_ROOT	You cannot backup to a root directory	You cannot backup to a root directory	You cannot backup to a root directory	Impossibile applicare un backup sulla root directory 
+NO_SAVE_TO_BUP_DIR	Cannot save to the \V5\BACKUP folder	Cannot save to the \V5\BACKUP folder	Cannot save to the \V5\BACKUP folder	Impossibile salvare nella cartella \V5\BACKUP 
+NO_ZIP_DIR	Cannot create directory for Zip file.	Cannot create directory for Zip file.	Cannot create directory for Zip file.	Impossibile creare una directory per il file Zip.
+NOTE	Note	Note	Note	Nota
+NOTE:	Note:	Note:	Note:	Nota:
+NOTHING_TO_DO	You have not selected anything to do	You have not selected anything to do	You have not selected anything to do	Nessuna attività selezionata 
+OPERATION	Operation	Operation	Operation	Operazione
+PA_INTRO	  Part : 	  Part : 	  Part :	  Parte : 
+PRESS_CREATE	Press Create to make a restore point of the current setups. All machine and part setups will be saved.	Press Create to make a restore point of the current setups. All machine and part setups will be saved.	Press Create to make a restore point of the current setups. All machine and part setups will be saved.	Premere "Creare" per fare un nuovo restore point per i setup correnti. Tutte le macchine e parti dei setup verranno salvati.
+PRESS_SAVE	Press Save to make this the current Auto Backup directory and create a current backup.	Press Save to make this the current Auto Backup directory and create a current backup.	Press Save to make this the current Auto Backup directory and create a current backup.	Premere "Salva" per trasferire la directory sull'Auto Backup corrente e creare un backup corrente. 
+PURGE_ALARMS	Purge Alarm Summaries	Purge Alarm Summaries	Purge Alarm Summaries	Elimina Allarmi 
+PURGE_DATA	Purge Data	Purge Data	Purge Data	Elimina Dati
+PURGE_DOWN	Purge Downtimes	Purge Downtimes	Purge Downtimes	Elimina Fermi-macchina
+PURGE_OPT	Purge Options for Profiles	Purge Options for Profiles	Purge Options for Profiles	Elimina opzioni per i profili 
+RESTORE	Restore	Restore	Restore	Restore
+RESTORE_DATA	Restore data from previous backups.	Restore data from previous backups.	Restore data from previous backups.	Ripristina dati dai backup precedenti.
+RESTORE_TITLE	Restore Setups and Data	Restore Setups and Data	Restore Setups and Data	Ripristina Setup e Dati
+RESTORING	Restoring...	Restoring...	Restoring...	Ripristinando...
+RESTORING_CUR_PA	You are about to restore the CURRENT PART on this machine!	You are about to restore the CURRENT PART on this machine!   You are about to restore the CURRENT PART on this machine!   Si sta ripristinando la PARTE CORRENTE su questa macchina! 	
+SAVELIST	Create SaveList	Create SaveList	Create SaveList	Crea Lista di Salvataggio
+SCRAP_DOWN	Scrap/Downtime	Scrap/Downtime	Scrap/Downtime	Scrap/Downtime
+SEMAPHOR_FAIL	Cannot lock the machine semaphor db	Cannot lock the machine semaphor db	Cannot lock the machine semaphor db	Impossibile monitorare il semaforo db di macchina 
+SETUPS	Setups	Setups	Setups	Configurazioni
+SHOT_PARMS	Shot Parameters	Shot Parameters	Shot Parameters	Parametri Iniezione
+SHOT_PROS	Shot Profiles	Shot Profiles	Shot Profiles	Curve Iniezione
+ST_GLOBALS	SureTrak Globals	SureTrak Globals	SureTrak Globals	SureTrak Generale
+TRY_AGAIN	Try Again?	Try Again?	Try Again?	Riprova?
+ZIP_FILES	Zip Files	Zip Files	Zip Files	File Zip
+ZIP_CREATE_FAIL	No Zip File was Created	No Zip File was Created	No Zip File was Created	Nessun File Zip è stato creato

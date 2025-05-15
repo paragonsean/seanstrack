@@ -1,0 +1,1 @@
+cl /nologo /MTd /W3 /Zp1 /Z7 /D "WIN32" /D "_CONSOLE" /D "DEBUG" ctest.cpp ..\debuglib\v5subs.lib user32.lib

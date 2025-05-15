@@ -1,0 +1,28 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: JeditRes - Win32 Debug--------------------
+</h3>
+
+
+Microsoft (R) Program Maintenance Utility   Version 6.00.8168.0
+Copyright (C) Microsoft Corp 1988-1998. All rights reserved.
+
+ cl /nologo /MTd /W3 /Zp1 /Z7 /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /Fp"debug/jeditres.pch" /YX"windows.h" /Fo"debug/" /c jeditres.cpp
+jeditres.cpp
+ cl /nologo /MTd /W3 /Zp1 /Z7 /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /Fp"debug/jeditres.pch" /YX"windows.h" /Fo"debug/" /c windowlist.cpp
+windowlist.cpp
+ cl /nologo /MTd /W3 /Zp1 /Z7 /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /Fp"debug/jeditres.pch" /YX"windows.h" /Fo"debug/" /c vtwcontrol.cpp
+vtwcontrol.cpp
+ rc /l 0x409 /fo"debug\jeditres.res" jeditres.rc
+ link libcmtd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib comctl32.lib advapi32.lib shell32.lib uuid.lib mpr.lib  ..\debuglib\v5subs.lib /nologo /subsystem:windows /incremental:no /pdb:"debug\jeditres.pdb" /NODEFAULTLIB:libcmt.lib /debug /machine:I386 /out:"debug/jeditres.exe" debug\jeditres.obj debug\windowlist.obj debug\vtwcontrol.obj debug\jeditres.res
+
+
+
+<h3>Results</h3>
+jeditres.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

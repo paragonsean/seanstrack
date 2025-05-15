@@ -1,0 +1,32 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: profile - Win32 Debug--------------------
+</h3>
+
+
+Microsoft (R) Program Maintenance Utility   Version 6.00.8168.0
+Copyright (C) Microsoft Corp 1988-1998. All rights reserved.
+
+ cl /nologo /MTd /W3 /Od /Zp1 /Z7 /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /Fp"debug\profile.pch" /YX"windows.h" /Fo"debug/" /Fd"debug\\" /c profile.cpp
+profile.cpp
+ cl /nologo /MTd /W3 /Od /Zp1 /Z7 /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /Fp"debug\profile.pch" /YX"windows.h" /Fo"debug/" /Fd"debug\\" /c dconfig.cpp
+dconfig.cpp
+ cl /nologo /MTd /W3 /Od /Zp1 /Z7 /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /Fp"debug\profile.pch" /YX"windows.h" /Fo"debug/" /Fd"debug\\" /c master.cpp
+master.cpp
+ cl /nologo /MTd /W3 /Od /Zp1 /Z7 /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /Fp"debug\profile.pch" /YX"windows.h" /Fo"debug/" /Fd"debug\\" /c paramwin.cpp
+paramwin.cpp
+ rc /l 0x409 /fo"debug\profile.res" /d "NDEBUG" profile.rc
+ link libcmtd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib comctl32.lib advapi32.lib shell32.lib uuid.lib ..\debuglib\v5subs.lib /NODEFAULTLIB:LIBC.LIB ..\debuglib\dundas.lib /nologo /subsystem:windows /incremental:no /pdb:"debug\profile.pdb" /debug /machine:I386 /out:"debug/profile.exe" debug\profile.obj debug\alarmexp.obj debug\bitmapcl.obj  debug\box.obj debug\chospart.obj debug\chosshot.obj debug\colordef.obj  debug\colors.obj debug\corner.obj debug\ctrlimit.obj debug\dbarcfg.obj  debug\dconfig.obj debug\downbar.obj debug\editop.obj debug\editshif.obj  debug\export.obj  debug\fixaxis.obj debug\gridclas.obj debug\isalarm.obj debug\master.obj  debug\mplot.obj debug\mulprint.obj debug\olmsted.obj debug\paramhis.obj debug\paramwin.obj debug\password.obj  debug\plot.obj debug\rtmlist.obj debug\savepro.obj debug\status.obj debug\tcconfig.obj  debug\trend.obj debug\viewpara.obj debug\vlbclass.obj debug\xaxis.obj debug\xdcrplot.obj  debug\profile.res
+ copy debug\profile.exe \v5\exes
+        1 file(s) copied.
+
+
+
+<h3>Results</h3>
+profile.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

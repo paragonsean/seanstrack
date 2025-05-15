@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Choose Your Servo Amplifier Board</title>
+    <script>
+        function clickMVO(){
+            window.opener.chooseBoardTypePic("mvo");
+            cancel();
+        }
+
+        function clickDigital(){
+            window.opener.chooseBoardTypePic("digital");
+            cancel();
+        }
+
+        function cancel(){
+            window.close();
+        }
+    </script>
+</head>
+<body>
+<p>Click on the board you have.</p>
+<p>The upper one is the older MVO-06596 External Servo Amp board.</p>
+<p>The lower one is the new Digital Servo Amp that plugs directory into the Sure-Trak2 External Interface.</p>
+<img src="../public/images/mvo_06596.png" alt="MVO-06596" onclick="clickMVO()"/><br>
+<img src="../public/images/digital_servo_amp.png" alt="Digital Servo Amp" onclick="clickDigital()"/>
+<br>
+<button onclick="cancel()" id="cancel_button">Cancel</button>
+</body>
+</html>

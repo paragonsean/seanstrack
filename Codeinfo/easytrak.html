@@ -1,0 +1,104 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title>EasyTrak</title>
+<style type="text/css">
+<!--
+span.boxed   { background-color: floralwhite }
+span.indent1 { margin-left: 0.5in }
+span.indent2 { margin-left: 1.5in }
+ul li {list-style: disc }
+-->
+</style>
+</head>
+
+<body>
+<center><h3>EasyTrak</h3></center>
+<p>
+The EasyTrak screen is shown below. The <b>Current Position</b> is the position of the
+rod.
+<p>
+The <b>Velocity Averages</b> each represent the average velocity over the range
+below the value. For example, in the screen below the first range is from 0 to .05 inches. The
+average velocity in this range during the last shot was 5.47 ips.
+<p>
+The shot is controled in the region under the <b>Control Settings</b>.
+<p>
+On the left are the positions and percent valve openings for each position. The first position
+is always 0.00.
+<p>
+To the right of these are the four Limit Switch Positions. These switches will be closed
+when the current position meets or exceeds the corresponding position and will be opened when the
+current position is less than the corresponding position.
+<p>
+To the right of this is the <b>Tie Bar Monitor</b> which shows the current tonnage of each
+strain gauge and the total.
+<p>
+<center>
+<table border bgcolor=floralwhite>
+<tr>
+<td>
+<pre>
+                       ----------------------------
+                      | Current Position |   14.21 |
+    &ltF2&gt Save          ----------------------------
+ -----------------------------------------------------------------------
+|                           Velocity Averages                           |
+|-----------------------------------------------------------------------|
+|        5.47     |       11.76     |       23.91     |       40.73     |
+|----------------- ----------------- ----------------- -----------------|
+|   0.00 |   0.05 |   5.00 |   6.50 |   7.50 |   9.50 |  10.00 ³ 15.50  |
+ -----------------------------------------------------------------------
+
+  -----------------------------------   --------------------------------
+ |          Control Settings         | |        Tie Bar Monitor         |
+  -----------------------------------   --------------------------------
+  ------------------  ---------------   --------------------------------
+ |        | % Valve ||Limit |        | |    2548.43     |    2343.50    |
+ |Position|   Open  ||Switch|Position| |  Top Operator  |   Top Helper  |
+ |------------------||---------------|  --------------------------------
+ |   0.00 |   1.0 % ||  #1  |   3.00 |           |   17654   |
+ |   2.00 |   5.0 % ||  #2  |   5.00 |           |   Total   |
+ |   4.50 |  25.4 % ||  #3  |   7.00 |  --------------------------------
+ |   7.00 |  50.0 % ||  #4  |   9.00 | |    2548.43     |    2343.50    |
+ |  10.00 ³ 100.0 % | ---------------  |Bottom Operator | Bottom Helper |
+  ------------------                    --------------------------------
+</pre>
+</td>
+</tr>
+</table>
+</center>
+<p>
+You can use the arrow keys to move from one field to another. When you press the enter key the
+cursor is automatically moved to the next field.
+<p>
+Note: Any change to a field is <font color="red"><b>immediately</b></font> sent to the EasyTrak board.
+Because of this you should <b>not</b> make changes during a shot.
+<p>
+Pressing the <b>&ltF2&gt</b> key saves the current settings to disk. This is also done when the
+program exits. These settings are read in when the program starts.
+<p>
+The <b>SENSORS.TXT</b> file tells the program what hardware is being used. The first entry in the file
+describes the settings for the position sensor.
+<p>
+This is followed by four listings, one for each of the sensors connected
+to the four analog inputs.
+<p>
+Finally there is a setting for the minimum output voltage desired and the voltage range represented
+by a 100% valve open. The default settings for this are shown below.
+<p>
+;Min voltage [0, 10)<br>
+0.0<br>
+;Voltage Range (0, 10-min];<br>
+10.0
+<p>
+If you need an output voltage range of 1 to 5 volts you would use the following settings.
+<p>
+;Min voltage [0, 10)<br>
+1.0<br>
+;Voltage Range (0, 10-min];<br>
+4.0
+
+</body>
+</html>
+

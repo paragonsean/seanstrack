@@ -1,0 +1,15 @@
+<workspace name="TrueTrak">
+	<project path="editpart\editpart.aep" default="true"/>
+	<project path="subs\subs.aep"/>
+	<project path="include\include.aep"/>
+	<project path="ft2\ft2.aep"/>
+	<open_files>
+		<file path="editpart544\EDITPART.CPP"/>
+		<file path="editpart544\extern.h"/>
+		<file path="editpart544\resource.h"/>
+		<file path="ft2\board_monitor.cpp"/>
+		<file path="include\FTANALOG.H"/>
+		<file path="include\PARAM.H"/>
+	</open_files>
+</workspace>
+

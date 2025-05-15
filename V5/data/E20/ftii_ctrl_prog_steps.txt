@@ -1,0 +1,4 @@
+.022 UD1=-2000   #Set valve to something
+#.025 VA180AC40P60_E1.34
+.075 UD1=-2000      	#Park valve
+.129 UD1=-2000      	#Park valve

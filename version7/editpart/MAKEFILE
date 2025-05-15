@@ -1,0 +1,42 @@
+OPS = -c -v -tWM -WE
+
+editpart.exe : editpart.obj partdata.obj edparam.obj drawstr.obj save_dos.obj calc.obj editpart.res
+  TLink32 @&&|
+   -Tpe -aa -c -x +
+\APPS\BC5\LIB\c0w32.obj+
+editpart.obj+
+edparam.obj+
+calc.obj+
+drawstr.obj+
+partdata.obj+
+save_dos.obj
+editpart.exe
+
+..\lib\v5subs.lib+
+\APPS\BC5\LIB\import32.lib+
+\APPS\BC5\LIB\cw32mt.lib
+
+|
+   brc32 editpart.res editpart.exe
+   copy editpart.exe \v5\exes
+
+editpart.obj :  editpart.cpp ..\include\param.h ..\include\ftanalog.h ..\include\stsetup.h
+  Bcc32 $(OPS) editpart.cpp
+
+edparam.obj :  edparam.cpp ..\include\param.h ..\include\ftanalog.h
+  Bcc32 $(OPS) edparam.cpp
+
+partdata.obj :  partdata.cpp
+  Bcc32 $(OPS) partdata.cpp
+
+calc.obj :  calc.cpp
+  Bcc32 $(OPS) calc.cpp
+
+drawstr.obj :  drawstr.cpp
+  Bcc32 $(OPS) drawstr.cpp
+
+save_dos.obj :  save_dos.cpp
+  Bcc32 $(OPS) save_dos.cpp
+
+editpart.res : editpart.rc resource.h
+   brcc32 editpart.rc

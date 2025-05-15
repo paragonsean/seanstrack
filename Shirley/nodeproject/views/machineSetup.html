@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title id="machine_setup_text">Machine Setup</title>
+    <script src="../public/javascripts/lib/jquery-2.1.4.min.js"></script>
+    <script src="../public/javascripts/module/translation.js"></script>
+    <script src="../public/javascripts/module/data.js"></script>
+    <script src="../public/javascripts/module/table.js"></script>
+    <script src="../public/javascripts/module/io.js"></script>
+    <script src="../public/javascripts/class/Machine.js"></script>
+    <script src="../public/javascripts/parm/visiparm.js"></script>
+    <script src="../public/javascripts/class/Dcurve.js"></script>
+    <script src="../node_modules/async/lib/async.js"></script>
+    <script>
+        //get the current language of the page
+        var lang = <%- JSON.stringify(lang) %>;
+        translation(".." + translations_path + "/" + machine_setup_xml,lang);
+
+        var reqMachine = new XMLHttpRequest();
+        var reqMachineSetup = [];
+        var machines = []; //list of machine classes
+        var selectID; //selected machine's index
+
+        var dcurveList = []; //array of dcurve class
+
+        function askServer(){
+            var sourceFolder = "../getDirectories" + "?" + encodeURIComponent("data");
+            reqMachine.open("GET",sourceFolder,true);
+            reqMachine.onreadystatechange = handleServerResponse;
+            reqMachine.send();
+        }
+
+        /***********************************************************************
+         *                         handleServerResponse                         *
+         ***********************************************************************/
+        function handleServerResponse(){
+            if((reqMachine.readyState == 4) && (reqMachine.status == 200)) {
+                var machineList = reqMachine.responseText.split(",");
+                var count = 0;
+                for(var i = 0; i < machineList.length; i++) {
+                    (function(i) {
+                        var machineName = machineList[i];
+                        var setupFile = ".." + data_path + "/" + machineName + "/" + machine_setup_file;
+                        reqMachineSetup[i] = new XMLHttpRequest();
+                        reqMachineSetup[i].open("GET", setupFile, true);
+                        reqMachineSetup[i].onreadystatechange = function() {
+                            if ((reqMachineSetup[i].readyState == 4) && (reqMachineSetup[i].status == 200)) {
+                                var readData = readWAtt(reqMachineSetup[i].responseText);
+                                var attValue = readData["attValue"];
+                                //create machine object to store all fields
+                                machines[i] = new Machine(attValue,machineName);
+                                count++;
+                                if(count==machineList.length){
+                                    async.series([
+                                        function(callback) {
+                                            document.getElementById("machine_table").innerHTML = makeOneColumnTable(machineList);
+                                            callback(null,"1");
+                                        }, function(callback){
+                                            selectID = 0;
+                                            callback(null,"2");
+                                        },function(callback){
+                                            iniDcurveSelection();
+                                            callback(null,"3");
+                                        },function(callback){
+                                            selectRow("machine_table",initialize);
+                                            callback(null,"4");
+                                        },
+                                        function(callback){
+                                            initialize(selectID);
+                                           callback(null,"5");
+                                        }
+                                    ],function(err,results){
+                                        if(err) throw err;
+                                    });
+                                }
+                            }
+                        }
+
+                        reqMachineSetup[i].send();
+                    })(i);
+                }
+            }
+        }
+
+        function initialize(index){
+            //update selectID
+            selectID = index;
+            checkRadioWNameValue("machine_type_radio",machines[index].machineType);
+            selectWIDValue("rod_pitch",machines[index].rodPitch);
+            checkBox("has_hmi_checkbox",machines[index].hasHMI);
+            hasHmiChange();
+            checkBox("has_binary_checkbox",machines[index].hasBinaryValve);
+            hasBinaryChange();
+            $("#pulse_output").html(machines[index].binaryValvePulseWire);
+            setTextbox("pulse_time_textbox",machines[index].binaryValvePulseTime);
+            setTextbox("devent_time_textbox",machines[index].binaryValveDeventTime);
+            checkBox("has_suretrak_checkbox",machines[index].hasPressureControl);
+            hasSuretrakChange();
+            setTextbox("valve_setting",machines[index].valveSettingAfterJogShot);
+            setBoardType();
+            setTextbox("impact_points_position",machines[index].positionBaseImpactPoints);
+            setTextbox("impact_points_time",machines[index].timeBaseImpactPoints);
+            setTextbox("machine_down",machines[index].downtimeTimeout);
+            setTextbox("cycle_start",machines[index].autoShotTimeout);
+            setTextbox("quadrature_divisor",machines[index].quadratureDivisor);
+            checkBox("turn_limit_switch",machines[index].lsOffAtEOS);
+            checkBox("biscuit",machines[index].useTimeToMeasureBiscuit);
+            checkRadioWNameValue("calculate_parameters_radio",machines[index].postImpactPressureType);
+            selectWIDValue("differential_curve_type",machines[selectID].differentialCurveNumber);
+            iniPressureType();
+        }
+
+        function setBoardType(){
+            if(machines[selectID].hasDigitalServo == "T"){
+                $("#board_type_digital").prop("checked",true);
+            }
+            else{
+                $("#board_type_mvo").prop("checked",true);
+            }
+        }
+
+        function newMachine(){
+            //open a child window and let users enter the new machine's name
+          window.open("createMachine.html", "", "", "height=400,width=400");
+        }
+
+        function copyMachine(newMachineName){
+            if(newMachineName){
+                var newMachine = machines[selectID].copyAtt(newMachineName);
+                //save selectID as selectIDbefore;
+                var selectIDbefore = selectID;
+                machines[machines.length] = newMachine;
+                addRowOneColumn("machine_table",machines.length-1,newMachineName,initialize);
+                createMachineFolder(newMachineName,selectIDbefore);
+            }
+        }
+
+        function createMachineFolder(newMachineName,selectIDb4){
+            var createMachine = new XMLHttpRequest();
+            createMachine.open("GET","../createMachine?srcDir=" + encodeURIComponent("data/" + machines[selectIDb4].name) + "&dstDir=" + encodeURIComponent("data/" + newMachineName),true);
+            createMachine.onreadystatechange = function(){
+                if((createMachine.readyState == 4) && (createMachine.status == 200)) {
+                    //save the current machine settings to the new machine_setup.csv
+                    var newMachine = machines[machines.length-1];
+                    var val = newMachine.getValArr();
+                    var att = newMachine.getAttArr();
+                    var result = writeWAtt(att,val);
+                    var updateNewMachineSetup = new XMLHttpRequest();
+                    updateNewMachineSetup.open("POST","../data/"+newMachine.name+"/machine_setup.csv?"+encodeURI(result));
+                    updateNewMachineSetup.onreadystatechange = function(){};
+                    updateNewMachineSetup.send();
+                }
+            };
+            createMachine.send();
+        }
+
+        function deleteMachine(){
+            //check monitoring status of the machine???
+            if(confirm("You are about to delete ALL information about this machine. Do you wish to Continue?")){
+                var selectIDbe4 = selectID;
+                var machineNamebe4 = machines[selectID].name;
+                //remove line in table
+                var table = document.getElementById("machine_table");
+                table.deleteRow(selectID);
+                table.getElementsByTagName("tr")[0].click();
+                //remove element in machines array
+                machines.splice(selectIDbe4,1);
+                //delete folder
+                var deleteFolder = new XMLHttpRequest();
+                var deleteFolderUrl = encodeURIComponent("data/" + machineNamebe4);
+                deleteFolder.open("GET","/deleteFolder?"+deleteFolderUrl,true);
+                deleteFolder.onreadystatechange = function(){}
+                deleteFolder.send();
+            }else{}
+
+        }
+
+        function iniDcurveSelection(){
+            //read the dcurve.txt
+            var dcurve = new XMLHttpRequest();
+            dcurve.open("GET","/data/DCURVE.TXT");
+            dcurve.onreadystatechange = function(){
+                if((dcurve.readyState == 4) && (dcurve.status == 200)){
+                    var rawData = dcurve.responseText;
+                    var arr = readWOAtt(rawData);
+                    var result = "";
+                    for(var i = 0; i < arr.length; i++){
+                        dcurveList[i] = new Dcurve(arr[i]);
+                        result += "<option value='" + dcurveList[i].index + "'>" + dcurveList[i].name + "</option>";
+                    }
+                    $("#differential_curve_type").html(result);
+                    //find the value for current selected machine
+                    $("#differential_pressure").attr("disabled",true);
+                }
+            }
+            dcurve.send();
+        }
+
+        function iniPressureType(){
+            if(machines[selectID].differentialCurveNumber == "0"){
+                if(machines[selectID].postImpactPressureType == "512"){
+                    alert("You should choose a different Parameter Pressure type");
+                }
+                else{
+                    $("#differential_pressure").attr("disabled",true);
+                }
+            }
+            else{
+                $("#differential_pressure").attr("disabled",false);
+            }
+        }
+
+        function saveChanges(){
+            for (var i = 0; i < machines.length; i++) {
+                var newMachine = machines[i];
+                var val = newMachine.getValArr();
+                var att = newMachine.getAttArr();
+                var result = writeWAtt(att, val);
+                reqMachineSetup[i].open("POST", "../data/" + newMachine.name + "/machine_setup.csv?" + encodeURI(result));
+                reqMachineSetup[i].onreadystatechange = function () {};
+                reqMachineSetup[i].send();
+            }
+        }
+
+        /***********************************************************************
+         *                     A LOT OF CHANGE FUNCTIONS APPROACHING...       *
+         ***********************************************************************/
+        function machineTypeChange(){
+            machines[selectID].machineType = getRadioValueWName("machine_type_radio");
+        }
+
+        function rodPitchChange(){
+            machines[selectID].rodPitch = getValueWID("rod_pitch");
+        }
+
+        function hasHmiChange(){
+            if(document.getElementById("has_hmi_checkbox").checked){
+                $("#has_binary_checkbox").removeAttr("disabled");
+                checkBox("has_binary_checkbox",machines[selectID].hasBinaryValve);
+            }
+            else{
+                $("#has_binary_checkbox").attr("disabled",true);
+                $("#has_binary_checkbox").attr("checked",false);
+                $("#pulse_output").attr("disabled",true);
+                $("#pulse_time_textbox").attr("disabled",true);
+                $("#devent_time_textbox").attr("disabled",true);
+            }
+            machines[selectID].hasHMI = getCheckboxValueWID("has_hmi_checkbox");
+        }
+
+        function hasBinaryChange(){
+            if(document.getElementById("has_binary_checkbox").checked){
+                $("#pulse_output").removeAttr("disabled");
+                $("#pulse_time_textbox").removeAttr("disabled");
+                $("#devent_time_textbox").removeAttr("disabled");
+            }
+            else{
+                $("#pulse_output").attr("disabled",true);
+                $("#pulse_time_textbox").attr("disabled",true);
+                $("#devent_time_textbox").attr("disabled",true);
+            }
+            machines[selectID].hasBinaryValve = getCheckboxValueWID("has_binary_checkbox");
+        }
+
+        function pulseOutput(){
+            window.open("chooseWire.html","","");
+        }
+
+        function wireChange(wireNumber){
+            $("#pulse_output").html(wireNumber);
+            machines[selectID].binaryValvePulseWire = wireNumber;
+        }
+
+        function pulseTimeChange(){
+            machines[selectID].binaryValvePulseTime = getValueWID("pulse_time_textbox");
+        }
+
+        function deventTimeChange(){
+            machines[selectID].binaryValveDeventTime = getValueWID("devent_time_textbox");
+        }
+
+        function hasSuretrakChange(){
+            if(document.getElementById("has_suretrak_checkbox").checked){
+                $("#valve_setting").removeAttr("disabled");
+                $("#board_type_mvo").removeAttr("disabled");
+                $("#board_type_digital").removeAttr("disabled");
+                $("#board_type_choose_button").removeAttr("disabled");
+            }
+            else{
+                $("#valve_setting").attr("disabled",true);
+                $("#board_type_mvo").attr("disabled",true);
+                $("#board_type_digital").attr("disabled",true);
+                $("#board_type_choose_button").attr("disabled",true);
+            }
+            machines[selectID].hasPressureControl = getCheckboxValueWID("has_suretrak_checkbox");
+        }
+
+        function boardTypeChange(){
+            var hasDigital = getRadioValueWName("board_type_radio");
+            if(hasDigital == "digital"){
+                machines[selectID].hasDigitalServo = "T";
+            }
+            else{
+                machines[selectID].hasDigitalServo = "F";
+            }
+        }
+
+        function chooseBoardType(){
+            window.open("chooseBoardType.html", "", "", "height=400,width=400");
+        }
+
+        function chooseBoardTypePic(input){
+            if(input=="digital"){
+                $("#board_type_digital").prop("checked",true);
+                machines[selectID].hasDigitalServo = "T";
+            }
+            else{
+                $("#board_type_mvo").prop("checked",true);
+                machines[selectID].hasDigitalServo = "F";
+            }
+        }
+
+        function impactPointsPositionChange(){
+            machines[selectID].positionBaseImpactPoints = getValueWID("impact_points_position");
+        }
+
+        function impactPointsTimeChange(){
+            machines[selectID].timeBaseImpactPoints = getValueWID("impact_points_time");
+        }
+
+        function machineDownChange(){
+            machines[selectID].downtimeTimeout = getValueWID("machine_down");
+        }
+
+        function cycleStartChange(){
+            machines[selectID].autoShotTimeout = getValueWID("cycle_start");
+        }
+
+        function quadratureDivisorChange(){
+            machines[selectID].quadratureDivisor = getValueWID("quadrature_divisor");
+        }
+
+        function valveSettingChange(){
+            machines[selectID].valveSettingAfterJogShot = getValueWID("valve_setting");
+        }
+
+        function turnLimitSwitchChange(){
+            machines[selectID].lsOffAtEOS = getCheckboxValueWID("turn_limit_switch");
+        }
+
+        function biscuitChange(){
+            machines[selectID].useTimeToMeasureBiscuit = getCheckboxValueWID("biscuit");
+        }
+
+        function calculateParametersChange(){
+            machines[selectID].postImpactPressureType = getRadioValueWName("calculate_parameters_radio");
+        }
+
+        function dcurveChange(){
+            machines[selectID].differentialCurveNumber = getValueWID("differential_curve_type");
+            iniPressureType();
+        }
+
+        function editEquations(){
+            window.open("editEquations.html", "", "", "height=400,width=400");
+        }
+    </script>
+    <style>
+        #create_new_machine_text{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        #delete_the_current_machine_text{
+            position: absolute;
+            top: 10px;
+            left: 160px;
+        }
+        #machine_table_box{
+            width:100px;
+            height:500px;
+            position:absolute;
+            top:30px;
+            left:10px;
+        }
+        #machine_text{
+            position:relative;
+            top:10px;
+            left:10px;
+        }
+        #machine_table{
+            display: block;
+            width: 100px;
+            height: 450px;
+            border-style: solid;
+            border-color: grey;
+            border-width: 1px;
+            overflow: auto;
+            position: relative;
+            top:10px;
+            left:0px;
+        }
+        #machine_type_box{
+            position:absolute;
+            top:45px;
+            left: 140px;
+        }
+        #rod_pitch_box{
+            position:absolute;
+            top:140px;
+            left:140px;
+        }
+        #hmi_box{
+            position:absolute;
+            top: 200px;
+            left:140px;
+        }
+        #has_suretrak_box{
+            position:absolute;
+            top:360px;
+            left:140px;
+        }
+        #board_type_box{
+            position:absolute;
+            top:400px;
+            left:140px;
+        }
+        #impact_points_box{
+            position:absolute;
+            top:45px;
+            left:390px;
+        }
+        #timeout_box{
+            position:absolute;
+            top:155px;
+            left:390px;
+        }
+        #calculate_parameters_box{
+            position:absolute;
+            top:45px;
+            left:630px;
+        }
+        #differential_curve_type_box{
+            position:absolute;
+            top:175px;
+            left:630px;
+        }
+        #quadrature_divisor_box{
+            position: absolute;
+            top:260px;
+            left:390px;
+        }
+        #valve_setting_box{
+            position: absolute;
+            top:300px;
+            left:390px;
+        }
+        #turn_limit_switch_box{
+            position: absolute;
+            top:340px;
+            left:390px;
+        }
+        #biscuit_box{
+            position:absolute;
+            top:380px;
+            left:390px;
+        }
+        #save_changes{
+            position:absolute;
+            top:420px;
+            left:550px;
+        }
+    </style>
+</head>
+<body onload="askServer()">
+<button type="button" id="create_new_machine_text" onclick="newMachine()">Create New Machine</button>
+<button type="button" id="delete_the_current_machine_text" onclick="deleteMachine()">Delete the Current Machine</button>
+<div id="machine_table_box">
+    <div id="machine_text">Machine</div>
+    <table id="machine_table"></table>
+</div>
+<form>
+    <fieldset id="machine_type_box">
+        <legend id="machine_type_text">Machine Type</legend>
+        <input type="radio" id="hot_chamber" value="2" name="machine_type_radio" onchange="machineTypeChange()">
+        <label for="hot_chamber" id="hot_chamber_label">Hot Chamber</label><br>
+        <input type="radio" id="cold_chamber" value="1" name="machine_type_radio" onchange="machineTypeChange()">
+        <label for="cold_chamber" id="cold_chamber_label">Cold Chamber</label>
+    </fieldset>
+    <div id="rod_pitch_box">
+        <label for="rod_pitch" id="rod_pitch_text">Rod Pitch</label><br>
+        <select id="rod_pitch" onchange="rodPitchChange()">
+            <option value="0.4">0.4</option>
+            <option value="1.6">1.6</option>
+            <option value="100">100</option>
+            <option value="10P">10P</option>
+            <option value="1MM">1MM</option>
+            <option value="20P">20P</option>
+            <option value="26P">26P</option>
+            <option value="2MM">2MM</option>
+            <option value="4MM">4MM</option>
+        </select>
+    </div>
+    <fieldset id="hmi_box">
+        <input type="checkbox" value="has hmi" id="has_hmi_checkbox" onchange="hasHmiChange()">
+        <label for="has_hmi_checkbox" id="hmi_control_text">HMI Control</label><br>
+        <input type="checkbox" value="has binary" id="has_binary_checkbox" disabled onchange="hasBinaryChange()">
+        <label for="has_binary_checkbox" id="with_binary_valve_text">with Binary Valve</label><br>
+        <button id="pulse_output" onclick="pulseOutput()" type="button" style="width:30px;height:20px;"></button>
+        <label for="pulse_output" id="pulse_output_text">Pulse Output</label><br>
+        <input type="text" id="pulse_time_textbox" style="width:20px" disabled onchange="pulseTimeChange()">
+        <label for="pulse_time_textbox" id="pulse_time_text">Pulse Time</label><br>
+        <input type="text" id="devent_time_textbox" style="width:20px" disabled onchange="deventTimeChange()">
+        <label for="devent_time_textbox" id="devent_time_text">Devent Time</label>
+    </fieldset>
+    <div id="has_suretrak_box">
+        <input type="checkbox" id="has_suretrak_checkbox" onchange="hasSuretrakChange()">
+        <label for="has_suretrak_checkbox" id="sure_trak2_control_text">Sure-Trak2 Control</label>
+    </div>
+    <fieldset id="board_type_box">
+        <legend id="servo_amplifier_board_type_text">Servo Amplifier Board Type</legend>
+        <input type="radio" name="board_type_radio" id="board_type_mvo" value="mvo" disabled onchange="boardTypeChange()">
+        <label for="board_type_mvo" id="mvo_text">MVO-06596</label><br>
+        <input type="radio" name="board_type_radio" id="board_type_digital" value="digital" disabled onchange="boardTypeChange()">
+        <label for="board_type_digital" id="digital_servo_amp_text">Digital Servo Amp</label><br>
+        <button id="board_type_choose_button" type="button" onclick="chooseBoardType()" disabled>Choose</button>
+    </fieldset>
+        <fieldset id="impact_points_box">
+        <legend id="number_of_impact_points_text">Number of Impact Points</legend>
+        <input type="text" id="impact_points_position" style="width:30px" onchange="impactPointsPositionChange()">
+        <label for="impact_points_position" id="impact_points_position_text">Position</label><br>
+        <input type="text" id="impact_points_time" style="width:30px" onchange="impactPointsTimeChange()">
+        <label for="impact_points_time" id="impact_points_time_text">Time</label>
+    </fieldset>
+    <fieldset id="timeout_box">
+        <legend id="timeout_text">Timeout(Sec.)</legend>
+        <input type="text" id="machine_down" style="width:30px" onchange="machineDownChange()">
+        <label for="machine_down" id="machine_down_text">Machine Down</label><br>
+        <input type="text" id="cycle_start" style="width:30px" onchange="cycleStartChange()">
+        <label for="cycle_start" id="cycle_start_text">Cycle Start</label>
+    </fieldset>
+    <fieldset id="calculate_parameters_box">
+        <legend id="calculate_parameters_using_text">Calculate Parameters Using</legend>
+        <input type="radio" name="calculate_parameters_radio" id="head_pressure" value="16" onchange = "calculateParametersChange()">
+        <label for="head_pressure" id="head_pressure_text">Head Pressure</label><br>
+        <input type="radio" name="calculate_parameters_radio" id="rod_pressure" value="8" onchange = "calculateParametersChange()">
+        <label for="rod_pressure" id="rod_pressure_text">Rod Pressure</label><br>
+        <input type="radio" name="calculate_parameters_radio" id="differential_pressure" value="512" onchange = "calculateParametersChange()">
+        <label for="rod_pressure" id="differential_pressure_text">Differential Pressure</label>
+    </fieldset>
+    <div id="differential_curve_type_box">
+        <select id="differential_curve_type" onchange="dcurveChange()"></select><br>
+        <button type="button" onclick="editEquations()" id="edit_equations">Edit Equations</button>
+    </div>
+    <div id="quadrature_divisor_box">
+        <input type="text" id="quadrature_divisor" style="width:30px" onchange="quadratureDivisorChange()">
+        <label for="quadrature_divisor" id="quadrature_divisor_text">Quadrature Divisor[1-255]</label>
+    </div>
+    <div id="valve_setting_box">
+        <input type="text" id="valve_setting" style="width:30px" disabled onchange="valveSettingChange()">
+        <label for="valve_setting" id="valve_setting_text">Valve Setting (%) After Jog Shot (See Help)</label>
+    </div>
+    <div id="turn_limit_switch_box">
+        <input type="checkbox" id="turn_limit_switch" onchange="turnLimitSwitchChange()">
+        <label for="turn_limit_switch" id="turn_limit_switch_text">Turn Limit Switch Off at EOS</label>
+    </div>
+    <div id="biscuit_box">
+        <input type="checkbox" id="biscuit" onchange="biscuitChange()">
+        <label for="biscuit" id="biscuit_text">Replace Biscuit Time Delay with Time to Measure Biscuit</label>
+    </div>
+    <button type="button" id="save_changes" onclick="saveChanges()">Save Changes</button>
+</form>
+</body>
+</html>

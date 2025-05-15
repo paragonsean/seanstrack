@@ -1,0 +1,16 @@
+; This file is maintained by HCW. Do not modify this file directly.
+
+[OPTIONS]
+HCW=0
+ERRORLOG=Cpk.err
+LCID=0x409 0x0 0x0 ;English (United States)
+REPORT=Yes
+CONTENTS=Topic1
+TITLE=Statistical Summary Help
+HLP=cpk.hlp
+
+[FILES]
+.\cpk.rtf
+
+[MAP]
+topic1=0x0001

@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: ft2 - Win32 Debug--------------------
+</h3>
+
+
+Microsoft (R) Program Maintenance Utility   Version 6.00.8168.0
+Copyright (C) Microsoft Corp 1988-1998. All rights reserved.
+
+ cl /nologo /MTd /W3 /Od /Zp1 /Z7 /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /Fp"debug\ftii.pch" /YX"windows.h"  /Fo"debug/" /Fd"debug\\" /c board_monitor.cpp
+board_monitor.cpp
+ link libcmtd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib comctl32.lib advapi32.lib shell32.lib uuid.lib wsock32.lib ..\debuglib\v5subs.lib /NODEFAULTLIB:LIBC.LIB /map /nologo /subsystem:windows /incremental:no /pdb:"debug\ft2.pdb" /debug /machine:I386 /out:"debug/ft2.exe" debug\ft2.obj debug\board_monitor.obj debug\shotsave.obj debug\skip.obj debug\ft2.res
+ copy debug\ft2.exe \v5\exes
+        1 file(s) copied.
+ copy debug\ft2.exe \v5\exes\monall.exe
+        1 file(s) copied.
+
+
+
+<h3>Results</h3>
+ft2.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

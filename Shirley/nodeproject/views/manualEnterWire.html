@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title id="title">Enter the Output Wire Number</title>
+    <script src="../public/javascripts/lib/jquery-2.1.4.min.js"></script>
+    <script src="../public/javascripts/module/io.js"></script>
+    <script>
+        $(document).ready(function(){
+            setTextbox("wire",window.opener.document.getElementById("pulse_output").innerHTML);
+        });
+
+        function okok(){
+            var wireNumber = document.getElementById("wire").value;
+            window.opener.wireChange(wireNumber);
+            window.close();
+        }
+
+        function cancelcancel(){
+            window.close();
+        }
+    </script>
+</head>
+<body>
+<p>Wires 1-16 are monitor outputs.</p>
+<p>Wires 17-32 are control outputs.</p>
+<label for="wire" id="wire_number">Wire Number</label><input type="text" id="wire">
+<br>
+<button id="okok" onclick="okok()">OK</button>
+<button id="cancelcancel" onclick="cancelcancel()">Cancel</button>
+</body>
+</html>

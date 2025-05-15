@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<params>
+<param id="MachineName" desc="Machine Name" textValue="P4"/>
+<param id="PartName" desc="Part Name" textValue="Endshiel"/>
+<param id="Velocity_Pos" units="IN" curValType="0" curValue="0"/>
+<param id="Velocity_Time" units="IPS" curValType="0" curValue="0"/>
+<param id="Analog0_Pos" units="PSI" curValType="0" curValue="0"/>
+<param id="Analog0_Time" units="PSI" curValType="0" curValue="0"/>
+<param id="Analog1_Pos" units="PSI" curValType="0" curValue="0"/>
+<param id="Analog1_Time" units="PSI" curValType="0" curValue="0"/>
+<param id="Analog2_Pos" units="VOLTS" curValType="0" curValue="0"/>
+<param id="Analog2_Time" units="VOLTS" curValType="0" curValue="0"/>
+<param id="Analog3_Pos" units="VOLTS" curValType="0" curValue="0"/>
+<param id="Analog3_Time" units="VOLTS" curValType="0" curValue="0"/>
+<param id="Time_Pos" units="MS" curValType="0" curValue="0"/>
+<param id="Position_Time" units="MS" curValType="0" curValue="0"/>
+<param id="PosInc" units="IN" curValType="1" curValue="0.0125" Precision="3"/>
+<param id="TimeInc" units="MS" curValType="1" curValue="1" Precision="3"/>
+<param id="FillTime" desc="Fill Time" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="MS" />
+<param id="TotalShotTime" desc="Total Shot Time" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="MS" />
+<param id="SlowShotTime" desc="Slow Shot Time" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="MS" />
+<param id="FastShotTime" desc="Fast Shot Time" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="MS" />
+<param id="FastShotRiseTime" desc="Fast Shot Rise Time" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="MS" />
+<param id="CycleTime" desc="Cycle Time" halEnabled="True" halValue="32.0" hwlEnabled="True" hwlValue="28.0" lalEnabled="True" lalValue="25.0" lwlEnabled="True" lwlValue="27.0" curValType="2" curValue="1.0" precision="3" units="SEC" />
+<param id="TimeIntervalOne" desc="Time Interval One" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="MS" />
+<param id="TimeIntervalTwo" desc="Time Interval Two" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="MS" />
+<param id="UserTimeIntThree" desc="User Time Int Three" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="MS" />
+<param id="UserTimeIntFour" desc="User Time Int Four" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="MS" />
+<param id="UserTimeIntFive" desc="User Time Int Five" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="MS" />
+<param id="BiscuitSize" desc="Biscuit Size" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IN" />
+<param id="CalcStartFastShot" desc="Calc Start Fast Shot" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IN" />
+<param id="IntensPressure" desc="Intens Pressure" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="PSI" />
+<param id="IntensRiseTime" desc="Intens Rise Time" halEnabled="True" halValue="51.0" hwlEnabled="True" hwlValue="47.0" lalEnabled="True" lalValue="40.0" lwlEnabled="True" lwlValue="42.0" curValType="2" curValue="1.0" precision="3" units="MS" />
+<param id="EffPeakIntens" desc="Eff Peak Intens" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="PSI" />
+<param id="ImpactPressureToPeak" desc="Impact Pressure To Peak" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="PSI" />
+<param id="IntensSqueezeDistance" desc="Intens Squeeze Distance" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IN" />
+<param id="SleeveFullVelocity" desc="Sleeve Full Velocity" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IPS" />
+<param id="RunnerFullVelocity" desc="Runner Full Velocity" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IPS" />
+<param id="AvgFillVelocity" desc="Avg Fill Velocity" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IPS" />
+<param id="UserVelocityPosOne" desc="User Velocity Pos One" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IPS" />
+<param id="UserVelocityPosTwo" desc="User Velocity Pos Two" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IPS" />
+<param id="UserVelocityPosThree" desc="User Velocity Pos Three" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IPS" />
+<param id="UserVelocityPosFour" desc="User Velocity Pos Four" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IPS" />
+<param id="UserAvgVelRangeOne" desc="User Avg Vel Range One" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IPS" />
+<param id="UserAvgVelRangeTwo" desc="User Avg Vel Range Two" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IPS" />
+<param id="UserAvgVelRangeThree" desc="User Avg Vel Range Three" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IPS" />
+<param id="UserAvgVelRangeFour" desc="User Avg Vel Range Four" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IPS" />
+<param id="PositionP1" desc="Position P1" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IN" />
+<param id="PositionP2" desc="Position P2" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IN" />
+<param id="PositionP3" desc="Position P3" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IN" />
+<param id="AvgSlowShotVelocity" desc="Avg Slow Shot Velocity" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IPS" />
+<param id="AvgFastShotVelocity" desc="Avg Fast Shot Velocity" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IPS" />
+<param id="FastShotDistance" desc="Fast Shot Distance" halEnabled="False" halValue="0.0" hwlEnabled="False" hwlValue="0.0" lalEnabled="False" lalValue="0.0" lwlEnabled="False" lwlValue="0.0" curValType="2" curValue="1.0" precision="3" units="IN" />
+</params>

@@ -1,0 +1,44 @@
+﻿Build started 5/15/25 12:18:33 AM.
+     1>Project "C:\Sources\Version8\createpart\createpart.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt createpart.cpp touni.cpp
+         touni.cpp
+         createpart.cpp
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"Debug\createpart.res" createpart.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Sources\Version8\truetrak\Debug\createpart.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Sources\Version8\truetrak\Debug\createpart.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Sources\Version8\truetrak\Debug\createpart.lib" /MACHINE:X86 Debug\createpart.res
+         Debug\createpart.obj
+         Debug\touni.obj
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: __thiscall STRING_CLASS::STRING_CLASS(void)" (??0STRING_CLASS@@QAE@XZ) referenced in function "unsigned char __cdecl parse_command_line(char *)" (?parse_command_line@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: __thiscall STRING_CLASS::~STRING_CLASS(void)" (??1STRING_CLASS@@QAE@XZ) referenced in function "unsigned char __cdecl parse_command_line(char *)" (?parse_command_line@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall STRING_CLASS::isempty(void)" (?isempty@STRING_CLASS@@QAEEXZ) referenced in function "unsigned char __cdecl parse_command_line(char *)" (?parse_command_line@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::operator=(char const *)" (??4STRING_CLASS@@QAEXPBD@Z) referenced in function "char * __cdecl extract_part_name(class STRING_CLASS &,char *)" (?extract_part_name@@YAPADAAVSTRING_CLASS@@PAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::operator=(class STRING_CLASS const &)" (??4STRING_CLASS@@QAEXABV0@@Z) referenced in function "unsigned char __cdecl startup(char *)" (?startup@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::strip(void)" (?strip@STRING_CLASS@@QAEXXZ) referenced in function "unsigned char __cdecl parse_command_line(char *)" (?parse_command_line@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: static void __cdecl ANALOG_SENSOR::shutdown(void)" (?shutdown@ANALOG_SENSOR@@SAXXZ) referenced in function "void __cdecl shutdown(void)" (?shutdown@@YAXXZ)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: static unsigned char __cdecl ANALOG_SENSOR::get(void)" (?get@ANALOG_SENSOR@@SAEXZ) referenced in function "unsigned char __cdecl startup(char *)" (?startup@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: void __thiscall GENERIC_LIST_CLASS::rewind(void)" (?rewind@GENERIC_LIST_CLASS@@QAEXXZ) referenced in function "public: void __thiscall MACHINE_NAME_LIST_CLASS::rewind(void)" (?rewind@MACHINE_NAME_LIST_CLASS@@QAEXXZ)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: __thiscall INI_CLASS::~INI_CLASS(void)" (??1INI_CLASS@@QAE@XZ) referenced in function "unsigned char __cdecl startup(char *)" (?startup@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "char * __cdecl findchar(char,char *)" (?findchar@@YAPADDPAD@Z) referenced in function "unsigned char __cdecl parse_command_line(char *)" (?parse_command_line@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "char * __cdecl findstring(char const *,char *)" (?findstring@@YAPADPBDPAD@Z) referenced in function "unsigned char __cdecl parse_command_line(char *)" (?parse_command_line@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "void __cdecl units_shutdown(void)" (?units_shutdown@@YAXXZ) referenced in function "void __cdecl shutdown(void)" (?shutdown@@YAXXZ)
+     1>createpart.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl units_startup(void)" (?units_startup@@YAEXZ) referenced in function "unsigned char __cdecl startup(char *)" (?startup@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl copypart(class STRING_CLASS &,class STRING_CLASS &,class STRING_CLASS &,class STRING_CLASS &,class STRING_CLASS &,class STRING_CLASS &,unsigned int)" (?copypart@@YAEAAVSTRING_CLASS@@00000I@Z) referenced in function "unsigned char __cdecl startup(char *)" (?startup@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "char * __cdecl resource_string(struct HINSTANCE__ *,unsigned int)" (?resource_string@@YAPADPAUHINSTANCE__@@I@Z) referenced in function "char * __cdecl resource_string(unsigned int)" (?resource_string@@YAPADI@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: __thiscall COMPUTER_CLASS::COMPUTER_CLASS(void)" (??0COMPUTER_CLASS@@QAE@XZ) referenced in function "unsigned char __cdecl startup(char *)" (?startup@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: class STRING_CLASS & __thiscall COMPUTER_CLASS::whoami(void)" (?whoami@COMPUTER_CLASS@@QAEAAVSTRING_CLASS@@XZ) referenced in function "unsigned char __cdecl startup(char *)" (?startup@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall COMPUTER_CLASS::startup(void)" (?startup@COMPUTER_CLASS@@QAEEXZ) referenced in function "unsigned char __cdecl startup(char *)" (?startup@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: __thiscall MACHINE_NAME_LIST_CLASS::MACHINE_NAME_LIST_CLASS(void)" (??0MACHINE_NAME_LIST_CLASS@@QAE@XZ) referenced in function "unsigned char __cdecl startup(char *)" (?startup@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: __thiscall MACHINE_NAME_LIST_CLASS::~MACHINE_NAME_LIST_CLASS(void)" (??1MACHINE_NAME_LIST_CLASS@@QAE@XZ) referenced in function "unsigned char __cdecl startup(char *)" (?startup@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall MACHINE_NAME_LIST_CLASS::add_computer(class STRING_CLASS &)" (?add_computer@MACHINE_NAME_LIST_CLASS@@QAEEAAVSTRING_CLASS@@@Z) referenced in function "unsigned char __cdecl startup(char *)" (?startup@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall MACHINE_NAME_LIST_CLASS::next(void)" (?next@MACHINE_NAME_LIST_CLASS@@QAEEXZ) referenced in function "unsigned char __cdecl startup(char *)" (?startup@@YAEPAD@Z)
+     1>createpart.obj : error LNK2019: unresolved external symbol "public: class STRING_CLASS & __thiscall MACHINE_NAME_LIST_CLASS::name(void)" (?name@MACHINE_NAME_LIST_CLASS@@QAEAAVSTRING_CLASS@@XZ) referenced in function "unsigned char __cdecl startup(char *)" (?startup@@YAEPAD@Z)
+     1>createpart.obj : error LNK2001: unresolved external symbol "private: static char * STRING_CLASS::emptystring" (?emptystring@STRING_CLASS@@0PADA)
+     1>C:\Sources\Version8\truetrak\Debug\createpart.exe : fatal error LNK1120: 25 unresolved externals
+     1>Done Building Project "C:\Sources\Version8\createpart\createpart.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.73

@@ -1,0 +1,166 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resrc1.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+MY_ICON                 ICON    DISCARDABLE     "pickwire.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+CHOOSE_WIRE_DIALOG DIALOG DISCARDABLE  0, 0, 359, 321
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Choose Wire"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",CHOOSE_WIRE_CONTROL,"ChooseWireControl",WS_TABSTOP,0,
+                    0,359,268
+    CTEXT           "FT2\nI/O\nNumber",FT2_IO_TB,0,0,40,28,NOT WS_VISIBLE
+    CTEXT           "Virtual\nOutput\nNumber",VIRTUAL_OUTPUT_TB,45,0,40,28,
+                    NOT WS_VISIBLE
+    CTEXT           "Fieldbus\nOutput\nNumber",FIELDBUS_OUTPUT_TB,90,0,40,28,
+                    NOT WS_VISIBLE
+    LTEXT           "\n\nNormal Use",NORMAL_USE_TB,135,0,220,28,NOT
+                    WS_VISIBLE
+    LISTBOX         DEVICENET_LISTBOX,0,28,359,240,LBS_SORT |
+                    LBS_USETABSTOPS | NOT WS_VISIBLE | WS_VSCROLL |
+                    WS_TABSTOP
+    PUSHBUTTON      "Opto Control",CONTROL_OUTPUT_PB,0,291,49,14,BS_CENTER |
+                    NOT WS_TABSTOP
+    PUSHBUTTON      "Opto Monitor",MONITOR_OUTPUT_PB,49,291,48,14,BS_CENTER |
+                    NOT WS_TABSTOP
+    PUSHBUTTON      "DeviceNet Control",DEVICENET_CONTROL_PB,97,291,65,14,BS_CENTER | NOT WS_TABSTOP
+    PUSHBUTTON      "DeviceNet Monitor",DEVICENET_MONITOR_PB,162,291,65,14,BS_CENTER | NOT WS_TABSTOP
+    PUSHBUTTON      "OK",IDOK,141,307,42,14,BS_CENTER | NOT WS_TABSTOP
+    PUSHBUTTON      "Cancel",IDCANCEL,186,307,41,14,BS_CENTER | NOT
+                    WS_TABSTOP
+    LTEXT           "Static",CHOOSE_WIRE_INFO_TBOX,0,268,359,22,WS_BORDER
+    LTEXT           "Click on the module you wish to use or press Tab to use the next module.",
+                    IDC_STATIC,289,290,61,17
+    PUSHBUTTON      "Manual Entry",MANUAL_CHOICE_PB,227,291,55,14,BS_CENTER |
+                    NOT WS_TABSTOP
+END
+
+FT_OUTPUT_WIRE_DIALOG DIALOG DISCARDABLE  0, 0, 253, 100
+STYLE DS_3DLOOK | WS_POPUP | WS_CAPTION
+CAPTION "Enter the Output Wire Number"
+FONT 10, "MS Sans Serif"
+BEGIN
+    RTEXT           "Wire Number",IDC_STATIC,3,40,62,12
+    EDITTEXT        FT_OUTPUT_WIRE_EBOX,68,38,30,14,ES_AUTOHSCROLL
+    LTEXT           "Opto Monitor",IDC_STATIC,149,15,99,8
+    LTEXT           "Opto Control",IDC_STATIC,149,24,102,8
+    PUSHBUTTON      "OK",IDOK,73,83,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,83,50,14
+    LTEXT           "Static",CHOOSE_WIRE_INFO_TBOX,0,60,253,18,WS_BORDER
+    LTEXT           "Wires",IDC_STATIC,115,4,19,8
+    LTEXT           "Output Type",IDC_STATIC,150,4,38,8
+    LTEXT           "1 - 16",IDC_STATIC,116,15,17,8
+    LTEXT           "17 - 18",IDC_STATIC,116,24,20,8
+    LTEXT           "101 - 121",IDC_STATIC,116,33,27,8
+    LTEXT           "201 - 221",IDC_STATIC,116,42,27,8
+    LTEXT           "DeviceNet Monitor",IDC_STATIC,149,33,102,8
+    LTEXT           "DeviceNet Control",IDC_STATIC,149,42,102,8
+END
+
+BROUSE_DIALOG DIALOG DISCARDABLE  0, 0, 240, 120
+STYLE WS_POPUP | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,186,6,50,14,BS_CENTER
+    PUSHBUTTON      "Cancel",IDCANCEL,186,26,50,14,BS_CENTER
+    PUSHBUTTON      "Choose Wire",CHOOSE_WIRE_PB,186,46,50,14,BS_CENTER
+    LISTBOX         DIRECTORY_LISTBOX,28,28,116,66,LBS_SORT | WS_VSCROLL |
+                    WS_TABSTOP
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "resrc1.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE
+BEGIN
+    "FT_OUTPUT_WIRE_DIALOG", DIALOG
+    BEGIN
+        BOTTOMMARGIN, 83
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

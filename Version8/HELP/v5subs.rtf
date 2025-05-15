@@ -1,0 +1,329 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033{\fonttbl{\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f2\fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f22\froman\fcharset238\fprq2 Times New Roman CE;}{\f23\froman\fcharset204\fprq2 Times New Roman Cyr;}{\f25\froman\fcharset161\fprq2 Times New Roman Greek;}{\f26\froman\fcharset162\fprq2 Times New Roman Tur;}
+{\f27\froman\fcharset186\fprq2 Times New Roman Baltic;}{\f34\fmodern\fcharset238\fprq1 Courier New CE;}{\f35\fmodern\fcharset204\fprq1 Courier New Cyr;}{\f37\fmodern\fcharset161\fprq1 Courier New Greek;}{\f38\fmodern\fcharset162\fprq1 Courier New Tur;}
+{\f39\fmodern\fcharset186\fprq1 Courier New Baltic;}}{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;
+\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{\widctlpar\adjustright \fs20\cgrid \snext0 Normal;}{\*
+\cs10 \additive Default Paragraph Font;}{\s15\widctlpar\adjustright \f2\fs20\cgrid \sbasedon0 \snext15 Plain Text;}{\s16\widctlpar\adjustright \f2\fs16\cgrid \sbasedon0 \snext16 ProgramingHelp;}{\s17\widctlpar\adjustright \fs20\cgrid \sbasedon0 \snext17 
+footnote text;}{\*\cs18 \additive \super \sbasedon10 footnote reference;}}{\info{\author Jay Wood}{\operator Jay Wood}{\creatim\yr1999\mo11\dy17\hr12\min21}{\revtim\yr1999\mo12\dy2\hr8\min24}{\version4}{\edmins51}{\nofpages223}{\nofwords2379}
+{\nofchars13564}{\*\company Visi-Trak Corporation}{\nofcharsws16657}{\vern89}}\paperw11520\margl0\margr0\margt0\margb0 \widowctrl\ftnbj\aenddoc\hyphcaps0\formshade\viewkind4\viewscale100\pgbrdrhead\pgbrdrfoot \fet0\sectd 
+\psz1\linex0\endnhere\sectdefaultcl {\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl4
+\pnlcltr\pnstart1\pnindent720\pnhang{\pntxta )}}{\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}
+{\pntxta )}}{\*\pnseclvl8\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}\pard\plain \s15\widctlpar\adjustright \f2\fs20\cgrid {\uldb absolute_value}{\v absolute_value}{
+
+\par }{\uldb adjust_for_units}{\v adjust_for_units}{
+\par }{\uldb resource_string}{\v resource_string}{
+\par \page }{\cs18\super #{\footnote \pard\plain \s17\widctlpar\adjustright \fs20\cgrid {\cs18\super #}{ absolute_value}}${\footnote \pard\plain \s17\widctlpar\adjustright \fs20\cgrid {\cs18\super $}{ absolute_value}}K{\footnote \pard\plain 
+\s17\widctlpar\adjustright \fs20\cgrid {\cs18\super K}{ Absolute Value}}}{absolute_value( float x );
+\par inline float absolute_value( float x )
+\par Simple inline function that returns the absolute value of a float
+\par \page float swap( float & x, float & y );
+\par 
+\par inline void swap( float & x, float & y )
+\par Simple inline function to swap two float values.
+\par \page }{\cs18\super #{\footnote \pard\plain \s17\widctlpar\adjustright \fs20\cgrid {\cs18\super #}{ adjust_for_units}}${\footnote \pard\plain \s17\widctlpar\adjustright \fs20\cgrid {\cs18\super $}{ adjust_for_units}}K{\footnote \pard\plain 
+\s17\widctlpar\adjustright \fs20\cgrid {\cs18\super K}{ Adjust for units;Units, adjusting}}}{adjust_for_units
+\par 
+\par double adjust_for_units( short dest_units_id, double x, short sorc_units_id );
+\par float  adjust_for_units( short dest_units_id, float sorc, short sorc_units_id );
+\par 
+\par This function converts a double or float value from one unit to another.
+\par The unit id's used are those in visiparm.h. 
+\par 
+\par Example: Convert 25.4 from centimeters to inches;
+\par 
+\par #include "..\\include\\visiparm.h
+\par #include "..\\include\\subs.h"
+\par 
+\par double centimeters;
+\par double inches;
+\par 
+\par centimeters = 25.4;
+\par inches = adjust_for_units( INCH_UNITS, centimeters, CM_UNITS );
+\par \page TCHAR   * alphadate( const SYSTEMTIME & sorc );
+\par \page TCHAR   * alphatime( const SYSTEMTIME & sorc );
+\par \page TCHAR *   ascii_double( double sorc );
+\par \page TCHAR   * ascii_float( float sorc );
+\par \page int32     asctoint32( const TCHAR * sorc );
+\par \page unsigned long asctoul( const TCHAR * sorc );
+\par \page BOOLEAN   boolean_from_ini( const TCHAR * fname, const TCHAR * section, const TCHAR * key );
+\par \page void      boolean_to_ini( TCHAR * fname, TCHAR * section, TCHAR * key, BOOLEAN b );
+\par \page TCHAR   * category_name( TCHAR * number_to_match );
+\par \page short     charlen( const TCHAR * sorc, short max_len );
+\par \page short     compare( const TCHAR * s1, const TCHAR * s2, short max_len );
+\par \page float     convert_analog( BOARD_DATA raw_value, ANALOG_SENSOR_SETUP_DATA * ap );
+\par \page void      copychars(   LPTSTR dest, const TCHAR * sorc, short n );
+\par \page void      copyfromstr( LPTSTR dest, const TCHAR * sorc, short n );
+\par \page TCHAR   * copystring( TCHAR * dest, TCHAR * sorc );
+\par \page BOOLEAN   copy_all_files( TCHAR * dest_dir, TCHAR * sorc_dir, BOOLEAN with_subs, BOOLEAN with_compression, HWND w, int id );
+\par BOOLEAN   copy_all_files( TCHAR * dest_dir, TCHAR * sorc_dir, TCHAR * wildname, HWND w, int id );
+\par \page TCHAR   * copy_w_char( TCHAR * dest, TCHAR * sorc, TCHAR c );
+\par \page int32     countchars( TCHAR c, const TCHAR * sorc );
+\par \page BOOLEAN   create_computer_directory( TCHAR * computer_name );
+\par \page BOOLEAN   create_directory( TCHAR * path );
+\par \page TCHAR   * current_part_name( TCHAR * computer, TCHAR * machine );
+\par \page int32     current_shot_number( PART_NAME_ENTRY & p );
+\par \page void      get_current_password_level( void );
+\par \page long      current_sec_since1990( void );
+\par \page int       day_of_the_week( int m, int d, int y );
+\par \page void      dcurve_shutdown( void );
+\par \page BOOLEAN   dcurve_startup( void );
+\par \page ANALOG_SENSOR_SETUP_DATA * default_analog_sensor( void );
+\par \page BOOLEAN   directory_exists( TCHAR * path );
+\par \page WORD      dofyr( WORD month, WORD day, WORD year );
+\par WORD      dofyr( const SYSTEMTIME & st );
+\par \page BOOLEAN   empty_directory( TCHAR * dirname );
+\par BOOLEAN   empty_directory( TCHAR * dirname, TCHAR * fname );
+\par \page void      error_message( short routine_number, short msg_number );
+\par void      error_message( short routine_number, short msg_number, short n );
+\par void      error_message( short routine_number, short msg_number, TCHAR * s );
+\par void      error_message( TCHAR * s,            short msg_number );
+\par void      error_message( TCHAR * s );
+\par \page BOOLEAN   execute_and_wait( TCHAR * command_line, TCHAR * current_directory );
+\par \page double    extdouble( const TCHAR * sorc, short nof_chars );
+\par double    extdouble( const TCHAR * sorc );
+\par \page TCHAR   * extfield( TCHAR * dest, TCHAR * sorc, TCHAR delimiter, int32 maxlen );
+\par \page float     extfloat(  const TCHAR * sorc, short nof_chars );
+\par float     extfloat( const TCHAR * sorc );
+\par \page BOOLEAN   exthms( SYSTEMTIME & t, const TCHAR * s );
+\par \page long      extlong( const TCHAR * sorc, short nof_chars );
+\par long      extlong( const TCHAR * sorc, short nof_chars, int radix );
+\par \page BOOLEAN   extmdy( SYSTEMTIME & t, const TCHAR * s );
+\par \page BOOLEAN   extmmddyy( SYSTEMTIME & t, const TCHAR * s );
+\par \page short     extshort( const TCHAR * sorc, short nof_chars );
+\par \page BOOLEAN   file_exists( TCHAR * path );
+\par \page int32     file_size( TCHAR * path );
+\par \page BOOLEAN   get_file_write_time( SYSTEMTIME & t, TCHAR * fname );
+\par \page BOOLEAN   get_shotsave_semaphore( TCHAR * computer, TCHAR * machine );
+\par \page BOOLEAN   get_startup_part( TCHAR * machine, TCHAR * part );
+\par \page BOOLEAN   get_time_class_from_db( TIME_CLASS & tc, DB_TABLE & db, FIELDOFFSET offset );
+\par \page void      fillchars( LPTSTR dest, TCHAR c, short n );
+\par \page TCHAR   * findchar( TCHAR c, TCHAR * sorc, short maxlen );
+\par TCHAR   * findchar( TCHAR c, TCHAR * sorc );
+\par const TCHAR * findchar( TCHAR c, const TCHAR * sorc );
+\par const TCHAR * findchar( TCHAR c, const TCHAR * sorc, short maxlen );
+\par \page TCHAR   * findstring( const TCHAR * s_to_find, TCHAR * s_to_search );
+\par \page void      fill_part_listbox( HWND w, int box, TCHAR * computer, TCHAR * machine );
+\par \page void      fill_parts_and_counts_listbox( HWND w, int box, TCHAR * computer, TCHAR * machine );
+\par void      fill_parts_and_counts_listbox( HWND w, int box, TCHAR * computer, TCHAR * machine, TCHAR separator );
+\par \page void      fill_parts_and_shot_count_listbox( HWND w, int box, TCHAR * computer, TCHAR * machine );
+\par \page void      fill_shot_listbox( HWND w, int listbox_id, TCHAR * computer, TCHAR * machine, TCHAR * part );
+\par \page void      fix_dde_name( TCHAR * s );
+\par \page void      fix_shotname( TCHAR * s );
+\par \page TCHAR   * fixed_string( double x, int32 left_places, int32 right_places );
+\par \page float     float_from_ini( TCHAR * fname, TCHAR * section, TCHAR * key );
+\par \page void      float_to_ini( TCHAR * fname, TCHAR * section, TCHAR * key, float x );
+\par \page double    double_from_ini( TCHAR * fname, TCHAR * section, TCHAR * key );
+\par \page void      double_to_ini( TCHAR * fname, TCHAR * section, TCHAR * key, double x );
+\par \page ANALOG_SENSOR_SETUP_DATA * find_analog_sensor( short analog_number );
+\par \page int32     free_kilobytes( TCHAR * root );
+\par \page void      free_shotsave_semaphore( void );
+\par \page void      ftoasc( TCHAR * dest, double x );
+\par void      ftoasc( TCHAR * dest, float x  );
+\par \page void      getday( TCHAR * dest, short day );
+\par \page BOOLEAN   get_dcurve_coefficients( float & dest_head_coef, float & dest_rod_coef, short curve_number );
+\par \page BOOLEAN   get_exe_directory( TCHAR * dest );
+\par \page TCHAR   * get_ini_string( const TCHAR * fname, const TCHAR * section, const TCHAR * key );
+\par \page TCHAR   * get_long_ini_string( const TCHAR * fname, const TCHAR * section, const TCHAR * key );
+\par \page void      put_ini_string( const TCHAR * fname, const TCHAR * section, const TCHAR * key, const TCHAR * sorc );
+\par \page unsigned long hextoul( const TCHAR * sorc );
+\par \page TCHAR   * hhmm( int32 hours, int32 minutes );
+\par \page void      init_systemtime_struct( SYSTEMTIME & t );
+\par \page void      insalph( LPTSTR dest, int32 n,  int32 slen, TCHAR c, int32 radix );
+\par void      insalph( LPTSTR dest, double x, int32 slen, TCHAR c );
+\par void      insalph( LPTSTR dest, float x,  int32 slen, TCHAR c );
+\par \page void      int32toasc(  LPTSTR dest, int32 n, int32 radix );
+\par TCHAR   * int32toasc( int32 n );
+\par \page int32     int32_from_ini( TCHAR * fname, TCHAR * section, TCHAR * key );
+\par \page void      int32_to_ini( TCHAR * fname, TCHAR * section, TCHAR * key, int32 i );
+\par \page BOOLEAN   is_numeric( TCHAR c );
+\par \page BOOLEAN   is_removable( TCHAR * path );
+\par \page BOOLEAN   is_time( TCHAR * s );
+\par \page BOOLEAN   kill_directory( TCHAR * dirname );
+\par \page TCHAR   * maketext( int32 n );
+\par TCHAR   * maketext( TCHAR * sorc, int32 chars_to_add );
+\par TCHAR   * maketext( TCHAR * sorc );
+\par \page TCHAR   * machine_computer_name( TCHAR * machine_name );
+\par \page BOOLEAN   machine_exists( TCHAR * computer_to_find, TCHAR * name_to_find );
+\par \page BOOLEAN   monitor_is_running( void );
+\par \page BOOLEAN   part_exists(    TCHAR * computer_to_find, TCHAR * machine_to_find, TCHAR * name_to_find );
+\par BOOLEAN   part_exists( PART_NAME_ENTRY & p );
+\par \page BOOLEAN   make_downtime_record( DB_TABLE & t, SYSTEMTIME & st, TCHAR * cat, TCHAR * subcat, TCHAR * op, TCHAR * part );
+\par \page void      maxfloat( float & x, const float y );
+\par \page void      maxint(     int & x, const   int y );
+\par \page void      maxlong(   long & x, const  long y );
+\par \page void      maxshort( short & x, const short y );
+\par \page void      minfloat( float & x, const float y );
+\par \page void      minint(     int & x, const   int y );
+\par \page void      minlong(   long & x, const  long y );
+\par \page void      minshort( short & x, const short y );
+\par \page void      maxint32( int32 & x, const int32 y );
+\par \page void      minint32( int32 & x, const int32 y );
+\par \page TCHAR   * nextstring( TCHAR * s );
+\par \page BOOLEAN   is_empty( TCHAR * s );
+\par \page BOOLEAN   is_zero( double x );
+\par \page BOOLEAN   is_float_zero( float x );
+\par \page BOOLEAN   not_float_zero( float x );
+\par \page BOOLEAN   parmdata_startup( void );
+\par \page BITSETYPE parmdata_type( short parm_number );
+\par \page TCHAR   * part_name_copy( TCHAR * sorc );
+\par \page void      pixel_equation( float & a, float & b, int32 min_pixel, int32 max_pixel, float min_value, float max_value );
+\par \page void      plot_data( HDC dc, RECT & r, float min_x, float max_x, float min_y, float max_y, float * xp, float * yp, int32 n );
+\par \page void      post_impact_seconds( TCHAR * dest, short n, short ms_per_sample );
+\par \page void      post_impact_n_ms( short * dest_n, short * dest_ms, TCHAR * sorc );
+\par \page short     post_impact_n( short true_ms, TCHAR * sorc );
+\par \page short     readline( TCHAR * dest, HANDLE fh, short buflen );
+\par \page void      remove_char( TCHAR * sorc );
+\par \page BOOLEAN   replace_char_with_null( TCHAR * cp, TCHAR c );
+\par BOOLEAN   replace_char_with_null( TCHAR * cp, const TCHAR * cset );
+\par \page BOOLEAN   replace_tab_with_null( TCHAR * cp );
+\par \page void      reverse( LPTSTR s );
+\par \page void      rjust( LPTSTR s, short n, TCHAR c );
+\par \page BOOLEAN   samedate( const SYSTEMTIME & s1, const SYSTEMTIME & s2 );
+\par \page int32     seconds_difference( SYSTEMTIME & t1, SYSTEMTIME & t2 );
+\par \page int32     seconds_difference( FILETIME & t1,   FILETIME & t2 );
+\par \page float     sec_per_vel_unit( short uid );
+\par \page long      sec_since1990( SYSTEMTIME & t );
+\par \page BOOLEAN   sensor_list_startup( void );
+\par \page void      sensor_list_shutdown( void );
+\par \page BOOLEAN   set_last_shot_number( PART_NAME_ENTRY & p, int32 new_shot_number );
+\par BOOLEAN   set_last_shot_number( TCHAR * computer_name, TCHAR * machine_name, TCHAR * part_name, int32 new_shot_number );
+\par \page void      get_shift_number_and_date( short * shift, SYSTEMTIME * shift_date, const SYSTEMTIME & true_date );
+\par \page short     shift_number( short * shift_dow, const SYSTEMTIME & now );
+\par \page void      shifts_shutdown( void );
+\par \page BOOLEAN   shifts_startup( void );
+\par \page int32     max_parameters_saved( TCHAR * machine );
+\par \page int32     max_profiles_saved( TCHAR * machine );
+\par \page BITSETYPE skip_new_shot_notify( TCHAR * machine, FILETIME time_of_shot );
+\par \page BOOLEAN   skip_reset_machine( TCHAR * machine );
+\par \page void      skip_shutdown( void );
+\par \page BOOLEAN   skip_startup( void );
+\par \page BOOLEAN   strings_are_equal( const TCHAR * s1, const TCHAR * s2, short max_len );
+\par BOOLEAN   strings_are_equal( const TCHAR * s1, const TCHAR * s2 );
+\par \page void      strip( TCHAR * s );
+\par \page TCHAR   * subcategory_name( TCHAR * cat_to_match, TCHAR * subcat_to_match );
+\par \page TCHAR   * ultoascii( unsigned long n, unsigned long radix );
+\par \page TCHAR   * ultoascii( unsigned long n );
+\par \page TCHAR   * ultohex( unsigned long n );
+\par \page void      ul_to_ini( TCHAR * fname, TCHAR * section, TCHAR * key, unsigned long i );
+\par \page unsigned long ul_from_ini( TCHAR * fname, TCHAR * section, TCHAR * key );
+\par \page void      unicode_to_char( char * dest, TCHAR * sorc );
+\par \page void      units_shutdown( void );
+\par \page BOOLEAN   units_startup( void );
+\par \page TCHAR *   units_name( short uid );
+\par \page short     units_id( TCHAR * sorc );
+\par \page BITSETYPE units_type( short uid );
+\par \page BOOLEAN   unknown( TCHAR * cp );
+\par \page BOOLEAN   waitfor_shotsave_semaphor( TCHAR * computer, TCHAR * machine );
+\par \page int32     whole_places( float x );
+\par \page BOOL      writeline( HANDLE fh, TCHAR * sorc );
+\par \page void    append_backslash_to_path( TCHAR * s );
+\par \page void    append_directory_to_path( TCHAR * dest, const TCHAR * sorc );
+\par \page void    append_filename_to_path(  TCHAR * dest, const TCHAR * sorc );
+\par \page void    remove_backslash_from_path( TCHAR * s );
+\par \page BOOLEAN drive_exists( TCHAR * path );
+\par \page BOOLEAN disk_is_in_drive( TCHAR * path );
+\par \page BOOLEAN path_is_drive_only( TCHAR * s );
+\par \page BOOLEAN dir_from_filename( TCHAR * s );
+\par \page BOOLEAN change_shot_number_in_profile( TCHAR * fname, int32 new_shot_number );
+\par \page BOOLEAN copy_profile( PART_NAME_ENTRY & dest, PART_NAME_ENTRY & sorc, int32 shot_number, int32 shot_increment );
+\par \page short   read_parameters_from_profile( float * parameters, TCHAR * fname );
+\par \page /*
+\par --------------
+\par Copypart flags
+\par -------------- */
+\par #define COPY_PART_PARAMETERS       1
+\par #define COPY_PART_CHANNELS         2
+\par #define COPY_PART_MARKS            4
+\par #define COPY_SUBPART_NAMES         8
+\par #define COPY_PART_BASIC            16
+\par #define COPY_PART_ADVANCED         32
+\par #define COPY_PART_USER_POSITIONS   64
+\par #define COPY_PART_REFERENCE_TRACE 128
+\par #define COPY_PART_SURETRAK_SETUP  256
+\par #define COPY_PART_PARAM_NAMES     512
+\par #define COPY_PART_ALL            1023
+\par BOOLEAN copypart( TCHAR * dest_computer, TCHAR * dest_machine, TCHAR * dest_part, TCHAR * sorc_computer, TCHAR * sorc_machine, TCHAR * sorc_part, BITSETYPE flags );
+\par \page BOOLEAN copymachine( TCHAR * computer, TCHAR * machine, MACHINE_CLASS & sorc );
+\par \page int32   average_character_width( HDC dc );
+\par \page int32   character_height( HDC dc );
+\par \page HFONT   create_font( HDC dc, long width, long height, TCHAR * name );
+\par \page RECT    desktop_client_rect( void );
+\par \page void    draw_rectangle( HDC dc, RECT & r, COLORREF color );
+\par \page void    eb_select_all( HWND w );
+\par void    eb_select_all( HWND w, int id );
+\par \page void    fill_rectangle( HDC dc, RECT & r, COLORREF color );
+\par \page BOOLEAN get_cb_select( HWND w, TCHAR * dest );
+\par BOOLEAN get_cb_select( HWND w, int box, TCHAR * dest );
+\par \page short   get_lb_count( HWND w );
+\par short   get_lb_count( HWND w, int box );
+\par \page BOOLEAN get_lb_item_text( HWND w, TCHAR * dest, int i, int max_len );
+\par \page BOOLEAN get_lb_item_text( HWND w, int box, TCHAR * dest, int i, int max_len );
+\par \page BOOLEAN get_lb_select( HWND w, TCHAR * dest );
+\par \page BOOLEAN get_lb_select( HWND w, int box, TCHAR * dest );
+\par \page short   get_lb_select_count( HWND w );
+\par \page short   get_lb_select_count( HWND w, int box );
+\par \page short   get_lb_select_list( INT ** dest, HWND w );
+\par \page short   get_lb_select_list( INT ** dest, HWND w, int box );
+\par \page int32   pixel_width( HDC dc, TCHAR * s );
+\par \page int32   pixel_width( HDC dc, TCHAR * s, int32 nof_chars );
+\par \page void    hourglass_cursor( void );
+\par \page void    lb_select_all( HWND w );
+\par \page void    lb_select_all( HWND w, int box );
+\par \page BOOLEAN get_text( TCHAR * dest, HWND w, int max_len );
+\par \page BOOLEAN get_text( TCHAR * dest, HWND w, int box, int max_len );
+\par \page double get_double_from_ebox( HWND w );
+\par \page double get_double_from_ebox( HWND w, int box );
+\par \page void    limit_text( HWND w, int nof_chars );
+\par \page void    limit_text( HWND w, int box, int nof_chars );
+\par \page void    restore_cursor( void );
+\par \page BOOLEAN set_text( HWND w, const TCHAR * sorc );
+\par \page BOOLEAN set_text( HWND w, int box, const TCHAR * sorc );
+\par \page BOOLEAN set_current_cb_item( HWND w, TCHAR * item_to_find );
+\par \page BOOLEAN set_current_cb_item( HWND w, int box, TCHAR * item_to_find );
+\par \page BOOLEAN set_current_lb_item( HWND w, TCHAR * item_to_find );
+\par \page BOOLEAN set_current_lb_item( HWND w, int box, TCHAR * item_to_find );
+\par \page BOOLEAN is_a_listbox( HWND w );
+\par \page BOOLEAN is_an_editbox( HWND w );
+\par \page BOOLEAN is_checked( HWND w, int button_id );
+\par \page BOOLEAN is_previous_instance( TCHAR * class_name, TCHAR * window_title );
+\par \page BOOLEAN is_windows_nt( void );
+\par \page void    add_to_menu( UINT id, TCHAR * name );
+\par \page BOOL    load_menu( HWND w, TCHAR * menuname, short current_password_level );
+\par \page void    modify_menu_string( UINT id, TCHAR * newname );
+\par \page void    remove_from_menu( UINT id );
+\par \page int     resource_message_box( HWND w, HINSTANCE instance, UINT msg_id, UINT title_id, UINT boxtype );
+\par \page int     resource_message_box( HINSTANCE instance, UINT msg_id, UINT title_id, UINT boxtype );
+\par \page void    resource_message_box( HINSTANCE instance, UINT msg_id, UINT title_id );
+\par \page }{\cs18\super #{\footnote \pard\plain \s17\widctlpar\adjustright \fs20\cgrid {\cs18\super #}{ resource_string}}${\footnote \pard\plain \s17\widctlpar\adjustright \fs20\cgrid {\cs18\super $}{ resource_string}}K{\footnote \pard\plain 
+\s17\widctlpar\adjustright \fs20\cgrid {\cs18\super K}{ Resource String;Loading a resource string}}}{resource_string
+\par TCHAR * resource_string( HINSTANCE instance, UINT resource_id );
+\par 
+\par This function returns a pointer to a static TCHAR array that has been filled with the value of the resource string. The TCHAR array will be changed the next time resource_string is called.
+\par 
+\par Note: this should never be used in any thread except the main one.
+\par \page void    set_checkbox( HWND w, BOOLEAN need_check );
+\par \page void    set_checkbox( HWND w, int id, BOOLEAN need_check );
+\par \page void    shrinkwrap( HWND main_window, HWND dialog_window );
+\par \page void    toggle_menu_view_state( BOOLEAN & state, HWND w, UINT menu_choice_id );
+\par \page LISTBOX_CLASS
+\par 
+\par #include "..\\include\\visiparm.h"
+\par #include "..\\include\\listbox.h"
+\par 
+\par LISTBOX_CLASS lb;
+\par int         * ids;
+\par int           i;
+\par int           n;
+\par TCHAR         s[COMPUTER_NAME_LEN+1];
+\par 
+\par lb.init( ComputerWindow.handle(), COMPUTER_LISTBOX );
+\par n = lb.get_select_list( &ids );
+\par if ( n > 0 )
+\par     \{
+\par     for ( i=0; i<n; i++ )
+\par         lstrcpy( s, lb.item_text(ids[i]) );
+\par 
+\par     delete [] ids;
+\par     \}
+\par 
+\par }}

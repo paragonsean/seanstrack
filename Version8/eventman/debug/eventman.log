@@ -1,0 +1,81 @@
+﻿Build started 5/15/25 12:18:42 AM.
+     1>Project "C:\Sources\Version8\eventman\eventman.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt eventman.cpp mail.cpp
+         mail.cpp
+         eventman.cpp
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"Debug\eventman.res" eventman.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Sources\Version8\truetrak\Debug\eventman.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Sources\Version8\truetrak\Debug\eventman.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Sources\Version8\truetrak\Debug\eventman.lib" /MACHINE:X86 Debug\eventman.res
+         Debug\eventman.obj
+         Debug\mail.obj
+     1>eventman.obj : error LNK2019: unresolved external symbol __imp__InitCommonControls@0 referenced in function _WinMain@16
+     1>eventman.obj : error LNK2019: unresolved external symbol "public: __thiscall STRING_CLASS::STRING_CLASS(void)" (??0STRING_CLASS@@QAE@XZ) referenced in function "void __cdecl append_string_handle(char *,struct HSZ__ *)" (?append_string_handle@@YAXPADPAUHSZ__@@@Z)
+     1>mail.obj : error LNK2001: unresolved external symbol "public: __thiscall STRING_CLASS::STRING_CLASS(void)" (??0STRING_CLASS@@QAE@XZ)
+     1>eventman.obj : error LNK2019: unresolved external symbol "public: __thiscall STRING_CLASS::~STRING_CLASS(void)" (??1STRING_CLASS@@QAE@XZ) referenced in function "void __cdecl append_string_handle(char *,struct HSZ__ *)" (?append_string_handle@@YAXPADPAUHSZ__@@@Z)
+     1>mail.obj : error LNK2001: unresolved external symbol "public: __thiscall STRING_CLASS::~STRING_CLASS(void)" (??1STRING_CLASS@@QAE@XZ)
+     1>eventman.obj : error LNK2019: unresolved external symbol "public: char * __thiscall STRING_CLASS::find(char)" (?find@STRING_CLASS@@QAEPADD@Z) referenced in function "void __cdecl get_poke_data(struct HSZ__ *,struct HDDEDATA__ *)" (?get_poke_data@@YAXPAUHSZ__@@PAUHDDEDATA__@@@Z)
+     1>eventman.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall STRING_CLASS::init(long)" (?init@STRING_CLASS@@QAEEJ@Z) referenced in function "void __cdecl append_string_handle(char *,struct HSZ__ *)" (?append_string_handle@@YAXPADPAUHSZ__@@@Z)
+     1>eventman.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::operator=(char const *)" (??4STRING_CLASS@@QAEXPBD@Z) referenced in function _WinMain@16
+     1>mail.obj : error LNK2001: unresolved external symbol "public: void __thiscall STRING_CLASS::operator=(char const *)" (??4STRING_CLASS@@QAEXPBD@Z)
+     1>eventman.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::operator+=(char const *)" (??YSTRING_CLASS@@QAEXPBD@Z) referenced in function "void __cdecl append_string_handle(char *,struct HSZ__ *)" (?append_string_handle@@YAXPADPAUHSZ__@@@Z)
+     1>mail.obj : error LNK2001: unresolved external symbol "public: void __thiscall STRING_CLASS::operator+=(char const *)" (??YSTRING_CLASS@@QAEXPBD@Z)
+     1>eventman.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::operator+=(class STRING_CLASS const &)" (??YSTRING_CLASS@@QAEXABV0@@Z) referenced in function "void __cdecl show_visi_event(struct DATA_ENTRY *)" (?show_visi_event@@YAXPAUDATA_ENTRY@@@Z)
+     1>mail.obj : error LNK2001: unresolved external symbol "public: void __thiscall STRING_CLASS::operator+=(class STRING_CLASS const &)" (??YSTRING_CLASS@@QAEXABV0@@Z)
+     1>eventman.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall STRING_CLASS::operator==(char const *)" (??8STRING_CLASS@@QAEEPBD@Z) referenced in function "struct DATA_ENTRY * __cdecl find_data(char *,short)" (?find_data@@YAPAUDATA_ENTRY@@PADF@Z)
+     1>mail.obj : error LNK2001: unresolved external symbol "public: unsigned char __thiscall STRING_CLASS::operator==(char const *)" (??8STRING_CLASS@@QAEEPBD@Z)
+     1>eventman.obj : error LNK2019: unresolved external symbol "public: __thiscall COMPUTER_CLASS::COMPUTER_CLASS(void)" (??0COMPUTER_CLASS@@QAE@XZ) referenced in function "int __cdecl init(void)" (?init@@YAHXZ)
+     1>mail.obj : error LNK2001: unresolved external symbol "public: __thiscall COMPUTER_CLASS::COMPUTER_CLASS(void)" (??0COMPUTER_CLASS@@QAE@XZ)
+     1>eventman.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall COMPUTER_CLASS::startup(void)" (?startup@COMPUTER_CLASS@@QAEEXZ) referenced in function "int __cdecl init(void)" (?init@@YAHXZ)
+     1>eventman.obj : error LNK2019: unresolved external symbol "public: __thiscall GENERIC_LIST_CLASS::~GENERIC_LIST_CLASS(void)" (??1GENERIC_LIST_CLASS@@QAE@XZ) referenced in function "void __cdecl `dynamic atexit destructor for 'DataList''(void)" (??__FDataList@@YAXXZ)
+     1>eventman.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall GENERIC_LIST_CLASS::append(void *)" (?append@GENERIC_LIST_CLASS@@QAEEPAX@Z) referenced in function "void __cdecl set_topic_value(char *,short,char *)" (?set_topic_value@@YAXPADF0@Z)
+     1>eventman.obj : error LNK2019: unresolved external symbol "public: void * __thiscall GENERIC_LIST_CLASS::next(void)" (?next@GENERIC_LIST_CLASS@@QAEPAXXZ) referenced in function "struct DATA_ENTRY * __cdecl find_data(char *,short)" (?find_data@@YAPAUDATA_ENTRY@@PADF@Z)
+     1>eventman.obj : error LNK2019: unresolved external symbol "public: void __thiscall GENERIC_LIST_CLASS::remove_all(void)" (?remove_all@GENERIC_LIST_CLASS@@QAEXXZ) referenced in function "void __cdecl cleanup(void)" (?cleanup@@YAXXZ)
+     1>eventman.obj : error LNK2019: unresolved external symbol "public: void __thiscall GENERIC_LIST_CLASS::rewind(void)" (?rewind@GENERIC_LIST_CLASS@@QAEXXZ) referenced in function "struct DATA_ENTRY * __cdecl find_data(char *,short)" (?find_data@@YAPAUDATA_ENTRY@@PADF@Z)
+     1>eventman.obj : error LNK2019: unresolved external symbol "bool __cdecl bool_from_ini(char const *,char const *,char const *)" (?bool_from_ini@@YA_NPBD00@Z) referenced in function "int __stdcall main_proc(struct HWND__ *,unsigned int,unsigned int,long)" (?main_proc@@YGHPAUHWND__@@IIJ@Z)
+     1>eventman.obj : error LNK2019: unresolved external symbol "short __cdecl compare(char const *,char const *,short)" (?compare@@YAFPBD0F@Z) referenced in function "void __cdecl get_poke_data(struct HSZ__ *,struct HDDEDATA__ *)" (?get_poke_data@@YAXPAUHSZ__@@PAUHDDEDATA__@@@Z)
+     1>eventman.obj : error LNK2019: unresolved external symbol "char * __cdecl copystring(char *,char const *)" (?copystring@@YAPADPADPBD@Z) referenced in function "void __cdecl append_integer(char *,int)" (?append_integer@@YAXPADH@Z)
+     1>mail.obj : error LNK2001: unresolved external symbol "char * __cdecl copystring(char *,char const *)" (?copystring@@YAPADPADPBD@Z)
+     1>eventman.obj : error LNK2019: unresolved external symbol "char * __cdecl findchar(char,char *)" (?findchar@@YAPADDPAD@Z) referenced in function "void __cdecl save_newmail(char *)" (?save_newmail@@YAXPAD@Z)
+     1>mail.obj : error LNK2001: unresolved external symbol "char * __cdecl findchar(char,char *)" (?findchar@@YAPADDPAD@Z)
+     1>eventman.obj : error LNK2019: unresolved external symbol "void __cdecl int32toasc(char *,long,long)" (?int32toasc@@YAXPADJJ@Z) referenced in function "void __cdecl append_integer(char *,int)" (?append_integer@@YAXPADH@Z)
+     1>mail.obj : error LNK2001: unresolved external symbol "void __cdecl int32toasc(char *,long,long)" (?int32toasc@@YAXPADJJ@Z)
+     1>eventman.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl strings_are_equal(char const *,char const *)" (?strings_are_equal@@YAEPBD0@Z) referenced in function "void __cdecl save_newmail(char *)" (?save_newmail@@YAXPAD@Z)
+     1>mail.obj : error LNK2001: unresolved external symbol "unsigned char __cdecl strings_are_equal(char const *,char const *)" (?strings_are_equal@@YAEPBD0@Z)
+     1>eventman.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl is_previous_instance(char *,char *)" (?is_previous_instance@@YAEPAD0@Z) referenced in function _WinMain@16
+     1>eventman.obj : error LNK2019: unresolved external symbol "char * __cdecl resource_string(struct HINSTANCE__ *,unsigned int)" (?resource_string@@YAPADPAUHINSTANCE__@@I@Z) referenced in function "char * __cdecl resource_string(unsigned int)" (?resource_string@@YAPADI@Z)
+     1>eventman.obj : error LNK2001: unresolved external symbol "private: static char * STRING_CLASS::emptystring" (?emptystring@STRING_CLASS@@0PADA)
+     1>mail.obj : error LNK2001: unresolved external symbol "private: static char * STRING_CLASS::emptystring" (?emptystring@STRING_CLASS@@0PADA)
+     1>mail.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl directory_exists(char *)" (?directory_exists@@YAEPAD@Z) referenced in function "public: unsigned char __thiscall NAME_CLASS::directory_exists(void)" (?directory_exists@NAME_CLASS@@QAEEXZ)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: long __thiscall STRING_CLASS::len(void)" (?len@STRING_CLASS@@QAEJXZ) referenced in function "void __cdecl send_mailslot_event(char *,char *,char *)" (?send_mailslot_event@@YAXPAD00@Z)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::operator=(class STRING_CLASS const &)" (??4STRING_CLASS@@QAEXABV0@@Z) referenced in function "public: void __thiscall REMOTE_COMPUTER_ENTRY::operator=(class REMOTE_COMPUTER_ENTRY const &)" (??4REMOTE_COMPUTER_ENTRY@@QAEXABV0@@Z)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::operator+=(char)" (??YSTRING_CLASS@@QAEXD@Z) referenced in function "void __cdecl show_status(void)" (?show_status@@YAXXZ)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::operator+=(int)" (??YSTRING_CLASS@@QAEXH@Z) referenced in function "void __cdecl read_thread(void *)" (?read_thread@@YAXPAX@Z)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: void __thiscall STRING_CLASS::cat_path(char const *)" (?cat_path@STRING_CLASS@@QAEXPBD@Z) referenced in function "void __cdecl reload_remote_computers(void)" (?reload_remote_computers@@YAXXZ)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall NAME_CLASS::get_exe_dir_file_name(char const *)" (?get_exe_dir_file_name@NAME_CLASS@@QAEEPBD@Z) referenced in function "public: unsigned char __thiscall NAME_CLASS::get_local_ini_file_name(char *)" (?get_local_ini_file_name@NAME_CLASS@@QAEEPAD@Z)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: class STRING_CLASS & __thiscall COMPUTER_CLASS::name(void)" (?name@COMPUTER_CLASS@@QAEAAVSTRING_CLASS@@XZ) referenced in function "void __cdecl reload_remote_computers(void)" (?reload_remote_computers@@YAXXZ)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall COMPUTER_CLASS::load(void)" (?load@COMPUTER_CLASS@@QAEEXZ) referenced in function "void __cdecl new_computer_setup(void)" (?new_computer_setup@@YAXXZ)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall COMPUTER_CLASS::next(void)" (?next@COMPUTER_CLASS@@QAEEXZ) referenced in function "void __cdecl reload_remote_computers(void)" (?reload_remote_computers@@YAXXZ)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: void __thiscall COMPUTER_CLASS::rewind(void)" (?rewind@COMPUTER_CLASS@@QAEXXZ) referenced in function "void __cdecl reload_remote_computers(void)" (?reload_remote_computers@@YAXXZ)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: __thiscall FIFO_CLASS::FIFO_CLASS(void)" (??0FIFO_CLASS@@QAE@XZ) referenced in function "void __cdecl `dynamic initializer for 'SendData''(void)" (??__ESendData@@YAXXZ)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: __thiscall FIFO_CLASS::~FIFO_CLASS(void)" (??1FIFO_CLASS@@QAE@XZ) referenced in function "void __cdecl `dynamic atexit destructor for 'SendData''(void)" (??__FSendData@@YAXXZ)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall FIFO_CLASS::push(void *)" (?push@FIFO_CLASS@@QAEEPAX@Z) referenced in function "void __cdecl to_mailslot(char *,char *)" (?to_mailslot@@YAXPAD0@Z)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: void * __thiscall FIFO_CLASS::pop(void)" (?pop@FIFO_CLASS@@QAEPAXXZ) referenced in function "void __cdecl send_thread(void *)" (?send_thread@@YAXPAX@Z)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: __thiscall INI_CLASS::~INI_CLASS(void)" (??1INI_CLASS@@QAE@XZ) referenced in function "void __cdecl reload_remote_computers(void)" (?reload_remote_computers@@YAXXZ)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall INI_CLASS::set_file(char const *)" (?set_file@INI_CLASS@@QAEEPBD@Z) referenced in function "void __cdecl reload_remote_computers(void)" (?reload_remote_computers@@YAXXZ)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall INI_CLASS::set_section(char const *)" (?set_section@INI_CLASS@@QAEEPBD@Z) referenced in function "void __cdecl reload_remote_computers(void)" (?reload_remote_computers@@YAXXZ)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: unsigned char __thiscall INI_CLASS::find(char const *)" (?find@INI_CLASS@@QAEEPBD@Z) referenced in function "void __cdecl reload_remote_computers(void)" (?reload_remote_computers@@YAXXZ)
+     1>mail.obj : error LNK2019: unresolved external symbol "public: char * __thiscall INI_CLASS::get_string(void)" (?get_string@INI_CLASS@@QAEPADXZ) referenced in function "void __cdecl reload_remote_computers(void)" (?reload_remote_computers@@YAXXZ)
+     1>mail.obj : error LNK2019: unresolved external symbol "char * __cdecl copy_w_char(char *,char *,char)" (?copy_w_char@@YAPADPAD0D@Z) referenced in function "void __cdecl to_mailslot(char *,char *)" (?to_mailslot@@YAXPAD0@Z)
+     1>mail.obj : error LNK2019: unresolved external symbol "char * __cdecl maketext(long)" (?maketext@@YAPADJ@Z) referenced in function "void __cdecl to_mailslot(char *,char *)" (?to_mailslot@@YAXPAD0@Z)
+     1>mail.obj : error LNK2019: unresolved external symbol "unsigned char __cdecl strings_are_equal(char const *,char const *,short)" (?strings_are_equal@@YAEPBD0F@Z) referenced in function "void __cdecl send_thread(void *)" (?send_thread@@YAXPAX@Z)
+     1>mail.obj : error LNK2019: unresolved external symbol "void __cdecl append_filename_to_path(char *,char const *)" (?append_filename_to_path@@YAXPADPBD@Z) referenced in function "void __cdecl send_thread(void *)" (?send_thread@@YAXPAX@Z)
+     1>mail.obj : error LNK2019: unresolved external symbol "void __cdecl resource_message_box(struct HINSTANCE__ *,unsigned int,unsigned int)" (?resource_message_box@@YAXPAUHINSTANCE__@@II@Z) referenced in function "void __cdecl resource_message_box(unsigned int,unsigned int)" (?resource_message_box@@YAXII@Z)
+     1>C:\Sources\Version8\truetrak\Debug\eventman.exe : fatal error LNK1120: 50 unresolved externals
+     1>Done Building Project "C:\Sources\Version8\eventman\eventman.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.54

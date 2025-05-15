@@ -1,0 +1,1742 @@
+<html>
+<head>
+<title>Jay's Log</title>
+
+<style type="text/css">
+
+td.big {
+  font-family: Geneva, Arial, Helvetica, sans-serif;
+  font-size: 16pt;
+  }
+
+</style>
+
+</head>
+
+<body>
+<h3>Friday 27-Sep-02</h3>
+<p>
+Ray Kultzen called from Thomas to remind me that I promised to make the courner parameters
+and trend chart setups part based. He said they are about ready to sign a po that would have
+Al there at the end of Oct and he would like the changes done by then.
+
+I said they would be done.
+
+<h3>Wednesday 02-Oct-02</h3>
+
+Mark asked to let people change the velocity
+column in the suretrak control but nothing else. I did this by changing the <b>Save Changes</b>
+button to <b>Vel. Changes</b> if the password level is not high enough to save changes but is
+&gt;= VelocityChangesLevel in editpart.ini. Because anything in the editor might have been changed, I
+reload the suretrak setup and then change only the velocity changes.
+
+I don't know how many people are going to want this. I suppose I need to put a note somewhere that will
+catch people's attention that it is possible but for now it's just for Mark.
+<p>
+
+I promised Ray Kultgen at Thomas that I would make the corner parameters and the trend chart parameters
+part based. The setups are contained in the following files, all in the exes folder now.
+<ul>
+<li>tcconfig.ini</li>
+<li>display.ini</li>
+<li>fixedparam.ini</li>
+<li>tcparams.dat</li>
+</ul>
+
+<h3>Wednesday 15-Oct-02</h3>
+I finished the help file additions for the new options screen, made up a
+tentative V5.72 and gave it to Al to try out.
+
+<h3>Monday 28-Oct-02</h3>
+Ray Kultgen from Thomas called to see if I had finished the requests he had. He said they had bought
+the software update agreement. I told him the popup screen and the part based corner parameters and trend
+chart parameters were done. He was going to talk to JB about having Al come up to install them.
+
+
+<h3>Tuesday 29-Oct-02</h3>
+
+Sean called from Orlick. They have one machine that only prints half a graph. The other three print ok. They have HPM units with NT4. I could find no way to change the handshakeing, which I assume was the cause of the problem. I finally told Sean I knew of no way to fix it.
+
+<h3>Wednesday 30-Oct-02</h3>
+
+Got a call from James Harrison,(905 544 1997 ext 250) Orlick's computer guy, to fix the printer problem. He tried changing the bios settings for the printer port but to no avail. He then swapped the hard drive from one of the other machines and still had the problem - implying that it is a cpu or cable problem.
+<p>
+I later learned from Ying that they had this problem last week and swapped the cpu to another box and the problem went with the cpu.
+<p>
+I told Harrison that I would call him tomorrow.
+<p>
+I added a check in the part editor so when you try to delete a part I won't let you if it is the warmup part for another part.
+
+<h3>Thursday 31-Oct-02</h3>
+
+I changed the way I copy parts so if I copy to another machine and part has a warmup part that doesn't exist on that machine I will copy the warmup part as well.
+<p>
+
+When the suretrak program starts it checks the runlist to make sure that all the parts exist.
+
+<h3>Thursday 7-Nov-02</h3>
+Finished work on the website for a while. I still need some copy for the home page but it works ok.
+<p>
+We got a po today to add the ability to reflect an input to the fastrak board to one of the alarm bits. This will be done at the end of each shot just like an alarm.
+
+<h3>Monday 11-Nov-02</h3>
+Put the suretrak pdf file on the psuedo-site today. Fixed the javascript so it loads the graphics in order on the home page.
+
+<h3>Wednesday 13-Nov-02</h3>
+I finished the operator interface for the reflected alarms for amt. I put them in the advanced setup, mainly because there was room there.
+Dundas wasn't giving up focus when I got a tab or shift-tab. I trapped these in the OnCharDown() function, which only gets characters when the cell is not in edit mode, and sent the focus to the proper control (see editpart.cpp).
+
+<h3>Monday 18-Nov-02</h3>
+Added an entry on the aboutus page for the japan show.
+
+<h3>Wednesday 20-Nov-02</h3>
+Added functions to WINDOW_CLASS to add and remove styles. Decided to create a part-based ini file, config.ini, to put future partbased settings in. An example of this is the part-based display and trend chart settings. I wish I had not created a new partdisplay.ini file for them but it's too late to change it now. In the future I will put all such in the config.ini file.
+<p>
+I considered writing a minimalist xml reader for this, and I still may add that to the INI_CLASS.
+<p>
+I added a set_section function to the INI_CLASS and a new find function that only has the key string. This makes searching and then loading a lot cleaner.
+
+<h3>Thursday 21-Nov-02</h3>
+I changed the string class to NOT delete the string if I set it to a null or empty string.
+I just put a null at the start.
+
+<h3>Friday 22-Nov-02</h3>
+Made still another try at getting the address for Japan correct. We'll see...
+<p>
+Finished the editor for the multipart runlist for HPM. Still need to do the help screen.
+
+<h3>Monday 02-Dec-02</h3>
+I changed the uggrid.cpp program to use the COLOR_BTNFACE color for the background of unused grid space such as right and bottom. It had previously used the default background color which was lighter than the dialog box background and looked funny.
+
+<h3>Tuesday 03-Dec-02</h3>
+
+Sue couldn't run Crystal Reports. This is the first time she tried since I installed the new pervasive. The problem was missing dll's from the windows\system directory. The error message said that p2bbtrv.dll could not be found or run but the ones that were missing were s2dtconv.dll and sbtrvd32.dll. I copied these from my scuzzy machine and it appears to run.
+<p>
+We had this same problem with Tom's. I had forgotten but the solution then was to compare his old windows/system folder with the new one (we had switched drives and I still had the old drive).
+<p>
+I got the reflected inputs working and added some help to the help file, though I think some of that will change if we use the small opto board.
+
+<h3>Thursday 05-Dec-02</h3>
+
+I added a "Saving..." popup to the editpart program
+
+<h3>Friday 06-Dec-02</h3>
+Spent the afternoon making up a system to send to Sergey to use to install NT4 Japan on
+a 586 system.
+
+<h3>Monday 09-Dec-02</h3>
+
+Sergey's disk would not boot. I found that the active partition had moved from 1 to 2.
+<p>
+Sergey did not install any video drivers. I installed them, the drivers were in the Video directory, and changed the 586 board to 800x600 by removing the jumper on JP3.
+
+<h3>Thursday 12-Dec-02</h3>
+Sean called to say that on both new units at Autocast they run ok for a while and then the grid and profiles dissappear, though the axis labels still appear.
+
+<h3>Monday 16-Dec-02</h3>
+<table border width="100%"">
+<tr>
+<td>
+While working on the backup list I found two bugs in the database routines (!). One was in the compare when comparing all fields (I have never done this before that I recall) and another in restoring the fields after go to the first equal or greater record when it is greater.
+</td>
+<td width="5%">Bugs</td>
+</tr>
+<tr>
+<td>I called Gateway about the 20GB drive that appeared here. They said it had been sent to the wrong address. Tom is going to return it.
+</td>
+<td>Mystery Drive</td>
+</tr>
+<tr>
+<td>Sean called back about autocast. I said I couldn't figure out anything and asked if there was anyone there I could call. He said Ed Wrench.
+</td>
+<td>Autocast</td>
+</tr>
+</table>
+
+<h3>Wednesday 18-Dec-02</h3>
+<table border width="100%"">
+<tr>
+<td>
+Al found that I was not displaying the axis label correctly if there was only one and it wasn't the first.
+I fixed this.</td><td width="5%">Bugs</td>
+</tr>
+<tr>
+<td>Paul called to tell me that the new downtime screen was locking up. Sure enough, I watched and
+sence it is a model dialog box, if the machine starts running again and the box is still displayed then
+the main menu gets constipated. I fixed this by converting the downtime entry dialog into a modeless dialog.</td><td>Paul Verhage</td>
+</tr>
+</table>
+
+<h3>Thursday 02-Jan-03</h3>
+<table border width="100%"">
+<tr>
+<td>Ying bought me a new monitor for Christmas. Installed with no problem.</td><td width="5%">New Monitor</td>
+</tr>
+<tr>
+<td>Ying also bought a new computer for Bill. I tried the XP Home that came with it and then scrubbed it and installed
+Win2K.</td><td>Bill's New Computer</td>
+</tr>
+</table>
+
+<h3>Monday 06-Jan-03</h3>
+<table border width="100%"">
+<tr>
+<td>Gary called to say he is trying to install the new software and machine 1 is giving board errors. I told him which
+board was giving him problems, which was really his main question.</td><td width="5%">Gary Goetz</td>
+</tr>
+<tr><td>I spent the first couple of hours trying to get the network printers working. I finally got
+the hp8100 working but the Konica would not respond.</td><td>Bill's New Computer</td>
+</tr>
+</table>
+
+<h3>Wednesday 08-Jan-03</h3>
+<table border width="100%"">
+<tr>
+<td>Got Bill's new computer installed and working.</td><td width="5%">Bill's New Computer</td>
+</tr>
+</table>
+
+<h3>Thursday 09-Jan-03</h3>
+<table border width="100%"">
+<tr>
+<td>Ernie (he said his name is <b>Ernest</b> but answers the phone <b>Ernie</b>)
+called to say that they have one machine that runs for about a week ok and then goes bad with
+disk read errors and blue screens (NT4 w/MMI). I talked to Al about it. We have replaced just about
+everything on the machine. Al even swapped the backplane with his own here. Ernie said it worked great
+for about a year but now is bad again. He reloads it with ghost.
+
+I suggested letting me have the system to rebuild but that was before I heard it was an MMI.
+Ernie said they will be in touch when they decide what to do.</td><td width="5%">Albany Chicago</td>
+</tr>
+</table>
+
+<h3>Friday 10-Jan-03</h3>
+<table border width="100%"">
+<tr>
+<td>Ed Wrench called to say he had lost his master traces when he installed 5.72. I said no way but didn't know what else
+to say. I had him send me a recent backup of his setups. I found all the master traces intack but some were
+old. That's when I remembered that you can't see them at all unless in time based mode. I called Ed and
+he was going to make new ones.</td><td width="5%">Ed Wrench Autocast</td>
+</tr>
+<tr>
+<td>
+I finished changing the v5setups.cpp to find the computer directories by itself. I also allow you to change
+the name of the computer in case there are duplicates.</td><td>V5Setups</td>
+</tr>
+</table>
+
+<h3>Monday 13-Jan-03</h3>
+<table border width="100%"">
+<tr>
+<td>I changed the computer class to use a linked list instead of an array and to sort the entries
+as they are added</td><td width="5%">Computer Class</td>
+</tr>
+<tr>
+<td>Rob is at Tim Industries. They insist on converting from Win95 to WinNT though there is no
+good reason for doing so. Ying had a hard drive burned and I set it up with a network card which we sent with
+it, even though there is already one onboard.</td><td>Tim Industries</td>
+</tr>
+
+</table>
+
+<h3>Tuesday 14-Jan-03</h3>
+<table border width="100%"">
+<tr>
+<td>I have the NEW_COMPUTER message working. Now when you add an office workstation you can connect to a monitoring
+computer and have it immediately start sending you notifications. You still have to restart the plot program
+in the office.</td><td width="5%">V5Setups</td>
+</tr>
+<tr>
+<td>When I installed Bill's new computer I was unable to connect to the Konica. I assumed at the
+time that this was a printer problem and not OS. This turned out to be correct and today Bill
+needed to print to the Konica. Sue reset the Konica and after a long while, I don't know what
+the delay was, it began to print again. I don't think it has worked for over a week.</td><td>Konica Printer</td>
+</tr>
+
+</table>
+
+<h3>Wednesday 15-Jan-03</h3>
+<table border width="100%"">
+<tr>
+<td>Scott called last night and left a message to inform me that he made the change to the new machine names. He has some problems
+with the network which he described at great length but I'm not real sure what his problem is.</td><td width="5%">Scott Swanson</td>
+</tr>
+<tr>
+<td>I changed the add_computers dialog in the netsetup to only list computers I don't already know about</td><td>NetSetup</td>
+</tr>
+<tr>
+<td>Carl is in Texas. He was at a unit that had their control box and our computer or something like that (no one
+admitted to knowing how this happened. Anyway, the unit had a black keyboard with a built-in mouse. NT4 came up with
+an event error and no mouse. I talked Carl through loading the mouse setup. The mouse was set to unknown devide (?).
+Carl changed it to Standard Serial Mouse and rebooted and it worked ok.</td><td>Carl at HPM</td>
+</tr>
+</table>
+
+<h3>Tuesday 28-Jan-03</h3>
+<table border width="100%"">
+<tr>
+<td>I changed the install program to copy all new units to the UNITS.TXT table. This requires
+the current version of the file on the floppy number 1</td><td width="5%">New Units</td>
+</tr>
+<tr>
+<td>I removed the code from converta.cpp that looked for the milli-volt convert.</td><td>Milli-volt</td>
+</tr>
+<tr>
+<td>Gary called because his board monitor wasn't converting the volts to degrees F. This was because
+I was using the polynomial equation(!). I sent him a new asensor.txt which fixed the problem.</td><td>Gary Goetz</td>
+</tr>
+</table>
+
+<h3>Wednesday 29-Jan-03</h3>
+<table border width="100%"">
+<tr>
+<td>I added a Digital Input variable type to vartypes.txt. I found that I had added weight and density
+types before without adding them to visiparm.h. I fixed this. I also changed setup to update the vartypes.txt
+database with any new entries in a vartypes.txt file on disk 1</td><td width="5%">Variable Types</td>
+</tr>
+<tr>
+<td>I removed the reflection grid from the advanced setup. This removed the loading and unloading
+of the info from reflect.txt as well.</td><td>Digital Input Reflection</td>
+</tr>
+</table>
+
+<h3>Thursday 30-Jan-03</h3>
+<table border width="100%"">
+<tr>
+<td>I finished the new Digital Input parameter.</td><td width="5%">Digital Input</td>
+</tr>
+</table>
+
+<h3>Friday 31-Jan-03</h3>
+<table border width="100%"">
+<tr>
+<td>Finished changes to help file. Cleaned help as well. Made V5.74 install</td><td width="5%">V5.74 Beta</td>
+</tr>
+<tr>
+<td>Added units.txt and vartype.txt to disk 1</td><td>Disk 1</td>
+</tr>
+</table>
+
+<h3>Monday 03-Feb-03</h3>
+<table border width="100%"">
+<tr>
+<td>I changed the install file to allow me to update more than one menu item in a row.</td><td width="5%">Setup</td>
+</tr>
+</table>
+
+<h3>Tuesday 04-Feb-03</h3>
+<table border width="100%"">
+<tr>
+<td>The day was consumed by gremlins. Mark Potratz's laptop being the main culpret.
+I finally wiped the disk, installed dos, then XP but the main drive ended up being
+E: this way and I wiped it again.</td><td width="5%">Dell Laptop</td>
+</tr>
+<tr>
+<td>Some kind of lawyer thing going on. Bill needed help printing tifs from IE. I finally
+gave up and copied them from mine (I have full quicktime).</td><td>Tifs</td>
+</tr>
+</table>
+
+<h3>Wednesday 05-Feb-03</h3>
+<table border width="100%"">
+<tr>
+<td>Al at GM. Couldn't find tweakui. Turns out I don't need to, \windows\system\appwiz.cpl is the add/remove
+programs.</td><td width="5%">GM</td>
+</tr>
+<tr>
+<td>I released V5.74</td><td>V5.74</td>
+</tr>
+</table>
+
+<h3>Monday 10-Feb-03</h3>
+<table border width="100%"">
+<tr>
+<td>I sent, at JB's request, a copy of 5.74 to Wolfi</td><td width="5%">Wolfi V5.74</td>
+</tr>
+<tr>
+<td>Added print parameters checkbox to computer options screen</td><td>Print Params</td>
+</tr>
+
+<tr>
+<td>A couple of weeks ago I upgraded Orlick's system from NT5 to Win95. That system was:
+<br>Computer C02 (V5\data\C02), Network name=2020, workgroup=VISITRAK
+<br>Machine 02, cold chamber, no downtime
+<br>NT4 Serial 14699-OEM-0042413-79495. Promised John Lorincz that I would send him the serial numbers.
+<br>Texas Micro P5133HX, Bios 4.01a.2.1
+<br>Cirrus compatable display adaptor.</td><td>Orlick</td>
+</tr>
+</table>
+
+<h3>Tuesday 11-Feb-03</h3>
+<table border width="100%"">
+<tr>
+<td>I sent a new version of dsbackup to Scott Swanson at Albany-Chicago because he wanted to
+plot the cycle times of his machines. I sent him instructions on how to setup the network
+parameter file.</td><td width="5%">Scott Swanson</td>
+</tr>
+
+</table>
+
+<h3>Wednesday 12-Feb-03</h3>
+<table border width="100%"">
+<tr>
+<td>Vennie called from somewhere. He had talked to Rob yeasterday. He has a 486 cpu and hard drive that Al
+(he said) fixed for him. He plugged it in both ways (!) and it doesn't work. I told him how to plug it in
+correctly and how to set it up in the bios. I told him if the board could not auto-id the drive then something
+was broken.</td><td width="5%">Vinnie</td>
+</tr>
+<tr>
+<td>I sent Scott Swanson a copy of V5.74. He says my parameter logging appears to be working. He says they
+want to start downtime logging. I recommended he start with one computer first, until they decide
+what they want.</td><td>Scott Swanson V5.74</td>
+</tr>
+
+<tr>
+<td>Gary Goetz called to find out why passwords.txt isn't working. I have him a lesson
+on the new password functions.</td><td>Gary Goetz</td>
+</tr>
+
+<tr>
+<td>While testing copylog for Gary I found that the buffer I was using for the file name
+was too small (just when reading it in). I fixed this.</td><td>CopyLog Bug</td>
+</tr>
+
+<tr>
+<td>I changed the dir_from_filename function (path.cpp) to give up if the length of the passed name is 0.
+Before I was only checking for 1 (?). duh.</td><td>path bug</td>
+</tr>
+
+</table>
+
+<h3>Thursday 13-Feb-03</h3>
+<table border width="100%"">
+<tr>
+<td>I added a simple replace function to STRING_CLASS. At the same time I added a new upsize function
+to handle reallocating the string when I need a bigger one. I also added a new function,
+move_string_forward, to shift a string to the right.</td><td width="5%">STRING CLASS</td>
+</tr>
+</table>
+
+<h3>Friday 14-Feb-03</h3>
+<table border width="100%"">
+<tr>
+<td>John Lorencz called from Orlick to warn me the next board and drive will be shipped today. Rma=10961.
+Password = HPM</td><td width="5%">Orlick</td>
+</tr>
+</table>
+
+<h3>Tuesday 18-Feb-03</h3>
+<table border width="100%"">
+<tr>
+<td>Spent a couple of hours trying to get our new 486 board to work with Win95. So far it only works 640x480x16bit</td><td width="5%">New 486</td>
+</tr>
+<tr>
+<td>Ray couldn't get one of the printers to work. I gave him a lesson on LPT1.</td><td>Ray Schmidt</td>
+</tr>
+</table>
+
+<h3>Wednesday 19-Feb-03</h3>
+<table border width="100%"">
+<tr>
+<td>Began working on the second of Orlick's computers, converting to Win95.
+<br>Login: Administrator, Password: HPM
+<br>Computer C01 (V5\data\C01), Network name=2020, workgroup=WORKGROUP Network not installed.
+<br>Machine 007, cold chamber, no downtime
+<br>NT4 Serial 15998-OEM-0034876-51886.
+<br>Texas Micro 233 w/o video, P5233HX, Bios 4.05a.2.2
+<br>Drive=Quantum FireballSE2 2014MB
+<br>Cirrus compatable display adaptor.
+<br>New Win95 Serial = 34800-OEM-0001785-89730
+</td><td width="5%">Orlick</td>
+</table>
+
+<h3>Thursday 20-Feb-03</h3>
+<table border width="100%"">
+<tr>
+<td>My dynamic_file_name subroutine modified the string sent to it, something which I forgot. I changed it so
+it no longer does this (I use <b>const</b> TCHAR * sorc now).</td><td width="5%">dynamic file name</td>
+</tr>
+<tr>
+<td>I changed iniclass to allow me to save null strings. This allows me to erase a variable from an ini file,
+which I didn't realize you can do.</td><td>iniclass</td>
+</tr>
+</table>
+
+<h3>Friday 21-Feb-03</h3>
+<table border width="100%"">
+<tr>
+<td>I added the valve drawings to valves.html. I exported them as flash movies from Corel Draw</td><td width="5%">Valve Dwg</td>
+</tr>
+<tr>
+<td>I was able to get the new 486 (SBC 456/E) board to use the supplied drivers. It turns out that the problem was
+that my switchbox decided there was no longer a video signal. I don't know why. There is still a problem with
+the drivers but it doesn't affect us much. If the display type is set to "CRT only", the choice that makes the
+most sense, the board restricts the display to 640x480 and windows into any higher resolution that you try to set.
+You must set the display to <b>800x600</b> TFT in order to use 800x600.</td><td>SBC 456/E</td>
+</tr>
+<tr>
+<td>John called from Orlick and asked me to install the HP940c printer drivers on the hard drive, and all future hard drives,
+before sending it back. The drive was still here and I complied, putting the files in the C:\Apps\Hp940c folder.</td><td>Orlick HP940c</td>
+</tr>
+</table>
+
+<h3>Tuesday 25-Feb-03</h3>
+<table border width="100%"">
+<tr>
+<td>Added a test function to monall that turns the 8 opto outputs of the FasTrak board on and off</td><td width="5%">Opto Test</td>
+</tr>
+<tr>
+<td>Began converting boardman to emulate the new board, or at least use the new protocol.</td><td>FT II</td>
+</tr>
+</table>
+
+<h3>Wednesday 26-Feb-03</h3>
+<table border width="100%"">
+<tr>
+<td>I made a new standalone Opto Test program for Al</td><td width="5%">Opto Test</td>
+</tr>
+<tr>
+<td>Finished simplifying the tcp/ip server in boardman so that it looks like the FTII. I called Greg, who
+said he will probably need to return to binary for the realtime updates. I said I was ok with that.</td><td>Tcp/Ip FTII</td>
+</tr>
+</table>
+
+<h3>Thursday 27-Feb-03</h3>
+<table border width="100%"">
+<tr>
+<td>Changed shotsave.cpp to NOT load EosComPort if it begins with N or n.</td><td width="5%">EosComPort</td>
+</tr>
+</table>
+
+<h3>Tuesday 04-Mar-03</h3>
+<table border width="100%"">
+<tr>
+<td>I spent about an hour on the phone with Carl Hess, reinstalling a V4 system. Carl said he had it backed up
+but I later found, too late, that he had only backed up the Sure-Trak™ stuff. I don't think I was able to make
+him understand that the Sure-Trak™ and True-Trak™ are separate in V4. Carl said that the operator appeared to have
+created a new machine for each part. I said it was doubtful that the setups were very sophisticated and told
+him how to set up a part.</td><td width="5%">Carl Hess</td>
+</tr>
+</table>
+
+<h3>Wednesday 12-Mar-03</h3>
+<table border width="100%"">
+<tr>
+<td>Ernie Mesa called yeasterday
+from Albany Chicago to find out what I had learned about the system they have
+that is slow starting. I wasn't here so he left a message.</td><td width="5%">Albany Chicago</td>
+</tr>
+<tr>
+<td>Dave Hanson called from A&B Diecasting. He said his computer was locked up while booting when he
+came in the other day. Now when he tries to save changes to a part or sometimes when he tries to
+access the display properties the system reboots.
+I said it could be lots of things but he has a TMI 233 w/video which narrows it down. I talked him thru reloading
+the video drivers and running scandisk and then gave him to Ying.
+</td><td>A&B Die Cast</td>
+</tr>
+
+<tr>
+<td>Mirko Jankovic called from Orlick. He got the new board working but it has the same
+print problem as the old one. I got a TMI board to take a look but couldn't find anything wrong
+with the default settings. I tried to call him back but the extension he gave me is invalid and no one
+answers the 0 line.</td><td>Orlick</td>
+</tr>
+<tr>
+<td>AMT called to say the new monitor didn't work. I asked if they had installed the new mux24d chips and
+they said "what mux24d chips?". Opps. Nick burnt me two sets and they are going out today.</td><td>AMT</td>
+</tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Thursday 13-Mar-03</td></tr>
+<tr>
+<td>Ernie Mesa called again last night. This time he is having problems with the Data Server. Apparently
+he wants me to use my nickol. I tried at 1:00 but no one answered.
+I called later and Ernie said they are still having problems with 9 copies of plot starting up and the
+machines take 15 minutes to change parts. I said I would call him at 9:00 AM tomorrow (10:00 my time)
+and see if we can figure this out.</td><td>Albany Chicago</td>
+</tr>
+
+<tr>
+<td>I set up a TMI 233 board without video and made an NT4 disk.</td><td>TMI 233 NT4</td>
+</tr>
+
+<tr>
+<td>We had a fastrak board to go to AMT so Barb waited until today to send the eproms and also
+had Tony put Mux24D chips on the new board as well. I tested it before it went out.</td><td>AMT</td>
+</tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Friday 14-Mar-03</td></tr>
+
+<tr><td>I called Ernie Mesa. I couldn't find anything major wrong with ws0 and fs that would explain
+the extremely slow performance of their systems. We did find NetBUI installed on FS. I told him to remove
+this, as they are using TCP/IP, and see if it was installed on any of the floor computers but I doubt that that is the problem.
+I looked up the behavior of WinExec. It doesn't return until the program calls GetMessage, which in the
+case of profile can be a long time. Ernie said that the behavior appears when the program is looking for one
+of the office computers. I still could find no reason to
+ start another instance of profile.</td><td>Albany Chicago</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Monday 17-Mar-03</td></tr>
+<tr><td>I added help for the print parameters xbox on the computer options screen</td><td>Co Options</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Tuesday 18-Mar-03</td></tr>
+<tr><td>Ed Wrench wasn't able to restore his default data. He emailed it to me and I was able to do it ok so I
+told hime to delete the v4, v4local, pdoxrun, and private folders before trying again.</td><td>Ed Wrench</td></tr>
+<tr><td>I backed up the v5 folder (plus some of the others) on A&B's disk and then sent it back with my CPU and
+their memory. I explained to them how to reset the cmos, which I assume they will have to do, and that the board
+comes with no guarentee that it will even work. I booted their disk on it (after deleting the rsview shortcut from
+the statup folder. There was a screen icon with the same path. They changed the video driver
+on the win95 disk to Cirrus Logic 5429/30/34/36 and their video was listed as CL-GD5429-Rev0 512K.</td><td>A and B</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Wednesday 19-Mar-03</td></tr>
+
+<tr><td>I finished adding a choose downtime machine to the profile program. This allows you to
+pick which machine to look at without going back to the plot screen. I updated the help file as well.</td><td>Choose Machine</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Thursday 20-Mar-03</td></tr>
+<tr><td>I changed profile so that when you press the arrow keys while viewing a shot I go to the next or previous one. I
+then added x10 for the up and down keys.</td><td>Arrow Keys</td></tr>
+
+<tr><td>I added a listbox to the backup list dialog in bupres because Al said it was confusing without a list
+of what you are going to save.</td><td>Backup List</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Monday 31-Mar-03</td></tr>
+<tr><td>Ernie Mesa left a message to the effect that he has removed the NetBUI from all the computers
+but they are still slow and getting slower.
+I called him and he said that he was going to try taking some of the office computers off of the
+monitoring lists. I said that was what I was going to recommend and told him how to do it with the
+network setup program. I said to try it first with the non-HMI machines, as restarting the program
+would be much easier. I also emailed Scott and asked if there was anything running on the floor computers
+besides my program.</td><td>Albany Chicago</td></tr>
+<tr><td>Eric Mason called to ask for 9 corner parameters on the last 50 shots screen. I hemmed for
+a while and then said I would look into it. He's not in a hurry, he said, but would like me to email him
+if I have something.</td><td>Eric Mason Pace</td></tr>
+<tr><td>Paul Verhage called to find out how to turn off the popup downtime screen on some of
+his units. He said there were several popups and no one ever entered the downtimes. I realized he
+was running V5.73 and sent him a new version, as well as telling him how to turn it off.</td><td>Thomas Industries</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Tuesday 01-Apr-03</td></tr>
+<tr><td>Spent the day making a demo for Peter showning how to write to bitmaps that are not displayed.</td><td>Peter Olmsted</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Wednesday 02-Apr-03</td></tr>
+<tr><td>Began working on a status screen (shot, alarm, production).</td><td>status screen</td></tr>
+<tr><td>Peter called with a some questions. I doubt that the program I sent him will do him any good.</td><td>Peter Olmsted</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Thursday 03-Apr-03</td></tr>
+<tr><td>I changed the font class to copy the string before modifying it when I do a get.</td><td>Font Class</td></tr>
+<tr><td>Orlick sent the third drive.
+<br>TMI 233 w/o Video P5233HX. Bios V4.05a.2.2
+<br>64MB Memory
+<br>Quantum 3.5 Series 3 gig HD.
+<br>NT Serial = 14699-OEM-0042413-79495.
+<br>Cirrus compatable display adapter. Chip=CL5424. 512K.
+<br>Login: Administrator, Password: HPM
+<br>Computer Name=2020. Network not installed.
+<br>New Win95 Serial=34800-OEM-0001785-89789.
+<br>Die Cast Machine 01 Part V653</td><td>Orlick</td></tr>
+<tr><td> </td><td> </td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Tuesday 08-Apr-03</td></tr>
+<tr><td>Brian Olig called to say he had just purchased four old Visi-Trak systems for $400. I sent him a
+new copy of 5.68 and told him what to delete from the old system.</td><td> Brian Olig</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Wednesday 09-Apr-03</td></tr>
+<tr><td>I went to MAC to look at their network. All the monitoring computers were hooked to each other. I unhooked
+them and showed Mark Petit how to set the network up. We installed a new office workstation. My NetSetup program
+kept deleting the Data Server from the monitoring computers. I told Mark I would fix it and get back to him.
+I found I also need to make separate threads for the network enumeration and add computer routines as they take
+way too long sometimes.</td><td>Magnesium Aluminum</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Thursday 10-Apr-03</td></tr>
+<tr><td>I changed NetSetup to load network stuff in separate threads and found the bug that
+made me remove the Data Server from monitoring computer setups. I sent a copy of the new
+program to Mark Petit.</td><td>NetSetup</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Tuesday 15-Apr-03</td></tr>
+<tr><td>One of the guys at Orlick called to say that the board I sent the other day was zapped.
+They reset the bios but it won't print.</td><td>Orlick</td></tr>
+<tr><td>Finished the first go at the status screen. Still have parameters to add, plus some
+of the downtime options.</td><td>Status Screen</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Wednesday 16-Apr-03</td></tr>
+<tr><td>I changed the status screen to look for a shift change and reload the
+downtime and alarm info if it finds one.</td><td>Status Screen</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Thursday 17-Apr-03</td></tr>
+<tr><td>I changed the previous instance checks in eventman, profile, monall, and suretrk
+to not use the window name but only the class.</td><td>prev instance</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Wednesday 23-Apr-03</td></tr>
+<tr><td>Mike Hipp wants to display one alarm level and one warning level on the main
+plot screen parameter boxes. I currently cannot do this but told him I would add it soon.</td><td>Mike Hipp</td></tr>
+<tr><td>Mike Clark at SUS called. He has no parameters on any of the parts on one machine!
+I told him to backup the setups from one of his other computers and that I would send
+him (email) a copy of the program to install in the office. He can then restore one of his parts
+to the office pc and I will tell him which file to copy to the bad pc.</td><td>SUS</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Thursday 24-Apr-03</td></tr>
+<tr><td>The Konica guy was here today to show us how to scan. The twain drivers are on the IP421 cd. He
+copied the file, setup.exe, to the Users\common\scanner folder. You can run this to install
+on win98 or 2000. You just run it and press next. When you are done there is an imaging entry in the
+accessories. Run this, choose select device, choose the Konica.
+Choose Acquire Image. Set the address to 192.168.254.39, Name it
+Konica, and then set the mailbox you wish to use. Tom is 1, Bill is 2, Brian is 3, and Ying is 4.
+<br>When you scan, You choose a mailbox to scan to. Press scan on the pannel to scan the image. Then
+you press the big green button to save the scan to your mailbox.
+<br>I had problems getting Ying's hooked up because I was using 039 instead of 39 for the address.
+<br>You can log onto the printer as a webpage. password is SYSADM.</td><td>Konica Scans</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Wednesday 30-Apr-03</td></tr>
+<tr><td>Added += for int and unsigned int to STRING_CLASS and STRING_ARRAY_CLASS</td><td>+=</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Tuesday 13-May-03</td></tr>
+<tr><td>Searched for a decent fifo class for use with the monitor program for the FTII. Without going to standard c++ I could not find
+one. Wrote my own.</td><td>Fifo Class</td></tr>
+<tr><td>Added the ability to upload to the FTII from a text file at Greg's request.</td><td>FTII Upload</td></tr>
+<tr><td>Created a new project for the ftii monitor (called ftii). This was after much thought
+about whether to incorporate it into the existing monall program. I finally decided that this
+would be too much of a cludge</td><td>FTII Project</td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Monday<br>19-May-03</td></tr>
+<tr><td>I changed the string header file in the ms include directory to fix a bug in the
+getline function (per ms instructions)</td><td><center>STL getline</center></td></tr>
+<tr><td>Two issues with the FTII. The first is that in order to convert the quadrant
+counts into velocities I need the timer frequency. This is the only time I need it. I'm thinking
+of getting the timer frequency from the board when I connect and saving it at the beginning of the
+shot data file. As I seed it this is the only place I need it and though this will take 4 bytes
+per shot it will simplify the database and future upgrade code as I won't have to worry about
+the frequency.
+<p>There is also an issue about the first point. It has no data and merely represents
+the start of the shot (actually the end of the first point is the start of shot) so I need some way of getting
+the timer count for the start of shot so I can figure the velocity of the first quadrant of the
+second point. I can approximate this by converting the 1 ms timer count to clock timer counts and subtracting
+it from the <b>last</b> quadrant count of the second point
+</td><td><center>FTII</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Tuesday<br>20-May-03</td></tr>
+<tr><td>Orlick sent back one of their cpu's and hardrives that they claim overflows the buffer
+when printing (at least that is the symptom) to a hp940c printer. I hooked these up and attached
+Barb's printer of the same model and everything worked great. I was able to print multiple shots
+in color with no problems. Ying is going to handle it from here.</td><td><center>Orlick HP940c</center></td></tr>
+<tr><td>Did some testing of the ftii outputs for Greg. There is some crosstalk between the
+monitor and control side outputs. Greg is working on this.</td><td><center>FTII Outputs</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Wednesday<br>21-May-03</td></tr>
+<tr><td>Began monitoring with the FTII. I added the timer frequency to the file (bytes 0-3).</td><td><center>FTII</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Thurssday<br>22-May-03</td></tr>
+<tr><td>John Schoeder (sp?) called twice with questions about the autoshot input. Apparently he wasn't
+getting one and thought (hoped) it was the software. I told him it was most likely the wire.
+He then admitted that they were "working" with the wiring.</td><td><center>John Schoeder</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Friday<br>23-May-03</td></tr>
+<tr><td>Tom's Outlook stopped working. Norton Antivirus was also locking up. I don't have
+any idea what happened. We kept getting a message that
+there was an error in ThorConnWndClass. I am not certain that this is an Outlook thing
+but it appeared to be. We disabled Norton for a while and finally uninstalled Outlook 97 and then
+installed Outlook 98 and imported the old outlook.pst file (312 meg). This locked up the new Outlook
+but it woke up ok. Tom now has Bill's old Outlook 98 but still has the Word and Excel from his own.</td><td><center>Tom's Outlook</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Tuesday<br>27-May-03</td></tr>
+<tr><td>I added a plc parameter type to the part editor for Ying to show to someone. It doesn't do anything
+but shows that we have this in mind.</td><td><center>PLC Parameter</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Thursday<br>29-May-03</td></tr>
+<tr><td>Mike McLaughlin (sp?) at Lexington Diecast called to say that one of his computers would
+no longer run windows. I talked him thru hooking up a good drive and the bad drive
+and copying the windows system from the good to the bad. The only goof I might have made was that
+he had a servo shot program on that talked to the plc. If that was in the program files folder it is now
+toast but the one from the other drive is now copied over.</td><td><center>Mike McLaughlin</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Friday<br>06-June-03</td></tr>
+<tr><td>Jim McKeown (ma cu' un) called from Port City. Brian Surch asked him to call me
+about the machine that is not displaying the center. It displays the scales but no curves.
+He has been rebooting. I told him to try just restarting the program (v5.68). He also
+asked me to send him a new disk. He doesn't understand how to format a floppy. </td><td><center>Port City</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Friday<br>13-June-03</td></tr>
+<tr><td>I got the FTII monitor working yeasterday but there was still a bug in it. I had
+JB stop today on his way to the airport and updated him to a new version which
+watches for monitor changes (part setup and different part both show up this way). I was
+killing the sockets and reloading them but that didn't work too well as the new sockets had zero pointers
+in the dest buffer. I don't know why yet but in the meantime I just reload the setups and then resend them
+to the board. I also put a green cycle start window in the upper right corner as before.</td><td><center>Gifa FTII</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Tuesday<br>17-June-03</td></tr>
+<tr><td>I fixed the profile program to use metric units</td><td><center>FTII Metric</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Tuesday<br>01-July-03</td></tr>
+<tr><td>The ups unit has been having problems lately. The service guy was in today and tried something
+which caused the ups to shut off power to the server. The server recovered ok. The service guy said our
+battery is bad and he will replace it but it will take a couple of weeks for the new one to get in.
+</td><td><center>UPS</center></td></tr>
+<tr><td>Gary Goetz wants to know if we can turn on the intensifier when the pressure reaches
+a certain value (spike). This is a Sure-Trak controled machine.</td><td><center>Gary Goetz</center></td></tr>
+<tr><td>I got a call from a guy at merc who works with Mark Potratz. He says they are going to buy
+4 more units from us and wants to know what problems he will have going to cat5 instead of bnc and
+how he can get the data out of the system. I told him I have routines to get the data out at the
+end of each shift and that the nic cards may already have rj45 connectors and that he should look
+and see.</td><td><center>Merc</center></td></tr>
+<tr><td>The printer guy called to see when he can install the new Konica. I said anytime. He
+said the only difference was that the scan boxes would have names and wanted to know if
+I would be installing the software on the computers. I said I would. He said he would call me back.
+</td><td><center>Konica</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Wednesday<br>09-July-03</td></tr>
+<tr><td>Nat Workman called from Merc again. He is the guy trying to set up the network data
+repository. He had a couple more questions about the way the data server saves the data. I told him
+the programs should probably be on the data server and that at least one has to be because the
+data is saved from the data server program itself but that I can save to a network path.
+Nat said that would be ok.</td><td><center>Merc Data Center</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Thursday<br>10-July-03</td></tr>
+<tr><td>I received my new DVD-ROM drive. It is a Pacific Digital Model DHM-G48 S/N D06C0238022497
+Manufactured Sept 2002 CS94E-0208-G50. I registered it at their website.</td><td><center>DVD</center></td></tr>
+<tr><td>A guy called from Port City to say that they were going to start using the
+production features. I talked to him about things and then talked to Ying. We decided
+that we should upgrade them to 5.74. Most of their machines are at 5.68, though they have new ones
+that are at 5.71, I think. Anyway, I would feel better if they were at 5.74
+except that now I can't get ahold of the guy that called me. I think his name is Jeremy Schafer. I'll
+try again tomorrow.</td><td><center>Port City</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Thursday<br>17-July-03</td></tr>
+<tr><td>Forth conversion for Orlick. Computer C01. No network installed. Login Administrator/HPM.
+Machine 008. Printer HP940c. Program labeled as Servo Shot Plus with the HPM logo.
+<br>NT4 Serial=28398-OEM-0037963-13989, Win95 Serial=13402-OEM-0060404-78128
+<br>Display currus compatible display adapter. Chip type CL5424. TMI P5233HX V4.05a.2.2
+HD = 2014MB Quantum Fireball SE2</td><td><center>Orlick</center></td></tr>
+<tr><td>I added plunger_area() to the PART_CLASS.</td><td><center>PART_CLASS</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Friday<br>18-July-03</td></tr>
+<tr><td>I fixed a bug in the part editor wherein I wasn't showing the correct channel description
+for the channels when editing a target value parameter.</td><td><center>Bug Fix</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Wednesday<br>23-July-03</td></tr>
+<tr><td>Mark Potratz called. He had four machines go down at the same time recently. One kept bombing and
+he finally reloaded windows. Now it is bombing again with hard disk write errors. I asked if he had
+run scandisk before reloading windows, he said he had but that it locked up. I said to try chkdsk first and
+then scandisk.</td><td><center>Mark Potratz</center></td></tr>
+<tr><td>Tony gave me a little pc104 computer to try to load win95 on (he already had loaded the
+floppy version (!). I got it loaded but it still uses msdos mode to access the flash drive and
+I can't get the ethernet port to work even though Tony had it working. Duh
+<br>It turned out that you had to set the bios to "other" instead of "win95" which I had
+changed it to, as they use nt drivers (?). Tony figured this out. Kludge city.
+Once I got everything installed it worked ok. Not fast but ok and it's only a 100mhz version.
+</td><td><center>MZ104+</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Thursday<br>24-July-03</td></tr>
+<tr><td>I stopped at Twinsburg on my way in to try to get WS4 back onto the network. I first
+tried putting my nic card (300,5) in but that caused the computer to lock up. It gets to where
+it puts up the network login screen and then the entire screen blanks out. This is the same thing
+it was doing with the original card. I tried reinstalling windows but it still did the same thing.
+It has 166MHZ cpu (preditor I think) which is very fast.</td><td><center>Metaldyne</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Friday<br>25-July-03</td></tr>
+<tr><td>Tom asked me to change the cripled website to make the email address more apparent. I changed
+everything to a row in the table, which lets it contract smaller. I also moved the email address above the
+phone numbers.</td><td><center>Website</center></td></tr>
+<tr><td></td><td><center></center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Tuesday<br>29-July-03</td></tr>
+<tr><td>I stopped at Twinsburg to see why the Data Server wasn't getting updates from 11, 12, and 13. This
+was because the V5 folder was shared on the Data Server and the NetSetup program had used this folder instead
+of V5DS. I later realized that this also meant that the computer.txt file in the V5\data folder now has
+network entries in it, which is bad. I send Jeff a new computer.txt and asked him to copy it to the data server.
+</td><td><center>Metaldyne</center></td></tr>
+<tr><td>I added a Valve Start Step to the Control Programs Mod screen</td><td><center>SureTrak</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Thursday<br>31-July-03</td></tr>
+<tr><td>Jeremy Shaeffer called from Port City. He was having problems with restoring downtimes. I found that
+the restore doesn't work on downtimes(!). I fixed it and sent the fix to Jeremy.</td><td><center>Downtime Restore</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Friday<br>1-Aug-03</td></tr>
+<tr><td>I changed the zoom display so I show the four channels if you are in
+channels display</td><td><center>Zoom</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Friday<br>8-Aug-03</td></tr>
+<tr><td>Jeremy called again. He is having problems restoring the downtime data
+because it doesn't merge. I offered him a copy of vtextrac which he was very interested in.
+</td><td><center>Port City</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Monday<br>12-Aug-03</td></tr>
+<tr><td>Ray Kultgen called to say that HPM is going to build them a new machine and he would like
+to have a raid controller on it instead of having a ghost drive with old setups for the MMI stuff.
+I said that was reasonable and didn't look too expensive but that I wasn't the money guy. Ray said he
+would call Ying in a couple of days. Ying was skeptical but I talked to Nick and he said that hardwarewise
+it would be easy enough. The raid controller Ray was looking at was at CDW and I think was the
+same one (the FASTRACK $90) that Brian DeBour once asked me about.</td><td><center>Thomas Industries</center></td></tr>
+<tr><td>The guy from Future Die Cast, Bob maybe but I think it was the other guy,  called to say
+he was having problems with the install across the network (sounded like a problem with the common control
+library but I couldn't be sure) and he tried to fix it by installing win98 across the network from a
+shared cdrom. Luckily this didn't work. I told him to try copying the install directory to the C drive
+of the floor machine and try the install from there.</td><td><center>Future Die Cast</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Thursday<br>14-Aug-03</td></tr>
+<tr><td>Chris Hould called because their old HPM machine, which has been running since 1996 without a problem
+had the hd go south. Chris was able to get the V4 folder ok but really didn't know that he
+needed. He almost had it working but I sent him a 4.33 update and that and some directions fixed him up.</td><td><center>Cambridge Tool</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Friday<br>15-Aug-03</td></tr>
+<tr><td>Nick George called to say they bought a new CPU for their monitoring machine and installed
+Win2000 on it and was having problems getting my program to install. I told him how to make an install folder
+on the local drive. I then tried installing the nt driver on our machine here and, lo, it worked!</td><td><center>Twin City</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Tuesday<br>19-Aug-03</td></tr>
+<tr><td>Dave Pyman called from Port City. One of their disks crashed. He reloaded windows
+and said that he was getting errors from the board. I got him to run ioex4 and it said the board
+was in power up state but wouldn't talk to the board beyond that. The same thing happened when we
+changed to 240. I had Al talk to him. Al was more thurough than I and determined that windows thought
+there was an unknown device at 220. I asked whether windows had been installed on another computer
+and Dave said yes. I told him to reinstall using our cpu. He did that but somehow got it to install over
+the existing installation. Windows still thought there was an unknown device at 220. I told Dave
+how to use deltree to remove everything and then reinstall windows.</td><td><center>Port City</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Friday<br>22-Aug-03</td></tr>
+<tr><td>Dave Pyman sent his 5 cpu backplane back to us to fix. It turns out that the problem was
+that he had an Am Preditor board and hadn't loaded the drivers, of course, and I forgot to ask.
+Without the intel drivers the board doesn't talk to the isa bus.</td><td><center>Port City</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Tuesday<br>26-Aug-03</td></tr>
+<tr><td>Dave Pyman called to say that the video wasn't working and that when it did three of the fastrak boards
+weren't talking. This is the 5 board system that we made the new hd for on friday. The video turned out
+to be a power problem (bad cord, bad monitor, something like that). Then Al had Dave unplug all of the boards.
+When he did that they all worked and I passed the problem to Al.</td><td><center>Port City</center></td></tr>
+<tr><td>Carl Hague about the system that Al and I rebuilt last week. It had had a cpu fail and
+we reinstalled windows to work on the 486 (actually 586) board. Carl said that when the computer booted the
+display blacked out after showing the windows logo. I told him to try booting to safe mode and changing the monitor.
+That didn't work but he did get into safe mode so I had him try resetting the card to a generic VGA and the
+monitor to Generic VGA.</td><td><center>Fasco (Pasco?)</cehnter></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Monday<br>15-Sep-03</td></tr>
+<tr><td>Wayne called to say that he could not modify the first step of his suretrak control
+on the Win2000 system ("not a first step"). I told him how to edit the control file and change the step
+so it looked ok for the mod program. I also had to teach him about passwords and startup.lst.</td><td><center>Twin City</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Tuesday<br>16-Sep-03</td></tr>
+<tr><td>I found a bug in the database (get_next_key_match). It didn't work after the first match, just
+returned the next record. This fixed the backup from list problem.</td><td><center>DB bug</center></td></tr>
+<tr><td>I added the clear downtime alarm for Brian Surch</td><td><center>Port City</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Wednesday<br>17-Sep-03</td></tr>
+<tr><td>Sean Ogrady called to say that his newly refirbished portable that he got back 2 months
+ago and just hooked up monday now cannot find the hard drive and the flat pannel monitor doesn't work.
+I checked with Tony and he said that the unit was incredibly beat up when we got it back. It has an Am Pred
+board and the newer type of flat panel. When I called back Sean confirmed that it is already beat up again
+and that the cable that prevents the top pannel from opening is already broken. I told him is hd (a fujitsu)
+is probably dead and told him I could set up a new one. Barb had Rob call him about the other stuff.</td>
+<td><center>Amcan Castings</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Thursday<br>18-Sep-03</td></tr>
+<tr><td>Mike Ime called to say they have a v4 system that they turned off two months ago when the
+machine it was monitoring was taken down for refirbish. Now the p1 to p3 distance has majically changed.
+I explained that this is just a constant that I subtract from P3 but Mike argued that something had
+changed based upon the fact that they are pouring less metal and so the biscuit is smaller. I said no,
+I just subtract from p3.</td><td><center>GM</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Wednesday<br>01-Oct-03</td></tr>
+<tr><td>I fixed the axis display. With ftii plots the rod pressure limits were wrong. I also changed the
+way I load the ftii plot so that I load the channels [1-8] which are selected to be displayed
+and I zoom these as well and display the correct labels.</td><td><center>FTII Display</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Monday<br>06-Oct-03</td></tr>
+<tr><td>I updated the profiles.cpp in subs to check for ftii profiles. I also fixed plot to do
+nothing if it tries to load a ftii profile that doesn't exist.</td><td><center>Ftii Bugs</center></td></tr>
+<tr><td>I was not removing the channel info from the analogs when I calculated the max and min. This
+was the reason the scale was wrong on the rod pressure. Fixed</td><td><center>Ftii Bugs</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Thursday<br>09-Oct-03</td></tr>
+<tr><td>I found two more bugs in bupres. These concerned setting the last shot number in the plookup file and
+duplicating the highest number in the graphlist.txt file. I fixed both, I hope.</td><td><center>Bupres Bugs</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Tuesday<br>21-Oct-03</td></tr>
+<tr><td>Added code for the ftii_part_setup.txt file instead of keeping a copy
+of the entire download file. Fixed the ftii program so it uses the ms_per_sample from the part and chaned monedit
+to update this number.</td><td><center>Ftii Updates</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Thursday<br>06-Nov-03</td></tr>
+<tr><td>Greg told me yeasterday that I could probably download flash files over the ethernet port if I
+enabled the '+' sign and waited for it after sending each line. I did this and it worked great.</td><td><center>Ethernet Flash Download</center></td></tr>
+<tr><td>I got the Data Server Backup and Restore working with the FasTrak2 files</td><td><center>FasTrak2 DS</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Friday 14-Nov-03</td></tr>
+<tr><td>I added a <b>No Network</b> option to the options screen so that the local program on the
+data archive computer doesn't try to open a mailslot.</td><td><center>No Network Option</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Monday 17-Nov-03</td></tr>
+<tr><td>The profile screen "suddenly" began crashing when I received a machine up message and the box screen was displayed.
+Of course it didn't happen when I used debug mode. The
+problem was that I was casting an integer to a (TCHAR *) and passing this to the tool tip. This is supposed to work.
+The tooltip is supposed to load a resource but for some reason it was trying to load the string instead.
+I changed the code to load the string myself and pass that. It appears to work ok now.</td><td><center>Box Screen Dies</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Monday 01-Dec-03</td></tr>
+<tr><td>I wasn't setting the cycle start timeout value when I uploaded to the ft2.</td><td><center>CS Timeout</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Tuesday 02-Dec-03</td></tr>
+<tr><td>I figured out what was causing the problem with the "adam" hub/switch that we are using
+to connect the ft2 boards. All the ft2 boards have the same Medium Access Control (MAC) hardware address. This didn't bother
+my old hub but totally confused the "adam" switch. I changed the hardware address of one of my two boards and
+my problems went away.</td><td><center>MAC Address</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Wednesday 03-Dec-03</td></tr>
+<tr><td>Ted Misenhimer called from Fasco. He had talked to Rob about problems he was having with
+his unit, which we had rebuilt about a month ago. He had tried to install a jazz drive and had not
+been able to do so. Now, he said, it locked up after a while. Indeed, while I had him look for things it
+locked up and then wouldn't boot at all (no signal on monitor). I told him to send the cpu and
+hd to me.</td><td><center>Fasco</center></td></tr>
+<tr><td>Greg and I got the null valve to work.</td><td><center>Null Valve</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Wednesday 07-Jan-04</td></tr>
+<tr><td>I sent Terry Trainor a copy of V575 at JB's request</td><td><center>L.E. Mason</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Friday 16-Jan-04</td></tr>
+<tr><td>I wasn't setting the shot time in ft2. That fixed the status updates.</td><td><center>FT2</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Monday 18-Jan-04</td></tr>
+<tr><td>Added the configurations and network to the website.</td><td><center>Web</center></td></tr>
+<tr><td></td><td><center></center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Friday 23-Jan-04</td></tr>
+<tr><td>Alex called from Maddison and asked why the scrap dates were wrong. I sent him v5.75 with
+instructions on how to install it. I also told him how to put it on his office pc. He asked if there
+was some way to remove the exit menu item from the suretrak screen, as some of his guys shut it down
+by mistake. I didn't promise anything except that I would look into it.</td><td><center>Maddison</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center" align="center">Friday 30-Jan-04</td></tr>
+<tr><td>Rich sent an email to Al saying that the mm display went from 999 to 100. Sure enough, Al
+hooked up a shot box and this is what happened, but only in the monall and suretrak programs.
+Luckily, I have an entry (LeftPosPlaces) in the monall.ini and suretrak.ini files. I sent new unicode
+versions of these files to Rich.</td><td><center>Toyota</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center">Monday 02-Feb-04</td></tr>
+<tr><td>I changed the default LeftPosPlaces to 4 in both the monall and suretrak programs.</td><td><center>LeftPosPlaces</center></td></tr>
+<tr><td>I finished the new parameter for Madison, the max analog over range.</td><td><center>Max over Range</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center">Tuesday 03-Feb-04</td></tr>
+<tr><td>I changed the ft2 realtime to display true distance and velocity./td><td><center>FT2</center></td></tr>
+<tr><td>
+I added the ftanalog.csv file to copypart, added the ftii machine setups to bupres, and added some docs for the
+new parameter in the help file.</td><td><center>FT2</center></td></tr>
+<tr><td>Issued V6.05</td><td><center>V6.05</center></td></tr>
+
+<tr><td colspan="2" class="big" valign="center">Monday 16-Feb-04</td></tr>
+<tr><td>I got the runlist working today (this is normally used for the warmup part only) on the FT2. I had
+a problem on friday with two copies of s in one place. This appears to have been caused by not recompiling the
+dundas code, though I can't imagine how that happened.</td><td><center>FT2 Warmup Part</center></td></tr>
+</table>
+
+<h3>Thursday 19-Feb-04</h3>
+<table border width="100%">
+<tr><td>Rob is at Eric Mason's place. I had numerous things that didn't work in 6.06, including using the
+wrong sensor and using the wrong position for ft_analog. I fixed those and also fixed where if you double
+clicked on the trend chart I always went to the standard screen rather than the zabish, if that was chosen.
+</td><td width="10%"><center>Eric Mason</center></td></tr>
+</table>
+
+<h3>Monday 01-Mar-04</h3>
+<table border width="100%">
+<tr><td>Sunday Tom was "cleaning" his windows\temp and inadvertantly must have done something bad. Anyway, thereafter
+he couldn't use either max or greatplains. Pervasive couldn't talk to the DB's. I reinstalled Pervasive but that did
+no good. I then removed Pervasive again, reinstalled novell, and then reinstalled pervasive and that worked.</td><td width="10%"><center>Tom's Pervasive</center></td></tr>
+<tr><td>Tom's computer name is JACKW. Sue's is TOMV. They don't use the local engine at all.</td><td><center>Tom's Pervasive</center></td></tr>
+<tr><td>When you reinstall Pervasive you wipe out the dll's for Crystal Reports</td><td><center>Crystal Reports</center></td></tr>
+</table>
+
+<h3>Tuesday 02-Mar-04</h3>
+<table border width="100%">
+<tr><td>Greg sent a new version of the flash files and I updated the terminal program to use the + again.
+Greg's new files allow us to update over the ethernet cable.</td><td width="10%"><center>FT2</center></td></tr>
+</table>
+
+<h3>Wednesday 03-Mar-04</h3>
+<table border width="100%">
+<tr><td>Updated dataserv.html to include the NoNetwork=Y line in the c:\v5\exes\visitrak.ini file.</td><td width="10%"><center>Data Server</center></td></tr>
+</table>
+
+<h3>Monday 15-Mar-04</h3>
+<table border width="100%">
+<tr><td>Last week I removed the grid control. I ran shots over the weekend without loosing any memory.</td><td width="10%"><center>No Grid Control</center></td></tr>
+</table>
+
+<h3>Thursday 18-Mar-04</h3>
+<table border width="100%">
+<tr><td>The downtime appears to be working correctly. Also got the MonitorWire and AlarmOnDown wires working.</td><td width="10%"><center>FT2 Downtime</center></td></tr>
+<tr><td>Rob discovered that I had forgotton to change the 6.06 to 6.07 or 6.08 in the about box. Luckily
+I was able to fix this before issuing the final V6.08 but 6.07 had this problem.</td><td><center>About Box</center></td></tr>
+</table>
+
+<h3>Wednesday 31-Mar-04</h3>
+<table border width="100%">
+<tr><td>This was my first day working at home. I forgot to bring the
+word docs for the FT2 board.</td><td width="10%"><center>Home Work</center></td></tr>
+<tr><td>I changed the smoothing so the arrays are replaced with the smoothed values. The limits
+aren't replaced at this time. I put the setups for the smooth in the Display Setup. I also
+put checkboxes so you can choose which curves get smoothed.</td><td><center>Smoothing</center></td></tr>
+<tr><td>I fixed a bug in the ftii_parameters. I was getting distance instead of velocity
+for Sleeve full velocity, runner full velocity, and average fill velocity.</td><td><center>Velocity Bug</center></td></tr>
+</table>
+
+<h3>Thursday 01-Apr-04</h3>
+<table border width="100%">
+<tr><td>The v5setups program doesn't display the computers if the password is low. I had forgotten
+to change the dialog for this case to include the ft2 stuff. I added this so it looks like the
+normal screen but I still need to do it for the japanese, german, and spanish versions.</td><td width="10%"><center>FT2 Board Setup</center></td></tr>
+</table>
+
+<h3>Friday 02-Apr-04</h3>
+<table border width="100%">
+<tr><td>If you turned off monitoring while ft2 was running I didn't send a null
+message to the board. I fixed this.</td><td width="10%"><center>Ft2 not monitored</center></td></tr>
+<tr><td>I changed ft2 so the terminal only shows stuff from the current machine. I also
+made it so if I am watching the realtime screen and Greg changes the board using the sneaker
+method of rerunning monall that I turnoff operational status packets from the old board and
+turn them on on the new board.</td><td><center>Ft2 Terminal</center></td></tr>
+<tr><td>I changed the setup.exe to add check boxes for office workstation and local install
+on data archiver. In both these cases I delete the monitor exes. If I am installing an
+office workstation I delete the machines as well.</td><td><center>Setup</center></td></tr>
+</table>
+
+<h3>Monday 05-Apr-04</h3>
+<table border width="100%">
+<tr><td>Added Display Setup screen help</td><td width="10%"><center>Display Setup Help</center></td></tr>
+</table>
+
+<h3>Tuesday 06-Apr-04</h3>
+<table border width="100%">
+<tr><td>I finished changing the statistical summary to allow you to reduce the number of parameters displayed.</td><td width="10%"><center>Stat Summary</center></td></tr>
+<tr><td></td><td><center></center></td></tr>
+</table>
+
+<h3>Tuesday 13-Apr-04</h3>
+<table border width="100%">
+<tr><td>Mike Thompson called from Port City to say that the screen is showing no trace on a computer
+monitoring 5 machines at 150 shots per hour per machine (750 shots/hr). If he shut it down and then restarted
+the program everything worked for a while and then started doing the same thing again. He can print, and then it get the
+shot and works ok for a while. I called him back to tell him to lock on one machine at a time and he said that
+they had just switched to the last 50 shots screen and he switched back and it seemed ok.</td><td width="10%"><center>Port City</center></td></tr>
+<tr><td></td><td><center></center></td></tr>
+</table>
+
+<h3>Thursday 15-Apr-04</h3>
+<table border width="100%">
+<tr><td>I set up the data archiver for Rome. They had a VisiNet folder with a dat file so I was able
+to get the directories right.</td><td width="10%"><center>Rome</center></td></tr>
+<tr><td>I talked to Dwane Hoke at Hayes Limmer about connecting the office pc's to the V5Backup folder on
+the data archive computer. He was finally able to do it but says he is going to be forced to make all of the monitoring
+computers domain based. Everything he does is difficult.</td><td><center>Hayes</center></td></tr>
+<tr><td>Jack Lawrence sent a hard disk from Blue Ridge Pressure Castings. He couldn't boot but I was able
+to boot to command line and run scandisk. They had one bad block and a bunch of chk files. The drive was
+reporting it's size incorrectly. After that I booted to safe mode and then to regular windows using
+an IAC halfcard 486. The only new hardware found was the ps2 mouse. I made a part and ran some
+shots and everything worked ok. I deleted the part, tried the cpu with a serial mouse and it worked ok.
+</td><td><center>Blue Ridge</center></td></tr>
+</table>
+
+<h3>Friday 16-Apr-04</h3>
+<table border width="100%">
+<tr><td>I wasn't copying all the ft2 help files in the install program for 6.09. Fixed.</td><td width="10%"><center>ft2 Install</center></td></tr>
+<tr><td>Added help for the ft2 realtime screen.</td><td><center>Ft2 Help</center></td></tr>
+</table>
+
+<h3>Monday 19-Apr-04</h3>
+<table border width="100%">
+<tr><td>Changed the install program to copy different ftii.ini files depending on control or not.</td><td width="10%"><center>Install</center></td></tr>
+<tr><td>Changed the install program to create 4 floppies. Moved all the ft2help files to the fourth floppy.</td><td><center>4 Floppies</center></td></tr>
+</table>
+
+<h3>Friday 23-Apr-04</h3>
+<table border width="100%">
+<tr><td>I added a brouse button to the netsetup program so you can pick computers to add from the brouse window.</td><td width="10%"><center>NetSetup</center></td></tr>
+</table>
+
+<h3>Monday 26-Apr-04</h3>
+<table border width="100%">
+<tr><td>I updated the help for the NetSetup program and changed the screen text to Data Archiver. I
+also changed the startup to brouse for computers if there is no .dat file. This keeps the program from
+trying to find computers on a big network.</td><td width="10%"><center>NetSetup</center></td></tr>
+<tr><td>I removed all knowledge of the data server from the computer class. I didn't really use it for
+anything as the data server should not appear in the computer.txt file at all.</td><td><center>COMPUTER CLASS</center></td></tr>
+<tr><td></td><td><center></center></td></tr>
+</table>
+
+<h3>Thursday 29-Apr-04</h3>
+<table border width="100%">
+<tr><td>I changed the computer.txt to computer.csv and made the path limit MAX_PATH
+instead of 25</td><td width="10%"><center>Computer Path</center></td></tr>
+<tr><td>I updated the netsetup program to use the new sizes.</td><td><center>NetSetup</center></td></tr>
+</table>
+
+<h3>Friday 30-Apr-04</h3>
+<table border width="100%">
+<tr><td>I grayed out the buttons in the computer section of the fastrak board setup.
+You need to use the netsetup program for this now.</td><td width="10%"><center>Fastrak Board Setup</center></td></tr>
+</table>
+
+<h3>Monday 03-May-04</h3>
+<table border width="100%">
+<tr><td>I added the option to set the level of the "Exit" menu item on the Suretrak
+Control Interface program.<td width="10%"><center>SCI Exit</center></td></tr>
+<tr><td>Added diagrams to the ft2 help screens</td><td><center>FT2 Help</center></td></tr>
+</table>
+
+<h3>Tuesday 04-May-04</h3>
+<table border width="100%">
+<tr><td>I changed the purge level for downtimes to work for alarm summary data as well</td><td width="10%"><center>Purge Alarm Summary Data</center></td></tr>
+</table>
+
+<h3>Wednesday 05-May-04</h3>
+<table border width="100%">
+<tr><td>Changed the downtime summary screen to show all subcats at once.</td><td width="10%"><center>Downtime Summary</center></td></tr>
+</table>
+
+<h3>Friday 07-May-04</h3>
+<table border width="100%">
+<tr><td>Added find(), first_name(), last_name() to WORKER_LIST_CLASS in workclas.h</td><td width="10%"><center>WORKER LIST CLASS</center></td></tr>
+<tr><td>Added operator first and last names to vtextrac downtime record format</td><td><center>Vtextrac</center></td></tr>
+</table>
+
+<h3>Tuesday 11-May-04</h3>
+<table border width="100%">
+<tr><td>I fixed the setup program so it grays out the startup options more appropriately.</td><td width="10%"><center>Setup</center></td></tr>
+</table>
+
+<h3>Monday 24-May-04</h3>
+<table border width="100%">
+<tr><td>Found that I was sending too many null messages. Sometimes the Null
+message would be the one I tried to wake the board up with, in which case nothing would
+ever happen again.</td><td width="10%"><center>Null Message Bug</center></td></tr>
+</table>
+
+<h3>Wednesday 26-May-04</h3>
+<table border width="100%">
+<tr><td>I changed iniclass so that if there is no ini file and I am unicode then
+I will write a short file with just the section first. Otherwise WritePrivateProfileString
+will create an ansii file.</td><td width="10%"><center>INI_CLASS</center></td></tr>
+</table>
+
+<h3>Friday 04-Jun-04</h3>
+<table border width="100%">
+<tr><td>I fixed a bug in the netsetup program where I would not delete the old entry when I
+renamed a computer.</td><td width="10%"><center>Netsetup Fix</center></td></tr>
+</table>
+
+<h3>Monday 14-Jun-04</h3>
+<table border width="100%">
+<tr><td>Slowed down suretrak program so it only talks to the suretrak board
+twice a second instead of three times.</td><td width="10%"><center>SureTrak</center></td></tr>
+<tr><td>Added <b>Upload Current Board</b> to FT2</td><td><center>FT2</center></td></tr>
+<tr><td>Created Setup for NetSetup program.</td><td><center>DS Install</center></td></tr>
+<tr><td>Reworked DSInstall to install DS file</td><td><center>DS Install</center></td></tr>
+<tr><td>Fixed Bug in monall that prevented me from loading the zeroth mux psensor.</td><td><center>Monall</center></td></tr>
+<tr><td>Added new ftii files to copymach.</td><td><center>copymach</center></td></tr>
+</table>
+
+<h3>Wednesday 16-Jun-04</h3>
+<table border width="100%">
+<tr><td>I still had one more bug in Netsetup which caused me to dup computers. I fixed this.</td><td width="10%"><center>NetSetup</center></td></tr>
+</table>
+
+<h3>Tuesday 22-Jun-04</h3>
+<table border width="100%">
+<tr><td>Tom Light called from lp. He has a new telesis stamp machine that he's trying to
+hook up. I fixed the serialtest so it knows about fixed with shot numbers (it didn't) and sent that
+to him with the directions. I also told him to use programmable protocol.</td><td width="10%"><center>L&P Telesis</center></td></tr>
+</table>
+
+<h3>Thursday 24-Jun-04</h3>
+<table border width="100%">
+<tr><td>Tom Light had me send the telesis stuff to john.patrick@lpalum.com. They never got it and tried to set up
+the telesis using the complicated protocol. I spent quite a bit of time trying to send the file. Lee Mathes
+finally had me send it to his alelphia account and that worked. Apparently lp junks all email with attachments.</td><td width="10%"><center>L&P Telesis</center></td></tr>
+<tr><td>I set up the three computers for lp harrison. QW00084 was the laptop which I made a workstation. QW00085
+was the Data Archiver. I also put the NetSetup on this and the FTII as well, though this should be copied to
+the laptop.</td><td><center>L&P Harrison</center></td></tr>
+</table>
+
+<h3>Friday 25-Jun-04</h3>
+<table border width="100%">
+<tr><td>Added the manual mode indicator to the Ft2 Setup screen at Al's request. This required changing the
+ftii.ini file as well. Changed the install for 6.11 to always copy the ftii.ini file.</td><td width="10%"><center>Ft2 Setup</center></td></tr>
+</table>
+
+<h3>Monday 28-Jun-04</h3>
+<table border width="100%">
+<tr><td>Tom Light emailed me that he got the Telesis going by changing the eol to \r\n instead of just
+\r.</td><td width="10%"><center>Telisis</center></td></tr>
+</table>
+
+<h3>Tuesday 06-Jul-04</h3>
+<table border width="100%">
+<tr><td>Found mem leak in profile getting downtime event string.</td><td width="10%"><center>Mem leak</center></td></tr>
+</table>
+
+<h3>Friday 09-Jul-04</h3>
+<table border width="100%">
+<tr><td>Finished, hopfully, V6.11 both ansii and unicode. The problem we were having with
+unicode was caused by having a min stroke len less than the end point of the first step. I added a check for this
+in the editor and it now nags you if your msl is less than the start of the fast shot step.</td><td width="10%"><center>V6.11</center></td></tr>
+<tr><td>I also added code to turn off the operational data packets during a download. This was actually
+not necessary for the problem we were having but it is a good idea and I kept it.</td><td><center>Min Stroke Len</center></td></tr>
+<tr><td>Al asked me to add a 100 pitch rod to the rodpitch choices. When the FT2 sees this it automatically
+changes the V314 variable to end in a '5'.</td><td><center>V314 Prince Setup</center></td></tr>
+</table>
+
+<h3>Monday 12-Jul-04</h3>
+<table border width="100%">
+<tr><td>Al told me that sometimes there is no end position on the last step. If this is the fast shot
+then I need to use the total stroke length rather than the end of the step when I calculate the
+recommended msl in the part editor. I should, actually, subtract the
+nominal biscuit size from the tsl but for now
+I'm not going to do that.</td><td width="10%"><center>No end position for fast shot step.</center></td></tr>
+<tr><td>I gave Tony V6.11, which means I've tentatively released it.</td><td><center>V6.11 Release</center></td></tr>
+</table>
+
+<h3>Wednesday 13-Jul-04</h3>
+<table border width="100%">
+<tr><td>I finally fixed bupres so he stops if you press cancel when he is copying profiles. Previously he would
+continue until done with that part, which could be a long time.</td><td width="10%"><center>Abort bupres inbetween shots</center></td></tr>
+<tr><td></td><td><center></center></td></tr>
+</table>
+
+<h3>Wednesday 14-Jul-04</h3>
+<table border width="100%">
+<tr><td>Chemo #6</td><td width="10%"><center>Chemo</center></td></tr>
+</table>
+
+<h3>Thursday 29-Jul-04</h3>
+<table border width="100%">
+<tr><td>I found a bug in the start of shift routine. I was adding seven days if the start of shift was on saturday and I was on sunday.</td><td width="10%"><center>Shift Bug</center></td></tr>
+</table>
+
+<h3>Tuesday 03-Aug-04</h3>
+<table border width="100%">
+<tr><td>I have always thought that if a string is missing from the japanese section of the resource file that it will get it from
+the english section. This makes no sense but I always thought it would work thhat way. Duh. It doesn't.</td><td width="10%"><center>Missing Resource</center></td></tr>
+</table>
+
+<h3>Monday 09-Aug-04</h3>
+<table border width="100%">
+<tr><td>Tom was having trouble with his email asking for password all the time. Brightnet told him to change his
+smtp server to <b>smtp.visi-trakworldwide.com</b> and his smtp port to <b>587</b> and that fixed the problem.</td><td width="10%"><center>Tom's SMTP</center></td></tr>
+<tr><td></td><td><center></center></td></tr>
+</table>
+
+<h3>Tuesday 17-Aug-04</h3>
+<table border width="100%">
+<tr><td>I changed the part editor so that if this is a monitor-only system I use just the four limit switch settings from
+the part editor program.</td><td width="10%"><center>FT2 Limit Switches</center></td></tr>
+</table>
+
+<h3>Wednesday 18-Aug-04</h3>
+<table border width="100%">
+<tr><td>Ed Wrench called to tell me that when you disable parameter limit editing you can still edit if you
+double click in the listbox. Sure enough, this is true. I fixed it with a one line fix but Ed is at v5.72 and I'm not sure what
+to do.</td><td width="10%"><center>Ed Wrench Param Limits</center></td></tr>
+<tr><td>Finished the initial Downtime Report program.</td><td><center>Downtime Report</center></td></tr>
+</table>
+
+<h3>Friday 20-Aug-04</h3>
+<table border width="100%">
+<tr><td>Finished help for the shift report</td><td width="10%"><center>Shift Report Help</center></td></tr>
+<tr><td>Added status bar help for menu items that were lacking.</td><td><center>Status Bar Help</center></td></tr>
+<tr><td>I changed the wires for limit switches in the monitor-only ftii_control_program.txt</td><td><center>Limit Switch Wires</center></td></tr>
+<tr><td>The shift report uses ft2help.exe to play the flash help file. To do that I had to change the startup file name
+in ft2help.txt. I changed ft2.exe (which runs as monall.exe) to change this as well. </td><td><center>Flash Help</center></td></tr>
+</table>
+
+<h3>Monday 23-Aug-04</h3>
+<table border width="100%">
+<tr><td>Finished the Shift Report with Bill's changes.</td><td width="10%"><center>Shift Report</center></td></tr>
+</table>
+
+<h3>Wednesday 25-Aug-04</h3>
+<table border width="100%">
+<tr><td>Added suretrak2 control xbox to machine editor. Combined basic and advanced screens. Changed install program
+to set the suretrak_controlled variable in the machset table if this is a suretrak.
+The part editor uses this to decide whether you can change the wire masks for the limit switches or not. FasTrak2 monitor systems can
+but no one else. If this is a <b>suretrak2</b> then I change the limit switches on the positions screen to 5 and 6 but no wire masks can
+be changed.</td><td width="10%"><center>Machine Editor Wire&nbsp;Masks</center></td></tr>
+<tr><td>I changed the alternate machset tables on the install disk so that if a control system is installed from scratch I
+have already defined the machine as a control.</td><td><center>Update SureTrak Control</center></td></tr>
+<tr><td>I changed the limit switch wire masks (V378-V383) in the monitor only ftii_control_program.txt again and zeroed them all out so they don't interfere
+with the alarms. On monitor-only systems you can set these for the limit switches.</td><td><center>Limit Switch Wire Masks</center></td></tr>
+</table>
+
+<h3>Thursday 26-Aug-04</h3>
+<table border width="100%">
+<tr><td>I added a shiftrpt.ini file with separate color settings for the screen and printer. I need a screen to set these up but for now
+you can at least change them if you have to.</td><td width="10%"><center>Shiftrpt.ini</center></td></tr>
+<tr><td>I created a COLOR_CLASS to simplify colors. I had a COLORS_CLASS to load the colors for the plot screen and this will be confusing
+but I'll probably never use the COLOR<b>S</b>_CLASS again.</td><td><center>COLOR_CLASS</center></td></tr>
+</table>
+
+<h3>Friday 27-Aug-04</h3>
+<table border width="100%">
+<tr><td>I changed the display setup so the fixed axes work for all 8 channels.</td><td width="10%"><center>8 Fixed Axes</center></td></tr>
+</table>
+
+<h3>Monday 30-Aug-04</h3>
+<table border width="100%">
+<tr><td>Issued V6.12</td><td width="10%"><center>V6.12</center></td></tr>
+</table>
+
+<h3>Wednesday 01-Sep-04</h3>
+<table border width="100%">
+<tr><td>I changed the color editor in the downtime setup program to use scrollbars instead of trackbars and added another
+scrollbar which moves the rest all at once.</td><td width="10%"><center>Color Edit</center></td></tr>
+</table>
+
+<h3>Friday 03-Sep-04</h3>
+<table border width="100%">
+<tr><td>I cleaned up the status screen so you can change the font and redisplay real time.</td><td width="10%"><center>Status Screen</center></td></tr>
+<tr><td>The box screen and status screen weren't looking at the alarms because they were trying to get the parameters from the .pro file.</td><td><center>Box Alarm Bug</center></td></tr>
+<tr><td>Added parameter value type to the status screen.</td><td><center>Status Screen Parameter value</center></td></tr>
+</table>
+
+<h3>Wednesday 08-Sep-04</h3>
+<table border width="100%">
+<tr><td>I found that the when transfering data from the ftii_file_data to the ftii_array_data I wasn't duplicating the zeroth
+point of the output bits (it was thus a random number) and wasn't copying the isw4 points at all (I was duping the isw1 points instead.</td><td width="10%"><center>Output Bit copy bug</center></td></tr>
+<tr><td>I changed the ftii_array write_csv() to output the 8 analog channels and made this the olmsted csv save function ( menu item 808). There is no entry in profile.mnu, you have to add it manually.</td><td><center>Write CSV</center></td></tr>
+<tr><td>Issued V6.14. There is no 6.13. See 10-Sep for official release.</td><td><center>V6.14 RC1</center></td></tr>
+<tr><td>I fixed the help for the shift report so it has the new picture.</td><td><center>Shift Report Help</center></td></tr>
+</table>
+
+<h3>Friday 10-Sep-04</h3>
+<table border width="100%">
+<tr><td>Reissued V6.14 after finding an irregularity in the initialization of the smooth settings.</td><td width="10%"><center>V6.14</center></td></tr>
+</table>
+
+<h3>Friday 24-Sep-04</h3>
+<table border width="100%">
+<tr><td>Eric Mason called this week to inform me that I was saving all the shots no matter what the settigs. Eric has 6.07 and there was
+no way to upgrade him (he has older flash) so I fixed the ft2.exe for 6.07 and emailed it to him. I also fixed the current ft2 and need to
+make a new release. First, though, Al had some changes to the help file which I added. These were valve setup instructions and
+alternate step instructions for the suretrak2.</td><td width="10%"><center>Save All Shots  & V6.15</center></td></tr>
+</table>
+
+<h3>Tuesday 28-Sep-04</h3>
+<table border width="100%">
+<tr><td>Spent most of the day loading up two hd's for Pace.</td><td width="10%"><center>Pace HD's</center></td></tr>
+<tr><td>Removed infections from Kathy's Computer</td><td><center>Kathy's Computer</center></td></tr>
+<tr><td>I discovered that I had moved the t2 folder, which is the udp version of the terminal program used to
+upload flash files to the ft2, to the old_projects. Why I did this I don't know. I restored it and modified the upload dialog
+to include all three files. Al and I talked about the monitor only setup and decided to load all systems with the control flash
+and the full ftii_control_program.txt. I need to change the setup file.</td><td><center>T2</center></td></tr>
+</table>
+
+<h3>Tuesday 12-Oct-04</h3>
+<table border width="100%">
+<tr><td>Greg sent me a new flash file that won't upload while the ram is moving. Al was worried because he has a couple of customers
+who have rams that drift constantly. Greg says the restriction only applies during the shot so this shouldn't be a problem. Greg also
+had me remove the .H and .G commands from the ftii_control_program.txt. I've been running this version and it seems to work well.
+</td><td width="10%"><center>Upload During Shot</center></td></tr>
+<tr><td>I found how to set the NetSetup brouse-for-computers to start in the network neighborhood.</td><td><center>Brouse for Computers</center></td></tr>
+</table>
+
+<h3>Wednesday 13-Oct-04</h3>
+<table border width="100%">
+<tr><td>I changed the ft2 monitor program to use the third set of points instead of the second to figure out the analog channels. This is because
+the board puts a bad point in the second set of the first shot. After that it is ok.</td><td width="10%"><center>FT2 Analog Bug</center></td></tr>
+<tr><td>I added a checkbox to save the raw counts to the csv file instead of the converted data.</td><td><center>CSV Raw Counts</center></td></tr>
+</table>
+
+<h3>Thursday 14-Oct-04</h3>
+<table border width="100%">
+<tr><td>I added, at Al's request, a textbox with the description of the current step for the ft2 control just like the one for the suretrak.
+For now I only look in the exes folder for the control.msg file.</td><td width="10%"><center>FT2 Step Messages</center></td></tr>
+</table>
+
+<h3>Friday 15-Oct-04</h3>
+<table border width="100%">
+<tr><td>I changed the FILE_CLASS to retry opens (all opens) up to 10 times if there is a sharing violation.</td><td width="10%"><center>FILE_CLASS retrys</center></td></tr>
+</table>
+
+<h3>Friday 22-Oct-04</h3>
+<table border width="100%">
+<tr><td>I found that the part setup was replacing all the parameter pressure units with the head pressure units. I changed this so it only replaces
+the internal pressure units.</td><td width="10%"><center>Units Bug</center></td></tr>
+<tr><td></td><td><center></center></td></tr>
+</table>
+
+<h3>Friday 05-Nov-04</h3>
+<table border width="100%">
+<tr><td>Issued V6.16. This includes two bug fixes plus addition of the step description on the realtime ft2 screen. It also includes a check
+for a zero position in the first 10 time based points. If I find this I replace the values of that point with those of the
+following point.</td><td width="10%"><center>V6.16</center></td></tr>
+</table>
+
+<h3>Monday 08-Nov-04</h3>
+<table border width="100%">
+<tr><td>The backup program wasn't saving the new ftii_ctrl_prog_steps.txt file, which I use for the alternate first step. I fixed this.</td><td width="10%"><center>ftii_ctrl_prog_steps</center></td></tr>
+</table>
+
+<h3>Tuesday 09-Nov-04</h3>
+<table border width="100%">
+<tr><td>Greg found that in the Machine Setup if you change the Sure-Trak2 setting I don't set the has_changed flag and the change is
+not saved unless you change something else (like toggle the Calc Params type).</td><td width="10%"><center>Emachine Bug</center></td></tr>
+<tr><td></td><td><center></center></td></tr>
+</table>
+
+<h3>Wednesday 10-Nov-04</h3>
+<table border width="100%">
+<tr><td>Saving the changes in the shift report was confusing as changes to the title are saved to the current file and so if you make a new
+report and then save to a new name all the changes also appear in the old report. I put a warning to this effect in the Ranges dialog.</td><td width="10%"><center>Shift Report Save</center></td></tr>
+<tr><td>When I upload the ft2 all alarms are turned off. I wasn't clearing my bit list and so never turned them back on. I changed the
+board monitor so it clears the alarm_bits when it completes an upload.</td><td><center>FT2 Alarm Bits</center></td></tr>
+</table>
+
+<h3>Thursday 11-Nov-04</h3>
+<table border width="100%">
+<tr><td>Added the asensor, boards, and ftii_boards to the bupres.</td><td width="10%"><center>Backup and Restore</center></td></tr>
+</table>
+
+<h3>Friday 19-Nov-04</h3>
+<table border width="100%">
+<tr><td>Made up 6.17 install. Began testing. This has the .H and .G back in the ftii_control_program.txt file and some
+additions to the ft2 help file.</td><td width="10%"><center>V6.17</center></td></tr>
+</table>
+
+<h3>Tuesday 23-Nov-04</h3>
+<table border width="100%">
+<tr><td>Finished up changes to the NetSetup program. It now gets the version, checks for shared full, and warns if the path has changed. It also works for both new and old (computer.csv vs computer.txt).</td><td width="10%"><center>NetSetup</center></td></tr>
+</table>
+
+<h3>Wednesday 24-Nov-04</h3>
+<table border width="100%">
+<tr><td>Finished the new FT2 help file (TOC and Index).</td><td width="10%"><center>FT2 Help</center></td></tr>
+</table>
+
+<h3>Wednesday 22-Dec-04</h3>
+<table border width="100%">
+<tr><td>Honda was having the Profile program lock up if they exceeded 1.2 Seconds post impact. This was because I didn't increase the
+MAX_POINTS in Visiparm from 5000 to 14000 to allow for the new points. Duh.</td><td width="10%"><center>Honda Bug</center></td></tr>
+<tr><td></td><td><center></center></td></tr>
+</table>
+
+<h3>Thursday 06-Jan-05</h3>
+<table border width="100%">
+<tr><td>I was not copying the limit switch wires (which are stored in the ftii_part_settings.txt file) when I copied a part (6.20). I
+fixed this.</td><td width="10%"><center>Copy Limit Switch Wires</center></td></tr>
+<tr><td>I decided to create a new data file, ftii_limit_switch_wires.dat, which will have the six wire numbers, one per line.</td><td><center>Ftii Limit Switch Wires</center></td></tr>
+</table>
+
+<h3>Wednesday 12-Jan-05</h3>
+<table border width="100%">
+<tr><td>Al found that I wasn't copying the new message file to the exes folder. This is in the setup program only. I changed that and also
+added a checkbox to the update screen that will add su.exe to the startup folder.</td><td width="10%"><center>ST2 Message File</center></td></tr>
+<tr><td>Issued V6.20a which is the same as V6.20 except for the setup.exe changes.</td><td><center>V6.20a</center></td></tr>
+</table>
+
+<h3>Friday 14-Jan-05</h3>
+<table border width="100%">
+<tr><td>I discovered that my picture of the opto board doesn't show on screens with indexed (256 color) displays. It can display ok,
+as irfanfiew does, so I need to add the palette commands to my control.</td><td width="10%"><center>256 Colors</center></td></tr>
+</table>
+
+<h3>Monday 17-Jan-05</h3>
+<table border width="100%">
+<tr><td>Matt Faldet called to say his netsetup is dying when he presses std connections. I sent him the new one.</td><td width="10%"><center>Matt</center></td></tr>
+<tr><td>Greg sent his preliminary spec for the new servo amp board (w/pressure control).</td><td><center>FT2 Spec</center></td></tr>
+<tr><td>Spent a couple of hours trying to disenfect Kathy's computer.</td><td><center>Kathy's Computer</center></td></tr>
+</table>
+
+<h3>Tuesday 18-Jan-05</h3>
+<table border width="100%">
+<tr><td>Al changed the control.msg for the FT2.<br>76,79,Waiting for MANUAL MODE</td><td width="10%"><center>FT2 control.msg</center></td></tr>
+</table>
+
+<h3>Thursday 20-Jan-05</h3>
+<table border width="100%">
+<tr><td>I found that I had the WRONG ftii_control_program.txt file in the 6.20 install. I replaced it with the correct one, the one with
+.UV1=, etc., and reissued it as 6.20b.</td><td width="10%"><center>V6.20b</center></td></tr>
+</table>
+
+<h3>Thursday 27-Jan-05</h3>
+<table border width="100%">
+<tr><td>Greg called from EST. He said they still weren't connecting to the FT2 board on the machine we updated last week. I had him check the network address. It
+turned out that he was connecting but that he unconnected after one shot so that wasn't the problem. I thought they had the new version of the
+software but maybe not. Anyway, I sent the new 6.20b with instructions. I used the ftp upload site so it won't show in my sent box.</td><td width="10%"><center>EST</center></td></tr>
+<tr><td>I added a 1ms sleep before each line while uploading. This appears to have fixed the problem with the FT2 not working with my xp system.</td><td><center>FT2 & XP</center></td></tr>
+<tr><td>I've been talking to Greg at Est for a week or so. Today I talked to him off and on all day. He kept telling me he was getting the Not
+Connected status but he just meant he wasn't getting any updates from the board on the realtime screen!/td><td><center>Greg at EST</center></td></tr>
+</table>
+
+<h3>Friday 28-Jan-05</h3>
+<table border width="100%">
+<tr><td>I changed board_monitor.cpp so that if I get a nak or if I time out I clear the waiting_for_ack and waiting_for_plus. Previously
+I was only clearing the waiting_for_ack if the nak count was less than the max.</td><td width="10%"><center>Naks</center></td></tr>
+<tr><td>If the min stroke length was greater than the last position based point I was messing up. I changed calculate_ftii_parameters
+so that if this is true I set the min stroke len to the last pos based point -1.</td><td><center>Min Stroke Len</center></td></tr>
+<tr><td>I was also messing up the fill time trying to use timer counts from the first time based point. I changed the interpolated_timer_count
+function in ftii_array_data to use the last position based point if asked for anything higher.</td><td><center>Fill Time</center></td></tr>
+</table>
+
+<h3>Monday 31-Jan-05</h3>
+<table border width="100%">
+<tr><td>Randy Clemens asked me if we had an option to monitor the rod pres during low impact and open the valve if the
+pressure gets too high. I said no and he said we should think about it.</td><td width="10%"><center>Randy Clemens</center></td></tr>
+<tr><td>I added the valve test in progress and warning active low to the list of already in use outputs.</td><td><center>St2 outputs</center></td></tr>
+</table>
+
+<h3>Wednesday 02-Feb-05</h3>
+<table border width="100%">
+<tr><td>I added a do_not_download bool to the fastrak2 program which I set when I get cs and remove five seconds after the retract
+or the At Home message on the EMC_4_21. I do this only for the ST2 and not the FT2.</td><td width="10%"><center>Do Not Download</center></td></tr>
+</table>
+
+<h3>Thursday 03-Feb-05</h3>
+<table border width="100%">
+<tr><td>I added input_bits to the board_entry class. This keeps track of the bits so I can tell when they change. For now I only use this
+if you use something other than the cycle start message to disable uploads.</td><td width="10%"><center>input bits</center></td></tr>
+<tr><td>I fixed the help for the shift report. In 6.20 when you press f1 the help for the FT2 would appear.</td><td><center>Shift Report Help</center></td></tr>
+<tr><td>I don't know why but when showing channels I wasn't beginning analogs at zero. I changed this, though I should actually
+set the minimum to the value when the sensor outputs a raw value of zero.</td><td><center>Zero Analog</center></td></tr>
+<tr><td>I made the first attempt at V6.21</td><td><center>V6.21 Trial</center></td></tr>
+</table>
+
+<h3>Monday 07-Feb-05</h3>
+<table border width="100%">
+<tr><td>I spent most of the day trying to find where I'm leaking memory but couldn't come up with anything.</td><td width="10%"><center>Leak</center></td></tr>
+<tr><td>I changed the board monitor so he zeros out the alarm_bits if the FT2 sends me a cycle timeout message, as the board clears
+the alarm bits when this happens.</td><td><center>Zero Alarm bits on Cycle Timeout</center></td></tr>
+</table>
+
+<h3>Wednesday 09-Feb-05</h3>
+<table border width="100%">
+<tr><td>I changed the timeout ms in the dbsubs.cpp to double the ms during the last 8 attempts. This increases the wait time to
+about 3 seconds, max.</td><td width="10%"><center>dbsubs wait ms</center></td></tr>
+<tr><td>I also did the same sort of thing to the file_class except I only max out at 1 sec.</td><td><center>file_class</center></td></tr>
+</table>
+
+<h3>Thursday 10-Feb-05</h3>
+<table border width="100%">
+<tr><td>Tom decided to give the P450 to Sue. It had two drives, 2GB and 6GB. I removed the 2GB and made the 6GB the boot drive
+and installed W2K Pro from the Developer Network ISO. I then installed Novell 4.9 and Pervasive and firefox. The system then became
+unstable, taking forever to shut down, etc.</td><td width="10%"><center>Sue's P450</center></td></tr>
+<tr><td>A fellow called from somewhere last week asking of I could output the stamp info (just the shot number) to an ethernet
+address. Actually he wants to use a device that sits on the wire and converts it's stuff to a serial port. I promised to look into it but
+got busy. He called to see how the quote was coming. I admitted I had forgotten all about it. He offered to send me one of the
+units (B&B 901) and I agreed to write the software and then tell him how much it was rather than make a quote.</td><td><center>Ethernet Serial Output</center></td></tr>
+</table>
+
+<h3>Friday 11-Feb-05</h3>
+<table border width="100%">
+<tr><td>I upgraded Sue's P450 to SP3 and reinstalled Pervasive. It seems ok now.
+I then installed word and excel and irfanview and acrobat6 and upgraded ie to 5.5.</td><td width="10%"><center>Sue's P450</center></td></tr>
+<tr><td>I issued V6.21</td><td><center>V6.21</center></td></tr>
+</table>
+
+<h3>Wednesday 16-Feb-05</h3>
+<table border width="100%">
+<tr><td>I added a global OriginalAnalogSensor to editpart.cpp.
+I load this when I load a new part and then use it to check when I save changes.</td><td width="10%"><center>Editpart OriginalAnalogSensor</center></td></tr>
+<tr><td>I got the new screen working, the one that lets you assign sensors to the extended channels. It still needs some work, though.</td><td><center>Extended channels</center></td></tr>
+</table>
+
+<h3>Thursday 17-Feb-05</h3>
+<table border width="100%">
+<tr><td>I decided to make the new screen global so that I can update it when I load a new part.</td><td width="10%"><center>Extended Channels</center></td></tr>
+</table>
+
+<h3>Friday 18-Feb-05</h3>
+<table border width="100%">
+<tr><td>I was setting the do_not_upload to false when the shot was complete and this was not a suretrak but I don't do this if it's not a suretrak so I removed this.</td><td width="10%"><center>do_not_upload</center></td></tr>
+</table>
+
+<h3>Friday 25-Feb-05</h3>
+<table border width="100%">
+<tr><td>Ying found out I wasn't deleting shots (just the graphlst.txt) when purging. I fixed this.</td><td width="10%"><center>Purge Bug</center></td></tr>
+<tr><td>I issued 6.22, which just fixed the above bug.</td><td><center>V6.22</center></td></tr>
+<tr><td>Al asked about the FasTrak On/Off inputs. I said we didn't have those for the FT2. Al said we don't need them yet but will. I decided
+I can save the input as the number and add 1000 if the trigger is from high to low.</td><td><center>FT2 On/Off Inputs</center></td></tr>
+</table>
+
+<h3>Monday 28-Feb-05</h3>
+<table border width="100%">
+<tr><td>The internet was still not working when I came in. Tom said SBC had come on Saturday and had said the problem was theirs but after they fixed
+it Tom still could not connect and they said now we had a problem inside. Of course that wasn't true. The problem was that the SBC guy had disconnected the
+modem from the phone jack and when he had plugged it back in he hadn't put the plug all the way back in. It took until 10:00 to figure this out.
+brightnet was very helpful and patient. SBC almost got us to pay them to come out and check the inside line.</td><td width="10%"><center>Internet</center></td></tr>
+</table>
+
+<h3>Wednesday 02-Mar-05</h3>
+<table border width="100%">
+<tr><td>I inverted the picture I was using to choose wires on the opto board. The picture I used was upside down compared to the way the
+optos are mounted in our cabinate.</td><td width="10%"><center>Choose Wires</center></td></tr>
+<tr><td>I added, at Al's request, a popup screen to change the limit switch descriptions in the part editor.</td><td><center>Limit Switch Desc</center></td></tr>
+<tr><td>Harvey Cunningham called to say that his Data Archiver wasn't zipping the files. It turned out that he wasn't running the program.
+He was also having problems with spikes in the data. This only appears on the floor computer and not on the data archiver. I suggested the data
+archiver might be set to smooth. He checked but it was set to smooth with 0 points. He has a tail rod on the machine with the problem but I
+can't imagine what the difference is if not for smoothing. I had asked him to email me a shot or two but he said he never had the time.</td><td><center>Harvy Cunningham</center></td></tr>
+</table>
+
+<h3>Thursday 03-Mar-05</h3>
+<table border width="100%">
+<tr><td>I updated ft2 so he reloads the limit switch descriptions for switches 1-4 when he gets a new setup notification. I also change him so he reloads the
+globals when you change the current board on the main window.</td><td width="10%"><center>FT2 Globals</center></td></tr>
+</table>
+
+<h3>Thursday 10-Mar-05</h3>
+<table border width="100%">
+<tr><td>The DSRESTOR program was trying to get the machine and part name from the paz file name. If I didn't include them in the file
+name because I was using a directory with the machine name instead then the restore failed. I change the restore program to extract
+the machset and parts tables from the paz or maz file and then read the machine and part from these.</td><td width="10%"><center>DSRESTOR</center></td></tr>
+</table>
+
+<h3>Friday 11-Mar-05</h3>
+<table border width="100%">
+<tr><td>The setup program for the data server was overwriting the dsbackup.ini file if it already existed. I fixed this and made up an
+install disk for Al and Rob that has the V6.22, Data Archiver, and ftii on it. I also added a version (2.0) to the dsrestor. I need to do the same
+to the dsbackup program.</td><td width="10%"><center>Data Archiver Setup</center></td></tr>
+</table>
+
+<h3>Monday 14-Mar-05</h3>
+<table border width="100%">
+<tr><td>I finished adding the mirror drive to the data archiver. There is no operator interface yet, you just enter HaveMirror=Y and
+MirrorRoot=F: in the [Config] section of the dsbackup.ini file. You have to restart the dsbackup program for the changes
+to take effect.</td><td width="10%"><center>Dsbackup Mirror</center></td></tr>
+<tr><td>I added an about box to the dsbackup program and put on a menu item for the help topics as well.</td><td><center>Dsbackup About</center></td></tr>
+</table>
+
+<h3>Tuesday 15-Mar-05</h3>
+<table border width="100%">
+<tr><td> I added some comments to the display of the main board in the diagrams.fla.</td><td width="10%"><center>FT2 Help</center></td></tr>
+</table>
+
+<h3>Monday 28-Mar-05</h3>
+<table border width="100%">
+<tr><td>Mike Howe called from Albany Chicago called and left a message that he would like the following.<ol>
+<li>He
+wants his people to sign in and out and wants the machine to not make a shot until the operator signs in.</li>
+<li>He wants to be able to down a machine without waiting for the popup.</li>
+<li>After a machine is down he doesn't want it to start until the operator enters a downtime code.</li></ol></td><td width="10%"><center>Albany Chicago Downtime Requests</center></td></tr>
+<tr><td></td><td><center></center></td></tr>
+</table>
+
+<h3>Tuesday 05-Apr-05</h3>
+<table border width="100%">
+<tr><td>When editing the editpart.cpp file I discovered that I was overwriting the setting for the biscuit time delay when I saved the changes.</td><td width="10%"><center>Biscuit Time Delay</center></td></tr>
+<tr><td>I finished the pressure control. The only thing not included is the limit switch number.</td><td><center>Pressure Control</center></td></tr>
+<tr><td>Ed Wrench called yeasterday to say that on two parts the biscuit size doesn't change when he changes the total stroke length or when he changes the delay time. In
+installed 6.06, The version that he has, on my system and reverted to flash 3.0 and tried it out with his part, except that I changed the tsl and msl to fit my die
+cast machine and it worked perfectly. I called him today and he said they are changing the die and he will take a look further tomorrow.
+</td><td><center>Ed Wrench</center></td></tr>
+</table>
+
+<h3>Wednesday 06-Apr-05</h3>
+<table border width="100%">
+<tr><td>I created two new files in the V5\Data directory. These are used in the Set DAC screen to set the valve types.
+<ol>
+<li>main_valve_types.txt</li>
+<li>pilot_valve_types.txt</li>
+</ol></td><td width="10%"><center>New Files</center></td></tr>
+<tr><td></td><td><center></center></td></tr>
+</table>
+
+<h3>Thursday 07-Apr-05</h3>
+<table border width="100%">
+<tr><td></td><td width="10%"><center></center></td></tr>
+<tr><td></td><td><center></center></td></tr>
+</table>
+
+</body>
+</html>

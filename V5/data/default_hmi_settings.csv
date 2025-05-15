@@ -1,0 +1,10 @@
+Binary Valve Type (V414),10
+Pulse Time (V416),1
+Devent Time (V417),.2
+Pre Fast LS Number,2
+Fast LS Number,3
+Shot Full Forward LS Number,4
+Intensification LS Number,6
+Pulse Wire,27
+LS 5 Wire,25
+LS 6 Wire,26

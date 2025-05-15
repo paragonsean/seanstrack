@@ -1,0 +1,98 @@
+<html>
+<head>
+<style type="text/css" title="the blues">
+<!--
+th,td { padding-left: 10; padding-right: 10  }
+-->
+</style>
+</head>
+<body>
+<p>
+You will need four blank, formatted, diskettes. Label them
+</p>
+<ul>
+  <li>Disk 1</li>
+  <li>Disk 2</li>
+  <li>Disk 3</li>
+  <li>Update 4.32</li>
+  </ul>
+<p>
+I am assuming that you are in the office, working on a Windows 95, 98, NT, etc., computer
+and that the four files, Disk1.exe, Disk2.exe, Disk3.exe, and Update4.exe, have been
+downloaded onto the hard drive of that computer.
+</p>
+<p>
+Put the first diskette, <b>Disk 1</b>, into the diskette drive and run the <b>Disk1.exe</b> program.
+This will copy the necessary files to Disk 1.
+</p>
+<p>
+Repeat this with
+<table border>
+  <tr><th>Diskette Name</th><th>Program to Run</th></tr>
+  <tr><td>Disk 2</td><td>Disk2.exe</td></tr>
+  <tr><td>Disk 3</td><td>Disk3.exe</td></tr>
+  <tr><td>Update 4.32</td><td>Update4.exe</td></tr>
+  </table>
+
+<p>
+Now that you have created the installation and update diskettes,
+I assume you are doing the rest of the installation on the MS-DOS based monitoring computer.
+</p>
+
+<h3>Full Installation</h3>
+
+<p>
+Diskettes 1 through 3 are used to do a full installation of the program.
+This will delete all existing data on the computer.
+If you are going to do this you should first remove all <nobr>Visi-Trak</nobr> directories
+(you can back up your current system with backupv4.exe first if you wish).
+Delete the following directories if they exist.
+</p>
+<ul>
+  <li>V4</li>
+  <li>V4LOCAL</li>
+  <li>PDOXRUN</li>
+  <li>PRIVATE</li>
+  </ul>
+<p>
+For example, to delete the V4 directory enter the following two lines.
+<code>
+<br>
+CD \
+<br>
+DELTREE V4
+</code>
+</P>
+<p>
+Now, insert <b>Disk 3</b> into the diskette drive and enter the following two lines.
+<code>
+<br>
+A:
+<br>
+INSTALL  A  C
+</code>
+</p>
+<p>
+You will be prompted to insert each of the three diskettes.
+This will install a Version 4.29 of the software. When the installation is done,
+continue with the update to Version 4.32 as described below.
+</p>
+<h3>Update an Existing installation</h3>
+<p>
+Insert the <b>Update 4.32</b> diskette into the diskette drive and enter the following two lines.
+<code>
+<br>
+A:
+<br>
+UPDATE  A  C
+</code>
+</p>
+<p>
+This will update your system to the current version. You can start the program by entering
+</p>
+<code>V4</code>
+
+</body>
+</html>
+
+

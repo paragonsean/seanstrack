@@ -1,0 +1,44 @@
+Greg,
+
+Each message begins with
+    Message Type   (2 bytes)
+    Message Length (4 bytes)
+
+This is followed by the message itself.
+At the present there are only two message types that I use.
+
+Type                           Value     Description
+BOARD_DATA_SOCKET_ENTRY_TYPE    0x1     All messages except the close notification
+SOCKET_CLOSE_NOTIFY_TYPE        0x2     Tells the board that this montitor program is exiting
+
+
+The socket close notification is the shortest message
+
+  00 02  00 00 00 00
+  -----  -----------
+    |         +------ Bytes remaining in this message
+    +---------------- SOCKET_CLOSE_NOTIFY_TYPE
+
+A simple message is one like SET_COMMAND_MODE
+
+  00 01  00 00 00 04  00 01  00 01
+  -----  -----------  -----  -----
+    |         |         |      +--- Board Index { 0 = Sure-Trak, 1->8 = FasTrak }
+    |         |         +---------- Command ( 0x1 = SET_COMMAND_MODE }
+    |         +-------------------- Bytes remaining in this message
+    +------------------------------ BOARD_DATA_SOCKET_ENTRY_TYPE
+
+Send Command Busy is a little longer
+
+  00 01 00 00 00 06 00 07 00 00 80 14
+  ----  ----------- ----- ----- -----
+    |        |        |     |     +--- 0x8014 = CLEAR_CONTROL_MODE = Command to be sent
+    |        |        |     +--------- Board Index { 0 = Sure-Trak }
+    |        |        +--------------- Command ( 0x7 = SEND_COMMAND_BUSY }
+    |        +------------------------ Bytes remaining in this message
+    +--------------------------------- BOARD_DATA_SOCKET_ENTRY_TYPE
+
+And so on...
+
+
+Jay

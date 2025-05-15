@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>Welcome to Visi-Trak &reg; Worldwide, Die Casting Sense, Monitor, Control</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="keywords"
+content="die, cast, diecast, process, monitor, visi, trak, visi-trak, shot control, control, cast, aluminium, cold, chamber, hot, brass, zinc, magnesium, engineering, hotchamber, coldchamber, injection, speeds, speed, velocity, pressure, analog, digital, sensors, position, sensor, sure-trak, true-trak, fastrak">
+<meta HTTP-EQUIV="description"
+CONTENT="Visi-Trak Worldwide, LLC - Sense, Monitor, and Control for improving die casting quality and profits">
+
+
+
+
+
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-image: url(./base_globe.jpg);
+    background-repeat: no-repeat;
+    background-color: #E5E5E5;
+    }
+
+div.board {
+  position: absolute;
+  left: 210;
+  top:  54;
+  z-index: 1;
+  }
+
+div.board1 {
+  position: absolute;
+  left: 100;
+  top:   44;
+  z-index: 2;
+  }
+
+div.das {
+  position: absolute;
+  left: 400;
+  top:   200;
+  z-index: 3;
+  }
+
+div.servo {
+  position: absolute;
+  left: 352;
+  top:   369;
+  z-index: 4;
+  }
+
+table.num_1 {
+  position: absolute;
+  left: 210;
+  top:  200;
+  z-index: 2;
+  }
+
+</style>
+
+<script language="JavaScript">
+var myindex = 0;
+
+function show_images()
+{
+
+if ( myindex == 1 )
+  {
+  document.dest2.src=das_pic.src;
+  }
+
+if ( myindex == 2 )
+  {
+  document.dest.src=ft_board_pic.src;
+  document.servodest.src = "../website/images/das_pic_025.gif";
+  }
+
+if ( myindex == 3 )
+  {
+  document.dest1.src=ft_board_pic.src;
+  document.servodest.src = "../website/images/das_pic_03.gif";
+  }
+
+if ( myindex < 3 )
+  {
+  myindex++;
+  setTimeout( 'show_images()', 2000 );
+  }
+}
+
+function preload_images()
+{
+ft_board_pic = new Image;
+ft_board_pic.src = "./ft_board.gif";
+
+das_pic = new Image;
+das_pic.src = "../website/images/das_pic_02.gif";
+
+show_images();
+}
+</script>
+
+</head>
+<body onLoad="preload_images()">
+
+<center>
+<p>
+<table class="num_1" width="200">
+<tr><td>This is the home page of Visi-Trak Worldwide. Our site is temporarily down for repairs. If you
+need to contact us please phone us at 216 524-2363.</td></tr>
+</table>
+<div class="board"><img name="dest"; src="../website/images/shim.gif"></div>
+<div class="board1"><img name="dest1"; src="../website/images/shim.gif"></div>
+<div class="das"><img name="dest2"; src="../website/images/shim.gif"></div>
+<div class="servo"><img name="servodest"; src="../website/images/shim.gif"></div>
+</center>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿Build started 5/15/25 12:18:47 AM.
+     1>Project "C:\Sources\Version8\profile\profile.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(364,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fd"vc120.pdb" /Gd /TP /analyze- /errorReport:prompt alarmexp.cpp bitmapcl.cpp box.cpp chospart.cpp chosshot.cpp chosshot_no_graphlist.cpp colordef.cpp colors.cpp corner.cpp ctrlimit.cpp dbarcfg.cpp dconfig.cpp downbar.cpp editop.cpp editshif.cpp export.cpp fixaxis.cpp gridclas.cpp isalarm.cpp master.cpp mplot.cpp mulprint.cpp mulprint_no_graphlist.cpp olmsted.cpp paramhis.cpp paramwin.cpp password.cpp plot.cpp plotx1.cpp plotx4.cpp profile.cpp rtmlist.cpp savepro.cpp status.cpp tcconfig.cpp trend.cpp viewpara.cpp vlbclass.cpp xaxis.cpp xdcrplot.cpp
+         xdcrplot.cpp
+         xaxis.cpp
+         vlbclass.cpp
+         viewpara.cpp
+         trend.cpp
+         tcconfig.cpp
+         status.cpp
+         savepro.cpp
+         rtmlist.cpp
+         profile.cpp
+         plotx4.cpp
+     1>c1xx : fatal error C1083: Cannot open source file: 'plotx4.cpp': No such file or directory
+         plotx1.cpp
+     1>c1xx : fatal error C1083: Cannot open source file: 'plotx1.cpp': No such file or directory
+         plot.cpp
+         password.cpp
+         paramwin.cpp
+         paramhis.cpp
+         olmsted.cpp
+         mulprint_no_graphlist.cpp
+     1>mulprint_no_graphlist.cpp(64): error C2065: 'MyPart' : undeclared identifier
+     1>mulprint_no_graphlist.cpp(64): error C2228: left of '.computer' must have class/struct/union
+                 type is 'unknown-type'
+     1>mulprint_no_graphlist.cpp(64): error C2228: left of '.machine' must have class/struct/union
+                 type is 'unknown-type'
+     1>mulprint_no_graphlist.cpp(64): error C2228: left of '.part' must have class/struct/union
+                 type is 'unknown-type'
+     1>mulprint_no_graphlist.cpp(64): error C2065: 'StarDotStar' : undeclared identifier
+     1>mulprint_no_graphlist.cpp(64): error C2660: 'NAME_CLASS::get_part_results_dir_file_name' : function does not take 2 arguments
+     1>mulprint_no_graphlist.cpp(71): error C2065: 'PeriodChar' : undeclared identifier
+     1>mulprint_no_graphlist.cpp(80): error C2065: 'PeriodChar' : undeclared identifier
+     1>mulprint_no_graphlist.cpp(80): fatal error C1903: unable to recover from previous error(s); stopping compilation
+         mulprint.cpp
+         mplot.cpp
+         Generating Code...
+         Compiling...
+         master.cpp
+         isalarm.cpp
+         gridclas.cpp
+         fixaxis.cpp
+         export.cpp
+         editshif.cpp
+         editop.cpp
+         downbar.cpp
+         dconfig.cpp
+         dbarcfg.cpp
+         ctrlimit.cpp
+         corner.cpp
+         colors.cpp
+         colordef.cpp
+         chosshot_no_graphlist.cpp
+     1>chosshot_no_graphlist.cpp(370): error C2665: 'fix_shotname' : none of the 2 overloads could convert all the argument types
+                 c:\sources\version8\profile\..\include\subs.h(225): could be 'void fix_shotname(STRING_CLASS &)'
+                 while trying to match the argument list '(TCHAR [27])'
+         chosshot.cpp
+         chospart.cpp
+         box.cpp
+         bitmapcl.cpp
+         alarmexp.cpp
+         Generating Code...
+     1>Done Building Project "C:\Sources\Version8\profile\profile.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:13.45

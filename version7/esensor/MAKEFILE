@@ -1,0 +1,22 @@
+OPS = -c -v -tWM -WE
+
+esensor.exe : esensor.obj esensor.res
+  TLink32 @&&|
+   -Tpe -aa -c -x +
+\APPS\BC5\LIB\c0w32.obj+
+esensor.obj
+esensor.exe
+
+..\lib\v5subs.lib+
+\APPS\BC5\LIB\import32.lib+
+\APPS\BC5\LIB\cw32mt.lib
+
+|
+   brc32 esensor.res esensor.exe
+   copy esensor.exe \v5\exes
+
+esensor.obj :  esensor.cpp
+  Bcc32 $(OPS) esensor.cpp
+
+esensor.res : esensor.rc
+   brcc32 esensor.rc

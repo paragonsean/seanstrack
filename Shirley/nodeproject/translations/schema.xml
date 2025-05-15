@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<translations>
+	<translation id="machie_setup_text">
+		<English>Machine Setup</English>
+		<Chinese>机器设置</Chinese>
+	</translation>
+	<translation id="create_new_machine_text">
+		<English>Create New Machine</English>
+		<Chinese>新建机器</Chinese>
+	</translation>
+</translations>	
+		

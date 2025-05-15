@@ -1,0 +1,176 @@
+<html>
+<head>
+<title>True-Trak 2020&trade; End Of Shot Output File</title>
+<style type="text/css">
+td { padding-left: 10; padding-right: 10  }
+em { font-style: normal; font-weight: bolder; }
+</style>
+</head>
+<body>
+<h3>True-Trak 2020&trade; End Of Shot Output File</h3>
+
+It is possible to send shot information to a file at the end of
+each shot. This is set up using entries in the
+<b>\V5\EXES\MONALL.INI</b> file. All entries are in the <b>[Config]</b> section.
+
+The following lines configure the output.
+
+<pre>
+EosFixedWidth=None  Number of characters for parameter values or "None" to disable.
+EosOutputFile=C:\Shot-Parameters\param.csv  This is the name of the file that the data will be written to...
+EosOutputFile=UNKNOWN                       Do not write to a file.
+EosKillOutputFile=Y This tells the program to delete the output file, if it exists, before writing a new file.
+</pre>
+
+The following lines override the default good shot indicators: "A", "W", "G".
+<pre>
+EosHaveAlarmShot=Alarm      Prints the word "Alarm" if at least one parameters is in alarm
+EosHaveWarningShot=Warning  Prints the word "Warning" if there are no alarms but at least one parameter is in warning
+EosHaveGoodShot=Good        Prints the word "Good" if there are no Warnings and no Alarms
+</pre>
+
+<h4>Delimiters</h4>
+Each field in the output is separated by a character. The
+default character is a comma. You can change this. Three examples
+are shown below. The second sets the delimiter to a tab character. The last example, a
+backslash followed by a zero, tells the program to <em>use no delimiter between fields</em>.
+<pre>
+EosComDelimitChar=;
+EosComDelimitChar=\t
+EosComDelimitChar=\0
+</pre>
+
+<h4>Line End</h4>
+You will normally want a carriage return and line feed at the end of each
+line. Include the following line.
+
+<pre>
+EosComEol=\r\n
+</pre>
+
+
+<h4>The Setup Line</h4>
+<p>The line that is output is controlled by the setup line. The setup line
+contains a list, in order, of the outputs desired.
+</p>
+<p>
+Each outout is separated by a comma (except for the last). The
+outputs are:
+<p>
+<center>
+
+<table border width="75%" bgcolor=floralwhite>
+<tr><td colspan="2" bgcolor=moccasin align=center>Tags for the EOS Output File</td></tr>
+<tr><td>D</td>     <td>Date mm/dd/yyyy</td></tr>
+<tr><td>D0</td>    <td>Date mmddyy</td></tr>
+<tr><td>G</td>     <td>Prints an indicator for alarm, warning, or good shot</td></tr>
+<tr><td>J</td>     <td>Julian Date, Jan 1 = 1,   Dec 31 = 365.</td></tr>
+<tr><td>J3</td>    <td>Julian Date, Jan 1 = 001, Dec 31 = 365.</td></tr>
+<tr><td>L</td>     <td>Inserts a Line Feed (only works with ',' delimiter)</td></tr>
+<tr><td>M</td>     <td>Machine Name</td></tr>
+<tr><td>P</td>     <td>Part Name</td></tr>
+<tr><td>PD</td>    <td>Plunger Diameter</td></tr>
+<tr><td>Q</td>     <td>Insert text, use \1 for control character. "QV015," inserts "V015" into the line.</td></tr>
+<tr><td>R</td>     <td>Inserts a Carriage Return (only works with ',' delimiter)</td></tr>
+<tr><td>S6</td>    <td>Shot Number with optional length. No length, "S", means variable length (Shot 32 would be "32"), specified length, "S6", means left pad with zeros (Shot 32 would be "000032").</td></tr>
+<tr><td>T</td>     <td>Time hh:mm:ss</td></tr>
+<tr><td>T0</td>    <td>Time hhmmss</td></tr>
+<tr><td>T1</td>    <td>Time hhmm</td></tr>
+<tr><td>Y</td>     <td>Last Digit of the current year. 2009 = 9, 2010 = 0, etc.</td></tr>
+<tr><td>Y2</td>    <td>Last 2 Digits of the current year. 2009 = 09</td></tr>
+<tr><td>1</td>     <td>Parameter 1</td></tr>
+<tr><td>2</td>     <td>Parameter 2</td></tr>
+<tr><td>&nbsp;</td><td>...</td></tr>
+</table>
+</center>
+
+<pre>
+EosComSetup=M,P,S6,D,T,1,2,3,4
+</pre>
+
+results in the following output (assuming ',' delemiter and no eol).
+
+<pre>
+M01,VISITRAK,000032,02/27/1998,12:34:53,28.9112,626.432,574.342,51.8590
+</pre>
+
+If you only wanted the shot number you would use the following line.
+
+<pre>
+EosComSetup=S
+</pre>
+
+This would give the following output for shot number 32
+
+<pre>
+32
+</pre>
+
+<pre>
+EosComSetup=S6
+</pre>
+
+This would give the following output
+
+<pre>
+000032
+</pre>
+
+The parameters are shown below.
+<p>
+<center>
+<table border bgcolor=floralwhite>
+
+<tr><td align=center colspan="4" bgcolor=moccasin>Visi-Trak Parameters</td></tr>
+<tr><td align="right">0</td><td>Fill Time</td>                    <td>18</td><td>Sleeve Full Velocity</td></tr>
+<tr><td align="right">1</td><td>Total Shot Time</td>              <td>19</td><td>Runner Full Velocity</td></tr>
+<tr><td align="right">2</td><td>Slow Shot Time</td>               <td>20</td><td>Average Fill Velocity</td></tr>
+<tr><td align="right">3</td><td>Fast Shot</td>                    <td>21</td><td>User Velocity Pos One</td></tr>
+<tr><td align="right">4</td><td>Fast Shot Rise Time</td>          <td>22</td><td>User Velocity Pos Two</td></tr>
+<tr><td align="right">5</td><td>Cycle Time</td>                   <td>23</td><td>User Velocity Pos Three</td></tr>
+<tr><td align="right">6</td><td>User Time Int One</td>            <td>24</td><td>User Velocity Pos Four</td></tr>
+<tr><td align="right">7</td><td>User Time Int Two</td>            <td>25</td><td>User Avg Vel Range One</td></tr>
+<tr><td align="right">8</td><td>User Time Int Three</td>          <td>26</td><td>User Avg Vel Range Two</td></tr>
+<tr><td align="right">9</td><td>User Time Int Four</td>           <td>27</td><td>User Avg Vel Range Three</td></tr>
+<tr><td align="right">10</td><td>User Time Int Five</td>          <td>28</td><td>User Avg Vel Range Four</td></tr>
+<tr><td align="right">11</td><td>Biscuit Size</td>                <td>29</td>     <td>Position P1</td></tr>
+<tr><td align="right">12</td><td>Calc Start Fast Shot</td>        <td>30</td><td>Position P2</td></tr>
+<tr><td align="right">13</td><td>Intensification Pressure</td>    <td>31</td><td>Position P3</td></tr>
+<tr><td align="right">14</td><td>Intensification Rise Time</td>   <td>32</td><td>Avg Slow Shot Velocity</td></tr>
+<tr><td align="right">15</td><td>Eff Peak Intensification</td>    <td>33</td><td>Avg Fast Show Velocity</td></tr>
+<tr><td align="right">16</td><td>Impact Pressure to Peak</td>     <td>34</td><td>Fast Shot Distance</td></tr>
+<tr><td align="right">17</td><td>Intens Squeeze Distance</td>     <td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+</center>
+<p>
+
+<h4>Fixed Width Parameter Fields</h4>
+If you need to have fixed width fields for the parameter values you can set the width by entering the
+following line
+<pre>
+EosFixedWidth=10
+</pre>
+
+Setting the value to a non-numeric string returns you to variable length values.
+<pre>
+EosFixedWidth=None
+</pre>
+
+The difference can be seen in the following example. The setup line is
+<pre>
+EosComSetup=0,3,4,5,11,12,13
+</pre>
+
+If the fixed width is set to <b>10</b> you get the following output.
+<pre>
+    45.326;    61.726;       0.0;    15.204;    0.9875;     2.053;    2500.0
+</pre>
+
+If it is set to <b>None</b> you get the following output.
+<pre>
+45.326;61.725;0.0;15.117;0.9875;2.053;2500.0
+</pre>
+
+</body>
+</html>
+

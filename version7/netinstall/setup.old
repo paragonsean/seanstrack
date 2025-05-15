@@ -1,0 +1,316 @@
+#include <windows.h>
+#include <shlobj.h>
+
+#include "..\include\visiparm.h"
+#include "..\include\listbox.h"
+#include "..\include\stringcl.h"
+#include "..\include\wclass.h"
+#include "..\include\subs.h"
+
+#include "resource.h"
+
+HINSTANCE    MainInstance;
+WINDOW_CLASS MainWindow;
+WINDOW_CLASS BrouseWindow;
+LISTBOX_CLASS Lb;
+
+static TCHAR MyClassName[] = TEXT( "Setup" );
+static TCHAR VisiTrakIniFile[] = TEXT( "visitrak.ini" );
+static TCHAR RestoreDirPath[]  = TEXT( "C:\\V5BACKUP" );
+
+/***********************************************************************
+*                             RESOURCE_STRING                          *
+***********************************************************************/
+TCHAR * resource_string( UINT resource_id )
+{
+return resource_string( MainInstance, resource_id );
+}
+
+/***********************************************************************
+*                                BEGIN                                 *
+***********************************************************************/
+static void begin()
+{
+static TCHAR LinkTitle[] = TEXT( "Data Server Restore" );
+static TCHAR ShellFolderKey[] = TEXT( "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders" );
+
+TCHAR ExeFileName[MAX_PATH];
+TCHAR buf[MAX_PATH];
+WCHAR ws[MAX_PATH];
+
+ULONG buf_size = MAX_PATH;
+HKEY  hCU;
+DWORD lpType;
+
+HRESULT        result;
+IShellLink   * psl;
+IPersistFile * ppf;
+bool           have_key;
+
+/*
+----------------------------------
+Make a link to the restore program
+---------------------------------- */
+lstrcpy( ExeFileName, exe_directory() );
+append_filename_to_path(  ExeFileName, TEXT("dsrestor.exe") );
+
+/*
+-------------------------------------------
+Put the restore directory on the same drive
+------------------------------------------- */
+*RestoreDirPath = *ExeFileName;
+
+/*
+---------------------------
+Get the path of the desktop
+--------------------------- */
+have_key = false;
+if ( RegOpenKeyEx(HKEY_LOCAL_MACHINE, ShellFolderKey, 0, KEY_QUERY_VALUE, &hCU) == ERROR_SUCCESS )
+    {
+    buf_size = MAX_PATH * sizeof(TCHAR);
+    if ( RegQueryValueEx( hCU, TEXT( "Common Desktop"), NULL, &lpType, (unsigned char *) &buf, &buf_size) == ERROR_SUCCESS )
+        have_key = true;
+    RegCloseKey(hCU);
+    }
+
+/*
+-----------------------------------------
+Win95 doesn't normally have the above key
+----------------------------------------- */
+if ( !have_key )
+    {
+    if ( RegOpenKeyEx(HKEY_CURRENT_USER, ShellFolderKey, 0, KEY_QUERY_VALUE, &hCU) == ERROR_SUCCESS )
+        {
+        buf_size = MAX_PATH * sizeof(TCHAR);
+        if ( RegQueryValueEx( hCU, TEXT("Desktop"), NULL, &lpType, (unsigned char *) &buf, &buf_size) == ERROR_SUCCESS )
+            have_key = true;
+        RegCloseKey(hCU);
+        }
+    }
+
+append_filename_to_path(  buf, TEXT("Data Server Restore.lnk") );
+
+if ( CoInitialize(0) == S_OK )
+    {
+    Lb.add( TEXT("Creating Desktop Link...") );
+
+    /*
+    ------------------------------------------
+    Get a pointer to the IShellLink interface.
+    ------------------------------------------ */
+    result = CoCreateInstance( CLSID_ShellLink, NULL, CLSCTX_INPROC_SERVER, IID_IShellLink, (void**) &psl );
+    if (SUCCEEDED(result) )
+        {
+        /*
+        ------------------------------------------------------------------------------------------------
+        Query IShellLink for the IPersistFile interface for saving the shell link in persistent storage.
+        ------------------------------------------------------------------------------------------------ */
+        result = psl->QueryInterface( IID_IPersistFile, (void**) &ppf );
+        if ( SUCCEEDED(result) )
+            {
+            /*
+            --------------------------------------
+            Set the path to the shell link target.
+            -------------------------------------- */
+            psl->SetPath( ExeFileName );
+            Lb.add( ExeFileName );
+
+            /*
+            --------------------------------------
+            Set the description of the shell link.
+            -------------------------------------- */
+            psl->SetDescription( LinkTitle );
+
+            /*
+            ----------------------
+            Ensure string is ANSI.
+            ---------------------- */
+            #ifdef UNICODE
+                lstrcpy( ws, buf );
+            #else
+                MultiByteToWideChar(CP_ACP, 0, buf, -1, ws, MAX_PATH);
+            #endif
+
+            Lb.add( buf );
+
+            /*
+            ------------------------------------------------
+            Save the link via the IPersistFile::Save method.
+            ------------------------------------------------ */
+            result = ppf->Save(ws, TRUE);
+
+            /*
+            --------------------------------
+            Release pointer to IPersistFile.
+            -------------------------------- */
+            ppf->Release();
+            }
+
+        /*
+        ------------------------------
+        Release pointer to IShellLink.
+        ------------------------------ */
+        psl->Release();
+        }
+
+    CoUninitialize();
+    }
+
+Lb.add( TEXT("Saving restore folder name in the Visitrak.ini file...") );
+Lb.add( RestoreDirPath );
+put_ini_string( VisiTrakIniFile, TEXT("Restore"), TEXT("StartDir"),   RestoreDirPath );
+put_ini_string( VisiTrakIniFile, TEXT("Restore"), TEXT("RestoreDir"), RestoreDirPath );
+
+Lb.add( TEXT("Creating the restore folder (if necessary)...") );
+create_directory( RestoreDirPath );
+
+Lb.add( TEXT("Finished, press [ESC] to exit") );
+}
+
+/***********************************************************************
+*                              MAIN_PROC                               *
+***********************************************************************/
+long CALLBACK main_proc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
+{
+int id;
+int cmd;
+HWND begin_button;
+HWND w;
+
+id  = LOWORD( wParam );
+
+switch ( msg )
+    {
+    case WM_CREATE:
+        MainWindow = hWnd;
+
+        begin_button = CreateWindow(
+            "BUTTON",
+            "Begin",
+            WS_CHILD | BS_NOTIFY | BS_PUSHBUTTON | WS_VISIBLE,
+            200, 145,
+            100, 25,
+            hWnd,
+            (HMENU) 100,
+            MainInstance,
+            0
+            );
+
+        w = CreateWindow(
+            "LISTBOX",
+            0,
+            WS_CHILD | LBS_NOSEL | WS_VISIBLE,
+            3, 0,
+            490, 143,
+            hWnd,
+            (HMENU) STATUS_LISTBOX,
+            MainInstance,
+            0
+            );
+
+        Lb.init( w );
+        Lb.add( TEXT("Press 'Begin' to install the software") );
+        SetFocus( begin_button );
+        break;
+
+    case WM_CHAR:
+        if ( wParam == VK_ESCAPE )
+            {
+            MainWindow.close();
+            return 0;
+            }
+        break;
+
+    case WM_COMMAND:
+        cmd  = HIWORD( wParam );
+        switch (id)
+            {
+            case BEGIN_BUTTON:
+                if ( cmd == BN_CLICKED )
+                    {
+                    EnableWindow( GetDlgItem(hWnd, BEGIN_BUTTON), FALSE );
+                    MainWindow.set_focus();
+                    begin();
+                    }
+                return 0;
+            }
+
+        break;
+
+    case WM_DESTROY:
+        PostQuitMessage( 0 );
+        return 0;
+
+    }
+
+return  DefWindowProc( hWnd, msg, wParam, lParam );
+}
+
+/***********************************************************************
+*                               STARTUP                                *
+***********************************************************************/
+static void startup( int cmd_show )
+{
+STRING_CLASS title;
+WNDCLASS wc;
+
+wc.lpszClassName = MyClassName;
+wc.hInstance     = MainInstance;
+wc.lpfnWndProc   = (WNDPROC) main_proc;
+wc.hCursor       = LoadCursor( NULL, IDC_ARROW );
+wc.hIcon         = LoadIcon( MainInstance, TEXT("MY_ICON") );
+wc.lpszMenuName  = 0;
+wc.hbrBackground = (HBRUSH) (COLOR_WINDOW+1);  /* Use standard background */
+wc.style         = CS_HREDRAW | CS_VREDRAW;
+wc.cbClsExtra    = 0;
+wc.cbWndExtra    = 0;
+
+RegisterClass( &wc );
+
+title = resource_string( MAIN_WINDOW_TITLE_STRING );
+
+CreateWindow(
+    MyClassName,
+    title.text(),
+    WS_OVERLAPPEDWINDOW,
+    CW_USEDEFAULT, CW_USEDEFAULT,     // X,y
+    505, 200,                         // W,h
+    NULL,
+    NULL,
+    MainInstance,
+    NULL
+    );
+
+MainWindow.show( cmd_show );
+UpdateWindow( MainWindow.handle() );
+}
+
+/***********************************************************************
+*                               SHUTDOWN                               *
+***********************************************************************/
+static void shutdown( void )
+{
+}
+
+/***********************************************************************
+*                               WINMAIN                                *
+***********************************************************************/
+APIENTRY WinMain( HINSTANCE this_instance, HINSTANCE prev_instance, LPSTR cmd_line, int cmd_show )
+{
+MSG   msg;
+
+InitCommonControls();
+
+MainInstance = this_instance;
+
+startup( cmd_show );
+
+while ( GetMessage(&msg, NULL, 0, 0) )
+    {
+    TranslateMessage( &msg );
+    DispatchMessage(  &msg );
+    }
+
+shutdown();
+return( msg.wParam );
+}

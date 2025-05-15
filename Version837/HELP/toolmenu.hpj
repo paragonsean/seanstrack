@@ -1,0 +1,27 @@
+; This file is maintained by HCW. Do not modify this file directly.
+
+[OPTIONS]
+HCW=0
+ERRORLOG=toolmenu.err
+LCID=0x409 0x0 0x0 ;English (United States)
+REPORT=Yes
+CONTENTS=Topic1
+TITLE=Tools Menu Help
+HLP=toolmenu.hlp
+
+[FILES]
+.\toolmenu.rtf
+
+[MAP]
+backuprestore=7
+boardmonitor=4
+downsetup=10
+editdown=11
+exportparams=9
+ftboardsetup=8
+machineeditor=3
+monitorconfig=5
+opsignon=1
+parteditor=2
+sci=12
+sensorsdef=6

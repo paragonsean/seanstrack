@@ -1,0 +1,32 @@
+Distance Units,10
+Velocity Units,11
+Pressure Units,8
+Total Stroke Length,635.0
+Min Stroke Length,300.0
+Time Delay Biscuit,0
+End of Shot Velocity,0.127
+Sleeve Fill Distance,50.0
+Runner Fill Distance,25.0
+Min Velocity for CSFS,0.0
+Velocity for Rise CSFS,0.0
+Min CSFS Position,0.0
+User Vel 1,0.0
+User Vel 2,0.0
+User Vel 3,0.0
+User Vel 4,0.0
+User Avg St 1,0.0
+User Avg St 2,0.0
+User Avg St 3,0.0
+User Avg St 4,0.0
+User Avg End 1,0.0
+User Avg End 2,0.0
+User Avg End 3,0.0
+User Avg End 4,0.0
+Plunger Diameter,50.0
+Time for Intens Pres,0
+Pres for Response Time,0
+Ms per time sample,1
+N of Time Samples,500
+Production Enabled,0
+Head Pressure Channel,1
+Rod Pressure Channel,2

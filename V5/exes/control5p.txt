@@ -1,0 +1,500 @@
+#	  control5p, version for use with pressure control
+#
+#         Ethernet monitor / control setup
+#
+#    Shot control program with pressure control
+#    For use with version 5 firmware.	This version includes follow through stop.
+#    If follow through stop is not used, set V354 out beyond what the cylinder can stroke.
+#
+#    7-14-05 Changed step 78 to J2_I0.54 from J0.1_I0.54
+#
+#    8-2-05 Changed V430 from  211 to H0000d3d3, setting both axes to 0xd3 (211).
+#
+#    8-12-05 Changed V428, the analog conversion delay from 25 to 4 for use with Rev. E external interface boards.
+#
+#    12-14-05 Added pressure control variable V86 to set the last pressure control block number.
+#
+#    3-27-06 Added bits 12, 13 and 14 to V314.  Bit 12 is cleared if there is an Opto I/O board present.  Bit 13 is
+#    set if it's desired to lock out cycle start until AT HOME. Bit 14 is set if it's desired to accept CS's without conditions.
+#
+#    9-22-06 Changed the manual mode section so that at home is not required.  Cylinder can be jogged even if it's
+#    already partially extended.
+#
+#    10-26-06 Clear the CS signal to the monitor, V312 bit 0, at the top of the program.  Also it is now cleared
+#    right after it is set at the beginning of the shot.  This is to be compatible with V5.06 or later firmware.  If an
+#    older version of this program were to be used with V5.06 or later firmware, it should still work, however for best
+#    results, this version or later should be used.
+#   
+.H # Halt control program
+#
+########################### WARNING ##############################
+#								 #
+# When making changes directly to the control code in this	 #
+# file (not variable initialization - only control code), enable # 
+# the .H above and the .G near the end of this file the first 	 #
+# time the file is downloaded.  After that those lines can be 	 #
+# commented out.  When the control program is halted, each	 #
+# control step location in memory is cleared before it is	 #
+# written.  When the program is running, this is NOT done.	 #
+# Therefore major problems can occur with the operation of the	 #
+# control program when making changes and downloading without	 #
+# halting the program the first time new code is downloaded. 	 #
+# 								 #
+# Also, it is a good idea to halt the control program when	 #
+# downloading to a new (or replaced) board for the first time.	 #
+#								 #
+##################################################################
+#
+#
+# If using this file with version 4 firmware:
+#	1, Set V314 to H00000011 below.
+#	2, Use the commented out program step 20 and comment out the current step 20.
+#	3, Comment out the pressure control steps 47 - 49 and use the dummy steps that are provided.
+#	   The pressure control and digital servo amplifier variables that are written in this file will have no
+#	   effect on V4 firmware.
+#	   It may be possible that a future upgrade to the V4 firmware will support pressure control.  If that is the
+#	   case, leave in the pressure control program lines.  The pressure control variables will function in a future
+#	   V4 upgrade exactly as they now do in the V5 firmware.
+#
+#	Must put the following line in the first part of visitrak.ini in the V5\exes dir. to enbl. press. control:
+#	HavePressureControl=Y 
+#
+#
+V300=33333333  # Clock frequency in Hz.
+V313=H3110FFFF #Config word 1
+V314=H00002211 #Config word 2, H00000211 for 2 axis integral amp, H00000111 for 1 axis integral amplifier,
+#		H00000011 for no or an external amplifier.
+#		Setting bit 13 locks out CS until AT HOME.  Leave bit 12 cleared if an Opto I/O board is present.
+#		Set bit 14 to accept cycle starts without conditions. 
+#
+# Monitor items
+V318=1800  #Total stroke length
+V319=1280  #MIN. STK. LEN.
+V320=1     # Minimum velocity for EOS calculation in X1 pulses / sec.
+V321=2000  #Time delay biscuit.
+V322=200   # End of shot velocity in X1 pulses / sec.
+#
+# These setup items are reserved but not implemented, set them to zero
+V323=0  # Fill distance in X4 counts.
+V324=0  # Runner fill distance in X4 counts.
+V325=0  # Min. position for CSFS in X4 counts.
+V326=0  # Velocity for CSFS in X1 pulses / sec.
+V327=0  # Velocity for rise time calculation in X1 pulses / sec.
+#
+#
+V328=1000  # Timed collection interval in uS.
+V329=2000  # Number of timed collection data points, 2000 max.
+V330=30000 # Time out period in milliseconds.
+# Limit switches
+V366=4000  # Limit switch #1, axis #1 in X4 counts.
+V367=4000  # Limit switch #2, axis #1 in X4 counts.
+V368=4000  # Limit switch #3, axis #1 in X4 counts.
+V369=4000  # Limit switch #4, axis #1 in X4 counts.
+V370=4000  # Limit switch #5, axis #1 in X4 counts.
+V371=4000  # Limit switch #6, axis #1 in X4 counts.
+# Limit switch output masks, axis 1
+V378=H10000000 #LS1_1 mask
+V379=H20000000 #LS2_1 mask
+V380=H40000000 #LS3_1 mask
+V381=H80000000 #LS4_1 mask
+V382=H02000000 #LS5_1 mask
+V383=H04000000 #LS6_1 mask
+#
+# Limit switch output masks, axis 2
+V384=H00000000 #LS1_2 MASK
+V385=H00000000 #LS2_2 MASK
+V386=H00000000 #LS3_2 MASK
+V387=H00000000 #LS4_2 MASK
+V388=H00000000 #LS5_2 MASK
+V389=H00000000 #LS6_2 MASK
+#
+# Control items
+V340=500   #Velocity loop gain.
+V341=2000  #Break velocity #1 in X1 pulses / sec
+V342=6000  #Break velocity #2 in X1 pulses / sec
+V343=6000  #Break velocity #3 in X1 pulses / sec
+V344=2000  #Break gain #1 multiplier X 1000
+V345=1000  #Break gain #2 multiplier X 1000
+V346=1000  #Break gain #3 multiplier X 1000
+V349=960   #Zero speed check position in X4 counts
+V350=0     #Null offset in volts * 1000
+V351=0	   #LVDT offset in volts * 1000
+V352=4000  #Jog shot setting, Voltage X 1000.
+V353=1000  #Follow through setting, Voltage X 1000.
+V354=1500  #Follow through stop position, X4 counts
+V355=-10000  #Retract setting, volts X 1000.
+V357=10  #Sensor deviation in X4 counts
+V358=0   #Position loop gain
+V359=0   #Reserved for position loop break gain FE setting
+V360=0   #Reserved for position loop gain break
+# Misc
+V390=750   #Oscilloscope mode trigger voltage X 1000
+V391=17    #Oscilloscope mode trigger channel, 17 – 20
+V392=1000  #Oscilloscope mode sample interval in uS.
+V393=250   #Update block ramp time in uS.
+V428=4
+V429=7 #5 for external amp, 7 for internal
+#
+# Digital Servo amplifier settings
+V414=0		#Amp #1 pilot and control valve types
+V415=0		#Amp #2	 "	"	"	"
+V430=H0000d3d3 #LVDT demodulator settings 0-255.  Originally 83 (0x53), set to 211 (0xd3) to reverse sec. polarity and make
+#		 terminal pinnout compatible with the old amplifier board.
+#V431=H00000000	#Digital pot gain settings
+V361=5000	#Amp #1 board level LVDT offset, volts * 1000, set to 5000 in most cases
+V362=0		#Amp #2    "		"		"	
+#
+# Pressure control parameters
+# Variable V80 is the pressure control config. word
+#V80=0		#Disable pressure control
+#V80=H00000001	#Pressure control command +/-2.5V
+V80=H00000011	#Pressure control command +/-5V
+#V80=H00000021	#Pressure control command +/-10V
+V80=V80|H00000080 #Enable this line to prevent pressure command from going negative.
+V81=100		#Pressure loop gain. 
+V82=1000	#Pressure control arm setting in volts X 1000.
+V83=0		#Pressure control initial pressure setting volts X 1000.
+V84=0		#Pressure control retract setting volts X 1000.
+V85=0		#Pressure control park setting.
+V86=49		#Last pressure control block.
+V87=0		#Reserved for additional pressure control parameter.
+V88=0		#Reserved for additional pressure control parameter.
+V89=0		#Reserved for additional pressure control parameter.
+V404=0  	#Null offset axis #2 in volts * 1000
+V405=0		#LVDT offset axis #2 in volts * 1000
+#
+# Set-up shot profile
+######### STEP1 #########
+V0=0		#ACCEL #1
+V1=H7FFF	#VEL #1
+V2=0		#ENDING POS #1
+V3=0		#WHILE IO INDICATOR #1
+######### STEP2 #########
+V4=0			#ACCEL #2
+V5=H7FFF		#VEL #2
+V6=0			#ENDING POS #2
+V7=0			#WHILE IO INDICATOR #2
+######### STEP3 #########
+V8=0		#ACCEL #3
+V9=H7FFF	#VEL #3
+V10=0		#ENDING POS #3
+V11=0		#WHILE IO INDICATOR #3
+######### STEP4 #########
+V12=0			#ACCEL #4
+V13=H7FFF		#VEL #4
+V14=0			#ENDING POS #4
+V15=0			#WHILE IO INDICATOR #4
+######### STEP5 #########
+V16=0		#ACCEL #5
+V17=H7FFF	#VEL #5
+V18=0		#ENDING POS #5
+V19=0		#WHILE IO INDICATOR #5
+######### STEP6 #########
+V20=0			#ACCEL #6
+V21=H7FFF		#VEL #6
+V22=0			#ENDING POS #6
+V23=0			#WHILE IO INDICATOR #6
+######### STEP7 #########
+V24=0		#ACCEL #7
+V25=H7FFF	#VEL #7
+V26=0		#ENDING POS #7
+V27=0		#WHILE IO INDICATOR #7
+######### STEP8 #########
+V28=0			#ACCEL #8
+V29=H7FFF		#VEL #8
+V30=0			#ENDING POS #8
+V31=0			#WHILE IO INDICATOR #8
+######### STEP9 #########
+V32=0		#ACCEL #9
+V33=H7FFF	#VEL #9
+V34=0		#ENDING POS #9
+V35=0		#WHILE IO INDICATOR #9
+######### STEP10 #########
+V36=0			#ACCEL #10
+V37=H7FFF		#VEL #10
+V38=0			#ENDING POS #10
+V39=0			#WHILE IO INDICATOR #10
+######### STEP11 #########
+V40=0		#ACCEL #11
+V41=H7FFF	#VEL #11
+V42=0		#ENDING POS #11
+V43=0		#WHILE IO INDICATOR #11
+######### STEP12 #########
+V44=0			#ACCEL #12
+V45=H7FFF		#VEL #12
+V46=0			#ENDING POS #12
+V47=0			#WHILE IO INDICATOR #12
+######### STEP13 #########
+V47=0		#ACCEL #13
+V49=H7FFF	#VEL #13
+V50=0		#ENDING POS #13
+V51=0		#WHILE IO INDICATOR #13
+######### STEP14 #########
+V52=0			#ACCEL #14
+V53=H7FFF		#VEL #14
+V54=0			#ENDING POS #14
+V55=0			#WHILE IO INDICATOR #14
+######### STEP15 #########
+V56=0		#ACCEL #15
+V57=H7FFF	#VEL #15
+V58=0		#ENDING POS #15
+V58=0		#WHILE IO INDICATOR #15
+######### STEP16 #########
+V60=0			#ACCEL #16
+V61=H7FFF		#VEL #16
+V62=0			#ENDING POS #16
+V63=0			#WHILE IO INDICATOR #16
+######### STEP17 #########
+V64=0		#ACCEL #17
+V65=H7FFF	#VEL #17
+V66=0		#ENDING POS #17
+V67=0		#WHILE IO INDICATOR #17
+######### STEP18 #########
+V68=0			#ACCEL #18
+V69=H7FFF		#VEL #18
+V70=0			#ENDING POS #18
+V71=0			#WHILE IO INDICATOR #18
+######### STEP19 #########
+V72=0		#ACCEL #19
+V73=H7FFF	#VEL #19
+V74=0		#ENDING POS #19
+V75=0		#WHILE IO INDICATOR #19
+######### STEP20 #########
+V76=0			#ACCEL #20
+V77=H7FFF		#VEL #20
+V78=0			#ENDING POS #20
+V79=0			#WHILE IO INDICATOR #20
+#
+#
+# Pressure control profile steps
+######### STEP 1 ##########
+V90=0		#RAMP #1, mS
+V91=H7FFF 	#PRESSURE CMD #1, volts X 1000
+#V91=1500|H80000000	#Example of open loop pressure command, set bit 31 for OL.
+V92=0		#END TIME #1, mS
+######### STEP 2 ##########
+V93=0		#RAMP #2, mS
+V94=H7FFF	#PRESSURE CMD #2, volts X 1000	
+#V94=2500|H80000000	#Example of open loop pressure command, set bit 31 for OL.
+V95=0		#END TIME #2, mS
+######### STEP 3 ##########
+V96=0		#RAMP #3, mS
+V97=H7FFF	#PRESSURE CMD #3, volts X 1000
+#V97=1500|H80000000	#Example of open loop pressure command, set bit 31 for OL.
+V98=0		#END TIME #3, mS
+#
+#
+#
+#This program is for use with an AT HOME signal.
+#Sensor fault checking can be added.
+#
+#Program
+.001 D0_B0.33          #Turn off ss
+.002 UD1=-1000_B0.34   #Park valve, turn off accumulator
+.003 J1.70_I1.54       #Go to manual portion of program if man. input is on
+.004 UD1=V355          #Open valve to retract setting
+.005 UV312=V312&Hfffffffe #Turn off the CS signal to the monitor
+.006 D10  # Can't set delay to zero here!!! Must be one or greater!!!
+.007 J0.1_I1.54	      #Jump if manual mode
+.008 J0.6_I0.55       #Jump if not at home
+.009 UD1=-2000        #Then park valve
+.010 D0
+.011 D10
+.012 J0.11_I1.50      #Trap start shot
+.013 J0.11_I1.305
+.014 D10
+.015 J0.1_I1.54       #Jump if manual mode
+.016 J0.20_I1.50      #Jump if start shot
+.017 J0.20_I1.305
+.018 J1.100_I1.56     #	Jump if valve test
+.019 J0.14
+#
+#
+# SHOT
+#
+# If a CS was not received by monitor_supervisor(), setting the
+# CS detected config word bit will force the monitor to trigger.
+# We have to be monitoring for ZSPEED checking to be set up and active.
+#
+# Steps 22 and 25 cannot be changed or used for something else.  These are written by the True-Trak software.
+#
+#.020 UV312=V312|H00000002 #Set shot in progress config word bit if using version 4 firmware
+.020 UV312=V312|H00000001 #Set CS detected config. word bit, use this line for V5 and later firmware
+.021 D200 #Give monitor_supervisor() time to sense CS 
+.022 UD1=-2000   #Set valve to something
+.023 UV312=V312&Hfffffffe #Now clear out the CS signal to the monitor
+.024 UA1=0_B1.33
+#.025 VA180AC40P60_B1.34 #<--- Alternative short step and then acc.
+#.025 VA180AC0P60_E1.34 #<--- Alternative short step and then acc.
+.025 D0
+.026 VA1V1ACV0PV2_W0.V3B1.34
+.027 VA1V5ACV4PV6_W0.V7
+.028 VA1V9ACV8PV10_W0.V11
+.029 VA1V13ACV12PV14_W0.V15
+.030 VA1V17ACV16PV18_W0.V19
+.031 VA1V21ACV20PV22_W0.V23
+.032 VA1V25ACV24PV26_W0.V27
+.033 VA1V29ACV28PV30_W0.V31
+.034 VA1V33ACV32PV34_W0.V35
+.035 VA1V37ACV36PV38_W0.V39
+.036 VA1V41ACV40PV42_W0.V43
+.037 VA1V45ACV44PV46_W0.V47
+.038 VA1V49ACV48PV50_W0.V51
+.039 VA1V53ACV52PV54_W0.V55
+.040 VA1V57ACV56PV58_W0.V59
+.041 VA1V61ACV60PV62_W0.V63
+.042 VA1V65ACV64PV66_W0.V67
+.043 VA1V69ACV68PV70_W0.V71
+.044 VA1V73ACV72PV74_W0.V75
+.045 VA1V77ACV76PV78_W0.V79
+.046 D0
+# END OF SHOT
+#
+# PRESSURE CONTROL
+.047 XA2V91RV90TV92_W0.51 #FT will terminate pressure control if it occurs before the block times out.
+.048 XA2V94RV93TV95_W0.51
+.049 XA2V97RV96TV98_W0.51
+#
+# If not using pressure control, comment out the above lines and use these.
+#.047 D0
+#.048 D0
+#.049 D0
+#
+.050 D0
+.051 D10
+.052 J0.1_I1.54   #Jump if manual
+.053 J0.51_I0.51  #Loop if not follow through
+.054 UD1=V353     #Open valve to the follow through setting
+.055 J1.113  	  #D0 #Jump to follow through stop subroutine
+.056 D10
+.057 J0.1_I1.54
+.058 J0.56_I0.52  #Loop if not retract
+.059 D0_B0.33   	#Turn off both slow and accumulator
+.060 D0_B0.34
+.061 UD1=V355     #Open valve to retract setting
+.062 UD3=V84  	  #XA2V84R0T10 #open pressure control to the retract setting
+.063 D10
+.064 J0.1_I1.54
+.065 J0.63_I0.55  #Jump if not at home
+.066 UD3=V85  #XA1V85R0T10  #Park pressure control valve
+.067 D500  		#Wait .5 sec.
+.068 D0       	  #Then check sensor for fault. D0 if no fault checking.
+.069 J0.1
+#
+# Old Manual Mode subroutine, Waits for At Home before allowing a jog shot
+#.070 D10
+#.071 J0.70_I1.53    	#Trap jog shot
+#.072 D0_B0.33
+#.073 D0_B0.34
+#.074 J2_I0.54     	#Return if not manual mode
+#.075 UD1=-2000      	#Park valve
+#.076 D10
+#.077 UD1=V355_I0.55 	#Open valve to retract setting if not at home
+#.078 J2_I0.54
+#.079 J0.76_I0.55	#Loop if not at home
+#.080 UD1=-2000		#Park valve
+#.081 J2_I0.54     	#Return if not manual mode
+#.082 D0
+#.083 J1.90_I1.53  	#Jump if jog shot
+#.084 J1.100_I1.56     	#Jump if valve test
+#.085 J0.72
+#.086 D0
+#
+# MANUAL MODE SUBROUTINE, Jog shot can happen anytime
+.070 D10
+.071 J0.70_I1.53    	#Trap jog shot
+.072 D0_B0.33
+.073 D0_B0.34
+.074 J2_I0.54     	#Return if not manual mode
+.075 UD1=-3000      	#Park valve
+.076 D10
+.077 D0
+.078 D0
+.079 J1.90_I1.53  	#Jump if jog shot
+.080 J1.100_I1.56     	#Jump if valve test
+.081 J0.72
+.082 D0
+#
+# JOG SHOT
+.090 UD1=V352_B1.33	#Open valve to JS setting
+.091 D10
+.092 D0
+.093 D0
+.094 J0.91_I1.53
+.095 J2 #Return
+# Valve test subroutine from switch
+.100 J1.108
+.101 J2_I0.56
+.102 J0.100
+.103 D0
+.104 D0
+# Valve test when commanded from computer
+.105 J1.108
+.106 J0.105
+.107 D0
+# Subroutine to pulse valve
+.108 UD1=3500-V351 #Subtract out the LVDT compensation
+.109 D2000
+.110 UD1=0-V351 #Subtract out the LVDT compensation
+.111 D2000
+.112 J2
+# FOLLOW THROUGH STOP SUBROUTINE
+.113 D10
+.114 J2_I1.54
+.115 J2_I1.52
+.116 J0.113_IA1<V354
+.117 D0_B0.33
+.118 D0_B0.34
+.119 UD1=V355
+.120 J2
+.121 END
+#
+VF # Save all variables to flash
+.F # Save control program to flash
+.G # Start control program
+#
+#
+#                     I/O List
+#
+#         INPUTS
+#
+# 49 ==            Formerly Pump on
+# 50 == Start shot
+# 51 == Follow through
+# 52 == Retract
+# 53 == Jog Shot
+# 54 == Manual mode
+# 55 == At home
+# 56 == Valve test
+# 57 ==
+# 58 == OK For fast shot
+# 59 == Vacuum on
+# 60 == Low impact
+# 61 ==
+# 62 ==
+# 63 ==
+# 64 ==         Formerly Vacuum abort
+#
+# 305 == Alternate start shot (External interface TB2-16)
+# 304 == Alternate at home input (External interface TB2-15)
+#
+#         OUTPUTS
+#
+# 33  == Slow Out
+# 34  == Accumulator
+# 35  ==
+# 36  == 
+# 37  == Valve test in operation
+# 38  ==
+# 39  ==
+# 40  ==
+# 41  ==
+# 42  == LS5
+# 43  == LS6
+# 44  == Warning (active low)  Formerly controller fault
+# 45  == LS1
+# 46  == LS2
+# 47  == LS3
+# 48  == LS4
+#
+#

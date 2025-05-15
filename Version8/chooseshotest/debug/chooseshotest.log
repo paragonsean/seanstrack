@@ -1,0 +1,32 @@
+﻿Build started 5/15/25 12:23:28 AM.
+     1>Project "C:\Sources\Version8\chooseshotest\chooseshotest.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug\\" /Fd".\Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt chooseshotest.cpp
+         chooseshotest.cpp
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(140): error C2143: syntax error : missing '}' before ';'
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(140): error C2064: term does not evaluate to a function taking 1 arguments
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(140): error C2143: syntax error : missing ')' before ';'
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(141): warning C4390: ';' : empty controlled statement found; is this the intent?
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(149): error C3861: 'ascii_to_int32': identifier not found
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(159): error C3861: 'ascii_to_int32': identifier not found
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(173): error C2143: syntax error : missing ';' before '}'
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(180): error C2143: syntax error : missing ';' before '}'
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(194): error C2143: syntax error : missing ';' before '}'
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(209): error C2043: illegal break
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(221): error C2059: syntax error : '}'
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(221): error C2143: syntax error : missing ';' before '}'
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(222): error C2143: syntax error : missing ';' before '}'
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(222): error C2059: syntax error : '}'
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(228): error C2143: syntax error : missing ';' before '{'
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(228): error C2447: '{' : missing function header (old-style formal list?)
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(277): error C3861: 'fill_dir_tc': identifier not found
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(283): error C3861: 'fill_dir_tc': identifier not found
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(348): error C2039: 'read' : is not a member of 'STRINGTABLE_CLASS'
+                 c:\sources\version8\include\stringtable.h(5) : see declaration of 'STRINGTABLE_CLASS'
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(351): error C2661: 'STRINGTABLE_CLASS::append' : no overloaded function takes 1 arguments
+     1>c:\sources\version8\chooseshotest\chooseshotest.cpp(428): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>Done Building Project "C:\Sources\Version8\chooseshotest\chooseshotest.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.43

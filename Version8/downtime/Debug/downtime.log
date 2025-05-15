@@ -1,0 +1,17 @@
+﻿Build started 5/15/25 12:18:34 AM.
+     1>Project "C:\Sources\Version8\downtime\downtime.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt category.cpp downtime.cpp
+         downtime.cpp
+         category.cpp
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"Debug\downtime.res" downtime.rc 
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"Debug\downtimec.res" downtimec.rc 
+     1>RC : fatal error RC1110: could not open downtimec.rc
+         
+     1>Done Building Project "C:\Sources\Version8\downtime\downtime.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.32
