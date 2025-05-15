@@ -1,0 +1,7 @@
+Exception: STATUS_ACCESS_VIOLATION at eip=00000000
+eax=00000000 ebx=00000001 ecx=610A5C2C edx=00000000 esi=610A016C edi=610A0174
+ebp=0240FE70 esp=0240FE54 program=c:\altera\excalibur\sopc_builder_2_7\cygwin\bin\date.exe
+cs=001B ds=0023 es=0023 fs=003B gs=0000 ss=0023
+Stack trace:
+Frame     Function  Args
+End of stack trace
