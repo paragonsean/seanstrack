@@ -1,0 +1,23 @@
+FT2  Virtual  Fieldbus Normal
+I/O  Output   Output   Use
+101,   1,       1,     ZSPEED or Alarm Output
+102,   2,       2,     Alarm Output
+103,   3,       3,     Alarm Output
+104,   4,       4,     Alarm Output
+105,   5,       5,     Alarm Output
+106,   6,       6,     Alarm Output
+107,   7,       7,     Alarm Output
+108,   8,       8,     Alarm Output
+109,   9,       9,     Alarm Output
+110,  10,      10,     Alarm Output
+111,  11,      11,     Alarm Output
+112,  12,      12,     Alarm Output
+113,  13,      13,     Alarm Output
+114,  14,      14,     Alarm Output
+115,  15,      15,     Alarm Output
+116,  16,      16,     Alarm Output
+117,  17,      17,     Alarm Output
+118,  18,      18,     Alarm Output
+119,  19,      19,     Alarm Output
+120,  20,      20,     Alarm Output
+121,  21,      21,     Alarm Output

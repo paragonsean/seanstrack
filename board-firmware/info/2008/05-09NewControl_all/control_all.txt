@@ -1,0 +1,601 @@
+#	  control_all_zitai6, version for use with all external interfaces and all monitoring and control
+#
+#
+#    7-14-05 Changed step 78 to J2_I0.54 from J0.1_I0.54
+#
+#    8-2-05 Changed V430 from  211 to H0000d3d3, setting both axes to 0xd3 (211).
+#
+#    8-12-05 Changed V428, the analog conversion delay from 25 to 4 for use with Rev. E external interface boards.
+#
+#    12-14-05 Added pressure control variable V86 to set the last pressure control block number.
+#
+#    3-27-06 Added bits 12, 13 and 14 to V314.  Bit 12 is cleared if there is an Opto I/O board present.  Bit 13 is
+#    set if it's desired to lock out cycle start until AT HOME. Bit 14 is set if it's desired to accept CS's without conditions.
+#
+#    9-22-06 Changed the manual mode section so that at home is not required.  Cylinder can be jogged even if it's
+#    already partially extended.
+#
+#    10-26-06 Clear the CS signal to the monitor, V312 bit 0, at the top of the program.  Also it is now cleared
+#    right after it is set at the beginning of the shot.  This is to be compatible with V5.06 or later firmware.  If an
+#    older version of this program were to be used with V5.06 or later firmware, it should still work, however for best
+#    results, this version or later should be used.
+#
+#    1-25-07 control_all, originally based on control5p.  This is for use with version 6 firmware ONLY.  Both rev.B and
+#    rev.E external interface boards are supported.  All control types are supported as well as monitor only.
+#    If monitor only is desired, V314 bit 8 must be cleared.  If set, shot control will be enabled.  If pressure
+#    control is desired, V80 bit 0 must be set as before.  Clearing V80 bit 0 will disable pressure control.
+#
+#    Framework for position control and PID control is also included here.  
+#
+#    Added dip switch SW5-5 and SW5-6 to select revB external interface and external servo amp.  See table below.
+#
+#	DIP switch settings on the FTII board, V6 and V7 firmware
+#
+#	SW5-1	Force Master Enable.
+#	SW5-2	Make fake shots.
+#	SW5-3	Stop the control program.
+#	SW5-4	Force serial mode.
+#	SW5-5	On if using a revB external interface board, otherwise off.
+#	SW5-6	On if using an external servo amp, otherwise off.  This switch Doesn't matter if SW5-5 is on.
+#	SW5-7	Function trace.
+#	SW5-8	Select UBE sensor.
+#
+#    3-1-07 Changed follow through stop command from V355 (retract command) to V502
+#
+#    3-18-07 Set sample time parameters V223 and V248
+#
+#    4-13-07 Changed DERIV_TIME to SENSOR_TYPE, 1==Encoder, 2==Hi-res
+#
+#    7-19-07 Added velcoity loop integral gains.  This version is for V7 or earlier firmware.
+#
+#    12-18-07 Added zpseed mask for changing zspeed output   
+#
+#    2-5-08 Added support for the Prince binary valve.  Added V395, the binary valve pulse mask.  Defined 10 as
+#    binary valve type.  Setting V414 to 10 will select the binary valve.  Added V416 which is the binary valve
+#    pulse time in uS.  Added V417 which is the binary valve devent time in uS.  After the FTII board outputs
+#    the binary pulse, the devent time is time before the proportional valve is set to the low impact setting.
+#
+#    3-6-08 Special version for Zitai Ningbo.  Has support for retract control.  Made the valve park, step #73 a subroutine
+#    Elminated FT stop, now called max cylinder limit.  Set output 40 when this is reached.  Also check for this limit when jogging.
+#    Elminated V502 as the FT stop setting.
+#
+#    5-5-08 New GP version using subroutines based on above Zitai version.  Elminated V404 and V405.  Added internal
+#    I/O numbers 401 and 402 to enable and disable dither.  401 is axis #1 and 402 is axis #2.  Setting them enables
+#    dither and clearing them disables dither.	
+#	
+.H # Halt control program
+#
+V300=33333333   #Clock frequency in Hz.
+V313=H3110FFFF  #Config word 1
+V314=H00000011 #Config word 1, monitor only
+#
+# V500 is a configuration variable for this program only.  FTII firmware does not look at this at all.
+#	Bit0 == Shot control enabled, if cleared, monitor only is assumed.
+#	Bit1 == Simplified shot control for simulation is enabled.  Ignored if bit 0 is not set, Not implemented yes but available for the future.
+#
+V500=H00000001 
+V502=-2000 # Followthrough stop command, voltage x 1000
+#
+# Monitor items
+V318=1800  #Total stroke length
+V319=1280  #MIN. STK. LEN.
+V320=1     # Minimum velocity for EOS calculation in X1 pulses / sec.
+V321=2000  #Time delay biscuit.
+V322=200   # End of shot velocity in X1 pulses / sec.
+#
+# These setup items are reserved but not implemented, set them to zero
+V323=0  # Fill distance in X4 counts.
+V324=0  # Runner fill distance in X4 counts.
+V325=0  # Min. position for CSFS in X4 counts.
+V326=0  # Velocity for CSFS in X1 pulses / sec.
+V327=0  # Velocity for rise time calculation in X1 pulses / sec.
+#
+#
+V328=1000  # Timed collection interval in uS.
+V329=2000  # Number of timed collection data points, 2000 max.
+V330=30000 # Time out period in milliseconds.
+# Limit switches
+V366=4000  # Limit switch #1, axis #1 in X4 counts.
+V367=4000  # Limit switch #2, axis #1 in X4 counts.
+V368=4000  # Limit switch #3, axis #1 in X4 counts.
+V369=4000  # Limit switch #4, axis #1 in X4 counts.
+V370=4000  # Limit switch #5, axis #1 in X4 counts.
+V371=4000  # Limit switch #6, axis #1 in X4 counts.
+# Limit switch output masks, axis 1
+V378=H10000000 #LS1_1 mask
+V379=H20000000 #LS2_1 mask
+V380=H40000000 #LS3_1 mask
+V381=H80000000 #LS4_1 mask
+V382=H02000000 #LS5_1 mask
+V383=H04000000 #LS6_1 mask
+#
+# Limit switch output masks, axis 2
+V384=H00000000 #LS1_2 MASK
+V385=H00000000 #LS2_2 MASK
+V386=H00000000 #LS3_2 MASK
+V387=H00000000 #LS4_2 MASK
+V388=H00000000 #LS5_2 MASK
+V389=H00000000 #LS6_2 MASK
+#
+# ZSPEED output mask
+V394=H00000001
+# Binary valve ouput mask
+V395=H01000000
+#
+# Die casting specific parameters, also not axis specific.
+V349=960	#Zero speed check position in X4 counts
+V352=4000  	#Jog shot setting, Voltage X 1000.
+V353=1000  	#Follow through setting, Voltage X 1000.
+V354=1500  	#Follow through stop position, X4 counts, to disable - set out beyond what the cylinder can stroke.
+V355=-10000  	#Retract setting, volts X 1000.
+		# V356 available
+V357=10  	#Sensor deviation in X4 counts
+
+# Control items, Axis #1
+V200=0		#PROPORTIONAL_GN_SETTING1	
+V201=0		#INTEGRAL_GN_SETTING1		
+V202=0		#DERIVATIVE_GN_SETTING1		
+V203=0		#INTEGRATOR_LIMIT_SETTING1	
+V204=0		#ACCEL_FEEDFORWARD_SETTING1	
+V205=0		#VEL_FEEDFORWARD_SETTING1	 
+V206=0		#TORQUE_LIMIT_SETTING1		Volts X 1000
+V207=0		#PEAK_TORQUE_SETTING1		Volts X 1000
+V208=0		#POS_BREAK_POINT_SETTING1	 
+V209=0		#POS_BREAK_GAIN_SETTING1	
+V210=0		#SETTLING_ACCURACY_SETTING1	
+	# Velocity loop parameters
+V340=500 	#VEL_LOOP_GAIN_SETTING1		
+V212=0		#VEL_LOOP_DERIVATIVE_GN_SETTING1 
+V443=1		#VEL_LOOP_INTEGRAL_GN_SETTING1
+V341=2000  	#Break velocity #1 in X1 pulses / sec
+V342=6000  	#Break velocity #2 in X1 pulses / sec
+V343=6000  	#Break velocity #3 in X1 pulses / sec
+V344=2000  	#Break gain #1 multiplier X 1000
+V345=1000  	#Break gain #2 multiplier X 1000
+V346=1000  	#Break gain #3 multiplier X 1000
+	# Common parameters
+V347=175	#DITHER_FREQ_SETTING1		
+V348=0		#DITHER_AMPL_SETTING1, zero here will disable dither		
+V350=0		#NULL_OFFSET_SETTING1		
+V351=0		#LVDT_OFFSET_SETTING1		
+V223=2500	#SAMPLE_TIME_SETTING1		uS
+V224=1		#SENSOR_TYPE_SETTING1	1==Encoder, 2==Hi-res
+
+# Control items, Axis #2
+V225=0		#PROPORTIONAL_GN_SETTING2	
+V226=0		#INTEGRAL_GN_SETTING2		
+V227=0		#DERIVATIVE_GN_SETTING2		
+V228=0		#INTEGRATOR_LIMIT_SETTING2	
+V229=0		#ACCEL_FEEDFORWARD_SETTING2	
+V230=0		#VEL_FEEDFORWARD_SETTING2	
+V231=0		#TORQUE_LIMIT_SETTING2		
+V232=0		#PEAK_TORQUE_SETTING2		
+V233=0		#POS_BREAK_POINT_SETTING2	
+V234=0		#POS_BREAK_GAIN_SETTING2	
+V235=0		#SETTLING_ACCURACY_SETTING2	
+	# Velocity loop parameters
+V236=0		#VEL_LOOP_GAIN_SETTING2		
+V237=0		#VEL_LOOP_DERIVATIVE_GN_SETTING2 
+V444=1		#VEL_LOOP_INTEGRAL_GN_SETTING2
+V238=0		#VEL_LOOP_BK_VEL1_SETTING2	
+V239=0		#VEL_LOOP_BK_VEL2_SETTING2	
+V240=0		#VEL_LOOP_BK_VEL3_SETTING2	
+V241=0		#VEL_LOOP_BKGN1_SETTING2	
+V242=0		#VEL_LOOP_BKGN2_SETTING2	
+V243=0		#VEL_LOOP_BKGN3_SETTING2	
+	# Common parameters
+V244=175		#DITHER_TIME_SETTING2		
+V245=0		#DITHER_AMPL_SETTING2		
+V246=0		#NULL_OFFSET_SETTING2		
+V247=0		#LVDT_OFFSET_SETTING2		
+V248=2500	#SAMPLE_TIME_SETTING2		
+V249=1		#SENSOR_TYPE_SETTING2		
+
+# Misc
+V390=750   #Oscilloscope mode trigger voltage X 1000
+V391=17    #Oscilloscope mode trigger channel, 17 ?20
+V392=1000  #Oscilloscope mode sample interval in uS.
+V393=250   #Update block ramp time in uS.
+
+V428=4	   # Analog delay value when using a revE external interface
+V442=30	   # Analog delay value when using a revB external interface
+V429=7 	   # Analog mode, 5 or 7 are acceptable - Both do exactly the same thing
+#
+# Digital Servo amplifier settings
+#V414=0		#Amp #1 pilot and control valve types, 10 == Prince binary valve, enable when supported in TrueTrak software
+V415=0		#Amp #2	 "	"	"	"
+#V416=0  #Binary valve pulse time, enable when supported in the TrueTrak software
+#V417=0  #Binary valve devent time, enable when supported in the TrueTrak software
+V430=H0000d3d3 #LVDT demodulator settings 0-255.  Originally 83 (0x53), set to 211 (0xd3) to reverse sec. polarity and make
+#		 terminal pinnout compatible with the old amplifier board.
+#V431=H00000000	#Digital pot gain settings
+V361=5000	#Amp #1 board level LVDT offset, volts * 1000, set to 5000 in most cases
+V362=0		#Amp #2    "		"		"	
+#
+# Retract control settings
+V449=4     # Dac 4 for retract control
+V450=5000  # Retract arm setting
+V451=25000 # Retract setting
+#
+# Pressure control parameters
+# Variable V80 is the pressure control config. word
+#V80=0		#Disable pressure control
+#V80=H00000001	#Pressure control command +/-2.5V
+V80=H00000017	#Pressure control command +/-5V, LS4 arm
+#V80=H00000021	#Pressure control command +/-10V
+V80=V80|H00000080 #Enable this line to prevent pressure command from going negative.
+V81=100		#Pressure loop gain. 
+V82=1000	#Pressure control arm setting in volts X 1000.
+V83=1000	#Pressure control loop time uS.
+V84=0		#Pressure control retract setting volts X 1000.
+V85=0		#Pressure control park setting.
+V86=49		#Last pressure control block.
+V87=0		#Pressure control I gain.
+V88=0		#Pressure control D gain.
+V89=0		#Reserved for additional pressure control parameter.
+#
+# Set-up shot profile
+######### STEP1 #########
+V0=0		#ACCEL #1
+V1=H7FFF	#VEL #1
+V2=0		#ENDING POS #1
+V3=0		#WHILE IO INDICATOR #1
+######### STEP2 #########
+V4=0			#ACCEL #2
+V5=H7FFF		#VEL #2
+V6=0			#ENDING POS #2
+V7=0			#WHILE IO INDICATOR #2
+######### STEP3 #########
+V8=0		#ACCEL #3
+V9=H7FFF	#VEL #3
+V10=0		#ENDING POS #3
+V11=0		#WHILE IO INDICATOR #3
+######### STEP4 #########
+V12=0			#ACCEL #4
+V13=H7FFF		#VEL #4
+V14=0			#ENDING POS #4
+V15=0			#WHILE IO INDICATOR #4
+######### STEP5 #########
+V16=0		#ACCEL #5
+V17=H7FFF	#VEL #5
+V18=0		#ENDING POS #5
+V19=0		#WHILE IO INDICATOR #5
+######### STEP6 #########
+V20=0			#ACCEL #6
+V21=H7FFF		#VEL #6
+V22=0			#ENDING POS #6
+V23=0			#WHILE IO INDICATOR #6
+######### STEP7 #########
+V24=0		#ACCEL #7
+V25=H7FFF	#VEL #7
+V26=0		#ENDING POS #7
+V27=0		#WHILE IO INDICATOR #7
+######### STEP8 #########
+V28=0			#ACCEL #8
+V29=H7FFF		#VEL #8
+V30=0			#ENDING POS #8
+V31=0			#WHILE IO INDICATOR #8
+######### STEP9 #########
+V32=0		#ACCEL #9
+V33=H7FFF	#VEL #9
+V34=0		#ENDING POS #9
+V35=0		#WHILE IO INDICATOR #9
+######### STEP10 #########
+V36=0			#ACCEL #10
+V37=H7FFF		#VEL #10
+V38=0			#ENDING POS #10
+V39=0			#WHILE IO INDICATOR #10
+######### STEP11 #########
+V40=0		#ACCEL #11
+V41=H7FFF	#VEL #11
+V42=0		#ENDING POS #11
+V43=0		#WHILE IO INDICATOR #11
+######### STEP12 #########
+V44=0			#ACCEL #12
+V45=H7FFF		#VEL #12
+V46=0			#ENDING POS #12
+V47=0			#WHILE IO INDICATOR #12
+######### STEP13 #########
+V47=0		#ACCEL #13
+V49=H7FFF	#VEL #13
+V50=0		#ENDING POS #13
+V51=0		#WHILE IO INDICATOR #13
+######### STEP14 #########
+V52=0			#ACCEL #14
+V53=H7FFF		#VEL #14
+V54=0			#ENDING POS #14
+V55=0			#WHILE IO INDICATOR #14
+######### STEP15 #########
+V56=0		#ACCEL #15
+V57=H7FFF	#VEL #15
+V58=0		#ENDING POS #15
+V58=0		#WHILE IO INDICATOR #15
+######### STEP16 #########
+V60=0			#ACCEL #16
+V61=H7FFF		#VEL #16
+V62=0			#ENDING POS #16
+V63=0			#WHILE IO INDICATOR #16
+######### STEP17 #########
+V64=0		#ACCEL #17
+V65=H7FFF	#VEL #17
+V66=0		#ENDING POS #17
+V67=0		#WHILE IO INDICATOR #17
+######### STEP18 #########
+V68=0			#ACCEL #18
+V69=H7FFF		#VEL #18
+V70=0			#ENDING POS #18
+V71=0			#WHILE IO INDICATOR #18
+######### STEP19 #########
+V72=0		#ACCEL #19
+V73=H7FFF	#VEL #19
+V74=0		#ENDING POS #19
+V75=0		#WHILE IO INDICATOR #19
+######### STEP20 #########
+V76=0			#ACCEL #20
+V77=H7FFF		#VEL #20
+V78=0			#ENDING POS #20
+V79=0			#WHILE IO INDICATOR #20
+#
+#
+# Pressure control profile steps
+######### STEP 1 ##########
+V90=0		#RAMP #1, mS
+V91=H7FFF 	#PRESSURE CMD #1, volts X 1000
+#V91=1500|H80000000	#Example of open loop pressure command, set bit 31 for OL.
+V92=0		#END TIME #1, mS
+######### STEP 2 ##########
+V93=0		#RAMP #2, mS
+V94=H7FFF	#PRESSURE CMD #2, volts X 1000	
+#V94=2500|H80000000	#Example of open loop pressure command, set bit 31 for OL.
+V95=0		#END TIME #2, mS
+######### STEP 3 ##########
+V96=0		#RAMP #3, mS
+V97=H7FFF	#PRESSURE CMD #3, volts X 1000
+#V97=1500|H80000000	#Example of open loop pressure command, set bit 31 for OL.
+V98=0		#END TIME #3, mS
+#
+#
+#
+#This program is for use with an AT HOME signal.
+#Sensor fault checking can be added.
+#
+#
+########################################### MAIN PROGRAM ##############################################
+#
+#Program
+.001 UV501=V500&H00000001 # Check for shot control enabled, if not we'll stay in monitor only mode
+.002 D100
+.003 J0.2_IV501=0     #Stay in monitor only mode
+.004 J1.73 # Park valve
+.005 J1.78 # Arm retract voltage
+.006 UD3=V85 # Park pressure valve
+#
+.007 D10
+.008 UV312=V312&Hfffffffe #Turn off the CS signal to the monitor
+.009 D10
+.010 J0.9_I1.50       #Trap start shot
+.011 J0.9_I1.305
+.012 D10
+.013 J1.170_I1.54     #Jump if manual mode
+.014 J0.20_I1.50      #Jump if start shot
+.015 J0.20_I1.305
+.016 J1.100_I1.56     #Jump if valve test
+.017 J1.140_I1.52     #Jump if retract
+.018 J0.12
+#
+#
+# Shot 
+#
+# If a CS was not received by monitor_supervisor(), setting the
+# CS detected config word bit will force the monitor to trigger.
+# We have to be monitoring for ZSPEED checking to be set up and active.
+#
+# Steps 22 and 25 cannot be changed or used for something else.  These are written by the True-Trak software.
+#
+.020 UV312=V312|H00000001 #Set CS detected config. word bit, use this line for V5 and later firmware
+.021 D200_E1.401 #Give monitor_supervisor() time to sense CS 
+.022 UD1=-2000   #Set valve to something
+.023 UV312=V312&Hfffffffe #Now clear out the CS signal to the monitor
+.024 UA1=0_B1.33
+#.025 VA180AC40P60_B1.34 #<--- Alternative short step and then acc.
+#.025 VA180AC0P60_E1.34 #<--- Alternative short step and then acc.
+.025 D0
+.026 VA1V1ACV0PV2_W0.V3B1.34
+.027 VA1V5ACV4PV6_W0.V7
+.028 VA1V9ACV8PV10_W0.V11
+.029 VA1V13ACV12PV14_W0.V15
+.030 VA1V17ACV16PV18_W0.V19
+.031 VA1V21ACV20PV22_W0.V23
+.032 VA1V25ACV24PV26_W0.V27
+.033 VA1V29ACV28PV30_W0.V31
+.034 VA1V33ACV32PV34_W0.V35
+.035 VA1V37ACV36PV38_W0.V39
+.036 VA1V41ACV40PV42_W0.V43
+.037 VA1V45ACV44PV46_W0.V47
+.038 VA1V49ACV48PV50_W0.V51
+.039 VA1V53ACV52PV54_W0.V55
+.040 VA1V57ACV56PV58_W0.V59
+.041 VA1V61ACV60PV62_W0.V63
+.042 VA1V65ACV64PV66_W0.V67
+.043 VA1V69ACV68PV70_W0.V71
+.044 VA1V73ACV72PV74_W0.V75
+.045 VA1V77ACV76PV78_W0.V79
+.046 D0_B0.401
+#
+# PRESSURE CONTROL, ignored if V80 bit 0 is 0.
+.047 XA2V91RV90TV92_W0.51B1.402 #FT will terminate pressure control if it occurs before the block times out.
+.048 XA2V94RV93TV95_W0.51
+.049 XA2V97RV96TV98_W0.51E0.402
+#
+.050 D0
+.051 D10
+.052 J0.7_I1.54   #Jump if manual
+.053 J0.7_I1.52  # If retract before follow through, we'll forget FT and retract
+.054 J0.51_I0.51  #Loop if not follow through
+.055 UD1=V353     #Open valve to the follow through setting
+.056 J1.113  	  # Wait for cylinder to reach the max setting, retract, manual or reaching the max limit will abort this
+.057 J0.7
+.058 END
+#############################################################################################################
+#
+#
+################################### SUBROUTINES ###################################
+#
+# Valve park subroutine
+.073 UD1=200	
+.074 D350
+.075 UD1=-2000 # Park valve
+.076 J2
+#
+# Subroutine to arm retract control(Clear retract voltage)
+.078 UD1=V450_IV449=1
+.079 UD2=V450_IV449=2
+.080 UD3=V450_IV449=3
+.081 UD4=V450_IV449=4
+.082 J2
+#
+# JOG SHOT Subroutine
+.090 J1.78_B1.401 # Set retract control arm setting
+.091 UD1=V352_B1.33	#Open valve to JS setting
+.092 D10
+.093 J1.113_I0.40 # Check for max cylinder position if limit not set.  If manual mode, we'll just keep comming back here.
+.094 J0.92_I1.53 
+.095 D0_B0.33
+.096 D0 #J1.73
+.097 J2_B0.401 #Return
+#
+# Valve test subroutine from switch
+.100 J1.108
+.101 J2_I0.56
+.102 J0.100
+.103 D0
+.104 D0
+#
+# Valve test when commanded from computer, not really a subroutine but we'll include it here anyway.
+.105 J1.108
+.106 J0.105
+.107 D0
+#
+# Subroutine to pulse valve
+.108 UD1=3500-V351_B1.401 #Subtract out the LVDT compensation, enable dither
+.109 D2000
+.110 UD1=0-V351    #Subtract out the LVDT compensation
+.111 D2000
+.112 J2_B0.401	   # Disable dither
+#
+# CYLINDER MAX LIMIT STOP SUBROUTINE
+.113 D10
+.114 J0.118_IA1>V354
+.115 J2_I1.54
+.116 J2_I1.52
+.117 J0.113
+.118 D0_B1.40  # Turn on cylinder max limit output
+.119 D0_B0.33
+.120 D0_B0.34
+.121 J1.73 # Park valve
+.122 J2
+#
+# Retract subroutine
+.140 D0_B0.33
+.141 D0_B0.34
+.142 J0.154_I1.55 #If at home, we'll exit	
+.143 UD1=V355     #Open valve to retract setting
+.144 UD3=V84  	  #XA2V84R0T10 #open pressure control to the retract setting
+	# Set up the command for the retract control
+.145 UV504=V314&H00010000 # >0 if retract control
+.146 J1.190_IV504>0 # Set the retract control output voltage
+.147 D0
+.148 D0
+	# Wait for AT HOME
+.149 D10
+.150 D0_IA1<V354B0.40 # If we've dropped below the cylinder max limit, turn off the max output
+.151 D0
+.152 J0.156_I0.52  # If no longer retract, we'll leave
+.153 J0.149_I0.55  #Jump if not at home
+.154 UD3=V85   # Prk the pressure control valve
+.155 UA1=0_I1.54 # If manual, reset position.  In Auto, start shot will reset position.
+.156 J1.75 # Park valve
+.157 J1.78_IV504>0 # Now set the retract control arm voltage if retract control enabled
+.158 D0
+.159 J2
+#
+# MANUAL MODE SUBROUTINE, Jog shot can happen anytime
+.170 D10
+.171 J0.170_I1.53    	#Trap jog shot
+.172 D0_B0.33
+.173 D0_B0.34
+.174 J2_I0.54     	#Return if not manual mode
+.175 D10
+.176 J1.140_I1.52  #Jump to the retract subroutine if retract
+.177 J2_I0.54      #Return if not manual mode
+.178 D0
+.179 J1.90_I1.53  	#Jump if jog shot
+.180 J1.100_I1.56     	#Jump if valve test
+.181 J0.172
+#
+# Subroutine to set the retract setting
+.190 UV502=V451&H7FFF7FFF # Strip out the OL designator and the 16 bit sign.  For now, we'll assume OL only.
+.191 UV503=V451&H00008000 # V503 will == H00008000 if the retract command were < 0 (a signed 16 bit value).
+.192 UV502=V502|H80000000_IV503!=0 # Add sign bit to the converted value.  V502 is now the retract voltage command X 1000.
+	# Now output the retract setting to the appropriate DAC.
+.193 UD1=V502_IV449=1
+.194 UD2=V502_IV449=2
+.195 UD3=V502_IV449=3
+.196 UD4=V502_IV449=4
+.197 J2
+####################################################################################
+#
+VF # Save all variables to flash
+.F # Save control program to flash
+.G # Start control program
+#
+#
+#                     I/O List
+#
+#         INPUTS
+#
+# 49 ==            Formerly Pump on
+# 50 == Start shot
+# 51 == Follow through
+# 52 == Retract
+# 53 == Jog Shot
+# 54 == Manual mode
+# 55 == At home
+# 56 == Valve test
+# 57 ==
+# 58 == OK For fast shot
+# 59 == Vacuum on
+# 60 == Low impact
+# 61 ==
+# 62 ==
+# 63 ==
+# 64 ==         Formerly Vacuum abort
+#
+# 305 == Alternate start shot (External interface TB2-16)
+# 304 == Alternate at home input (External interface TB2-15)
+#
+#         OUTPUTS
+#
+# 33  == Slow Out
+# 34  == Accumulator
+# 35  ==
+# 36  == 
+# 37  == Valve test in operation
+# 38  == 
+# 39  ==
+# 40  == Cylinder max limit position reached
+# 41  == Prince binary valve pulse output
+# 42  == LS5
+# 43  == LS6
+# 44  == Warning (active low)  Formerly controller fault
+# 45  == LS1
+# 46  == LS2
+# 47  == LS3
+# 48  == LS4
+#
+#    Internal I/O numbers
+#
+# 401 == Enable dither shot control
+# 402 == Enable dither pressure control
+#
+#

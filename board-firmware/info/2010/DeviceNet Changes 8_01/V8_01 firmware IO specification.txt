@@ -1,0 +1,219 @@
+
+******************************* FT2 I/O structure, V8.01 and later firmware ***************************
+								Must use control_all.txt 7-14-10 or later
+
+####### FT2 Input word ISW1.  Use command OI1<CR> to read. #######
+####### Existing Opto 22 based inputs.					   #######
+Bit 0,	Monitor Opto I/O input #1, FT2 I/O# 33
+Bit 1,	Monitor Opto I/O input #2, FT2 I/O# 34
+Bit 2,	Monitor Opto I/O input #3, FT2 I/O# 35
+Bit 3,	Monitor Opto I/O input #4, FT2 I/O# 36
+Bit 4,	Monitor Opto I/O input #5, FT2 I/O# 37
+Bit 5,	Monitor Opto I/O input #6, FT2 I/O# 38
+Bit 6,	Monitor Opto I/O input #7, FT2 I/O# 39
+Bit 7,	Monitor Opto I/O input #8, FT2 I/O# 40
+Bit 8,	Monitor Opto I/O input #9, FT2 I/O# 41
+Bit 9,	Monitor Opto I/O input #10, FT2 I/O# 42
+Bit 10,	Monitor Opto I/O input #11, FT2 I/O# 43
+Bit 11,	Monitor Opto I/O input #12, FT2 I/O# 44
+Bit 12,	Monitor Opto I/O input #13, FT2 I/O# 45
+Bit 13,	Monitor Opto I/O input #14, FT2 I/O# 46
+Bit 14,	Monitor Opto I/O input #15, FT2 I/O# 47
+Bit 15,	Monitor Opto I/O input #16, FT2 I/O# 48
+
+Bit 16,	Control Opto I/O input #1, FT2 I/O# 49
+Bit 17,	Control Opto I/O input #2, FT2 I/O# 50, Start Shot input
+Bit 18,	Control Opto I/O input #3, FT2 I/O# 51, Follow Through input
+Bit 19,	Control Opto I/O input #4, FT2 I/O# 52, Retract input
+Bit 20,	Control Opto I/O input #5, FT2 I/O# 53, Jog Shot input
+Bit 21,	Control Opto I/O input #6, FT2 I/O# 54,	Manual Mode input
+Bit 22,	Control Opto I/O input #7, FT2 I/O# 55, At Home input
+Bit 23,	Control Opto I/O input #8, FT2 I/O# 56, Valve Test Input
+Bit 24,	Control Opto I/O input #9, FT2 I/O# 57
+Bit 25,	Control Opto I/O input #10, FT2 I/O# 58, OK for Fast Shot input
+Bit 26,	Control Opto I/O input #11, FT2 I/O# 59, Vacuum On input
+Bit 27,	Control Opto I/O input #12, FT2 I/O# 60, Low Imapct input
+Bit 28,	Control Opto I/O input #13, FT2 I/O# 61, Fill Test input
+Bit 29,	Control Opto I/O input #14, FT2 I/O# 62
+Bit 30,	Control Opto I/O input #15, FT2 I/O# 63
+Bit 31,	Control Opto I/O input #16, FT2 I/O# 64
+
+
+####### FT2 Output word OSW1.  Use command OO1<CR> to read or OO1=~Hxxxxxxxx to clear individual bits or OO1=Hxxxxxxxx to set individual bits #######
+####### Existing Opto 22 based outputs. FT2 I/O numbers are the same as TrueTrak Wire Numbers.												  #######	
+Bit 0,	Monitor Opto I/O output #1, FT2 I/O# 1, ZSPEED or Arlarm output	+
+Bit 1,	Monitor Opto I/O output #2, FT2 I/O# 2,	Alarm output			|
+Bit 2,	Monitor Opto I/O output #3, FT2 I/O# 3,	Alarm output			|
+Bit 3,	Monitor Opto I/O output #4, FT2 I/O# 4,	Alarm output			|---- Mux adapter board
+Bit 4,	Monitor Opto I/O output #5, FT2 I/O# 5,	Alarm output			|
+Bit 5,	Monitor Opto I/O output #6, FT2 I/O# 6,	Alarm output			|
+Bit 6,	Monitor Opto I/O output #7, FT2 I/O# 7,	Alarm output			|
+Bit 7,	Monitor Opto I/O output #8, FT2 I/O# 8,	Alarm output			+
+Bit 8,	Monitor Opto I/O output #9, FT2 I/O# 9
+Bit 9,	Monitor Opto I/O output #10, FT2 I/O# 10
+Bit 10,	Monitor Opto I/O output #11, FT2 I/O# 11
+Bit 11,	Monitor Opto I/O output #12, FT2 I/O# 12
+Bit 12,	Monitor Opto I/O output #13, FT2 I/O# 13
+Bit 13,	Monitor Opto I/O output #14, FT2 I/O# 14
+Bit 14,	Monitor Opto I/O output #15, FT2 I/O# 15
+Bit 15,	Monitor Opto I/O output #16, FT2 I/O# 16
+
+Bit 16,	Control Opto I/O output #1, FT2 I/O# 17, Slow Shot output
+Bit 17,	Control Opto I/O output #2, FT2 I/O# 18, Accumulator output
+Bit 18,	Control Opto I/O output #3, FT2 I/O# 19
+Bit 19,	Control Opto I/O output #4, FT2 I/O# 20
+Bit 20,	Control Opto I/O output #5, FT2 I/O# 21, Valve Test In Operation output
+Bit 21,	Control Opto I/O output #6, FT2 I/O# 22, LS7 output
+Bit 22,	Control Opto I/O output #7, FT2 I/O# 23, LS8 output
+Bit 23,	Control Opto I/O output #8, FT2 I/O# 24, Cylinder Max Limit output
+Bit 24,	Control Opto I/O output #9, FT2 I/O# 25, Prince Binary Valve Pulse output
+Bit 25,	Control Opto I/O output #10, FT2 I/O# 26, LS5 output
+Bit 26,	Control Opto I/O output #11, FT2 I/O# 27, LS6 output
+Bit 27,	Control Opto I/O output #12, FT2 I/O# 28, Warning output (active low)
+Bit 28,	Control Opto I/O output #13, FT2 I/O# 29, LS1 output
+Bit 29,	Control Opto I/O output #14, FT2 I/O# 30, LS2 output
+Bit 30,	Control Opto I/O output #15, FT2 I/O# 31, LS3 output
+Bit 31,	Control Opto I/O output #16, FT2 I/O# 32, LS4 output
+
+
+####### FT2 Input word ISW2.  Use command OI2<CR> to read.  All 32 bits are dedicated for monitor inputs #######
+Bit 0,	Virtual monitor input #1, FT2 I/O# 133, Fieldbus input #1
+Bit 1,	Virtual monitor input #2, FT2 I/O# 134, Fieldbus input #2
+Bit 2,	Virtual monitor input #3, FT2 I/O# 135, Fieldbus input #3
+Bit 3,	Virtual monitor input #4, FT2 I/O# 136, Fieldbus input #4
+Bit 4,	Virtual monitor input #5, FT2 I/O# 137, Fieldbus input #5
+Bit 5,	Virtual monitor input #6, FT2 I/O# 138, Fieldbus input #6
+Bit 6,	Virtual monitor input #7, FT2 I/O# 139, Fieldbus input #7
+Bit 7,	Virtual monitor input #8, FT2 I/O# 140, Fieldbus input #8
+Bit 8,	Virtual monitor input #9, FT2 I/O# 141, Fieldbus input #9
+Bit 9,	Virtual monitor input #10, FT2 I/O# 142, Fieldbus input #10
+Bit 10,	Virtual monitor input #11, FT2 I/O# 143, Fieldbus input #11
+Bit 11,	Virtual monitor input #12, FT2 I/O# 144, Fieldbus input #12
+Bit 12,	Virtual monitor input #13, FT2 I/O# 145, Fieldbus input #13
+Bit 13,	Virtual monitor input #14, FT2 I/O# 146, Fieldbus input #14
+Bit 14,	Virtual monitor input #15, FT2 I/O# 147, Fieldbus input #15
+Bit 15,	Virtual monitor input #16, FT2 I/O# 148, Fieldbus input #16
+Bit 16,	Virtual monitor input #17, FT2 I/O# 149, Fieldbus input #17
+Bit 17,	Virtual monitor input #18, FT2 I/O# 150, Fieldbus input #18
+Bit 18,	Virtual monitor input #19, FT2 I/O# 151, Fieldbus input #19
+Bit 19,	Virtual monitor input #20, FT2 I/O# 152, Fieldbus input #20
+Bit 20,	Virtual monitor input #21, FT2 I/O# 153, Fieldbus input #21
+Bit 21,	Virtual monitor input #22, FT2 I/O# 154, Available for future fieldbus expansion
+Bit 22,	Virtual monitor input #23, FT2 I/O# 155, Available for future fieldbus expansion
+Bit 23,	Virtual monitor input #24, FT2 I/O# 156, Available for future fieldbus expansion
+Bit 24,	Virtual monitor input #25, FT2 I/O# 157, Available for future fieldbus expansion
+Bit 25,	Virtual monitor input #26, FT2 I/O# 158, Available for future fieldbus expansion
+Bit 26,	Virtual monitor input #27, FT2 I/O# 159, Available for future fieldbus expansion
+Bit 27,	Virtual monitor input #28, FT2 I/O# 160, Available for future fieldbus expansion
+Bit 28,	Virtual monitor input #29, FT2 I/O# 161, Available for future fieldbus expansion
+Bit 29,	Virtual monitor input #30, FT2 I/O# 162, Available for future fieldbus expansion
+Bit 30,	Virtual monitor input #31, FT2 I/O# 163, Available for future fieldbus expansion
+Bit 31,	Virtual monitor input #32, FT2 I/O# 164, Available for future fieldbus expansion
+
+
+####### FT2 Input word ISW3.  Use command OI3<CR> to read.  All 32 bits are dedicated for control inputs #######
+Bit 0,	Virtual control input #1, FT2 I/O# 233, Fieldbus input #22
+Bit 1,	Virtual control input #2, FT2 I/O# 234, Fieldbus input #23, Reserved for Start Shot input
+Bit 2,	Virtual control input #3, FT2 I/O# 235, Fieldbus input #24, Reserved for Follow Through input
+Bit 3,	Virtual control input #4, FT2 I/O# 236, Fieldbus input #25, Reserved for Retract input
+Bit 4,	Virtual control input #5, FT2 I/O# 237, Fieldbus input #26, Reserved for Jog Shot input
+Bit 5,	Virtual control input #6, FT2 I/O# 238, Fieldbus input #27, Reserved for Manual Mode input
+Bit 6,	Virtual control input #7, FT2 I/O# 239, Fieldbus input #28,	Reserved for At Home input
+Bit 7,	Virtual control input #8, FT2 I/O# 240, Fieldbus input #29,	Reserved for Valve Test input
+Bit 8,	Virtual control input #9, FT2 I/O# 241, Fieldbus input #30
+Bit 9,	Virtual control input #10, FT2 I/O# 242, Fieldbus input #31, Reserved for OK for Fast Shot input
+Bit 10,	Virtual control input #11, FT2 I/O# 243, Fieldbus input #32, Reserved for Vacuum On input
+Bit 11,	Virtual control input #12, FT2 I/O# 244, Fieldbus input #33, Reserved for Low Impact input
+Bit 12,	Virtual control input #13, FT2 I/O# 245, Fieldbus input #34, Reserved for Fill Test input
+Bit 13,	Virtual control input #14, FT2 I/O# 246, Fieldbus input #35
+Bit 14,	Virtual control input #15, FT2 I/O# 247, Fieldbus input #36
+Bit 15,	Virtual control input #16, FT2 I/O# 248, Fieldbus input #37
+Bit 16,	Virtual control input #17, FT2 I/O# 249, Fieldbus input #38
+Bit 17,	Virtual control input #18, FT2 I/O# 250, Fieldbus input #39
+Bit 18,	Virtual control input #19, FT2 I/O# 251, Fieldbus input #40
+Bit 19,	Virtual control input #20, FT2 I/O# 252, Fieldbus input #41
+Bit 20,	Virtual control input #21, FT2 I/O# 253, Fieldbus input #42
+Bit 21,	Virtual control input #22, FT2 I/O# 254, Available for future fieldbus expansion
+Bit 22,	Virtual control input #23, FT2 I/O# 255, Available for future fieldbus expansion
+Bit 23,	Virtual control input #24, FT2 I/O# 256, Available for future fieldbus expansion
+Bit 24,	Virtual control input #25, FT2 I/O# 257, Available for future fieldbus expansion
+Bit 25,	Virtual control input #26, FT2 I/O# 258, Available for future fieldbus expansion
+Bit 26,	Virtual control input #27, FT2 I/O# 259, Available for future fieldbus expansion
+Bit 27,	Virtual control input #28, FT2 I/O# 260, Available for future fieldbus expansion
+Bit 28,	Virtual control input #29, FT2 I/O# 261, Available for future fieldbus expansion
+Bit 29,	Virtual control input #30, FT2 I/O# 262, Available for future fieldbus expansion
+Bit 30,	Virtual control input #31, FT2 I/O# 263, Available for future fieldbus expansion
+Bit 31,	Virtual control input #32, FT2 I/O# 264, Available for future fieldbus expansion
+
+
+####### FT2 Output word OSW2.  Use command OO2<CR> to read or OO2=~Hxxxxxxxx to clear individual bits or OO2=Hxxxxxxxx to set individual bits #######
+####### All 32 bits are dedicated to monitor outputs.  TrueTrak wire numbers should match FT2 I/O numbers. 									  #######		
+Bit 0,	Virtual monitor output #1, FT2 I/O# 101, Fieldbus output #1, Reserved for ZSPEED or alarm output
+Bit 1,	Virtual monitor output #2, FT2 I/O# 102, Fieldbus output #2, Reserved for arlarm output
+Bit 2,	Virtual monitor output #3, FT2 I/O# 103, Fieldbus output #3, Reserved for arlarm output
+Bit 3,	Virtual monitor output #4, FT2 I/O# 104, Fieldbus output #4, Reserved for arlarm output
+Bit 4,	Virtual monitor output #5, FT2 I/O# 105, Fieldbus output #5, Reserved for arlarm output
+Bit 5,	Virtual monitor output #6, FT2 I/O# 106, Fieldbus output #6, Reserved for arlarm output
+Bit 6,	Virtual monitor output #7, FT2 I/O# 107, Fieldbus output #7, Reserved for arlarm output
+Bit 7,	Virtual monitor output #8, FT2 I/O# 108, Fieldbus output #8, Reserved for arlarm output
+Bit 8,	Virtual monitor output #9, FT2 I/O# 109, Fieldbus output #9, Reserved for arlarm output
+Bit 9,	Virtual monitor output #10, FT2 I/O# 110, Fieldbus output #10, Reserved for arlarm output
+Bit 10,	Virtual monitor output #11, FT2 I/O# 111, Fieldbus output #11, Reserved for arlarm output
+Bit 11,	Virtual monitor output #12, FT2 I/O# 112, Fieldbus output #12, Reserved for arlarm output
+Bit 12,	Virtual monitor output #13, FT2 I/O# 113, Fieldbus output #13, Reserved for arlarm output
+Bit 13,	Virtual monitor output #14, FT2 I/O# 114, Fieldbus output #14, Reserved for arlarm output
+Bit 14,	Virtual monitor output #15, FT2 I/O# 115, Fieldbus output #15, Reserved for arlarm output
+Bit 15,	Virtual monitor output #16, FT2 I/O# 116, Fieldbus output #16, Reserved for arlarm output
+Bit 16,	Virtual monitor output #17, FT2 I/O# 117, Fieldbus output #17, Reserved for arlarm output
+Bit 17,	Virtual monitor output #18, FT2 I/O# 118, Fieldbus output #18, Reserved for arlarm output
+Bit 18,	Virtual monitor output #19, FT2 I/O# 119, Fieldbus output #19, Reserved for arlarm output
+Bit 19,	Virtual monitor output #20, FT2 I/O# 120, Fieldbus output #20, Reserved for arlarm output
+Bit 20,	Virtual monitor output #21, FT2 I/O# 121, Fieldbus output #21, Reserved for arlarm output
+Bit 21,	Virtual monitor output #22, FT2 I/O# 122, Available for future fieldbus expansion
+Bit 22,	Virtual monitor output #23, FT2 I/O# 123, Available for future fieldbus expansion
+Bit 23,	Virtual monitor output #24, FT2 I/O# 124, Available for future fieldbus expansion
+Bit 24,	Virtual monitor output #25, FT2 I/O# 125, Available for future fieldbus expansion
+Bit 25,	Virtual monitor output #26, FT2 I/O# 126, Available for future fieldbus expansion
+Bit 26,	Virtual monitor output #27, FT2 I/O# 127, Available for future fieldbus expansion
+Bit 27,	Virtual monitor output #28, FT2 I/O# 128, Available for future fieldbus expansion
+Bit 28,	Virtual monitor output #29, FT2 I/O# 129, Available for future fieldbus expansion
+Bit 29,	Virtual monitor output #30, FT2 I/O# 130, Available for future fieldbus expansion
+Bit 30,	Virtual monitor output #31, FT2 I/O# 131, Available for future fieldbus expansion
+Bit 31,	Virtual monitor output #32, FT2 I/O# 132, Available for future fieldbus expansion
+
+
+####### FT2 Output word OSW3.  Use command OO3<CR> to read or OO3=~Hxxxxxxxx to clear individual bits or OO3=Hxxxxxxxx to set individual bits #######
+####### All 32 bits are dedicated to control outputs.  TrueTrak wire numbers should match FT2 I/O numbers. 									  #######		
+Bit 0,	Virtual control output #1, FT2 I/O# 201, Fieldbus output #22, Reserved for Slow Shot output
+Bit 1,	Virtual control output #2, FT2 I/O# 202, Fieldbus output #23, Reserved for Accumulator output
+Bit 2,	Virtual control output #3, FT2 I/O# 203, Fieldbus output #24
+Bit 3,	Virtual control output #4, FT2 I/O# 204, Fieldbus output #25
+Bit 4,	Virtual control output #5, FT2 I/O# 205, Fieldbus output #26, Reserved for Valve Test in Operation output 
+Bit 5,	Virtual control output #6, FT2 I/O# 206, Fieldbus output #27, Reserved for LS7 output
+Bit 6,	Virtual control output #7, FT2 I/O# 207, Fieldbus output #28, Reserved for LS8 output
+Bit 7,	Virtual control output #8, FT2 I/O# 208, Fieldbus output #29, Reserved for Cylinder Max Limit output
+Bit 8,	Virtual control output #9, FT2 I/O# 209, Fieldbus output #30, Reserved for Prince Binary Valve Pulse output
+Bit 9,	Virtual control output #10, FT2 I/O# 210, Fieldbus output #31, Reserved for LS5 output
+Bit 10,	Virtual control output #11, FT2 I/O# 211, Fieldbus output #32, Reserved for LS6 output
+Bit 11,	Virtual control output #12, FT2 I/O# 212, Fieldbus output #33, Reserved for Warning output (active low)
+Bit 12,	Virtual control output #13, FT2 I/O# 213, Fieldbus output #34, Reserved for LS1 output
+Bit 13,	Virtual control output #14, FT2 I/O# 214, Fieldbus output #35, Reserved for LS2 output
+Bit 14,	Virtual control output #15, FT2 I/O# 215, Fieldbus output #36, Reserved for LS3 output
+Bit 15,	Virtual control output #16, FT2 I/O# 216, Fieldbus output #37, Reserved for LS4 output
+Bit 16,	Virtual control output #17, FT2 I/O# 217, Fieldbus output #38
+Bit 17,	Virtual control output #18, FT2 I/O# 218, Fieldbus output #39
+Bit 18,	Virtual control output #19, FT2 I/O# 219, Fieldbus output #40
+Bit 19,	Virtual control output #20, FT2 I/O# 220, Fieldbus output #41
+Bit 20,	Virtual control output #21, FT2 I/O# 221, Fieldbus output #42
+Bit 21,	Virtual control output #22, FT2 I/O# 222, Available for future fieldbus expansion
+Bit 22,	Virtual control output #23, FT2 I/O# 223, Available for future fieldbus expansion
+Bit 23,	Virtual control output #24, FT2 I/O# 224, Available for future fieldbus expansion
+Bit 24,	Virtual control output #25, FT2 I/O# 225, Available for future fieldbus expansion
+Bit 25,	Virtual control output #26, FT2 I/O# 226, Available for future fieldbus expansion
+Bit 26,	Virtual control output #27, FT2 I/O# 227, Available for future fieldbus expansion
+Bit 27,	Virtual control output #28, FT2 I/O# 228, Available for future fieldbus expansion
+Bit 28,	Virtual control output #29, FT2 I/O# 229, Available for future fieldbus expansion
+Bit 29,	Virtual control output #30, FT2 I/O# 230, Available for future fieldbus expansion
+Bit 30,	Virtual control output #31, FT2 I/O# 231, Available for future fieldbus expansion
+Bit 31,	Virtual control output #32, FT2 I/O# 232, Available for future fieldbus expansion
+

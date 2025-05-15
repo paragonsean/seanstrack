@@ -1,0 +1,17 @@
+Greg,
+
+I put the board into ascii mode and took another shot. I've spread the
+lines out, there were no spaces in the original lines,
+so they line up and listed two questionable points from the same shot.
+
+
+P_1_85,CH14 CH2 1005 CH3 2003 CH4 38af CH5 4876 CH6 59aa CH7 6088 CH8 7003
+P_1_86,CH13 CH2 1004 CH3    4 CH4 38ab CH5 4877 CH6 59ac CH7 607d CH8 7003
+P_1_87,CH14 CH2 1005 CH3 2003 CH4 3896 CH5 4875 CH6 59a8 CH7 6087 CH8 7003
+
+P_1_96,CH1    4 CH2 1004 CH3 2003 CH4 38af CH5 4876 CH6 59aa CH7 6088 CH8 7003
+P_1_97,CH1 6008 CH2    4 CH3 1004 CH4 2004 CH5 355d CH6 7003 CH7    4 CH8 7003
+P_1_98,CH1    4 CH2 1005 CH3 2004 CH4 38af CH5 4876 CH6 59aa CH7 607e CH8 7003
+
+
+Jay

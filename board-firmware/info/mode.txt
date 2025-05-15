@@ -1,0 +1,187 @@
+
+  
+Mode
+
+Displays system status, changes system settings, or reconfigures ports or devices. Used without parameters, mode displays all the controllable attributes of the console and the available COM devices. Because you can use mode to perform many different tasks, the syntax you need to use to carry out each task is different. Click the task that you want to perform.
+
+To configure a serial communications port
+Syntax
+
+mode comm[:] [baud=b] [parity=p] [data=d] [stop=s] [to={on|off}] [xon={on|off}] [odsr={on|off}] [octs={on|off}] [dtr={on|off|hs}] [rts={on|off|hs|tg}] [idsr={on|off}]
+Parameters
+
+comm[:]
+    Specifies the number of the asynchronous-communications (COM) port.
+baud=b
+    Specifies the transmission rate in bits per second. The following table lists valid abbreviations for b and its related rate.
+    Value 	Rate
+    11 	110 baud
+    15 	150 baud
+    30 	300 baud
+    60 	600 baud
+    12 	1200 baud
+    24 	2400 baud
+    48 	4800 baud
+    96 	9600 baud
+    19 	19,200 baud
+parity=p
+    Specifies how the system uses the parity bit to check for transmission errors. The following table lists valid p values. The default value is e. Not all computers support the values m and s.
+    Value 	Description
+    n 	none
+    e 	even
+    o 	odd
+    m 	mark
+    s 	space
+data=d
+    Specifies the number of data bits in a character. Valid values for d are in the range 5 through 8. The default value is 7. Not all computers support the values 5 and 6.
+stop=s
+    Specifies the number of stop bits that define the end of a character: 1, 1.5, or 2. If the baud rate is 110, the default value is 2. Otherwise, the default value is 1. Not all computers support the value 1.5.
+to={on|off}
+    Specifies whether infinite time-out processing is on or off. The default is off.
+xon={on|off}
+    Specifies whether the xon or xoff protocol for data-flow control is on or off.
+odsr={on|off}
+    Specifies whether output handshaking that uses the Data Set Ready (DSR) circuit is on or off.
+octs={on|off}
+    Specifies whether output handshaking that uses the Clear To Send (CTS) circuit is on or off.
+dtr={on|off|hs}
+    Specifies whether the Data Terminal Ready (DTR) circuit is on or off, or set to handshake.
+rts={on|off|hs|tg}
+    Specifies whether the Request To Send (RTS) circuit is set to on, off, handshake, or toggle.
+idsr={on|off}
+    Specifies whether the DSR circuit sensitivity is on or off.
+/?
+    Displays help at the command prompt.
+
+To display the status of all devices or of a single device
+Syntax
+
+mode [device] [/status]
+Parameters
+
+device
+    Specifies the name of the device for which you want to display the status.
+/status
+    Requests the status of any redirected parallel printers. You can abbreviate the /status command-line option as /sta.
+/?
+    Displays help at the command prompt.
+
+Remarks
+
+    * Used without parameters, mode displays the status of all devices installed on your system.
+
+To redirect output from a parallel port to a serial communications port
+Syntax
+
+mode lptn[:]=comm[:]
+Parameters
+
+lptn
+    Required. Specifies the parallel port. Valid values for n are in the range 1 through 3. 
+comm [:]
+    Required. Specifies the serial port. Valid values for m are in the range 1 through 4.
+/?
+    Displays help at the command prompt.
+
+Remarks
+
+    * You must be a member of the Administrators group to redirect printing.
+
+Examples
+
+To set up your system so that it sends parallel-printer output to a serial printer, you must use the mode command twice. The first time, use mode to configure the serial port. The second time, use mode to redirect parallel-printer output to the serial port you specified in the first mode command.
+
+For example, if your serial printer operates at 4800 baud with even parity and is connected to the COM1 port (the first serial connection on your computer), type:
+
+mode com1 48,e,,,b
+mode lpt1=com1
+
+If you redirect parallel-printer output from LPT1 to COM1 but then decide that you want to print a file by using LPT1, type the following command before you print the file:
+
+mode lpt1
+
+This command prevents the redirection the file from LPT1 to COM1.
+
+To select, refresh, or display the numbers of the code pages for the console
+Syntax
+
+mode device codepage select=yyy
+
+mode device codepage [/status]
+Parameters
+
+device
+    Required. Specifies the device for which you want to select a code page. CON is the only valid name for a device.
+codepage select=
+    Required. Specifies which code page to use with the specified device. You can abbreviate codepage and select as cp and sel, respectively.
+yyy
+    Required. Specifies the number of the code page to select. The following table lists each code page supported and its Country/Region or language.
+    Value 	Country/Region
+    437 	United States
+    850 	Multilingual (Latin I)
+    852 	Slavic (Latin II)
+    855 	Cyrillic (Russian)
+    857 	Turkish
+    860 	Portuguese
+    861 	Icelandic
+    863 	Canadian-French
+    865 	Nordic
+    866 	Russian
+    869 	Modern Greek
+codepage
+    Required. Displays the numbers of the code pages, if any, that are selected for the specified device.
+/status
+    Displays the numbers of the current code pages selected for the specified device. You can abbreviate /status to /sta. Whether or not you specify /status, mode codepage displays the numbers of the code pages that are selected for the specified device. 
+/?
+    Displays help at the command prompt.
+
+To change the size of the command prompt screen buffer
+Syntax
+
+mode con[:] [cols=c] [lines=n]
+Parameters
+
+con[:]
+    Required. Indicates that the change is to the command prompt window.
+cols=c
+    Specifies the number of characters (columns) wide in the command prompt screen buffer.
+lines=n
+    Specifies the number of lines deep in the command prompt screen buffer.
+/?
+    Displays help at the command prompt.
+
+To set the keyboard typematic rate
+Syntax
+
+mode con[:] [rate=r delay=d]
+Parameters
+
+con[:]
+    Required. Refers to the keyboard.
+rate=r
+    Specifies the rate at which a character is repeated on the screen when you hold down a key.
+delay=d
+    Specifies the amount of time that must elapse, after you press and hold down a key, before the character output starts to repeat.
+/?
+    Displays help at the command prompt.
+
+Remarks
+
+    * The typematic rate is the rate at which a character repeats when you hold down the key for that character. The typematic rate has two components, the rate and the delay. Some keyboards do not recognize this command.
+    * Using rate=r
+
+      Valid values are in the range 1 through 32. These values are equal to approximately 2 to 30 characters per second, respectively. The default value is 20 for IBM AT-compatible keyboards, and 21 for IBM PS/2-compatible keyboards. If you set the rate, you must also set the delay.
+    * Using delay=d
+
+      Valid values for d are 1, 2, 3, and 4 (representing 0.25, 0.50, 0.75, and 1 second, respectively). The default value is 2. If you set the delay, you must also set the rate.
+
+Formatting legend
+Format	Meaning
+Italic	Information that the user must supply
+Bold	Elements that the user must type exactly as shown
+Ellipsis (...)	Parameter that can be repeated several times in a command line
+Between brackets ([])	Optional items
+Between braces ({}); choices separated by pipe (|). Example: {even|odd}	Set of choices from which the user must choose only one
+Courier font	Code or program output
+  Contact Us   |   E-mail this Page   |   TechNet Newsletter
+  © 2003 Microsoft Corporation. All rights reserved.     Terms of Use    Privacy Statement    Accessibility  

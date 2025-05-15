@@ -1,0 +1,140 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033
+{\fonttbl
+{\f0\froman\fcharset0\fprq2\fttruetype Times New Roman;}
+{\f1\froman\fcharset0\fprq2\ftnil NULL;}
+{\f2\fnil\fcharset0\fprq2\fttruetype Dingbats;}
+{\f3\froman\fcharset0\fprq2\ftnil Symbol;}
+{\f4\fswiss\fcharset0\fprq2\fttruetype Arial;}
+{\f5\fmodern\fcharset0\fprq1\fttruetype Courier New;}}
+{\colortbl
+\red0\green0\blue0;
+\red255\green255\blue255;}
+{\stylesheet
+{\s5\fi-431\li720 Dashed List;}
+{\s2\fi-431\li720 Box List;}
+{\s21\tx1584\sbasedon16\snext15 Section Heading;}
+{\s17\tx431\sbasedon9\snext15 Numbered Heading 2;}
+{\s20\f5\sbasedon15 Plain Text;}
+{\s12\fi-431\li720 Implies List;}
+{\s26\fi-431\li720\sbasedon19 Upper Case List;}
+{\s7\fi-431\li720 Hand List;}
+{\s27\fi-431\li720\sbasedon19 Upper Roman List;}
+{\s15\f0\fs24 Normal;}
+{\s1\li1440\ri1440\sa120\sbasedon15 Block Text;}
+{\s14\fi-431\li720\sbasedon15 Lower Roman List;}
+{\s11\fi-431\li720 Heart List;}
+{\s13\fi-431\li720\sbasedon19 Lower Case List;}
+{\s24\fi-431\li720 Tick List;}
+{\s8\sb440\sa60\f4\fs34\b\sbasedon15\snext15 Heading 1;}
+{\s9\sb440\sa60\f4\fs28\b\sbasedon15\snext15 Heading 2;}
+{\s10\sb440\sa60\f4\fs24\b\sbasedon15\snext15 Heading 3;}
+{\s19\fi-431\li720 Numbered List;}
+{\s23\fi-431\li720 Star List;}
+{\s16\tx431\sbasedon8\snext15 Numbered Heading 1;}
+{\s6\fi-431\li720 Diamond List;}
+{\s18\tx431\sbasedon10\snext15 Numbered Heading 3;}
+{\s4\tx1584\sbasedon16\snext15 Chapter Heading;}
+{\s22\fi-431\li720 Square List;}
+{\s25\fi-431\li720 Triangle List;}
+{\s3\fi-431\li720 Bullet List;}}
+\kerning0\cf0\viewkind1\paperw12240\paperh15840\margl1440\margr1440\widowctl
+\sectd\sbknone\colsx360\marglsxn1800\margrsxn1800\pgncont
+\pard\plain{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain{\f0\fs24\b\lang1033{\*\listtag0}February 5, 2003}
+\par\pard\plain{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qc{\f0\fs28\b\lang1033{\*\listtag0}Ethernet data acquisition and control board preliminary specifications:}
+\par\pard\plain\qc{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}1,\tab Form factor:  Stand alone board \'96 Compatible with any computer platform with Ethernet capability.}
+\par\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}2,\tab Minimum power requirements: +5VDC@2A, +12VDC@0.5A a}{\*\bkmkstart _Hlt32286927}{\*\bkmkstart _Hlt32286926}{\f0\fs24\lang1033{\*\listtag0}nd }
+\par\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}\tab \'96}{\*\bkmkstart _Hlt32286934}{\f0\fs24\lang1033{\*\listtag0}1}{\*\bkmkend _Hlt32286934}{\f0\fs24\lang1033{\*\listtag0}2VDC}{\*\bkmkend _Hlt32286927}{\*\bkmkend _Hlt32286926}{\f0\fs24\lang1033{\*\listtag0}@150mA.}
+\par\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}3,\tab Communication:  Two RJ-45, 10Base-T Ethernet ports (100MB fast Ethernet to be supported in future) and two 115,200 baud RS-232 ports.  One Ethernet port dedicated for general purpose communications and one dedicated to a direct Ethernet PLC connection.  General purpose Ethernet port to consist of two Unix like \'93sockets.\'94  One socket for remote, plant wide communications and the other for local, at the machine communications.}
+\par\pard\plain\qj\tx-720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}4,\tab Microprocessor:  Altera Nios 32 bit soft core processor, operating at 33.33 MHz, imbedded in an Altera field programmable logic device (PLD).}
+\par\pard\plain\qj\tx-720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}5,\tab Memory:  512KB of ram memory and 1MB Flash memory.  Both Firmware and PLD device configuration saved in non-volatile flash memory.  Upgrades can be accomplished \'93in circuit.\'94}
+\par\pard\plain\qj\tx-720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720{\f0\fs24\lang1033{\*\listtag0}6,\tab Board completely \'93unit less\'94 in operation.  English or Metric units easily supportable by application interfacing to the board. }
+\par\pard\plain\qj\tx-720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}7,\tab Position input: full quadrature, two channels with possible future expansion to four channels.}
+\par\pard\plain\qj\tx-720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}8,\tab Position resolution:  \'bc of an encoder quadrature cycle \'96 referred to herein as \'93X4\'94 counts.}
+\par\pard\plain\qj\tx-720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720{\f0\fs24\lang1033{\*\listtag0}9,\tab Analog inputs for monitoring:  Sixteen channels supported.  Eight are \'93fast\'94 channels sampled in real time during cylinder movement.}
+\par\pard\plain\qj\fi-720\li720\tx-720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720{\f0\fs24\lang1033{\*\listtag0}\tab Eight additional \'93slow\'94 channels are available for non time-critical acquisition.}
+\par\pard\plain\qj\fi-720\li720\tx-720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720{\f0\fs24\lang1033{\*\listtag0}10,\tab Analog input signal ranges:  Software selectable between 0 \'96 2.5V and 0 \'96 5V.  }
+\par\pard\plain\qj\fi-720\li720\tx-720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}11,\tab Analog input resolution:  12 bit all channels.}
+\par\pard\plain\qj\tx-720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}12,\tab Position based data acquisition during the shot, Each sample is stored in RAM memory:}
+\par\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}\tab  }
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab a,\tab Velocity  Sampled every X4 position pulse.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760{\f0\fs24\lang1033{\*\listtag0}\tab b,\tab Analog  channels #1 through #8  Sampled every X1 position pulse (one complete quadrature cycle).}
+\par\pard\plain\qj\fi-6480\li6480\tx-720\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-6480\li6480\tx-720\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760{\f0\fs24\lang1033{\*\listtag0}13,\tab Position based data acquisition maximum sample rate:}
+\par\pard\plain\qj\fi-6480\li6480\tx-720\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760{\f0\fs24\lang1033{\*\listtag0}\tab }
+\par\pard\plain\qj\fi-720\li720\tx-720\tx0\tx720\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760{\f0\fs24\lang1033{\*\listtag0}\tab 10KHz - 500 IPS assuming a 20 pitch rod or 20 MPS with a 2mm pitch rod.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760{\f0\fs24\lang1033{\*\listtag0}\tab }
+\par\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}14,\tab Time based monitoring:  2000 Samples are taken once every user defined time interval after the end of shot and stored in RAM memory.}
+\par\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab a,\tab Cylinder position for monitoring cylinder creep.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab b,\tab Analog channels #1 through #8.}
+\par\pard\plain\qj\tx-720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\tx-720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}15,\tab Data access:  All data to and from the board is accessible over an Ethernet link using the TCP/IP protocol.}
+\par\pard\plain\qj\tx-720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}16,\tab External inputs / outputs to machine PLC:  2 Opto DEC PB-32 I/O board interfaces are supported for a total of 32 optically isolated inputs and 32 optically isolated outputs.  One Ethernet port dedicated to a direct PLC connection.}
+\par\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}17,\tab Four dedicated high speed, 12\'9624VDC inputs are available.  In addition, two additional DC inputs are reserved for the below functions:}
+\par\pard\plain\qj\tx-720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}18,\tab Ready for shot trigger.}
+\par\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}19,\tab Master enable (motor running).}
+\par\pard\plain\qj\tx-720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}20,\tab Programmable limit switch outputs:  6 programmable limit switches are standard. }
+\par\pard\plain\qj\tx-720{\f0\fs24\lang1033{\*\listtag0} }
+\par\pard\plain\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}21, \tab Computed parameters:  A large number of computed shot parameters are obtainable from the data collected.  These include but are not limited to the following:}
+\par\pard\plain\qj\tx-720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab a,\tab Cycle time.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab b,\tab Biscuit size.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab c,\tab Fill time.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab d,\tab Slow shot time.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab e,\tab Fast shot time.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab f,\tab Total shot time.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab g,\tab End of shot position (start of time based monitoring).}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab h,\tab Computed start of fast shot position.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab i,\tab P1 (sleeve full position).}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab j,\tab P2 (runner full).}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab k,\tab P3 (final squeeze position).}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab }
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab l,\tab Rise time to fast shot velocity.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab m,\tab Average velocity between points.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab n,\tab Velocity at set points.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab o,\tab Velocity at P1.}
+\par\pard\plain\qj\fi-720\li720\tx-720\tx0{\f0\fs24\lang1033{\*\listtag0}\tab p,\tab Velocity at P2.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab \tab }
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab q,\tab Peak intensification pressure.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab r,\tab Time to peak intensification pressure.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab s,\tab Effective peak intensification pressure.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab t,\tab Impact pressure.}
+\par\pard\plain\qj\fi-1440\li1440\tx-720\tx0\tx720{\f0\fs24\lang1033{\*\listtag0}\tab u,\tab Intensification squeeze distance.}
+\par\pard\plain{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\keepn{\f0\fs24\b\lang1033{\*\listtag0}Shot control features in addition to the above specifications:}
+\par\pard\plain{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\fi-720\li720{\f0\fs24\lang1033{\*\listtag0}1,\tab Analog input channels:  Four Analog input channels are dedicated to shot control in addition to the sixteen dedicated to monitoring.  These channels are also 12 bit resolution.  Shot control channels have an input range of \'9610 to +10V.}
+\par\pard\plain\fi-720\li720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\fi-720\li720{\f0\fs24\lang1033{\*\listtag0}2,\tab Analog output channels:  4 analog output channels are supported, 14 bit resolution with an output range of \'9610 to +10V.}
+\par\pard\plain\fi-720\li720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\fi-720\li720{\f0\fs24\lang1033{\*\listtag0}4,\tab Shot control modes of operation:}
+\par\pard\plain\fi-720\li720{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\fi-720\li720{\f0\fs24\lang1033{\*\listtag0}\tab a,\tab Full closed loop velocity control.}
+\par\pard\plain{\f0\fs24\lang1033{\*\listtag0}\tab b,\tab Open loop velocity control.}
+\par\pard\plain\fi-2130\li1440\tx720\tx1440{\f0\fs24\lang1033{\*\listtag0}\tab c,\tab Combination of both open and closed loop velocity steps within the same motion profile.}
+\par\pard\plain\fi-2130\li1440\tx720\tx1440{\f0\fs24\lang1033{\*\listtag0}\tab d, \tab Position control mode allow accurate positioning and holding of a cylinder.}
+\par\pard\plain\fi-1410\li720\tx1440{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\tx1440{\f0\fs24\lang1033{\*\listtag0}}}

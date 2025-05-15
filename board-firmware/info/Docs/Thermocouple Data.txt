@@ -1,0 +1,41 @@
+Here's my idea for sending the temperature data.  I've created a data type called expanded data.  This is 16 channels of 32 bit data that can be anything described by the channel description:
+
+// Expanded data structure, 16 channels of 32 bit data
+typedef volatile struct
+  {
+  unsigned char ch_desc[16]; // 8 bit channel description
+  unsigned int ch_data[16];  // 32 bit channel data
+  } data_expansion_packet;
+
+// Expanded data channel descriptions
+#define NO_DATA 0  // Disregard data
+#define TEMPERATURE 1 // Degrees C X 1000
+
+The data will be sent after the shot as a binary data packet.  I've added a new binary data type, type #9 for sending this data.
+
+// Define binary data types
+#define POS_BASED_DATA 0
+#define TIME_BASED_DATA 1
+#define COMPUTED_SHOT_DATA 2
+#define O_SCOPE_DATA 3
+#define OP_DATA 4
+#define STRING 5
+#define IO_CHANGE_REPORTING 6
+#define SINGLE_SAMPLE_ANALOG_REPORTING 7
+#define BLOCK_SAMPLE_ANALOG_REPORTING 8
+#define EXPANDED_DATA 9 // New binary data type for transmitting expanded data.
+
+Here's the existing binary data structure we presently use for shot data, etc.  Nothing has changed here.
+
+typedef volatile struct
+{
+char header; // 'B' == Binary data
+unsigned char data_type;
+unsigned short int flags;
+unsigned short int data_set_num;
+unsigned short int packet_num;
+unsigned short int num_of_packets;
+unsigned short int num_of_bytes;
+} binary_header;
+
+Let me know if you would like to change anything.

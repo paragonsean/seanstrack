@@ -1,0 +1,26 @@
+V378 LS1_1_MASK Axis #1
+V379 LS2_1_MASK
+V380 LS3_1_MASK
+V381 LS4_1_MASK
+V382 LS5_1_MASK
+V383 LS6_1_MASK
+V384 LS1_2_MASK Axis #2
+V385 LS2_2_MASK
+V386 LS3_2_MASK
+V387 LS4_2_MASK
+V388 LS5_2_MASK
+V389 LS6_2_MASK
+V394 ZSpeed output Mask
+V395 Binary Valve Mask
+V400 LS7_1 MASK
+V401 LS8_1 MASK
+V402 LS7_2 MASK
+V403 LS8_2 MASK
+
+The following should remain as masks.
+V433 isw1 mask, report #1  // Input(s) to initiate a sample
+V434 isw4 mask, report #1
+V436 isw1 mask, report #2
+V437 isw4 mask, report #2
+V439 isw1 mask, report #3
+V440 isw4 mask, report #3

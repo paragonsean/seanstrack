@@ -1,0 +1,6 @@
+The watchdog timer is reset from within the control loop.  
+That should stop the board from resetting continuously like you were seeing.
+
+I also added the ability to manually stop the control program by pressing SW8.  
+Since the control loop is an interrupt service routine, if it never exits
+polled code like Ethernet will never get a chance to execute.

@@ -1,0 +1,18 @@
+Valve Test
+
+Right now I'm thinking that there will be 2 commands to initiate a valve test:
+
+.J0.??<CR> To force the control program to jump to the valve test section, the block to jump to to be determined.
+
+And
+
+OC1=1<CR> To place the board into the o-scope mode.
+
+When finished, OC1=0<CR> will stop o-scope mode.  .G<CR> will restart the control program.
+
+
+Position Values
+
+I save the position as a 32 bit int.  Position is really a 24 bit signed value, 23 significant bits and a sign bit.  If bit 23 is set, I set all
+the other bits up to bit 31 to create a negative 32 bit value.
+

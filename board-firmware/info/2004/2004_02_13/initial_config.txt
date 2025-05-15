@@ -1,0 +1,61 @@
+9-8-03
+
+Procedure for performing an initial configuration on new Ethernet Monitor and Control boards using Altera's Max Plus 2 program only version.
+
+1, Install 4 jumpers, 2 on SW1 and 2 on SW2 in the "connect" position.
+
+2, Set dip switch SW5 such that 1, 7 and 8 are ON, all others OFF.
+
+3, Install a serial cable between the serial port on the board and the computer's COM1 port.
+
+4, Install an Altera ByteBlaster II cable between the computer's parallel port and the 10 pin JTAG connector (J2) on the board.
+
+5, Wire +5V to TB1-1 and ground to TB1-2.  Power up the board.
+
+6, Start the Max Plus 2 program.  Open the programmer as follows from the menu:   MAX plus II -> programmer.  The programmer window will appear.
+
+7, Click on PROGRAM.  The MAX 7064AE device on the board will be programmed and verified.  A success message will appear if the were no problems with the program operation.
+
+8, Click on CONFIGURE.  The Apex 20K200E will be configured.
+
+9, Open a MS-DOS or command prompt window.  There are 3 flash files that need to be loaded.  They are loaded with the fastrak2 program.
+
+To load the first one, type: 
+	fastrak2 lan91c111.hexout.flash<CR> from the command line.  
+
+To load the second one, type:
+	fastrak2 lan91c111.hexout.0x1c0000.flash<CR>
+
+To load the third one, type:
+	fastrak2 enet_mon_cont??.flash<cr>  where ?? is the current 	version number.  This will change over time.
+
+10, Power down the board.  Remove the ByteBlaster II cable.  Remove the 4 jumpers.
+
+11, Power up the board.  The board should configure automatically.  If successful, the red watchdog LED will light briefly followed by the green watchdog LED staying lit.  The 2 LED displays should be lit with dashes.
+
+12, Install a jumper on J1 and repeat step 11.
+
+13, Remove the jumper on J1.  The board has been initially configured. 
+
+
+Altera uses a .jcf file to setup the JTAG chain used to program / configure the 2 devices on the board.  When the programmer window is open, the JTAG menu item will allow restoring (updating) the .jcf file.
+
+As the board's configuration files change over time, new flash files and new .jcf files will be provided.
+
+The board is configured with both JTAG devices in the chain.  The MAX7064AE is the first device and the Apex20K200E device is second.
+
+As initially configured, all files are in c:\enet_board_programming_files.
+
+The following files are in this directory:
+
+fastrak2.exe
+enet_mon_cont??.flash
+lan91c111x2_32.hexout.flash
+lan91c111x2_32.hexout.0x1c0000.flash
+config_controller.pof
+lan91c111x2_32.sof
+cygwin1.dll
+setup1.jcf
+hello_plugs.srec
+initial_config.txt (this file)
+

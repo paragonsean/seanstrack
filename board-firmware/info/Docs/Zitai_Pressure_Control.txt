@@ -1,0 +1,41 @@
+Here's my initial attempt at defining the retract control settings.  We'll use 3 new variables:
+
+V449 - DAC channel to use from 1 - 4.
+V450 - Arm setting, voltage x 1000, -10000 to +10000, entered as a percentage by the user.
+V451 - Retract setting.  This should be entered just like a velocity setting.  If entered as a percentage, set bit 31 and enter the setting as percentage x 100 (volts x 1000).  Otherwise the setting is entered as X1 counts per second.
+
+Since we may want to use the LVDT offset (span) DAC channels for other purposes, as we will with Zitai's retract control,  some means of disabling the offset function is needed. The LVDT offset for amp1 is normally DAC channel #2.  The offset for amp2 is normally DAC channel #4.   I have added a couple of new bits to V311, the control configuration word, to do this.
+
+   Bit5, if set, disables the LVDT offset (span setting) for amp1.
+   Bit6, if set, disables the LVDT offset (span setting) for amp2.
+
+Perhaps a check box could be added in the "F2 set DAC" screen, by the span setting, to disable the span, one for amp1 and one for amp2.  If checked, the corresponding bit in V311 would be set, otherwise the bit would be cleared.
+
+After the shot, when the retract signal is set, I'll set the DAC to the retract setting.  When the At Home signal is sensed, I'll set it to the arm setting.
+
+------------------------------------
+
+I would say that a percent ramp would be limited to a pressure step in which the pressure setting is also a percent.  A percent pressure setting would always be open loop.  If they unchecked open loop, then they could not enter pressure as a percentage.  If they check open loop and enter pressure as a percentage, then the ramp, if not MS, must also be a percentage.  In that case the MS button would be the only option unless a percentage is entered, in which case the MS button would disappear.
+
+It it's an open loop step and the user is entering  pressure in units, then the ramp (goose) must also be entered in units as well - if it's not MS.  In that case, MS and PSI would be your only options.
+
+In a fully closed loop pressure step (loop closure in firmware), no percents would be allowed at all.
+
+If the user enters a percent ramp, could you flag it for me by setting bit 30 in the ramp setting?  We're currently using bit 31 for our "goose" bit.
+
+-------------------------------------
+
+A goose ramp and a percent ramp are essentially the same and both will have bit 31 set.  The difference is that during a goose ramp, I look at the pressure feedback from the pressure transducer and wait for the actual pressure >= the first commanded pressure.  At that point the pressure loop is closed and control begins.  I'm assuming that during a % ramp (and % pressure setting), there will not be any pressure feedback and no pressure transducer type selected.   That's the main difference.
+
+I know this gets confusing but "open loop" with actual pressure values entered is open loop in the sense that the board outputs some voltage equal to the pressure transducer voltage at the pressure asked for.  The board itself does not close the loop, therefore from the board's perspective it's "open loop."  However the pressure loop is closed in hardware, on the amplifier board.  Therefore "open loop" with actual pressure values entered is really a kind of pseudo closed loop.  Entering the pressures directly in units kind of implies that.  We can only do this with our servo amplifier.  Some other kind of proportional controller (such as Zitai is using) most likely will not have the means of bringing in a pressure feedback signal.  Therefore our only option is true open loop in which percentages are the only thing that make sense.  We could convert an actual pressure setting to some voltage, assuming the user selected a pressure transducer type, but we would have no way of knowing what actual pressure would result since the loop is open, totally open.
+
+The % scheme is a way of providing true open loop operation within the framework of our full blown pressure control, allowing users to easily upgrade to something better if they wanted to.   We may run into this at other places well.
+I'm not exactly sure how I'm going to handle the switch from goose to the step voltage.  If it's flagged by setting bit 30, I know it's a % and can deal with it somehow.  I'll probably treat the % ramp as an arming voltage like we do now.  When LS1 passes its setting I'll output the goose voltage.  At impact when the pressure step begins to execute, I won't be waiting for the pressure to rise, I'll just output the % pressure command and leave it at that.  That way the user can arm the system to whatever he wants.  He can also set both the goose % and step % to same value so that nothing changes during the transition to "pressure control."
+
+Perhaps our nomenclature needs to change.   We essentially have the possibility of three distinct modes of pressure control operation:
+
+1,    True closed loop pressure control where the board, in software, closes the loop.  We have tried this before and were not very successful.  I know why and I'm pretty sure I can make that mode work.  That's one of the things I plan to address shortly.  Ironically, full closed loop operation with a proportional valve would be possible.  This is what you get if the "open loop" box is unchecked.
+
+2,   Hardware closed loop / board open loop (pseudo closed loop).  This is the way we operate now.  Pressure settings are entered directly in units, the board outputs a voltage proportional to the pressure feedback, the voltage is compared in hardware to the pressure feedback and a servo valve is driven to make the necessary corrections.  This is what you get if the "open loop" box is checked.  Calling this open loop is somewhat misleading and confusing, I can see that.  It's half true but doesn't tell the whole story.
+
+3,   Total open loop operation.  Only percentages are possible and no pressure feedback whatsoever is involved.  That's what we're proposing with Zitai.

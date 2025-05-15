@@ -1,0 +1,113 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033
+{\fonttbl
+{\f0\froman\fcharset0\fprq2\fttruetype Times New Roman;}
+{\f1\froman\fcharset0\fprq2\ftnil NULL;}
+{\f2\fnil\fcharset0\fprq2\fttruetype Dingbats;}
+{\f3\froman\fcharset0\fprq2\ftnil Symbol;}
+{\f4\fswiss\fcharset0\fprq2\fttruetype Arial;}
+{\f5\fmodern\fcharset0\fprq1\fttruetype Courier New;}}
+{\colortbl
+\red0\green0\blue0;
+\red255\green255\blue255;}
+{\stylesheet
+{\s5\sl240\slmult1\fi-431\li720 Dashed List;}
+{\s2\sl240\slmult1\fi-431\li720 Box List;}
+{\s21\sl240\slmult1\tx1584\sbasedon16\snext15 Section Heading;}
+{\s17\sl240\slmult1\tx431\sbasedon9\snext15 Numbered Heading 2;}
+{\s20\sl240\slmult1\f5\sbasedon15 Plain Text;}
+{\s12\sl240\slmult1\fi-431\li720 Implies List;}
+{\s26\sl240\slmult1\fi-431\li720\sbasedon19 Upper Case List;}
+{\s7\sl240\slmult1\fi-431\li720 Hand List;}
+{\s27\sl240\slmult1\fi-431\li720\sbasedon19 Upper Roman List;}
+{\s15\sl240\slmult1\f0\fs24 Normal;}
+{\s1\sl240\slmult1\li1440\ri1440\sa119\sbasedon15 Block Text;}
+{\s14\sl240\slmult1\fi-431\li720\sbasedon15 Lower Roman List;}
+{\s11\sl240\slmult1\fi-431\li720 Heart List;}
+{\s13\sl240\slmult1\fi-431\li720\sbasedon19 Lower Case List;}
+{\s24\sl240\slmult1\fi-431\li720 Tick List;}
+{\s8\sl240\slmult1\sb440\sa60\f4\fs34\b\sbasedon15\snext15 Heading 1;}
+{\s9\sl240\slmult1\sb440\sa60\f4\fs28\b\sbasedon15\snext15 Heading 2;}
+{\s10\sl240\slmult1\sb440\sa60\f4\fs24\b\sbasedon15\snext15 Heading 3;}
+{\s19\sl240\slmult1\fi-431\li720 Numbered List;}
+{\s23\sl240\slmult1\fi-431\li720 Star List;}
+{\s16\sl240\slmult1\tx431\sbasedon8\snext15 Numbered Heading 1;}
+{\s6\sl240\slmult1\fi-431\li720 Diamond List;}
+{\s18\sl240\slmult1\tx431\sbasedon10\snext15 Numbered Heading 3;}
+{\s4\sl240\slmult1\tx1584\sbasedon16\snext15 Chapter Heading;}
+{\s22\sl240\slmult1\fi-431\li720 Square List;}
+{\s25\sl240\slmult1\fi-431\li720 Triangle List;}
+{\s3\sl240\slmult1\fi-431\li720 Bullet List;}}
+\kerning0\cf0\viewkind1\paperw12240\paperh15840\margl1440\margr1440\widowctl
+\sectd\sbknone\colsx360\marglsxn1800\margrsxn1800\pgncont
+\pard\plain\qc\sl240\slmult1{\f0\fs24\b\lang1033{\*\listtag0}INTEROFFICE MEMO}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs24\b\lang1033{\*\listtag0}
+\par}\pard\plain\qj\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}November 6, 2002}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\qj\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}To:\tab Jay Wood}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}From:\tab Greg Solands}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}Hello Jay}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}I have the TCP communications working well and have begun to implement some of our stuff.}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}I wanted to let you know that I will be making some large changes to our original spec so you don't spend a lot of time trying to work with that.}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}I want to simplify the commands to the board - using a single letter or character to specify the command.  Kind of like Altera does with the their GERMS interface.  In fact, our commands will just be an extension of the GERMS interface.  For example, commands dealing with the control program will begin with a period, since that is how a line of control program code begins.  Please note the following examples:}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}.001J0.1 I1.17<CR> --> Save a line of control program code to SRAM.}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}.UV23=3223<CR>  ----> Immediately execute a line of control program code.}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}.F<CR> ------> Save control program to flash memory.}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}Commands dealing with board variables will begin with a "V."  Some examples are as follows:}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}V23<CR> -----> Request the current value of V23}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}V90-100<CR> -----> Request the values of a range of variables}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}V74:2234<CR> ------> Write 2234 to V74}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}VF<CR> -----> Save variables to flash memory.}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}Commands dealing with real time operational data will begin with an "O."  Some examples might be as follows:}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}OD1<CR> -----> Request the current value sent to DAC1}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}OD1:14212<CR> -----> Send the value 14212 to DAC1}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}OA12<CR> ------> Request the current value of analog channel 12}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}OP1<CR> ------> Request the current position on axis #1}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}OV1<CR> -------> Request the current velocity on axis #1}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}OS<CR> ------> Request an operational status "packet."}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}And so on.}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}I think this type of command configuration will simplify communicating with the board.  It will also simplify terminal mode operation as the user can simply type in these commands and watch what happens.}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\sl240\slmult1{\f0\fs22\b\lang1033{\*\listtag0}POSITION / TIME BASED BLOCK DATA}
+\par\pard\plain\sl240\slmult1{\f0\fs22\b\lang1033{\*\listtag0}
+\par}\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}I would like to take another look at how to format and send you the position and timed based data.  If we want to keep open the possibility of the board sending data even while the shot is still taking place, then I need a scheme for sending you data when I do not know how many bytes will be in the entire data set.  What about the following? I can send you the following strings, assuming a position based data set:}
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\sl240\slmult1{\f0\fs18\lang1033{\*\listtag0}P_22337_1,MSxxxxxxxxPaaaaaaaaQ1bbbbbbbbQ2ccccccccQ3ddddddddQ4eeeeeeee<LF>}
+\par\pard\plain\sl240\slmult1{\f0\fs18\lang1033{\*\listtag0}P_22337_1,CH9_xxxCH10_xxxCH11_xxxCH12_xxxCH13_xxxCH14_xxxCH15_xxxCH16_xxx<LF>}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs18\lang1033{\*\listtag0}P_22337_1,ISW1xxxx_ISW2xxxx_ISW3xxxxOSW1xxxxOSW2xxxxOSW3xxxx<LF>}
+\par\pard\plain\sl240\slmult1{\f0\fs18\lang1033{\*\listtag0}P_22337_2,MSxxxxxxxxPaaaaaaaaQ1bbbbbbbbQ2ccccccccQ3ddddddddQ4eeeeeeee<LF>}
+\par\pard\plain\sl240\slmult1{\f0\fs18\lang1033{\*\listtag0}P_22337_2,CH9_xxxCH10_xxxCH11_xxxCH12_xxxCH13_xxxCH14_xxxCH15_xxxCH16_xxx<LF>}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs18\lang1033{\*\listtag0}P_22337_2,ISW1xxxx_ISW2xxxx_ISW3xxxxOSW1xxxxOSW2xxxxOSW3xxxx<LF>}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs18\lang1033{\*\listtag0}
+\par}\pard\plain\qj\sl240\slmult1{\f0\fs18\lang1033{\*\listtag0}\tab \tab \tab \tab }{\f0\fs32\b\lang1033{\*\listtag0}.}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs32\b\lang1033{\*\listtag0}\tab \tab \tab \tab .}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs32\b\lang1033{\*\listtag0}\tab \tab \tab \tab .}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs32\b\lang1033{\*\listtag0}
+\par}\pard\plain\sl240\slmult1{\f0\fs18\lang1033{\*\listtag0}P_22337_745, MSxxxxxxxxPaaaaaaaaQ1bbbbbbbbQ2ccccccccQ3ddddddddQ4eeeeeeee<LF>}
+\par\pard\plain\sl240\slmult1{\f0\fs18\lang1033{\*\listtag0}P_22337_745,CH9_xxxCH10_xxxCH11_xxxCH12_xxxCH13_xxxCH14_xxxCH15_xxxCH16_xxx<LF>}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs18\lang1033{\*\listtag0}P_22337_745,ISW1xxxx_ISW2xxxx_ISW3xxxxOSW1xxxxOSW2xxxxOSW3xxxx<LF>}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs18\lang1033{\*\listtag0}P_END_22337_745<LF>}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs18\lang1033{\*\listtag0}
+\par}\pard\plain\qj\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}Where \'93P\'94 indicates that this is position based data.  22337 is my internal shot number.  The number that follows is the data point number.  In this case, 3 \'93strings\'94 required for each data point given the amount of data.  I will keep sending these to you without regard to the size of or the amount of data required for any given shot.  When all data has been sent, I can follow up with an END statement as shown which will indicate the shot number and the final amount of data points.}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\qj\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}With this scheme, would you be able to keep receiving data and processing it until the END statement is reached, not knowing how much data there will be until all of it has been sent?  Each string of data ends with a \'91\\n\'92 character.}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\qj\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}A similar scheme can also be used with time based data.  In that case however, we will know how many data points there will be beforehand.  }
+\par\pard\plain\fi-720\li720\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}Concerning the velocity timer Q1 \'96 Q4 values, I would like to keep the useful part of the count at 30 bits and use the 2 MSBs for flagging Up/down changes and quadrature errors as originally planned.  This gives us up to 64 seconds from the cycle start signal to the end of data collection.  That should be plenty of time.  As indicated in the position data set above, I can include the 1mS timer count value each data point as a reference.  With this reference, you could keep track of whatever needed to be tracked based on the 1mS counter.  Also you could extrapolate between 1mS ticks by using the velocity count data. }
+\par\pard\plain\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\qj\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}Let me know on the above items and I\'92ll begin to rewrite the specification.}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\qj\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}Thanks}
+\par\pard\plain\qj\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\qj\sl240\slmult1{\f0\fs22\lang1033{\*\listtag0}Greg}}

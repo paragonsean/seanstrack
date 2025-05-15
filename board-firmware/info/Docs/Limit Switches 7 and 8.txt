@@ -1,0 +1,16 @@
+Al,
+
+Here are the new V8 firmware files.  The following changes were made:
+
+1,   Support for limit switch 7 and 8.  V396 sets LS7 and V397 sets LS8.
+2,   V400 is the LS7 mask and V401 is the LS8 mask.  These are set to zero in the new control_all file which disables LS7 and LS8.  Setting the masks to the desired             outputs will enable LS7 and LS8.  3,   Fixed the follow through problem that Zitai found.  Switching to manual mode will now terminate a pressure control block that gets hung up.
+4,   Included is an updated control_all.txt file to be used with V8 firmware.
+
+Please don't use this version for Zitai until it's been field tested here first.
+The vacuum interface seems to work OK with the Prince binary valve settings as is.  I didn't make any changes.  Let me know if you find any issues.
+
+Give it a try and let me know if you find any issues, should be OK.
+
+Thanks Al,
+
+Greg 

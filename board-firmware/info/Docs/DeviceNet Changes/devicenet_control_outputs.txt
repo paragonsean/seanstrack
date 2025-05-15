@@ -1,0 +1,23 @@
+FT2  Virtual  Fieldbus Normal
+I/O  Output   Output   Use
+201,   1,      22,     Slow Shot Output
+202,   2,      23,     Accumulator Output
+203,   3,      24      Not Used
+204,   4,      25      Not Used
+205,   5,      26,     Valve Test in Operation output
+206,   6,      27,     LS7 Output
+207,   7,      28,     LS8 Output
+208,   8,      29,     Cylinder Max Limit Output
+209,   9,      30,     Prince Binary Valve Pulse Output
+210,  10,      31,     LS5 Output
+211,  11,      32,     LS6 Output
+212,  12,      33,     Warning Output (active low)
+213,  13,      34,     LS1 Output
+214,  14,      35,     LS2 Output
+215,  15,      36,     LS3 Output
+216,  16,      37,     LS4 Output
+217,  17,      38      Not Used
+218,  18,      39      Not Used
+219,  19,      40      Not Used
+220,  20,      41      Not Used
+221,  21,      42      Not Used

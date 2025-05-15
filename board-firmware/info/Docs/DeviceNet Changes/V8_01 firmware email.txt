@@ -1,0 +1,91 @@
+Hello Jay,
+
+The following are some issues that need to be address to support
+DeviceNet and other fieldbus virtual I/O from the FT2 board.  My version
+8.01 firmware will support DeviceNet.  A new control_all.txt file will
+be required as well.  I've also attached a new control_all file for your
+reference.  This is not necessarily the final version. I've attached a
+text document that shows all of the I/O associated with the FT2 board,
+V8.01 and later firmware.
+
+I've changed around my I/O numbers to match your wire numbers. That's
+the reason for the new control_all file, to map the new I/Os to the
+control program. This will make things easier. I'll outline below the
+changes to the TT program.  Again, all of this only applies to V8.01 or
+later firmware:
+
+1 With virtual outputs, your wire numbers will match my I/O number (FT2
+  I/O number) just as they also match my output numbers with the Opto
+  based physical outputs.
+
+2 Change alternative step turn on I/O number in F10 Control Program mods to 18 from 34.
+
+3 For limit switches, load the wire number itself, not the mask.
+
+4 Need to expand alarms so that virtual outputs can be used.  Perhaps
+  some sort of "generic" I/O board graphic could be used.  The manual
+  entry needs to be expanded to include the larger, 3 digit virtual
+  output numbers.
+
+5 Make sure break gains are displayed correctly on the shot control
+  setup screen with V8 firmware.  Currently it works fine with V7
+  firmware, however I don't think it displays correctly w/V8 firmware.
+
+6 Support limit switches 7 and 8.
+
+7 I'll need to increase the op data (realtime data) packet to include
+  virtual I/O words ISW2, ISW3, OSW2 and OSW3.  Presently OSW1 and ISW1
+  are included in the packet.  This is the I/O data from the Opto board.
+
+Current Op_data_packet:
+
+struct
+{
+int dac[4];                            // DAC voltage * 1000
+op_packet_analog_channels channels;    // 16 channels
+unsigned short int dummy_channels[4];  // To make the V5 packet consistant with the V4.xx packet
+int pos;
+int vel;
+unsigned int isw1;
+unsigned int isw4;
+unsigned int osw1;
+unsigned int mon_status_word1;
+unsigned int status_word1;
+unsigned int config_word1;
+int warning;
+int fatal_error;
+int blk_no;                            // Current control program step
+} op_data_packet;
+
+Proposed addition to packet to include virtual I/O:
+
+struct
+{
+int                       dac[4];             // DAC voltage * 1000
+op_packet_analog_channels channels;           // 16 channels
+unsigned short int        dummy_channels[4];  // To make the V5 packet consistant with the V4.xx packet
+int                       pos;
+int                       vel;
+unsigned int              isw1;
+unsigned int              isw4;
+unsigned int              osw1;
+unsigned int              mon_status_word1;
+unsigned int              status_word1;
+unsigned int              config_word1;
+int                       warning;
+int                       fatal_error;
+int                       blk_no;             // Current control program step
+
+// virtual I/O
+unsigned int              isw2;               // Monitor virtual inputs
+unsigned int              isw3;               // control virtual inputs
+unsigned int              osw2;               // Monitor virtual outputs
+unsigned int              osw3;               // Control virtual outputs
+} op_data_packet;
+
+
+Also some way of selecting virtual I/O to display on the realtime screen
+is needed.  Isn't this currently editable somewhere?
+
+Greg
+

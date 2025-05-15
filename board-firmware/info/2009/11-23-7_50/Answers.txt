@@ -1,0 +1,35 @@
+A board can be updated from any version.  The board will not execute what's being updated until it is reset.  Updating is simply changing the flash and that can be done on any previous version.
+
+I've modified the flash procedures here:
+
+Apex 7_50 Flash Procedure:
+
+1,   Erase control program and variables e108000<CR>
+2,   Upload all flash files at the same time:
+         emc_16010200.hexout.flash
+         emc_16010200.hexout.0x1c0000.flash
+         emc_7_50.flash
+         ad_loop19.flash
+         revB_ad_loop18.flash  (This file hasn't changed however it can be reloaded again if desired).
+3,   Reboot.  Some newer Apex boards may execute the RB command.  Most will probably have to be manually rebooted.
+4,   Attempt to connect.  If successful, then reset connection to update the control program and variables.
+
+You may have to go back and forth between exiting the True-Trak program, connecting and resetting several time to get the board to come alive the first time after updating to 7.50 firmware.  Once it does, there should not be any further difficulty.
+
+Clyclone II 7_50 Flash Procedure:
+
+1,   Unprotect flash with the e(<CR> command
+2,   Upload all flash files at the same time:
+      cyc_chip_16010201.flash
+      cyc_7_50.flash
+      These files haven't changed but can be reloaded again if desired:
+          cyc_ad_loop19.flash
+          cyc_revB_ad_loop18.flash
+          germs_monitor_epcs1.flash
+3. Reboot using the RB command.
+
+Madison Kipp may have manually edited V314, that's the only one I'm aware of.
+
+Greg
+
+

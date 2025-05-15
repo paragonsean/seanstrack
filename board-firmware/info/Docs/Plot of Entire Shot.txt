@@ -1,0 +1,2 @@
+Al and I talked about this. One thing I can do is make it easier to visualize the entire shot. To that end I'm thinking of making a new plot that will be able to use the log data from the realtime updates. This would be a time-based plot beginning at cycle start and extending to AT_HOME or the next cycle start. The plot would be the same as current, meaning we could show head, rod, measured command and lvdt pressures, except it would include data before and after the shot. Changes in the digital i/os would also be shown as well as warnings and errors.
+

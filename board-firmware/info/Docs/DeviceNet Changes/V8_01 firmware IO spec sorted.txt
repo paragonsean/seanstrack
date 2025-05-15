@@ -1,0 +1,225 @@
+FT2 I/O structure, V8.01 and later firmware
+Must use control_all.txt 7-14-10 or later
+
+ISW1, Existing Opto 22 based inputs.
+Use command OI1<CR> to read.
+
+ISW2, All 32 bits are dedicated for monitor inputs
+OI2<CR> to read
+
+ISW3, All 32 bits are dedicated for control inputs
+OI3<CR> to read.
+
+OSW1, Existing Opto 22 based outputs. FT2 I/O numbers are the same as TrueTrak Wire Numbers.
+OO1<CR> to read
+OO1=Hxxxxxxxx to set individual bits
+OO1=~Hxxxxxxxx to clear individual bits
+
+OSW2, All 32 bits are dedicated to monitor outputs. TrueTrak wire numbers should match FT2 I/O numbers.
+OO2<CR> to read
+OO2=Hxxxxxxxx to set individual bits
+OO2=~Hxxxxxxxx to clear individual bits
+
+OSW3, All 32 bits are dedicated to control outputs. TrueTrak wire numbers should match FT2 I/O numbers.
+OO3<CR> to read
+OO3=Hxxxxxxxx to set individual bits
+OO3=~Hxxxxxxxx to clear individual bits
+
+FT2
+I/O
+Num  Word  Bit           Description
+---  ----  --- ----------------------------------------
+  1  OSW1   0  Monitor Opto I/O output  1, ZSPEED or Alarm output +
+  2  OSW1   1  Monitor Opto I/O output  2, Alarm output           |
+  3  OSW1   2  Monitor Opto I/O output  3, Alarm output           |
+  4  OSW1   3  Monitor Opto I/O output  4, Alarm output           |---- Mux adapter board
+  5  OSW1   4  Monitor Opto I/O output  5, Alarm output           |
+  6  OSW1   5  Monitor Opto I/O output  6, Alarm output           |
+  7  OSW1   6  Monitor Opto I/O output  7, Alarm output           |
+  8  OSW1   7  Monitor Opto I/O output  8, Alarm output           +
+  9  OSW1   8  Monitor Opto I/O output  9
+ 10  OSW1   9  Monitor Opto I/O output 10
+ 11  OSW1  10  Monitor Opto I/O output 11
+ 12  OSW1  11  Monitor Opto I/O output 12
+ 13  OSW1  12  Monitor Opto I/O output 13
+ 14  OSW1  13  Monitor Opto I/O output 14
+ 15  OSW1  14  Monitor Opto I/O output 15
+ 16  OSW1  15  Monitor Opto I/O output 16
+ 17  OSW1  16  Control Opto I/O output  1, Slow Shot output
+ 18  OSW1  17  Control Opto I/O output  2, Accumulator output
+ 19  OSW1  18  Control Opto I/O output  3
+ 20  OSW1  19  Control Opto I/O output  4
+ 21  OSW1  20  Control Opto I/O output  5, Valve Test In Operation output
+ 22  OSW1  21  Control Opto I/O output  6, LS7 output
+ 23  OSW1  22  Control Opto I/O output  7, LS8 output
+ 24  OSW1  23  Control Opto I/O output  8, Cylinder Max Limit output
+ 25  OSW1  24  Control Opto I/O output  9, Prince Binary Valve Pulse output
+ 26  OSW1  25  Control Opto I/O output 10, LS5 output
+ 27  OSW1  26  Control Opto I/O output 11, LS6 output
+ 28  OSW1  27  Control Opto I/O output 12, Warning output (active low)
+ 29  OSW1  28  Control Opto I/O output 13, LS1 output
+ 30  OSW1  29  Control Opto I/O output 14, LS2 output
+ 31  OSW1  30  Control Opto I/O output 15, LS3 output
+ 32  OSW1  31  Control Opto I/O output 16, LS4 output
+ 33  ISW1   0  Monitor Opto I/O input  1
+ 34  ISW1   1  Monitor Opto I/O input  2
+ 35  ISW1   2  Monitor Opto I/O input  3
+ 36  ISW1   3  Monitor Opto I/O input  4
+ 37  ISW1   4  Monitor Opto I/O input  5
+ 38  ISW1   5  Monitor Opto I/O input  6
+ 39  ISW1   6  Monitor Opto I/O input  7
+ 40  ISW1   7  Monitor Opto I/O input  8
+ 41  ISW1   8  Monitor Opto I/O input  9
+ 42  ISW1   9  Monitor Opto I/O input 10
+ 43  ISW1  10  Monitor Opto I/O input 11
+ 44  ISW1  11  Monitor Opto I/O input 12
+ 45  ISW1  12  Monitor Opto I/O input 13
+ 46  ISW1  13  Monitor Opto I/O input 14
+ 47  ISW1  14  Monitor Opto I/O input 15
+ 48  ISW1  15  Monitor Opto I/O input 16
+ 49  ISW1  16  Control Opto I/O input  1
+ 50  ISW1  17  Control Opto I/O input  2, Start Shot input
+ 51  ISW1  18  Control Opto I/O input  3, Follow Through input
+ 52  ISW1  19  Control Opto I/O input  4, Retract input
+ 53  ISW1  20  Control Opto I/O input  5, Jog Shot input
+ 54  ISW1  21  Control Opto I/O input  6, Manual Mode input
+ 55  ISW1  22  Control Opto I/O input  7, At Home input
+ 56  ISW1  23  Control Opto I/O input  8, Valve Test Input
+ 57  ISW1  24  Control Opto I/O input  9
+ 58  ISW1  25  Control Opto I/O input 10, OK for Fast Shot input
+ 59  ISW1  26  Control Opto I/O input 11, Vacuum On input
+ 60  ISW1  27  Control Opto I/O input 12, Low Imapct input
+ 61  ISW1  28  Control Opto I/O input 13, Fill Test input
+ 62  ISW1  29  Control Opto I/O input 14
+ 63  ISW1  30  Control Opto I/O input 15
+ 64  ISW1  31  Control Opto I/O input 16
+
+101  OSW2   0  Virtual monitor output  1, Fieldbus output  1, Reserved for ZSPEED or alarm output
+102  OSW2   1  Virtual monitor output  2, Fieldbus output  2, Reserved for alarm output
+103  OSW2   2  Virtual monitor output  3, Fieldbus output  3, Reserved for alarm output
+104  OSW2   3  Virtual monitor output  4, Fieldbus output  4, Reserved for alarm output
+105  OSW2   4  Virtual monitor output  5, Fieldbus output  5, Reserved for alarm output
+106  OSW2   5  Virtual monitor output  6, Fieldbus output  6, Reserved for alarm output
+107  OSW2   6  Virtual monitor output  7, Fieldbus output  7, Reserved for alarm output
+108  OSW2   7  Virtual monitor output  8, Fieldbus output  8, Reserved for alarm output
+109  OSW2   8  Virtual monitor output  9, Fieldbus output  9, Reserved for alarm output
+110  OSW2   9  Virtual monitor output 10, Fieldbus output 10, Reserved for alarm output
+111  OSW2  10  Virtual monitor output 11, Fieldbus output 11, Reserved for alarm output
+112  OSW2  11  Virtual monitor output 12, Fieldbus output 12, Reserved for alarm output
+113  OSW2  12  Virtual monitor output 13, Fieldbus output 13, Reserved for alarm output
+114  OSW2  13  Virtual monitor output 14, Fieldbus output 14, Reserved for alarm output
+115  OSW2  14  Virtual monitor output 15, Fieldbus output 15, Reserved for alarm output
+116  OSW2  15  Virtual monitor output 16, Fieldbus output 16, Reserved for alarm output
+117  OSW2  16  Virtual monitor output 17, Fieldbus output 17, Reserved for alarm output
+118  OSW2  17  Virtual monitor output 18, Fieldbus output 18, Reserved for alarm output
+119  OSW2  18  Virtual monitor output 19, Fieldbus output 19, Reserved for alarm output
+120  OSW2  19  Virtual monitor output 20, Fieldbus output 20, Reserved for alarm output
+121  OSW2  20  Virtual monitor output 21, Fieldbus output 21, Reserved for alarm output
+122  OSW2  21  Virtual monitor output 22, Available for future fieldbus expansion
+123  OSW2  22  Virtual monitor output 23, Available for future fieldbus expansion
+124  OSW2  23  Virtual monitor output 24, Available for future fieldbus expansion
+125  OSW2  24  Virtual monitor output 25, Available for future fieldbus expansion
+126  OSW2  25  Virtual monitor output 26, Available for future fieldbus expansion
+127  OSW2  26  Virtual monitor output 27, Available for future fieldbus expansion
+128  OSW2  27  Virtual monitor output 28, Available for future fieldbus expansion
+129  OSW2  28  Virtual monitor output 29, Available for future fieldbus expansion
+130  OSW2  29  Virtual monitor output 30, Available for future fieldbus expansion
+131  OSW2  30  Virtual monitor output 31, Available for future fieldbus expansion
+132  OSW2  31  Virtual monitor output 32, Available for future fieldbus expansion
+133  ISW2   0  Virtual monitor input  1, Fieldbus input  1
+134  ISW2   1  Virtual monitor input  2, Fieldbus input  2
+135  ISW2   2  Virtual monitor input  3, Fieldbus input  3
+136  ISW2   3  Virtual monitor input  4, Fieldbus input  4
+137  ISW2   4  Virtual monitor input  5, Fieldbus input  5
+138  ISW2   5  Virtual monitor input  6, Fieldbus input  6
+139  ISW2   6  Virtual monitor input  7, Fieldbus input  7
+140  ISW2   7  Virtual monitor input  8, Fieldbus input  8
+141  ISW2   8  Virtual monitor input  9, Fieldbus input  9
+142  ISW2   9  Virtual monitor input 10, Fieldbus input 10
+143  ISW2  10  Virtual monitor input 11, Fieldbus input 11
+144  ISW2  11  Virtual monitor input 12, Fieldbus input 12
+145  ISW2  12  Virtual monitor input 13, Fieldbus input 13
+146  ISW2  13  Virtual monitor input 14, Fieldbus input 14
+147  ISW2  14  Virtual monitor input 15, Fieldbus input 15
+148  ISW2  15  Virtual monitor input 16, Fieldbus input 16
+149  ISW2  16  Virtual monitor input 17, Fieldbus input 17
+150  ISW2  17  Virtual monitor input 18, Fieldbus input 18
+151  ISW2  18  Virtual monitor input 19, Fieldbus input 19
+152  ISW2  19  Virtual monitor input 20, Fieldbus input 20
+153  ISW2  20  Virtual monitor input 21, Fieldbus input 21
+154  ISW2  21  Virtual monitor input 22, Available for future fieldbus expansion
+155  ISW2  22  Virtual monitor input 23, Available for future fieldbus expansion
+156  ISW2  23  Virtual monitor input 24, Available for future fieldbus expansion
+157  ISW2  24  Virtual monitor input 25, Available for future fieldbus expansion
+158  ISW2  25  Virtual monitor input 26, Available for future fieldbus expansion
+159  ISW2  26  Virtual monitor input 27, Available for future fieldbus expansion
+160  ISW2  27  Virtual monitor input 28, Available for future fieldbus expansion
+161  ISW2  28  Virtual monitor input 29, Available for future fieldbus expansion
+162  ISW2  29  Virtual monitor input 30, Available for future fieldbus expansion
+163  ISW2  30  Virtual monitor input 31, Available for future fieldbus expansion
+164  ISW2  31  Virtual monitor input 32, Available for future fieldbus expansion
+
+201  OSW3   0  Virtual control output  1, Fieldbus output 22, Reserved for Slow Shot output
+202  OSW3   1  Virtual control output  2, Fieldbus output 23, Reserved for Accumulator output
+203  OSW3   2  Virtual control output  3, Fieldbus output 24
+204  OSW3   3  Virtual control output  4, Fieldbus output 25
+205  OSW3   4  Virtual control output  5, Fieldbus output 26, Reserved for Valve Test in Operation output
+206  OSW3   5  Virtual control output  6, Fieldbus output 27, Reserved for LS7 output
+207  OSW3   6  Virtual control output  7, Fieldbus output 28, Reserved for LS8 output
+208  OSW3   7  Virtual control output  8, Fieldbus output 29, Reserved for Cylinder Max Limit output
+209  OSW3   8  Virtual control output  9, Fieldbus output 30, Reserved for Prince Binary Valve Pulse output
+210  OSW3   9  Virtual control output 10, Fieldbus output 31, Reserved for LS5 output
+211  OSW3  10  Virtual control output 11, Fieldbus output 32, Reserved for LS6 output
+212  OSW3  11  Virtual control output 12, Fieldbus output 33, Reserved for Warning output (active low)
+213  OSW3  12  Virtual control output 13, Fieldbus output 34, Reserved for LS1 output
+214  OSW3  13  Virtual control output 14, Fieldbus output 35, Reserved for LS2 output
+215  OSW3  14  Virtual control output 15, Fieldbus output 36, Reserved for LS3 output
+216  OSW3  15  Virtual control output 16, Fieldbus output 37, Reserved for LS4 output
+217  OSW3  16  Virtual control output 17, Fieldbus output 38
+218  OSW3  17  Virtual control output 18, Fieldbus output 39
+219  OSW3  18  Virtual control output 19, Fieldbus output 40
+220  OSW3  19  Virtual control output 20, Fieldbus output 41
+221  OSW3  20  Virtual control output 21, Fieldbus output 42
+222  OSW3  21  Virtual control output 22, Available for future fieldbus expansion
+223  OSW3  22  Virtual control output 23, Available for future fieldbus expansion
+224  OSW3  23  Virtual control output 24, Available for future fieldbus expansion
+225  OSW3  24  Virtual control output 25, Available for future fieldbus expansion
+226  OSW3  25  Virtual control output 26, Available for future fieldbus expansion
+227  OSW3  26  Virtual control output 27, Available for future fieldbus expansion
+228  OSW3  27  Virtual control output 28, Available for future fieldbus expansion
+229  OSW3  28  Virtual control output 29, Available for future fieldbus expansion
+230  OSW3  29  Virtual control output 30, Available for future fieldbus expansion
+231  OSW3  30  Virtual control output 31, Available for future fieldbus expansion
+232  OSW3  31  Virtual control output 32, Available for future fieldbus expansion
+233  ISW3   0  Virtual control input  1, Fieldbus input 22
+234  ISW3   1  Virtual control input  2, Fieldbus input 23, Reserved for Start Shot input
+235  ISW3   2  Virtual control input  3, Fieldbus input 24, Reserved for Follow Through input
+236  ISW3   3  Virtual control input  4, Fieldbus input 25, Reserved for Retract input
+237  ISW3   4  Virtual control input  5, Fieldbus input 26, Reserved for Jog Shot input
+238  ISW3   5  Virtual control input  6, Fieldbus input 27, Reserved for Manual Mode input
+239  ISW3   6  Virtual control input  7, Fieldbus input 28, Reserved for At Home input
+240  ISW3   7  Virtual control input  8, Fieldbus input 29, Reserved for Valve Test input
+241  ISW3   8  Virtual control input  9, Fieldbus input 30
+242  ISW3   9  Virtual control input 10, Fieldbus input 31, Reserved for OK for Fast Shot input
+243  ISW3  10  Virtual control input 11, Fieldbus input 32, Reserved for Vacuum On input
+244  ISW3  11  Virtual control input 12, Fieldbus input 33, Reserved for Low Impact input
+245  ISW3  12  Virtual control input 13, Fieldbus input 34, Reserved for Fill Test input
+246  ISW3  13  Virtual control input 14, Fieldbus input 35
+247  ISW3  14  Virtual control input 15, Fieldbus input 36
+248  ISW3  15  Virtual control input 16, Fieldbus input 37
+249  ISW3  16  Virtual control input 17, Fieldbus input 38
+250  ISW3  17  Virtual control input 18, Fieldbus input 39
+251  ISW3  18  Virtual control input 19, Fieldbus input 40
+252  ISW3  19  Virtual control input 20, Fieldbus input 41
+253  ISW3  20  Virtual control input 21, Fieldbus input 42
+254  ISW3  21  Virtual control input 22, Available for future fieldbus expansion
+255  ISW3  22  Virtual control input 23, Available for future fieldbus expansion
+256  ISW3  23  Virtual control input 24, Available for future fieldbus expansion
+257  ISW3  24  Virtual control input 25, Available for future fieldbus expansion
+258  ISW3  25  Virtual control input 26, Available for future fieldbus expansion
+259  ISW3  26  Virtual control input 27, Available for future fieldbus expansion
+260  ISW3  27  Virtual control input 28, Available for future fieldbus expansion
+261  ISW3  28  Virtual control input 29, Available for future fieldbus expansion
+262  ISW3  29  Virtual control input 30, Available for future fieldbus expansion
+263  ISW3  30  Virtual control input 31, Available for future fieldbus expansion
+264  ISW3  31  Virtual control input 32, Available for future fieldbus expansion

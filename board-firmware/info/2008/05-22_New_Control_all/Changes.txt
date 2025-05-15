@@ -1,0 +1,3 @@
+I changed this on 6/2/2008 to change the v47=0 to v48=0 in step 13 of the shot control. This was just a typo.
+
+Jay

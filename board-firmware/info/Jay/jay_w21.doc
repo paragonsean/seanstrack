@@ -1,0 +1,101 @@
+{\rtf1\ansi\ansicpg1252\deff0
+{\fonttbl
+{\f0\froman\fcharset0\fprq2\fttruetype Times New Roman;}
+{\f1\froman\fcharset0\fprq2\ftnil NULL;}
+{\f2\fnil\fcharset0\fprq2\fttruetype Dingbats;}
+{\f3\froman\fcharset0\fprq2\ftnil Symbol;}
+{\f4\fswiss\fcharset0\fprq2\fttruetype Arial;}
+{\f5\fmodern\fcharset0\fprq1\fttruetype Courier New;}}
+{\colortbl
+\red0\green0\blue0;
+\red255\green255\blue255;}
+{\stylesheet
+{\s34\li720\f0\fs24\lang1033\sbasedon19\snext34 䈀漀搀礀 吀攀砀琀 䤀渀搀攀渀琀;}
+{\s18\fi-431\li720\sbasedon19 Lower Roman List;}
+{\s20\tx431\sbasedon12\snext19 Numbered Heading 1;}
+{\s21\tx431\sbasedon13\snext19 Numbered Heading 2;}
+{\s22\tx431\sbasedon14\snext19 Numbered Heading 3;}
+{\*\cs8\sbasedon19 Endnote Text;}
+{\s6\fi-431\li720 Diamond List;}
+{\s23\fi-431\li720 Numbered List;}
+{\*\cs7\fs20\super Endnote Reference;}
+{\s36\qj\fi-720\li720\f0\fs22\lang1033\sbasedon19\snext36 䈀漀搀礀 吀攀砀琀 䤀渀搀攀渀琀 ㌀;}
+{\s29\fi-431\li720 Triangle List;}
+{\s26\fi-431\li720 Square List;}
+{\s5\fi-431\li720 Dashed List;}
+{\s31\fi-431\li720\sbasedon23 Upper Roman List;}
+{\s32\qj\f0\fs22\lang1033\sbasedon19\snext32 䈀漀搀礀 吀攀砀琀;}
+{\s15\fi-431\li720 Heart List;}
+{\s35\fi-2610\li2610\f0\fs24\lang1033\sbasedon19\snext35 䈀漀搀礀 吀攀砀琀 䤀渀搀攀渀琀 ㈀;}
+{\s33\f0\fs22\lang1033\sbasedon19\snext33 䈀漀搀礀 吀攀砀琀 ㈀;}
+{\*\cs37\f0\fs20\lang0 䐀攀昀愀甀氀琀 倀愀爀愀最爀愀瀀栀 䘀漀渀琀;}
+{\s30\fi-431\li720\sbasedon23 Upper Case List;}
+{\s3\fi-431\li720 Bullet List;}
+{\s11\fi-431\li720 Hand List;}
+{\*\cs10\fs20\sbasedon19 Footnote Text;}
+{\s12\keepn\qc\f0\fs24\b\lang1033\sbasedon19\snext19 Heading 1;}
+{\s13\sb440\sa60\f4\fs28\b\sbasedon19\snext19 Heading 2;}
+{\s14\sb440\sa60\f4\fs24\b\sbasedon19\snext19 Heading 3;}
+{\s28\fi-431\li720 Tick List;}
+{\s19\f0\fs24\lang1033 Normal;}
+{\s17\fi-431\li720\sbasedon23 Lower Case List;}
+{\s1\li1440\ri1440\sa120\sbasedon19 Block Text;}
+{\*\cs9\fs20\super Footnote Reference;}
+{\s25\tx1584\sbasedon20\snext19 Section Heading;}
+{\s16\fi-431\li720 Implies List;}
+{\s2\fi-431\li720 Box List;}
+{\s27\fi-431\li720 Star List;}
+{\s24\f5\fs20\lang1033\sbasedon19 Plain Text;}
+{\s4\tx1584\sbasedon20\snext19 Chapter Heading;}}
+\kerning0\cf0\ftnbj\fet2\ftnstart1\ftnnar\aftnnar\ftnstart1\facingp\titlepg{\info}\deftab720\viewkind1\paperw12240\paperh15840\margl1440\margr1440\widowctl
+\sectd\sbknone\colsx360\marglsxn1800\margrsxn1800\pgncont\ltrsect
+\pard\plain\ltrpar\ql\s19\itap0{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\ltrpar\qc\s12\itap0\keepn{\f0\fs24\b\lang1033{\*\listtag0}\abinodiroverride\ltrch INTEROFFICE MEMO}
+\par\pard\plain\ltrpar\qj\s19\itap0{\f0\fs24\lang1033{\*\listtag0}
+\par}\pard\plain\ltrpar\qj\s19\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch December 29, 2003}
+\par\pard\plain\ltrpar\qj\s19\itap0{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\ltrpar\qj\s19\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch To:\tab Jay Wood}
+\par\pard\plain\ltrpar\qj\s19\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch From:\tab Greg Solands}
+\par\pard\plain\ltrpar\qj\s19\itap0{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\ltrpar\ql\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch Hello Jay,}
+\par\pard\plain\ltrpar\ql\s24\itap0{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\ltrpar\ql\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch I hope you had a good Christmas holiday.}
+\par\pard\plain\ltrpar\ql\s24\itap0{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\ltrpar\ql\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch I have attached a new development firmware version (dev7) and a test control program.  This is both a monitor and control version.  The included control program will output a tri wave on DAC output #3 (TB2-29).  If you jumper this signal back to TB2-23, you\uc1\u8217\'92ll should get a tri wave for the pressure plot.  Also, you should get a plot when testing the o-scope function.}
+\par\pard\plain\ltrpar\ql\s24\itap0{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\ltrpar\ql\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch I would like to modify our communication rules in UDP somewhat:}
+\par\pard\plain\ltrpar\ql\s24\itap0{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\ltrpar\ql\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch 1,\tab I will continue to ACK anything you send me, no change there.}
+\par\pard\plain\ltrpar\ql\s24\itap0{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\ltrpar\ql\fi-720\li720\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch 2,\tab Don\uc1\u8217\'92t ACK any ASCII data I send you.  If I send you anything that does not begin with a \uc1\u8216\'91B\uc1\u8217\'92, don\uc1\u8217\'92t ACK.}
+\par\pard\plain\ltrpar\ql\fi-720\li720\s24\itap0{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\ltrpar\ql\fi-720\li720\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch 3,\tab I am using the previously unused 16 bit field in my binary header for flags.  }
+\par\pard\plain\ltrpar\ql\fi-720\li720\s24\itap0{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\ltrpar\ql\fi-720\li720\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch \tab typedef volatile struct}
+\par\pard\plain\ltrpar\ql\fi-720\li2160\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch \{}
+\par\pard\plain\ltrpar\ql\fi-720\li2160\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch char header; // 'B' == Binary data}
+\par\pard\plain\ltrpar\ql\fi-720\li2160\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch unsigned char data_type;}
+\par\pard\plain\ltrpar\ql\fi-720\li2160\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch unsigned short int flags;  // New flags field}
+\par\pard\plain\ltrpar\ql\fi-720\li2160\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch unsigned short int data_set_num;}
+\par\pard\plain\ltrpar\ql\fi-720\li2160\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch unsigned short int packet_num;}
+\par\pard\plain\ltrpar\ql\fi-720\li2160\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch unsigned short int num_of_packets;}
+\par\pard\plain\ltrpar\ql\fi-720\li2160\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch unsigned short int num_of_bytes;}
+\par\pard\plain\ltrpar\ql\fi-720\li2160\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch \} binary_header;}
+\par\pard\plain\ltrpar\ql\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch \tab }
+\par\pard\plain\ltrpar\ql\li720\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch Bit 0 is the \uc1\u8220\'93don\uc1\u8217\'92t ACK\uc1\u8221\'94 flag.  If you receive a binary packet and the don\uc1\u8217\'92t ACK flag is set, then don\uc1\u8217\'92t ACK, otherwise send an ACK as usual.}
+\par\pard\plain\ltrpar\ql\li720\s24\itap0{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\ltrpar\ql\fi-720\li720\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch 4,\tab If I need to send you ASCII data and I want an ACK I\uc1\u8217\'92ll treat it as binary data and send it with a binary header.  I have added a new STRING data type to our binary data types.  }
+\par\pard\plain\ltrpar\ql\fi-720\li720\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch \tab // Define binary data types}
+\par\pard\plain\ltrpar\ql\fi-720\li1440\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch #define POS_BASED_DATA 0}
+\par\pard\plain\ltrpar\ql\fi-720\li1440\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch #define TIME_BASED_DATA 1}
+\par\pard\plain\ltrpar\ql\fi-720\li1440\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch #define COMPUTED_SHOT_DATA 2}
+\par\pard\plain\ltrpar\ql\fi-720\li1440\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch #define O_SCOPE_DATA 3}
+\par\pard\plain\ltrpar\ql\fi-720\li1440\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch #define OP_DATA 4}
+\par\pard\plain\ltrpar\ql\fi-720\li1440\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch #define STRING 5 // An oxymoron}
+\par\pard\plain\ltrpar\ql\s24\itap0{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\ltrpar\ql\li720\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch If you receive ASCII data from me encapsulated in binary format, treat it like any other string I might send, just ACK if the don\uc1\u8217\'92t ACK flag is cleared.}
+\par\pard\plain\ltrpar\ql\li720\s24\itap0{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\ltrpar\ql\s24\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch Certain types of data, such as op packets and most ASCII data doesn\uc1\u8217\'92t need to be ACKed.  If we lose a packet here or there, it\uc1\u8217\'92s not a big deal.  It saves me some processing time not having to deal with ACKs unnecessarily.  The dev7 firmware included here uses these new rules.}
+\par\pard\plain\ltrpar\ql\li180\s24\itap0{\f0\fs22\lang1033{\*\listtag0}
+\par}\pard\plain\ltrpar\qj\s19\itap0{\f0\fs22\lang1033{\*\listtag0}\abinodiroverride\ltrch Greg}
+\par\pard\plain\ltrpar\qj\s19\itap0{\f0\fs24\lang1033{\*\listtag0}}}

@@ -1,0 +1,35 @@
+Attached are V7.50 flash files for both the Apex and Cyclone boards as well as updated documents.  The following changes have been made:
+
+1. Added an 8 bit quadrature divider circuit to allow dividing by 255.  Variable 314, the configuration word #2 is used to set the divisor.
+   Bits 0-3 are the existing lower 4 bits of the divisor.
+   Bits 24-27 are the upper 4 bits and have been added.
+These bits are set to zero on existing versions of firmware so there should not be any compatibility issues using V7.50 firmware with existing True-Trak software.
+
+2. Made the Apex version of V7.50 firmware completely functionally compatible with the Cyclone II version.  Both versions are compiled from the same source code.  They work exactly the same in every way.  Whatever the Cyclone II board does, the Apex version will function exactly the same way.
+
+3. Both the Apex and CycloneII versions requiring upgrading to version 16 chip configuration file.  The boards must have their chip configuration file changed to version 16 before V7.50 firmware will function.
+
+4. Even though the two boards are functionally equivalent, the flash files themselves are completely different and are not compatible between the boards (same as before).  Cyclone II flash files begin with a "cyc" prefix and Apex flash files begin with an "emc" prefix, exactly as before. 
+5. When updating a Cyclone II board, only the cyc_7_50.flash and cyc_16010201.flash files need to be loaded.  The other flash files haven't changed and don't need to be updated.
+
+6. A master programming file is included for the Cyclone II version.  This file is CycloneII_7_50_192_169_254_99.pof and can be blasted directly to flash using the USBlaster cable.  See the Initial FTII config_cycloneII document for more details.  This makes programming Cyclone II boards much easier.  This cannot be done on Apex boards since they do not have a JTAG interface tied directly to the flash memory.
+
+7. When updating an Apex board to V7.50 firmware, the following files have to be loaded:
+   emc_16010200.hexout.flash
+   emc_16010200.hexout.0x1c0000.flash
+   emc_7_50.flash
+   ad_loop19.flash.
+
+The only flash file that has not changed is revB_ad_loop18.flash
+
+8. Before updating an existing Apex board, the control program and variables in flash have to be erased.  The following command will erase these:  e108000<CR>  Then the connection has to be reset from within the True-Trak program to reload the variables and control program.
+
+9. The Apex version of 7.50 firmware is a major change.  I don't expect any problems since the code is already proven on the Cyclone II board.  It runs exactly like a Cyclone II board here in my testing.  However be careful when doing the first one in the field to make sure everything runs as expected.  Perhaps an Apex board can be loaded with 7.50 and run on the shot end.
+
+10. The Realtime screen will display the firmware version as 7_50 for both the Cyclone II and Apex versions of the board.  You won't be able to tell which board is present just by looking at the Realtime screen.  Execute an OV command to see which board is present.  As far as the True-Trak program is concerned, it shouldn't care which board is present.  If the firmware is 7.50 or greater, both boards will function identically.
+
+11. I'd like to try and not make any further updates to V6 firmware on the Apex board.  All future changes to Apex firmware should be V7.51 and later and occur in unison with Cyclone II updates.
+
+Let me know if you would like to see something changed.
+
+Greg

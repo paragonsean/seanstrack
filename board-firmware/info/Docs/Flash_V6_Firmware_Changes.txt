@@ -1,0 +1,21 @@
+What I would like to do is as follows:
+
+1,   Have one version of firmware (version 6.0) that works with both the old rev. B external interface as well as the new rev. E board.  No more separate firmware versions depending on the external interface board.  We'll use a DIP switch to select what external interface board is being used.
+
+2,   Have one control program that will work across the board with all of the possible system configurations.  No more control4c, control5c, control5p and so on.  We'll consolidate everything into one file and set bits in the configuration variables to establish what type of system we have.  Regardless whether the system is monitor only, shot control or shot control with pressure control, we'll only have one control program file.
+
+3,   Enable the reboot from software function.  I've got this working now.  The new CycloneII board will have this capability.  We can also do this on the old board as well however, the configuration PLD, U4 will have to loaded with a new program.  For newly manufactured  boards, this will be easy.  For existing boards in the field the reboot function will not work until and unless U4's program is updated.  Since this requires a JTAG (ByteBlaster) cable, this will be more difficult.
+
+4,   I think there's still some confusion concerning the upper analog channels.  I would like to define these as follows, regardless of the external interface being used:
+   Channels 17 to 20 will always be the upper channels that appear on the external interface terminals TB2-23, 24, 25 and 26.  These are also the channels I've         called WANA1 to WANA4 (Wide input range ANAlog channels) in the past.  They have a -10V to +10V input range
+
+   Channels 21 to 24 will be the upper control channels and also have a -10V to +10V input range.  These channels are available only if a rev. E external                     interface board and a digital servo amp are present.  Otherwise they do not exist.  These are the channels I have referred to as CANA1 to CANA4 (Control         ANAlog channels).
+
+   These are not necessarily the channel numbers I use in my code to address these channels, nor is this necessarily how the channels are physically arranged in             hardware.  However for the sake of having a common interface to the outside world that spans across different hardware, I think we should standardize on the         above definitions.
+
+5,   In the past, I have believed there was some potential for memory instability on the FTII board.  This reared its ugly head in a major way on the CycloneII board.  I believe I have solved this problem and can apply the fix to the old board as well.  If we have any customers that are reporting  flaky type issues that don't seem to make any sense, memory instability could be the cause.  This could be a fix for any of those type of situations.
+
+6,    Add some intelligence to the way the FTII board boots.  First it will look for the presence of an external interface board.  Next it will check for the Ethernet daughter board.  If there's not an external interface board, then monitoring and control aren't possible so we won't even attempt that.  If there's not an Ethernet daughter board, then serial mode is only possible thing we could do at that point, so we'll automatically enter serial mode.  If an Ethernet board is present we'll enter a communication mode where we can talk to the board and load flash files etc. without monitoring and control being operational.  Serial mode can still be forced with DIP switch SW5-4 at any time. 
+Right now, the board boots up assuming that all of the hardware is in place.  Since most of the time it is, this usually isn't a problem.  It could be a problem when attempting to power up a FTII board by itself.
+
+7,   Source code compatibility.  Source code will be compatible between between the CycloneII and Apex versions of the FTII board, even though the hardware is quite different.  Any changes made to one will compile on the other.  Any work done here with the old board will directly apply to the new.  Since these are all things I was planning to add to the new CycloneII version, I think it makes sense to make these these additions to the old board now and all of it will port over and directly apply to the new board as well.

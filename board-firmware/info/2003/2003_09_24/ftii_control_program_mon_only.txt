@@ -1,0 +1,53 @@
+#         Ethernet monitor only setup 
+#
+#
+#
+V300=33333333  # Clock frequency in Hz. 
+V313=H3110FFFF #Config word
+#
+# Monitor items
+V318=1800  #Total stroke length
+V319=1280  #MIN. STK. LEN.
+V320=1     # Minimum velocity for EOS calculation in X1 pulses / sec.
+V321=2000  #Time delay biscuit. 
+V322=200   # End of shot velocity in X1 pulses / sec.
+#
+# These setup items are reserved but not implemented, set them to zero
+V323=0  # Fill distance in X4 counts.
+V324=0  # Runner fill distance in X4 counts.
+V325=0  # Min. position for CSFS in X4 counts.
+V326=0  # Velocity for CSFS in X1 pulses / sec.
+V327=0  # Velocity for rise time calculation in X1 pulses / sec.
+#
+#
+V328=1000  # Timed collection interval in uS.
+V329=2000  # Number of timed collection data points, 2000 max.
+V330=30000 # Time out period in milliseconds.
+# Limit switches
+V366=4000  # Limit switch #1, axis #1 in X4 counts.
+V367=4000  # Limit switch #2, axis #1 in X4 counts.
+V368=4000  # Limit switch #3, axis #1 in X4 counts.
+V369=4000  # Limit switch #4, axis #1 in X4 counts.
+V370=4000  # Limit switch #5, axis #1 in X4 counts.
+V371=4000  # Limit switch #6, axis #1 in X4 counts.
+#
+# Limit switch output masks, axis 1
+V378=H10000000 #LS1_1 mask
+V379=H20000000 #LS2_1 mask
+V380=H40000000 #LS3_1 mask
+V381=H80000000 #LS4_1 mask
+V382=H02000000 #LS5_1 mask
+V383=H04000000 #LS6_1 mask
+#
+# Limit switch output masks, axis 2
+V384=H00000000 #LS1_2 MASK
+V385=H00000000 #LS2_2 MASK
+V386=H00000000 #LS3_2 MASK
+V387=H00000000 #LS4_2 MASK
+V388=H00000000 #LS5_2 MASK
+V389=H00000000 #LS6_2 MASK
+#
+#
+#
+VF # Save all variables to flash
+#

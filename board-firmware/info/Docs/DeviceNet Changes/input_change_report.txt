@@ -1,0 +1,78 @@
+The following are some additional proposed changes that I believe we should consider making to the firmware.
+
+1,   Previously I had defined V427 as ISW1 bits to watch. You had mentioned this to me before.  I can add 2 new variables to include ISW2 and 3.
+
+#define ISW1_BITS_TO_WATCH    vtg.v[427]  // Existing
+#define ISW2_BITS_TO_WATCH    vtg.v[462]  // New
+#define ISW3_BITS_TO_WATCH    vtg.v[463]  // New
+
+2,   Expand the input change report to include the virtual I/Os.  This gets sent when any of the watch bits above change.
+
+// Whenever an input changes during idle time, this is the data transmitted.  This data is binary data type 6.
+typedef volatile struct
+{
+unsigned int isw1;
+unsigned int isw4;
+unsigned int isw1_bits_that_changed;
+unsigned int isw4_bits_that_changed;
+unsigned int one_ms_counter;
+unsigned int isw2;
+unsigned int isw3;
+unsigned int isw2_bits_that_changed;
+unsigned int isw3_bits_that_changed;
+} input_change_report;
+
+3,   We had previously defined all these variables as masks for generating analog reports.
+#define ISW1_MASK_ANALOG_REPORT1 vtg.v[433]   #define ISW4_MASK_ANALOG_REPORT1 vtg.v[434]   #define SAMPLE_INTERVAL_REPORT1  vtg.v[435]
+#define ISW1_MASK_ANALOG_REPORT2 vtg.v[436]   #define ISW4_MASK_ANALOG_REPORT2 vtg.v[437]  #define SAMPLE_INTERVAL_REPORT2  vtg.v[438]
+#define ISW1_MASK_ANALOG_REPORT3 vtg.v[439]   #define ISW4_MASK_ANALOG_REPORT3 vtg.v[440] #define SAMPLE_INTERVAL_REPORT3  vtg.v[441]
+
+Should we eliminate the masks and just define one I/O number for REPORT1, one for REPORT2 and one for REPORT3?
+
+I can define V456 as the I/O number for REPORT1,
+                 V457 as the I/O number for REPORT2 and
+                  V458 as the I/O number for REPORT3.
+
+Then we can forget the masks and support the virtual (DeviceNet) I/O numbers as well.
+
+4,   Should we consider adding the virtual I/O data to the shot data sample?  I tried tacking this to the end of the existing shot data packet, however the plot program gets very upset.  Didn't like that at all.  This is what I tried, the last 4 lines were added:
+
+typedef volatile struct
+  {
+  // 72 bytes, 18 words
+  unsigned short int ana_ch1;
+  unsigned short int ana_ch2;
+  unsigned short int ana_ch3;
+  unsigned short int ana_ch4;
+  unsigned short int ana_ch5;
+  unsigned short int ana_ch6;
+  unsigned short int ana_ch7;
+  unsigned short int ana_ch8;
+  unsigned int vel_count_q1;
+  unsigned int vel_count_q2;
+  unsigned int vel_count_q3;
+  unsigned int vel_count_q4;
+  unsigned int isw1;
+  unsigned int isw4;
+  unsigned int osw1;
+  unsigned int one_ms_timer;
+  int position;
+  unsigned int sample_num;  // For buffering
+  unsigned int isw2; //virtual monitor inputs 133-164
+  unsigned int isw3; //virtual control inputs 233-264
+  unsigned int osw2; //virtual monitor outputs 101-132
+  unsigned int osw3; //virtual control outputs 201-232
+  } combined_sample;
+
+5,   For the temperature monitoring or any other type of information we may want to get from the board, I thought about following as one possibility:
+
+typedef volatile struct
+{
+unsigned char ch_desc[16]; // 8 bit channel description
+unsigned int ch_data[16];  // 32 bit channel data
+} data_expansion_packet;
+
+This would give us 16 channels additional 32 bit data expansion along with an 8 bit description for each channel.  Therefore we could define 256 different data types for each channel.  I'll send one packet after each shot and we could possibly define an I/O number to send this data based on an input change between shots.
+
+Greg
+

@@ -1,0 +1,168 @@
+The "Wire" column is the new wire number. For Outputs 1-32 this is the same as the wire numbers that we
+currently use.
+
+---------------------------------------------
+                  Outputs
+---------------------------------------------
+Wire           Description
+---- ----------------------------------------
+  1  Monitor Opto  1, ZSPEED or Alarm output +
+  2  Monitor Opto  2, Alarm output           |
+  3  Monitor Opto  3, Alarm output           |
+  4  Monitor Opto  4, Alarm output           |---- Mux adapter board
+  5  Monitor Opto  5, Alarm output           |
+  6  Monitor Opto  6, Alarm output           |
+  7  Monitor Opto  7, Alarm output           |
+  8  Monitor Opto  8, Alarm output           +
+  9  Monitor Opto  9
+ 10  Monitor Opto 10
+ 11  Monitor Opto 11
+ 12  Monitor Opto 12
+ 13  Monitor Opto 13
+ 14  Monitor Opto 14
+ 15  Monitor Opto 15
+ 16  Monitor Opto 16
+
+ 17  Control Opto  1, Slow Shot output
+ 18  Control Opto  2, Accumulator output
+ 19  Control Opto  3
+ 20  Control Opto  4
+ 21  Control Opto  5, Valve Test In Operation output
+ 22  Control Opto  6, LS 7
+ 23  Control Opto  7, LS 8
+ 24  Control Opto  8, Cylinder Max Limit output
+ 25  Control Opto  9, Prince Binary Valve Pulse output
+ 26  Control Opto 10, LS 5
+ 27  Control Opto 11, LS 6
+ 28  Control Opto 12, Warning output (active low)
+ 29  Control Opto 13, LS 1
+ 30  Control Opto 14, LS 2
+ 31  Control Opto 15, LS 3
+ 32  Control Opto 16, LS 4
+
+101  Virtual monitor  1, ZSPEED or alarm output
+102  Virtual monitor  2, alarm output
+103  Virtual monitor  3, alarm output
+104  Virtual monitor  4, alarm output
+105  Virtual monitor  5, alarm output
+106  Virtual monitor  6, alarm output
+107  Virtual monitor  7, alarm output
+108  Virtual monitor  8, alarm output
+109  Virtual monitor  9, alarm output
+110  Virtual monitor 10, alarm output
+111  Virtual monitor 11, alarm output
+112  Virtual monitor 12, alarm output
+113  Virtual monitor 13, alarm output
+114  Virtual monitor 14, alarm output
+115  Virtual monitor 15, alarm output
+116  Virtual monitor 16, alarm output
+117  Virtual monitor 17, alarm output
+118  Virtual monitor 18, alarm output
+119  Virtual monitor 19, alarm output
+120  Virtual monitor 20, alarm output
+121  Virtual monitor 21, alarm output
+
+201  Virtual control  1, Slow Shot output
+202  Virtual control  2, Accumulator output
+203  Virtual control  3,
+204  Virtual control  4,
+205  Virtual control  5, Valve Test in Operation output
+206  Virtual control  6, LS 7
+207  Virtual control  7, LS 8
+208  Virtual control  8, Cylinder Max Limit output
+209  Virtual control  9, Prince Binary Valve Pulse output
+210  Virtual control 10, LS 5
+211  Virtual control 11, LS 6
+212  Virtual control 12, Warning output (active low)
+213  Virtual control 13, LS 1
+214  Virtual control 14, LS 2
+215  Virtual control 15, LS 3
+216  Virtual control 16, LS 4
+217  Virtual control 17,
+218  Virtual control 18,
+219  Virtual control 19,
+220  Virtual control 20,
+221  Virtual control 21,
+
+---------------------------------------------
+                  Inputs
+---------------------------------------------
+Wire           Description
+---- ----------------------------------------
+ 33  Monitor Opto  1
+ 34  Monitor Opto  2
+ 35  Monitor Opto  3
+ 36  Monitor Opto  4
+ 37  Monitor Opto  5
+ 38  Monitor Opto  6
+ 39  Monitor Opto  7
+ 40  Monitor Opto  8
+ 41  Monitor Opto  9
+ 42  Monitor Opto 10
+ 43  Monitor Opto 11
+ 44  Monitor Opto 12
+ 45  Monitor Opto 13
+ 46  Monitor Opto 14
+ 47  Monitor Opto 15
+ 48  Monitor Opto 16
+
+ 49  Control Opto  1
+ 50  Control Opto  2, Start Shot input
+ 51  Control Opto  3, Follow Through input
+ 52  Control Opto  4, Retract input
+ 53  Control Opto  5, Jog Shot input
+ 54  Control Opto  6, Manual Mode input
+ 55  Control Opto  7, At Home input
+ 56  Control Opto  8, Valve Test Input
+ 57  Control Opto  9
+ 58  Control Opto 10, OK for Fast Shot input
+ 59  Control Opto 11, Vacuum On input
+ 60  Control Opto 12, Low Imapct input
+ 61  Control Opto 13, Fill Test input
+ 62  Control Opto 14
+ 63  Control Opto 15
+ 64  Control Opto 16
+
+133  Virtual monitor  1
+134  Virtual monitor  2
+135  Virtual monitor  3
+136  Virtual monitor  4
+137  Virtual monitor  5
+138  Virtual monitor  6
+139  Virtual monitor  7
+140  Virtual monitor  8
+141  Virtual monitor  9
+142  Virtual monitor 10
+143  Virtual monitor 11
+144  Virtual monitor 12
+145  Virtual monitor 13
+146  Virtual monitor 14
+147  Virtual monitor 15
+148  Virtual monitor 16
+149  Virtual monitor 17
+150  Virtual monitor 18
+151  Virtual monitor 19
+152  Virtual monitor 20
+153  Virtual monitor 21
+
+233  Virtual control  1
+234  Virtual control  2, Start Shot input
+235  Virtual control  3, Follow Through input
+236  Virtual control  4, Retract input
+237  Virtual control  5, Jog Shot input
+238  Virtual control  6, Manual Mode input
+239  Virtual control  7, At Home input
+240  Virtual control  8, Valve Test input
+241  Virtual control  9
+242  Virtual control 10, OK for Fast Shot input
+243  Virtual control 11, Vacuum On input
+244  Virtual control 12, Low Impact input
+245  Virtual control 13, Fill Test input
+246  Virtual control 14
+247  Virtual control 15
+248  Virtual control 16
+249  Virtual control 17
+250  Virtual control 18
+251  Virtual control 19
+252  Virtual control 20
+253  Virtual control 21

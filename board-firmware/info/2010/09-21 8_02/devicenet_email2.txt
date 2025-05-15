@@ -1,0 +1,22 @@
+Jay,
+
+Here's updated firmware.  I've also included a new control_all file as well.
+
+There are 3 new variables that set up the deviceNet I/O:
+
+V453:  Set to zero if virtual fieldbus I/O is not being used.  Set to 1 (probably more to come later) if using DeviceNet.
+
+V454:  This is the divisor for setting the baud rate for the board's UART2 port.  It is calculated using this formula:
+V454 = (33.3333MHz / desired baud rate)-1 == (V300 / desired baud rate) -1 Since V300 = the board's clock frequency.
+For example, if the user wanted to use 38.4KB, V454 = (33,333,333 / 38,400) - 1 = 867.
+This is ignored if V453 is set to zero.
+
+V455 is used for test purposes.   You can set this to zero.
+
+Perhaps we can use an "ini" file for now to set these? Otherwise, in the short term, I can just change the control_all file to set these if necessary.
+
+I spoke too soon earlier, Joe emailed me today asking when I can come back.  When do you think we may be ready to begin testing the changes?
+
+Thanks Jay,
+
+Greg 

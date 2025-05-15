@@ -1,0 +1,155 @@
+Greg,
+
+I use the microsoft file functions instead of the old fopen, fclose, and such. I thought this was a good idea
+but I have since changed my mind. They work pretty much the same way, however.
+
+The constants in what follows, like GENERIC_READ and ONESTOPBIT, are defined in the windows.h file.
+If your comm port is already set up you don't need to call init_serial_port;
+
+In theory, then, if your ports are already set up you could use fopen and fclose (with the proper
+entries) and just fread or fwrite from or to COM1.
+
+Below are the routines I use. I've taken out a lot of stuff and, actually, I never had a read routine
+because I only write so I really can't guarentee anything but the gist of it is here. There are docs
+if you search for "ReadFile", "SetCommState", and such.
+
+#include <windows.h>
+
+char ComPortName[] = "COM1";
+
+/***********************************************************************
+*                           INIT_SERIAL_PORT                           *
+*   A DCB structure is made up of the following.                       *
+*                                                                      *
+*   DWORD DCBlength            // sizeof( DCB )                        *
+*   DWORD BaudRate;            // current baud rate                    *
+*   DWORD fBinary: 1;          // binary mode, no EOF check            *
+*   DWORD fParity: 1;          // enable parity checking               *
+*   DWORD fOutxCtsFlow:1;      // CTS output flow control              *
+*   DWORD fOutxDsrFlow:1;      // DSR output flow control              *
+*   DWORD fDtrControl:2;       // DTR flow control type                *
+*   DWORD fDsrSensitivity:1;   // DSR sensitivity                      *
+*   DWORD fTXContinueOnXoff:1; // XOFF continues Tx                    *
+*   DWORD fOutX: 1;            // XON/XOFF out flow control            *
+*   DWORD fInX: 1;             // XON/XOFF in flow control             *
+*   DWORD fErrorChar: 1;       // enable error replacement             *
+*   DWORD fNull: 1;            // enable null stripping                *
+*   DWORD fRtsControl:2;       // RTS flow control                     *
+*   DWORD fAbortOnError:1;     // abort reads/writes on error          *
+*   DWORD fDummy2:17;          // reserved                             *
+*   WORD wReserved;            // not currently used                   *
+*   WORD XonLim;               // transmit XON threshold               *
+*   WORD XoffLim;              // transmit XOFF threshold              *
+*   BYTE ByteSize;             // number of bits/byte, 4-8             *
+*   BYTE Parity;               // 0-4=no,odd,even,mark,space           *
+*   BYTE StopBits;             // 0,1,2 = 1, 1.5, 2                    *
+*   char XonChar;              // Tx and Rx XON character              *
+*   char XoffChar;             // Tx and Rx XOFF character             *
+*   char ErrorChar;            // error replacement character          *
+*   char EofChar;              // end of input character               *
+*   char EvtChar;              // received event character             *
+*   WORD wReserved1;           // reserved; do not use                 *
+***********************************************************************/
+BOOL init_serial_port()
+{
+HANDLE  fh;
+DCB     dcb;
+BOOL    status;
+
+dcb.DCBlength = sizeof( DCB );
+status = FALSE;
+
+fh = CreateFile( ComPortName, GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);
+if ( fh != INVALID_HANDLE_VALUE )
+    {
+    status = GetCommState( fh, &dcb );
+    CloseHandle( fh );
+    }
+
+if ( status )
+    {
+    dcb.BaudRate = (DWORD) 9600;
+    dcb.Parity   = 0;          /* 0=None, 1=Odd, 2=Even, 3=Mark, 4=Space */
+    dcb.ByteSize = 8;          /* bits */
+    dcb.StopBits = ONESTOPBIT; /* 1=ONESTOPBIT, 1.5=ONE5STOPBITS, 2=TWOSTOPBITS */
+
+    /*
+    ---------------------------------------------------
+    Tell the other computer I am always ready for chars
+    --------------------------------------------------- */
+    dcb.fRtsControl = RTS_CONTROL_ENABLE;
+    dcb.fDtrControl = DTR_CONTROL_ENABLE;
+
+    dcb.fOutxCtsFlow = 0;   /* 0=No CTS handshake, 1=Yes */
+    dcb.fOutxDsrFlow = 0;   /* 0=No DSR handshake, 1=Yes */
+
+    dcb.fDsrSensitivity   = 0;
+    dcb.fTXContinueOnXoff = 1;
+    dcb.fInX              = 0;
+
+    dcb.fOutX = 0;              /* 0=No Xon/Xoff, 1 = Yes */
+
+    fh = CreateFile( ComPortName, GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);
+    if ( fh != INVALID_HANDLE_VALUE )
+        {
+        SetCommState( fh, &dcb );
+        CloseHandle( fh );
+        }
+    else
+        {
+        status = FALSE;
+        }
+    }
+
+return status;
+}
+
+/***********************************************************************
+*                         WRITE_TO_SERIAL_PORT                         *
+***********************************************************************/
+void write_to_serial_port( char * buf )
+{
+
+HANDLE  fh;
+DWORD   bytes_to_write;
+DWORD   bytes_written;
+
+bytes_to_write = lstrlen(buf);
+bytes_written  = 0;
+
+fh = CreateFile( ComPortName, GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);
+if ( fh != INVALID_HANDLE_VALUE )
+    {
+    WriteFile( fh, buf, bytes_to_write, &bytes_written, 0 );
+    CloseHandle( fh );
+    }
+}
+
+/***********************************************************************
+*                         READ_FROM_PORT                       *
+***********************************************************************/
+int read_from_serial_port( char * dest, int max_characters_to_read )
+{
+HANDLE  fh;
+DWORD   bytes_to_read;
+DWORD   bytes_read;
+BOOL    status;
+
+bytes_to_read = max_characters_to_read;
+bytes_read    = 0;
+
+fh = CreateFile( ComPortName, GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);
+if ( fh != INVALID_HANDLE_VALUE )
+    {
+    status = ReadFile( fh, dest, bytes_to_read, &bytes_read, 0 );
+    CloseHandle( fh );
+    }
+
+if ( status )
+    return (int) bytes_read;
+
+return 0;
+}
+
+
+

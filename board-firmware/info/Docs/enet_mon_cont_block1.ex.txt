@@ -1,0 +1,196 @@
+5-3-03    Control program block definitions.
+
+DWELL BLOCK STRUCTURE
+
+.001 D{a} {_test input}{_set output}
+
+DWELL TIME
+{a} = V0 ... V511 ------>Variable.
+	constant --------->Dwell time in mS.
+
+
+POSITION CONTROL BLOCK STRUCTURE.
+
+.001 LAab{Fc} {_test input}{_set output}
+
+AXIS NUMBER
+a = A1 or A2.  Axes A3 and A4 may be supported in the future.
+
+POSITION TO MOVE TO
+b = V0 ... V511 ------>Variable
+	constant ---------> Position to move to in X4 counts.
+
+
+VELOCITY
+{c} = V0 ... V511 ------>Variable
+	constant ---------> Velocity setting in X1 pulses / sec.
+
+
+VELOCITY CONTROL BLOCK STRUCTURE.
+
+.001 VAab{ACc}{Pd} {_test input}{_set output}
+
+AXIS NUMBER
+a = 1 or 2.  Possible future expansion to axes 3 and 4.
+
+VELOCITY SETTING
+b = V0 ... V511 ---------> Variable.
+constant ------------> Closed loop velocity setting in X1 pulses/sec.  32 bit word.  The low 16 bits contain the setting.  The acceptable range is +/-10000.  A setting of 32767 (0x7FFF) indicates skip entire block.  Bits 16 - 29 are reserved for expansion.  Bit 31 indicates open loop percentage.  If set, the setting value (low 16 bits) is a percentage of valve opening X 100 with the range being 0 - 10000.  Bit 30 indicates this is a vacuum wait step.
+
+ACCELERATION COMMAND (Optional, if absent max. acceleration is assumed)
+{c} = V0 ... V511 ---------> Variable.
+          constant ------------> Accel. or decel. Distance in X1 counts.  32 bit value.  The low 16 bits contain the setting.  The acceptable range is 0 - 65,535.  Bits 16 - 30 are reserved for expansion.  Bit 31 is the "Goose" bit.  If set, the setting value (low 16 bits) is DAC voltage X 1000 which is equal to percentage of valve opening X 100 with the range being 0 - 10000.  The valve is immediately opened to that percentage and then control is passed on the velocity setting.
+
+END POSITION COMMAND (Optional, if absent movement will continue until stop)
+{d} = V0 ... V511 ---------> Variable.
+           constant -----------> Position in X4 counts. Range is +8388607 to -8388608.
+
+
+JUMP BLOCK STRUCTURE.
+
+.001 {-}Ja.{+/-}b {_test input}{_set output}
+
+RELATIVE INDICATOR
+{-} = Relative jump, omit for absolute jump.
+
+JUMP TYPE
+ a = Jump type,  0 == Normal, 1 == Subroutine, 2 == Return from subroutine.
+
+RELATIVE JUMP DIRECTION INDICATOR
+{+/-} = Omit sign for absolute jumps.  If relative jump, + == forward jump,
+	    - == backward jump.
+
+ b = V0 ... V511 ---------> Variable.
+          constant ------------> If absolute jump, block to jump to.  If relative jump, number of blocks to jump to, either forward or backward
+       $ ----------> Jump to current block, type normal, rel or abs only.
+
+
+UPDATE BLOCK STRUCTURE.
+
+.001 Ua{ACxxxx}=b{c}{d} {_test input}{_set output}
+
+ITEM TO UPDATE
+  a = V0 ... V511 ---------->Variable
+	A1 ... A2 -----> Axis #1 or axis #2.  Axes #3 and #4 may be supported in the future.
+	C -----> Execute command
+D1 ... D4 ----> DAC output voltage X 1000 == percentage of valve opening X 100 ==  range is +10000 to -10000 (+/- 10V, +/- 100%).  Anything over 10000 will cause the entire block to be skipped.
+AC -----> DAC1...DAC4 acceleration in mV/uS.  US saved in vtg.v[393].  Only used a DAC1...DAC4 update.  If absent or zero DAC will be updated immediately.  Can also specify a variable - (ACV87) - for example.
+
+
+FIRST OPERAND
+ b = V0 ... V511 ---------->Variable
+D1 ... D4 -----> DAC output voltage X 1000 == percentage of valve opening X 100 ==  range is +10000 to -10000 (+/- 10V, +/- 100%)
+N1 ... N20 ----> Analog input voltage X 1000.
+	P -------------------------> Position in X4 counts. Range is +8388607 to -8388608
+ F ------------------------> Velocity in X1 pulses/sec, with a range of 0 - 16383.  Bit 15           reserved for sign.
+	constant ------> Direct integer, 32 bit value.
+
+
+OPERATOR (Optional)
+{c} =   + --------> Addition operator
+	-  -------> Subtraction operator
+	*  --------> Multiplication operator
+	/  --------> Division operator
+	& --------> AND operator
+	| ----------> OR operator
+	^ ---------> XOR operator
+
+SECOND OPERAND (Optional, must include if an operator is used)
+{d} = V0 ... V511 ---------->Variable
+	constant ------> Direct integer, 32 bit value.
+
+
+
+
+Page 5
+
+{_test input}	CONDITIONAL EXECUTION (Optional).
+
+Basic form = {I or W}{1 or 0}.{input#}
+
+{I or W} = 	I ------> IF
+		W ----> WHILE
+
+{1 or 0} = 	1 -----> Input ON
+		0 -----> Input OFF
+
+{input#} = V0 ... V511 --------> Variable, if the value the variable points to is zero, conditional execution is bypassed.
+		constant -----------> Input number to test.
+
+Advanced form = {_I or W}{a}{b}{c}
+
+FIRST OPERAND
+{a} = V0 ... V511 ---------->Variable
+D1 ... D4 -----> DAC output voltage X 1000 == percentage of valve opening X 100 ==  range is +10000 to -10000 (+/- 10V, +/- 100%)
+	A1 ... A4 -------------> Position in X4 counts. Range is +8388607 to -8388608
+F1 ... F4 ---------------> Velocity in X1 pulses/sec, with a range of 0 - 16383.  Bit 31   reserved for sign.
+N1 ... N20 -------------> Analog input voltage in volts X 1000.
+	
+
+OPERATOR
+{b} =    > -------> Greater than
+	>= -------> Greater than or equal to
+	<  --------> Less than
+	<=   --------> Less than or equal to
+	= ---------> Equal to
+	!= --------> Not equal to
+
+SECOND OPERAND
+{c} = V0 ... V511 ---------->Variable
+	constant ------> Direct integer, 32 bit value.
+
+
+
+
+
+Page 6
+
+{_set output} SET DIGITAL I/O LINES (Optional).
+
+{B or d or E}{1 or 0}.{output#}
+
+{B or d or E} = 	B ------> At the beginning of the block
+			D ------> During the block
+			E ------> At the end of the block
+
+{1 or 0} = 	1 -----> Turn on
+		0 -----> Turn off
+
+{output#} = V0 ... V511 --------> Variable, if value the variable points to is zero, setting outputs is disabled.
+		constant -----------> Output number to control.
+
+
+
+Braces indicate optional items.
+
+Use a hash "#" symbol to delimit comments.
+
+Numbers can be optionally expressed as hex.  Prefix a hex number with an "h", for example hffc2.
+
+
+Revisions:  page 7
+
+
+11-21-02: Original document.
+
+12-3-02: Changed velocity control block specification.
+
+ Delimited conditional / set output with an underscore character.  For example: UV123=34_I1.22_B1.1
+
+Modified velocity block syntax to include an "A" before the axis number specifier, VA1546...
+
+1-21-03
+
+1,  Changed V330 timeout period from seconds to milliseconds
+
+5-2-03
+
+1,  Changed conditional check items
+2, Changed dwell time from uS to mS.
+3, Made bit 30 in the velocity block velocity specification indicate a vacuum wait step.
+4, Added jump to $ (current block).
+
+6-30-03
+
+1,  Eliminated the variable descriptions from this doc.  The are defined in the Ethernet board command spec.
+

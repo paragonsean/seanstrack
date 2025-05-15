@@ -1,0 +1,41 @@
+October 21, 2005
+
+PROCEDURE FOR SETTING A STANDALONE MVO-06596 SERVO AMP BOARD WITH 50MM OR 80MM OLMSTED CARTRIDGE VALVE
+
+1,	Check jumper settings.  The following jumpers should be in on the MVO-06596 servo amplifier board:  JP1, JP3, JP6, JP7, JP8, JP10, JP13, JP14, JP16.
+
+	If using a rev. D MVO-06596, JP18 must also be installed.
+	If using a Textron servo pilot, JP1 can be left off.
+
+2,	Check polarity of LVDT wiring.  
+
+Turn off the hydraulics.  Measure the voltage on the servo amplifier at TB1-5 to TB1-6 (ground).  Move the LVDT mechanical adjustment clockwise into the cap a turn or so.  This has the same effect on the LVDT signal as the valve poppet moving more to the open side.  The voltage on TB1-5 should increase or if already negative, go less negative.  If the voltage on TB1-5 does not increase, swap the secondary leads to the LVDT on the amplifier board at TB1-1 and TB1-2.  At this point, the LVDT polarity is correct.
+
+3,	Check polarity of servo pilot wiring. 
+
+Using the SET DAC feature built into the shot control interface, A positive command should result in a negative voltage at TP1 on the servo amplifier.  If the polarity is wrong swap the high and low servo coil drive signals on the amplifier TB1-9 and TB2-10.  
+
+	At this time the LVDT and servo pilot wiring should be correct and in the correct polarity.
+
+4,	On the amplifier board, move jumper JP6 to JP5 and remove JP1 if it is being used.  Reapply hydraulic pressure.  Using the SET DAC feature, send out +5V and -5V commands.  The valve poppet should be slamming from stop to stop.   While measuring the voltage on TP1, continue to send +5V and -5V commands and adjust LVDT mechanical adjustment until you get an even positive and negative reading.  The actual voltage value is not important yet.  We’re just looking for even positive and negative readings. 
+
+5,	Issue a -5V command to close the valve.  Adjust the amplifier gain pot,  POT1 to get 5.15VDC at TP1.  Measure the voltage at terminal TB1-5.  Adjust the LVDT mechanical adjustment until the voltage at TB1-5 is -150mV.  Lock down the LVDT adjusting nut.
+
+Page 2.
+
+
+6,	Issue a +5V command to open the valve.  The voltage at TB1-5 should be close to +10V.  Issue a -5V command to close the valve.  If the voltages don’t add up, perhaps the LVDT mechanical adjustment is out of range.  There have been issues with the 80mm and 100mm valves in that LVDT adjusting screw needed to be almost all the way out (totally unscrewed) in order to a balanced condition.  If this is this is the case and tuning is attempted with the LVDT mechanical adjustment approx. centered, a “false” setup that almost appears correct is possible, however it will be very difficult to hold a tune and achieve stable control operation.
+
+7,	Put jumper JP5 back to JP6 and reinstall JP1 if it is used.  
+
+8,	Null the servo valve as normally would be done.
+
+9,	Run the valve test and adjust POT5 to get a smooth flat trace with a slight overshoot at the beginning.  Save a master trace if desired.
+
+10,	Run the 8ips test and adjust the LVDT DAC compensation parameter until the valve command is 3% while moving at 8 IPS. 
+
+Alternatively the velocity command can be set to 3% and the LVDT DAC compensation adjusted until the shot velocity as shown on the shot trace is close to 8IPS.  
+
+
+Note; after the machine is started, periodically check the voltage from TB1-5 to ground, when the shot rod is fully retracted after a shot.  It should remain close to -150mV.  Continual change may indicate a problem with the servo amplifier board.
+

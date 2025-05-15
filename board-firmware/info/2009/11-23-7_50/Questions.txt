@@ -1,0 +1,37 @@
+Greg,
+
+I normally include all of the update files in case people are upgrading from an earlier release. Is this ok? Can the board be updated from an ealier flash or does it have to be at Version 6_12?
+
+Apex 7_50 Flash Proceedure.
+
+1. Send E108000 command to erase the current control program 
+2. Upload the entire control program to the board as though the operator choose "Reset" from the menu.
+3. Upload the "version 16 chip configuration file". 
+   I assume this means emc_16010200.hexout.flash and emc_16010200.hexout.0x1c0000.flash. Is that true?
+4. Do I have to have the operator reboot now?
+5. Upload the remaining files:
+   ad_loop19.flash
+   emc_7_50.flash
+   revB_ad_loop18.flash
+6. Prompt the operator to reboot.
+
+Clyclone II 7_50 Flash Proceedure
+
+1. Upload cyc_chip_16010201.flash
+2. Reboot using the RB command?
+3. Upload the rest of the files
+   cyc_7_50.flash
+   cyc_ad_loop19.flash
+   cyc_revB_ad_loop18.flash
+   germs_monitor_epcs1.flash
+4. Reboot using the RB command.
+
+When I update from V7.06 to V7.07 of my program I will look at the machine set up to see if this is a 100 pitch machine. If it is then I will set the new Quadrature Divisor to 5. Otherwise I will set it to one.
+
+Are there any installations that have edited the control_all.txt file and changed V314 to have something other than the default value of 1? If so I will read that file, if this is not a 100 pitch machine, and use the value in the control_all.txt file.
+
+Jay
+
+
+
+
