@@ -1,0 +1,52 @@
+
+
+Plugs In Nios 2.0
+=================
+dvb@altera.com \ 2001.09.20
+
+The plugs library has several changes in
+the release of Nios 2.0. None of them should
+prove particularly baffling to a software
+engineer of moderate familiarity with the art.
+
+The major change is that the plugs library
+may now be run with interrupts enabled, so
+that calling nr_plugs_idle() is no longer
+necessary.
+
+To do this, a parameter has been
+added to nr_plugs_initialize().
+
+int nr_plugs_initialize
+		(
+		long flags,
+		ns_plugs_network_settings *network_settings,
+		void *adapter_base_address,
+		int adapter_irq,
+		ns_plugs_adapter_description *adapter_description
+		);
+
+The fourth parameter is the interrupt number of the ethernet
+hardware device. If this parameter is set to zero, interrupts
+are not enabled, and the adapter is not instructed to enter
+interrupt mode.
+
+NOTE: The 1.1-based reference designs have a problem with
+the interrupt circuitry! The interrupt arrives at the
+Nios core ASYNCHRONOUS to the main CLK signal, causing
+occasional spurious interrupts to other values than the
+assigned irq number. This is easily fixed with a
+D-Flip-Flop between the cs8900 and the Nios, clocked
+by CLK. The Nios 2.0 core implements this internally.
+
+The other changes are at the adapter layer.
+Two new routines have been added. The first
+is to enable and disable interrupts; the second
+to enable and disable promiscuous mode.
+
+The adapter layer has not been previously
+documented; this note will make no further
+attempt to remedy that condition.
+
+==========================================================
+

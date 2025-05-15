@@ -1,0 +1,32 @@
+#!perl
+
+# hello_perl
+use socket;
+
+print("Hello from perl\n\n");
+print("perl is easy.\n\n\n");
+
+#print("Enter something from the keyboard and see what happens!!!\n\n");
+
+#while ($input_line = <STDIN>)
+#	{
+#	print("\n\nDa ta da daaah!!! - Here it comes, are you ready?\n\n");
+#	print "${input_line} and ${input_line} again\n\n";
+#	#print " " . $input_line . " and " . $input_line . " again\n\n";
+#	}
+
+$tcp_proto_num = getprotobyname('tcp') || 6;
+
+socket(SOCKET, PF_INET, SOCK_STREAM, $tcp_proto_num)
+	or die("socket: $!");
+
+$port = 20000;
+$packed_address = pack('Sna4x8', AF_INET, $port, "\169\254\96\254");
+
+connect(SOCKET, $packed_address) or die("connect: $!");
+
+
+print("\nDone inputting stuff\n");
+printf("Goodbye!!! from perl\n");
+
+# end of file

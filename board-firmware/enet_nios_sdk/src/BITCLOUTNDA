@@ -1,0 +1,52 @@
+#!perl
+
+# tcp_client_perl
+#use socket;
+use IO::Socket;
+
+print("Hello from perl\n\n");
+print("perl is easy.\n\n\n");
+
+#print("Enter something from the keyboard and see what happens!!!\n\n");
+
+#while ($input_line = <STDIN>)
+#	{
+#	print("\n\nDa ta da daaah!!! - Here it comes, are you ready?\n\n");
+#	print "${input_line} and ${input_line} again\n\n";
+#	#print " " . $input_line . " and " . $input_line . " again\n\n";
+#	}
+
+#$tcp_proto_num = getprotobyname('tcp') || 6;
+
+#socket(SOCKET, PF_INET, SOCK_STREAM, $tcp_proto_num)
+#	or die("socket: $!");
+
+#$port = 20000;
+#$packed_address = pack('Sna4x8', AF_INET, $port, "\169\254\96\254");
+
+#connect(SOCKET, $packed_address) or die("connect: $!");
+
+$no_of_attempts = 1;
+
+again:
+if ($no_of_attempts == 11) {goto ext;}
+
+$remote = IO::Socket::INET->new(
+		Proto => "tcp",
+		PeerAddr => "169.254.96.254",
+		PeerPort => "20000",
+		)
+	    #or die "cannot connect";
+		or $no_of_attempts++, goto again;
+
+print "It took $no_of_attempts try(s) to get a connection, but we got one!!!\n";
+print $remote "V123\r";
+
+
+
+ext:
+if ($no_of_attempts == 11) {print "Unable to connect, tried 10 times\n\n";}
+print("\nDone inputting stuff\n");
+printf("Goodbye!!! from perl\n");
+
+# end of file
