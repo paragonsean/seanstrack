@@ -1,0 +1,283 @@
+#         Ethernet monitor / control setup 
+#
+#			simple_dwell.txt
+#
+#
+#
+.H # Halt control program
+#
+V300=33333333  # Clock frequency in Hz. 
+V313=H3110FFFF #Config word
+#
+# Monitor items
+V318=1800  #Total stroke length
+V319=1280  #MIN. STK. LEN.
+V320=1     # Minimum velocity for EOS calculation in X1 pulses / sec.
+V321=2000  #Time delay biscuit. 
+V322=200   # End of shot velocity in X1 pulses / sec.
+#
+# These setup items are reserved but not implemented, set them to zero
+V323=0  # Fill distance in X4 counts.
+V324=0  # Runner fill distance in X4 counts.
+V325=0  # Min. position for CSFS in X4 counts.
+V326=0  # Velocity for CSFS in X1 pulses / sec.
+V327=0  # Velocity for rise time calculation in X1 pulses / sec.
+#
+#
+V328=1000  # Timed collection interval in uS.
+V329=2000  # Number of timed collection data points, 2000 max.
+V330=30000 # Time out period in milliseconds.
+# Limit switches axis1
+V366=4000  # Limit switch #1, axis #1 in X4 counts.
+V367=4000  # Limit switch #2, axis #1 in X4 counts.
+V368=4000  # Limit switch #3, axis #1 in X4 counts.
+V369=4000  # Limit switch #4, axis #1 in X4 counts.
+V370=4000  # Limit switch #5, axis #1 in X4 counts.
+V371=4000  # Limit switch #6, axis #1 in X4 counts.
+#
+# Limit switches axis2
+V372=4000  # Limit switch #1, axis #2 in X4 counts.
+V373=4000  # Limit switch #2, axis #2 in X4 counts.
+V374=4000  # Limit switch #3, axis #2 in X4 counts.
+V375=4000  # Limit switch #4, axis #2 in X4 counts.
+V376=4000  # Limit switch #5, axis #2 in X4 counts.
+V377=4000  # Limit switch #6, axis #2 in X4 counts.
+#
+#
+# Control items axis1
+V340=500   #Velocity loop gain.
+V341=2000  #Break velocity #1 in X1 pulses / sec
+V342=6000  #Break velocity #2 in X1 pulses / sec
+V343=6000  #Break velocity #3 in X1 pulses / sec
+V344=2000  #Break gain #1 multiplier X 1000
+V345=1000  #Break gain #2 multiplier X 1000
+V346=1000  #Break gain #3 multiplier X 1000
+V349=960   #Zero speed check position in X4 counts
+V350=0     #Null offset in volts * 1000
+V351=0     #LVDT offset in volts * 1000
+V352=3000  #Jog shot setting, Voltage X 1000.
+V353=1000  #Follow through setting, Voltage X 1000.
+V354=1500  #Follow through stop position, X4 counts
+V355=-10000  #Retract setting, volts X 1000.
+V357=10  #Sensor deviation in X4 counts
+V358=0   #Position loop gain
+V359=0   #Reserved for position loop break gain FE setting
+V360=0   #Reserved for position loop gain break
+#
+# Control items axis2
+V394=500   #Velocity loop gain.
+V395=2000  #Break velocity #1 in X1 pulses / sec
+V396=6000  #Break velocity #2 in X1 pulses / sec
+V397=6000  #Break velocity #3 in X1 pulses / sec
+V398=2000  #Break gain #1 multiplier X 1000
+V399=1000  #Break gain #2 multiplier X 1000
+V400=1000  #Break gain #3 multiplier X 1000
+V403=960   #Zero speed check position in X4 counts
+V404=0     #Null offset in volts * 1000
+V405=1125  #LVDT offset in volts * 1000
+V406=3000  #Jog shot setting, Voltage X 1000.
+V407=1000  #Follow through setting, Voltage X 1000.
+V408=1500  #Follow through stop position, X4 counts
+V409=-10000  #Retract setting, volts X 1000.
+V410=10      #Sensor deviation in X4 counts
+V411=0       #Position loop gain
+V412=0       #Reserved for position loop break gain FE setting
+V413=0       #Reserved for position loop gain break
+#
+# Misc
+V390=750   #Oscilloscope mode trigger voltage X 1000
+V391=17    #Oscilloscope mode trigger channel, 17 – 20
+V392=1000  #Oscilloscope mode sample interval in uS.
+V393=250   #Update block ramp time in uS.
+#
+# Set-up shot profile
+######### STEP1 #########
+.UV0=0		#ACCEL #1
+.UV1=H7FFF	#VEL #1
+.UV2=0		#ENDING POS #1
+.UV3=0		#WHILE IO INDICATOR #1
+######### STEP2 #########
+.UV4=0			#ACCEL #2
+.UV5=H7FFF		#VEL #2
+.UV6=0			#ENDING POS #2
+.UV7=0			#WHILE IO INDICATOR #2
+######### STEP3 #########
+.UV8=0		#ACCEL #3
+.UV9=H7FFF	#VEL #3
+.UV10=0		#ENDING POS #3
+.UV11=0		#WHILE IO INDICATOR #3
+######### STEP4 #########
+.UV12=0			#ACCEL #4
+.UV13=H7FFF		#VEL #4
+.UV14=0			#ENDING POS #4
+.UV15=0			#WHILE IO INDICATOR #4
+######### STEP5 #########
+.UV16=0		#ACCEL #5
+.UV17=H7FFF	#VEL #5
+.UV18=0		#ENDING POS #5
+.UV19=0		#WHILE IO INDICATOR #5
+######### STEP6 #########
+.UV20=0			#ACCEL #6
+.UV21=H7FFF		#VEL #6
+.UV22=0			#ENDING POS #6
+.UV23=0			#WHILE IO INDICATOR #6
+######### STEP7 #########
+.UV24=0		#ACCEL #7
+.UV25=H7FFF	#VEL #7
+.UV26=0		#ENDING POS #7
+.UV27=0		#WHILE IO INDICATOR #7
+######### STEP8 #########
+.UV28=0			#ACCEL #8
+.UV29=H7FFF		#VEL #8
+.UV30=0			#ENDING POS #8
+.UV31=0			#WHILE IO INDICATOR #8
+######### STEP9 #########
+.UV32=0		#ACCEL #9
+.UV33=H7FFF	#VEL #9
+.UV34=0		#ENDING POS #9
+.UV35=0		#WHILE IO INDICATOR #9
+######### STEP10 #########
+.UV36=0			#ACCEL #10
+.UV37=H7FFF		#VEL #10
+.UV38=0			#ENDING POS #10
+.UV39=0			#WHILE IO INDICATOR #10
+######### STEP11 #########
+.UV40=0		#ACCEL #11
+.UV41=H7FFF	#VEL #11
+.UV42=0		#ENDING POS #11
+.UV43=0		#WHILE IO INDICATOR #11
+######### STEP12 #########
+.UV44=0			#ACCEL #12
+.UV45=H7FFF		#VEL #12
+.UV46=0			#ENDING POS #12
+.UV47=0			#WHILE IO INDICATOR #12
+######### STEP13 #########
+.UV47=0		#ACCEL #13
+.UV49=H7FFF	#VEL #13
+.UV50=0		#ENDING POS #13
+.UV51=0		#WHILE IO INDICATOR #13
+######### STEP14 #########
+.UV52=0			#ACCEL #14
+.UV53=H7FFF		#VEL #14
+.UV54=0			#ENDING POS #14
+.UV55=0			#WHILE IO INDICATOR #14
+######### STEP15 #########
+.UV56=0		#ACCEL #15
+.UV57=H7FFF	#VEL #15
+.UV58=0		#ENDING POS #15
+.UV58=0		#WHILE IO INDICATOR #15
+######### STEP16 #########
+.UV60=0			#ACCEL #16
+.UV61=H7FFF		#VEL #16
+.UV62=0			#ENDING POS #16
+.UV63=0			#WHILE IO INDICATOR #16
+######### STEP17 #########
+.UV64=0		#ACCEL #17
+.UV65=H7FFF	#VEL #17
+.UV66=0		#ENDING POS #17
+.UV67=0		#WHILE IO INDICATOR #17
+######### STEP18 #########
+.UV68=0			#ACCEL #18
+.UV69=H7FFF		#VEL #18
+.UV70=0			#ENDING POS #18
+.UV71=0			#WHILE IO INDICATOR #18
+######### STEP19 #########
+.UV72=0		#ACCEL #19
+.UV73=H7FFF	#VEL #19
+.UV74=0		#ENDING POS #19
+.UV75=0		#WHILE IO INDICATOR #19
+######### STEP20 #########
+.UV76=0			#ACCEL #20
+.UV77=H7FFF		#VEL #20
+.UV78=0			#ENDING POS #20
+.UV79=0			#WHILE IO INDICATOR #20
+#
+#
+#
+# 2 TRI WAVES, 180 OUT OF PHASE
+#.001 D3000
+#.002 UV0=0
+#.003 UV1=5000
+#.004 D0 #UD3=3000
+#.005 J1.50
+#.006 UV0=V0+100
+#.007 UV1=V1-100
+#.008 J0.5_IV0<=5000
+#.009 UV0=V0-100
+#.010 UV1=V1+100
+#.011 J1.50
+#.012 J0.9_IV0>0
+#.013 J0.2
+## DAC OUTPUT SUBROUTINE
+#.050 UD3=V0
+#.051 UD4=V1
+##.051 D50 # DWELL THIS MANY MILLISECONDS
+#.052 J2 
+#.053 END
+#
+# SIMPLE DWELL
+.001 D1
+.002 J0.1
+.003 END
+#
+#
+#
+#.001 D500_B1.33
+#.002 D500_B1.34
+#.003 D500_B1.35
+#.004 D500_B1.36
+#.005 J0.$_W0.303
+#.006 D500_B0.33
+#.007 D500_B0.34
+#.008 D500_B0.35
+#.009 D500_B0.36
+#.010 J0.1
+#.011 END
+#
+VF  # Save all variables to flash
+.F  # Save control program to flash
+.G  # Start control program
+#
+#
+#                     I/O List
+#
+#         INPUTS
+#
+# 49 ==            	Formerly Pump on
+# 50 == Start shot
+# 51 == Follow through
+# 52 == Retract
+# 53 == Jog Shot
+# 54 == Manual mode
+# 55 == At home
+# 56 == 		Formerly VALVE_TEST_INPUT
+# 57 == 		Formerly EIGHT_IPS_INPUT
+# 58 == OK For fast shot
+# 59 == Vacuum on
+# 60 == Low impact
+# 61 == Fill test
+# 62 ==
+# 63 == 
+# 64 ==         	Formerly Vacuum abort
+#
+#
+#         OUTPUTS
+#
+# 33  == Slow Out
+# 34  == Accumulator
+# 35  ==
+# 36  == 
+# 37  == Valve test in operation
+# 38  ==
+# 39  ==
+# 40  ==
+# 41  ==
+# 42  == LS5
+# 43  == LS6
+# 44  == Warning (active low)  Formerly controller fault
+# 45  == LS1
+# 46  == LS2
+# 47  == LS3
+# 48  == LS4
+#
+#
