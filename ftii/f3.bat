@@ -1,0 +1,1 @@
+fastrak2 emc_chip_06000000.hexout.flash
