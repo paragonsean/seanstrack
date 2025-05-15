@@ -1,0 +1,81 @@
+# Makefile for NEDK stuff
+#
+#
+# Three allowed values for TARGET are SOLARIS WINDOWS or HPUX.
+#
+# You can define the variables outside the Makefile_nedk through
+# the following syntax:
+# > make -f Makefile_nedk <VARIABLE=VALUE>
+# (i.e. make if Makefile_nedk TARGET=WINDOWS, if the target is Windows)
+#
+
+TARGET=WINDOWS
+SERVER_PORT=20000		# define port number for server and client 
+BUILD_FOR_ETHERNET=1		# build the server for ethernet or serial								# 0 - Build for serial 
+				# 1 - Build for ethernet
+
+#
+# This arrives at to gcc as F_TARGET_(target name)=1
+#
+#
+
+ifeq ($(TARGET),WINDOWS)
+GERMS_CLIENT = germs_client.exe
+else
+GERMS_CLIENT = germs_client
+endif
+
+ifeq ($TARGET),SOLARIS)
+CLIENT_GCC_PLAT_OPTIONS = -lsocket -lnsl
+endif
+
+
+CLIENT_CC_OPTS  =	-W -DF_TARGET_$(TARGET)=1 \
+			$(CLIENT_GCC_PLAT_OPTIONS)
+
+NIOS_CC_OPTS 	= 	-cc -DSERVER_PORT=$(SERVER_PORT) \
+			-cc -DBUILD_FOR_ETHERNET=$(BUILD_FOR_ETHERNET) \
+			-cc -O0
+
+$(GERMS_CLIENT) : germs_client.c
+	gcc germs_client.c $(CLIENT_CC_OPTS) -o $@
+GERMS_SERVER = germs_server
+
+clean:
+	rm -f $(GERMS_SERVER).(o,map,nm,out,srec)
+	rm -f $(GERMS_CLIENT)
+
+$(GERMS_SERVER) : germs_server.c
+	nios-build $(NIOS_CC_OPTS) germs_server.c
+
+
+tcp_toys:
+	@echo Building host-side tcp_sender
+	gcc tcp_sender.c $(CLIENT_CC_OPTS) -o tcp_sender
+	@echo Building nios tcp_receiver.srec
+	nios-build tcp_receiver.c
+
+
+
+nedk_example_web_server:
+	@echo Building Web Server
+	nios-build wosfs.c nedk_example_web_server.c
+	@echo Building File System
+	wosfs_maker.pl \
+			exc-nios.gif \
+			index.html \
+			template_page.html.template \
+			404_page.html \
+			static_page.html \
+			> pages.flash
+	@echo .
+	@echo .
+	@echo ". To use the web server, type the following:"
+	@echo ".     nios-run -x pages.flash"
+	@echo ".     nios-run nedk_example_web_server.srec"
+	@echo "."
+	@echo ". done."
+
+
+
+all: tcp_toys nedk_example_web_server $(GERMS_CLIENT) $(GERMS_SERVER) 

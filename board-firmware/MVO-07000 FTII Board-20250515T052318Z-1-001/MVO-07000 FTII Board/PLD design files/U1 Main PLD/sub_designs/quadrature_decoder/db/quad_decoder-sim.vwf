@@ -1,0 +1,598 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+
+/*
+Copyright (C) 1991-2003 Altera Corporation
+Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+support information,  device programming or simulation file,  and any other
+associated  documentation or information  provided by  Altera  or a partner
+under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+other  use  of such  megafunction  design,  netlist,  support  information,
+device programming or simulation file,  or any other  related documentation
+or information  is prohibited  for  any  other purpose,  including, but not
+limited to  modification,  reverse engineering,  de-compiling, or use  with
+any other  silicon devices,  unless such use is  explicitly  licensed under
+a separate agreement with  Altera  or a megafunction partner.  Title to the
+intellectual property,  including patents,  copyrights,  trademarks,  trade
+secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+support  information,  device programming or simulation file,  or any other
+related documentation or information provided by  Altera  or a megafunction
+partner, remains with Altera, the megafunction partner, or their respective
+licensors. No other licenses, including any licenses needed under any third
+party's intellectual property, are provided herein.
+*/
+
+HEADER
+{
+	VERSION = 1;
+	TIME_UNIT = ns;
+	PRINT_OPTIONS = "Print_options_version 6\
+range_start 0ps\
+range_end 15.0us\
+width 1\
+names_percentage 25\
+comments 1\
+grid_lines 1\
+time_bars 1\
+name_every_page 0\
+expand_groups 0\
+print_all 1";
+	SIMULATION_TIME = 15000.0;
+	GRID_PHASE = 0.0;
+	GRID_PERIOD = 10.0;
+	GRID_DUTY_CYCLE = 50;
+}
+
+SIGNAL("clk")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("ch_a")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("ch_b")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("up_dn")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("x4")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("rst")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("err")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("ch_a_out")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("ch_b_out")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("speed_pulse_q1")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("speed_pulse_q2")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("speed_pulse_q3")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("speed_pulse_q4")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+TRANSITION_LIST("clk")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 500;
+			LEVEL 0 FOR 15.0;
+			LEVEL 1 FOR 15.0;
+		}
+	}
+}
+
+TRANSITION_LIST("ch_a")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 320.0;
+		LEVEL 1 FOR 260.0;
+		LEVEL 0 FOR 525.0;
+		LEVEL 1 FOR 265.0;
+		LEVEL 0 FOR 560.0;
+		LEVEL 1 FOR 455.0;
+		LEVEL 0 FOR 330.0;
+		LEVEL 1 FOR 560.0;
+		LEVEL 0 FOR 900.0;
+		LEVEL 1 FOR 1380.0;
+		LEVEL 0 FOR 1460.0;
+		LEVEL 1 FOR 630.0;
+		LEVEL 0 FOR 950.0;
+		LEVEL 1 FOR 690.0;
+		LEVEL 0 FOR 770.0;
+		LEVEL 1 FOR 655.0;
+		LEVEL 0 FOR 4290.0;
+	}
+}
+
+TRANSITION_LIST("ch_b")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 440.0;
+		LEVEL 1 FOR 265.0;
+		LEVEL 0 FOR 515.0;
+		LEVEL 1 FOR 330.0;
+		LEVEL 0 FOR 665.0;
+		LEVEL 1 FOR 800.0;
+		LEVEL 0 FOR 1640.0;
+		LEVEL 1 FOR 900.0;
+		LEVEL 0 FOR 1790.0;
+		LEVEL 1 FOR 750.0;
+		LEVEL 0 FOR 850.0;
+		LEVEL 1 FOR 765.0;
+		LEVEL 0 FOR 5290.0;
+	}
+}
+
+TRANSITION_LIST("up_dn")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 2783.628;
+		LEVEL 0 FOR 1440.0;
+		LEVEL 1 FOR 6540.0;
+		LEVEL 0 FOR 4236.372;
+	}
+}
+
+TRANSITION_LIST("x4")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 446.005;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 90.0;
+		}
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 120.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 360.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 90.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 120.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 150.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 330.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 270.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 150.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 270.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 210.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 870.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 450.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 2340.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 270.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 420.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 480.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 330.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 390.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 630.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 4143.995;
+	}
+}
+
+TRANSITION_LIST("rst")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 10.0;
+		LEVEL 1 FOR 175.0;
+		LEVEL 0 FOR 14815.0;
+	}
+}
+
+TRANSITION_LIST("err")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 5633.805;
+		LEVEL 1 FOR 2640.0;
+		LEVEL 0 FOR 6726.195;
+	}
+}
+
+TRANSITION_LIST("ch_a_out")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 352.422;
+		LEVEL 1 FOR 240.0;
+		LEVEL 0 FOR 540.0;
+		LEVEL 1 FOR 270.0;
+		LEVEL 0 FOR 540.0;
+		LEVEL 1 FOR 480.0;
+		LEVEL 0 FOR 330.0;
+		LEVEL 1 FOR 540.0;
+		LEVEL 0 FOR 900.0;
+		LEVEL 1 FOR 1380.0;
+		LEVEL 0 FOR 1470.0;
+		LEVEL 1 FOR 630.0;
+		LEVEL 0 FOR 960.0;
+		LEVEL 1 FOR 690.0;
+		LEVEL 0 FOR 750.0;
+		LEVEL 1 FOR 660.0;
+		LEVEL 0 FOR 4267.578;
+	}
+}
+
+TRANSITION_LIST("ch_b_out")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 473.953;
+		LEVEL 1 FOR 270.0;
+		LEVEL 0 FOR 510.0;
+		LEVEL 1 FOR 330.0;
+		LEVEL 0 FOR 660.0;
+		LEVEL 1 FOR 810.0;
+		LEVEL 0 FOR 1620.0;
+		LEVEL 1 FOR 900.0;
+		LEVEL 0 FOR 1800.0;
+		LEVEL 1 FOR 750.0;
+		LEVEL 0 FOR 840.0;
+		LEVEL 1 FOR 780.0;
+		LEVEL 0 FOR 5256.047;
+	}
+}
+
+TRANSITION_LIST("speed_pulse_q1")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 384.071;
+		LEVEL 1 FOR 120.0;
+		LEVEL 0 FOR 660.0;
+		LEVEL 1 FOR 120.0;
+		LEVEL 0 FOR 690.0;
+		LEVEL 1 FOR 300.0;
+		LEVEL 0 FOR 1950.0;
+		LEVEL 1 FOR 480.0;
+		LEVEL 0 FOR 2370.0;
+		LEVEL 1 FOR 330.0;
+		LEVEL 0 FOR 1260.0;
+		LEVEL 1 FOR 330.0;
+		LEVEL 0 FOR 1110.0;
+		LEVEL 1 FOR 660.0;
+		LEVEL 0 FOR 4235.929;
+	}
+}
+
+TRANSITION_LIST("speed_pulse_q2")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 502.149;
+		LEVEL 1 FOR 120.0;
+		LEVEL 0 FOR 660.0;
+		LEVEL 1 FOR 150.0;
+		LEVEL 0 FOR 840.0;
+		LEVEL 1 FOR 180.0;
+		LEVEL 0 FOR 330.0;
+		LEVEL 1 FOR 300.0;
+		LEVEL 0 FOR 1620.0;
+		LEVEL 1 FOR 2370.0;
+		LEVEL 0 FOR 330.0;
+		LEVEL 1 FOR 300.0;
+		LEVEL 0 FOR 1290.0;
+		LEVEL 1 FOR 360.0;
+		LEVEL 0 FOR 5647.851;
+	}
+}
+
+TRANSITION_LIST("speed_pulse_q3")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 623.536;
+		LEVEL 1 FOR 150.0;
+		LEVEL 0 FOR 660.0;
+		LEVEL 1 FOR 180.0;
+		LEVEL 0 FOR 840.0;
+		LEVEL 1 FOR 330.0;
+		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 240.0;
+		LEVEL 0 FOR 4380.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 1200.0;
+		LEVEL 1 FOR 420.0;
+		LEVEL 0 FOR 5226.464;
+	}
+}
+
+TRANSITION_LIST("speed_pulse_q4")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 773.933;
+		LEVEL 1 FOR 390.0;
+		LEVEL 0 FOR 450.0;
+		LEVEL 1 FOR 360.0;
+		LEVEL 0 FOR 1350.0;
+		LEVEL 1 FOR 900.0;
+		LEVEL 0 FOR 3930.0;
+		LEVEL 1 FOR 510.0;
+		LEVEL 0 FOR 1110.0;
+		LEVEL 1 FOR 330.0;
+		LEVEL 0 FOR 660.0;
+		LEVEL 1 FOR 4236.067;
+	}
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "clk";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 0;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ch_a";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 1;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ch_b";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 2;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "up_dn";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 3;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "x4";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 4;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "rst";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 5;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "err";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 6;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ch_a_out";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 7;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ch_b_out";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 8;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "speed_pulse_q1";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 9;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "speed_pulse_q2";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 10;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "speed_pulse_q3";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 11;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "speed_pulse_q4";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 12;
+	TREE_LEVEL = 0;
+}
+
+TIME_BAR
+{
+	TIME = 0;
+	MASTER = FALSE;
+}
+
+TIME_BAR
+{
+	TIME = 1755000;
+	MASTER = TRUE;
+}
+;

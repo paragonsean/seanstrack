@@ -1,0 +1,18 @@
+
+State Machine - |position_velocity_interface_unit|gp_pos_cam:gp_pos_cam_inst2|altcam:altcam_component|wsm
+Name WS2 WS1W WS0 
+WS0 0 0 0 
+WS1W 0 1 1 
+WS2 1 0 1 
+
+State Machine - |position_velocity_interface_unit|gp_pos_cam:gp_pos_cam_inst1|altcam:altcam_component|wsm
+Name WS2 WS1W WS0 
+WS0 0 0 0 
+WS1W 0 1 1 
+WS2 1 0 1 
+
+State Machine - |position_velocity_interface_unit|ls_cam:ls_cam_inst|altcam:altcam_component|wsm
+Name WS2 WS1W WS0 
+WS0 0 0 0 
+WS1W 0 1 1 
+WS2 1 0 1 

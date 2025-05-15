@@ -1,0 +1,1441 @@
+quad_decoder - Quartus II Compilation Report File
+-------------------------------------------------------------------------------
+
++-----------------------------------------------------------------------------------------------+
+| Report Information                                                                            |
++--------------------+--------------------------------------------------------------------------+
+| Project            | C:\qdesigns2_2\sub_designs\quadrature_decoder/                           |
+| Compiler Settings  | quad_decoder                                                             |
+| Quartus II Version | 2.2 Build 176 02/04/2003 SP 1 SJ Full Version                            |
++--------------------+--------------------------------------------------------------------------+
+
+Table of Contents
+    Compilation Report
+        Legal Notice
+        Project Settings
+            General Settings
+        Results for "quad_decoder" Compiler Settings
+            Summary
+            Compiler Settings
+            Messages
+            Hierarchy
+            Logic Options
+            Synthesis Section
+                Resource Utilization by Entity
+            Device Options
+            Floorplan View
+            Resource Section
+                Input Pins
+                Output Pins
+                All Package Pins
+                Control Signals
+                Global & Other Fast Signals
+                Carry Chains
+                Non-Global High Fan-Out Signals
+                Local Routing Interconnect
+                MegaLAB Interconnect
+                LAB External Interconnect
+                MegaLAB Usage Summary
+                Row Interconnect
+                LAB Column Interconnect
+                ESB Column Interconnect
+                Resource Usage Summary
+                Resource Utilization by Entity
+                Delay Chain Summary
+                I/O Bank Usage
+            Equations
+            Pin-Out File
+            Timing Analyses
+                Timing Settings
+                fmax (not incl. delays to/from pins)
+                Register-to-Register fmax
+                tsu (Input Setup Times)
+                th (Input Hold Times)
+                tco (Clock to Output Delays)
+            Processing Time
+
++-----------------------------------------------------------------------------+
+| Legal Notice                                                                |
++-----------------------------------------------------------------------------+
+Copyright (C) 1991-2003 Altera Corporation
+Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+support information,  device programming or simulation file,  and any other
+associated  documentation or information  provided by  Altera  or a partner
+under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+other  use  of such  megafunction  design,  netlist,  support  information,
+device programming or simulation file,  or any other  related documentation
+or information  is prohibited  for  any  other purpose,  including, but not
+limited to  modification,  reverse engineering,  de-compiling, or use  with
+any other  silicon devices,  unless such use is  explicitly  licensed under
+a separate agreement with  Altera  or a megafunction partner.  Title to the
+intellectual property,  including patents,  copyrights,  trademarks,  trade
+secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+support  information,  device programming or simulation file,  or any other
+related documentation or information provided by  Altera  or a megafunction
+partner, remains with Altera, the megafunction partner, or their respective
+licensors. No other licenses, including any licenses needed under any third
+party's intellectual property, are provided herein.
+
+
++-----------------------------------------------------------------------------+
+| General Settings                                                            |
++-----------------------------------------------------------------------------+
++-------------------+---------------------+
+| Option            | Setting             |
++-------------------+---------------------+
+| Start date & time | 09/24/2003 19:53:56 |
+| Main task         | Compilation         |
+| Settings name     | quad_decoder        |
++-------------------+---------------------+
+
++-----------------------------------------------------------------------------+
+| Summary                                                                     |
++-----------------------------------------------------------------------------+
++-------------------------------------+-----------------------------------------------+
+| Processing status                   | Fitting Successful - Wed Sep 24 19:54:14 2003 |
+| Timing requirements/analysis status | Requirements met                              |
+| Chip name                           | quad_decoder                                  |
+| Device for compilation              | EP20K200EFC484-2X                             |
+| Total logic elements                | 59 / 8,320 ( < 1 % )                          |
+| Total pins                          | 13 / 376 ( 3 % )                              |
+| Total memory bits                   | 0 / 106,496 ( 0 % )                           |
+| Total PLLs                          | 0 / 2 ( 0 % )                                 |
+| Device for timing analysis          | EP20K200EFC484-2X                             |
++-------------------------------------+-----------------------------------------------+
+
++-----------------------------------------------------------------------------+
+| Compiler Settings                                                           |
++-----------------------------------------------------------------------------+
++----------------------------------------------------------+--------------------+
+| Option                                                   | Setting            |
++----------------------------------------------------------+--------------------+
+| Chip name                                                | quad_decoder       |
+| Family name                                              | APEX20KE           |
+| Focus entity name                                        | |quad_decoder      |
+| Device                                                   | EP20K200EFC484-2X  |
+| Disk space/compilation speed tradeoff                    | Normal             |
+| Preserve fewer node names                                | On                 |
+| Optimize timing                                          | Normal compilation |
+| Optimize IOC register placement for timing               | On                 |
+| Fast Fit compilation                                     | Off                |
+| Enable SignalTap II Logic Analyzer                       | Off                |
+| Perform WYSIWYG primitive resynthesis                    | Off                |
+| Perform gate-level register retiming                     | Off                |
+| Use Fitter timing information during synthesis           | Off                |
+| Duplicate logic elements during fitting                  | Off                |
+| Duplicate logic elements/resythesize LUTs during fitting | Off                |
+| SignalProbe compilation                                  | Off                |
+| Generate compressed bitstreams                           | Off                |
++----------------------------------------------------------+--------------------+
+
++-----------------------------------------------------------------------------+
+| Messages                                                                    |
++-----------------------------------------------------------------------------+
+Info: Found 2 design units and 1 entities in source file C:\qdesigns2_2\sub_designs\quadrature_decoder\quad_decoder.vhd
+  Info: Found design unit 1: quad_decoder-behave
+  Info: Found entity 1: quad_decoder
+Info: Found 1 design units and 1 entities in source file C:\quartus_2_2\libraries\megafunctions\lpm_counter.tdf
+  Info: Found entity 1: lpm_counter
+Info: Found 1 design units and 1 entities in source file C:\quartus_2_2\libraries\megafunctions\alt_synch_counter.tdf
+  Info: Found entity 1: alt_synch_counter
+Info: Registers with preset signals will power up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info: Implemented 72 device resources
+  Info: Implemented 4 input pins
+  Info: Implemented 9 output pins
+  Info: Implemented 59 logic cells
+Info: Selected device EP20K200EFC484-2X for design quad_decoder
+Info: Smart compilation turned off -- SignalProbe information will not be saved
+Info: Promoted cell clk to global signal automatically
+Info: Promoted cell rst to global signal automatically
+Info: Promoted cell i~0 to global signal automatically
+Info: Started  fitting attempt 1 on Wed Sep 24 2003 at 19:54:06
+Info: Fitter placement was successful
+Info: Estimated most critical path is register to register delay of 6.636 ns
+  Info: 1: + IC(0.000 ns) + CELL(0.209 ns) = 0.209 ns; Loc. = LAB_16_D2; REG Node = 'X4_INTERNAL'
+  Info: 2: + IC(4.320 ns) + CELL(1.034 ns) = 5.563 ns; Loc. = LAB_16_N1; COMB Node = 'i~295'
+  Info: 3: + IC(0.284 ns) + CELL(0.789 ns) = 6.636 ns; Loc. = LAB_16_N1; REG Node = 'LATCHED_QUADRATURE_ERROR'
+  Info: Total cell delay = 2.032 ns
+  Info: Total interconnect delay = 4.604 ns
+Info: Clock clk has Internal fmax of 154.27 MHz between source register CLK_CTR[0] and destination register REQUEST_FOR_SP_Q3 (period= 6.482 ns)
+  Info: + Longest register to register delay is 5.884 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.209 ns) = 0.209 ns; Loc. = LC9_7_D2; REG Node = 'CLK_CTR[0]'
+    Info: 2: + IC(0.417 ns) + CELL(1.139 ns) = 1.765 ns; Loc. = LC10_6_D2; COMB Node = 'Mux_140_rtl_2~141'
+    Info: 3: + IC(1.499 ns) + CELL(0.464 ns) = 3.728 ns; Loc. = LC5_10_D2; COMB Node = 'Mux_144_rtl_0~42'
+    Info: 4: + IC(0.444 ns) + CELL(1.154 ns) = 5.326 ns; Loc. = LC7_10_D2; COMB Node = 'Mux_144_rtl_4~0'
+    Info: 5: + IC(0.364 ns) + CELL(0.194 ns) = 5.884 ns; Loc. = LC4_10_D2; REG Node = 'REQUEST_FOR_SP_Q3'
+    Info: Total cell delay = 3.160 ns
+    Info: Total interconnect delay = 2.724 ns
+  Info: - Smallest clock skew is 0.000 ns
+    Info: + Shortest clock path from clock clk to destination register is 2.743 ns
+      Info: 1: + IC(0.000 ns) + CELL(1.373 ns) = 1.373 ns; Loc. = Pin_N4; CLK Node = 'clk'
+      Info: 2: + IC(1.370 ns) + CELL(0.000 ns) = 2.743 ns; Loc. = LC4_10_D2; REG Node = 'REQUEST_FOR_SP_Q3'
+      Info: Total cell delay = 1.373 ns
+      Info: Total interconnect delay = 1.370 ns
+    Info: - Longest clock path from clock clk to source register is 2.743 ns
+      Info: 1: + IC(0.000 ns) + CELL(1.373 ns) = 1.373 ns; Loc. = Pin_N4; CLK Node = 'clk'
+      Info: 2: + IC(1.370 ns) + CELL(0.000 ns) = 2.743 ns; Loc. = LC9_7_D2; REG Node = 'CLK_CTR[0]'
+      Info: Total cell delay = 1.373 ns
+      Info: Total interconnect delay = 1.370 ns
+  Info: + Micro clock to output delay of source is 0.434 ns
+  Info: + Micro setup delay of destination is 0.164 ns
+Info: All timing requirements were met. See Report window for more details.
+
++-----------------------------------------------------------------------------+
+| Hierarchy                                                                   |
++-----------------------------------------------------------------------------+
+Hierarchy
+  quad_decoder
+    lpm_counter:CNT_rtl_0
+      alt_synch_counter:wysi_counter
+
++-----------------------------------------------------------------------------+
+| Logic Options                                                               |
++-----------------------------------------------------------------------------+
++------------------------------------------------------------------------------------+-------+
+| Name                                                                               | Value |
++------------------------------------------------------------------------------------+-------+
+| Optimization Technique -- APEX 20K/APEX 20KE/APEX 20KC/APEX II/ARM-based Excalibur | Speed |
+| Power-Up Don't Care                                                                | On    |
++------------------------------------------------------------------------------------+-------+
+
++-----------------------------------------------------------------------------+
+| Resource Utilization by Entity                                              |
++-----------------------------------------------------------------------------+
++----------------------------------------+-------------+-----------+-------------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------+
+| Compilation Hierarchy Node             | Logic Cells | Registers | Memory Bits | Pins | Virtual Pins | LUT-Only LCs | Register-Only LCs | LUT/Register LCs | Full Hierarchy Name                                                |
++----------------------------------------+-------------+-----------+-------------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------+
+| |quad_decoder                          | 59 (57)     | 19        | 0           | 13   | 0            | 40 (40)      | 4 (4)             | 15 (13)          | |quad_decoder                                                      |
+|    |lpm_counter:CNT_rtl_0|             | 2 (0)       | 2         | 0           | 0    | 0            | 0 (0)        | 0 (0)             | 2 (0)            | |quad_decoder|lpm_counter:CNT_rtl_0                                |
+|       |alt_synch_counter:wysi_counter| | 2 (2)       | 2         | 0           | 0    | 0            | 0 (0)        | 0 (0)             | 2 (2)            | |quad_decoder|lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter |
++----------------------------------------+-------------+-----------+-------------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------+
+
++-----------------------------------------------------------------------------+
+| Device Options                                                              |
++-----------------------------------------------------------------------------+
++------------------------------------------------------------------+---------------------+
+| Option                                                           | Setting             |
++------------------------------------------------------------------+---------------------+
+| Auto-restart configuration after error                           | Off                 |
+| Release clears before tri-states                                 | Off                 |
+| Enable user-supplied start-up clock (CLKUSR)                     | Off                 |
+| Enable device-wide reset (DEV_CLRn)                              | Off                 |
+| Enable device-wide output enable (DEV_OE)                        | Off                 |
+| Enable INIT_DONE output                                          | Off                 |
+| Auto-increment JTAG user code for multiple configuration devices | On                  |
+| Disable CONF_DONE and nSTATUS pull-ups on configuration device   | Off                 |
+| Generate compressed bitstreams                                   | Off                 |
+| Generate Tabular Text File (.ttf)                                | Off                 |
+| Generate Raw Binary File (.rbf)                                  | Off                 |
+| Generate Hexadecimal Output File (.hexout)                       | Off                 |
+| Configuration scheme                                             | Passive Serial      |
+| Hexadecimal Output File count direction                          | Up                  |
+| Hexadecimal Output File start address                            | 0                   |
+| Reserve all unused pins                                          | As input tri-stated |
+| Configuration device                                             | EPC2                |
+| Base pin-out file on sameframe device                            | Off                 |
+| Auto user code                                                   | Off                 |
+| Configuration device auto user code                              | Off                 |
+| JTAG user code for target device                                 | 0XFFFFFFFF          |
+| JTAG user code for configuration device                          | 0XFFFFFFFF          |
++------------------------------------------------------------------+---------------------+
+
++-----------------------------------------------------------------------------+
+| Floorplan View                                                              |
++-----------------------------------------------------------------------------+
+Floorplan report data cannot be output to ASCII.
+Please use Quartus II to view the floorplan report data.
+
++-----------------------------------------------------------------------------+
+| Input Pins                                                                  |
++-----------------------------------------------------------------------------+
++------+-------+-------------+--------------+------+---------+--------+--------------+-------------------------+---------------+-----------------+---------------+----------------------+--------------+
+| Name | Pin # | MegaLAB Row | MegaLAB Col. | Col. | Fan-Out | Global | I/O Register | Use Local Routing Input | Power Up High | PCI I/O Enabled | Single-Pin CE | FastRow Interconnect | I/O Standard |
++------+-------+-------------+--------------+------+---------+--------+--------------+-------------------------+---------------+-----------------+---------------+----------------------+--------------+
+| ch_a | C2    |  D          | --           | --   | 1       | no     | no           | no                      | no            | no              | no            | no                   | LVTTL        |
+| clk  | N4    | --          | --           | --   | 19      | yes    | no           | no                      | no            | no              | no            | no                   | LVTTL        |
+| rst  | F12   | --          | --           | --   | 18      | yes    | no           | no                      | no            | no              | no            | no                   | LVTTL        |
+| ch_b | K22   |  L          | --           | --   | 1       | no     | no           | no                      | no            | no              | no            | no                   | LVTTL        |
++------+-------+-------------+--------------+------+---------+--------+--------------+-------------------------+---------------+-----------------+---------------+----------------------+--------------+
+
++-----------------------------------------------------------------------------+
+| Output Pins                                                                 |
++-----------------------------------------------------------------------------+
++----------------+-------+-------------+--------------+------+--------------+--------------------------+---------------+----------------+-----------------+---------------+---------------+------------+--------------+
+| Name           | Pin # | MegaLAB Row | MegaLAB Col. | Col. | I/O Register | Use Local Routing Output | Power Up High | Slow Slew Rate | PCI I/O Enabled | Single-Pin OE | Single-Pin CE | Open Drain | I/O Standard |
++----------------+-------+-------------+--------------+------+--------------+--------------------------+---------------+----------------+-----------------+---------------+---------------+------------+--------------+
+| ch_a_out       | E21   |  D          | --           | --   | no           | no                       | no            | no             | no              | no            | no            | no         | LVTTL        |
+| ch_b_out       | C3    |  D          | --           | --   | no           | no                       | no            | no             | no              | no            | no            | no         | LVTTL        |
+| speed_pulse_q1 | D2    |  D          | --           | --   | no           | no                       | no            | no             | no              | no            | no            | no         | LVTTL        |
+| speed_pulse_q2 | D21   |  D          | --           | --   | no           | no                       | no            | no             | no              | no            | no            | no         | LVTTL        |
+| speed_pulse_q3 | D20   |  F          | --           | --   | no           | no                       | no            | no             | no              | no            | no            | no         | LVTTL        |
+| speed_pulse_q4 | C1    |  D          | --           | --   | no           | no                       | no            | no             | no              | no            | no            | no         | LVTTL        |
+| up_dn          | K21   |  K          | --           | --   | no           | no                       | no            | no             | no              | no            | no            | no         | LVTTL        |
+| x4             | U1    |  T          | --           | --   | no           | no                       | no            | no             | no              | no            | no            | no         | LVTTL        |
+| err            | L20   |  N          | --           | --   | no           | no                       | no            | no             | no              | no            | no            | no         | LVTTL        |
++----------------+-------+-------------+--------------+------+--------------+--------------------------+---------------+----------------+-----------------+---------------+---------------+------------+--------------+
+
++-----------------------------------------------------------------------------+
+| All Package Pins                                                            |
++-----------------------------------------------------------------------------+
++-------+----------------+--------------+
+| Pin # | Usage          | I/O Standard |
++-------+----------------+--------------+
+| A1    | GND            |              |
+| A2    | RESERVED_INPUT |              |
+| A3    | RESERVED_INPUT |              |
+| A4    | RESERVED_INPUT |              |
+| A5    | RESERVED_INPUT |              |
+| A6    | RESERVED_INPUT |              |
+| A7    | RESERVED_INPUT |              |
+| A8    | RESERVED_INPUT |              |
+| A9    | NC             |              |
+| A10   | NC             |              |
+| A11   | GND            |              |
+| A12   | NC             |              |
+| A13   | NC             |              |
+| A14   | NC             |              |
+| A15   | RESERVED_INPUT |              |
+| A16   | RESERVED_INPUT |              |
+| A17   | RESERVED_INPUT |              |
+| A18   | RESERVED_INPUT |              |
+| A19   | RESERVED_INPUT |              |
+| A20   | RESERVED_INPUT |              |
+| A21   | RESERVED_INPUT |              |
+| A22   | GND            |              |
+| B1    | VCC_INT        |              |
+| B2    | GND            |              |
+| B3    | RESERVED_INPUT |              |
+| B4    | RESERVED_INPUT |              |
+| B5    | RESERVED_INPUT |              |
+| B6    | RESERVED_INPUT |              |
+| B7    | RESERVED_INPUT |              |
+| B8    | RESERVED_INPUT |              |
+| B9    | RESERVED_INPUT |              |
+| B10   | RESERVED_INPUT |              |
+| B11   | RESERVED_INPUT |              |
+| B12   | RESERVED_INPUT |              |
+| B13   | RESERVED_INPUT |              |
+| B14   | RESERVED_INPUT |              |
+| B15   | RESERVED_INPUT |              |
+| B16   | RESERVED_INPUT |              |
+| B17   | RESERVED_INPUT |              |
+| B18   | RESERVED_INPUT |              |
+| B19   | RESERVED_INPUT |              |
+| B20   | RESERVED_INPUT |              |
+| B21   | GND            |              |
+| B22   | VCC_INT        |              |
+| C1    | speed_pulse_q4 | LVTTL        |
+| C2    | ch_a           | LVTTL        |
+| C3    | ch_b_out       | LVTTL        |
+| C4    | RESERVED_INPUT |              |
+| C5    | RESERVED_INPUT |              |
+| C6    | RESERVED_INPUT |              |
+| C7    | RESERVED_INPUT |              |
+| C8    | RESERVED_INPUT |              |
+| C9    | RESERVED_INPUT |              |
+| C10   | RESERVED_INPUT |              |
+| C11   | RESERVED_INPUT |              |
+| C12   | RESERVED_INPUT |              |
+| C13   | RESERVED_INPUT |              |
+| C14   | RESERVED_INPUT |              |
+| C15   | RESERVED_INPUT |              |
+| C16   | RESERVED_INPUT |              |
+| C17   | RESERVED_INPUT |              |
+| C18   | RESERVED_INPUT |              |
+| C19   | RESERVED_INPUT |              |
+| C20   | RESERVED_INPUT |              |
+| C21   | RESERVED_INPUT |              |
+| C22   | RESERVED_INPUT |              |
+| D1    | RESERVED_INPUT |              |
+| D2    | speed_pulse_q1 | LVTTL        |
+| D3    | RESERVED_INPUT |              |
+| D4    | RESERVED_INPUT |              |
+| D5    | RESERVED_INPUT |              |
+| D6    | RESERVED_INPUT |              |
+| D7    | RESERVED_INPUT |              |
+| D8    | RESERVED_INPUT |              |
+| D9    | RESERVED_INPUT |              |
+| D10   | RESERVED_INPUT |              |
+| D11   | GND+           |              |
+| D12   | #TRST          |              |
+| D13   | RESERVED_INPUT |              |
+| D14   | RESERVED_INPUT |              |
+| D15   | RESERVED_INPUT |              |
+| D16   | RESERVED_INPUT |              |
+| D17   | RESERVED_INPUT |              |
+| D18   | RESERVED_INPUT |              |
+| D19   | RESERVED_INPUT |              |
+| D20   | speed_pulse_q3 | LVTTL        |
+| D21   | speed_pulse_q2 | LVTTL        |
+| D22   | RESERVED_INPUT |              |
+| E1    | RESERVED_INPUT |              |
+| E2    | RESERVED_INPUT |              |
+| E3    | RESERVED_INPUT |              |
+| E4    | RESERVED_INPUT |              |
+| E5    | RESERVED_INPUT |              |
+| E6    | RESERVED_INPUT |              |
+| E7    | RESERVED_INPUT |              |
+| E8    | RESERVED_INPUT |              |
+| E9    | RESERVED_INPUT |              |
+| E10   | RESERVED_INPUT |              |
+| E11   | #TDO           |              |
+| E12   | ^nCEO          |              |
+| E13   | RESERVED_INPUT |              |
+| E14   | RESERVED_INPUT |              |
+| E15   | RESERVED_INPUT |              |
+| E16   | RESERVED_INPUT |              |
+| E17   | RESERVED_INPUT |              |
+| E18   | RESERVED_INPUT |              |
+| E19   | RESERVED_INPUT |              |
+| E20   | RESERVED_INPUT |              |
+| E21   | ch_a_out       | LVTTL        |
+| E22   | RESERVED_INPUT |              |
+| F1    | RESERVED_INPUT |              |
+| F2    | RESERVED_INPUT |              |
+| F3    | RESERVED_INPUT |              |
+| F4    | RESERVED_INPUT |              |
+| F5    | RESERVED_INPUT |              |
+| F6    | GND            |              |
+| F7    | RESERVED_INPUT |              |
+| F8    | RESERVED_INPUT |              |
+| F9    | RESERVED_INPUT |              |
+| F10   | RESERVED_INPUT |              |
+| F11   | RESERVED_INPUT |              |
+| F12   | rst            | LVTTL        |
+| F13   | RESERVED_INPUT |              |
+| F14   | RESERVED_INPUT |              |
+| F15   | RESERVED_INPUT |              |
+| F16   | RESERVED_INPUT |              |
+| F17   | GND            |              |
+| F18   | RESERVED_INPUT |              |
+| F19   | RESERVED_INPUT |              |
+| F20   | RESERVED_INPUT |              |
+| F21   | RESERVED_INPUT |              |
+| F22   | RESERVED_INPUT |              |
+| G1    | RESERVED_INPUT |              |
+| G2    | RESERVED_INPUT |              |
+| G3    | RESERVED_INPUT |              |
+| G4    | RESERVED_INPUT |              |
+| G5    | RESERVED_INPUT |              |
+| G6    | RESERVED_INPUT |              |
+| G7    | GND            |              |
+| G8    | VCC_IO         |              |
+| G9    | RESERVED_INPUT |              |
+| G10   | RESERVED_INPUT |              |
+| G11   | RESERVED_INPUT |              |
+| G12   | RESERVED_INPUT |              |
+| G13   | RESERVED_INPUT |              |
+| G14   | RESERVED_INPUT |              |
+| G15   | RESERVED_INPUT |              |
+| G16   | GND            |              |
+| G17   | RESERVED_INPUT |              |
+| G18   | RESERVED_INPUT |              |
+| G19   | RESERVED_INPUT |              |
+| G20   | RESERVED_INPUT |              |
+| G21   | RESERVED_INPUT |              |
+| G22   | RESERVED_INPUT |              |
+| H1    | RESERVED_INPUT |              |
+| H2    | RESERVED_INPUT |              |
+| H3    | RESERVED_INPUT |              |
+| H4    | RESERVED_INPUT |              |
+| H5    | RESERVED_INPUT |              |
+| H6    | RESERVED_INPUT |              |
+| H7    | VCC_IO         |              |
+| H8    | GND            |              |
+| H9    | VCC_INT        |              |
+| H10   | RESERVED_INPUT |              |
+| H11   | RESERVED_INPUT |              |
+| H12   | RESERVED_INPUT |              |
+| H13   | RESERVED_INPUT |              |
+| H14   | VCC_IO         |              |
+| H15   | GND            |              |
+| H16   | RESERVED_INPUT |              |
+| H17   | RESERVED_INPUT |              |
+| H18   | RESERVED_INPUT |              |
+| H19   | RESERVED_INPUT |              |
+| H20   | RESERVED_INPUT |              |
+| H21   | RESERVED_INPUT |              |
+| H22   | RESERVED_INPUT |              |
+| J1    | RESERVED_INPUT |              |
+| J2    | RESERVED_INPUT |              |
+| J3    | RESERVED_INPUT |              |
+| J4    | RESERVED_INPUT |              |
+| J5    | RESERVED_INPUT |              |
+| J6    | RESERVED_INPUT |              |
+| J7    | RESERVED_INPUT |              |
+| J8    | VCC_INT        |              |
+| J9    | GND            |              |
+| J10   | VCC_IO         |              |
+| J11   | GND            |              |
+| J12   | RESERVED_INPUT |              |
+| J13   | VCC_INT        |              |
+| J14   | GND            |              |
+| J15   | VCC_IO         |              |
+| J16   | RESERVED_INPUT |              |
+| J17   | RESERVED_INPUT |              |
+| J18   | RESERVED_INPUT |              |
+| J19   | RESERVED_INPUT |              |
+| J20   | RESERVED_INPUT |              |
+| J21   | RESERVED_INPUT |              |
+| J22   | RESERVED_INPUT |              |
+| K1    | RESERVED_INPUT |              |
+| K2    | RESERVED_INPUT |              |
+| K3    | RESERVED_INPUT |              |
+| K4    | RESERVED_INPUT |              |
+| K5    | RESERVED_INPUT |              |
+| K6    | RESERVED_INPUT |              |
+| K7    | RESERVED_INPUT |              |
+| K8    | RESERVED_INPUT |              |
+| K9    | VCC_IO         |              |
+| K10   | GND            |              |
+| K11   | VCC_INT        |              |
+| K12   | VCC_IO         |              |
+| K13   | GND            |              |
+| K14   | VCC_INT        |              |
+| K15   | RESERVED_INPUT |              |
+| K16   | RESERVED_INPUT |              |
+| K17   | GND+           |              |
+| K18   | RESERVED_INPUT |              |
+| K19   | RESERVED_INPUT |              |
+| K20   | RESERVED_INPUT |              |
+| K21   | up_dn          | LVTTL        |
+| K22   | ch_b           | LVTTL        |
+| L1    | VCC_IO         |              |
+| L2    | GND            |              |
+| L3    | RESERVED_INPUT |              |
+| L4    | ^DATA0         |              |
+| L5    | ^DCLK          |              |
+| L6    | GND+           |              |
+| L7    | RESERVED_INPUT |              |
+| L8    | RESERVED_INPUT |              |
+| L9    | VCC_CKLK2      |              |
+| L10   | VCC_INT        |              |
+| L11   | GND            |              |
+| L12   | GND            |              |
+| L13   | VCC_IO         |              |
+| L14   | RESERVED_INPUT |              |
+| L15   | RESERVED_INPUT |              |
+| L16   | RESERVED_INPUT |              |
+| L17   | RESERVED_INPUT |              |
+| L18   | ^MSEL1         |              |
+| L19   | ^MSEL0         |              |
+| L20   | err            | LVTTL        |
+| L21   | RESERVED_INPUT |              |
+| L22   | VCC_IO         |              |
+| M1    | GND            |              |
+| M2    | RESERVED_INPUT |              |
+| M3    | RESERVED_INPUT |              |
+| M4    | ^nCE           |              |
+| M5    | #TDI           |              |
+| M6    | RESERVED_INPUT |              |
+| M7    | RESERVED_INPUT |              |
+| M8    | VCC_CKLK4      |              |
+| M9    | GND_CKLK2      |              |
+| M10   | VCC_IO         |              |
+| M11   | GND            |              |
+| M12   | GND            |              |
+| M13   | VCC_INT        |              |
+| M14   | VCC_INT        |              |
+| M15   | RESERVED_INPUT |              |
+| M16   | RESERVED_INPUT |              |
+| M17   | RESERVED_INPUT |              |
+| M18   | GND+           |              |
+| M19   | ^NCONFIG       |              |
+| M20   | RESERVED_INPUT |              |
+| M21   | GND            |              |
+| M22   | VCC_INT        |              |
+| N1    | RESERVED_INPUT |              |
+| N2    | RESERVED_INPUT |              |
+| N3    | RESERVED_INPUT |              |
+| N4    | clk            | LVTTL        |
+| N5    | RESERVED_INPUT |              |
+| N6    | RESERVED_INPUT |              |
+| N7    | RESERVED_INPUT |              |
+| N8    | GND_CKLK4      |              |
+| N9    | VCC_INT        |              |
+| N10   | GND            |              |
+| N11   | VCC_IO         |              |
+| N12   | VCC_INT        |              |
+| N13   | GND            |              |
+| N14   | VCC_IO         |              |
+| N15   | RESERVED_INPUT |              |
+| N16   | RESERVED_INPUT |              |
+| N17   | RESERVED_INPUT |              |
+| N18   | RESERVED_INPUT |              |
+| N19   | RESERVED_INPUT |              |
+| N20   | RESERVED_INPUT |              |
+| N21   | RESERVED_INPUT |              |
+| N22   | RESERVED_INPUT |              |
+| P1    | RESERVED_INPUT |              |
+| P2    | RESERVED_INPUT |              |
+| P3    | RESERVED_INPUT |              |
+| P4    | RESERVED_INPUT |              |
+| P5    | GND*           |              |
+| P6    | RESERVED_INPUT |              |
+| P7    | RESERVED_INPUT |              |
+| P8    | VCC_IO         |              |
+| P9    | GND            |              |
+| P10   | VCC_INT        |              |
+| P11   | RESERVED_INPUT |              |
+| P12   | RESERVED_INPUT |              |
+| P13   | VCC_IO         |              |
+| P14   | GND            |              |
+| P15   | VCC_INT        |              |
+| P16   | RESERVED_INPUT |              |
+| P17   | RESERVED_INPUT |              |
+| P18   | RESERVED_INPUT |              |
+| P19   | RESERVED_INPUT |              |
+| P20   | RESERVED_INPUT |              |
+| P21   | RESERVED_INPUT |              |
+| P22   | RESERVED_INPUT |              |
+| R1    | RESERVED_INPUT |              |
+| R2    | RESERVED_INPUT |              |
+| R3    | RESERVED_INPUT |              |
+| R4    | RESERVED_INPUT |              |
+| R5    | RESERVED_INPUT |              |
+| R6    | GND+           |              |
+| R7    | VCC_INT        |              |
+| R8    | GND            |              |
+| R9    | VCC_IO         |              |
+| R10   | RESERVED_INPUT |              |
+| R11   | RESERVED_INPUT |              |
+| R12   | RESERVED_INPUT |              |
+| R13   | RESERVED_INPUT |              |
+| R14   | VCC_INT        |              |
+| R15   | GND            |              |
+| R16   | VCC_IO         |              |
+| R17   | RESERVED_INPUT |              |
+| R18   | RESERVED_INPUT |              |
+| R19   | RESERVED_INPUT |              |
+| R20   | RESERVED_INPUT |              |
+| R21   | RESERVED_INPUT |              |
+| R22   | RESERVED_INPUT |              |
+| T1    | RESERVED_INPUT |              |
+| T2    | RESERVED_INPUT |              |
+| T3    | RESERVED_INPUT |              |
+| T4    | GND_CKOUT2     |              |
+| T5    | VCC_CKOUT2     |              |
+| T6    | RESERVED_INPUT |              |
+| T7    | GND            |              |
+| T8    | VCC_IO         |              |
+| T9    | RESERVED_INPUT |              |
+| T10   | RESERVED_INPUT |              |
+| T11   | RESERVED_INPUT |              |
+| T12   | RESERVED_INPUT |              |
+| T13   | RESERVED_INPUT |              |
+| T14   | RESERVED_INPUT |              |
+| T15   | VCC_IO         |              |
+| T16   | GND            |              |
+| T17   | RESERVED_INPUT |              |
+| T18   | RESERVED_INPUT |              |
+| T19   | RESERVED_INPUT |              |
+| T20   | RESERVED_INPUT |              |
+| T21   | RESERVED_INPUT |              |
+| T22   | RESERVED_INPUT |              |
+| U1    | x4             | LVTTL        |
+| U2    | RESERVED_INPUT |              |
+| U3    | RESERVED_INPUT |              |
+| U4    | RESERVED_INPUT |              |
+| U5    | RESERVED_INPUT |              |
+| U6    | GND            |              |
+| U7    | RESERVED_INPUT |              |
+| U8    | RESERVED_INPUT |              |
+| U9    | RESERVED_INPUT |              |
+| U10   | RESERVED_INPUT |              |
+| U11   | RESERVED_INPUT |              |
+| U12   | RESERVED_INPUT |              |
+| U13   | RESERVED_INPUT |              |
+| U14   | RESERVED_INPUT |              |
+| U15   | RESERVED_INPUT |              |
+| U16   | RESERVED_INPUT |              |
+| U17   | GND            |              |
+| U18   | RESERVED_INPUT |              |
+| U19   | RESERVED_INPUT |              |
+| U20   | RESERVED_INPUT |              |
+| U21   | RESERVED_INPUT |              |
+| U22   | RESERVED_INPUT |              |
+| V1    | RESERVED_INPUT |              |
+| V2    | RESERVED_INPUT |              |
+| V3    | RESERVED_INPUT |              |
+| V4    | RESERVED_INPUT |              |
+| V5    | RESERVED_INPUT |              |
+| V6    | RESERVED_INPUT |              |
+| V7    | RESERVED_INPUT |              |
+| V8    | RESERVED_INPUT |              |
+| V9    | RESERVED_INPUT |              |
+| V10   | RESERVED_INPUT |              |
+| V11   | GND+           |              |
+| V12   | GND+           |              |
+| V13   | RESERVED_INPUT |              |
+| V14   | RESERVED_INPUT |              |
+| V15   | RESERVED_INPUT |              |
+| V16   | RESERVED_INPUT |              |
+| V17   | RESERVED_INPUT |              |
+| V18   | RESERVED_INPUT |              |
+| V19   | RESERVED_INPUT |              |
+| V20   | RESERVED_INPUT |              |
+| V21   | RESERVED_INPUT |              |
+| V22   | RESERVED_INPUT |              |
+| W1    | RESERVED_INPUT |              |
+| W2    | RESERVED_INPUT |              |
+| W3    | RESERVED_INPUT |              |
+| W4    | RESERVED_INPUT |              |
+| W5    | RESERVED_INPUT |              |
+| W6    | RESERVED_INPUT |              |
+| W7    | RESERVED_INPUT |              |
+| W8    | RESERVED_INPUT |              |
+| W9    | RESERVED_INPUT |              |
+| W10   | ^CONF_DONE     |              |
+| W11   | ^NSTATUS       |              |
+| W12   | #TCK           |              |
+| W13   | #TMS           |              |
+| W14   | RESERVED_INPUT |              |
+| W15   | RESERVED_INPUT |              |
+| W16   | RESERVED_INPUT |              |
+| W17   | RESERVED_INPUT |              |
+| W18   | RESERVED_INPUT |              |
+| W19   | RESERVED_INPUT |              |
+| W20   | RESERVED_INPUT |              |
+| W21   | RESERVED_INPUT |              |
+| W22   | RESERVED_INPUT |              |
+| Y1    | RESERVED_INPUT |              |
+| Y2    | RESERVED_INPUT |              |
+| Y3    | RESERVED_INPUT |              |
+| Y4    | RESERVED_INPUT |              |
+| Y5    | RESERVED_INPUT |              |
+| Y6    | RESERVED_INPUT |              |
+| Y7    | RESERVED_INPUT |              |
+| Y8    | RESERVED_INPUT |              |
+| Y9    | RESERVED_INPUT |              |
+| Y10   | RESERVED_INPUT |              |
+| Y11   | RESERVED_INPUT |              |
+| Y12   | RESERVED_INPUT |              |
+| Y13   | RESERVED_INPUT |              |
+| Y14   | RESERVED_INPUT |              |
+| Y15   | RESERVED_INPUT |              |
+| Y16   | RESERVED_INPUT |              |
+| Y17   | RESERVED_INPUT |              |
+| Y18   | RESERVED_INPUT |              |
+| Y19   | RESERVED_INPUT |              |
+| Y20   | RESERVED_INPUT |              |
+| Y21   | RESERVED_INPUT |              |
+| Y22   | RESERVED_INPUT |              |
+| AA1   | VCC_INT        |              |
+| AA2   | GND            |              |
+| AA3   | RESERVED_INPUT |              |
+| AA4   | RESERVED_INPUT |              |
+| AA5   | RESERVED_INPUT |              |
+| AA6   | RESERVED_INPUT |              |
+| AA7   | RESERVED_INPUT |              |
+| AA8   | RESERVED_INPUT |              |
+| AA9   | RESERVED_INPUT |              |
+| AA10  | RESERVED_INPUT |              |
+| AA11  | RESERVED_INPUT |              |
+| AA12  | RESERVED_INPUT |              |
+| AA13  | RESERVED_INPUT |              |
+| AA14  | RESERVED_INPUT |              |
+| AA15  | RESERVED_INPUT |              |
+| AA16  | RESERVED_INPUT |              |
+| AA17  | RESERVED_INPUT |              |
+| AA18  | RESERVED_INPUT |              |
+| AA19  | RESERVED_INPUT |              |
+| AA20  | RESERVED_INPUT |              |
+| AA21  | GND            |              |
+| AA22  | VCC_INT        |              |
+| AB1   | GND            |              |
+| AB2   | RESERVED_INPUT |              |
+| AB3   | RESERVED_INPUT |              |
+| AB4   | RESERVED_INPUT |              |
+| AB5   | RESERVED_INPUT |              |
+| AB6   | RESERVED_INPUT |              |
+| AB7   | RESERVED_INPUT |              |
+| AB8   | RESERVED_INPUT |              |
+| AB9   | NC             |              |
+| AB10  | NC             |              |
+| AB11  | GND            |              |
+| AB12  | NC             |              |
+| AB13  | NC             |              |
+| AB14  | NC             |              |
+| AB15  | RESERVED_INPUT |              |
+| AB16  | RESERVED_INPUT |              |
+| AB17  | RESERVED_INPUT |              |
+| AB18  | RESERVED_INPUT |              |
+| AB19  | RESERVED_INPUT |              |
+| AB20  | RESERVED_INPUT |              |
+| AB21  | RESERVED_INPUT |              |
+| AB22  | GND            |              |
++-------+----------------+--------------+
+
++-----------------------------------------------------------------------------+
+| Control Signals                                                             |
++-----------------------------------------------------------------------------+
++---------------+-----------+---------+--------------+--------------+
+| Name          | Pin #     | Fan-Out | Usage        | Global Usage |
++---------------+-----------+---------+--------------+--------------+
+| X4_INTERNAL   | LC3_16_D2 | 5       | Clock enable | Non-global   |
+| clk           | N4        | 19      | Clock        | Pin          |
+| rst           | F12       | 18      | Async. clear | Pin          |
+| i~0           | LC7_16_N1 | 2       | Async. clear | Internal     |
+| LessThan_12~5 | LC3_15_N1 | 3       | Sync. load   | Non-global   |
++---------------+-----------+---------+--------------+--------------+
+
++-----------------------------------------------------------------------------+
+| Global & Other Fast Signals                                                 |
++-----------------------------------------------------------------------------+
++------+-----------+---------+--------+
+| Name | Pin #     | Fan-Out | Global |
++------+-----------+---------+--------+
+| clk  | N4        | 19      | yes    |
+| rst  | F12       | 18      | yes    |
+| i~0  | LC7_16_N1 | 2       | yes    |
++------+-----------+---------+--------+
+
++-----------------------------------------------------------------------------+
+| Carry Chains                                                                |
++-----------------------------------------------------------------------------+
++--------------------+------------------------+
+| Carry Chain Length | Number of Carry Chains |
++--------------------+------------------------+
+| 0                  | 0                      |
+| 1                  | 0                      |
+| 2                  | 1                      |
++--------------------+------------------------+
+
++-----------------------------------------------------------------------------+
+| Non-Global High Fan-Out Signals                                             |
++-----------------------------------------------------------------------------+
++---------------------------------------------------------------------------+---------+
+| Name                                                                      | Fan-Out |
++---------------------------------------------------------------------------+---------+
+| TMPBB                                                                     | 29      |
+| TMPAA                                                                     | 23      |
+| Mux_140_rtl_2~141                                                         | 20      |
+| AAA                                                                       | 18      |
+| BBB                                                                       | 14      |
+| CLK_CTR[0]                                                                | 9       |
+| CLK_CTR[1]                                                                | 9       |
+| REQUEST_FOR_SP_Q2                                                         | 5       |
+| REQUEST_FOR_SP_Q4                                                         | 5       |
+| UP_DN_INTERNAL                                                            | 5       |
+| X4_INTERNAL                                                               | 5       |
+| REQUEST_FOR_SP_Q3                                                         | 4       |
+| REQUEST_FOR_SP_Q1                                                         | 4       |
+| LessThan_12~5                                                             | 3       |
+| REQUEST_FOR_X4_PULSE                                                      | 3       |
+| lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[1]                 | 3       |
+| LATCHED_QUADRATURE_ERROR                                                  | 3       |
+| QUADRATURE_ERROR                                                          | 3       |
+| Mux_147_rtl_4~26                                                          | 2       |
+| Mux_147_rtl_4~28                                                          | 2       |
+| Mux_141_rtl_4~15                                                          | 2       |
+| Mux_146_rtl_4~23                                                          | 2       |
+| Mux_141_rtl_4~13                                                          | 2       |
+| lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[0]                 | 2       |
+| Mux_142_rtl_2~16                                                          | 2       |
+| Mux_144_rtl_2~16                                                          | 2       |
+| Mux_145_rtl_3~17                                                          | 1       |
+| Mux_145_rtl_2~17                                                          | 1       |
+| Mux_143_rtl_0~54                                                          | 1       |
+| i~295                                                                     | 1       |
+| Mux_140_rtl_0~138                                                         | 1       |
+| Mux_143_rtl_2~18                                                          | 1       |
+| Mux_144_rtl_0~42                                                          | 1       |
+| Mux_139_rtl_2~9                                                           | 1       |
+| Mux_140_rtl_1~138                                                         | 1       |
+| Mux_145_rtl_1~55                                                          | 1       |
+| lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|counter_cell[0]~COUT | 1       |
+| OK_FOR_X4_PULSE                                                           | 1       |
+| OK_TO_REMOVE_QUADRATURE_ERROR                                             | 1       |
+| Mux_142_rtl_0~42                                                          | 1       |
+| Mux_138_rtl_3~16                                                          | 1       |
+| Mux_142_rtl_3~18                                                          | 1       |
+| Mux_144_rtl_4~0                                                           | 1       |
+| Mux_144_rtl_3~18                                                          | 1       |
+| Mux_145_rtl_4~0                                                           | 1       |
+| Mux_140_rtl_2~114                                                         | 1       |
+| Mux_148_rtl_4~10                                                          | 1       |
+| Mux_143_rtl_4~0                                                           | 1       |
+| Mux_139_rtl_4~0                                                           | 1       |
+| Mux_145_rtl_0~55                                                          | 1       |
++---------------------------------------------------------------------------+---------+
+
++-----------------------------------------------------------------------------+
+| Local Routing Interconnect                                                  |
++-----------------------------------------------------------------------------+
++-----------------------------+--------------------+
+| Local Routing Interconnects | Number of MegaLABs |
++-----------------------------+--------------------+
+| 0 - 4                       | 50                 |
+| 5 - 9                       | 1                  |
+| 10 - 14                     | 0                  |
+| 15 - 19                     | 0                  |
+| 20 - 24                     | 0                  |
+| 25 - 29                     | 0                  |
+| 30 - 34                     | 0                  |
+| 35 - 39                     | 0                  |
+| 40 - 44                     | 0                  |
+| 45 - 49                     | 0                  |
+| 50 - 54                     | 1                  |
++-----------------------------+--------------------+
+
++-----------------------------------------------------------------------------+
+| MegaLAB Interconnect                                                        |
++-----------------------------------------------------------------------------+
++-----------------------+--------------------+
+| MegaLAB Interconnects | Number of MegaLABs |
++-----------------------+--------------------+
+| 0                     | 45                 |
+| 1                     | 4                  |
+| 2                     | 1                  |
+| 3                     | 1                  |
+| 4                     | 0                  |
+| 5                     | 0                  |
+| 6                     | 0                  |
+| 7                     | 0                  |
+| 8                     | 0                  |
+| 9                     | 0                  |
+| 10                    | 0                  |
+| 11                    | 0                  |
+| 12                    | 0                  |
+| 13                    | 1                  |
++-----------------------+--------------------+
+
++-----------------------------------------------------------------------------+
+| LAB External Interconnect                                                   |
++-----------------------------------------------------------------------------+
++----------------------------+-----------------+
+| LAB External Interconnects | Number MegaLABs |
++----------------------------+-----------------+
+| 0 - 2                      | 49              |
+| 3 - 5                      | 2               |
+| 6 - 8                      | 0               |
+| 9 - 11                     | 0               |
+| 12 - 14                    | 0               |
+| 15 - 17                    | 0               |
+| 18 - 20                    | 0               |
+| 21 - 23                    | 0               |
+| 24 - 26                    | 0               |
+| 27 - 29                    | 0               |
+| 30 - 32                    | 1               |
++----------------------------+-----------------+
+
++-----------------------------------------------------------------------------+
+| MegaLAB Usage Summary                                                       |
++-----------------------------------------------------------------------------+
++--------------+--------------------+----------------------+-------------------------------------+--------------------------------------+----------------------------------+-----------------------------------+--------+---------+--------------------+---------------------------+-----------------+
+| MegaLAB Name | Total Cells        | MegaLAB Interconnect | Column Fast Interconnect Driving In | Column Fast Interconnect Driving Out | Row Fast Interconnect Driving In | Row Fast Interconnect Driving Out | Fan-In | Fan-Out | Local Interconnect | LAB External Interconnect | Control Signals |
++--------------+--------------------+----------------------+-------------------------------------+--------------------------------------+----------------------------------+-----------------------------------+--------+---------+--------------------+---------------------------+-----------------+
+|  A1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  A2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  B1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  B2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  C1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  C2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 5      | 1       | 0                  | 0                         | 0               |
+|  D1          |  0 / 160 ( 0 % )   | 3                    | 0                                   | 0                                    | 3                                | 0                                 | 0      | 0       | 0                  | 3                         | 0               |
+|  D2          |  52 / 160 ( 32 % ) | 13                   | 1                                   | 4                                    | 1                                | 3                                 | 4      | 15      | 51                 | 30                        | 2               |
+|  E1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  E2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 1      | 0       | 0                  | 0                         | 0               |
+|  F1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  F2          |  0 / 160 ( 0 % )   | 1                    | 1                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 1                         | 0               |
+|  G1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  G2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  H1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  H2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  I1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  I2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  J1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  J2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 1      | 0       | 0                  | 0                         | 0               |
+|  K1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  K2          |  0 / 160 ( 0 % )   | 1                    | 1                                   | 0                                    | 0                                | 0                                 | 0      | 1       | 0                  | 1                         | 0               |
+|  L1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  L2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  M1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  M2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 1      | 0       | 0                  | 0                         | 0               |
+|  N1          |  7 / 160 ( 4 % )   | 2                    | 0                                   | 0                                    | 2                                | 1                                 | 4      | 1       | 8                  | 5                         | 4               |
+|  N2          |  0 / 160 ( 0 % )   | 1                    | 0                                   | 0                                    | 1                                | 0                                 | 0      | 0       | 0                  | 1                         | 0               |
+|  O1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  O2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  P1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  P2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  Q1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  Q2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  R1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  R2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  S1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  S2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 1      | 0       | 0                  | 0                         | 0               |
+|  T1          |  0 / 160 ( 0 % )   | 1                    | 0                                   | 0                                    | 1                                | 0                                 | 0      | 0       | 0                  | 1                         | 0               |
+|  T2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  U1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  U2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  V1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  V2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  W1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  W2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  X1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  X2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  Y1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  Y2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  Z1          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
+|  Z2          |  0 / 160 ( 0 % )   | 0                    | 0                                   | 0                                    | 0                                | 0                                 | 0      | 0       | 0                  | 0                         | 0               |
++--------------+--------------------+----------------------+-------------------------------------+--------------------------------------+----------------------------------+-----------------------------------+--------+---------+--------------------+---------------------------+-----------------+
+
++-----------------------------------------------------------------------------+
+| Row Interconnect                                                            |
++-----------------------------------------------------------------------------+
++-------+------------------------+---------------------+------------------------+
+| Row   | Interconnect Available | Interconnect Used   | Half Interconnect Used |
++-------+------------------------+---------------------+------------------------+
+|  A    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  B    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  C    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  D    | 100                    |  4 / 100 ( 4 % )    |  0 / 200 ( 0 % )       |
+|  E    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  F    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  G    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  H    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  I    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  J    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  K    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  L    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  M    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  N    | 100                    |  3 / 100 ( 3 % )    |  0 / 200 ( 0 % )       |
+|  O    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  P    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  Q    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  R    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  S    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  T    | 100                    |  1 / 100 ( 1 % )    |  0 / 200 ( 0 % )       |
+|  U    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  V    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  W    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  X    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  Y    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+|  Z    | 100                    |  0 / 100 ( 0 % )    |  0 / 200 ( 0 % )       |
+| Total | 2600                   |  8 / 2600 ( < 1 % ) |  0 / 5200 ( 0 % )      |
++-------+------------------------+---------------------+------------------------+
+
++-----------------------------------------------------------------------------+
+| LAB Column Interconnect                                                     |
++-----------------------------------------------------------------------------+
++--------------+------+------------------------+---------------------+------------------------+
+| MegaLAB Col. | Col. | Interconnect Available | Interconnect Used   | Half Interconnect Used |
++--------------+------+------------------------+---------------------+------------------------+
+| 1            | 1    | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 1            | 2    | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 1            | 3    | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 1            | 4    | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 1            | 5    | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 1            | 6    | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 1            | 7    | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 1            | 8    | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 1            | 9    | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 1            | 10   | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 1            | 11   | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 1            | 12   | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 1            | 13   | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 1            | 14   | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 1            | 15   | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 1            | 16   | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 1            | 17   | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 2            | 1    | 80                     |  0 / 80 ( 0 % )     |  1 / 160 ( < 1 % )     |
+| 2            | 2    | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 2            | 3    | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 2            | 4    | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 2            | 5    | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 2            | 6    | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 2            | 7    | 80                     |  1 / 80 ( 1 % )     |  0 / 160 ( 0 % )       |
+| 2            | 8    | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 2            | 9    | 80                     |  0 / 80 ( 0 % )     |  1 / 160 ( < 1 % )     |
+| 2            | 10   | 80                     |  0 / 80 ( 0 % )     |  1 / 160 ( < 1 % )     |
+| 2            | 11   | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 2            | 12   | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 2            | 13   | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 2            | 14   | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 2            | 15   | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 2            | 16   | 80                     |  0 / 80 ( 0 % )     |  0 / 160 ( 0 % )       |
+| 2            | 17   | 80                     |  1 / 80 ( 1 % )     |  0 / 160 ( 0 % )       |
+| Total        |      | 2720                   |  2 / 2720 ( < 1 % ) |  3 / 5440 ( < 1 % )    |
++--------------+------+------------------------+---------------------+------------------------+
+
++-----------------------------------------------------------------------------+
+| ESB Column Interconnect                                                     |
++-----------------------------------------------------------------------------+
++-------+------------------------+-------------------+------------------------+
+| Col.  | Interconnect Available | Interconnect Used | Half Interconnect Used |
++-------+------------------------+-------------------+------------------------+
+| 0     | 128                    |  0 / 128 ( 0 % )  |  0 / 256 ( 0 % )       |
+| 1     | 128                    |  0 / 128 ( 0 % )  |  0 / 256 ( 0 % )       |
+| Total | 256                    |  0 / 256 ( 0 % )  |  0 / 512 ( 0 % )       |
++-------+------------------------+-------------------+------------------------+
+
++-----------------------------------------------------------------------------+
+| Resource Usage Summary                                                      |
++-----------------------------------------------------------------------------+
++----------------------------+----------------------+
+| Resource                   | Usage                |
++----------------------------+----------------------+
+| Logic cells                | 59 / 8,320 ( < 1 % ) |
+| Registers                  | 19 / 9,448 ( < 1 % ) |
+| User inserted logic cells  | 0                    |
+| I/O pins                   | 13 / 376 ( 3 % )     |
+| Clock pins                 | 0                    |
+| Dedicated input pins       | 0                    |
+| Global signals             | 3                    |
+| ESBs                       | 0 / 52 ( 0 % )       |
+| Macrocells                 | 0 / 832 ( 0 % )      |
+| ESB pterm bits used        | 0 / 106,496 ( 0 % )  |
+| ESB CAM bits used          | 0 / 106,496 ( 0 % )  |
+| Total memory bits          | 0 / 106,496 ( 0 % )  |
+| Total RAM block bits       | 0 / 106,496 ( 0 % )  |
+| FastRow interconnects      | 0 / 120 ( 0 % )      |
+| PLLs                       | 0 / 2 ( 0 % )        |
+| Maximum fan-out node       | TMPBB                |
+| Maximum fan-out            | 29                   |
+| Total fan-out              | 255                  |
+| Average fan-out            | 3.54                 |
++----------------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Resource Utilization by Entity                                              |
++-----------------------------------------------------------------------------+
++----------------------------------------+-------------+-----------+-------------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------+
+| Compilation Hierarchy Node             | Logic Cells | Registers | Memory Bits | Pins | Virtual Pins | LUT-Only LCs | Register-Only LCs | LUT/Register LCs | Full Hierarchy Name                                                |
++----------------------------------------+-------------+-----------+-------------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------+
+| |quad_decoder                          | 59 (57)     | 19        | 0           | 13   | 0            | 40 (40)      | 4 (4)             | 15 (13)          | |quad_decoder                                                      |
+|    |lpm_counter:CNT_rtl_0|             | 2 (0)       | 2         | 0           | 0    | 0            | 0 (0)        | 0 (0)             | 2 (0)            | |quad_decoder|lpm_counter:CNT_rtl_0                                |
+|       |alt_synch_counter:wysi_counter| | 2 (2)       | 2         | 0           | 0    | 0            | 0 (0)        | 0 (0)             | 2 (2)            | |quad_decoder|lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter |
++----------------------------------------+-------------+-----------+-------------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------+
+
++-----------------------------------------------------------------------------+
+| Delay Chain Summary                                                         |
++-----------------------------------------------------------------------------+
++----------------+----------+-------------+-----------------------+-------------------------+---------------------+-----+
+| Name           | Pin Type | Pad to Core | Pad to Input Register | Core to Output Register | Core to CE Register | TCO |
++----------------+----------+-------------+-----------------------+-------------------------+---------------------+-----+
+| ch_a           | Input    | ON          | OFF                   | OFF                     | OFF                 | OFF |
+| clk            | Input    | OFF         | OFF                   | OFF                     | OFF                 | OFF |
+| rst            | Input    | OFF         | OFF                   | OFF                     | OFF                 | OFF |
+| ch_b           | Input    | ON          | OFF                   | OFF                     | OFF                 | OFF |
+| ch_a_out       | Output   | OFF         | OFF                   | OFF                     | OFF                 | OFF |
+| ch_b_out       | Output   | OFF         | OFF                   | OFF                     | OFF                 | OFF |
+| speed_pulse_q1 | Output   | OFF         | OFF                   | OFF                     | OFF                 | OFF |
+| speed_pulse_q2 | Output   | OFF         | OFF                   | OFF                     | OFF                 | OFF |
+| speed_pulse_q3 | Output   | OFF         | OFF                   | OFF                     | OFF                 | OFF |
+| speed_pulse_q4 | Output   | OFF         | OFF                   | OFF                     | OFF                 | OFF |
+| up_dn          | Output   | OFF         | OFF                   | OFF                     | OFF                 | OFF |
+| x4             | Output   | OFF         | OFF                   | OFF                     | OFF                 | OFF |
+| err            | Output   | OFF         | OFF                   | OFF                     | OFF                 | OFF |
++----------------+----------+-------------+-----------------------+-------------------------+---------------------+-----+
+
++-----------------------------------------------------------------------------+
+| I/O Bank Usage                                                              |
++-----------------------------------------------------------------------------+
++--------+----------------+
+| Bank # | Usage          |
++--------+----------------+
+| 1      | 1 / 32 ( 3 % ) |
+| 2      | 0 / 30 ( 0 % ) |
+| 3      | 5 / 64 ( 7 % ) |
+| 4      | 1 / 65 ( 1 % ) |
+| 5      | 0 / 32 ( 0 % ) |
+| 6      | 0 / 30 ( 0 % ) |
+| 7      | 1 / 61 ( 1 % ) |
+| 8      | 5 / 62 ( 8 % ) |
++--------+----------------+
+
++-----------------------------------------------------------------------------+
+| Equations                                                                   |
++-----------------------------------------------------------------------------+
+The equations can be found in C:\qdesigns2_2\sub_designs\quadrature_decoder\quad_decoder.eqn.htm.
+
++-----------------------------------------------------------------------------+
+| Pin-Out File                                                                |
++-----------------------------------------------------------------------------+
+The pin-out file can be found in C:\qdesigns2_2\sub_designs\quadrature_decoder\quad_decoder.pin.
+
++-----------------------------------------------------------------------------+
+| Timing Settings                                                             |
++-----------------------------------------------------------------------------+
++------------------+-------------+------------------+------------------------------------------------------------------+--------------------+
+| Assignment File  | Source Name | Destination Name | Option                                                           | Setting            |
++------------------+-------------+------------------+------------------------------------------------------------------+--------------------+
+| quad_decoder.psf |             |                  | Include external delays to/from device pins in fmax calculations | Off                |
+| quad_decoder.psf |             |                  | Run All Timing Analyses                                          | Off                |
+| quad_decoder.psf |             |                  | Ignore user-defined clock settings                               | Off                |
+| quad_decoder.psf |             |                  | Default hold multicycle                                          | Same As Multicycle |
+| quad_decoder.psf |             |                  | Cut off feedback from I/O pins                                   | On                 |
+| quad_decoder.psf |             |                  | Cut off clear and preset signal paths                            | On                 |
+| quad_decoder.psf |             |                  | Cut off read during write signal paths                           | On                 |
+| quad_decoder.psf |             |                  | Cut paths between unrelated clock domains                        | On                 |
+| quad_decoder.psf |             |                  | Number of paths to report                                        | 200                |
+| quad_decoder.psf |             |                  | Number of destination nodes to report                            | 10                 |
+| quad_decoder.psf |             |                  | Number of source nodes to report per destination node            | 10                 |
+| quad_decoder.psf |             |                  | Maximum Strongly Connected Component loop size                   | 50                 |
+|                  |             |                  | Device name                                                      | EP20K200EFC484-2X  |
+| quad_decoder.esf |             | clk              | Clock Settings                                                   | clk                |
++------------------+-------------+------------------+------------------------------------------------------------------+--------------------+
+
++-----------------------------------------------------------------------------+
+| fmax (not incl. delays to/from pins)                                        |
++-----------------------------------------------------------------------------+
++--------------------------------------------------------------------+---------------+------------------------------------------------------------+
+| Clock Name                                                         | Required fmax | Actual fmax (period)                                       |
+|    -- Destination Register Name                                    |               |                                                            |
+|       -- Source Register Name                                      |               |                                                            |
++--------------------------------------------------------------------+---------------+------------------------------------------------------------+
+| clk                                                                | 33.33 MHz     | 154.27 MHz ( period = 6.482 ns )                           |
+|    -- REQUEST_FOR_SP_Q3                                            | 33.33 MHz     | 154.27 MHz ( period = 6.482 ns )                           |
+|       -- CLK_CTR[0]                                                | 33.33 MHz     | 154.27 MHz ( period = 6.482 ns )                           |
+|       -- CLK_CTR[1]                                                | 33.33 MHz     | 171.50 MHz ( period = 5.831 ns )                           |
+|       -- TMPAA                                                     | 33.33 MHz     | 219.73 MHz ( period = 4.551 ns )                           |
+|       -- TMPBB                                                     | 33.33 MHz     | 220.65 MHz ( period = 4.532 ns )                           |
+|       -- REQUEST_FOR_SP_Q3                                         | 33.33 MHz     | 224.06 MHz ( period = 4.463 ns )                           |
+|       -- AAA                                                       | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- BBB                                                       | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|    -- REQUEST_FOR_SP_Q4                                            | 33.33 MHz     | 157.80 MHz ( period = 6.337 ns )                           |
+|       -- CLK_CTR[0]                                                | 33.33 MHz     | 157.80 MHz ( period = 6.337 ns )                           |
+|       -- CLK_CTR[1]                                                | 33.33 MHz     | 175.87 MHz ( period = 5.686 ns )                           |
+|       -- TMPBB                                                     | 33.33 MHz     | 230.41 MHz ( period = 4.340 ns )                           |
+|       -- AAA                                                       | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- REQUEST_FOR_SP_Q4                                         | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- TMPAA                                                     | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- BBB                                                       | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|    -- LATCHED_QUADRATURE_ERROR                                     | 33.33 MHz     | 157.85 MHz ( period = 6.335 ns )                           |
+|       -- QUADRATURE_ERROR                                          | 33.33 MHz     | 157.85 MHz ( period = 6.335 ns )                           |
+|       -- X4_INTERNAL                                               | 33.33 MHz     | 161.11 MHz ( period = 6.207 ns )                           |
+|       -- lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[1] | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[0] | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- LATCHED_QUADRATURE_ERROR                                  | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- OK_TO_REMOVE_QUADRATURE_ERROR                             | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|    -- UP_DN_INTERNAL                                               | 33.33 MHz     | 163.69 MHz ( period = 6.109 ns )                           |
+|       -- CLK_CTR[0]                                                | 33.33 MHz     | 163.69 MHz ( period = 6.109 ns )                           |
+|       -- CLK_CTR[1]                                                | 33.33 MHz     | 183.22 MHz ( period = 5.458 ns )                           |
+|       -- TMPBB                                                     | 33.33 MHz     | 201.25 MHz ( period = 4.969 ns )                           |
+|       -- TMPAA                                                     | 33.33 MHz     | 232.34 MHz ( period = 4.304 ns )                           |
+|       -- UP_DN_INTERNAL                                            | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- BBB                                                       | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- AAA                                                       | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|    -- OK_TO_REMOVE_QUADRATURE_ERROR                                | 33.33 MHz     | 163.96 MHz ( period = 6.099 ns )                           |
+|       -- X4_INTERNAL                                               | 33.33 MHz     | 163.96 MHz ( period = 6.099 ns )                           |
+|       -- QUADRATURE_ERROR                                          | 33.33 MHz     | 176.49 MHz ( period = 5.666 ns )                           |
+|       -- lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[1] | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[0] | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- LATCHED_QUADRATURE_ERROR                                  | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|    -- OK_FOR_X4_PULSE                                              | 33.33 MHz     | 164.20 MHz ( period = 6.090 ns )                           |
+|       -- CLK_CTR[0]                                                | 33.33 MHz     | 164.20 MHz ( period = 6.090 ns )                           |
+|       -- CLK_CTR[1]                                                | 33.33 MHz     | 183.86 MHz ( period = 5.439 ns )                           |
+|       -- TMPAA                                                     | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- REQUEST_FOR_X4_PULSE                                      | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- BBB                                                       | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- AAA                                                       | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- TMPBB                                                     | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|    -- REQUEST_FOR_SP_Q2                                            | 33.33 MHz     | 165.34 MHz ( period = 6.048 ns )                           |
+|       -- TMPBB                                                     | 33.33 MHz     | 165.34 MHz ( period = 6.048 ns )                           |
+|       -- AAA                                                       | 33.33 MHz     | 165.92 MHz ( period = 6.027 ns )                           |
+|       -- CLK_CTR[0]                                                | 33.33 MHz     | 172.62 MHz ( period = 5.793 ns )                           |
+|       -- CLK_CTR[1]                                                | 33.33 MHz     | 194.48 MHz ( period = 5.142 ns )                           |
+|       -- REQUEST_FOR_SP_Q2                                         | 33.33 MHz     | 209.12 MHz ( period = 4.782 ns )                           |
+|       -- BBB                                                       | 33.33 MHz     | 221.53 MHz ( period = 4.514 ns )                           |
+|       -- TMPAA                                                     | 33.33 MHz     | 222.87 MHz ( period = 4.487 ns )                           |
+|    -- lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[1]    | 33.33 MHz     | 168.24 MHz ( period = 5.944 ns )                           |
+|       -- X4_INTERNAL                                               | 33.33 MHz     | 168.24 MHz ( period = 5.944 ns )                           |
+|       -- lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[1] | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[0] | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|    -- lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[0]    | 33.33 MHz     | 168.32 MHz ( period = 5.941 ns )                           |
+|       -- X4_INTERNAL                                               | 33.33 MHz     | 168.32 MHz ( period = 5.941 ns )                           |
+|       -- lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[1] | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[0] | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|    -- CLK_CTR[0]                                                   | 33.33 MHz     | 185.08 MHz ( period = 5.403 ns )                           |
+|       -- TMPBB                                                     | 33.33 MHz     | 185.08 MHz ( period = 5.403 ns )                           |
+|       -- AAA                                                       | 33.33 MHz     | 187.55 MHz ( period = 5.332 ns )                           |
+|       -- TMPAA                                                     | 33.33 MHz     | 188.11 MHz ( period = 5.316 ns )                           |
+|       -- BBB                                                       | 33.33 MHz     | 215.75 MHz ( period = 4.635 ns )                           |
+|       -- CLK_CTR[0]                                                | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|       -- CLK_CTR[1]                                                | 33.33 MHz     | Restricted to 233.64 MHz                                   |
+|    -- Timing analysis results restricted.                          |               | To change the limit use Timing Settings (Assignments menu) |
++--------------------------------------------------------------------+---------------+------------------------------------------------------------+
+
++-----------------------------------------------------------------------------+
+| Register-to-Register fmax                                                   |
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------+-----------------------------------------------------------+-------------------+------------------------+----------------------------------+----------------------------------+
+| Source Register Name                                      | Destination Register Name                                 | Source Clock Name | Destination Clock Name | Required fmax                    | Actual fmax (period)             |
++-----------------------------------------------------------+-----------------------------------------------------------+-------------------+------------------------+----------------------------------+----------------------------------+
+| CLK_CTR[0]                                                | REQUEST_FOR_SP_Q3                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 154.27 MHz ( period = 6.482 ns ) |
+| CLK_CTR[0]                                                | REQUEST_FOR_SP_Q4                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 157.80 MHz ( period = 6.337 ns ) |
+| QUADRATURE_ERROR                                          | LATCHED_QUADRATURE_ERROR                                  | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 157.85 MHz ( period = 6.335 ns ) |
+| X4_INTERNAL                                               | LATCHED_QUADRATURE_ERROR                                  | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 161.11 MHz ( period = 6.207 ns ) |
+| CLK_CTR[0]                                                | UP_DN_INTERNAL                                            | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 163.69 MHz ( period = 6.109 ns ) |
+| X4_INTERNAL                                               | OK_TO_REMOVE_QUADRATURE_ERROR                             | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 163.96 MHz ( period = 6.099 ns ) |
+| CLK_CTR[0]                                                | OK_FOR_X4_PULSE                                           | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 164.20 MHz ( period = 6.090 ns ) |
+| TMPBB                                                     | REQUEST_FOR_SP_Q2                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 165.34 MHz ( period = 6.048 ns ) |
+| AAA                                                       | REQUEST_FOR_SP_Q2                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 165.92 MHz ( period = 6.027 ns ) |
+| X4_INTERNAL                                               | lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[1] | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 168.24 MHz ( period = 5.944 ns ) |
+| X4_INTERNAL                                               | lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[0] | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 168.32 MHz ( period = 5.941 ns ) |
+| CLK_CTR[1]                                                | REQUEST_FOR_SP_Q3                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 171.50 MHz ( period = 5.831 ns ) |
+| CLK_CTR[0]                                                | REQUEST_FOR_SP_Q2                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 172.62 MHz ( period = 5.793 ns ) |
+| CLK_CTR[1]                                                | REQUEST_FOR_SP_Q4                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 175.87 MHz ( period = 5.686 ns ) |
+| QUADRATURE_ERROR                                          | OK_TO_REMOVE_QUADRATURE_ERROR                             | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 176.49 MHz ( period = 5.666 ns ) |
+| CLK_CTR[1]                                                | UP_DN_INTERNAL                                            | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 183.22 MHz ( period = 5.458 ns ) |
+| CLK_CTR[1]                                                | OK_FOR_X4_PULSE                                           | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 183.86 MHz ( period = 5.439 ns ) |
+| TMPBB                                                     | CLK_CTR[0]                                                | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 185.08 MHz ( period = 5.403 ns ) |
+| TMPBB                                                     | CLK_CTR[1]                                                | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 185.08 MHz ( period = 5.403 ns ) |
+| TMPBB                                                     | REQUEST_FOR_SP_Q1                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 187.51 MHz ( period = 5.333 ns ) |
+| AAA                                                       | CLK_CTR[0]                                                | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 187.55 MHz ( period = 5.332 ns ) |
+| AAA                                                       | CLK_CTR[1]                                                | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 187.55 MHz ( period = 5.332 ns ) |
+| TMPAA                                                     | CLK_CTR[0]                                                | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 188.11 MHz ( period = 5.316 ns ) |
+| TMPAA                                                     | CLK_CTR[1]                                                | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 188.11 MHz ( period = 5.316 ns ) |
+| TMPBB                                                     | QUADRATURE_ERROR                                          | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 188.96 MHz ( period = 5.292 ns ) |
+| TMPAA                                                     | REQUEST_FOR_SP_Q1                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 191.64 MHz ( period = 5.218 ns ) |
+| CLK_CTR[1]                                                | REQUEST_FOR_SP_Q2                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 194.48 MHz ( period = 5.142 ns ) |
+| TMPAA                                                     | QUADRATURE_ERROR                                          | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 194.78 MHz ( period = 5.134 ns ) |
+| CLK_CTR[0]                                                | REQUEST_FOR_SP_Q1                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 196.35 MHz ( period = 5.093 ns ) |
+| TMPBB                                                     | UP_DN_INTERNAL                                            | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 201.25 MHz ( period = 4.969 ns ) |
+| REQUEST_FOR_SP_Q2                                         | REQUEST_FOR_SP_Q2                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 209.12 MHz ( period = 4.782 ns ) |
+| BBB                                                       | CLK_CTR[0]                                                | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 215.75 MHz ( period = 4.635 ns ) |
+| BBB                                                       | CLK_CTR[1]                                                | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 215.75 MHz ( period = 4.635 ns ) |
+| TMPAA                                                     | REQUEST_FOR_SP_Q3                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 219.73 MHz ( period = 4.551 ns ) |
+| TMPBB                                                     | REQUEST_FOR_SP_Q3                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 220.65 MHz ( period = 4.532 ns ) |
+| BBB                                                       | REQUEST_FOR_SP_Q2                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 221.53 MHz ( period = 4.514 ns ) |
+| TMPAA                                                     | REQUEST_FOR_SP_Q2                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 222.87 MHz ( period = 4.487 ns ) |
+| REQUEST_FOR_SP_Q3                                         | REQUEST_FOR_SP_Q3                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 224.06 MHz ( period = 4.463 ns ) |
+| CLK_CTR[1]                                                | REQUEST_FOR_SP_Q1                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 225.12 MHz ( period = 4.442 ns ) |
+| TMPBB                                                     | REQUEST_FOR_SP_Q4                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 230.41 MHz ( period = 4.340 ns ) |
+| TMPAA                                                     | UP_DN_INTERNAL                                            | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | 232.34 MHz ( period = 4.304 ns ) |
+| AAA                                                       | REQUEST_FOR_SP_Q4                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| REQUEST_FOR_SP_Q4                                         | REQUEST_FOR_SP_Q4                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| CLK_CTR[1]                                                | QUADRATURE_ERROR                                          | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| UP_DN_INTERNAL                                            | UP_DN_INTERNAL                                            | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| REQUEST_FOR_SP_Q1                                         | REQUEST_FOR_SP_Q1                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| TMPBB                                                     | X4_INTERNAL                                               | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| AAA                                                       | REQUEST_FOR_SP_Q1                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| TMPBB                                                     | REQUEST_FOR_X4_PULSE                                      | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| AAA                                                       | X4_INTERNAL                                               | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| TMPAA                                                     | X4_INTERNAL                                               | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| BBB                                                       | REQUEST_FOR_SP_Q1                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| AAA                                                       | QUADRATURE_ERROR                                          | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| AAA                                                       | REQUEST_FOR_X4_PULSE                                      | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| TMPAA                                                     | REQUEST_FOR_X4_PULSE                                      | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| BBB                                                       | QUADRATURE_ERROR                                          | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| BBB                                                       | UP_DN_INTERNAL                                            | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| AAA                                                       | REQUEST_FOR_SP_Q3                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| AAA                                                       | UP_DN_INTERNAL                                            | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| TMPAA                                                     | OK_FOR_X4_PULSE                                           | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| CLK_CTR[0]                                                | CLK_CTR[0]                                                | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| CLK_CTR[0]                                                | CLK_CTR[1]                                                | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| CLK_CTR[0]                                                | QUADRATURE_ERROR                                          | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| CLK_CTR[1]                                                | CLK_CTR[0]                                                | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| CLK_CTR[1]                                                | CLK_CTR[1]                                                | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[1] | OK_TO_REMOVE_QUADRATURE_ERROR                             | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| REQUEST_FOR_X4_PULSE                                      | OK_FOR_X4_PULSE                                           | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| BBB                                                       | X4_INTERNAL                                               | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[1] | lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[1] | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[1] | lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[0] | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| BBB                                                       | REQUEST_FOR_X4_PULSE                                      | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| BBB                                                       | OK_FOR_X4_PULSE                                           | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| REQUEST_FOR_X4_PULSE                                      | X4_INTERNAL                                               | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| OK_FOR_X4_PULSE                                           | X4_INTERNAL                                               | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| AAA                                                       | OK_FOR_X4_PULSE                                           | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| BBB                                                       | REQUEST_FOR_SP_Q3                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| TMPBB                                                     | OK_FOR_X4_PULSE                                           | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| TMPAA                                                     | REQUEST_FOR_SP_Q4                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[0] | lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[1] | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[1] | LATCHED_QUADRATURE_ERROR                                  | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| BBB                                                       | REQUEST_FOR_SP_Q4                                         | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[0] | OK_TO_REMOVE_QUADRATURE_ERROR                             | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[0] | LATCHED_QUADRATURE_ERROR                                  | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[0] | lpm_counter:CNT_rtl_0|alt_synch_counter:wysi_counter|q[0] | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| TMPBB                                                     | BBB                                                       | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| LATCHED_QUADRATURE_ERROR                                  | LATCHED_QUADRATURE_ERROR                                  | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| LATCHED_QUADRATURE_ERROR                                  | OK_TO_REMOVE_QUADRATURE_ERROR                             | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| CLK_CTR[0]                                                | REQUEST_FOR_X4_PULSE                                      | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| TMPAA                                                     | AAA                                                       | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| OK_TO_REMOVE_QUADRATURE_ERROR                             | LATCHED_QUADRATURE_ERROR                                  | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
+| CLK_CTR[1]                                                | REQUEST_FOR_X4_PULSE                                      | clk               | clk                    | 33.33 MHz ( period = 30.003 ns ) | Restricted to 233.64 MHz         |
++-----------------------------------------------------------+-----------------------------------------------------------+-------------------+------------------------+----------------------------------+----------------------------------+
+
++-----------------------------------------------------------------------------+
+| tsu (Input Setup Times)                                                     |
++-----------------------------------------------------------------------------+
++---------------------+------------+
+| Data Pin Name       | Actual tsu |
+|    -- Register Name |            |
+|       -- Clock Name |            |
++---------------------+------------+
+| ch_a                | 4.194 ns   |
+|    -- TMPAA         | 4.194 ns   |
+|       -- clk        | 4.194 ns   |
+| ch_b                | 4.008 ns   |
+|    -- TMPBB         | 4.008 ns   |
+|       -- clk        | 4.008 ns   |
++---------------------+------------+
+
++-----------------------------------------------------------------------------+
+| th (Input Hold Times)                                                       |
++-----------------------------------------------------------------------------+
++---------------------+-----------+
+| Data Pin Name       | Actual th |
+|    -- Register Name |           |
+|       -- Clock Name |           |
++---------------------+-----------+
+| ch_b                | <= 0 ns   |
+|    -- TMPBB         | <= 0 ns   |
+|       -- clk        | <= 0 ns   |
+| ch_a                | <= 0 ns   |
+|    -- TMPAA         | <= 0 ns   |
+|       -- clk        | <= 0 ns   |
++---------------------+-----------+
+
++-----------------------------------------------------------------------------+
+| tco (Clock to Output Delays)                                                |
++-----------------------------------------------------------------------------+
++--------------------------------+------------+
+| Output Name                    | Actual tco |
+|    -- Register Name            |            |
+|       -- Clock Name            |            |
++--------------------------------+------------+
+| x4                             | 11.005 ns  |
+|    -- X4_INTERNAL              | 11.005 ns  |
+|       -- clk                   | 11.005 ns  |
+| speed_pulse_q1                 | 9.071 ns   |
+|    -- REQUEST_FOR_SP_Q1        | 9.071 ns   |
+|       -- clk                   | 9.071 ns   |
+| ch_b_out                       | 8.953 ns   |
+|    -- TMPBB                    | 8.953 ns   |
+|       -- clk                   | 8.953 ns   |
+| speed_pulse_q4                 | 8.933 ns   |
+|    -- REQUEST_FOR_SP_Q4        | 8.933 ns   |
+|       -- clk                   | 8.933 ns   |
+| err                            | 8.805 ns   |
+|    -- LATCHED_QUADRATURE_ERROR | 8.805 ns   |
+|       -- clk                   | 8.805 ns   |
+| up_dn                          | 8.628 ns   |
+|    -- UP_DN_INTERNAL           | 8.628 ns   |
+|       -- clk                   | 8.628 ns   |
+| speed_pulse_q3                 | 8.536 ns   |
+|    -- REQUEST_FOR_SP_Q3        | 8.536 ns   |
+|       -- clk                   | 8.536 ns   |
+| ch_a_out                       | 7.422 ns   |
+|    -- TMPAA                    | 7.422 ns   |
+|       -- clk                   | 7.422 ns   |
+| speed_pulse_q2                 | 7.149 ns   |
+|    -- REQUEST_FOR_SP_Q2        | 7.149 ns   |
+|       -- clk                   | 7.149 ns   |
++--------------------------------+------------+
+
++-----------------------------------------------------------------------------+
+| Processing Time                                                             |
++-----------------------------------------------------------------------------+
++-------------------+--------------+
+| Module Name       | Elapsed Time |
++-------------------+--------------+
+| Database Builder  | 00:00:01     |
+| Logic Synthesizer | 00:00:01     |
+| Fitter            | 00:00:10     |
+| Assembler         | 00:00:01     |
+| Timing Analyzer   | 00:00:00     |
+| Total             | 00:00:15     |
++-------------------+--------------+
+

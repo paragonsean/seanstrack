@@ -1,0 +1,9 @@
+# Monitor stuff
+V300=33333333  # Clock frequency in Hz. 
+V301=33333333  # Clock frequency in Hz. 
+V302=33333333  # Clock frequency in Hz. 
+V303=33333333  # Clock frequency in Hz. 
+V304=33333333  # Clock frequency in Hz. 
+-xcxcxcxc
+V306=33333333  # Clock frequency in Hz. 
+V307=33333333  # Clock frequency in Hz. 

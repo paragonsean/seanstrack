@@ -1,0 +1,51 @@
+*PADS-ECO-V3.0-MILS*
+*REMARK*  old file: C:\Documents and Settings\George\My Documents\PADS Projects\Files\ecogtmp0.asc
+*REMARK*  new file: C:\Documents and Settings\George\My Documents\PADS Projects\Files\J5458-00-Visi-Trak\misc\J5458-00.ASC
+*REMARK*  created by ECOGEN (Version 6.1b) on 9/26/2006 5:28:13 PM
+
+PART DIFFERENCES
+----------------
+OLD DESIGN                                        NEW DESIGN
+Ref-des	Part-type:Decal                           Ref-des	Part-type:Decal
+
+NET DIFFERENCES
+----------------
+OLD DESIGN                                        NEW DESIGN
+<none>                                            ADDR0
+<none>                                            ADDR1
+<none>                                            CLKOUT1_3
+<none>                                            CLKOUT1_4
+<none>                                            CLKOUT1_5
+<none>                                            CLKOUT2_3
+<none>                                            CLKOUT2_4
+<none>                                            CLKOUT2_5
+
+SWAPPED GATE DIFFERENCES
+------------------------
+OLD DESIGN                                        NEW DESIGN
+
+SWAPPED PIN DIFFERENCES
+------------------------
+OLD DESIGN                                        NEW DESIGN
+
+
+UNMATCHED NET PINS IN OLD DESIGN
+--------------------------------
+
+UNMATCHED NET PINS IN NEW DESIGN
+--------------------------------
+ADDR0               U1.AA10	
+ADDR1               U1.T12	
+CLKOUT1_3           U15.4	
+CLKOUT1_4           U15.6	
+CLKOUT1_5           U15.7	
+CLKOUT2_3           U15.17	
+CLKOUT2_4           U15.15	
+CLKOUT2_5           U15.14	
+
+ATTRIBUTE DIFFERENCES
+---------------------
+Attribute Level	[ OLD DESIGN Parent -> NEW DESIGN Parent ]
+
+          Attribute Name           Old Value                New Value
+

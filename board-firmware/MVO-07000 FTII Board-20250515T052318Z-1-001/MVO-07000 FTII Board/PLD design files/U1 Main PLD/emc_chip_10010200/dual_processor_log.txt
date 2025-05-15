@@ -1,0 +1,490 @@
+Altera SOPC Builder Version 5.10 Build 216
+Copyright (c) 1999-2005 Altera Corporation.  All rights reserved.
+
+
+# 2007.04.13 10:14:13 (*) mk_custom_sdk starting
+# 2007.04.13 10:14:13 (*) Reading project D:/qdesigns_5_1/Apex20KE/emc_chip_10010200/dual_processor.ptf.
+
+# 2007.04.13 10:14:13 (*) Finding all CPUs
+
+# 2007.04.13 10:14:13 (*) Finding all available components
+# 2007.04.13 10:14:13 (*) Reading D:/qdesigns_5_1/Apex20KE/emc_chip_10010200/.sopc_builder/install.ptf
+
+# 2007.04.13 10:14:13 (*) Found 60 components
+
+# 2007.04.13 10:14:14 (*) Finding all peripherals
+
+# 2007.04.13 10:14:14 (*) Finding software components
+
+# 2007.04.13 10:14:15 (*) Generating gnu SDK for ad_nios
+# 2007.04.13 10:14:15 (*) Copying Files for ad_nios
+
+# 2007.04.13 10:14:15 (*) Generating Memory Map for ad_nios
+
+# 2007.04.13 10:14:15 (*) Generating Makefile and excalibur.h for ad_nios
+
+# 2007.04.13 10:14:15 (*) Generating gnu SDK for enet_nios
+# 2007.04.13 10:14:15 (*) Copying Files for enet_nios
+
+# 2007.04.13 10:14:16 (*) Generating Memory Map for enet_nios
+
+# 2007.04.13 10:14:16 (*) Generating Makefile and excalibur.h for enet_nios
+
+# 2007.04.13 10:14:19 (*) Wrote gnu tcl script for enet_nios
+
+# 2007.04.13 10:14:20 (*) Making Library
+
+# 2007.04.13.10:14:22 --- Deleting libnios16.a libnios16_debug.a
+
+# 2007.04.13.10:14:22 --- Building libnios16.a
+
+# 2007.04.13.10:14:22 --- Building libnios16_debug.a
+
+# 2007.04.13 10:14:24 (*) Making Library
+
+# 2007.04.13.10:14:25 --- Deleting libnios32.a libnios32_debug.a
+
+# 2007.04.13.10:14:25 --- Compiling flash_AMD29LV800.c
+
+# 2007.04.13.10:14:26 --- Assembling jtag_rxchar.s
+
+# 2007.04.13.10:14:26 --- Assembling jtag_tx_ready.s
+
+# 2007.04.13.10:14:26 --- Assembling jtag_txchar.s
+
+# 2007.04.13.10:14:26 --- Assembling jtag_txcr.s
+
+# 2007.04.13.10:14:27 --- Assembling jtag_txhex.s
+
+# 2007.04.13.10:14:27 --- Assembling jtag_txhex16.s
+
+# 2007.04.13.10:14:27 --- Assembling jtag_txhex32.s
+
+# 2007.04.13.10:14:27 --- Assembling jtag_txstring.s
+
+# 2007.04.13.10:14:27 --- Compiling lan91c111.c
+
+# 2007.04.13.10:14:28 --- Assembling nios_atexit.s
+
+# 2007.04.13.10:14:28 --- Compiling nios_cache.c
+
+# 2007.04.13.10:14:28 --- Assembling nios_close.s
+
+# 2007.04.13.10:14:28 --- Assembling nios_copyrange.s
+
+# 2007.04.13.10:14:28 --- Assembling nios_cstubs.s
+
+# 2007.04.13.10:14:28 --- Assembling nios_cwpmanager.s
+
+# 2007.04.13.10:14:29 --- Compiling nios_debug.c
+
+# 2007.04.13.10:14:29 --- Assembling nios_delay.s
+
+# 2007.04.13.10:14:29 --- Compiling nios_fprintf.c
+
+# 2007.04.13.10:14:29 --- Assembling nios_fstat.s
+
+# 2007.04.13.10:14:29 --- Compiling nios_gdb_stub.c
+
+# 2007.04.13.10:14:30 --- Compiling nios_gdb_stub_io.c
+
+# 2007.04.13.10:14:30 --- Assembling nios_gdb_stub_isr.s
+
+# 2007.04.13.10:14:30 --- Assembling nios_getctlreg.s
+
+# 2007.04.13.10:14:31 --- Assembling nios_getpid.s
+
+# 2007.04.13.10:14:31 --- Compiling nios_gprof.c
+
+# 2007.04.13.10:14:31 --- Assembling nios_isatty.s
+
+# 2007.04.13.10:14:31 --- Assembling nios_isrmanager.s
+
+# 2007.04.13.10:14:31 --- Assembling nios_jumptoreset.s
+
+# 2007.04.13.10:14:32 --- Assembling nios_jumptostart.s
+
+# 2007.04.13.10:14:32 --- Assembling nios_kill.s
+
+# 2007.04.13.10:14:32 --- Assembling nios_lseek.s
+
+# 2007.04.13.10:14:32 --- Assembling nios_math1.s
+
+# 2007.04.13.10:14:32 --- Compiling nios_more_cstubs.c
+
+# 2007.04.13.10:14:32 --- Compiling nios_premain_hook.c
+
+# 2007.04.13.10:14:33 --- Compiling nios_printf.c
+
+# 2007.04.13.10:14:33 --- Assembling nios_sbrk.s
+
+# 2007.04.13.10:14:33 --- Assembling nios_setjmp.s
+
+# 2007.04.13.10:14:33 --- Assembling nios_setup.s
+
+# 2007.04.13.10:14:33 --- Compiling nios_sprintf.c
+
+# 2007.04.13.10:14:34 --- Compiling nios_uart.c
+
+# 2007.04.13.10:14:34 --- Assembling nios_zerorange.s
+
+# 2007.04.13.10:14:34 --- Compiling pio_lcd16207.c
+
+# 2007.04.13.10:14:34 --- Compiling pio_showhex.c
+
+# 2007.04.13.10:14:35 --- Compiling plugs.c
+
+# 2007.04.13.10:14:36 --- Compiling plugs_dhcp.c
+
+# 2007.04.13.10:14:37 --- Compiling plugs_print.c
+
+# 2007.04.13.10:14:37 --- Assembling spi_rxchar.s
+
+# 2007.04.13.10:14:37 --- Assembling spi_txchar.s
+
+# 2007.04.13.10:14:37 --- Assembling timer_milliseconds.s
+
+# 2007.04.13.10:14:38 --- Assembling uart_rxchar.s
+
+# 2007.04.13.10:14:38 --- Assembling uart_txchar.s
+
+# 2007.04.13.10:14:38 --- Assembling uart_txcr.s
+
+# 2007.04.13.10:14:38 --- Assembling uart_txhex.s
+
+# 2007.04.13.10:14:38 --- Assembling uart_txhex16.s
+
+# 2007.04.13.10:14:38 --- Assembling uart_txhex32.s
+
+# 2007.04.13.10:14:38 --- Assembling uart_txstring.s
+
+# 2007.04.13.10:14:38 --- Building libnios32.a
+
+# 2007.04.13.10:14:39 --- Compiling flash_AMD29LV800.c
+
+# 2007.04.13.10:14:39 --- Assembling jtag_rxchar.s
+
+# 2007.04.13.10:14:39 --- Assembling jtag_tx_ready.s
+
+# 2007.04.13.10:14:39 --- Assembling jtag_txchar.s
+
+# 2007.04.13.10:14:39 --- Assembling jtag_txcr.s
+
+# 2007.04.13.10:14:40 --- Assembling jtag_txhex.s
+
+# 2007.04.13.10:14:40 --- Assembling jtag_txhex16.s
+
+# 2007.04.13.10:14:40 --- Assembling jtag_txhex32.s
+
+# 2007.04.13.10:14:40 --- Assembling jtag_txstring.s
+
+# 2007.04.13.10:14:40 --- Compiling lan91c111.c
+
+# 2007.04.13.10:14:40 --- Assembling nios_atexit.s
+
+# 2007.04.13.10:14:41 --- Compiling nios_cache.c
+
+# 2007.04.13.10:14:41 --- Assembling nios_close.s
+
+# 2007.04.13.10:14:41 --- Assembling nios_copyrange.s
+
+# 2007.04.13.10:14:41 --- Assembling nios_cstubs.s
+
+# 2007.04.13.10:14:41 --- Assembling nios_cwpmanager.s
+
+# 2007.04.13.10:14:41 --- Compiling nios_debug.c
+
+# 2007.04.13.10:14:42 --- Assembling nios_delay.s
+
+# 2007.04.13.10:14:42 --- Compiling nios_fprintf.c
+
+# 2007.04.13.10:14:42 --- Assembling nios_fstat.s
+
+# 2007.04.13.10:14:42 --- Compiling nios_gdb_stub.c
+
+# 2007.04.13.10:14:42 --- Compiling nios_gdb_stub_io.c
+
+# 2007.04.13.10:14:43 --- Assembling nios_gdb_stub_isr.s
+
+# 2007.04.13.10:14:43 --- Assembling nios_getctlreg.s
+
+# 2007.04.13.10:14:43 --- Assembling nios_getpid.s
+
+# 2007.04.13.10:14:43 --- Compiling nios_gprof.c
+
+# 2007.04.13.10:14:43 --- Assembling nios_isatty.s
+
+# 2007.04.13.10:14:43 --- Assembling nios_isrmanager.s
+
+# 2007.04.13.10:14:44 --- Assembling nios_jumptoreset.s
+
+# 2007.04.13.10:14:44 --- Assembling nios_jumptostart.s
+
+# 2007.04.13.10:14:44 --- Assembling nios_kill.s
+
+# 2007.04.13.10:14:44 --- Assembling nios_lseek.s
+
+# 2007.04.13.10:14:44 --- Assembling nios_math1.s
+
+# 2007.04.13.10:14:44 --- Compiling nios_more_cstubs.c
+
+# 2007.04.13.10:14:44 --- Compiling nios_premain_hook.c
+
+# 2007.04.13.10:14:45 --- Compiling nios_printf.c
+
+# 2007.04.13.10:14:45 --- Assembling nios_sbrk.s
+
+# 2007.04.13.10:14:45 --- Assembling nios_setjmp.s
+
+# 2007.04.13.10:14:45 --- Assembling nios_setup.s
+
+# 2007.04.13.10:14:45 --- Compiling nios_sprintf.c
+
+# 2007.04.13.10:14:46 --- Compiling nios_uart.c
+
+# 2007.04.13.10:14:46 --- Assembling nios_zerorange.s
+
+# 2007.04.13.10:14:46 --- Compiling pio_lcd16207.c
+
+# 2007.04.13.10:14:46 --- Compiling pio_showhex.c
+
+# 2007.04.13.10:14:47 --- Compiling plugs.c
+
+# 2007.04.13.10:14:47 --- Compiling plugs_dhcp.c
+
+# 2007.04.13.10:14:47 --- Compiling plugs_print.c
+
+# 2007.04.13.10:14:48 --- Assembling spi_rxchar.s
+
+# 2007.04.13.10:14:48 --- Assembling spi_txchar.s
+
+# 2007.04.13.10:14:48 --- Assembling timer_milliseconds.s
+
+# 2007.04.13.10:14:48 --- Assembling uart_rxchar.s
+
+# 2007.04.13.10:14:48 --- Assembling uart_txchar.s
+
+# 2007.04.13.10:14:48 --- Assembling uart_txcr.s
+
+# 2007.04.13.10:14:48 --- Assembling uart_txhex.s
+
+# 2007.04.13.10:14:49 --- Assembling uart_txhex16.s
+
+# 2007.04.13.10:14:49 --- Assembling uart_txhex32.s
+
+# 2007.04.13.10:14:49 --- Assembling uart_txstring.s
+
+# 2007.04.13.10:14:49 --- Building libnios32_debug.a
+
+# 2007.04.13.10:14:49 --- Building nios_gdb_standalone.srec
+
+# 2007.04.13 10:14:50 (*) Building ad_rom_contents.srec using "textfile"
+# 2007.04.13 10:14:50 (*) cd D:/qdesigns_5_1/Apex20KE/emc_chip_10010200 ; nios-convert --outfile=ad_rom_contents.srec --iformat=srec --infile=ad_nios_sdk/src/ad_boot.srec
+
+# 2007.04.13 10:14:51 (*) Building ad_result_ram_contents.srec using "blank"
+# 2007.04.13 10:14:51 (*) cd D:/qdesigns_5_1/Apex20KE/emc_chip_10010200 ; nios-convert --outfile=ad_result_ram_contents.srec --address_low=8192 --address_high=8256
+
+# 2007.04.13 10:14:53 (*) Building ad_setup_ram_contents.srec using "blank"
+# 2007.04.13 10:14:53 (*) cd D:/qdesigns_5_1/Apex20KE/emc_chip_10010200 ; nios-convert --outfile=ad_setup_ram_contents.srec --address_low=8448 --address_high=8544
+
+# 2007.04.13 10:14:54 (*) Building ad_cmd_ram_contents.srec using "blank"
+# 2007.04.13 10:14:54 (*) cd D:/qdesigns_5_1/Apex20KE/emc_chip_10010200 ; nios-convert --outfile=ad_cmd_ram_contents.srec --address_low=8704 --address_high=8708
+
+# 2007.04.13 10:14:56 (*) Building ad_ram_contents.srec using "blank"
+# 2007.04.13 10:14:56 (*) cd D:/qdesigns_5_1/Apex20KE/emc_chip_10010200 ; nios-convert --outfile=ad_ram_contents.srec --address_low=12288 --address_high=14336
+
+# 2007.04.13 10:14:57 (*) Building enet_boot_rom_contents.srec using "germs"
+# 2007.04.13 10:14:57 (*) cd D:/qdesigns_5_1/Apex20KE/emc_chip_10010200 ; nios-build --sdk_directory=D:/qdesigns_5_1/Apex20KE/emc_chip_10010200/enet_nios_sdk -np -s -o enet_boot_rom_contents.srec -b 0-1536 D:/qdesigns_5_1/Apex20KE/emc_chip_10010200/enet_nios_sdk/lib/nios_germs_monitor.s
+
+# 2007.04.13 10:14:59 (*) Building ad_result_ram_contents.srec using "blank"
+# 2007.04.13 10:14:59 (*) cd D:/qdesigns_5_1/Apex20KE/emc_chip_10010200 ; nios-convert --outfile=ad_result_ram_contents.srec --address_low=8192 --address_high=8256
+
+# 2007.04.13 10:15:00 (*) Building ad_setup_ram_contents.srec using "blank"
+# 2007.04.13 10:15:00 (*) cd D:/qdesigns_5_1/Apex20KE/emc_chip_10010200 ; nios-convert --outfile=ad_setup_ram_contents.srec --address_low=8448 --address_high=8544
+
+# 2007.04.13 10:15:02 (*) Building ad_cmd_ram_contents.srec using "blank"
+# 2007.04.13 10:15:02 (*) cd D:/qdesigns_5_1/Apex20KE/emc_chip_10010200 ; nios-convert --outfile=ad_cmd_ram_contents.srec --address_low=8704 --address_high=8708
+
+# 2007.04.13 10:15:03 (*) Building ad_ram_contents.srec using "blank"
+# 2007.04.13 10:15:03 (*) cd D:/qdesigns_5_1/Apex20KE/emc_chip_10010200 ; nios-convert --outfile=ad_ram_contents.srec --address_low=12288 --address_high=14336
+
+# 2007.04.13 10:15:04 (*) Building ext_flash_contents.srec using "blank"
+# 2007.04.13 10:15:04 (*) cd D:/qdesigns_5_1/Apex20KE/emc_chip_10010200 ; nios-convert --outfile=ext_flash_contents.srec --address_low=1048576 --address_high=1114111
+
+# 2007.04.13 10:15:06 (*) mk_custom_sdk finishing
+
+# 2007.04.13 10:15:06 (*) Starting generation for system: dual_processor.
+
+..
+....
+.
+..
+....
+...
+.
+......
+......
+......
+..
+.
+.
+.
+.
+.
+
+# 2007.04.13 10:15:08 (*) Running Generator Program for enet_boot_rom
+
+# 2007.04.13 10:15:11 (*) Running Generator Program for ad_rom
+
+# 2007.04.13 10:15:13 (*) Running Generator Program for ad_result_ram
+
+# 2007.04.13 10:15:16 (*) Running Generator Program for ad_setup_ram
+
+# 2007.04.13 10:15:19 (*) Running Generator Program for ad_cmd_ram
+
+# 2007.04.13 10:15:22 (*) Running Generator Program for ad_ram
+
+# 2007.04.13 10:15:25 (*) Running Generator Program for timer1
+
+# 2007.04.13 10:15:28 (*) Running Generator Program for uart1
+
+# 2007.04.13 10:15:31 (*) Running Generator Program for uart2
+
+# 2007.04.13 10:15:35 (*) Running Generator Program for button_pio
+
+# 2007.04.13 10:15:37 (*) Running Generator Program for seven_seg_pio
+
+# 2007.04.13 10:15:39 (*) Running Generator Program for misc_outs
+
+# 2007.04.13 10:15:42 (*) Running Generator Program for watchdog
+
+# 2007.04.13 10:15:44 (*) Running Generator Program for adc_spi
+
+# 2007.04.13 10:15:47 (*) Running Generator Program for dac_spi
+
+# 2007.04.13 10:15:50 (*) Running Generator Program for sel_ana17_24
+
+# 2007.04.13 10:15:53 (*) Running Generator Program for misc_ins
+
+# 2007.04.13 10:15:56 (*) Running Generator Program for pv_unit1
+
+# 2007.04.13 10:15:59 (*) Running Generator Program for opto_data
+
+# 2007.04.13 10:16:01 (*) Running Generator Program for opto_control
+
+# 2007.04.13 10:16:04 (*) Running Generator Program for axis1_int
+
+# 2007.04.13 10:16:06 (*) Running Generator Program for one_ms_timer
+
+# 2007.04.13 10:16:09 (*) Running Generator Program for timer2
+
+# 2007.04.13 10:16:12 (*) Running Generator Program for WD_rst_timer
+
+# 2007.04.13 10:16:14 (*) Running Generator Program for pv_unit2
+
+# 2007.04.13 10:16:17 (*) Running Generator Program for o_scope_timer
+
+# 2007.04.13 10:16:19 (*) Running Generator Program for axis1_div_pio
+
+# 2007.04.13 10:16:22 (*) Running Generator Program for axis2_div_pio
+
+# 2007.04.13 10:16:24 (*) Running Generator Program for control_int
+
+# 2007.04.13 10:16:27 (*) Running Generator Program for bounceback_int
+
+# 2007.04.13 10:16:29 (*) Running Generator Program for ls_int_input
+
+# 2007.04.13 10:16:32 (*) Running Generator Program for cont_int_output
+
+# 2007.04.13 10:16:34 (*) Running Generator Program for lvdt_demod1_phase
+
+# 2007.04.13 10:16:37 (*) Running Generator Program for lvdt_demod2_phase
+
+# 2007.04.13 10:16:39 (*) Running Generator Program for lvdt_osc_phase
+
+# 2007.04.13 10:16:42 (*) Running Generator Program for samp_interface
+
+# 2007.04.13 10:16:44 (*) Running Generator Program for reboot
+
+# 2007.04.13 10:16:46 (*) Running Generator Program for SRAM1
+
+# 2007.04.13 10:16:48 (*) Running Generator Program for USR0_enet_nios
+
+# 2007.04.13 10:16:51 (*) Running Generator Program for ad_nios
+
+# 2007.04.13 10:16:53 (*)   To reduce system recompile time, check "Smart Recompile" in the Nios wizard.
+............................
+
+# 2007.04.13 10:17:10 (*) Running Generator Program for enet_nios
+
+# 2007.04.13 10:17:12 (*)   To reduce system recompile time, check "Smart Recompile" in the Nios wizard.
+.............................
+
+# 2007.04.13 10:17:48 (*) Running Generator Program for MUL_enet_nios
+
+
+# 2007.04.13 10:17:49 (*) Making arbitration and system (top) modules.
+
+# 2007.04.13 10:29:30 (*) Generating Quartus symbol for top level: dual_processor
+
+# 2007.04.13 10:29:30 (*) Generating Symbol D:/qdesigns_5_1/Apex20KE/emc_chip_10010200/dual_processor.bsf
+
+# 2007.04.13 10:29:31 (*) Creating command-line system-generation script: D:/qdesigns_5_1/Apex20KE/emc_chip_10010200/dual_processor_generation_script
+
+# 2007.04.13 10:29:31 (*) Running setup for HDL simulator: modelsim
+
+
+Building ModelSim Project
+
+'vsim' is not recognized as an internal or external command,
+operable program or batch file.
+
+# 2007.04.13 10:29:37 (*) Setting up Quartus with dual_processor_setup_quartus.tcl
+c:/altera/quartus51/bin/quartus_sh -t dual_processor_setup_quartus.tcl
+
+
+Info: *******************************************************************
+
+Info: Running Quartus II Shell
+    Info: Version 5.1 Build 216 03/06/2006 Service Pack 2.01 SJ Full Version
+    Info: Copyright (C) 1991-2006 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Fri Apr 13 10:29:37 2007
+
+Info: Command: quartus_sh -t dual_processor_setup_quartus.tcl
+
+Info: Evaluation of Tcl script dual_processor_setup_quartus.tcl was successful
+Info: Quartus II Shell was successful. 0 errors, 0 warnings
+    Info: Processing ended: Fri Apr 13 10:29:38 2007
+    Info: Elapsed time: 00:00:01
+
+# 2007.04.13 10:29:39 (*) Completed generation for system: dual_processor.
+# 2007.04.13 10:29:39 (*) THE FOLLOWING SYSTEM ITEMS HAVE BEEN GENERATED:
+  ad_nios include files such as memory maps : D:/qdesigns_5_1/Apex20KE/emc_chip_10010200/ad_nios_sdk/inc/ 
+  ad_nios library files : D:/qdesigns_5_1/Apex20KE/emc_chip_10010200/ad_nios_sdk/lib/ 
+  ad_nios example programs : D:/qdesigns_5_1/Apex20KE/emc_chip_10010200/ad_nios_sdk/src/ 
+  SOPC Builder database : D:/qdesigns_5_1/Apex20KE/emc_chip_10010200/dual_processor.ptf 
+  System HDL Model : D:/qdesigns_5_1/Apex20KE/emc_chip_10010200/dual_processor.v 
+  System Generation Script : D:/qdesigns_5_1/Apex20KE/emc_chip_10010200/dual_processor_generation_script 
+  HDL Simulation Directory : D:/qdesigns_5_1/Apex20KE/emc_chip_10010200/dual_processor_sim 
+  enet_nios include files such as memory maps : D:/qdesigns_5_1/Apex20KE/emc_chip_10010200/enet_nios_sdk/inc/ 
+  enet_nios library files : D:/qdesigns_5_1/Apex20KE/emc_chip_10010200/enet_nios_sdk/lib/ 
+  enet_nios example programs : D:/qdesigns_5_1/Apex20KE/emc_chip_10010200/enet_nios_sdk/src/ 
+
+
+# 2007.04.13 10:29:39 (*) SUCCESS: SYSTEM GENERATION COMPLETED.
+
+
+Press 'Exit' to exit.

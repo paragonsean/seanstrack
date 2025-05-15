@@ -1,0 +1,3 @@
+Revision name:      emc_chip_10010200
+Created on:         Wednesday, May 10, 2006
+Based on :          emc_chip_10010100

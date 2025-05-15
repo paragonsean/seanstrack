@@ -1,0 +1,269 @@
+   SDK_INFO 
+   {
+      CPU_Architecture = "nios_32";
+      CPU_Data_Width = "32";
+      CUSTOM_INSTRUCTIONS 
+      {
+         CUSTOM_INSTRUCTION USR0
+         {
+            Opcode = "USR0";
+            Macro_Name = "divi";
+            Instruction_Format = "RR";
+         }
+      }
+      MEMORY_MAP 
+      {
+         ELEMENT enet_boot_rom
+         {
+            Name = "na_enet_boot_rom";
+            C_Structure = "";
+            Base_Address = "0x00000000";
+            Address_Span = "0x00000400";
+         }
+         ELEMENT MUL_enet_nios
+         {
+            Name = "na_MUL_enet_nios";
+            C_Structure = "";
+            Base_Address = "0x00000000";
+            Address_Span = "0x00000004";
+         }
+         ELEMENT enet_nios
+         {
+            Name = "na_enet_nios";
+            C_Structure = "void *";
+            Base_Address = "0x00000000";
+            Address_Span = "0x00000004";
+         }
+         ELEMENT lan91c111
+         {
+            Name = "na_lan91c111";
+            C_Structure = "";
+            Base_Address = "0x00000500";
+            Address_Span = "0x00000020";
+            IRQ_Number = "28";
+         }
+         ELEMENT ad_result_ram
+         {
+            Name = "na_ad_result_ram";
+            C_Structure = "";
+            Base_Address = "0x00002000";
+            Address_Span = "0x00000040";
+         }
+         ELEMENT ad_setup_ram
+         {
+            Name = "na_ad_setup_ram";
+            C_Structure = "";
+            Base_Address = "0x00002100";
+            Address_Span = "0x00000012";
+         }
+         ELEMENT ad_cmd_ram
+         {
+            Name = "na_ad_cmd_ram";
+            C_Structure = "";
+            Base_Address = "0x00002200";
+            Address_Span = "0x00000004";
+         }
+         ELEMENT timer1
+         {
+            Name = "na_timer1";
+            C_Structure = "np_timer *";
+            Base_Address = "0x00004000";
+            Address_Span = "0x00000020";
+            IRQ_Number = "16";
+         }
+         ELEMENT uart1
+         {
+            Name = "na_uart1";
+            C_Structure = "np_uart *";
+            Base_Address = "0x00004100";
+            Address_Span = "0x00000020";
+            IRQ_Number = "60";
+         }
+         ELEMENT uart2
+         {
+            Name = "na_uart2";
+            C_Structure = "np_uart *";
+            Base_Address = "0x00004200";
+            Address_Span = "0x00000020";
+            IRQ_Number = "61";
+         }
+         ELEMENT button_pio
+         {
+            Name = "na_button_pio";
+            C_Structure = "np_pio *";
+            Base_Address = "0x00004300";
+            Address_Span = "0x00000010";
+         }
+         ELEMENT seven_seg_pio
+         {
+            Name = "na_seven_seg_pio";
+            C_Structure = "np_pio *";
+            Base_Address = "0x00004400";
+            Address_Span = "0x00000010";
+         }
+         ELEMENT misc_outs
+         {
+            Name = "na_misc_outs";
+            C_Structure = "np_pio *";
+            Base_Address = "0x00004700";
+            Address_Span = "0x00000010";
+         }
+         ELEMENT watchdog
+         {
+            Name = "na_watchdog";
+            C_Structure = "np_timer *";
+            Base_Address = "0x00004900";
+            Address_Span = "0x00000020";
+            IRQ_Number = "24";
+         }
+         ELEMENT dac_spi
+         {
+            Name = "na_dac_spi";
+            C_Structure = "np_spi *";
+            Base_Address = "0x00004b00";
+            Address_Span = "0x00000020";
+            IRQ_Number = "59";
+         }
+         ELEMENT sel_ana17_20
+         {
+            Name = "na_sel_ana17_20";
+            C_Structure = "np_pio *";
+            Base_Address = "0x00004c00";
+            Address_Span = "0x00000010";
+         }
+         ELEMENT misc_ins
+         {
+            Name = "na_misc_ins";
+            C_Structure = "np_pio *";
+            Base_Address = "0x00004d00";
+            Address_Span = "0x00000010";
+         }
+         ELEMENT pv_unit1
+         {
+            Name = "na_pv_unit1";
+            C_Structure = "np_usersocket *";
+            Base_Address = "0x00004d40";
+            Address_Span = "0x00000040";
+         }
+         ELEMENT opto_data
+         {
+            Name = "na_opto_data";
+            C_Structure = "np_pio *";
+            Base_Address = "0x00004e00";
+            Address_Span = "0x00000010";
+         }
+         ELEMENT opto_control
+         {
+            Name = "na_opto_control";
+            C_Structure = "np_pio *";
+            Base_Address = "0x00004f00";
+            Address_Span = "0x00000010";
+         }
+         ELEMENT axis1_int
+         {
+            Name = "na_axis1_int";
+            C_Structure = "np_pio *";
+            Base_Address = "0x00005010";
+            Address_Span = "0x00000010";
+            IRQ_Number = "18";
+         }
+         ELEMENT one_ms_timer
+         {
+            Name = "na_one_ms_timer";
+            C_Structure = "np_timer *";
+            Base_Address = "0x00005060";
+            Address_Span = "0x00000020";
+            IRQ_Number = "20";
+         }
+         ELEMENT timer2
+         {
+            Name = "na_timer2";
+            C_Structure = "np_timer *";
+            Base_Address = "0x00005080";
+            Address_Span = "0x00000020";
+            IRQ_Number = "21";
+         }
+         ELEMENT WD_rst_timer
+         {
+            Name = "na_WD_rst_timer";
+            C_Structure = "np_timer *";
+            Base_Address = "0x000050a0";
+            Address_Span = "0x00000020";
+            IRQ_Number = "23";
+         }
+         ELEMENT pv_unit2
+         {
+            Name = "na_pv_unit2";
+            C_Structure = "np_usersocket *";
+            Base_Address = "0x00005100";
+            Address_Span = "0x00000040";
+         }
+         ELEMENT o_scope_timer
+         {
+            Name = "na_o_scope_timer";
+            C_Structure = "np_timer *";
+            Base_Address = "0x00005200";
+            Address_Span = "0x00000020";
+            IRQ_Number = "25";
+         }
+         ELEMENT axis1_div_pio
+         {
+            Name = "na_axis1_div_pio";
+            C_Structure = "np_pio *";
+            Base_Address = "0x00005220";
+            Address_Span = "0x00000010";
+         }
+         ELEMENT axis2_div_pio
+         {
+            Name = "na_axis2_div_pio";
+            C_Structure = "np_pio *";
+            Base_Address = "0x00005230";
+            Address_Span = "0x00000010";
+         }
+         ELEMENT control_int
+         {
+            Name = "na_control_int";
+            C_Structure = "np_pio *";
+            Base_Address = "0x00005300";
+            Address_Span = "0x00000010";
+            IRQ_Number = "22";
+         }
+         ELEMENT bounceback_int
+         {
+            Name = "na_bounceback_int";
+            C_Structure = "np_pio *";
+            Base_Address = "0x00005320";
+            Address_Span = "0x00000010";
+            IRQ_Number = "17";
+         }
+         ELEMENT ls_int_input
+         {
+            Name = "na_ls_int_input";
+            C_Structure = "np_pio *";
+            Base_Address = "0x00005330";
+            Address_Span = "0x00000010";
+            IRQ_Number = "19";
+         }
+         ELEMENT cont_int_output
+         {
+            Name = "na_cont_int_output";
+            C_Structure = "np_pio *";
+            Base_Address = "0x00005340";
+            Address_Span = "0x00000010";
+         }
+         ELEMENT ext_flash
+         {
+            Name = "na_ext_flash";
+            C_Structure = "";
+            Base_Address = "0x00100000";
+            Address_Span = "0x00100000";
+         }
+         ELEMENT SRAM1
+         {
+            Name = "na_SRAM1";
+            C_Structure = "";
+            Base_Address = "0x00400000";
+            Address_Span = "0x00080000";
+         }
+      }
+   }

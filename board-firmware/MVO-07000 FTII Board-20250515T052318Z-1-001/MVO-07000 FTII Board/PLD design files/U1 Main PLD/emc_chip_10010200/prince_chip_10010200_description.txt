@@ -1,0 +1,3 @@
+Revision name:      prince_chip_10010200
+Created on:         Monday, May 15, 2006
+Based on :          emc_chip_10010200

@@ -1,0 +1,702 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+
+/*
+Copyright (C) 1991-2003 Altera Corporation
+Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+support information,  device programming or simulation file,  and any other
+associated  documentation or information  provided by  Altera  or a partner
+under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+other  use  of such  megafunction  design,  netlist,  support  information,
+device programming or simulation file,  or any other  related documentation
+or information  is prohibited  for  any  other purpose,  including, but not
+limited to  modification,  reverse engineering,  de-compiling, or use  with
+any other  silicon devices,  unless such use is  explicitly  licensed under
+a separate agreement with  Altera  or a megafunction partner.  Title to the
+intellectual property,  including patents,  copyrights,  trademarks,  trade
+secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+support  information,  device programming or simulation file,  or any other
+related documentation or information provided by  Altera  or a megafunction
+partner, remains with Altera, the megafunction partner, or their respective
+licensors. No other licenses, including any licenses needed under any third
+party's intellectual property, are provided herein.
+*/
+
+HEADER
+{
+	VERSION = 1;
+	TIME_UNIT = ns;
+	PRINT_OPTIONS = "Print_options_version 6\
+range_start 0ps\
+range_end 15.0us\
+width 1\
+names_percentage 25\
+comments 1\
+grid_lines 1\
+time_bars 1\
+name_every_page 0\
+expand_groups 0\
+print_all 1";
+	SIMULATION_TIME = 1000000.0;
+	GRID_PHASE = 0.0;
+	GRID_PERIOD = 10.0;
+	GRID_DUTY_CYCLE = 50;
+}
+
+SIGNAL("clk")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("ch_a")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("ch_b")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("rst")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("ch_a_out")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("ch_b_out")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("divisor")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 4;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("divisor[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "divisor";
+}
+
+SIGNAL("divisor[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "divisor";
+}
+
+SIGNAL("divisor[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "divisor";
+}
+
+SIGNAL("divisor[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "divisor";
+}
+
+TRANSITION_LIST("clk")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 33333;
+			LEVEL 0 FOR 15.0;
+			LEVEL 1 FOR 15.0;
+		}
+		LEVEL 0 FOR 10.0;
+	}
+}
+
+TRANSITION_LIST("ch_a")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 560.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 720.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 745.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 700.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 665.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 700.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 600.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 690.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 640.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 615.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 745.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 690.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 1005.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 810.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 900.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 625.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 715.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 665.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 865.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 645.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 790.0;
+		LEVEL 1 FOR 450.0;
+		LEVEL 0 FOR 1765.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 360.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 400.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 420.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 460.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 465.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 465.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 485.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 510.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 500.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 505.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 490.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 485.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 445.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 485.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 535.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 315.0;
+		LEVEL 1 FOR 300.0;
+		LEVEL 0 FOR 350.0;
+		LEVEL 1 FOR 335.0;
+		LEVEL 0 FOR 365.0;
+		LEVEL 1 FOR 285.0;
+		LEVEL 0 FOR 725.0;
+		LEVEL 1 FOR 350.0;
+		LEVEL 0 FOR 355.0;
+		LEVEL 1 FOR 340.0;
+		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 330.0;
+		LEVEL 0 FOR 390.0;
+		LEVEL 1 FOR 305.0;
+		LEVEL 0 FOR 535.0;
+		LEVEL 1 FOR 290.0;
+		LEVEL 0 FOR 350.0;
+		LEVEL 1 FOR 290.0;
+		LEVEL 0 FOR 5710.0;
+		LEVEL 1 FOR 8660.0;
+		LEVEL 0 FOR 940765.0;
+	}
+}
+
+TRANSITION_LIST("ch_b")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 815.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 695.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 720.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 675.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 640.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 675.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 575.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 665.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 615.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 590.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 720.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 665.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 980.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 785.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 875.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 600.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 690.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 640.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 840.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 620.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 765.0;
+		LEVEL 1 FOR 475.0;
+		LEVEL 0 FOR 1320.0;
+		LEVEL 1 FOR 325.0;
+		LEVEL 0 FOR 355.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 395.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 415.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 455.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 460.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 460.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 480.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 505.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 495.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 500.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 485.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 480.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 440.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 480.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 530.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 2440.0;
+		LEVEL 1 FOR 4620.0;
+		LEVEL 0 FOR 830.0;
+		LEVEL 1 FOR 365.0;
+		LEVEL 0 FOR 370.0;
+		LEVEL 1 FOR 355.0;
+		LEVEL 0 FOR 350.0;
+		LEVEL 1 FOR 335.0;
+		LEVEL 0 FOR 390.0;
+		LEVEL 1 FOR 345.0;
+		LEVEL 0 FOR 430.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 385.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 855.0;
+		LEVEL 1 FOR 340.0;
+		LEVEL 0 FOR 365.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 305.0;
+		LEVEL 1 FOR 365.0;
+		LEVEL 0 FOR 320.0;
+		LEVEL 1 FOR 315.0;
+		LEVEL 0 FOR 400.0;
+		LEVEL 1 FOR 355.0;
+		LEVEL 0 FOR 385.0;
+		LEVEL 1 FOR 330.0;
+		LEVEL 0 FOR 425.0;
+		LEVEL 1 FOR 305.0;
+		LEVEL 0 FOR 415.0;
+		LEVEL 1 FOR 340.0;
+		LEVEL 0 FOR 500.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 405.0;
+		LEVEL 1 FOR 310.0;
+		LEVEL 0 FOR 490.0;
+		LEVEL 1 FOR 310.0;
+		LEVEL 0 FOR 941470.0;
+	}
+}
+
+TRANSITION_LIST("rst")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 120.0;
+		LEVEL 1 FOR 175.0;
+		LEVEL 0 FOR 999705.0;
+	}
+}
+
+TRANSITION_LIST("ch_a_out")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 975.0;
+		LEVEL 1 FOR 1170.0;
+		LEVEL 0 FOR 1200.0;
+		LEVEL 1 FOR 1140.0;
+		LEVEL 0 FOR 1110.0;
+		LEVEL 1 FOR 1170.0;
+		LEVEL 0 FOR 1050.0;
+		LEVEL 1 FOR 1140.0;
+		LEVEL 0 FOR 1080.0;
+		LEVEL 1 FOR 1080.0;
+		LEVEL 0 FOR 1170.0;
+		LEVEL 1 FOR 1140.0;
+		LEVEL 0 FOR 1470.0;
+		LEVEL 1 FOR 1260.0;
+		LEVEL 0 FOR 1350.0;
+		LEVEL 1 FOR 1080.0;
+		LEVEL 0 FOR 1170.0;
+		LEVEL 1 FOR 1110.0;
+		LEVEL 0 FOR 1320.0;
+		LEVEL 1 FOR 1080.0;
+		LEVEL 0 FOR 1230.0;
+		LEVEL 1 FOR 1980.0;
+		LEVEL 0 FOR 660.0;
+		LEVEL 1 FOR 720.0;
+		LEVEL 0 FOR 750.0;
+		LEVEL 1 FOR 750.0;
+		LEVEL 0 FOR 780.0;
+		LEVEL 1 FOR 780.0;
+		LEVEL 0 FOR 810.0;
+		LEVEL 1 FOR 840.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 0 FOR 810.0;
+			LEVEL 1 FOR 810.0;
+		}
+		LEVEL 0 FOR 750.0;
+		LEVEL 1 FOR 810.0;
+		LEVEL 0 FOR 840.0;
+		LEVEL 1 FOR 2610.0;
+		LEVEL 0 FOR 660.0;
+		LEVEL 1 FOR 360.0;
+		LEVEL 0 FOR 330.0;
+		LEVEL 1 FOR 300.0;
+		LEVEL 0 FOR 330.0;
+		LEVEL 1 FOR 390.0;
+		LEVEL 0 FOR 330.0;
+		LEVEL 1 FOR 510.0;
+		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 360.0;
+		LEVEL 0 FOR 270.0;
+		LEVEL 1 FOR 5790.0;
+		LEVEL 0 FOR 600.0;
+		LEVEL 1 FOR 360.0;
+		LEVEL 0 FOR 330.0;
+		LEVEL 1 FOR 300.0;
+		LEVEL 0 FOR 360.0;
+		LEVEL 1 FOR 330.0;
+		LEVEL 0 FOR 330.0;
+		LEVEL 1 FOR 390.0;
+		LEVEL 0 FOR 360.0;
+		LEVEL 1 FOR 390.0;
+		LEVEL 0 FOR 330.0;
+		LEVEL 1 FOR 420.0;
+		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 420.0;
+		LEVEL 0 FOR 330.0;
+		LEVEL 1 FOR 510.0;
+		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 420.0;
+		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 510.0;
+		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 941365.0;
+	}
+}
+
+TRANSITION_LIST("ch_b_out")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1455.0;
+		LEVEL 1 FOR 1170.0;
+		LEVEL 0 FOR 1200.0;
+		LEVEL 1 FOR 1140.0;
+		LEVEL 0 FOR 1110.0;
+		LEVEL 1 FOR 1170.0;
+		LEVEL 0 FOR 1050.0;
+		LEVEL 1 FOR 1140.0;
+		LEVEL 0 FOR 1080.0;
+		LEVEL 1 FOR 1050.0;
+		LEVEL 0 FOR 1200.0;
+		LEVEL 1 FOR 1140.0;
+		LEVEL 0 FOR 1470.0;
+		LEVEL 1 FOR 1260.0;
+		LEVEL 0 FOR 1350.0;
+		LEVEL 1 FOR 1080.0;
+		LEVEL 0 FOR 1140.0;
+		LEVEL 1 FOR 1140.0;
+		LEVEL 0 FOR 1290.0;
+		LEVEL 1 FOR 1110.0;
+		LEVEL 0 FOR 1230.0;
+		LEVEL 1 FOR 1260.0;
+		LEVEL 0 FOR 540.0;
+		LEVEL 1 FOR 690.0;
+		LEVEL 0 FOR 720.0;
+		LEVEL 1 FOR 720.0;
+		LEVEL 0 FOR 780.0;
+		LEVEL 1 FOR 780.0;
+		LEVEL 0 FOR 780.0;
+		LEVEL 1 FOR 810.0;
+		LEVEL 0 FOR 810.0;
+		LEVEL 1 FOR 810.0;
+		LEVEL 0 FOR 840.0;
+		LEVEL 1 FOR 780.0;
+		LEVEL 0 FOR 810.0;
+		LEVEL 1 FOR 750.0;
+		LEVEL 0 FOR 810.0;
+		LEVEL 1 FOR 840.0;
+		LEVEL 0 FOR 270.0;
+		LEVEL 1 FOR 300.0;
+		LEVEL 0 FOR 360.0;
+		LEVEL 1 FOR 330.0;
+		LEVEL 0 FOR 360.0;
+		LEVEL 1 FOR 270.0;
+		LEVEL 0 FOR 5040.0;
+		LEVEL 1 FOR 750.0;
+		LEVEL 0 FOR 360.0;
+		LEVEL 1 FOR 390.0;
+		LEVEL 0 FOR 360.0;
+		LEVEL 1 FOR 330.0;
+		LEVEL 0 FOR 330.0;
+		LEVEL 1 FOR 390.0;
+		LEVEL 0 FOR 360.0;
+		LEVEL 1 FOR 420.0;
+		LEVEL 0 FOR 330.0;
+		LEVEL 1 FOR 390.0;
+		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 9240.0;
+		LEVEL 0 FOR 940615.0;
+	}
+}
+
+TRANSITION_LIST("divisor[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000000.0;
+	}
+}
+
+TRANSITION_LIST("divisor[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000000.0;
+	}
+}
+
+TRANSITION_LIST("divisor[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000000.0;
+	}
+}
+
+TRANSITION_LIST("divisor[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000000.0;
+	}
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "clk";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 0;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "rst";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 1;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ch_a";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 2;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ch_b";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 3;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ch_a_out";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 4;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ch_b_out";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 5;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "divisor";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 6;
+	TREE_LEVEL = 0;
+	CHILDREN = 7, 8, 9, 10;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "divisor[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 7;
+	TREE_LEVEL = 1;
+	PARENT = 6;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "divisor[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 8;
+	TREE_LEVEL = 1;
+	PARENT = 6;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "divisor[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 9;
+	TREE_LEVEL = 1;
+	PARENT = 6;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "divisor[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 10;
+	TREE_LEVEL = 1;
+	PARENT = 6;
+}
+
+TIME_BAR
+{
+	TIME = 0;
+	MASTER = TRUE;
+}
+;

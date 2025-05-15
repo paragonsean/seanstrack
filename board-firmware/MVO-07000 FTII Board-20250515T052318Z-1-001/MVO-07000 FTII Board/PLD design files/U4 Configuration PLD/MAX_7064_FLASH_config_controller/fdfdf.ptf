@@ -1,0 +1,9 @@
+SYSTEM fdfdf
+{
+   WIZARD_SCRIPT_ARGUMENTS 
+   {
+      clock_freq = "33333000";
+   }
+   System_Wizard_Version = "1.1.1";
+   System_Wizard_Build = "20";
+}

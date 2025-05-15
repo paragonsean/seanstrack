@@ -1,0 +1,5 @@
+#!/bin/sh
+
+c:/altera/quartus51//bin/perl561/bin/perl -I$sopc_builder/bin -I$sopc_builder/bin/perl_lib -I$sopc_builder/bin/europa $sopc_builder/bin/ptf_update.pl dual_processor.ptf 
+
+c:/altera/quartus51//bin/perl561/bin/perl -I$sopc_builder/bin -I$sopc_builder/bin/perl_lib -I$sopc_builder/bin/europa $sopc_builder/bin/mk_systembus.pl --sopc_directory=$sopc_builder --sopc_perl=c:/altera/quartus51//bin/perl561 --sopc_lib_path="D:/qdesigns_5_1/Apex20KE/emc_chip_10010200+c:/altera/kits/nios2_51/components+c:/altera/kits/nios/components+c:/altera/megacore/pci_compiler-v4.1.0/lib/sopc_builder+c:/altera/megacore/ddr_ddr2_sdram-v3.3.0/lib/sopc_builder+c:/altera/kits/nios2+c:/altera/quartus50/sopc_builder+C:/altera/quartus51/sopc_builder/components+c:/altera/kits/nios2_51/components+c:/altera/kits/nios/components" --target_module_name=dual_processor --system_directory=D:/qdesigns_5_1/Apex20KE/emc_chip_10010200 --system_name=dual_processor --project_name=emc_chip_10010100 --sopc_quartus_dir= $1

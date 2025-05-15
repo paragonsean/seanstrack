@@ -1,0 +1,88 @@
+Flow report for lvdt_interface
+Thu May 11 09:44:35 2006
+Version 5.1 Build 216 03/06/2006 Service Pack 2.01 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Elapsed Time
+  5. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------+
+; Flow Summary                                                               ;
++-------------------------+--------------------------------------------------+
+; Flow Status             ; Successful - Thu May 11 09:44:35 2006            ;
+; Quartus II Version      ; 5.1 Build 216 03/06/2006 SP 2.01 SJ Full Version ;
+; Revision Name           ; lvdt_interface                                   ;
+; Top-level Entity Name   ; lvdt_interface                                   ;
+; Family                  ; APEX20KE                                         ;
+; Device                  ; EP20K200EFC484-1                                 ;
+; Timing Models           ; Final                                            ;
+; Met timing requirements ; Yes                                              ;
+; Total logic elements    ; 95 / 8,320 ( 1 % )                               ;
+; Total pins              ; 30 / 376 ( 8 % )                                 ;
+; Total virtual pins      ; 0                                                ;
+; Total memory bits       ; 192 / 106,496 ( < 1 % )                          ;
+; Total PLLs              ; 0                                                ;
++-------------------------+--------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 05/11/2006 09:44:05 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; lvdt_interface      ;
++-------------------+---------------------+
+
+
++-------------------------------------+
+; Flow Elapsed Time                   ;
++----------------------+--------------+
+; Module Name          ; Elapsed Time ;
++----------------------+--------------+
+; Analysis & Synthesis ; 00:00:09     ;
+; Fitter               ; 00:00:12     ;
+; Assembler            ; 00:00:02     ;
+; Timing Analyzer      ; 00:00:03     ;
+; Total                ; 00:00:26     ;
++----------------------+--------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off lvdt_interface -c lvdt_interface
+quartus_fit --read_settings_files=off --write_settings_files=off lvdt_interface -c lvdt_interface
+quartus_asm --read_settings_files=off --write_settings_files=off lvdt_interface -c lvdt_interface
+quartus_tan --read_settings_files=off --write_settings_files=off lvdt_interface -c lvdt_interface
+
+
+

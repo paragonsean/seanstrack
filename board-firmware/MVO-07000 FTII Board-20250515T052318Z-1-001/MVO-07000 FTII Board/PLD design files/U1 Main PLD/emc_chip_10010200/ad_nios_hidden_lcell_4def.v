@@ -1,0 +1,77 @@
+module ad_nios_hidden_lcell_4DEF (
+                                   // inputs:
+                                    aclr,
+                                    cin,
+                                    clk,
+                                    dataa,
+                                    datab,
+                                    datac,
+                                    ena,
+                                    sclr,
+                                    sload,
+
+                                   // outputs:
+                                    cout,
+                                    regout
+                                 )
+;
+
+  parameter output_mode = "comb_and_reg";
+  parameter power_up = "low";
+  parameter lut_mask = "ffff";
+  parameter packed_mode = "false";
+  parameter cin_used = "false";
+  parameter operation_mode = "counter";
+
+
+  output           cout;
+  output           regout;
+  input            aclr;
+  input            cin;
+  input            clk;
+  input            dataa;
+  input            datab;
+  input            datac;
+  input            ena;
+  input            sclr;
+  input            sload;
+
+  wire             cout;
+  wire             regout;
+
+//synthesis translate_off
+//////////////// SIMULATION-ONLY CONTENTS
+  // This module is a placeholder.  The assignment is never executed
+  assign regout = datac;
+
+
+//////////////// END SIMULATION-ONLY CONTENTS
+
+//synthesis translate_on
+//synthesis read_comments_as_HDL on
+//  apex20k_lcell the_apex20k_lcell
+//    (
+//      .aclr (aclr),
+//      .cin (cin),
+//      .clk (clk),
+//      .cout (cout),
+//      .dataa (dataa),
+//      .datab (datab),
+//      .datac (datac),
+//      .ena (ena),
+//      .regout (regout),
+//      .sclr (sclr),
+//      .sload (sload)
+//    );
+//
+//  defparam the_apex20k_lcell.cin_used = cin_used,
+//           the_apex20k_lcell.lut_mask = lut_mask,
+//           the_apex20k_lcell.operation_mode = operation_mode,
+//           the_apex20k_lcell.output_mode = output_mode,
+//           the_apex20k_lcell.packed_mode = packed_mode,
+//           the_apex20k_lcell.power_up = power_up;
+//
+//synthesis read_comments_as_HDL off
+
+endmodule
+

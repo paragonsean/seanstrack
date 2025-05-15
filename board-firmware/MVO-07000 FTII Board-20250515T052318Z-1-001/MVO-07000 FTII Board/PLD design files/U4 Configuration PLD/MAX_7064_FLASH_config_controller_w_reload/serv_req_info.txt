@@ -1,0 +1,6 @@
+[Web SPR Info]
+Version=2.1 SERVICE PACK 1
+Product=Quartus II
+Logic Cell Usage=0
+Authorization Method=Guard
+Host ID=T000079249

@@ -1,0 +1,1777 @@
+|lvdt_interface
+pwm_out <= pwm1:inst.q
+clk => pwm1:inst.clock
+clk => clk_divider:inst4.clock
+clk => inst21.CLK
+clk => inst22.CLK
+clk => inst23.CLK
+clk => look_up_rom:inst42.inclock
+clk => sine_step_sequencer:inst5.clock
+clk => lpm_compare0:inst11.clock
+clk => inst1.CLK
+clk => pulse_expander:inst33.clock
+clk => inst8.CLK
+clk => lpm_compare0:inst15.clock
+clk => inst25.CLK
+clk => pulse_expander:inst40.clock
+clk => inst12.CLK
+rst => pwm1:inst.aclr
+rst => clk_divider:inst4.sclr
+rst => sine_step_sequencer:inst5.sclr
+rst => pulse_expander:inst33.sclr
+rst => pulse_expander:inst40.sclr
+sample_demod1 <= inst8
+phase_sel1[0] => lpm_compare0:inst11.datab[0]
+phase_sel1[1] => lpm_compare0:inst11.datab[1]
+phase_sel1[2] => lpm_compare0:inst11.datab[2]
+phase_sel1[3] => lpm_compare0:inst11.datab[3]
+phase_sel1[4] => lpm_compare0:inst11.datab[4]
+phase_sel1[5] => lpm_compare0:inst11.datab[5]
+phase_sel1[6] => lpm_compare0:inst11.datab[6]
+phase_sel1[7] => lpm_compare0:inst11.datab[7]
+sample_demod2 <= inst12
+phase_sel2[0] => lpm_compare0:inst15.datab[0]
+phase_sel2[1] => lpm_compare0:inst15.datab[1]
+phase_sel2[2] => lpm_compare0:inst15.datab[2]
+phase_sel2[3] => lpm_compare0:inst15.datab[3]
+phase_sel2[4] => lpm_compare0:inst15.datab[4]
+phase_sel2[5] => lpm_compare0:inst15.datab[5]
+phase_sel2[6] => lpm_compare0:inst15.datab[6]
+phase_sel2[7] => lpm_compare0:inst15.datab[7]
+sample_osc <= <GND>
+
+
+|lvdt_interface|pwm1:inst
+clock => lpm_ff:pwm_reg.clock
+clock => lpm_counter:cntr.clock
+clock => lpm_counter:pwm.clock
+clock => pwm_ff.CLK
+clock => period_pulse.CLK
+clock => $00004.CLK
+aclr => lpm_ff:pwm_reg.aset
+aclr => lpm_counter:cntr.aclr
+aclr => lpm_counter:pwm.aclr
+aclr => pwm_ff~0.IN0
+aclr => $00004~1.IN0
+aclr => period_pulse~0.IN0
+enable => lpm_counter:cntr.cnt_en
+enable => lpm_counter:pwm.cnt_en
+enable => altr_temp~3.IN0
+enable => $00004~0.IN0
+write => lpm_ff:pwm_reg.enable
+data[0] => lpm_ff:pwm_reg.data[0]
+data[1] => lpm_ff:pwm_reg.data[1]
+data[2] => lpm_ff:pwm_reg.data[2]
+data[3] => lpm_ff:pwm_reg.data[3]
+data[4] => lpm_ff:pwm_reg.data[4]
+data[5] => lpm_ff:pwm_reg.data[5]
+q <= $00004
+
+
+|lvdt_interface|pwm1:inst|lpm_counter:pwm
+clock => alt_synch_counter:wysi_counter.clock
+cnt_en => alt_synch_counter:wysi_counter.cnt_en
+aclr => alt_synch_counter:wysi_counter.aclr
+sload => alt_synch_counter:wysi_counter.sload
+data[0] => alt_synch_counter:wysi_counter.data[0]
+data[1] => alt_synch_counter:wysi_counter.data[1]
+data[2] => alt_synch_counter:wysi_counter.data[2]
+data[3] => alt_synch_counter:wysi_counter.data[3]
+data[4] => alt_synch_counter:wysi_counter.data[4]
+data[5] => alt_synch_counter:wysi_counter.data[5]
+q[0] <= alt_synch_counter:wysi_counter.q[0]
+q[1] <= alt_synch_counter:wysi_counter.q[1]
+q[2] <= alt_synch_counter:wysi_counter.q[2]
+q[3] <= alt_synch_counter:wysi_counter.q[3]
+q[4] <= alt_synch_counter:wysi_counter.q[4]
+q[5] <= alt_synch_counter:wysi_counter.q[5]
+cout <= alt_synch_counter:wysi_counter.cout
+eq[0] <= eq[15]~0
+eq[1] <= eq[15]~0
+eq[2] <= eq[15]~0
+eq[3] <= eq[15]~0
+eq[4] <= eq[15]~0
+eq[5] <= eq[15]~0
+eq[6] <= eq[15]~0
+eq[7] <= eq[15]~0
+eq[8] <= eq[15]~0
+eq[9] <= eq[15]~0
+eq[10] <= eq[15]~0
+eq[11] <= eq[15]~0
+eq[12] <= eq[15]~0
+eq[13] <= eq[15]~0
+eq[14] <= eq[15]~0
+eq[15] <= eq[15]~0
+
+
+|lvdt_interface|pwm1:inst|lpm_counter:pwm|alt_synch_counter:wysi_counter
+data[0] => counter_cell[0].DATAC
+data[1] => counter_cell[1].DATAC
+data[2] => counter_cell[2].DATAC
+data[3] => counter_cell[3].DATAC
+data[4] => counter_cell[4].DATAC
+data[5] => counter_cell[5].DATAC
+clock => counter_cell[5].CLK
+clock => counter_cell[4].CLK
+clock => counter_cell[3].CLK
+clock => counter_cell[2].CLK
+clock => counter_cell[1].CLK
+clock => counter_cell[0].CLK
+cnt_en => counter_cell[5].DATAB
+cnt_en => counter_cell[4].DATAB
+cnt_en => counter_cell[3].DATAB
+cnt_en => counter_cell[2].DATAB
+cnt_en => counter_cell[1].DATAB
+cnt_en => counter_cell[0].DATAB
+sload => pre_sload~0.IN0
+sclr => counter_cell[5].SCLR
+sclr => counter_cell[4].SCLR
+sclr => counter_cell[3].SCLR
+sclr => counter_cell[2].SCLR
+sclr => counter_cell[1].SCLR
+sclr => counter_cell[0].SCLR
+sset => pre_sload.IN1
+sconst => pre_sload~0.IN1
+aclr => counter_cell[5].ACLR
+aclr => counter_cell[4].ACLR
+aclr => counter_cell[3].ACLR
+aclr => counter_cell[2].ACLR
+aclr => counter_cell[1].ACLR
+aclr => counter_cell[0].ACLR
+q[0] <= counter_cell[0]
+q[1] <= counter_cell[1]
+q[2] <= counter_cell[2]
+q[3] <= counter_cell[3]
+q[4] <= counter_cell[4]
+q[5] <= counter_cell[5]
+cout <= counter_cell[5]~COUT
+
+
+|lvdt_interface|pwm1:inst|lpm_counter:cntr
+clock => alt_synch_counter:wysi_counter.clock
+cnt_en => alt_synch_counter:wysi_counter.cnt_en
+aclr => alt_synch_counter:wysi_counter.aclr
+q[0] <= alt_synch_counter:wysi_counter.q[0]
+q[1] <= alt_synch_counter:wysi_counter.q[1]
+q[2] <= alt_synch_counter:wysi_counter.q[2]
+q[3] <= alt_synch_counter:wysi_counter.q[3]
+q[4] <= alt_synch_counter:wysi_counter.q[4]
+q[5] <= alt_synch_counter:wysi_counter.q[5]
+cout <= alt_synch_counter:wysi_counter.cout
+eq[0] <= eq[15]~0
+eq[1] <= eq[15]~0
+eq[2] <= eq[15]~0
+eq[3] <= eq[15]~0
+eq[4] <= eq[15]~0
+eq[5] <= eq[15]~0
+eq[6] <= eq[15]~0
+eq[7] <= eq[15]~0
+eq[8] <= eq[15]~0
+eq[9] <= eq[15]~0
+eq[10] <= eq[15]~0
+eq[11] <= eq[15]~0
+eq[12] <= eq[15]~0
+eq[13] <= eq[15]~0
+eq[14] <= eq[15]~0
+eq[15] <= eq[15]~0
+
+
+|lvdt_interface|pwm1:inst|lpm_counter:cntr|alt_synch_counter:wysi_counter
+clock => counter_cell[5].CLK
+clock => counter_cell[4].CLK
+clock => counter_cell[3].CLK
+clock => counter_cell[2].CLK
+clock => counter_cell[1].CLK
+clock => counter_cell[0].CLK
+cnt_en => counter_cell[5].DATAB
+cnt_en => counter_cell[4].DATAB
+cnt_en => counter_cell[3].DATAB
+cnt_en => counter_cell[2].DATAB
+cnt_en => counter_cell[1].DATAB
+cnt_en => counter_cell[0].DATAB
+sload => pre_sload~0.IN0
+sclr => counter_cell[5].SCLR
+sclr => counter_cell[4].SCLR
+sclr => counter_cell[3].SCLR
+sclr => counter_cell[2].SCLR
+sclr => counter_cell[1].SCLR
+sclr => counter_cell[0].SCLR
+sset => pre_sload.IN1
+sconst => pre_sload~0.IN1
+aclr => counter_cell[5].ACLR
+aclr => counter_cell[4].ACLR
+aclr => counter_cell[3].ACLR
+aclr => counter_cell[2].ACLR
+aclr => counter_cell[1].ACLR
+aclr => counter_cell[0].ACLR
+q[0] <= sload_path[0]
+q[1] <= sload_path[1]
+q[2] <= sload_path[2]
+q[3] <= sload_path[3]
+q[4] <= sload_path[4]
+q[5] <= sload_path[5]
+cout <= counter_cell[5]~COUT
+
+
+|lvdt_interface|pwm1:inst|lpm_ff:pwm_reg
+data[0] => altr_temp~23.IN1
+data[0] => altr_temp~44.IN0
+data[0] => altr_temp~62.IN1
+data[0] => altr_temp~69.IN1
+data[1] => altr_temp~22.IN1
+data[1] => altr_temp~43.IN0
+data[1] => altr_temp~61.IN1
+data[1] => altr_temp~68.IN1
+data[2] => altr_temp~21.IN1
+data[2] => altr_temp~42.IN0
+data[2] => altr_temp~60.IN1
+data[2] => altr_temp~67.IN1
+data[3] => altr_temp~20.IN1
+data[3] => altr_temp~41.IN0
+data[3] => altr_temp~59.IN1
+data[3] => altr_temp~66.IN1
+data[4] => altr_temp~19.IN1
+data[4] => altr_temp~40.IN0
+data[4] => altr_temp~58.IN1
+data[4] => altr_temp~65.IN1
+data[5] => altr_temp~18.IN1
+data[5] => altr_temp~39.IN0
+data[5] => altr_temp~57.IN1
+data[5] => altr_temp~64.IN1
+clock => dffs[5].CLK
+clock => dffs[4].CLK
+clock => dffs[3].CLK
+clock => dffs[2].CLK
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[5].ENA
+enable => dffs[4].ENA
+enable => dffs[3].ENA
+enable => dffs[2].ENA
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+aclr => altr_temp~2.IN0
+aclr => dffs[5]~6.IN0
+aclr => dffs[4]~7.IN0
+aclr => dffs[3]~8.IN0
+aclr => dffs[2]~9.IN0
+aclr => dffs[1]~10.IN0
+aclr => dffs[0]~11.IN0
+aset => altr_temp~3.IN0
+aset => altr_temp~17.IN0
+aset => altr_temp~24.IN0
+aset => altr_temp~38.IN0
+aload => altr_temp~16.IN0
+aload => altr_temp~37.IN0
+sclr => nxd[5]~0.IN0
+sset => nxd[5]~1.IN0
+sset => nxd[4]~2.IN0
+sset => nxd[3]~3.IN0
+sset => nxd[2]~4.IN0
+sset => nxd[1]~5.IN0
+sset => nxd[0]~6.IN0
+sload => altr_temp~57.IN0
+sload => altr_temp~58.IN0
+sload => altr_temp~59.IN0
+sload => altr_temp~60.IN0
+sload => altr_temp~61.IN0
+sload => altr_temp~62.IN0
+sload => altr_temp~63.IN0
+q[0] <= dffs[0]
+q[1] <= dffs[1]
+q[2] <= dffs[2]
+q[3] <= dffs[3]
+q[4] <= dffs[4]
+q[5] <= dffs[5]
+
+
+|lvdt_interface|pwm1:inst|lpm_ff:pwm_reg|lpm_constant:ac
+result[0] <= result[0]~0
+result[1] <= <VCC>
+result[2] <= <VCC>
+result[3] <= result[0]~0
+result[4] <= result[0]~0
+result[5] <= result[0]~0
+
+
+|lvdt_interface|clk_divider:inst4
+clock => lpm_counter:lpm_counter_component.clock
+sclr => lpm_counter:lpm_counter_component.sclr
+q[0] <= lpm_counter:lpm_counter_component.q[0]
+q[1] <= lpm_counter:lpm_counter_component.q[1]
+q[2] <= lpm_counter:lpm_counter_component.q[2]
+q[3] <= lpm_counter:lpm_counter_component.q[3]
+q[4] <= lpm_counter:lpm_counter_component.q[4]
+q[5] <= lpm_counter:lpm_counter_component.q[5]
+q[6] <= lpm_counter:lpm_counter_component.q[6]
+q[7] <= lpm_counter:lpm_counter_component.q[7]
+q[8] <= lpm_counter:lpm_counter_component.q[8]
+q[9] <= lpm_counter:lpm_counter_component.q[9]
+cout <= lpm_counter:lpm_counter_component.cout
+
+
+|lvdt_interface|clk_divider:inst4|lpm_counter:lpm_counter_component
+clock => alt_synch_counter:wysi_counter.clock
+sclr => alt_synch_counter:wysi_counter.sclr
+q[0] <= alt_synch_counter:wysi_counter.q[0]
+q[1] <= alt_synch_counter:wysi_counter.q[1]
+q[2] <= alt_synch_counter:wysi_counter.q[2]
+q[3] <= alt_synch_counter:wysi_counter.q[3]
+q[4] <= alt_synch_counter:wysi_counter.q[4]
+q[5] <= alt_synch_counter:wysi_counter.q[5]
+q[6] <= alt_synch_counter:wysi_counter.q[6]
+q[7] <= alt_synch_counter:wysi_counter.q[7]
+q[8] <= alt_synch_counter:wysi_counter.q[8]
+q[9] <= alt_synch_counter:wysi_counter.q[9]
+cout <= alt_synch_counter:wysi_counter.cout
+eq[0] <= eq[15]~0
+eq[1] <= eq[15]~0
+eq[2] <= eq[15]~0
+eq[3] <= eq[15]~0
+eq[4] <= eq[15]~0
+eq[5] <= eq[15]~0
+eq[6] <= eq[15]~0
+eq[7] <= eq[15]~0
+eq[8] <= eq[15]~0
+eq[9] <= eq[15]~0
+eq[10] <= eq[15]~0
+eq[11] <= eq[15]~0
+eq[12] <= eq[15]~0
+eq[13] <= eq[15]~0
+eq[14] <= eq[15]~0
+eq[15] <= eq[15]~0
+
+
+|lvdt_interface|clk_divider:inst4|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter
+clock => counter_cell[9].CLK
+clock => counter_cell[8].CLK
+clock => counter_cell[7].CLK
+clock => counter_cell[6].CLK
+clock => counter_cell[5].CLK
+clock => counter_cell[4].CLK
+clock => counter_cell[3].CLK
+clock => counter_cell[2].CLK
+clock => counter_cell[1].CLK
+clock => counter_cell[0].CLK
+cnt_en => pre_sclr~0.IN1
+cnt_en => counter_cell[9].DATAB
+cnt_en => counter_cell[8].DATAB
+cnt_en => counter_cell[7].DATAB
+cnt_en => counter_cell[6].DATAB
+cnt_en => counter_cell[5].DATAB
+cnt_en => counter_cell[4].DATAB
+cnt_en => counter_cell[3].DATAB
+cnt_en => counter_cell[2].DATAB
+cnt_en => counter_cell[1].DATAB
+cnt_en => counter_cell[0].DATAB
+sload => altr_temp~2.IN0
+sload => pre_sload~0.IN0
+sclr => pre_sclr.IN0
+sset => altr_temp~2.IN1
+sset => pre_sload.IN1
+sconst => altr_temp~3.IN1
+sconst => pre_sload~0.IN1
+q[0] <= sload_path[0]
+q[1] <= sload_path[1]
+q[2] <= sload_path[2]
+q[3] <= sload_path[3]
+q[4] <= sload_path[4]
+q[5] <= sload_path[5]
+q[6] <= sload_path[6]
+q[7] <= sload_path[7]
+q[8] <= sload_path[8]
+q[9] <= sload_path[9]
+cout <= the_cout
+
+
+|lvdt_interface|clk_divider:inst4|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_constant:$00016
+result[0] <= result[0]~0
+result[1] <= <VCC>
+result[2] <= <VCC>
+result[3] <= <VCC>
+result[4] <= <VCC>
+result[5] <= <VCC>
+result[6] <= result[0]~0
+result[7] <= result[0]~0
+result[8] <= result[0]~0
+result[9] <= result[0]~0
+
+
+|lvdt_interface|clk_divider:inst4|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00018
+dataa[0] => comptree:comparator.dataa[0]
+dataa[1] => comptree:comparator.dataa[1]
+dataa[2] => comptree:comparator.dataa[2]
+dataa[3] => comptree:comparator.dataa[3]
+dataa[4] => comptree:comparator.dataa[4]
+dataa[5] => comptree:comparator.dataa[5]
+dataa[6] => comptree:comparator.dataa[6]
+dataa[7] => comptree:comparator.dataa[7]
+dataa[8] => comptree:comparator.dataa[8]
+dataa[9] => comptree:comparator.dataa[9]
+datab[0] => comptree:comparator.datab[0]
+datab[1] => comptree:comparator.datab[1]
+datab[2] => comptree:comparator.datab[2]
+datab[3] => comptree:comparator.datab[3]
+datab[4] => comptree:comparator.datab[4]
+datab[5] => comptree:comparator.datab[5]
+datab[6] => comptree:comparator.datab[6]
+datab[7] => comptree:comparator.datab[7]
+datab[8] => comptree:comparator.datab[8]
+datab[9] => comptree:comparator.datab[9]
+alb <= alb~0
+aeb <= aeb_xnode
+agb <= agb_xnode
+aleb <= aleb~0
+aneb <= aneb~0
+ageb <= ageb~0
+
+
+|lvdt_interface|clk_divider:inst4|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00018|comptree:comparator
+dataa[0] => cmpchain:cmp_end.dataa[0]
+dataa[1] => cmpchain:cmp_end.dataa[1]
+dataa[2] => cmpchain:cmp_end.dataa[2]
+dataa[3] => cmpchain:cmp_end.dataa[3]
+dataa[4] => cmpchain:cmp_end.dataa[4]
+dataa[5] => cmpchain:cmp_end.dataa[5]
+dataa[6] => cmpchain:cmp_end.dataa[6]
+dataa[7] => cmpchain:cmp_end.dataa[7]
+dataa[8] => cmpchain:cmp_end.dataa[8]
+dataa[9] => cmpchain:cmp_end.dataa[9]
+datab[0] => cmpchain:cmp_end.datab[0]
+datab[1] => cmpchain:cmp_end.datab[1]
+datab[2] => cmpchain:cmp_end.datab[2]
+datab[3] => cmpchain:cmp_end.datab[3]
+datab[4] => cmpchain:cmp_end.datab[4]
+datab[5] => cmpchain:cmp_end.datab[5]
+datab[6] => cmpchain:cmp_end.datab[6]
+datab[7] => cmpchain:cmp_end.datab[7]
+datab[8] => cmpchain:cmp_end.datab[8]
+datab[9] => cmpchain:cmp_end.datab[9]
+aeb <= cmpchain:cmp_end.aeb
+agb <= <UNC>
+
+
+|lvdt_interface|clk_divider:inst4|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00018|comptree:comparator|cmpchain:cmp_end
+dataa[0] => comptree:comp.dataa[0]
+dataa[1] => comptree:comp.dataa[1]
+dataa[2] => comptree:comp.dataa[2]
+dataa[3] => comptree:comp.dataa[3]
+dataa[4] => comptree:comp.dataa[4]
+dataa[5] => comptree:comp.dataa[5]
+dataa[6] => comptree:comp.dataa[6]
+dataa[7] => comptree:comp.dataa[7]
+dataa[8] => comptree:comp.dataa[8]
+dataa[9] => comptree:comp.dataa[9]
+datab[0] => comptree:comp.datab[0]
+datab[1] => comptree:comp.datab[1]
+datab[2] => comptree:comp.datab[2]
+datab[3] => comptree:comp.datab[3]
+datab[4] => comptree:comp.datab[4]
+datab[5] => comptree:comp.datab[5]
+datab[6] => comptree:comp.datab[6]
+datab[7] => comptree:comp.datab[7]
+datab[8] => comptree:comp.datab[8]
+datab[9] => comptree:comp.datab[9]
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|clk_divider:inst4|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00018|comptree:comparator|cmpchain:cmp_end|comptree:comp
+dataa[0] => cmpchain:cmp[0].dataa[0]
+dataa[1] => cmpchain:cmp[0].dataa[1]
+dataa[2] => cmpchain:cmp[0].dataa[2]
+dataa[3] => cmpchain:cmp[0].dataa[3]
+dataa[4] => cmpchain:cmp[1].dataa[0]
+dataa[5] => cmpchain:cmp[1].dataa[1]
+dataa[6] => cmpchain:cmp[1].dataa[2]
+dataa[7] => cmpchain:cmp[1].dataa[3]
+dataa[8] => cmpchain:cmp_end.dataa[0]
+dataa[9] => cmpchain:cmp_end.dataa[1]
+datab[0] => cmpchain:cmp[0].datab[0]
+datab[1] => cmpchain:cmp[0].datab[1]
+datab[2] => cmpchain:cmp[0].datab[2]
+datab[3] => cmpchain:cmp[0].datab[3]
+datab[4] => cmpchain:cmp[1].datab[0]
+datab[5] => cmpchain:cmp[1].datab[1]
+datab[6] => cmpchain:cmp[1].datab[2]
+datab[7] => cmpchain:cmp[1].datab[3]
+datab[8] => cmpchain:cmp_end.datab[0]
+datab[9] => cmpchain:cmp_end.datab[1]
+aeb <= aeb_node
+agb <= <UNC>
+
+
+|lvdt_interface|clk_divider:inst4|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00018|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp[1]
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~18.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~15.IN0
+dataa[1] => altr_temp~16.IN0
+dataa[2] => altr_temp~4.IN0
+dataa[2] => altr_temp~12.IN0
+dataa[2] => altr_temp~13.IN0
+dataa[3] => altr_temp~6.IN0
+dataa[3] => altr_temp~9.IN0
+dataa[3] => altr_temp~10.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~17.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~14.IN0
+datab[1] => altr_temp~16.IN1
+datab[2] => altr_temp~4.IN1
+datab[2] => altr_temp~11.IN0
+datab[2] => altr_temp~13.IN1
+datab[3] => altr_temp~6.IN1
+datab[3] => altr_temp~8.IN0
+datab[3] => altr_temp~10.IN1
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|clk_divider:inst4|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00018|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp[0]
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~18.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~15.IN0
+dataa[1] => altr_temp~16.IN0
+dataa[2] => altr_temp~4.IN0
+dataa[2] => altr_temp~12.IN0
+dataa[2] => altr_temp~13.IN0
+dataa[3] => altr_temp~6.IN0
+dataa[3] => altr_temp~9.IN0
+dataa[3] => altr_temp~10.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~17.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~14.IN0
+datab[1] => altr_temp~16.IN1
+datab[2] => altr_temp~4.IN1
+datab[2] => altr_temp~11.IN0
+datab[2] => altr_temp~13.IN1
+datab[3] => altr_temp~6.IN1
+datab[3] => altr_temp~8.IN0
+datab[3] => altr_temp~10.IN1
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|clk_divider:inst4|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00018|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp_end
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~8.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~5.IN0
+dataa[1] => altr_temp~6.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~7.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~4.IN0
+datab[1] => altr_temp~6.IN1
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|clk_divider:inst4|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00018|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree
+dataa[0] => cmpchain:cmp_end.dataa[0]
+dataa[1] => cmpchain:cmp_end.dataa[1]
+dataa[2] => cmpchain:cmp_end.dataa[2]
+datab[0] => cmpchain:cmp_end.datab[0]
+datab[1] => cmpchain:cmp_end.datab[1]
+datab[2] => cmpchain:cmp_end.datab[2]
+aeb <= cmpchain:cmp_end.aeb
+agb <= <UNC>
+
+
+|lvdt_interface|clk_divider:inst4|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00018|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree|cmpchain:cmp_end
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~13.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~10.IN0
+dataa[1] => altr_temp~11.IN0
+dataa[2] => altr_temp~4.IN0
+dataa[2] => altr_temp~7.IN0
+dataa[2] => altr_temp~8.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~12.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~9.IN0
+datab[1] => altr_temp~11.IN1
+datab[2] => altr_temp~4.IN1
+datab[2] => altr_temp~6.IN0
+datab[2] => altr_temp~8.IN1
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|clk_divider:inst4|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00018|altshift:aeb_ext_lat_ffs
+data[0] => result[0].DATAIN
+result[0] <= data[0]
+
+
+|lvdt_interface|clk_divider:inst4|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00018|altshift:agb_ext_lat_ffs
+data[0] => result[0].DATAIN
+result[0] <= data[0]
+
+
+|lvdt_interface|look_up_rom:inst42
+address[0] => lpm_rom:lpm_rom_component.address[0]
+address[1] => lpm_rom:lpm_rom_component.address[1]
+address[2] => lpm_rom:lpm_rom_component.address[2]
+address[3] => lpm_rom:lpm_rom_component.address[3]
+address[4] => lpm_rom:lpm_rom_component.address[4]
+inclock => lpm_rom:lpm_rom_component.inclock
+q[0] <= lpm_rom:lpm_rom_component.q[0]
+q[1] <= lpm_rom:lpm_rom_component.q[1]
+q[2] <= lpm_rom:lpm_rom_component.q[2]
+q[3] <= lpm_rom:lpm_rom_component.q[3]
+q[4] <= lpm_rom:lpm_rom_component.q[4]
+q[5] <= lpm_rom:lpm_rom_component.q[5]
+
+
+|lvdt_interface|look_up_rom:inst42|lpm_rom:lpm_rom_component
+address[0] => altrom:srom.address[0]
+address[1] => altrom:srom.address[1]
+address[2] => altrom:srom.address[2]
+address[3] => altrom:srom.address[3]
+address[4] => altrom:srom.address[4]
+inclock => altrom:srom.clocki
+memenab => otri[5].OE
+memenab => otri[4].OE
+memenab => otri[3].OE
+memenab => otri[2].OE
+memenab => otri[1].OE
+memenab => otri[0].OE
+q[0] <= otri[0]
+q[1] <= otri[1]
+q[2] <= otri[2]
+q[3] <= otri[3]
+q[4] <= otri[4]
+q[5] <= otri[5]
+
+
+|lvdt_interface|look_up_rom:inst42|lpm_rom:lpm_rom_component|altrom:srom
+address[0] => segment[0][5].WADDR
+address[0] => segment[0][5].RADDR
+address[0] => segment[0][4].WADDR
+address[0] => segment[0][4].RADDR
+address[0] => segment[0][3].WADDR
+address[0] => segment[0][3].RADDR
+address[0] => segment[0][2].WADDR
+address[0] => segment[0][2].RADDR
+address[0] => segment[0][1].WADDR
+address[0] => segment[0][1].RADDR
+address[0] => segment[0][0].WADDR
+address[0] => segment[0][0].RADDR
+address[1] => segment[0][5].WADDR
+address[1] => segment[0][5].RADDR
+address[1] => segment[0][4].WADDR
+address[1] => segment[0][4].RADDR
+address[1] => segment[0][3].WADDR
+address[1] => segment[0][3].RADDR
+address[1] => segment[0][2].WADDR
+address[1] => segment[0][2].RADDR
+address[1] => segment[0][1].WADDR
+address[1] => segment[0][1].RADDR
+address[1] => segment[0][0].WADDR
+address[1] => segment[0][0].RADDR
+address[2] => segment[0][5].WADDR
+address[2] => segment[0][5].RADDR
+address[2] => segment[0][4].WADDR
+address[2] => segment[0][4].RADDR
+address[2] => segment[0][3].WADDR
+address[2] => segment[0][3].RADDR
+address[2] => segment[0][2].WADDR
+address[2] => segment[0][2].RADDR
+address[2] => segment[0][1].WADDR
+address[2] => segment[0][1].RADDR
+address[2] => segment[0][0].WADDR
+address[2] => segment[0][0].RADDR
+address[3] => segment[0][5].WADDR
+address[3] => segment[0][5].RADDR
+address[3] => segment[0][4].WADDR
+address[3] => segment[0][4].RADDR
+address[3] => segment[0][3].WADDR
+address[3] => segment[0][3].RADDR
+address[3] => segment[0][2].WADDR
+address[3] => segment[0][2].RADDR
+address[3] => segment[0][1].WADDR
+address[3] => segment[0][1].RADDR
+address[3] => segment[0][0].WADDR
+address[3] => segment[0][0].RADDR
+address[4] => segment[0][5].WADDR
+address[4] => segment[0][5].RADDR
+address[4] => segment[0][4].WADDR
+address[4] => segment[0][4].RADDR
+address[4] => segment[0][3].WADDR
+address[4] => segment[0][3].RADDR
+address[4] => segment[0][2].WADDR
+address[4] => segment[0][2].RADDR
+address[4] => segment[0][1].WADDR
+address[4] => segment[0][1].RADDR
+address[4] => segment[0][0].WADDR
+address[4] => segment[0][0].RADDR
+clocki => segment[0][5].CLK0
+clocki => segment[0][4].CLK0
+clocki => segment[0][3].CLK0
+clocki => segment[0][2].CLK0
+clocki => segment[0][1].CLK0
+clocki => segment[0][0].CLK0
+q[0] <= segment[0][0]
+q[1] <= segment[0][1]
+q[2] <= segment[0][2]
+q[3] <= segment[0][3]
+q[4] <= segment[0][4]
+q[5] <= segment[0][5]
+
+
+|lvdt_interface|sine_step_sequencer:inst5
+clock => lpm_counter:lpm_counter_component.clock
+clk_en => lpm_counter:lpm_counter_component.clk_en
+sclr => lpm_counter:lpm_counter_component.sclr
+q[0] <= lpm_counter:lpm_counter_component.q[0]
+q[1] <= lpm_counter:lpm_counter_component.q[1]
+q[2] <= lpm_counter:lpm_counter_component.q[2]
+q[3] <= lpm_counter:lpm_counter_component.q[3]
+q[4] <= lpm_counter:lpm_counter_component.q[4]
+q[5] <= lpm_counter:lpm_counter_component.q[5]
+q[6] <= lpm_counter:lpm_counter_component.q[6]
+q[7] <= lpm_counter:lpm_counter_component.q[7]
+
+
+|lvdt_interface|sine_step_sequencer:inst5|lpm_counter:lpm_counter_component
+clock => alt_synch_counter:wysi_counter.clock
+clk_en => alt_synch_counter:wysi_counter.clk_en
+sclr => alt_synch_counter:wysi_counter.sclr
+q[0] <= alt_synch_counter:wysi_counter.q[0]
+q[1] <= alt_synch_counter:wysi_counter.q[1]
+q[2] <= alt_synch_counter:wysi_counter.q[2]
+q[3] <= alt_synch_counter:wysi_counter.q[3]
+q[4] <= alt_synch_counter:wysi_counter.q[4]
+q[5] <= alt_synch_counter:wysi_counter.q[5]
+q[6] <= alt_synch_counter:wysi_counter.q[6]
+q[7] <= alt_synch_counter:wysi_counter.q[7]
+cout <= alt_synch_counter:wysi_counter.cout
+eq[0] <= eq[15]~0
+eq[1] <= eq[15]~0
+eq[2] <= eq[15]~0
+eq[3] <= eq[15]~0
+eq[4] <= eq[15]~0
+eq[5] <= eq[15]~0
+eq[6] <= eq[15]~0
+eq[7] <= eq[15]~0
+eq[8] <= eq[15]~0
+eq[9] <= eq[15]~0
+eq[10] <= eq[15]~0
+eq[11] <= eq[15]~0
+eq[12] <= eq[15]~0
+eq[13] <= eq[15]~0
+eq[14] <= eq[15]~0
+eq[15] <= eq[15]~0
+
+
+|lvdt_interface|sine_step_sequencer:inst5|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter
+clock => counter_cell[7].CLK
+clock => counter_cell[6].CLK
+clock => counter_cell[5].CLK
+clock => counter_cell[4].CLK
+clock => counter_cell[3].CLK
+clock => counter_cell[2].CLK
+clock => counter_cell[1].CLK
+clock => counter_cell[0].CLK
+clk_en => counter_cell[7].ENA
+clk_en => counter_cell[6].ENA
+clk_en => counter_cell[5].ENA
+clk_en => counter_cell[4].ENA
+clk_en => counter_cell[3].ENA
+clk_en => counter_cell[2].ENA
+clk_en => counter_cell[1].ENA
+clk_en => counter_cell[0].ENA
+cnt_en => counter_cell[7].DATAB
+cnt_en => counter_cell[6].DATAB
+cnt_en => counter_cell[5].DATAB
+cnt_en => counter_cell[4].DATAB
+cnt_en => counter_cell[3].DATAB
+cnt_en => counter_cell[2].DATAB
+cnt_en => counter_cell[1].DATAB
+cnt_en => counter_cell[0].DATAB
+sload => pre_sload~0.IN0
+sclr => counter_cell[7].SCLR
+sclr => counter_cell[6].SCLR
+sclr => counter_cell[5].SCLR
+sclr => counter_cell[4].SCLR
+sclr => counter_cell[3].SCLR
+sclr => counter_cell[2].SCLR
+sclr => counter_cell[1].SCLR
+sclr => counter_cell[0].SCLR
+sset => pre_sload.IN1
+sconst => pre_sload~0.IN1
+q[0] <= sload_path[0]
+q[1] <= sload_path[1]
+q[2] <= sload_path[2]
+q[3] <= sload_path[3]
+q[4] <= sload_path[4]
+q[5] <= sload_path[5]
+q[6] <= sload_path[6]
+q[7] <= sload_path[7]
+cout <= counter_cell[7]~COUT
+
+
+|lvdt_interface|lpm_compare0:inst11
+dataa[0] => lpm_compare:lpm_compare_component.dataa[0]
+dataa[1] => lpm_compare:lpm_compare_component.dataa[1]
+dataa[2] => lpm_compare:lpm_compare_component.dataa[2]
+dataa[3] => lpm_compare:lpm_compare_component.dataa[3]
+dataa[4] => lpm_compare:lpm_compare_component.dataa[4]
+dataa[5] => lpm_compare:lpm_compare_component.dataa[5]
+dataa[6] => lpm_compare:lpm_compare_component.dataa[6]
+dataa[7] => lpm_compare:lpm_compare_component.dataa[7]
+datab[0] => lpm_compare:lpm_compare_component.datab[0]
+datab[1] => lpm_compare:lpm_compare_component.datab[1]
+datab[2] => lpm_compare:lpm_compare_component.datab[2]
+datab[3] => lpm_compare:lpm_compare_component.datab[3]
+datab[4] => lpm_compare:lpm_compare_component.datab[4]
+datab[5] => lpm_compare:lpm_compare_component.datab[5]
+datab[6] => lpm_compare:lpm_compare_component.datab[6]
+datab[7] => lpm_compare:lpm_compare_component.datab[7]
+clock => lpm_compare:lpm_compare_component.clock
+AeB <= lpm_compare:lpm_compare_component.AeB
+
+
+|lvdt_interface|lpm_compare0:inst11|lpm_compare:lpm_compare_component
+dataa[0] => comptree:comparator.dataa[0]
+dataa[1] => comptree:comparator.dataa[1]
+dataa[2] => comptree:comparator.dataa[2]
+dataa[3] => comptree:comparator.dataa[3]
+dataa[4] => comptree:comparator.dataa[4]
+dataa[5] => comptree:comparator.dataa[5]
+dataa[6] => comptree:comparator.dataa[6]
+dataa[7] => comptree:comparator.dataa[7]
+datab[0] => comptree:comparator.datab[0]
+datab[1] => comptree:comparator.datab[1]
+datab[2] => comptree:comparator.datab[2]
+datab[3] => comptree:comparator.datab[3]
+datab[4] => comptree:comparator.datab[4]
+datab[5] => comptree:comparator.datab[5]
+datab[6] => comptree:comparator.datab[6]
+datab[7] => comptree:comparator.datab[7]
+clock => comptree:comparator.clk
+aclr => comptree:comparator.aset
+alb <= alb~0
+aeb <= aeb_xnode
+agb <= agb_xnode
+aleb <= aleb~0
+aneb <= aneb~0
+ageb <= ageb~0
+
+
+|lvdt_interface|lpm_compare0:inst11|lpm_compare:lpm_compare_component|comptree:comparator
+dataa[0] => cmpchain:cmp[0].dataa[0]
+dataa[1] => cmpchain:cmp[0].dataa[1]
+dataa[2] => cmpchain:cmp[1].dataa[0]
+dataa[3] => cmpchain:cmp[1].dataa[1]
+dataa[4] => cmpchain:cmp[2].dataa[0]
+dataa[5] => cmpchain:cmp[2].dataa[1]
+dataa[6] => cmpchain:cmp[3].dataa[0]
+dataa[7] => cmpchain:cmp[3].dataa[1]
+datab[0] => cmpchain:cmp[0].datab[0]
+datab[1] => cmpchain:cmp[0].datab[1]
+datab[2] => cmpchain:cmp[1].datab[0]
+datab[3] => cmpchain:cmp[1].datab[1]
+datab[4] => cmpchain:cmp[2].datab[0]
+datab[5] => cmpchain:cmp[2].datab[1]
+datab[6] => cmpchain:cmp[3].datab[0]
+datab[7] => cmpchain:cmp[3].datab[1]
+clk => cmpchain:cmp[3].clk
+clk => cmpchain:cmp[2].clk
+clk => cmpchain:cmp[1].clk
+clk => cmpchain:cmp[0].clk
+aset => cmpchain:cmp[3].aset
+aset => cmpchain:cmp[2].aset
+aset => cmpchain:cmp[1].aset
+aset => cmpchain:cmp[0].aset
+aeb <= aeb_node
+agb <= <UNC>
+
+
+|lvdt_interface|lpm_compare0:inst11|lpm_compare:lpm_compare_component|comptree:comparator|cmpchain:cmp[3]
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~8.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~5.IN0
+dataa[1] => altr_temp~6.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~7.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~4.IN0
+datab[1] => altr_temp~6.IN1
+clk => aeb_out.CLK
+clk => agb_out.CLK
+aset => aeb_out~1.IN0
+aset => agb_out~1.IN0
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|lpm_compare0:inst11|lpm_compare:lpm_compare_component|comptree:comparator|cmpchain:cmp[2]
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~8.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~5.IN0
+dataa[1] => altr_temp~6.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~7.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~4.IN0
+datab[1] => altr_temp~6.IN1
+clk => aeb_out.CLK
+clk => agb_out.CLK
+aset => aeb_out~1.IN0
+aset => agb_out~1.IN0
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|lpm_compare0:inst11|lpm_compare:lpm_compare_component|comptree:comparator|cmpchain:cmp[1]
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~8.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~5.IN0
+dataa[1] => altr_temp~6.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~7.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~4.IN0
+datab[1] => altr_temp~6.IN1
+clk => aeb_out.CLK
+clk => agb_out.CLK
+aset => aeb_out~1.IN0
+aset => agb_out~1.IN0
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|lpm_compare0:inst11|lpm_compare:lpm_compare_component|comptree:comparator|cmpchain:cmp[0]
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~8.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~5.IN0
+dataa[1] => altr_temp~6.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~7.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~4.IN0
+datab[1] => altr_temp~6.IN1
+clk => aeb_out.CLK
+clk => agb_out.CLK
+aset => aeb_out~1.IN0
+aset => agb_out~1.IN0
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|lpm_compare0:inst11|lpm_compare:lpm_compare_component|comptree:comparator|comptree:sub_comptree
+dataa[0] => cmpchain:cmp_end.dataa[0]
+dataa[1] => cmpchain:cmp_end.dataa[1]
+dataa[2] => cmpchain:cmp_end.dataa[2]
+dataa[3] => cmpchain:cmp_end.dataa[3]
+datab[0] => cmpchain:cmp_end.datab[0]
+datab[1] => cmpchain:cmp_end.datab[1]
+datab[2] => cmpchain:cmp_end.datab[2]
+datab[3] => cmpchain:cmp_end.datab[3]
+aeb <= cmpchain:cmp_end.aeb
+agb <= <UNC>
+
+
+|lvdt_interface|lpm_compare0:inst11|lpm_compare:lpm_compare_component|comptree:comparator|comptree:sub_comptree|cmpchain:cmp_end
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~18.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~15.IN0
+dataa[1] => altr_temp~16.IN0
+dataa[2] => altr_temp~4.IN0
+dataa[2] => altr_temp~12.IN0
+dataa[2] => altr_temp~13.IN0
+dataa[3] => altr_temp~6.IN0
+dataa[3] => altr_temp~9.IN0
+dataa[3] => altr_temp~10.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~17.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~14.IN0
+datab[1] => altr_temp~16.IN1
+datab[2] => altr_temp~4.IN1
+datab[2] => altr_temp~11.IN0
+datab[2] => altr_temp~13.IN1
+datab[3] => altr_temp~6.IN1
+datab[3] => altr_temp~8.IN0
+datab[3] => altr_temp~10.IN1
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|lpm_compare0:inst11|lpm_compare:lpm_compare_component|altshift:aeb_ext_lat_ffs
+data[0] => result[0].DATAIN
+result[0] <= data[0]
+
+
+|lvdt_interface|lpm_compare0:inst11|lpm_compare:lpm_compare_component|altshift:agb_ext_lat_ffs
+data[0] => result[0].DATAIN
+result[0] <= data[0]
+
+
+|lvdt_interface|pulse_expander:inst33
+clock => lpm_counter:lpm_counter_component.clock
+clk_en => lpm_counter:lpm_counter_component.clk_en
+sclr => lpm_counter:lpm_counter_component.sclr
+q[0] <= lpm_counter:lpm_counter_component.q[0]
+q[1] <= lpm_counter:lpm_counter_component.q[1]
+q[2] <= lpm_counter:lpm_counter_component.q[2]
+q[3] <= lpm_counter:lpm_counter_component.q[3]
+q[4] <= lpm_counter:lpm_counter_component.q[4]
+q[5] <= lpm_counter:lpm_counter_component.q[5]
+q[6] <= lpm_counter:lpm_counter_component.q[6]
+q[7] <= lpm_counter:lpm_counter_component.q[7]
+cout <= lpm_counter:lpm_counter_component.cout
+
+
+|lvdt_interface|pulse_expander:inst33|lpm_counter:lpm_counter_component
+clock => alt_synch_counter:wysi_counter.clock
+clk_en => alt_synch_counter:wysi_counter.clk_en
+sclr => alt_synch_counter:wysi_counter.sclr
+q[0] <= alt_synch_counter:wysi_counter.q[0]
+q[1] <= alt_synch_counter:wysi_counter.q[1]
+q[2] <= alt_synch_counter:wysi_counter.q[2]
+q[3] <= alt_synch_counter:wysi_counter.q[3]
+q[4] <= alt_synch_counter:wysi_counter.q[4]
+q[5] <= alt_synch_counter:wysi_counter.q[5]
+q[6] <= alt_synch_counter:wysi_counter.q[6]
+q[7] <= alt_synch_counter:wysi_counter.q[7]
+cout <= alt_synch_counter:wysi_counter.cout
+eq[0] <= eq[15]~0
+eq[1] <= eq[15]~0
+eq[2] <= eq[15]~0
+eq[3] <= eq[15]~0
+eq[4] <= eq[15]~0
+eq[5] <= eq[15]~0
+eq[6] <= eq[15]~0
+eq[7] <= eq[15]~0
+eq[8] <= eq[15]~0
+eq[9] <= eq[15]~0
+eq[10] <= eq[15]~0
+eq[11] <= eq[15]~0
+eq[12] <= eq[15]~0
+eq[13] <= eq[15]~0
+eq[14] <= eq[15]~0
+eq[15] <= eq[15]~0
+
+
+|lvdt_interface|pulse_expander:inst33|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter
+clock => counter_cell[7].CLK
+clock => counter_cell[6].CLK
+clock => counter_cell[5].CLK
+clock => counter_cell[4].CLK
+clock => counter_cell[3].CLK
+clock => counter_cell[2].CLK
+clock => counter_cell[1].CLK
+clock => counter_cell[0].CLK
+clk_en => counter_cell[7].ENA
+clk_en => counter_cell[6].ENA
+clk_en => counter_cell[5].ENA
+clk_en => counter_cell[4].ENA
+clk_en => counter_cell[3].ENA
+clk_en => counter_cell[2].ENA
+clk_en => counter_cell[1].ENA
+clk_en => counter_cell[0].ENA
+cnt_en => pre_sclr~0.IN1
+cnt_en => counter_cell[7].DATAB
+cnt_en => counter_cell[6].DATAB
+cnt_en => counter_cell[5].DATAB
+cnt_en => counter_cell[4].DATAB
+cnt_en => counter_cell[3].DATAB
+cnt_en => counter_cell[2].DATAB
+cnt_en => counter_cell[1].DATAB
+cnt_en => counter_cell[0].DATAB
+sload => altr_temp~2.IN0
+sload => pre_sload~0.IN0
+sclr => pre_sclr.IN0
+sset => altr_temp~2.IN1
+sset => pre_sload.IN1
+sconst => altr_temp~3.IN1
+sconst => pre_sload~0.IN1
+q[0] <= sload_path[0]
+q[1] <= sload_path[1]
+q[2] <= sload_path[2]
+q[3] <= sload_path[3]
+q[4] <= sload_path[4]
+q[5] <= sload_path[5]
+q[6] <= sload_path[6]
+q[7] <= sload_path[7]
+cout <= the_cout
+
+
+|lvdt_interface|pulse_expander:inst33|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_constant:$00014
+result[0] <= <VCC>
+result[1] <= <VCC>
+result[2] <= <VCC>
+result[3] <= result[3]~0
+result[4] <= result[3]~0
+result[5] <= result[3]~0
+result[6] <= <VCC>
+result[7] <= <VCC>
+
+
+|lvdt_interface|pulse_expander:inst33|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016
+dataa[0] => comptree:comparator.dataa[0]
+dataa[1] => comptree:comparator.dataa[1]
+dataa[2] => comptree:comparator.dataa[2]
+dataa[3] => comptree:comparator.dataa[3]
+dataa[4] => comptree:comparator.dataa[4]
+dataa[5] => comptree:comparator.dataa[5]
+dataa[6] => comptree:comparator.dataa[6]
+dataa[7] => comptree:comparator.dataa[7]
+datab[0] => comptree:comparator.datab[0]
+datab[1] => comptree:comparator.datab[1]
+datab[2] => comptree:comparator.datab[2]
+datab[3] => comptree:comparator.datab[3]
+datab[4] => comptree:comparator.datab[4]
+datab[5] => comptree:comparator.datab[5]
+datab[6] => comptree:comparator.datab[6]
+datab[7] => comptree:comparator.datab[7]
+alb <= alb~0
+aeb <= aeb_xnode
+agb <= agb_xnode
+aleb <= aleb~0
+aneb <= aneb~0
+ageb <= ageb~0
+
+
+|lvdt_interface|pulse_expander:inst33|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|comptree:comparator
+dataa[0] => cmpchain:cmp_end.dataa[0]
+dataa[1] => cmpchain:cmp_end.dataa[1]
+dataa[2] => cmpchain:cmp_end.dataa[2]
+dataa[3] => cmpchain:cmp_end.dataa[3]
+dataa[4] => cmpchain:cmp_end.dataa[4]
+dataa[5] => cmpchain:cmp_end.dataa[5]
+dataa[6] => cmpchain:cmp_end.dataa[6]
+dataa[7] => cmpchain:cmp_end.dataa[7]
+datab[0] => cmpchain:cmp_end.datab[0]
+datab[1] => cmpchain:cmp_end.datab[1]
+datab[2] => cmpchain:cmp_end.datab[2]
+datab[3] => cmpchain:cmp_end.datab[3]
+datab[4] => cmpchain:cmp_end.datab[4]
+datab[5] => cmpchain:cmp_end.datab[5]
+datab[6] => cmpchain:cmp_end.datab[6]
+datab[7] => cmpchain:cmp_end.datab[7]
+aeb <= cmpchain:cmp_end.aeb
+agb <= <UNC>
+
+
+|lvdt_interface|pulse_expander:inst33|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|comptree:comparator|cmpchain:cmp_end
+dataa[0] => comptree:comp.dataa[0]
+dataa[1] => comptree:comp.dataa[1]
+dataa[2] => comptree:comp.dataa[2]
+dataa[3] => comptree:comp.dataa[3]
+dataa[4] => comptree:comp.dataa[4]
+dataa[5] => comptree:comp.dataa[5]
+dataa[6] => comptree:comp.dataa[6]
+dataa[7] => comptree:comp.dataa[7]
+datab[0] => comptree:comp.datab[0]
+datab[1] => comptree:comp.datab[1]
+datab[2] => comptree:comp.datab[2]
+datab[3] => comptree:comp.datab[3]
+datab[4] => comptree:comp.datab[4]
+datab[5] => comptree:comp.datab[5]
+datab[6] => comptree:comp.datab[6]
+datab[7] => comptree:comp.datab[7]
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|pulse_expander:inst33|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|comptree:comparator|cmpchain:cmp_end|comptree:comp
+dataa[0] => cmpchain:cmp[0].dataa[0]
+dataa[1] => cmpchain:cmp[0].dataa[1]
+dataa[2] => cmpchain:cmp[0].dataa[2]
+dataa[3] => cmpchain:cmp[0].dataa[3]
+dataa[4] => cmpchain:cmp[1].dataa[0]
+dataa[5] => cmpchain:cmp[1].dataa[1]
+dataa[6] => cmpchain:cmp[1].dataa[2]
+dataa[7] => cmpchain:cmp[1].dataa[3]
+datab[0] => cmpchain:cmp[0].datab[0]
+datab[1] => cmpchain:cmp[0].datab[1]
+datab[2] => cmpchain:cmp[0].datab[2]
+datab[3] => cmpchain:cmp[0].datab[3]
+datab[4] => cmpchain:cmp[1].datab[0]
+datab[5] => cmpchain:cmp[1].datab[1]
+datab[6] => cmpchain:cmp[1].datab[2]
+datab[7] => cmpchain:cmp[1].datab[3]
+aeb <= aeb_node
+agb <= <UNC>
+
+
+|lvdt_interface|pulse_expander:inst33|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp[1]
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~18.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~15.IN0
+dataa[1] => altr_temp~16.IN0
+dataa[2] => altr_temp~4.IN0
+dataa[2] => altr_temp~12.IN0
+dataa[2] => altr_temp~13.IN0
+dataa[3] => altr_temp~6.IN0
+dataa[3] => altr_temp~9.IN0
+dataa[3] => altr_temp~10.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~17.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~14.IN0
+datab[1] => altr_temp~16.IN1
+datab[2] => altr_temp~4.IN1
+datab[2] => altr_temp~11.IN0
+datab[2] => altr_temp~13.IN1
+datab[3] => altr_temp~6.IN1
+datab[3] => altr_temp~8.IN0
+datab[3] => altr_temp~10.IN1
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|pulse_expander:inst33|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp[0]
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~18.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~15.IN0
+dataa[1] => altr_temp~16.IN0
+dataa[2] => altr_temp~4.IN0
+dataa[2] => altr_temp~12.IN0
+dataa[2] => altr_temp~13.IN0
+dataa[3] => altr_temp~6.IN0
+dataa[3] => altr_temp~9.IN0
+dataa[3] => altr_temp~10.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~17.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~14.IN0
+datab[1] => altr_temp~16.IN1
+datab[2] => altr_temp~4.IN1
+datab[2] => altr_temp~11.IN0
+datab[2] => altr_temp~13.IN1
+datab[3] => altr_temp~6.IN1
+datab[3] => altr_temp~8.IN0
+datab[3] => altr_temp~10.IN1
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|pulse_expander:inst33|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree
+dataa[0] => cmpchain:cmp_end.dataa[0]
+dataa[1] => cmpchain:cmp_end.dataa[1]
+datab[0] => cmpchain:cmp_end.datab[0]
+datab[1] => cmpchain:cmp_end.datab[1]
+aeb <= cmpchain:cmp_end.aeb
+agb <= <UNC>
+
+
+|lvdt_interface|pulse_expander:inst33|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree|cmpchain:cmp_end
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~8.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~5.IN0
+dataa[1] => altr_temp~6.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~7.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~4.IN0
+datab[1] => altr_temp~6.IN1
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|pulse_expander:inst33|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|altshift:aeb_ext_lat_ffs
+data[0] => result[0].DATAIN
+result[0] <= data[0]
+
+
+|lvdt_interface|pulse_expander:inst33|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|altshift:agb_ext_lat_ffs
+data[0] => result[0].DATAIN
+result[0] <= data[0]
+
+
+|lvdt_interface|lpm_compare0:inst15
+dataa[0] => lpm_compare:lpm_compare_component.dataa[0]
+dataa[1] => lpm_compare:lpm_compare_component.dataa[1]
+dataa[2] => lpm_compare:lpm_compare_component.dataa[2]
+dataa[3] => lpm_compare:lpm_compare_component.dataa[3]
+dataa[4] => lpm_compare:lpm_compare_component.dataa[4]
+dataa[5] => lpm_compare:lpm_compare_component.dataa[5]
+dataa[6] => lpm_compare:lpm_compare_component.dataa[6]
+dataa[7] => lpm_compare:lpm_compare_component.dataa[7]
+datab[0] => lpm_compare:lpm_compare_component.datab[0]
+datab[1] => lpm_compare:lpm_compare_component.datab[1]
+datab[2] => lpm_compare:lpm_compare_component.datab[2]
+datab[3] => lpm_compare:lpm_compare_component.datab[3]
+datab[4] => lpm_compare:lpm_compare_component.datab[4]
+datab[5] => lpm_compare:lpm_compare_component.datab[5]
+datab[6] => lpm_compare:lpm_compare_component.datab[6]
+datab[7] => lpm_compare:lpm_compare_component.datab[7]
+clock => lpm_compare:lpm_compare_component.clock
+AeB <= lpm_compare:lpm_compare_component.AeB
+
+
+|lvdt_interface|lpm_compare0:inst15|lpm_compare:lpm_compare_component
+dataa[0] => comptree:comparator.dataa[0]
+dataa[1] => comptree:comparator.dataa[1]
+dataa[2] => comptree:comparator.dataa[2]
+dataa[3] => comptree:comparator.dataa[3]
+dataa[4] => comptree:comparator.dataa[4]
+dataa[5] => comptree:comparator.dataa[5]
+dataa[6] => comptree:comparator.dataa[6]
+dataa[7] => comptree:comparator.dataa[7]
+datab[0] => comptree:comparator.datab[0]
+datab[1] => comptree:comparator.datab[1]
+datab[2] => comptree:comparator.datab[2]
+datab[3] => comptree:comparator.datab[3]
+datab[4] => comptree:comparator.datab[4]
+datab[5] => comptree:comparator.datab[5]
+datab[6] => comptree:comparator.datab[6]
+datab[7] => comptree:comparator.datab[7]
+clock => comptree:comparator.clk
+aclr => comptree:comparator.aset
+alb <= alb~0
+aeb <= aeb_xnode
+agb <= agb_xnode
+aleb <= aleb~0
+aneb <= aneb~0
+ageb <= ageb~0
+
+
+|lvdt_interface|lpm_compare0:inst15|lpm_compare:lpm_compare_component|comptree:comparator
+dataa[0] => cmpchain:cmp[0].dataa[0]
+dataa[1] => cmpchain:cmp[0].dataa[1]
+dataa[2] => cmpchain:cmp[1].dataa[0]
+dataa[3] => cmpchain:cmp[1].dataa[1]
+dataa[4] => cmpchain:cmp[2].dataa[0]
+dataa[5] => cmpchain:cmp[2].dataa[1]
+dataa[6] => cmpchain:cmp[3].dataa[0]
+dataa[7] => cmpchain:cmp[3].dataa[1]
+datab[0] => cmpchain:cmp[0].datab[0]
+datab[1] => cmpchain:cmp[0].datab[1]
+datab[2] => cmpchain:cmp[1].datab[0]
+datab[3] => cmpchain:cmp[1].datab[1]
+datab[4] => cmpchain:cmp[2].datab[0]
+datab[5] => cmpchain:cmp[2].datab[1]
+datab[6] => cmpchain:cmp[3].datab[0]
+datab[7] => cmpchain:cmp[3].datab[1]
+clk => cmpchain:cmp[3].clk
+clk => cmpchain:cmp[2].clk
+clk => cmpchain:cmp[1].clk
+clk => cmpchain:cmp[0].clk
+aset => cmpchain:cmp[3].aset
+aset => cmpchain:cmp[2].aset
+aset => cmpchain:cmp[1].aset
+aset => cmpchain:cmp[0].aset
+aeb <= aeb_node
+agb <= <UNC>
+
+
+|lvdt_interface|lpm_compare0:inst15|lpm_compare:lpm_compare_component|comptree:comparator|cmpchain:cmp[3]
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~8.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~5.IN0
+dataa[1] => altr_temp~6.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~7.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~4.IN0
+datab[1] => altr_temp~6.IN1
+clk => aeb_out.CLK
+clk => agb_out.CLK
+aset => aeb_out~1.IN0
+aset => agb_out~1.IN0
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|lpm_compare0:inst15|lpm_compare:lpm_compare_component|comptree:comparator|cmpchain:cmp[2]
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~8.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~5.IN0
+dataa[1] => altr_temp~6.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~7.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~4.IN0
+datab[1] => altr_temp~6.IN1
+clk => aeb_out.CLK
+clk => agb_out.CLK
+aset => aeb_out~1.IN0
+aset => agb_out~1.IN0
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|lpm_compare0:inst15|lpm_compare:lpm_compare_component|comptree:comparator|cmpchain:cmp[1]
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~8.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~5.IN0
+dataa[1] => altr_temp~6.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~7.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~4.IN0
+datab[1] => altr_temp~6.IN1
+clk => aeb_out.CLK
+clk => agb_out.CLK
+aset => aeb_out~1.IN0
+aset => agb_out~1.IN0
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|lpm_compare0:inst15|lpm_compare:lpm_compare_component|comptree:comparator|cmpchain:cmp[0]
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~8.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~5.IN0
+dataa[1] => altr_temp~6.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~7.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~4.IN0
+datab[1] => altr_temp~6.IN1
+clk => aeb_out.CLK
+clk => agb_out.CLK
+aset => aeb_out~1.IN0
+aset => agb_out~1.IN0
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|lpm_compare0:inst15|lpm_compare:lpm_compare_component|comptree:comparator|comptree:sub_comptree
+dataa[0] => cmpchain:cmp_end.dataa[0]
+dataa[1] => cmpchain:cmp_end.dataa[1]
+dataa[2] => cmpchain:cmp_end.dataa[2]
+dataa[3] => cmpchain:cmp_end.dataa[3]
+datab[0] => cmpchain:cmp_end.datab[0]
+datab[1] => cmpchain:cmp_end.datab[1]
+datab[2] => cmpchain:cmp_end.datab[2]
+datab[3] => cmpchain:cmp_end.datab[3]
+aeb <= cmpchain:cmp_end.aeb
+agb <= <UNC>
+
+
+|lvdt_interface|lpm_compare0:inst15|lpm_compare:lpm_compare_component|comptree:comparator|comptree:sub_comptree|cmpchain:cmp_end
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~18.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~15.IN0
+dataa[1] => altr_temp~16.IN0
+dataa[2] => altr_temp~4.IN0
+dataa[2] => altr_temp~12.IN0
+dataa[2] => altr_temp~13.IN0
+dataa[3] => altr_temp~6.IN0
+dataa[3] => altr_temp~9.IN0
+dataa[3] => altr_temp~10.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~17.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~14.IN0
+datab[1] => altr_temp~16.IN1
+datab[2] => altr_temp~4.IN1
+datab[2] => altr_temp~11.IN0
+datab[2] => altr_temp~13.IN1
+datab[3] => altr_temp~6.IN1
+datab[3] => altr_temp~8.IN0
+datab[3] => altr_temp~10.IN1
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|lpm_compare0:inst15|lpm_compare:lpm_compare_component|altshift:aeb_ext_lat_ffs
+data[0] => result[0].DATAIN
+result[0] <= data[0]
+
+
+|lvdt_interface|lpm_compare0:inst15|lpm_compare:lpm_compare_component|altshift:agb_ext_lat_ffs
+data[0] => result[0].DATAIN
+result[0] <= data[0]
+
+
+|lvdt_interface|pulse_expander:inst40
+clock => lpm_counter:lpm_counter_component.clock
+clk_en => lpm_counter:lpm_counter_component.clk_en
+sclr => lpm_counter:lpm_counter_component.sclr
+q[0] <= lpm_counter:lpm_counter_component.q[0]
+q[1] <= lpm_counter:lpm_counter_component.q[1]
+q[2] <= lpm_counter:lpm_counter_component.q[2]
+q[3] <= lpm_counter:lpm_counter_component.q[3]
+q[4] <= lpm_counter:lpm_counter_component.q[4]
+q[5] <= lpm_counter:lpm_counter_component.q[5]
+q[6] <= lpm_counter:lpm_counter_component.q[6]
+q[7] <= lpm_counter:lpm_counter_component.q[7]
+cout <= lpm_counter:lpm_counter_component.cout
+
+
+|lvdt_interface|pulse_expander:inst40|lpm_counter:lpm_counter_component
+clock => alt_synch_counter:wysi_counter.clock
+clk_en => alt_synch_counter:wysi_counter.clk_en
+sclr => alt_synch_counter:wysi_counter.sclr
+q[0] <= alt_synch_counter:wysi_counter.q[0]
+q[1] <= alt_synch_counter:wysi_counter.q[1]
+q[2] <= alt_synch_counter:wysi_counter.q[2]
+q[3] <= alt_synch_counter:wysi_counter.q[3]
+q[4] <= alt_synch_counter:wysi_counter.q[4]
+q[5] <= alt_synch_counter:wysi_counter.q[5]
+q[6] <= alt_synch_counter:wysi_counter.q[6]
+q[7] <= alt_synch_counter:wysi_counter.q[7]
+cout <= alt_synch_counter:wysi_counter.cout
+eq[0] <= eq[15]~0
+eq[1] <= eq[15]~0
+eq[2] <= eq[15]~0
+eq[3] <= eq[15]~0
+eq[4] <= eq[15]~0
+eq[5] <= eq[15]~0
+eq[6] <= eq[15]~0
+eq[7] <= eq[15]~0
+eq[8] <= eq[15]~0
+eq[9] <= eq[15]~0
+eq[10] <= eq[15]~0
+eq[11] <= eq[15]~0
+eq[12] <= eq[15]~0
+eq[13] <= eq[15]~0
+eq[14] <= eq[15]~0
+eq[15] <= eq[15]~0
+
+
+|lvdt_interface|pulse_expander:inst40|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter
+clock => counter_cell[7].CLK
+clock => counter_cell[6].CLK
+clock => counter_cell[5].CLK
+clock => counter_cell[4].CLK
+clock => counter_cell[3].CLK
+clock => counter_cell[2].CLK
+clock => counter_cell[1].CLK
+clock => counter_cell[0].CLK
+clk_en => counter_cell[7].ENA
+clk_en => counter_cell[6].ENA
+clk_en => counter_cell[5].ENA
+clk_en => counter_cell[4].ENA
+clk_en => counter_cell[3].ENA
+clk_en => counter_cell[2].ENA
+clk_en => counter_cell[1].ENA
+clk_en => counter_cell[0].ENA
+cnt_en => pre_sclr~0.IN1
+cnt_en => counter_cell[7].DATAB
+cnt_en => counter_cell[6].DATAB
+cnt_en => counter_cell[5].DATAB
+cnt_en => counter_cell[4].DATAB
+cnt_en => counter_cell[3].DATAB
+cnt_en => counter_cell[2].DATAB
+cnt_en => counter_cell[1].DATAB
+cnt_en => counter_cell[0].DATAB
+sload => altr_temp~2.IN0
+sload => pre_sload~0.IN0
+sclr => pre_sclr.IN0
+sset => altr_temp~2.IN1
+sset => pre_sload.IN1
+sconst => altr_temp~3.IN1
+sconst => pre_sload~0.IN1
+q[0] <= sload_path[0]
+q[1] <= sload_path[1]
+q[2] <= sload_path[2]
+q[3] <= sload_path[3]
+q[4] <= sload_path[4]
+q[5] <= sload_path[5]
+q[6] <= sload_path[6]
+q[7] <= sload_path[7]
+cout <= the_cout
+
+
+|lvdt_interface|pulse_expander:inst40|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_constant:$00014
+result[0] <= <VCC>
+result[1] <= <VCC>
+result[2] <= <VCC>
+result[3] <= result[3]~0
+result[4] <= result[3]~0
+result[5] <= result[3]~0
+result[6] <= <VCC>
+result[7] <= <VCC>
+
+
+|lvdt_interface|pulse_expander:inst40|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016
+dataa[0] => comptree:comparator.dataa[0]
+dataa[1] => comptree:comparator.dataa[1]
+dataa[2] => comptree:comparator.dataa[2]
+dataa[3] => comptree:comparator.dataa[3]
+dataa[4] => comptree:comparator.dataa[4]
+dataa[5] => comptree:comparator.dataa[5]
+dataa[6] => comptree:comparator.dataa[6]
+dataa[7] => comptree:comparator.dataa[7]
+datab[0] => comptree:comparator.datab[0]
+datab[1] => comptree:comparator.datab[1]
+datab[2] => comptree:comparator.datab[2]
+datab[3] => comptree:comparator.datab[3]
+datab[4] => comptree:comparator.datab[4]
+datab[5] => comptree:comparator.datab[5]
+datab[6] => comptree:comparator.datab[6]
+datab[7] => comptree:comparator.datab[7]
+alb <= alb~0
+aeb <= aeb_xnode
+agb <= agb_xnode
+aleb <= aleb~0
+aneb <= aneb~0
+ageb <= ageb~0
+
+
+|lvdt_interface|pulse_expander:inst40|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|comptree:comparator
+dataa[0] => cmpchain:cmp_end.dataa[0]
+dataa[1] => cmpchain:cmp_end.dataa[1]
+dataa[2] => cmpchain:cmp_end.dataa[2]
+dataa[3] => cmpchain:cmp_end.dataa[3]
+dataa[4] => cmpchain:cmp_end.dataa[4]
+dataa[5] => cmpchain:cmp_end.dataa[5]
+dataa[6] => cmpchain:cmp_end.dataa[6]
+dataa[7] => cmpchain:cmp_end.dataa[7]
+datab[0] => cmpchain:cmp_end.datab[0]
+datab[1] => cmpchain:cmp_end.datab[1]
+datab[2] => cmpchain:cmp_end.datab[2]
+datab[3] => cmpchain:cmp_end.datab[3]
+datab[4] => cmpchain:cmp_end.datab[4]
+datab[5] => cmpchain:cmp_end.datab[5]
+datab[6] => cmpchain:cmp_end.datab[6]
+datab[7] => cmpchain:cmp_end.datab[7]
+aeb <= cmpchain:cmp_end.aeb
+agb <= <UNC>
+
+
+|lvdt_interface|pulse_expander:inst40|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|comptree:comparator|cmpchain:cmp_end
+dataa[0] => comptree:comp.dataa[0]
+dataa[1] => comptree:comp.dataa[1]
+dataa[2] => comptree:comp.dataa[2]
+dataa[3] => comptree:comp.dataa[3]
+dataa[4] => comptree:comp.dataa[4]
+dataa[5] => comptree:comp.dataa[5]
+dataa[6] => comptree:comp.dataa[6]
+dataa[7] => comptree:comp.dataa[7]
+datab[0] => comptree:comp.datab[0]
+datab[1] => comptree:comp.datab[1]
+datab[2] => comptree:comp.datab[2]
+datab[3] => comptree:comp.datab[3]
+datab[4] => comptree:comp.datab[4]
+datab[5] => comptree:comp.datab[5]
+datab[6] => comptree:comp.datab[6]
+datab[7] => comptree:comp.datab[7]
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|pulse_expander:inst40|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|comptree:comparator|cmpchain:cmp_end|comptree:comp
+dataa[0] => cmpchain:cmp[0].dataa[0]
+dataa[1] => cmpchain:cmp[0].dataa[1]
+dataa[2] => cmpchain:cmp[0].dataa[2]
+dataa[3] => cmpchain:cmp[0].dataa[3]
+dataa[4] => cmpchain:cmp[1].dataa[0]
+dataa[5] => cmpchain:cmp[1].dataa[1]
+dataa[6] => cmpchain:cmp[1].dataa[2]
+dataa[7] => cmpchain:cmp[1].dataa[3]
+datab[0] => cmpchain:cmp[0].datab[0]
+datab[1] => cmpchain:cmp[0].datab[1]
+datab[2] => cmpchain:cmp[0].datab[2]
+datab[3] => cmpchain:cmp[0].datab[3]
+datab[4] => cmpchain:cmp[1].datab[0]
+datab[5] => cmpchain:cmp[1].datab[1]
+datab[6] => cmpchain:cmp[1].datab[2]
+datab[7] => cmpchain:cmp[1].datab[3]
+aeb <= aeb_node
+agb <= <UNC>
+
+
+|lvdt_interface|pulse_expander:inst40|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp[1]
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~18.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~15.IN0
+dataa[1] => altr_temp~16.IN0
+dataa[2] => altr_temp~4.IN0
+dataa[2] => altr_temp~12.IN0
+dataa[2] => altr_temp~13.IN0
+dataa[3] => altr_temp~6.IN0
+dataa[3] => altr_temp~9.IN0
+dataa[3] => altr_temp~10.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~17.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~14.IN0
+datab[1] => altr_temp~16.IN1
+datab[2] => altr_temp~4.IN1
+datab[2] => altr_temp~11.IN0
+datab[2] => altr_temp~13.IN1
+datab[3] => altr_temp~6.IN1
+datab[3] => altr_temp~8.IN0
+datab[3] => altr_temp~10.IN1
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|pulse_expander:inst40|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp[0]
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~18.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~15.IN0
+dataa[1] => altr_temp~16.IN0
+dataa[2] => altr_temp~4.IN0
+dataa[2] => altr_temp~12.IN0
+dataa[2] => altr_temp~13.IN0
+dataa[3] => altr_temp~6.IN0
+dataa[3] => altr_temp~9.IN0
+dataa[3] => altr_temp~10.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~17.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~14.IN0
+datab[1] => altr_temp~16.IN1
+datab[2] => altr_temp~4.IN1
+datab[2] => altr_temp~11.IN0
+datab[2] => altr_temp~13.IN1
+datab[3] => altr_temp~6.IN1
+datab[3] => altr_temp~8.IN0
+datab[3] => altr_temp~10.IN1
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|pulse_expander:inst40|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree
+dataa[0] => cmpchain:cmp_end.dataa[0]
+dataa[1] => cmpchain:cmp_end.dataa[1]
+datab[0] => cmpchain:cmp_end.datab[0]
+datab[1] => cmpchain:cmp_end.datab[1]
+aeb <= cmpchain:cmp_end.aeb
+agb <= <UNC>
+
+
+|lvdt_interface|pulse_expander:inst40|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree|cmpchain:cmp_end
+dataa[0] => altr_temp~1.IN0
+dataa[0] => altr_temp~8.IN0
+dataa[1] => altr_temp~2.IN0
+dataa[1] => altr_temp~5.IN0
+dataa[1] => altr_temp~6.IN0
+datab[0] => altr_temp~1.IN1
+datab[0] => altr_temp~7.IN0
+datab[1] => altr_temp~2.IN1
+datab[1] => altr_temp~4.IN0
+datab[1] => altr_temp~6.IN1
+aeb <= aeb_out
+agb <= agb_out
+
+
+|lvdt_interface|pulse_expander:inst40|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|altshift:aeb_ext_lat_ffs
+data[0] => result[0].DATAIN
+result[0] <= data[0]
+
+
+|lvdt_interface|pulse_expander:inst40|lpm_counter:lpm_counter_component|alt_synch_counter:wysi_counter|lpm_compare:$00016|altshift:agb_ext_lat_ffs
+data[0] => result[0].DATAIN
+result[0] <= data[0]
+
+
